@@ -1,0 +1,59 @@
+name: Udrul til Cloudflare Pages
+
+# Udruller mappen site/ til Pages-projektet globus-nicco-dk, som svarer på
+# https://globus.nicco.dk. Kører ved hvert commit på main, der rører site/
+# eller denne fil, og kan startes manuelt under Actions.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - ".github/workflows/udrul.yml"
+  workflow_dispatch:
+
+# Kun én udrulning ad gangen. En ny venter, til den igangværende er færdig.
+concurrency:
+  group: udrul
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  udrul:
+    name: Kontrollér og udrul
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent repoet
+        uses: actions/checkout@v6
+
+      # Betingelser for at siden må gå live. Fejler én, udrulles der ikke.
+      - name: Kontrollér siden
+        run: |
+          set -euo pipefail
+          if grep -RInE 'fonts\.(googleapis|gstatic)\.com' site/; then
+            echo "::error::Siden henter fra Google Fonts. Skrifttyperne skal ligge i site/fonts/."
+            exit 1
+          fi
+          if ! head -c 15 site/index.html | grep -qi '^<!doctype html>'; then
+            echo "::error::site/index.html begynder ikke med doctype. Er det et fragment fra et artifact?"
+            exit 1
+          fi
+          if ! grep -q '<meta name="viewport"' site/index.html; then
+            echo "::error::site/index.html mangler viewport. Telefonlayoutet udløses ikke uden."
+            exit 1
+          fi
+          if ! grep -qF '[hidden]{display:none!important}' site/index.html; then
+            echo "::error::site/index.html mangler [hidden]-reglen. Paneler kan ikke lukkes uden."
+            exit 1
+          fi
+          echo "Kontrol bestået."
+
+      - name: Udrul til Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Konto-id er ikke en hemmelighed. Det står i enhver adresse i Cloudflares kontrolpanel.
+          accountId: b8e531774d257d9555c444b444dd71b5
+          command: pages deploy site --project-name=globus-nicco-dk --branch=main
