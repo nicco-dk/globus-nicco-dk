@@ -14,6 +14,9 @@ Dette repo er kilden. Det, der ligger i `site/` på `main`, er det, der er live 
 | `site/favicon.svg`, `site/favicon.ico` | Ikon til browserfanen |
 | `site/_headers` | Cache og sikkerhedsheadere, læses af Cloudflare Pages |
 | `.github/workflows/udrul.yml` | Kontrol og udrulning ved hvert commit på `main` |
+| `tools/tjek-data.mjs` | Formkontrol af datasættet, køres af workflowet og kan køres lokalt |
+| `OPDATERING.md` | Arbejdsbeskrivelse for den kørsel, der holder datasættet ajour |
+| `LOG.md` | Én post pr. opdatering: hvad der blev ændret og hvorfor |
 
 Kun `site/` udrulles. Denne README og alt andet uden for `site/` bliver i repoet.
 
@@ -25,7 +28,9 @@ Hosting er Cloudflare Pages, projekt `globus-nicco-dk`. Projektet er oprettet me
 - Udrulningen kan også startes manuelt under Actions, Udrul til Cloudflare Pages, Run workflow.
 - Kræver repo-secret `CLOUDFLARE_API_TOKEN`: et Cloudflare API-token med tilladelsen Account, Cloudflare Pages, Edit.
 
-Før udrulning kontrolleres fire betingelser. Fejler én, udrulles der ikke:
+Før udrulning kontrolleres siden og datasættet. Fejler noget, udrulles der ikke.
+
+Siden:
 
 1. Intet i `site/` henviser til fonts.googleapis.com eller fonts.gstatic.com.
 2. `site/index.html` begynder med `<!doctype html>`.
@@ -34,11 +39,13 @@ Før udrulning kontrolleres fire betingelser. Fejler én, udrulles der ikke:
 
 De tre sidste findes, fordi siden oprindeligt kom som et fragment fra et artifact uden dokumentskelet. Uden dem vises skrivebordslayoutet på telefoner, og detaljepanelet kan ikke lukkes.
 
+Datasættet, med `node tools/tjek-data.mjs`: sidens script kan læses, hver hændelse har de nødvendige felter og mindst én kilde med https-adresse, koordinater og datoer er gyldige, ingen dato ligger efter datasættets dato, trinnet stemmer med forløbet, og ingen hændelse er forsvundet siden forrige udgave. Kontrollen fanger formfejl. Den kan ikke se, om et tal er rigtigt.
+
 ## Opdatering af data
 
-Datasættet ligger i `site/index.html` i konstanten `EVENTS`. Hver hændelse har felterne: sted, land, koordinater, sygdom, smittestof, eskaleringstrin, forløb med datoer, stedknuder, forbindelser, talserie og kilder.
+Datasættet ligger i `site/index.html` i konstanten `EVENTS`, og datasættets dato i `DATA_DATO` lige over. Antal hændelser og dato i sidens overskriftslinje og fod læses derfra, så de to steder er de eneste, der skal røres ved en opdatering.
 
-En planlagt kørsel kan skrive en ny `site/index.html` og committe den. Siden opdaterer sig selv, når udrulningen er kørt.
+Fremgangsmåde, kilder, regler og felter står i `OPDATERING.md`. Hver opdatering får en post i `LOG.md`.
 
 ## Bemærk
 

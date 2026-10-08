@@ -1,0 +1,133 @@
+# Opdatering af datasættet
+
+Denne fil er arbejdsbeskrivelsen for den kørsel, der holder Udbrudsglobus ajour. Den læses af den, der udfører kørslen, hver gang. Følg den, som den står. Hvor den ikke dækker en situation, så vælg det forsigtige: lad data stå, og skriv i loggen, hvad der var uklart.
+
+## Hvad kørslen er til
+
+https://globus.nicco.dk viser aktuelle udbrud af smitsom sygdom på en klode. Siden er offentlig. Folk kan læse et tal her og handle på det, og der er ingen, der ser en ændring igennem, før den går live. Derfor er reglen for alt i denne fil den samme: **der står kun det på siden, som en navngiven kilde har offentliggjort, og kilden står ved siden af.** Et manglende tal er i orden. Et forkert tal er ikke.
+
+Kørslen gør tre ting: bringer de eksisterende hændelser ajour, tilføjer nye hændelser som myndighederne har meldt ud, og skriver ned, hvad den gjorde.
+
+## Hvad der må ændres
+
+Kun disse tre steder:
+
+1. Konstanten `DATA_DATO` i `site/index.html`.
+2. Listen `EVENTS` i `site/index.html`.
+3. `LOG.md`, hvor der tilføjes én post øverst.
+
+Alt andet står urørt: resten af `site/index.html` (markup, CSS, kortgeometri, kode, `DATA_STATUS`), de øvrige filer i `site/`, `tools/`, workflowet og denne fil. Ser noget andet forkert ud, så skriv det i loggen og i den afsluttende rapport i stedet for at rette det.
+
+## Kilder
+
+Brug dem i denne rækkefølge.
+
+**Myndigheder og internationale organer.** WHO (Disease Outbreak News, situationsrapporter, regionskontorerne AFRO, EMRO, EURO, PAHO, SEARO, WPRO), ECDC (den ugentlige Communicable Disease Threats Report og sygdomssiderne), US CDC, Africa CDC, UKHSA, GPEI, Statens Serum Institut, RIVM, RKI og andre nationale sundhedsmyndigheder. Disse kan stå alene.
+
+**Sekundære faglige kilder.** Fagtidsskrifter og faglige nyhedstjenester som CIDRAP. Kildens navn får tilføjelsen `, sekundær` eller `, medie`.
+
+**Nyhedsmedier.** Kun når myndighederne tier om en hændelse, der allerede er på siden, eller når en ny hændelse endnu ikke er bekræftet. Kildens navn får tilføjelsen `, medie`, hændelsen får trinnet `mistanke` medmindre en myndighed siger andet, og feltet `gap` beskriver, hvad der ikke er bekræftet.
+
+Siden viser kilder med `, medie` eller `, sekundær` som ikke myndighedsbekræftede. Tilføjelsen er derfor ikke pynt. Glem den ikke, og sæt den ikke på en myndighed.
+
+Brug ikke Wikipedia, sociale medier, fora eller sider, der genfortæller andres tal uden at henvise til dem.
+
+## Fremgangsmåde
+
+Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra to samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
+
+1. **Hent repoet** og læs `EVENTS` og de seneste poster i `LOG.md`, så du ved, hvad der står, og hvad forrige kørsel var i tvivl om.
+2. **Læs de to samlede kilder:** ECDC's seneste Communicable Disease Threats Report og WHO's liste over Disease Outbreak News siden forrige kørsel. Notér hvilke hændelser på siden de nævner, og hvilke nye hændelser de melder.
+3. **Bring nævnte hændelser ajour.** Slå kun enkeltkilder op for de hændelser, de samlede kilder nævner, og for hændelser med `live:true` og trin `spredning` eller `smitte`, hvor der er grund til at tro, at tallene har flyttet sig. En hændelse uden nyt lades urørt. Det er det normale udfald for de fleste hændelser på en given dag.
+4. **Tilføj nye hændelser**, højst fem pr. kørsel. Er der flere, så tag de alvorligste og nævn resten i loggen.
+5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret. Datoen betyder, at datasættet er gennemgået den dag.
+6. **Kør kontrollen:** `node tools/tjek-data.mjs site/index.html --forrige <forrige udgave>`, hvor forrige udgave hentes med `git show HEAD:site/index.html`. Ret det, den finder. Kan en fejl ikke rettes, så fortryd ændringen i den hændelse.
+7. **Skriv posten i `LOG.md`.**
+8. **Commit og send til `main`** med beskeden `Data: <dato> · <kort opsummering>`.
+9. **Følg udrulningen** under Actions, til den er grøn. Fejler den, så ret årsagen eller fortryd dit commit med et nyt commit. Efterlad ikke `main` med en fejlet kørsel.
+10. **Afslut med en kort rapport:** hvad der blev ændret, hvad der blev ladt urørt og hvorfor, og hvad der var usikkert.
+
+Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste hændelser. Kan ingen kilder hentes, så ændr ingen data, sæt ikke `DATA_DATO`, og skriv i loggen, at kørslen ikke kunne gennemføres.
+
+## Regler for ændringer
+
+**Tal.** Et tal står altid sammen med, hvem der har opgjort det, og pr. hvilken dato: `8.665 bekræftede tilfælde og 4.178 dødsfald, US CDC pr. 5. oktober`. Skriv tallet, som kilden skriver det. Regn ikke selv et tal ud, læg ikke tal fra to kilder sammen, og rund ikke af. Er to myndigheder uenige, så brug den nyeste opgørelse i `cases` og forklar forskellen i `extra`.
+
+**Kilder følger tallene.** Når et tal eller en oplysning ændres, skal den kilde, den kommer fra, stå i `src`. Erstat en forældet adresse med den nye, når kilden er den samme rapportserie. Kontrollér, at adressen faktisk fører til det, du henviser til.
+
+**Forløb.** En ny udvikling bliver et nyt punkt i `tl` med dato og en sætning om, hvad der skete. Ret ikke i gamle punkter, medmindre en kilde har rettet sig selv, og skriv i så fald hvorfor i loggen.
+
+**Trin.** Trinnet flyttes kun, når en kilde dokumenterer det, der definerer det nye trin. Flytningen sker ved, at det nye punkt i `tl` får trinnet i sit tredje felt, og at `stage` sættes til det samme. De to skal altid stemme overens.
+
+| Trin | Betyder | Kræver |
+| --- | --- | --- |
+| `mistanke` | Ubekræftet signal | En melding, hvor diagnosen ikke er fastslået |
+| `udbrud` | Bekræftet udbrud | Laboratoriebekræftet tilfælde |
+| `smitte` | Smitte mellem mennesker | Dokumenteret videregivelse fra person til person |
+| `spredning` | Geografisk spredning | Smitte i flere led og i nye områder |
+| `variant` | Ny variant eller resistens | Dokumenteret ændret smitsomhed eller svigtende behandling |
+| `reservoir` | Naturligt reservoir | Smittestof påvist hos dyr, ingen humane tilfælde |
+
+**Afsluttede hændelser slettes ikke.** Når en myndighed erklærer et udbrud for afsluttet, tilføjes et punkt i `tl` om det, og `live` sættes til `false`. Hændelsen bliver stående, så tidslinjen stadig kan vise den. Kontrollen afviser en udgave, hvor en hændelse er forsvundet.
+
+**`live`** betyder, at hændelsen udvikler sig nu. Sæt den til `false`, når der ikke har været nyt fra kilderne i en måned, eller når udbruddet er erklæret afsluttet.
+
+**Usikkerhed** skrives i `gap`, som siden viser under overskriften Usikkert. Brug feltet, når noget væsentligt ikke er bekræftet. Fjern det, når det er afklaret.
+
+**`naeste`** er en vurdering af, hvad der ville flytte trinnet, og siden mærker den som ikke kildebelagt. Ret den kun, når trinnet har flyttet sig, så teksten ikke længere passer.
+
+**Nye hændelser** kræver en myndighedskilde, eller en mediekilde med trin `mistanke` og et udfyldt `gap`. Tag hændelser med, som en læser ville forvente at finde på en side om udbrud: nye eller usædvanlige udbrud, udbrud med smitte mellem mennesker, og udbrud i eller med forbindelse til Danmark og Europa. Tag ikke den almindelige sæson for kendte sygdomme med, medmindre en myndighed kalder den usædvanlig.
+
+**Sprog.** Dansk, nøgternt og i samme tone som de eksisterende tekster. Ingen tankestreger: brug komma, punktum eller kolon. Sygdomme og steder skrives, som de eksisterende hændelser skriver dem.
+
+## Felter
+
+Datasættet er JavaScript, ikke JSON. Strenge står i enkelte anførselstegn, så en apostrof i en tekst skal skrives `\'`, ellers kan siden ikke læses.
+
+| Felt | Indhold |
+| --- | --- |
+| `id` | Kort, entydigt navn med små bogstaver og bindestreger, fx `ebola-drc`. Ændres aldrig |
+| `place`, `country`, `region` | Sted, land og verdensdel. Regionerne er Afrika, Amerika, Asien, Europa og Mellemøsten |
+| `lat`, `lon` | Hændelsens placering på kloden, breddegrad først |
+| `disease`, `pathogen` | Sygdom og smittestof |
+| `stage` | Trinnet, se tabellen ovenfor |
+| `live` | `true`, mens hændelsen udvikler sig |
+| `cases` | Omfanget i én linje: tal, kilde og opgørelsesdato |
+| `extra` | Uddybning af tallene |
+| `note` | Hvad hændelsen er, og hvorfor den er med |
+| `gap` | Hvad der er usikkert. Udelades, når intet væsentligt er usikkert |
+| `nodes` | Steder i hændelsen: `[navn, lon, lat, dato]`. **Her står længdegrad før breddegrad**, omvendt af `lat` og `lon` ovenfor |
+| `links` | Forbindelser mellem steder: `[fra, til, dato, type]`, hvor fra og til er numre i `nodes` talt fra 0. Typerne er `eksport`, `rute`, `udbredelse` og `respons`. Tegn kun en forbindelse, når en kilde dokumenterer retningen |
+| `rel` | `id` på hændelser, der hører sammen med denne |
+| `naeste` | Hvad der ville flytte trinnet |
+| `plabel`, `pts` | Talserie til grafen: en overskrift og punkter `[dato, tilfælde, dødsfald eller null]` i datoorden |
+| `tl` | Forløbet: `[dato, tekst, trin eller '']` i datoorden. Første punkt bærer hændelsens første trin |
+| `src` | Kilder: `[navn, adresse]`. Adressen skal begynde med `https://` |
+
+Datoer skrives `ÅÅÅÅ-MM-DD`. Kendes kun måneden, skrives `ÅÅÅÅ-MM`. Ingen dato må ligge efter `DATA_DATO`.
+
+Kontrollen kan ikke se, om længdegrad og breddegrad er byttet om, når begge tal er under 90. Slå koordinater op, og tjek dem mod et sted i samme land, der allerede står i datasættet.
+
+## Loggen
+
+`LOG.md` får én post øverst pr. kørsel, også når intet blev ændret:
+
+```
+## 9. oktober 2026
+
+**Gennemgået:** ECDC CDTR uge 41, WHO DON siden 8. oktober.
+
+**Ændret**
+- `ebola-drc`: tal opdateret til 8.702 bekræftede og 4.195 døde, US CDC pr. 8. oktober. Nyt punkt i forløbet.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 33 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `pest-irkutsk`: WHO har ikke fået svar fra Rusland. Ingen ændring.
+```
+
+Skriv konkret, hvad der blev ændret, og hvilken kilde det bygger på. Posten er det eneste sted, et menneske kan se, hvad kørslen gjorde og hvorfor.

@@ -182,7 +182,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 <div class="app">
   <header>
     <h1>Udbrudsglobus</h1>
-    <span class="sub">34 hændelser · daterede forløb fra første tilfælde til 8. oktober 2026 · sammenstillet manuelt, opdateres ikke automatisk endnu</span>
+    <span class="sub" id="sub"></span>
     <span class="proto">Prototypedata</span>
   </header>
 
@@ -258,8 +258,13 @@ const LK = {
 };
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
-// Datasæt sammenstillet 8. oktober 2026. Tidslinjer er foreløbige: start og seneste opdatering
-// er belagt med kilder, mellemliggende punkter mangler endnu for de fleste hændelser.
+// Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
+const DATA_DATO = '2026-10-08';
+// Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
+const DATA_STATUS = 'sammenstillet manuelt, opdateres ikke automatisk endnu';
+
+// Tidslinjer er foreløbige: start og seneste opdatering er belagt med kilder,
+// mellemliggende punkter mangler endnu for de fleste hændelser.
 const EVENTS = [
 
 {id:'ebola-drc',place:'Bunia, Ituri',country:'DR Congo',region:'Afrika',lat:1.5587,lon:30.2479,
@@ -830,7 +835,7 @@ const EVENTS = [
 ];
 
 // ---------- tid ----------
-const T0 = Date.UTC(2026,0,1), T1 = Date.UTC(2026,9,8);
+const T0 = Date.UTC(2026,0,1), T1 = pdate(DATA_DATO);
 const DAY = 86400000, SPAN = Math.round((T1-T0)/DAY);
 function pdate(s){
   const p = s.split('-').map(Number);
@@ -1393,8 +1398,10 @@ function tick(now){
   requestAnimationFrame(tick);
 }
 
+document.getElementById('sub').textContent =
+  EVENTS.length + ' hændelser · daterede forløb fra første tilfælde til ' + fmtDate(DATA_DATO) + ' · ' + DATA_STATUS;
 document.getElementById('foot').textContent =
-  'Bygget 8. oktober 2026. 34 hændelser med ' + EVENTS.reduce((n,e)=>n+e.tl.length,0) + ' daterede forløbspunkter og ' + EVENTS.reduce((n,e)=>n+(e.nodes?e.nodes.length:0),0) + ' stedknuder, sammenstillet fra WHO, ECDC, US CDC, UKHSA, PAHO, GPEI, RIVM, Statens Serum Institut, nationale myndigheder, fagtidsskrifter og nyhedsmedier. Linjer tegnes kun, hvor en kilde dokumenterer en retning. Kilder mærket medie eller sekundær er ikke myndighedsbekræftede.';
+  'Datasæt pr. ' + fmtDate(DATA_DATO) + '. ' + EVENTS.length + ' hændelser med ' + EVENTS.reduce((n,e)=>n+e.tl.length,0) + ' daterede forløbspunkter og ' + EVENTS.reduce((n,e)=>n+(e.nodes?e.nodes.length:0),0) + ' stedknuder, sammenstillet fra WHO, ECDC, US CDC, UKHSA, PAHO, GPEI, RIVM, Statens Serum Institut, nationale myndigheder, fagtidsskrifter og nyhedsmedier. Linjer tegnes kun, hvor en kilde dokumenterer en retning. Kilder mærket medie eller sekundær er ikke myndighedsbekræftede.';
 
 readTokens(); buildLadder(); renderCmp(); setCutoff(SPAN); resize();
 window.addEventListener('resize', resize);
