@@ -10,6 +10,8 @@ Dette repo er kilden. Det, der ligger i `site/` på `main`, er det, der er live 
 | --- | --- |
 | `site/index.html` | Siden, inklusive hele datasættet og kortgeometrien |
 | `site/fonts/` | Archivo og IBM Plex Mono, lagt lokalt så der ikke hentes noget fra Google |
+| `site/404.html` | Fejlside. Uden den svarer Pages med hele forsiden på ukendte adresser |
+| `site/favicon.svg`, `site/favicon.ico` | Ikon til browserfanen |
 | `site/_headers` | Cache og sikkerhedsheadere, læses af Cloudflare Pages |
 | `.github/workflows/udrul.yml` | Kontrol og udrulning ved hvert commit på `main` |
 
@@ -40,4 +42,6 @@ En planlagt kørsel kan skrive en ny `site/index.html` og committe den. Siden op
 
 ## Bemærk
 
-Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres ikke automatisk endnu.
+Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres ikke automatisk endnu. Det står også i sidens overskriftslinje.
+
+Siden er offentlig, men holdt ude af søgemaskiner, mens datasættet er en prototype. Det styres af linjen `<meta name="robots" content="noindex">` i `site/index.html`. Slet linjen, når siden skal kunne findes. Adresserne på pages.dev holdes altid ude med `X-Robots-Tag` i `site/_headers`, så der kun er én udgave i søgemaskinerne.
