@@ -69,13 +69,13 @@ const html = `<!doctype html>
 @font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/archivo-latin-700-normal.woff2') format('woff2')}
 @font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2')}
 :root{
-  --bg:#070d14; --panel:#0d1721; --fg:#e4ecf3; --fg-dim:#8ba0b4; --fg-faint:#5d7a92; --rule:#1d2d3d; --accent:#4fb3c9;
+  --bg:#070d14; --panel:#0d1721; --fg:#e4ecf3; --fg-dim:#8ba0b4; --fg-faint:#6f8aa1; --rule:#1d2d3d; --accent:#4fb3c9;
   color-scheme:dark;
   --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;
 }
 @media (prefers-color-scheme: light){
-  :root{--bg:#e9eff4; --panel:#ffffff; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#7b8fa1; --rule:#d8e2ea; --accent:#1d7d93; color-scheme:light}
+  :root{--bg:#e9eff4; --panel:#ffffff; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80; --rule:#d8e2ea; --accent:#196f84; color-scheme:light}
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--display);-webkit-font-smoothing:antialiased;padding:0 16px 48px}

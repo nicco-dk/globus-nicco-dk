@@ -12,6 +12,7 @@ Dette repo er kilden. Det, der ligger i `site/` på `main`, er det, der er live 
 | `site/fonts/` | Archivo og IBM Plex Mono, lagt lokalt så der ikke hentes noget fra Google |
 | `site/404.html` | Fejlside. Uden den svarer Pages med hele forsiden på ukendte adresser |
 | `site/favicon.svg`, `site/favicon.ico` | Ikon til browserfanen |
+| `site/og.png` | Billedet, der vises, når et link til siden deles. Et skærmbillede fra 8. oktober 2026, som ikke opdateres af sig selv |
 | `site/_headers` | Cache og sikkerhedsheadere, læses af Cloudflare Pages |
 | `.github/workflows/udrul.yml` | Kontrol og udrulning ved hvert commit på `main` |
 | `tools/tjek-data.mjs` | Formkontrol af datasættet, køres af workflowet og kan køres lokalt |
@@ -44,6 +45,14 @@ De tre sidste findes, fordi siden oprindeligt kom som et fragment fra et artifac
 Datasættet, med `node tools/tjek-data.mjs`: sidens script kan læses, hver hændelse har de nødvendige felter og mindst én kilde med https-adresse, koordinater og datoer er gyldige, ingen dato ligger efter datasættets dato, trinnet stemmer med forløbet, ingen hændelse er forsvundet siden forrige udgave, og hvert nyt punkt i et forløb bærer sin egen kilde. Kontrollen fanger formfejl. Den kan ikke se, om et tal er rigtigt.
 
 Kontrollen giver desuden advarsler, som ikke standser udrulningen: tal i `cases` uden opgørelsesdato, hændelser med `live:true` uden nyt i over 30 dage, og gamle forløbspunkter, der er ændret eller fjernet. Med `--links` slår den også de nye kildeadresser op. Det bruges af den daglige kørsel, ikke af workflowet, fordi en kilde, der er nede, ikke må standse en udrulning.
+
+## Siden for den besøgende
+
+- **Om siden.** Dialogen bag knapperne Om siden, Prototypedata og Hvad betyder trinnene forklarer trinnene, kilderne, opdateringen og at siden ikke er rådgivning. Teksten står i `site/index.html` i `<dialog id="om">`.
+- **Adresser.** Den valgte hændelse står i adressen som `#id`, fx https://globus.nicco.dk/#ebola-drc, så en hændelse kan deles. Derfor må et `id` aldrig ændres.
+- **Listen.** Hver hændelse viser datoen for seneste punkt i forløbet og det aktuelle omfang. Datoen markeres, når den er højst tre dage gammel (`NY_DAGE`). Knappen Nyeste først sorterer efter den dato.
+- **Område.** Filteret bruger feltet `region`. Danmark er hændelser med Danmark i `country` eller som stedknude.
+- **Telefon.** Under 900 pixel i bredden åbner detaljerne som et ark fra bunden.
 
 ## Opdatering af data
 
