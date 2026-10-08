@@ -51,8 +51,8 @@ Kontrollen giver desuden advarsler, som ikke standser udrulningen: tal i `cases`
 - **Om siden.** Dialogen bag knapperne Om siden, Prototypedata og Hvad betyder trinnene forklarer trinnene, kilderne, opdateringen og at siden ikke er rådgivning. Teksten står i `site/index.html` i `<dialog id="om">`.
 - **Adresser.** Den valgte hændelse står i adressen som `#id`, fx https://globus.nicco.dk/#ebola-drc, så en hændelse kan deles. Derfor må et `id` aldrig ændres.
 - **Listen.** Hver hændelse viser datoen for seneste punkt i forløbet og det aktuelle omfang. Datoen markeres, når den er højst tre dage gammel (`NY_DAGE`). Knappen Nyeste først sorterer efter den dato.
-- **Område.** Filteret bruger feltet `region`. Danmark er hændelser med Danmark i `country` eller som stedknude.
-- **Telefon.** Under 900 pixel i bredden åbner detaljerne som et ark fra bunden.
+- **Område.** Filteret bruger feltet `region`. Danmark er hændelser med Danmark i `country`.
+- **Telefon.** Under 900 pixel i bredden åbner detaljerne som et ark fra bunden. Et tryk uden for arket eller på Tilbage lukker det.
 
 ## Opdatering af data
 

@@ -210,6 +210,8 @@ footer a{color:var(--accent)}
 .item .d.ny::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:5px;vertical-align:1px}
 .item .c{font-size:12px;line-height:1.4;color:var(--fg-dim);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
 .acts{display:flex;flex-wrap:wrap;gap:6px}
+.scrim{display:none}
+.search input::-webkit-search-cancel-button{display:none}
 .hud{white-space:pre-line;max-width:calc(100% - 58px)}
 /* Om siden */
 dialog.om{width:min(620px,calc(100% - 24px));max-height:min(88vh,820px);padding:0;border:1px solid var(--rule);border-radius:6px;
@@ -241,11 +243,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .timebar{flex-wrap:wrap}
   /* Detaljerne åbner som et ark fra bunden, så de ses, uanset hvor på siden man står. */
   .detail{position:fixed;left:0;right:0;top:auto;bottom:0;width:100%;max-height:76vh;z-index:30;
-    border-width:1px 0 0;border-radius:14px 14px 0 0;padding:16px 16px 26px;
+    border-width:1px 0 0;border-radius:14px 14px 0 0;padding:0 16px 26px;
     box-shadow:0 -14px 40px rgba(0,0,0,.5);overscroll-behavior:contain}
-  .detail .x{position:sticky;top:0;right:auto;justify-self:end;z-index:2;width:40px;height:40px;margin:-6px -6px -49px 0;
-    font-size:22px;border-radius:50%;background:var(--panel-2);color:var(--fg)}
-  .detail h2{padding-right:44px}
+  /* Lukkeknappen er en fast bjælke øverst i arket, så teksten ruller under den og ikke bag et kryds. */
+  .detail .x{position:sticky;top:0;right:auto;z-index:2;justify-self:stretch;width:auto;height:46px;margin:0 -16px 2px;padding:0 18px;
+    text-align:right;font-size:22px;line-height:44px;border-radius:14px 14px 0 0;border-bottom:1px solid var(--rule);
+    background:var(--panel);color:var(--fg-dim)}
+  .detail .x::before{content:"Luk";font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-right:9px;vertical-align:3px}
+  .detail h2{padding-right:0}
+  /* Laget bag arket. Et tryk på det lukker arket i stedet for at ramme det, der ligger bagved. */
+  .scrim{display:block;position:fixed;inset:0;z-index:29;background:rgba(3,8,13,.5);border:0;padding:0;width:100%;height:100%;cursor:default}
 }
 @media (pointer:coarse){
   .zoomer button{width:42px;height:42px;font-size:17px}
@@ -255,6 +262,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .chips button,.srcs a,.rels button,.addcmp,.acts button,.timebar button,.focusbar button{padding-top:12px;padding-bottom:12px}
   .hbtn,.proto{padding-top:10px;padding-bottom:10px}
   .search .clr{padding:10px 12px;bottom:1px}
+  /* Under 16 px zoomer iPhone ind, når feltet får fokus. */
+  .search input{font-size:16px}
   .lbl button{padding:12px 0}
   .tlrow .tx a{padding:5px 0}
   .omhead button{padding:10px 14px}
@@ -278,6 +287,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button id="zout" title="Zoom ud" aria-label="Zoom ud">−</button>
       <button id="zreset" title="Nulstil visning" aria-label="Nulstil visning">⟲</button>
     </div>
+    <button class="scrim" id="scrim" type="button" aria-label="Luk detaljer" hidden></button>
     <div class="detail" id="detail" role="region" aria-label="Detaljer om den valgte hændelse" hidden></div>
   </div>
 
@@ -1222,10 +1232,10 @@ const fmtLon = v => { let x = ((v+180)%360+360)%360-180; return Math.abs(x).toFi
 // ---------- tilstand ----------
 const byId = Object.fromEntries(EVENTS.map(e => [e.id, e]));
 let query = '', off = new Set(), selected = null, focusId = null, region = null, nyeste = false;
-// Områder til filteret. Danmark er hændelser i Danmark eller med et registreret sted i Danmark.
+// Områder til filteret. Danmark er hændelser, der foregår i Danmark.
 // lon og lat er det punkt, kloden drejer hen til, når området vælges.
 const OMRAADER = [
-  {k:'Danmark', lon:10.5, lat:56, test: e => /Danmark/.test(e.country) || (e.nodes || []).some(n => /Danmark/.test(n[0]))},
+  {k:'Danmark', lon:10.5, lat:56, test: e => /Danmark/.test(e.country)},
   {k:'Europa', lon:14, lat:50}, {k:'Afrika', lon:20, lat:2}, {k:'Asien', lon:95, lat:25},
   {k:'Amerika', lon:-82, lat:15}, {k:'Mellemøsten', lon:45, lat:28}
 ];
@@ -1273,7 +1283,6 @@ function buildChips(){
     b.type = 'button'; b.dataset.k = o.k;
     b.innerHTML = '<span class="nm"></span><span class="n"></span>';
     b.querySelector('.nm').textContent = o.k || 'Alle';
-    if(o.k === 'Danmark') b.title = 'Hændelser i Danmark eller med et registreret sted i Danmark';
     b.addEventListener('click', () => {
       region = o.k && region !== o.k ? o.k : null;
       if(region) target = {lam:-o.lon, phi:o.lat};
@@ -1382,11 +1391,24 @@ function select(id, fly){
   if(iListen){ const cur = list.querySelector('[aria-current="true"]'); if(cur) cur.focus({preventScroll:true}); }
   skrivAdresse();
 }
+// Lukker detaljerne. På skrivebord bliver hændelsen stående alene på kloden, så dens linjer kan ses uden panelet.
+// På smalle skærme, hvor detaljerne er et ark, ryddes fokus også, ellers ligger Vis alle langt nede på siden.
+const SMAL = matchMedia('(max-width:900px)');
+function lukDetaljer(){
+  if(SMAL.matches) setFocus(null);
+  selected = null; detail.hidden = true; render(); skrivAdresse();
+}
 // Adressen følger den valgte hændelse, så et link fører direkte til den: globus.nicco.dk/#ebola-drc
+// Et valg lægger et trin i browserens historik, så Tilbage lukker detaljerne i stedet for at forlade siden.
 function skrivAdresse(){
   const h = selected ? '#' + selected : '';
   if(location.hash !== h){
-    try{ history.replaceState(null, '', h || location.pathname + location.search); }catch(err){ /* fx file:// */ }
+    try{
+      if(h && !location.hash) history.pushState({ug:1}, '', h);
+      else if(h) history.replaceState(history.state, '', h);
+      else if(history.state && history.state.ug) history.back();
+      else history.replaceState(null, '', location.pathname + location.search);
+    }catch(err){ /* fx file:// */ }
   }
   document.title = selected && byId[selected] ? `${byId[selected].disease} · ${byId[selected].country} · Udbrudsglobus` : 'Udbrudsglobus';
 }
@@ -1441,7 +1463,7 @@ function showDetail(e){
   const st = stageAt(e, cutoff), s = SK[st];
   detail.hidden = false; detail.style.setProperty('--c', `var(${s.v})`); detail.innerHTML = '';
   const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk');
-  x.addEventListener('click', () => { selected = null; detail.hidden = true; render(); skrivAdresse(); });
+  x.addEventListener('click', lukDetaljer);
   const dl = document.createElement('dl'); dl.className = 'kv';
   const rows = [['Smittestof', e.pathogen], ['Omfang', e.cases], ['Startet', fmtDate(e.tl[0][0])]];
   if(e.extra) rows.push(['Detaljer', e.extra]);
@@ -1621,6 +1643,10 @@ document.getElementById('ombtn').addEventListener('click', () => aabnOm());
 document.getElementById('protobtn').addEventListener('click', () => aabnOm('om-opdatering'));
 document.getElementById('trinhj').addEventListener('click', () => aabnOm('om-trin'));
 document.getElementById('omluk').addEventListener('click', () => om.close());
+// Baggrundslaget følger detaljepanelet og vises kun på smalle skærme.
+const scrim = document.getElementById('scrim');
+new MutationObserver(() => { scrim.hidden = detail.hidden; }).observe(detail, {attributes:true, attributeFilter:['hidden']});
+scrim.addEventListener('click', lukDetaljer);
 om.addEventListener('click', ev => { if(ev.target === om) om.close(); });
 
 const slider = document.getElementById('time'), nowlbl = document.getElementById('nowlbl');
