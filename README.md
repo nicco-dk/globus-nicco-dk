@@ -49,6 +49,6 @@ Fremgangsmåde, kilder, regler og felter står i `OPDATERING.md`. Hver opdaterin
 
 ## Bemærk
 
-Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres ikke automatisk endnu. Det står også i sidens overskriftslinje.
+Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører hver dag kl. 20.45 dansk tid efter `OPDATERING.md` og skriver en post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
 
 Siden er offentlig, men holdt ude af søgemaskiner, mens datasættet er en prototype. Det styres af linjen `<meta name="robots" content="noindex">` i `site/index.html`. Slet linjen, når siden skal kunne findes. Adresserne på pages.dev holdes altid ude med `X-Robots-Tag` i `site/_headers`, så der kun er én udgave i søgemaskinerne.
