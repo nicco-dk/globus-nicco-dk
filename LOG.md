@@ -4,6 +4,24 @@
 
 ## 8. oktober 2026
 
+**Regler og side ændret.** Ingen gennemgang af kilder og ingen ændrede tal i denne post.
+
+- Hvert nyt punkt i et forløb bærer nu sin egen kilde, som vises under punktet på siden. Otte punkter har fået kilden sat på: de seks fra aftenens opdatering samt punkterne 23. september og 5. oktober i `ebola-drc`, som bygger på WHO DON 618 og US CDC.
+- Automatiske kørsler retter ikke længere i gamle punkter. Det, kun ejeren må rette, står fremover under Til gennemgang.
+- Overskriftslinjen advarer selv, hvis der går mere end to dage uden en gennemgang.
+- Denne log er nu offentlig på https://globus.nicco.dk/log, og siden linker til den fra foden.
+- Kontrollen afviser nye punkter uden kilde. Den advarer om tal uden opgørelsesdato, som 28 hændelser har, om `maesling-il`, der står som aktiv uden nyt siden 31. marts, og om kildeadresser, der ikke svarer.
+
+**Til gennemgang**
+- `maesling-us`: kørslen tidligere i aften rettede tallet for hele 2025 fra 2.255 til 2.289 efter US CDC, før reglen om gamle punkter blev ændret. Rettelsen står.
+- `ebola-drc`: WHO og ECDC regner Sydkivu blandt de syv ramte provinser. Datasættet har ingen stedknude for Sydkivu, men en for Kinshasa.
+- `ebola-drc`: `note` nævner ikke evakueringen til Storbritannien 21. juli, som ECDC's ebolaside har med.
+- `ebola-ke`: `naeste` nævner 28 kontakter. Kenyanske medier gengiver ministeren med 57 i alt, heraf 10 i karantæne.
+- `ebola-ke`: forløbet har 3. oktober for både landrejsen til Kampala og ankomsten til Nairobi. WHO AFRO har 2. oktober for landrejsen.
+- `pest-irkutsk`: forløbet daterer WHO's opfordring til Rusland til 8. oktober. Al Jazeera og PBS har onsdag 7. oktober.
+
+## 8. oktober 2026
+
 **Gennemgået:** ECDC CDTR uge 40 (seneste udgave, uge 41 er ikke udkommet), WHO DON siden 8. oktober (DON 619). Enkeltkilder: ECDC's ebolaside, US CDC om ebola og mæslinger, WHO AFRO, RIVM, GPEI, ECDC's West Nile ugeside, ECDC om Irkutsk, Statens Serum Institut, Pennsylvanias sundhedsmyndighed, UKHSA, NaTHNaC, CIDRAP, Africa CDC og PAHO samt nyhedsmedier om Kenya, Irkutsk, Bangladesh og Florida. Første automatiske kørsel. `DATA_DATO` stod allerede på 8. oktober og er uændret.
 
 **Ændret**

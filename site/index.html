@@ -159,6 +159,13 @@ footer{grid-column:1/-1;font-family:var(--mono);font-size:10px;color:var(--fg-fa
 .srcs a.k-m{color:var(--fg-dim)}
 .srcs a.k-s{color:var(--fg-faint);border-style:dashed}
 .srclegend{font-family:var(--mono);font-size:9px;color:var(--fg-faint);letter-spacing:.04em;margin:6px 0 0;display:block}
+.tlrow .tx a{display:block;width:fit-content;margin-top:2px;font-family:var(--mono);font-size:9.5px;letter-spacing:.02em;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2px}
+.tlrow .tx a:hover{text-decoration-color:currentColor}
+.tlrow .tx a.k-o{color:var(--accent)}
+.tlrow .tx a.k-m{color:var(--fg-dim)}
+.tlrow .tx a.k-s{color:var(--fg-faint);text-decoration-style:dashed}
+.sub .sen{color:var(--s2)}
+footer a{color:var(--accent)}
 .spread{border-top:1px solid var(--rule);padding-top:9px}
 .spread h3{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:0 0 7px}
 .sprow{display:grid;grid-template-columns:62px 1fr;gap:9px;font-size:11.5px;padding:3px 0;color:var(--fg-dim)}
@@ -262,6 +269,8 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 const DATA_DATO = '2026-10-08';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk hver dag';
+// Går der flere dage end dette uden en gennemgang, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
+const DATA_MAX_ALDER = 2;
 
 // Tidslinjer er foreløbige: start og seneste opdatering er belagt med kilder,
 // mellemliggende punkter mangler endnu for de fleste hændelser.
@@ -289,10 +298,10 @@ const EVENTS = [
      ['2026-06-15','Hurtig stigning i tre provinser: 598 bekræftede 8. juni og 837 den 15. juni',''],
      ['2026-06-24','Dekret om 21 dages bevægelsesrestriktioner for kontakter. Frankrig melder et tilfælde hos en hjemvendt læge',''],
      ['2026-08-27','Vaccination af frontpersonale med Ervebo starter i Kisangani. WHO erklærer udbruddet i Uganda afsluttet med 20 tilfælde og 2 døde',''],
-     ['2026-09-23','Udbruddet når sin syvende provins, Sud-Ubangi, samt Dungu i Haut-Uélé. 7.890 bekræftede og 3.799 døde i 63 zoner',''],
+     ['2026-09-23','Udbruddet når sin syvende provins, Sud-Ubangi, samt Dungu i Haut-Uélé. 7.890 bekræftede og 3.799 døde i 63 zoner','',['WHO DON 618','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON618']],
      ['2026-09-29','ECDC opgør 8.224 bekræftede og 3.982 døde. Ituri 6.250, Nordkivu 1.570, Haut-Uélé 344',''],
-     ['2026-10-05','US CDC opgør 8.665 bekræftede tilfælde og 4.178 dødsfald',''],
-     ['2026-10-06','WHO opgør 8.728 bekræftede tilfælde og 4.205 dødsfald i 64 sundhedszoner. Alimbongo i Nordkivu er den senest ramte zone med fire bekræftede tilfælde, heraf to dødsfald','']],
+     ['2026-10-05','US CDC opgør 8.665 bekræftede tilfælde og 4.178 dødsfald','',['US CDC','https://www.cdc.gov/ebola/situation-summary/index.html']],
+     ['2026-10-06','WHO opgør 8.728 bekræftede tilfælde og 4.205 dødsfald i 64 sundhedszoner. Alimbongo i Nordkivu er den senest ramte zone med fire bekræftede tilfælde, heraf to dødsfald','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']]],
  src:[['WHO DON 603','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603'],['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['US CDC','https://www.cdc.gov/ebola/situation-summary/index.html']]},
 
 {id:'ebola-ke',place:'Nairobi',country:'Kenya',region:'Afrika',lat:-1.2864,lon:36.8172,
@@ -309,8 +318,8 @@ const EVENTS = [
      ['2026-10-05','Patienten dør sent mandag aften',''],
      ['2026-10-06','Sundhedsminister Aden Duale bekræfter Kenyas første Bundibugyo-tilfælde','udbrud'],
      ['2026-10-08','Ingen sekundære tilfælde registreret',''],
-     ['2026-10-08','Et mistænkt tilfælde i Wajir, en 20-årig mand der var rejst fra DR Congo over Uganda, tester foreløbigt negativt for ebola ifølge amtets guvernør',''],
-     ['2026-10-08','WHO omtaler tilfældet i DON 619 og formoder, at patienten blev smittet på et behandlingssted eller i lokalsamfundet, mens han søgte behandling for en anden sygdom. Sikker begravelse er gennemført, kontaktopsporingen fortsætter, også for flyet, og en risikovurdering for Kenya er på vej','']],
+     ['2026-10-08','Et mistænkt tilfælde i Wajir, en 20-årig mand der var rejst fra DR Congo over Uganda, tester foreløbigt negativt for ebola ifølge amtets guvernør','',['The Standard, medie','https://www.standardmedia.co.ke/health/health-science/article/2001559736/suspected-ebola-patient-tests-negative-in-wajir']],
+     ['2026-10-08','WHO omtaler tilfældet i DON 619 og formoder, at patienten blev smittet på et behandlingssted eller i lokalsamfundet, mens han søgte behandling for en anden sygdom. Sikker begravelse er gennemført, kontaktopsporingen fortsætter, også for flyet, og en risikovurdering for Kenya er på vej','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']]],
  src:[['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['WHO AFRO','https://www.afro.who.int/countries/kenya/news/kenya-confirms-first-imported-bundibugyo-virus-disease-case-who-supports-control-efforts'],['The Standard, medie','https://www.standardmedia.co.ke/health/health-science/article/2001559736/suspected-ebola-patient-tests-negative-in-wajir'],['Al Jazeera, medie','https://www.aljazeera.com/news/2026/10/6/kenya-confirms-first-ebola-case-after-patient-from-dr-congo-dies-in-nairobi'],['AP, medie','https://www.arkansasonline.com/news/2026/oct/07/kenya-confirms-first-ebola-case-death/']]},
 
 {id:'kolera',place:'Flere lande, tyngdepunkt DR Congo',country:'DR Congo m.fl.',region:'Afrika',lat:-4.4419,lon:15.2663,
@@ -443,7 +452,7 @@ const EVENTS = [
  tl:[['2026-09-29','Sundhedsarbejderen tester positiv i DR Congo','udbrud'],
      ['2026-10-01','Repatrieres med privatfly og indlægges om aftenen i højisolationsenheden i Leiden',''],
      ['2026-10-02','ECDC vurderer risikoen i EU og EØS som meget lav',''],
-     ['2026-10-08','WHO oplyser i DON 619, at patienten fortsat er i behandling i Nederlandene, og at tilfældet ikke tælles som et lokalt tilfælde','']],
+     ['2026-10-08','WHO oplyser i DON 619, at patienten fortsat er i behandling i Nederlandene, og at tilfældet ikke tælles som et lokalt tilfælde','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']]],
  src:[['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['ECDC','https://www.ecdc.europa.eu/en/news-events/risk-general-population-remains-very-low-following-fourth-imported-ebola-case-europe'],['RIVM','https://www.rivm.nl/en/ebola/current-information']]},
 
 {id:'wnv-eu',place:'202 områder i 16 lande',country:'EU, EØS og nabolande',region:'Europa',lat:42.5,lon:12.5,
@@ -695,7 +704,7 @@ const EVENTS = [
      ['2026-10-04','Sri Lanka 100.871 tilfælde og 78 dødsfald',''],
      ['2026-10-06','Bangladesh 90.356 indlagte og 281 dødsfald',''],
      ['2026-10-08','Filippinerne 180.770 tilfælde opgjort til 30. september',''],
-     ['2026-10-08','Bangladesh 94.151 indlagte og 294 dødsfald efter 5 nye dødsfald og 1.935 nye indlagte på et døgn','']],
+     ['2026-10-08','Bangladesh 94.151 indlagte og 294 dødsfald efter 5 nye dødsfald og 1.935 nye indlagte på et døgn','',['DGHS via The Business Standard, medie','https://www.tbsnews.net/bangladesh/health/dengue-claims-5-more-lives-1935-hospitalised-24-hours-1566516']]],
  src:[['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['DGHS via The Business Standard, medie','https://www.tbsnews.net/bangladesh/health/dengue-claims-5-more-lives-1935-hospitalised-24-hours-1566516'],['Daily Star, medie','https://www.thedailystar.net/news/healthcare/disease/news/5-more-die-dengue-1484-hospitalised-24-hours-4275521'],['The Morning, medie','https://www.themorning.lk/articles/OZbhhc2sFHqEPJzM2p9H']]},
 
 {id:'mers-sa',place:'Region ikke oplyst',country:'Saudi-Arabien',region:'Mellemøsten',lat:24.7136,lon:46.6753,
@@ -747,7 +756,7 @@ const EVENTS = [
      ['2026-09-28','Pennsylvania 903 tilfælde',''],
      ['2026-09-30','Pennsylvania melder sit femte dødsfald. 943 tilfælde og mindst 176 indlagte. USA knap 3.700',''],
      ['2026-10-05','Pennsylvania passerer 1.000 med 1.004 tilfælde og 198 indlagte. USA over 3.800 i 45 stater plus Washington DC',''],
-     ['2026-10-07','Pennsylvania 1.078 tilfælde i 41 counties, 207 indlagte og 5 dødsfald. Af 74 nye tilfælde siden 5. oktober er over 40 ældre tilfælde, der først nu er bekræftet','']],
+     ['2026-10-07','Pennsylvania 1.078 tilfælde i 41 counties, 207 indlagte og 5 dødsfald. Af 74 nye tilfælde siden 5. oktober er over 40 ældre tilfælde, der først nu er bekræftet','',['Pennsylvanias sundhedsmyndighed','https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-provides-statewide-update-on-measles-out9']]],
  src:[['US CDC','https://www.cdc.gov/measles/data-research'],['Pennsylvanias sundhedsmyndighed','https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-provides-statewide-update-on-measles-out9'],['CNN, medie','https://www.cnn.com/2026/09/30/health/pennsylvania-measles-outbreak-cases-related-deaths'],['ABC News, medie','https://abcnews.com/Health/measles-cases-surpass-1000-pennsylvania-outbreak-continues-spread/story?id=137002024']]},
 
 {id:'dengue-fl',place:'Hillsborough County, Tampa',country:'USA',region:'Amerika',lat:27.9506,lon:-82.4572,
@@ -1217,6 +1226,15 @@ function sparkSVG(e, w, h, full){
   return o + '</svg>';
 }
 function el(tag, cls, text){ const n = document.createElement(tag); if(cls) n.className = cls; if(text) n.textContent = text; return n; }
+// Link til en kilde. Tilføjelsen medie eller sekundær i navnet styrer udseendet og vises ikke.
+function kildeLink(t, u){
+  const a = document.createElement('a'); a.href = u; a.target = '_blank'; a.rel = 'noopener';
+  const m = /,\s*(medie|sekundær)$/.exec(t);
+  a.textContent = m ? t.slice(0, m.index) : t;
+  a.className = m ? (m[1] === 'medie' ? 'k-m' : 'k-s') : 'k-o';
+  a.title = m ? (m[1] === 'medie' ? 'Nyhedsmedie' : 'Sekundær kilde') : 'Myndighed eller fagtidsskrift';
+  return a;
+}
 function showDetail(e){
   const st = stageAt(e, cutoff), s = SK[st];
   detail.hidden = false; detail.style.setProperty('--c', `var(${s.v})`); detail.innerHTML = '';
@@ -1233,18 +1251,14 @@ function showDetail(e){
     row.className = 'tlrow ' + (r.ms <= cutoff ? 'past' : 'future');
     if(r[2]) row.style.setProperty('--d', `var(${SK[r[2]].v})`);
     row.appendChild(el('span','dt', shortDate(r[0])));
-    row.appendChild(el('span','tx', r[1]));
+    const tx = el('span','tx', r[1]);
+    // Fjerde felt er punktets egen kilde. Ældre punkter har den ikke.
+    if(r[3]) tx.append(' ', kildeLink(r[3][0], r[3][1]));
+    row.appendChild(tx);
     tl.appendChild(row);
   }
   const sr = document.createElement('div'); sr.className = 'srcs';
-  for(const [t,u] of e.src){
-    const a = document.createElement('a'); a.href = u; a.target = '_blank'; a.rel = 'noopener';
-    const m = /,\s*(medie|sekundær)$/.exec(t);
-    a.textContent = m ? t.slice(0, m.index) : t;
-    a.className = m ? (m[1] === 'medie' ? 'k-m' : 'k-s') : 'k-o';
-    a.title = m ? (m[1] === 'medie' ? 'Nyhedsmedie' : 'Sekundær kilde') : 'Myndighed eller fagtidsskrift';
-    sr.appendChild(a);
-  }
+  for(const [t,u] of e.src) sr.appendChild(kildeLink(t, u));
   sr.appendChild(el('span','srclegend','Fremhævet = myndighed · dæmpet = medie · stiplet = sekundær'));
   detail.append(x, el('span','chip', s.n), el('h2','', `${e.disease} · ${e.country}`),
     el('div','where', `${e.place} · ${Math.abs(e.lat).toFixed(2)}° ${e.lat>=0?'N':'S'} ${Math.abs(e.lon).toFixed(2)}° ${e.lon>=0?'Ø':'V'}`),
@@ -1404,10 +1418,24 @@ function tick(now){
   requestAnimationFrame(tick);
 }
 
-document.getElementById('sub').textContent =
-  EVENTS.length + ' hændelser · daterede forløb fra første tilfælde til ' + fmtDate(DATA_DATO) + ' · ' + DATA_STATUS;
-document.getElementById('foot').textContent =
-  'Datasæt pr. ' + fmtDate(DATA_DATO) + '. ' + EVENTS.length + ' hændelser med ' + EVENTS.reduce((n,e)=>n+e.tl.length,0) + ' daterede forløbspunkter og ' + EVENTS.reduce((n,e)=>n+(e.nodes?e.nodes.length:0),0) + ' stedknuder, sammenstillet fra WHO, ECDC, US CDC, UKHSA, PAHO, GPEI, RIVM, Statens Serum Institut, nationale myndigheder, fagtidsskrifter og nyhedsmedier. Linjer tegnes kun, hvor en kilde dokumenterer en retning. Kilder mærket medie eller sekundær er ikke myndighedsbekræftede.';
+// Dage siden datasættet sidst blev gennemgået, regnet i dansk tid. Kan dagen ikke bestemmes, vises ingen advarsel.
+function dageSidenGennemgang(){
+  try{
+    const p = new Intl.DateTimeFormat('en-CA', {timeZone:'Europe/Copenhagen', year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(new Date());
+    const g = t => +p.find(x => x.type === t).value;
+    return Math.round((Date.UTC(g('year'), g('month')-1, g('day')) - T1) / DAY);
+  }catch(err){ return 0; }
+}
+const ALDER = dageSidenGennemgang();
+const subEl = document.getElementById('sub');
+subEl.textContent = EVENTS.length + ' hændelser · daterede forløb fra første tilfælde til ' + fmtDate(DATA_DATO) + ' · ';
+subEl.appendChild(ALDER > DATA_MAX_ALDER
+  ? el('span','sen','opdateringen er forsinket, senest gennemgået for ' + ALDER + ' dage siden')
+  : el('span','', DATA_STATUS));
+const footEl = document.getElementById('foot');
+footEl.textContent =
+  'Datasæt pr. ' + fmtDate(DATA_DATO) + '. ' + EVENTS.length + ' hændelser med ' + EVENTS.reduce((n,e)=>n+e.tl.length,0) + ' daterede forløbspunkter og ' + EVENTS.reduce((n,e)=>n+(e.nodes?e.nodes.length:0),0) + ' stedknuder, sammenstillet fra WHO, ECDC, US CDC, UKHSA, PAHO, GPEI, RIVM, Statens Serum Institut, nationale myndigheder, fagtidsskrifter og nyhedsmedier. Linjer tegnes kun, hvor en kilde dokumenterer en retning. Kilder mærket medie eller sekundær er ikke myndighedsbekræftede. Hver opdatering står i ';
+{ const a = el('a','','ændringsloggen'); a.href = '/log'; footEl.append(a, '.'); }
 
 readTokens(); buildLadder(); renderCmp(); setCutoff(SPAN); resize();
 window.addEventListener('resize', resize);

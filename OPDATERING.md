@@ -32,6 +32,17 @@ Siden viser kilder med `, medie` eller `, sekundær` som ikke myndighedsbekræft
 
 Brug ikke Wikipedia, sociale medier, fora eller sider, der genfortæller andres tal uden at henvise til dem.
 
+### Sådan hentes kilderne
+
+Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længere, eller finder en kørsel en bedre vej, så skriv det under Til gennemgang i loggen, så afsnittet kan rettes. Kørslen retter ikke selv i denne fil.
+
+- **WHO DON.** Oversigten på https://www.who.int/emergencies/disease-outbreak-news viser ingen poster, når den hentes maskinelt. Brug WHO's dataudtræk i stedet. De seneste 15 med nummer og dato: `https://www.who.int/api/news/diseaseoutbreaknews?sf_culture=en&$orderby=PublicationDateAndTime%20desc&$top=15&$select=Title,PublicationDateAndTime,ItemDefaultUrl,DonId`. Hele teksten i én DON: `https://www.who.int/api/news/diseaseoutbreaknews?sf_culture=en&$filter=DonId%20eq%20'2026-DON619'`. Adressen, der sættes som kilde, er læserens side: `https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619`.
+- **ECDC.** Ugerapporterne står på https://www.ecdc.europa.eu/en/publications-and-data/monitoring/weekly-threats-reports og udkommer om fredagen. Ebolasiden https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda opdateres hver hverdag og har tal pr. provins.
+- **To veje til en side.** Hentningsværktøjet og et direkte opslag fra skallen med `curl -sL` rammer ikke de samme spærringer. Helt nye WHO-sider har fejlet i hentningsværktøjet, men kunne hentes direkte. US CDC afviser direkte opslag med 403, men kan læses med hentningsværktøjet. Fejler den ene vej, så prøv den anden, før kilden opgives.
+- **Læs tal to gange.** Hentningsværktøjet genfortæller siden, det citerer den ikke. Bed om den ordrette sætning med tallet, og læs den to gange uafhængigt af hinanden, eller hent sidens rå tekst direkte og find tallet dér, før det skrives.
+- **Myndigheder gennem medier.** Kan myndighedens egen side ikke hentes, som hos Kenyas sundhedsministerium, så brug mediet, der gengiver udmeldingen, med tilføjelsen `, medie`. Gengiver to medier forskellige tal fra samme udmelding, så lad tallet stå og skriv det under Usikkert.
+- **Faste udgivelser.** ECDC's ugerapport kommer fredag, GPEI's poliooversigt og US CDC's mæslingetal én gang om ugen. Mellem udgivelserne er der intet nyt at hente dér, og hændelsen lades urørt.
+
 ## Fremgangsmåde
 
 Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra to samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
@@ -41,11 +52,11 @@ Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres
 3. **Bring nævnte hændelser ajour.** Slå kun enkeltkilder op for de hændelser, de samlede kilder nævner, og for hændelser med `live:true` og trin `spredning` eller `smitte`, hvor der er grund til at tro, at tallene har flyttet sig. En hændelse uden nyt lades urørt. Det er det normale udfald for de fleste hændelser på en given dag.
 4. **Tilføj nye hændelser**, højst fem pr. kørsel. Er der flere, så tag de alvorligste og nævn resten i loggen.
 5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret. Datoen betyder, at datasættet er gennemgået den dag.
-6. **Kør kontrollen:** `node tools/tjek-data.mjs site/index.html --forrige <forrige udgave>`, hvor forrige udgave hentes med `git show HEAD:site/index.html`. Ret det, den finder. Kan en fejl ikke rettes, så fortryd ændringen i den hændelse.
+6. **Kør kontrollen:** `node tools/tjek-data.mjs site/index.html --forrige <forrige udgave> --links`, hvor forrige udgave hentes med `git show HEAD:site/index.html`. Ret alle fejl. Kan en fejl ikke rettes, så fortryd ændringen i den hændelse. Læs også advarslerne, se afsnittet Kontrollens advarsler.
 7. **Skriv posten i `LOG.md`.**
 8. **Commit og send til `main`** med beskeden `Data: <dato> · <kort opsummering>`.
 9. **Følg udrulningen** under Actions, til den er grøn. Fejler den, så ret årsagen eller fortryd dit commit med et nyt commit. Efterlad ikke `main` med en fejlet kørsel.
-10. **Afslut med en kort rapport:** hvad der blev ændret, hvad der blev ladt urørt og hvorfor, og hvad der var usikkert.
+10. **Afslut med en kort rapport:** hvad der blev ændret, hvad der blev ladt urørt og hvorfor, hvad der var usikkert, og hvad der venter på ejerens gennemgang.
 
 Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste hændelser. Kan ingen kilder hentes, så ændr ingen data, sæt ikke `DATA_DATO`, og skriv i loggen, at kørslen ikke kunne gennemføres.
 
@@ -53,9 +64,13 @@ Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste h
 
 **Tal.** Et tal står altid sammen med, hvem der har opgjort det, og pr. hvilken dato: `8.665 bekræftede tilfælde og 4.178 dødsfald, US CDC pr. 5. oktober`. Skriv tallet, som kilden skriver det. Regn ikke selv et tal ud, læg ikke tal fra to kilder sammen, og rund ikke af. Er to myndigheder uenige, så brug den nyeste opgørelse i `cases` og forklar forskellen i `extra`.
 
-**Kilder følger tallene.** Når et tal eller en oplysning ændres, skal den kilde, den kommer fra, stå i `src`. Erstat en forældet adresse med den nye, når kilden er den samme rapportserie. Kontrollér, at adressen faktisk fører til det, du henviser til.
+**Kilder følger tallene.** Hvert nyt punkt i `tl` bærer sin egen kilde i fjerde felt, så en læser kan se, hvor netop den oplysning kommer fra. Kontrollen afviser et nyt punkt uden kilde. `src` er hændelsens aktuelle hovedkilder: når et tal eller en oplysning i `cases`, `extra` eller `note` ændres, skal kilden også stå dér. Kontrollér, at adressen faktisk fører til det, du henviser til.
 
-**Forløb.** En ny udvikling bliver et nyt punkt i `tl` med dato og en sætning om, hvad der skete. Ret ikke i gamle punkter, medmindre en kilde har rettet sig selv, og skriv i så fald hvorfor i loggen.
+**Rapportserier i `src`.** Er kilden en løbende serie, som WHO's DON eller ECDC's ugerapport, erstattes den forældede adresse i `src` med den nye, men kun når de punkter i forløbet, der bygger på den gamle udgave, selv bærer den gamle adresse. Har et sådant punkt ingen kilde, så sæt den gamle adresse på punktet, før den fjernes fra `src`. Det ændrer ikke punktets dato eller tekst og er tilladt. Kan du ikke se, hvilket punkt den gamle adresse hører til, så lad den stå i `src`.
+
+**Forløb.** En ny udvikling bliver et nyt punkt i `tl` med dato, en sætning om, hvad der skete, og kilden.
+
+**Gamle punkter rettes ikke af kørslen.** Dato og tekst i et punkt, der stod i forrige udgave, og gamle punkter i `pts`, står, som de stod, også når en kilde har rettet sit eget tal. Skriv i stedet under Til gennemgang i loggen: hændelsen, det gamle tal, det nye tal og kilden. Ejeren retter. Den nye oplysning må gerne stå som et nyt punkt med dags dato, når den er væsentlig: "US CDC har opjusteret tallet for 2025 til 2.289". Kontrollen advarer, hvis et gammelt punkt er ændret eller fjernet.
 
 **Trin.** Trinnet flyttes kun, når en kilde dokumenterer det, der definerer det nye trin. Flytningen sker ved, at det nye punkt i `tl` får trinnet i sit tredje felt, og at `stage` sættes til det samme. De to skal altid stemme overens.
 
@@ -101,14 +116,25 @@ Datasættet er JavaScript, ikke JSON. Strenge står i enkelte anførselstegn, s�
 | `rel` | `id` på hændelser, der hører sammen med denne |
 | `naeste` | Hvad der ville flytte trinnet |
 | `plabel`, `pts` | Talserie til grafen: en overskrift og punkter `[dato, tilfælde, dødsfald eller null]` i datoorden |
-| `tl` | Forløbet: `[dato, tekst, trin eller '']` i datoorden. Første punkt bærer hændelsens første trin |
-| `src` | Kilder: `[navn, adresse]`. Adressen skal begynde med `https://` |
+| `tl` | Forløbet: `[dato, tekst, trin eller '', [navn, adresse]]` i datoorden. Første punkt bærer hændelsens første trin. Fjerde felt er punktets kilde og kræves på nye punkter. Ældre punkter kan mangle det |
+| `src` | Hændelsens hovedkilder: `[navn, adresse]`. Adressen skal begynde med `https://` |
 
 Datoer skrives `ÅÅÅÅ-MM-DD`. Kendes kun måneden, skrives `ÅÅÅÅ-MM`. Ingen dato må ligge efter `DATA_DATO`.
 
 Kontrollen kan ikke se, om længdegrad og breddegrad er byttet om, når begge tal er under 90. Slå koordinater op, og tjek dem mod et sted i samme land, der allerede står i datasættet.
 
+## Kontrollens advarsler
+
+En fejl standser udrulningen. En advarsel gør ikke, men den skal læses og besvares sådan:
+
+- **En kildeadresse svarer ikke.** Åbn den ad den anden vej, se Sådan hentes kilderne. Fører ingen vej til siden, så brug ikke adressen. Et 403 fra en myndighed, du lige har læst gennem hentningsværktøjet, er i orden og nævnes i loggen.
+- **`cases` har tal uden opgørelsesdato.** Mange ældre hændelser mangler kilde og dato i `cases`. Ret det i de hændelser, kørslen alligevel opdaterer tallet i. Opfind ikke en dato til et tal, du ikke selv har læst i kilden.
+- **`live:true` uden nyt punkt i over 30 dage.** Søg efter nyt om hændelsen. Er kilderne tavse, sættes `live` til `false`, som reglen om `live` siger, og det skrives i loggen.
+- **Et gammelt punkt er ændret eller fjernet.** Fortryd ændringen, og skriv den under Til gennemgang i stedet.
+
 ## Loggen
+
+Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker til fra foden, og den bygges af `LOG.md` ved hver udrulning. Skriv den, så en læser udefra kan følge, hvad der blev ændret og hvorfor. Ingen HTML i loggen, og adresser skrives fuldt ud med `https://`.
 
 `LOG.md` får én post øverst pr. kørsel, også når intet blev ændret:
 
@@ -128,6 +154,11 @@ Kontrollen kan ikke se, om længdegrad og breddegrad er byttet om, når begge ta
 
 **Usikkert**
 - `pest-irkutsk`: WHO har ikke fået svar fra Rusland. Ingen ændring.
+
+**Til gennemgang**
+- `maesling-us`: US CDC skriver nu 2.289 tilfælde for hele 2025. Punktet 31. december 2025 har 2.255. Ikke rettet.
 ```
 
 Skriv konkret, hvad der blev ændret, og hvilken kilde det bygger på. Posten er det eneste sted, et menneske kan se, hvad kørslen gjorde og hvorfor.
+
+Til gennemgang er det, kun ejeren må rette: gamle punkter, hvor en kilde har rettet sig selv, og alt uden for `DATA_DATO`, `EVENTS` og loggen, der ser forkert ud. Er der intet, skrives `- Intet.` Et punkt bliver stående i hver ny post, til ejeren har rettet det eller afvist det, så det ikke forsvinder ned i loggen.

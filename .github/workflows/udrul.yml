@@ -1,15 +1,17 @@
 name: Udrul til Cloudflare Pages
 
 # Udruller mappen site/ til Pages-projektet globus-nicco-dk, som svarer på
-# https://globus.nicco.dk. Kører ved hvert commit på main, der rører site/
-# eller denne fil, og kan startes manuelt under Actions.
+# https://globus.nicco.dk. Kører ved hvert commit på main, der rører site/,
+# LOG.md, værktøjerne eller denne fil, og kan startes manuelt under Actions.
 
 on:
   push:
     branches: [main]
     paths:
       - "site/**"
+      - "LOG.md"
       - "tools/tjek-data.mjs"
+      - "tools/byg-log.mjs"
       - ".github/workflows/udrul.yml"
   workflow_dispatch:
 
@@ -65,6 +67,11 @@ jobs:
           else
             node tools/tjek-data.mjs site/index.html
           fi
+
+      # Den offentlige ændringslog bygges af LOG.md og ligger ikke i repoet.
+      # Siden linker til den fra foden.
+      - name: Byg ændringsloggen
+        run: node tools/byg-log.mjs LOG.md site/log.html
 
       - name: Udrul til Pages
         uses: cloudflare/wrangler-action@v4
