@@ -4,6 +4,23 @@
 
 ## 9. oktober 2026
 
+**Regler ændret.** Ingen gennemgang af kilder og ingen ændrede tal i denne post. Ejeren har godkendt morgenkørslens to forslag til `OPDATERING.md`, og de er ført ind.
+
+- UKHSA's ugeoversigt over udbrud under overvågning er nu den tredje samlede kilde sammen med ECDC's ugerapport og WHO DON. Det var den, der havde Sindbis-tilfældet i Tyskland.
+- Afviser hentningsværktøjet en side, skal den forsøges hentet direkte, før kilden opgives eller erstattes af et medie. Det var før et råd og er nu et krav.
+- Robert Koch Instituts Epidemiologisches Bulletin og APO Group som vej til Kenyas sundhedsministeriums pressemeddelelser står nu i afsnittet Sådan hentes kilderne.
+- Den daglige kørsel starter fremover kl. 5.20 dansk tid, så siden er opdateret inden kl. 6.
+
+**Til gennemgang**
+- `maesling-us`: kørslen 8. oktober rettede tallet for hele 2025 fra 2.255 til 2.289 efter US CDC, før reglen om gamle punkter blev ændret. Rettelsen står.
+- `ebola-drc`: WHO, ECDC og UKHSA regner Sydkivu blandt de syv ramte provinser. Datasættet har ingen stedknude for Sydkivu, men en for Kinshasa.
+- `ebola-drc`: `note` nævner ikke evakueringen til Storbritannien 21. juli, som ECDC's ebolaside har med.
+- `ebola-ke`: `naeste` nævner 28 kontakter. Sundhedsministeriet har 57 pr. 7. oktober, og ministeren nævner 66 i karantæne 8. oktober. `naeste` rettes kun, når trinnet flytter sig, så teksten står.
+- `ebola-ke`: forløbet har 3. oktober for både landrejsen til Kampala og ankomsten til Nairobi. WHO AFRO har 2. oktober for landrejsen.
+- `pest-irkutsk`: forløbet daterer WHO's opfordring til Rusland til 8. oktober. Al Jazeera og PBS har onsdag 7. oktober. UKHSA's ugeoversigt skriver desuden, at kvinden døde 1. oktober, hvor forløbet har natten til 2. oktober.
+
+## 9. oktober 2026
+
 **Gennemgået:** ECDC CDTR uge 40 (seneste udgave, uge 41 var ikke udkommet, da kørslen gik i gang kl. 5.45), WHO DON siden 8. oktober (ingen nye efter DON 619) og UKHSA's ugeoversigt over udbrud under overvågning, uge 40, opdateret 8. oktober. Enkeltkilder: ECDC's ebolaside og ECDC's ugedata for West Nile, dengue og Krim-Congo hæmoragisk feber, US CDC om ebola, mæslinger og mpox, GPEI, RIVM, Statens Serum Institut, Robert Koch Institut, WHO AFRO, PAHO og NaTHNaC samt nyhedsmedier om Kenya, Irkutsk, Israel, Bangladesh, Florida, Pennsylvania, Nigeria og Zambia.
 
 **Ændret**

@@ -64,7 +64,7 @@ Den automatiske kørsel tilføjer og ajourfører, men retter ikke i gamle forlø
 
 ## Bemærk
 
-Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører hver dag kl. 5.45 dansk tid, så siden er gennemgået omkring kl. 6, efter `OPDATERING.md` og skriver en post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
+Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører hver dag kl. 5.20 dansk tid, så siden er gennemgået og udrullet inden kl. 6, efter `OPDATERING.md` og skriver en post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
 
 Går der mere end to dage uden en gennemgang, skifter overskriftslinjen selv til en advarsel med antal dage siden seneste gennemgang. Grænsen er `DATA_MAX_ALDER` i `site/index.html`.
 

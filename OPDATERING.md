@@ -38,17 +38,19 @@ Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længe
 
 - **WHO DON.** Oversigten på https://www.who.int/emergencies/disease-outbreak-news viser ingen poster, når den hentes maskinelt. Brug WHO's dataudtræk i stedet. De seneste 15 med nummer og dato: `https://www.who.int/api/news/diseaseoutbreaknews?sf_culture=en&$orderby=PublicationDateAndTime%20desc&$top=15&$select=Title,PublicationDateAndTime,ItemDefaultUrl,DonId`. Hele teksten i én DON: `https://www.who.int/api/news/diseaseoutbreaknews?sf_culture=en&$filter=DonId%20eq%20'2026-DON619'`. Adressen, der sættes som kilde, er læserens side: `https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619`.
 - **ECDC.** Ugerapporterne står på https://www.ecdc.europa.eu/en/publications-and-data/monitoring/weekly-threats-reports og udkommer om fredagen. Ebolasiden https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda opdateres hver hverdag og har tal pr. provins.
-- **To veje til en side.** Hentningsværktøjet og et direkte opslag fra skallen med `curl -sL` rammer ikke de samme spærringer. Helt nye WHO-sider har fejlet i hentningsværktøjet, men kunne hentes direkte. US CDC afviser direkte opslag med 403, men kan læses med hentningsværktøjet. Fejler den ene vej, så prøv den anden, før kilden opgives.
+- **UKHSA.** Ugeoversigten over udbrud under overvågning står på https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026, opdateres om torsdagen og kan hentes med hentningsværktøjet. Den samler signaler fra nationale myndigheder, også dem ECDC og WHO ikke nævner, og henviser til den oprindelige kilde. Sæt den oprindelige myndighed som kilde på hændelsen, når den kan hentes, og UKHSA ved siden af.
+- **Robert Koch Institut.** Epidemiologisches Bulletin ligger som PDF på rki.de og kan hentes direkte.
+- **To veje til en side.** Hentningsværktøjet og et direkte opslag fra skallen med `curl -sL` rammer ikke de samme spærringer. Helt nye WHO-sider har fejlet i hentningsværktøjet, men kunne hentes direkte. US CDC afviser direkte opslag med 403, men kan læses med hentningsværktøjet. Fejler den ene vej, skal den anden prøves, før kilden opgives eller erstattes af et medie. Det er et krav, ikke et råd. Skriv i loggen under Usikkert, hvilke sider der ikke kunne hentes ad nogen af de to veje.
 - **Læs tal to gange.** Hentningsværktøjet genfortæller siden, det citerer den ikke. Bed om den ordrette sætning med tallet, og læs den to gange uafhængigt af hinanden, eller hent sidens rå tekst direkte og find tallet dér, før det skrives.
-- **Myndigheder gennem medier.** Kan myndighedens egen side ikke hentes, som hos Kenyas sundhedsministerium, så brug mediet, der gengiver udmeldingen, med tilføjelsen `, medie`. Gengiver to medier forskellige tal fra samme udmelding, så lad tallet stå og skriv det under Usikkert.
-- **Faste udgivelser.** ECDC's ugerapport kommer fredag, GPEI's poliooversigt og US CDC's mæslingetal én gang om ugen. Mellem udgivelserne er der intet nyt at hente dér, og hændelsen lades urørt.
+- **Myndigheder gennem medier.** Kan myndighedens egen side ikke hentes, som hos Kenyas sundhedsministerium, så brug mediet, der gengiver udmeldingen, med tilføjelsen `, medie`. Kenyas sundhedsministeriums pressemeddelelser udsendes af APO Group og kan læses på https://www.africa-newsroom.com. Kilden mærkes stadig `, medie`, fordi det ikke er ministeriets egen side. Gengiver to medier forskellige tal fra samme udmelding, så lad tallet stå og skriv det under Usikkert.
+- **Faste udgivelser.** UKHSA's ugeoversigt kommer torsdag, ECDC's ugerapport fredag, GPEI's poliooversigt og US CDC's mæslingetal én gang om ugen. Mellem udgivelserne er der intet nyt at hente dér, og hændelsen lades urørt.
 
 ## Fremgangsmåde
 
-Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra to samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
+Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra tre samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
 
 1. **Hent repoet** og læs `EVENTS` og de seneste poster i `LOG.md`, så du ved, hvad der står, og hvad forrige kørsel var i tvivl om.
-2. **Læs de to samlede kilder:** ECDC's seneste Communicable Disease Threats Report og WHO's liste over Disease Outbreak News siden forrige kørsel. Notér hvilke hændelser på siden de nævner, og hvilke nye hændelser de melder.
+2. **Læs de tre samlede kilder:** ECDC's seneste Communicable Disease Threats Report, WHO's liste over Disease Outbreak News siden forrige kørsel og UKHSA's seneste ugeoversigt over udbrud under overvågning. Notér hvilke hændelser på siden de nævner, og hvilke nye hændelser de melder.
 3. **Bring nævnte hændelser ajour.** Slå kun enkeltkilder op for de hændelser, de samlede kilder nævner, og for hændelser med `live:true` og trin `spredning` eller `smitte`, hvor der er grund til at tro, at tallene har flyttet sig. En hændelse uden nyt lades urørt. Det er det normale udfald for de fleste hændelser på en given dag.
 4. **Tilføj nye hændelser**, højst fem pr. kørsel. Er der flere, så tag de alvorligste og nævn resten i loggen.
 5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret. Datoen betyder, at datasættet er gennemgået den dag.
@@ -141,7 +143,7 @@ Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker
 ```
 ## 9. oktober 2026
 
-**Gennemgået:** ECDC CDTR uge 41, WHO DON siden 8. oktober.
+**Gennemgået:** ECDC CDTR uge 41, WHO DON siden 8. oktober, UKHSA's ugeoversigt uge 40.
 
 **Ændret**
 - `ebola-drc`: tal opdateret til 8.702 bekræftede og 4.195 døde, US CDC pr. 8. oktober. Nyt punkt i forløbet.
