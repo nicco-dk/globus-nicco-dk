@@ -405,7 +405,7 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-10-08';
+const DATA_DATO = '2026-10-09';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk hver dag';
 // Går der flere dage end dette uden en gennemgang, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -446,8 +446,9 @@ const EVENTS = [
 {id:'ebola-ke',place:'Nairobi',country:'Kenya',region:'Afrika',lat:-1.2864,lon:36.8172,
  disease:'Ebola, importeret',pathogen:'Orthoebolavirus bundibugyoense',stage:'udbrud',live:true,
  cases:'1 bekræftet tilfælde og 1 dødsfald',
- extra:'28 kontakter sporet plus 23 passagerer og 4 besætningsmedlemmer. Kenya har testet 267 prøver siden maj. WHO har leveret omkring 1.000 ebolatest og 1.000 værnemiddelsæt til højrisikoamter.',
+ extra:'Sundhedsministeriet opgjorde 57 identificerede kontakter pr. 7. oktober, heraf 10 i karantæne. Sundhedsministeren oplyste 8. oktober, at 66 er i karantæne på National Police Service Hospital i Nairobi, gengivet af Citizen Digital. WHO AFRO opgjorde 28 kontakter plus 23 passagerer og 4 besætningsmedlemmer pr. 6. oktober. Kenya har testet 267 prøver siden maj. WHO har leveret omkring 1.000 ebolatest og 1.000 værnemiddelsæt til højrisikoamter.',
  note:'Kenyas første bekræftede ebolatilfælde nogensinde, importeret fra udbruddet i DR Congo. Patienten var kenyansk statsborger og havde boet syv år i DR Congo. WHO fraråder rejserestriktioner.',
+ gap:'Det samlede antal kontakter er uklart. Sundhedsministeren nævnte 8. oktober både 57 identificerede kontakter og 66 i karantæne. Tallet 66 er kun gengivet af medier.',
  nodes:[['Beni, Nordkivu',29.4719,0.4917,'2026-09'],['Kampala, Uganda',32.5825,0.3476,'2026-10-03'],['Nairobi',36.8172,-1.2864,'2026-10-03']],
  links:[[0,1,'2026-10-03','rute'],[1,2,'2026-10-03','rute']],
  rel:['ebola-drc','ebola-nl'],
@@ -456,10 +457,12 @@ const EVENTS = [
      ['2026-10-03','Rejser over land til Kampala, flyver til Nairobi og isoleres på Nairobi Hospital',''],
      ['2026-10-05','Patienten dør sent mandag aften',''],
      ['2026-10-06','Sundhedsminister Aden Duale bekræfter Kenyas første Bundibugyo-tilfælde','udbrud'],
+     ['2026-10-07','Sundhedsministeriet oplyser, at 57 kontakter er identificeret, og at ti af dem er gjort rede for og sat i karantæne på National Police Service Hospital i Nairobi','',['Kenyas sundhedsministerium via APO Group, medie','https://www.africa-newsroom.com/press/kenya-strengthens-ebola-preparedness-and-contact-tracing?lang=en']],
      ['2026-10-08','Ingen sekundære tilfælde registreret',''],
      ['2026-10-08','Et mistænkt tilfælde i Wajir, en 20-årig mand der var rejst fra DR Congo over Uganda, tester foreløbigt negativt for ebola ifølge amtets guvernør','',['The Standard, medie','https://www.standardmedia.co.ke/health/health-science/article/2001559736/suspected-ebola-patient-tests-negative-in-wajir']],
-     ['2026-10-08','WHO omtaler tilfældet i DON 619 og formoder, at patienten blev smittet på et behandlingssted eller i lokalsamfundet, mens han søgte behandling for en anden sygdom. Sikker begravelse er gennemført, kontaktopsporingen fortsætter, også for flyet, og en risikovurdering for Kenya er på vej','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']]],
- src:[['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['WHO AFRO','https://www.afro.who.int/countries/kenya/news/kenya-confirms-first-imported-bundibugyo-virus-disease-case-who-supports-control-efforts'],['The Standard, medie','https://www.standardmedia.co.ke/health/health-science/article/2001559736/suspected-ebola-patient-tests-negative-in-wajir'],['Al Jazeera, medie','https://www.aljazeera.com/news/2026/10/6/kenya-confirms-first-ebola-case-after-patient-from-dr-congo-dies-in-nairobi'],['AP, medie','https://www.arkansasonline.com/news/2026/oct/07/kenya-confirms-first-ebola-case-death/']]},
+     ['2026-10-08','WHO omtaler tilfældet i DON 619 og formoder, at patienten blev smittet på et behandlingssted eller i lokalsamfundet, mens han søgte behandling for en anden sygdom. Sikker begravelse er gennemført, kontaktopsporingen fortsætter, også for flyet, og en risikovurdering for Kenya er på vej','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']],
+     ['2026-10-08','Sundhedsminister Aden Duale oplyser, at 66 formodede kontakter er gjort rede for og sat i karantæne på National Police Service Hospital. Han nævner samtidig 57 identificerede kontakter og venter, at tallet stiger. Flyselskabet har udleveret oplysninger om 23 passagerer og 4 besætningsmedlemmer','',['Citizen Digital, medie','https://citizen.digital/article/health-cabinet-secretary-aden-duale-has-said-that-66-people-suspected-to-have-come-into-contact-with-n391689']]],
+ src:[['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['WHO AFRO','https://www.afro.who.int/countries/kenya/news/kenya-confirms-first-imported-bundibugyo-virus-disease-case-who-supports-control-efforts'],['Kenyas sundhedsministerium via APO Group, medie','https://www.africa-newsroom.com/press/kenya-strengthens-ebola-preparedness-and-contact-tracing?lang=en'],['Citizen Digital, medie','https://citizen.digital/article/health-cabinet-secretary-aden-duale-has-said-that-66-people-suspected-to-have-come-into-contact-with-n391689'],['The Standard, medie','https://www.standardmedia.co.ke/health/health-science/article/2001559736/suspected-ebola-patient-tests-negative-in-wajir'],['Al Jazeera, medie','https://www.aljazeera.com/news/2026/10/6/kenya-confirms-first-ebola-case-after-patient-from-dr-congo-dies-in-nairobi'],['AP, medie','https://www.arkansasonline.com/news/2026/oct/07/kenya-confirms-first-ebola-case-death/']]},
 
 {id:'kolera',place:'Flere lande, tyngdepunkt DR Congo',country:'DR Congo m.fl.',region:'Afrika',lat:-4.4419,lon:15.2663,
  disease:'Kolera',pathogen:'Vibrio cholerae',stage:'spredning',live:true,
@@ -665,7 +668,7 @@ const EVENTS = [
  src:[['ECDC CCHF case-CSV','https://cchf-weekly.ecdc.europa.eu/case_summary.csv'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf']]},
 
 {id:'maesling-il',place:'Jerusalem',country:'Israel',region:'Mellemøsten',lat:31.7683,lon:35.2137,
- disease:'Mæslinger',pathogen:'Measles morbillivirus, genotype B3',stage:'spredning',live:true,
+ disease:'Mæslinger',pathogen:'Measles morbillivirus, genotype B3',stage:'spredning',live:false,
  cases:'3.574 tilfælde og 17 dødsfald pr. 31. marts 2026',
  extra:'Jerusalem alene 1.289 tilfælde og 11 dødsfald, altså 36,1 procent af tilfældene og 64,7 procent af dødsfaldene. 68,7 procent af tilfældene i Jerusalem lå i seks ultraortodokse kvarterer. 82,7 procent af de smittede var uvaccinerede, og gennemsnitsalderen var 5,6 år.',
  note:'Udbruddet er sporet til en enkelt import fra Pakistan. Det er ikke erklæret afsluttet og truer Israels status som mæslingefrit land fra 2015.',
@@ -696,6 +699,19 @@ const EVENTS = [
      ['2026-09-15','To beboere i Schwanheim smittes uden tilknytning til lufthavnen','spredning'],
      ['2026-09-17','En af beboerne dør. 8 tilfælde og 3 dødsfald i alt','']],
  src:[['UKHSA uge 38','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-38-week-ending-20-september-2026'],['CNN, medie','https://www.cnn.com/2026/08/27/europe/germany-frankfurt-airport-malaria-intl'],['Al Jazeera, medie','https://www.aljazeera.com/news/2026/9/17/third-person-dies-from-malaria-in-cluster-near-germanys-frankfurt-airport']]},
+
+{id:'sindbis-de',place:'Baden-Württemberg',country:'Tyskland',region:'Europa',lat:48.6616,lon:9.3501,
+ disease:'Sindbis-feber, lokalt erhvervet',pathogen:'Sindbis-virus',stage:'udbrud',
+ cases:'1 lokalt erhvervet tilfælde, Robert Koch Institut pr. 1. oktober',
+ extra:'En 60-årig mand med symptomdebut 12. juli 2026: feberfornemmelse, udslæt og ledsmerter. Han havde ikke rejst uden for Baden-Württemberg. Lægerne undersøgte først for chikungunya, fordi han bor i et bydistrikt med etablerede bestande af asiatisk tigermyg. Diagnosen blev stillet med specifikke IgM- og IgG-antistoffer og serokonversion.',
+ note:'Det første påviste symptomatiske, lokalt erhvervede tilfælde af Sindbis-virus hos et menneske i Tyskland. Virusset overføres af stikmyg med fugle som værter og blev første gang fundet i tyske myg i 2009 og i en fugl i 2014. Smitte videre fra et smittet menneske gennem myg er ifølge Robert Koch Institut ikke beskrevet. UKHSA har taget tilfældet med som nyt signal i sin ugeoversigt.',
+ gap:'Bopælen er ikke oplyst nærmere end et bydistrikt i Baden-Württemberg. En molekylærbiologisk undersøgelse er planlagt, men ikke offentliggjort.',
+ naeste:'Rykker til spredning, hvis der findes lokalt erhvervede tilfælde flere steder i Tyskland. Smitte mellem mennesker er ikke beskrevet for Sindbis-virus.',
+ tl:[['2026-07-12','En 60-årig mand i Baden-Württemberg får feberfornemmelse, udslæt og ledsmerter. Lægerne undersøger i første omgang for chikungunya uden at finde antistoffer','mistanke',['Robert Koch Institut, Epidemiologisches Bulletin 40/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/40_26.pdf?__blob=publicationFile&v=2']],
+     ['2026-09','Infektion med Sindbis-virus bekræftes i laboratoriet. Tilfældet vurderes som lokalt erhvervet','udbrud',['Robert Koch Institut, Epidemiologisches Bulletin 40/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/40_26.pdf?__blob=publicationFile&v=2']],
+     ['2026-10-01','Robert Koch Institut offentliggør tilfældet som det første symptomatiske, lokalt erhvervede i Tyskland','',['Robert Koch Institut, Epidemiologisches Bulletin 40/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/40_26.pdf?__blob=publicationFile&v=2']],
+     ['2026-10-08','UKHSA tager tilfældet med som nyt signal i ugeoversigten over udbrud under overvågning','',['UKHSA uge 40','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-40-week-ending-4-october-2026']]],
+ src:[['Robert Koch Institut, Epidemiologisches Bulletin 40/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/40_26.pdf?__blob=publicationFile&v=2'],['UKHSA uge 40','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-40-week-ending-4-october-2026']]},
 
 {id:'cre-eu',place:'Grænseoverskridende, hospitalsrelateret',country:'EU og EØS',region:'Europa',lat:50.8503,lon:4.3517,
  disease:'Carbapenem-resistente Enterobacterales',pathogen:'Klebsiella pneumoniae og Escherichia coli med carbapenemase-gener',stage:'variant',live:true,

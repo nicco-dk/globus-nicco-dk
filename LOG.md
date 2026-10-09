@@ -2,6 +2,44 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 9. oktober 2026
+
+**Gennemgået:** ECDC CDTR uge 40 (seneste udgave, uge 41 var ikke udkommet, da kørslen gik i gang kl. 5.45), WHO DON siden 8. oktober (ingen nye efter DON 619) og UKHSA's ugeoversigt over udbrud under overvågning, uge 40, opdateret 8. oktober. Enkeltkilder: ECDC's ebolaside og ECDC's ugedata for West Nile, dengue og Krim-Congo hæmoragisk feber, US CDC om ebola, mæslinger og mpox, GPEI, RIVM, Statens Serum Institut, Robert Koch Institut, WHO AFRO, PAHO og NaTHNaC samt nyhedsmedier om Kenya, Irkutsk, Israel, Bangladesh, Florida, Pennsylvania, Nigeria og Zambia.
+
+**Ændret**
+- `ebola-ke`: to nye punkter i forløbet om kontaktopsporingen. 7. oktober: sundhedsministeriet oplyser 57 identificerede kontakter, heraf ti i karantæne på National Police Service Hospital i Nairobi. Kilden er ministeriets pressemeddelelse, gengivet af APO Group: https://www.africa-newsroom.com/press/kenya-strengthens-ebola-preparedness-and-contact-tracing?lang=en 8. oktober: sundhedsminister Aden Duale oplyser, at 66 formodede kontakter er i karantæne, Citizen Digital: https://citizen.digital/article/health-cabinet-secretary-aden-duale-has-said-that-66-people-suspected-to-have-come-into-contact-with-n391689 `extra` er skrevet om, så de tre opgørelser står med kilde og dato, og WHO AFRO's 28 kontakter pr. 6. oktober er beholdt. `gap` er tilføjet, fordi det samlede antal kontakter er uklart. Begge kilder er tilføjet i `src`. Antallet af tilfælde er uændret: 1 bekræftet og 1 dødsfald.
+- `maesling-il`: `live` er sat til `false`. Kontrollen advarede om, at hændelsen stod som aktiv uden nyt punkt i 191 dage. Søgninger på engelsk og hebraisk fandt ingen officielle tal efter 31. marts 2026 og ingen udmeldinger fra det israelske sundhedsministerium den seneste måned. Udbruddet er ikke erklæret afsluttet, og det står fortsat i `note` og `gap`. Ingen andre felter er ændret.
+
+**Nye**
+- `sindbis-de`: det første påviste symptomatiske, lokalt erhvervede tilfælde af Sindbis-virus hos et menneske i Tyskland. En 60-årig mand i Baden-Württemberg med symptomdebut 12. juli, laboratoriebekræftet i september og offentliggjort af Robert Koch Institut 1. oktober i Epidemiologisches Bulletin 40/2026: https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/40_26.pdf?__blob=publicationFile&v=2 UKHSA tog tilfældet med som nyt signal 8. oktober: https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-40-week-ending-4-october-2026 Trin `udbrud`, ikke markeret som aktiv, da der er tale om ét tilfælde fra juli.
+
+**Urørt**
+- 32 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `ebola-ke`: tallene for kontakter hænger ikke sammen. Citizen Digital gengiver ministeren 8. oktober med både 57 identificerede kontakter og 66, der er gjort rede for og i karantæne. Nation skriver også 66 i karantæne i sin overskrift, men artiklen kunne ikke hentes. Sundhedsministeriets egen side kunne ikke hentes, så pressemeddelelsen fra 7. oktober er læst hos APO Group, der udsender den på ministeriets vegne, og kilden er mærket som medie. Begge tal står i forløbet med hver sin kilde, og uklarheden står i `gap`.
+- `maesling-il`: at kilderne er tavse, bygger på søgninger. En artikel i JAMA Health Forum om udbruddets alvor og de to artikler i CDC's tidsskrift EID kunne ikke hentes i denne kørsel, så deres datoer er ikke kontrolleret. Findes der nyere officielle tal, bør `live` sættes tilbage.
+- `sindbis-de`: bopælen er ikke offentliggjort nærmere end et bydistrikt i Baden-Württemberg, så hændelsen er placeret midt i delstaten. Laboratoriebekræftelsen er kun dateret til september. Første punkt i forløbet har trinnet `mistanke`, fordi diagnosen ikke var stillet ved symptomdebut.
+- `ebola-drc`: ingen opgørelse nyere end 6. oktober. ECDC's ebolaside, senest opdateret 8. oktober kl. 16.25, har fortsat 8.728 bekræftede og 4.205 døde. US CDC's side, opdateret 8. oktober, viser nu de samme tal pr. 6. oktober. `extra` nævner fortsat US CDC's tal pr. 5. oktober. UKHSA's ugeoversigt har 8.603 og 4.148 pr. 4. oktober, altså ældre. Ingen ændring.
+- `pest-irkutsk`: intet nyt. Ingen dødsårsag og intet patogen er navngivet, og der er ikke fundet meldinger om, at Rusland har svaret WHO. Ingen ændring.
+- `maesling-us`: US CDC står fortsat på 3.887 bekræftede tilfælde pr. 1. oktober, opdateret 2. oktober. Pennsylvania har ikke opgjort noget nyere end 7. oktober. Ingen ændring.
+- `dengue-asien` og `maesling-bd`: ingen DGHS-tal nyere end 8. oktober var ude, da kørslen gik. Ingen ændring.
+- `dengue-fl`: Fox 13 skrev 7. oktober, at delstatens ugeopgørelse for 27. september til 3. oktober var ventet samme dag. Ingen nye tal er fundet, og medierne skriver fortsat 252. Ingen ændring.
+- `polio`: GPEI's side står fortsat pr. 30. september. Ingen ændring.
+- `wnv-eu`, `dengue-eu`, `chik-fr` og `cchf-es`: ECDC's ugedata er uændrede siden uge 40. Afventer CDTR uge 41, som ventes senere i dag.
+- `mpox`: WHO's situationsrapport nummer 70 er fortsat ikke fundet. `mpox-mo`: US CDC's side er opdateret 5. oktober med uændret tekst.
+- `h5n1-us`: en CIDRAP-artikel om tre kalkunfarme i Minnesota bar ingen dato, og dens tal passer ikke med datasættets periode. Ikke brugt.
+
+**Til gennemgang**
+- `maesling-us`: kørslen 8. oktober rettede tallet for hele 2025 fra 2.255 til 2.289 efter US CDC, før reglen om gamle punkter blev ændret. Rettelsen står.
+- `ebola-drc`: WHO, ECDC og UKHSA regner Sydkivu blandt de syv ramte provinser. Datasættet har ingen stedknude for Sydkivu, men en for Kinshasa.
+- `ebola-drc`: `note` nævner ikke evakueringen til Storbritannien 21. juli, som ECDC's ebolaside har med.
+- `ebola-ke`: `naeste` nævner 28 kontakter. Sundhedsministeriet har 57 pr. 7. oktober, og ministeren nævner 66 i karantæne 8. oktober. `naeste` rettes kun, når trinnet flytter sig, så teksten står.
+- `ebola-ke`: forløbet har 3. oktober for både landrejsen til Kampala og ankomsten til Nairobi. WHO AFRO har 2. oktober for landrejsen.
+- `pest-irkutsk`: forløbet daterer WHO's opfordring til Rusland til 8. oktober. Al Jazeera og PBS har onsdag 7. oktober. UKHSA's ugeoversigt skriver desuden, at kvinden døde 1. oktober, hvor forløbet har natten til 2. oktober.
+- `OPDATERING.md`, Sådan hentes kilderne: UKHSA's ugeoversigt på https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026 opdateres om torsdagen og kan hentes direkte. Den havde Sindbis-tilfældet i Tyskland, som hverken ECDC uge 40 eller WHO DON nævner, og kunne stå som tredje samlede kilde. Robert Koch Instituts Epidemiologisches Bulletin kan også hentes direkte.
+- `OPDATERING.md`, To veje til en side: i denne kørsel er sider, som hentningsværktøjet afviste, ikke forsøgt hentet direkte. Det gjaldt Kenyas sundhedsministerium, CDC's tidsskrift EID, JAMA, Science, Nation, Daily Star og CIDRAP's nyhedsoversigt. Kenyas sundhedsministeriums pressemeddelelser kan læses hos APO Group på https://www.africa-newsroom.com
+
 ## 8. oktober 2026
 
 **Regler og side ændret.** Ingen gennemgang af kilder og ingen ændrede tal i denne post.
