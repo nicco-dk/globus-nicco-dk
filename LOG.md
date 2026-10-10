@@ -2,6 +2,74 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 10. oktober 2026
+
+**Gennemgået:** ECDC CDTR uge 41, udkommet 9. oktober, WHO DON siden 9. oktober (ingen nye efter DON 619) og UKHSA's ugeoversigt over udbrud under overvågning, hvor uge 40 fra 8. oktober fortsat er den seneste. Enkeltkilder: DR Congos sundhedsministeriums daglige situationsrapport, ECDC's ebolaside og ECDC's ugedata for West Nile, dengue og Krim-Congo hæmoragisk feber, US CDC om ebola, mæslinger, mpox og Cyclospora, WHO's risikovurdering for kolera i Afrika, WHO AFRO, GPEI, Bangladeshs sundhedsmyndighed DGHS, Sri Lankas National Dengue Control Unit, Floridas sundhedsmyndighed, New Yorks guvernør, Pennsylvanias sundhedsmyndighed, Hongkongs sundhedsmyndighed CHP, Israels sundhedsministerium, RIVM, Statens Serum Institut, NaTHNaC, CIDRAP samt nyhedsmedier om Kenya, Ghana, Pennsylvania, Irkutsk, Zambia og Nigeria.
+
+**Ændret**
+- `ebola-drc`: tal opdateret til 8.787 bekræftede tilfælde og 4.242 dødsfald pr. 7. oktober efter sundhedsministeriets situationsrapport 146: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_146_07_10_2026.pdf US CDC har samme tal for DR Congo pr. 7. oktober. Dødelighed 48,3 procent, fortsat 64 af 167 sundhedszoner, og tallene pr. provins står nu i `extra`. Nyt punkt i forløbet og i talserien. I `src` er ECDC uge 40 erstattet af uge 41, og punktet 29. september har fået uge 40 som sin kilde.
+- `ebola-ke`: nyt punkt 9. oktober. Sundhedsminister Aden Duale oplyser, at patienten i Wajir er testet negativ for ebola og positiv for malaria, Capital FM: https://capitalfm.africa/wajir-patient-tests-negative-for-ebola-positive-for-malaria-duale-says/ `cases` har fået kilde og dato: 1 bekræftet tilfælde og 1 dødsfald, US CDC pr. 7. oktober. Tallet er uændret.
+- `kolera`: nyt punkt 8. oktober om WHO's risikovurdering for kolera i Afrika, som sætter den regionale risiko til høj: 160.799 tilfælde og 2.466 dødsfald i 19 lande fra 1. januar til 20. september, heraf DR Congo 48.759 og 1.416 og Nigeria 70.543 og 452. Kilde: https://www.who.int/publications/m/item/who-rapid-risk-assessment-cholera--african-region-v.1 `cases` viser nu begge opgørelser med kilde og dato, og `extra` forklarer forskellen.
+- `pest-irkutsk`: nyt punkt 9. oktober. ECDC skriver i uge 41, at oplysningerne ikke rækker til at vurdere risikoen for befolkningen i EU. Ingen nye fakta om dødsårsagen.
+- `wnv-eu`: 1.855 tilfælde og 208 områder i 18 lande, ECDC pr. 7. oktober. Bulgarien og Moldova er nye lande. Landetallene i `extra` er læst på ECDC's ugeside: https://wnv-weekly.ecdc.europa.eu/ Nyt punkt i forløbet og i talserien, ny stedknude for Bulgarien.
+- `dengue-eu`: Italien 68 og Frankrig 6 tilfælde, ECDC pr. 7. oktober. Ny klynge i Rom. ECDC har slået klyngerne i Livorno og Firenze sammen, så Italien nu har seks klynger. Nyt punkt i forløbet og i talserien, ny stedknude for Rom.
+- `chik-fr`: 146 lokale tilfælde i Frankrig og 1 i Italien, ECDC pr. 7. oktober. 20 klynger, heraf 18 aktive, og en ny i Bellefont-La Rauze i Lot. Nyt punkt i forløbet.
+- `wnv-eu`, `dengue-eu` og `chik-fr`: ECDC uge 40 er erstattet af uge 41 i `src`, og punkterne 30. september har fået uge 40 som deres kilde.
+- `maesling-il`: 3.823 tilfælde, 1.262 indlæggelser og 17 dødsfald pr. 2. september ifølge Israels sundhedsministerium, gengivet af ECDC i uge 41. Nyt punkt i forløbet og i talserien, `gap` rettet til. `live` står fortsat på `false`, se Usikkert.
+- `sindbis-de`: nyt punkt 9. oktober. ECDC omtaler tilfældet i uge 41, kalder symptomatiske tilfælde ikke uventede og foretager sig ikke yderligere.
+- `maesling-bd`: 202.893 mistænkte og 22.197 bekræftede tilfælde, 1.147 dødsfald, DGHS pr. 9. oktober: https://dghs.gov.bd/pages/press-releases/6ac91a1e734da992ba70ebd9 Nyt punkt i forløbet og i talserien. Punktet 8. oktober har fået sin kilde, The Business Standard, sat på.
+- `dengue-asien`: Sri Lanka 101.744 tilfælde og 78 dødsfald pr. 6. oktober, National Dengue Control Unit: https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-06.pdf Bangladesh 95.451 indlagte og 295 dødsfald pr. 9. oktober, DGHS' dashboard og The Business Standard: https://www.tbsnews.net/bangladesh/health/one-dies-1300-hospitalised-dengue-24-hours-1567591 To nye punkter i forløbet og et i talserien.
+- `polio`: GPEI pr. 7. oktober. Seks nye tilfælde af vaccineafledt type 2 i DR Congo, i alt 64 i 2026, og fem nye af vaccineafledt type 1 i Sydsudan, i alt 15. Afghanistan uændret på 35. `cases`, `extra` og `gap` er skrevet om, så det fremgår, at GPEI har fem tilfælde i Pakistan, hvor landets polioprogram har seks.
+- `maesling-us`: 4.080 bekræftede tilfælde i 47 jurisdiktioner, US CDC pr. 8. oktober. Pennsylvania 1.136 tilfælde, 219 indlagte og 5 dødsfald pr. 9. oktober, delstatens sundhedsmyndighed gengivet af WFMZ: https://www.wfmz.com/news/area/pennsylvania/doh-reports-over-1-100-total-measles-cases-across-41-counties-in-pennsylvania/article_3fbe233a-edf7-4c1b-afb6-0ce68827987a.html New Yorks guvernør erklærede katastrofetilstand 5. oktober: https://governor.ny.gov/news/governor-hochul-declares-state-disaster-emergency-response-ongoing-measles-outbreak Tre nye punkter i forløbet og et i talserien.
+- `dengue-fl`: 296 lokalt erhvervede tilfælde i 8 counties pr. 3. oktober, Floridas sundhedsmyndigheds ugerapport uge 39: https://www.floridahealth.gov/wp-content/uploads/2026/10/fl-arbovirus-report-w39-2026.pdf Broward County er kommet til. Nyt punkt i forløbet og i talserien.
+- `h5n1-us`: nyt punkt 8. oktober efter CIDRAP's gengivelse af USDA: seks nye fund på en uge, blandt andet i Indiana, og 550.000 fugle i 12 kommercielle og 9 baggårdsflokke de seneste 30 dage. Kilde: https://www.cidrap.umn.edu/avian-influenza-bird-flu/usda-notes-more-h5n1-avian-flu-poultry-farms Ny stedknude for Jay County i Indiana.
+
+**Nye**
+- `salmonella-eu`: Salmonella Strathcona i ti lande i EU og EØS, heriblandt Danmark. ECDC melder i uge 41 over 160 nye tilfælde i 2026 og omkring 100 mere, der afventer sekventering. Tidligere udbrudsundersøgelser har udpeget små tomater fra Sicilien som kilde. Trin `udbrud`. Kilde: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf
+- `gul-feber-gh`: gul feber i Upper West Region i Ghana. Tre laboratoriebekræftede tilfælde, alle døde, og sundhedsministeriet har erklæret udbrud. Trin `udbrud`. Kilder: NaTHNaC https://travelhealthpro.org.uk/outbreaks og Ghana News Agency https://gna.org.gh/2026/10/health-minister-confirms-three-yellow-fever-cases-in-upper-west/
+- `mpox-hk`: mpox i Hongkong. Sundhedsmyndigheden CHP melder 10. oktober om en markant stigning: 30 tilfælde i år, heraf 23 lokale, og 21 siden august. Trin `smitte`. Kilde: https://www.info.gov.hk/gia/general/202610/10/P2026101000238.htm
+- Set, men ikke taget med: Statens Serum Instituts udbrud af Salmonella Typhimurium ST19 med 33 syge i august, hvor siden senest er redigeret 15. september: https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/2026_salmonella_typhimurium_st19 ECDC's månedsoversigt over mæslinger nævner desuden Guatemala med 34.134 tilfælde, Mexico, Canada, Bulgarien, Kosovo og Sverige. Ingen af delene er nye signaler siden forrige kørsel.
+
+**Urørt**
+- 20 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `maesling-il`: ECDC kalder udbruddet igangværende 9. oktober, men det nyeste tal er fra 2. september, altså over en måned gammelt. `live` er derfor ikke sat tilbage til `true`. Sundhedsministeriets egne sider på gov.il kunne ikke hentes ad nogen af de to veje. Tallet er læst hos ECDC.
+- `gul-feber-gh`: sundhedsministeriets egen meddelelse er ikke fundet på ministeriets eller Ghana Health Service's sider. Tallene er læst to steder, hos NaTHNaC og hos det statslige nyhedsbureau GNA, og de er enige om tre bekræftede tilfælde, alle døde. NaTHNaC er mærket som sekundær kilde, fordi tjenesten gengiver ministeriet. GNA skriver 450 mistænkte tilfælde uden at sige, om det er regionen eller hele landet. Tallet står i `extra` med det forbehold i `gap`.
+- `mpox-hk`: CHP oplyser ikke kladen. Hændelsen er derfor ikke koblet til `mpox`, som handler om klade Ib.
+- `salmonella-eu`: ECDC oplyser ingen tal pr. land, og der er ikke fundet danske tal for 2026 hos Statens Serum Institut. Hændelsen er placeret i Italien, fordi flere af de syge har boet eller rejst dér, og har stedknuder for alle ti lande. Trinnet er sat til `udbrud` og ikke `spredning`, fordi smitten sker gennem fødevarer.
+- `ebola-drc`: ingen opgørelse nyere end 7. oktober. ECDC's ebolaside er senest opdateret 8. oktober kl. 16.25 og har tallene pr. 6. oktober.
+- `ebola-ke`: Wajir-resultatet er kun læst i medier. Sundhedsministeriet har ikke udsendt nyt gennem APO Group siden 7. oktober, og ministeriets egen side kunne ikke hentes ad nogen af de to veje. The Star skriver 9. oktober fortsat 66 i karantæne. Nation kunne heller ikke hentes.
+- `ebola-nl`: intet nyt om patienten. RIVM's side er senest opdateret 1. oktober.
+- `maesling-us`: Pennsylvanias pressemeddelelse fra 9. oktober er ikke fundet på pa.gov. Tallene er læst hos WFMZ, som gengiver den, og Reuters og CIDRAP har de samme tal. US CDC's side kunne kun læses med hentningsværktøjet, ikke direkte. Reuters og CIDRAP er uenige om ugens stigning, 193 eller 194, så den er ikke skrevet.
+- `maesling-bd`: ECDC uge 41 skriver 1.040 dødsfald for Bangladesh. Det er kun dødsfaldene blandt mistænkte tilfælde pr. 8. oktober. DGHS' samlede tal er brugt.
+- `kolera`: WHO's tal for Afrika og ECDC's globale tal er to forskellige serier med hver sin dato. WHO har flere dødsfald i Afrika alene, end ECDC har globalt. Begge står i `cases` med kilde og dato.
+- `polio`: tallene for Nigeria, Tchad og Somalia er fra 30. september, fordi GPEI's ugeside kun nævner lande med nye fund, og GPEI's tælletabeller ikke kunne læses.
+- `dengue-fl`: ugerapporten nævner ikke dødsfald. Det ene dødsfald står med sin egen dato fra forløbet.
+- `h5n1-us`: tallet for de seneste 30 dage gælder hele USA og er et rullende vindue. Talserien for Midtvesten er ikke ført videre.
+- `pest-irkutsk`: intet nyt om patogen eller dødsårsag. Rospotrebnadzors sider kunne ikke hentes ad nogen af de to veje.
+- `mpox`: WHO's situationsrapport nummer 70 er fortsat ikke udkommet. `mpox-mo`: US CDC's sider er opdateret 5. oktober med uændret tekst.
+- `anthrax-zm`, `difteri-ng`, `cchf-ir`, `mers-sa`, `h5n1-kh`, `sfts-th`, `salmonella-dk` og `h5n1-dk`: søgt, intet nyt fundet.
+- Sider, der ikke kunne hentes ad nogen af de to veje: Kenyas sundhedsministerium, Nation, Rospotrebnadzor, gov.il, Zambias sundhedsministerium, ZNBC, Filippinernes sundhedsministerium, Dhaka Tribune, Khmer Times og NU.nl.
+
+**Til gennemgang**
+- `maesling-bd`: punktet 8. oktober og talserien har 202.625 mistænkte tilfælde. DGHS' egen pressemeddelelse for 8. oktober har 201.625: https://dghs.gov.bd/pages/press-releases/6ac79bd5693754e6a6881711 The Business Standard skrev 2,02,625. Ikke rettet. Det rigtige tal står i det nye punkt 9. oktober og i `extra`.
+- `polio`: punktet 6. oktober siger, at Pakistan bekræfter sit sjette tilfælde. Ifølge nyhedsbureauet APP skete bekræftelsen mandag 5. oktober: https://www.app.com.pk/?p=1286643 Ikke rettet.
+- `cyclospora-us`: punktet 5. oktober har 19.883 tilfælde som nationalt sæsontal. Ifølge US CDC er det tallet pr. 15. september for sæsonen 1. maj til 31. august, og siden opdateres ikke længere ugentligt: https://www.cdc.gov/cyclosporiasis/cases/index.html `extra` kalder kilden af lavere kvalitet, selv om tallet er CDC's eget. Ikke rettet.
+- `anthrax-zm`: de 26 humane tilfælde gælder ifølge Times of Zambia pr. 28. september. Forløbet og talserien har 30. september, som er Lusaka Times' udgivelsesdato: https://times.co.zm/8000-animals-get-anthrax-vaccine/ Ikke rettet.
+- `ebola-ke`: sundhedsministeriets pressemeddelelse hos APO Group skriver, at patienten døde 6. oktober. WHO DON 619 og forløbet har 5. oktober. Ikke rettet.
+- `ebola-drc`: punktet 27. august siger, at WHO erklærede udbruddet i Uganda afsluttet den dag. ECDC's ebolaside skriver 25. august, mens ECDC uge 41 skriver 27. august i brødteksten og 25. august i resuméet. Ikke rettet.
+- `h5n1-dk`: fundene i sæler stammer fra DK-VET 1. oktober, som ikke står blandt kilderne: https://dkvet.dk/nyheder/2026/hoejpatogen-fugleinfluenza/ Statens Serum Instituts side, der står som kilde, er senest redigeret 17. april og handler om andre pattedyr.
+- `maesling-us`: kørslen 8. oktober rettede tallet for hele 2025 fra 2.255 til 2.289 efter US CDC, før reglen om gamle punkter blev ændret. Rettelsen står.
+- `ebola-drc`: WHO, ECDC, UKHSA og sundhedsministeriet regner Sydkivu blandt de syv ramte provinser. Datasættet har ingen stedknude for Sydkivu, men en for Kinshasa.
+- `ebola-drc`: `note` nævner ikke evakueringen til Storbritannien 21. juli, som ECDC's ebolaside har med.
+- `ebola-ke`: `naeste` nævner 28 kontakter. Sundhedsministeriet har 57 pr. 7. oktober, og ministeren nævner 66 i karantæne 8. oktober. `naeste` rettes kun, når trinnet flytter sig, så teksten står.
+- `ebola-ke`: forløbet har 3. oktober for både landrejsen til Kampala og ankomsten til Nairobi. WHO AFRO har 2. oktober for landrejsen.
+- `pest-irkutsk`: forløbet daterer WHO's opfordring til Rusland til 8. oktober. Al Jazeera og PBS har onsdag 7. oktober. UKHSA's ugeoversigt skriver, at kvinden døde 1. oktober. ECDC uge 41 skriver natten mellem 1. og 2. oktober, som forløbet.
+- `OPDATERING.md`, Sådan hentes kilderne: nye veje, der virkede med direkte hentning i denne kørsel. DR Congos daglige situationsrapport ligger på https://insp.cd og udkommer en til to dage efter rapportdatoen. DGHS' mæslingetal står i pressemeddelelser på https://dghs.gov.bd/pages/press-releases og dengue på https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php Sri Lankas dagstal ligger som PDF på https://www.dengue.health.gov.lk og Floridas ugerapport som PDF på https://www.floridahealth.gov om torsdagen. Hongkongs pressemeddelelser ligger på https://www.info.gov.hk/gia/general/ med en side pr. dag.
+- `OPDATERING.md`, To veje til en side: hentningsværktøjet afviste i denne kørsel mange adresser, der ikke kom fra et søgeresultat. Direkte hentning var derfor hovedvejen, og US CDC og New Yorks guvernør var de eneste, der kun kunne læses med hentningsværktøjet.
+- Repoet har en gren, `udrulning-fra-repo`, ved siden af `main`. Kørslen har ikke rørt den.
+
 ## 9. oktober 2026
 
 **Regler ændret.** Ingen gennemgang af kilder og ingen ændrede tal i denne post. Ejeren har godkendt morgenkørslens to forslag til `OPDATERING.md`, og de er ført ind.
