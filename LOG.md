@@ -32,6 +32,12 @@
 - Alle lande har en lysegrå prik på hovedstaden (Natural Earth), og navnet står ved, når man zoomer ind, eller når landet har en forbindelse til det valgte land. Krig og konflikt og alle streger går nu mellem hovedstæderne. Mistanker vises kun for det valgte land.
 - Mediesporet læser også overskrifter direkte fra 17 store medier, som GDELT dækker dårligt: Reuters, AP, CNN, The New York Times, The Wall Street Journal, The Washington Post, Financial Times, BBC, The Guardian, Al Jazeera, NPR, CBS, NBC, France 24, Le Monde, Euronews og DR. De tæller kun til røde streger.
 - Vælger man et land under krig og konflikt, viser grønne streger, hvem der i år har givet mindst 1 mio. USD i humanitær hjælp (OCHA FTS). Storme viser deres bane fra GDACS.
+- Prikker, der ligger tæt, samles i én prik med antallet. Kanten viser retningernes farver. Zoomer man ind eller trykker på prikken, skilles de. Ligger de samme sted, vises de som en liste.
+- Krig og konflikt har nu en prik pr. sted i stedet for én pr. land: kampe fra 8 omtaler (højst 8 steder pr. land) og demonstrationer fra 15 omtaler. Trykker man på en prik, ses kun det, der er omtalt netop dér: stedets navn fra GDELT, antal omtaler og medier, parterne, andre lande nævnt som part og op til fire artikler. Landesiden åbner, når man trykker på selve landet eller på "Se hele landet".
+- Landesiden tegner kun bekræftede konflikter. Par, der venter på tjek, får deres streg, når man peger på eller trykker på rækken.
+- Zoom op til 40 gange. Regionerne toner frem fra 15 gange og står fuldt fra 25 gange. Hovedstædernes navne kommer stadig frem fra 2 gange.
+- Søljen "Lige nu" i bunden viser alt med alvor 4, der er nyt inden for tre dage, og alle smitteudbrud på mistanke. Et tryk fører hen til hændelsen.
+- Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag
 

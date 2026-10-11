@@ -35,17 +35,17 @@ const I3 = new Map(Object.entries(LANDE).map(([a2, L]) => [L.i3, a2]));
 
 const VINDUE = { konflikt: 7, militaer: 30 };
 const MIN_MISTANKE = 2, MIN_MEDIER = 5, MIN_LANDE = 3, MIN_DAGE = 3;
-const MAKS_FILER = 700;          // højst så mange kvarterer pr. kørsel (ca. 7 døgn)
+const MAKS_FILER = +(process.env.MAKS_FILER || 700);          // højst så mange kvarterer pr. kørsel (ca. 7 døgn)
 const CACHE_DAGE = 7;            // hvor længe en hændelse huskes, så senere omtaler kan kobles på
 const MAKS_ARTIKLER = 12;
-const VERSION = 4;
+const VERSION = 5;
 const NU = new Date(), DAG = 864e5;
 const dagStr = ms => new Date(ms).toISOString().slice(0, 10);
 const stamp = d => d.toISOString().replace(/[-:T]/g, '').slice(0, 14);
 const fraStamp = s => Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8), +s.slice(8, 10), +s.slice(10, 12));
 
 // ---------- forrige tilstand ----------
-let T = { v: VERSION, sidste: null, ev: {}, p: {}, hv: {}, g: {}, gd: {} };
+let T = { v: VERSION, sidste: null, ev: {}, p: {}, hv: {}, g: {}, gd: {}, gi: {} };
 if (FORRIGE) {
   try {
     const r = await fetch(FORRIGE + (FORRIGE.includes('?') ? '&' : '?') + 'v=' + Date.now(), { signal: AbortSignal.timeout(30000) });
@@ -101,9 +101,12 @@ for (let i = 0; i < kvarterer.length; i += 12) {
       // militær, oprørere, opstandsgruppe, separatister eller anden væbnet gruppe. Det holder almindelig
       // kriminalitet og overført brug af ord som "fight" ude.
       const vaebnet = /^(MIL|REB|INS|SEP|UAF)/.test(c[12]) || /^(MIL|REB|INS|SEP|UAF)/.test(c[22]) || /^(MIL|REB|INS|SEP|UAF)/.test(c[13]) || /^(MIL|REB|INS|SEP|UAF)/.test(c[23]);
-      if ((c[28] === '19' || c[28] === '20' || c[26] === '183') && vaebnet && +c[51] > 2 && c[56] && c[57]) T.hv[c[0]] = [+c[56], +c[57], dagK, 'k'];
+      // Stedets navn (fx "Fort Hood, Texas, United States"), parternes lande og parternes type huskes,
+      // så en prik kan vise, hvad der er omtalt netop dér.
+      const hvMed = t => [+c[56], +c[57], dagK, t, c[52] || '', I3.get(c[7]) || '', I3.get(c[17]) || '', (c[12] || '').slice(0, 3), (c[22] || '').slice(0, 3)];
+      if ((c[28] === '19' || c[28] === '20' || c[26] === '183') && vaebnet && +c[51] > 2 && c[56] && c[57]) T.hv[c[0]] = hvMed('k');
       // Demonstrationer og protester (rod 14) tælles for sig.
-      else if (c[28] === '14' && +c[51] > 2 && c[56] && c[57]) T.hv[c[0]] = [+c[56], +c[57], dagK, 'd'];
+      else if (c[28] === '14' && +c[51] > 2 && c[56] && c[57]) T.hv[c[0]] = hvMed('d');
       const a = I3.get(c[7]), b = I3.get(c[17]); if (!a || !b || a === b) continue;
       const kode = c[26], rod = c[28];
       let type = null;
@@ -121,6 +124,13 @@ for (let i = 0; i < kvarterer.length; i += 12) {
         const G = hv[3] === 'd' ? T.gd : T.g;
         const celle = `${Math.round(hv[0] * 2) / 2},${Math.round(hv[1] * 2) / 2}`, g = G[hv[2]] || (G[hv[2]] = {});
         g[celle] = (g[celle] || 0) + 1;
+        // Hvad der er omtalt i cellen: stednavne, medier, artikler, parternes lande og type.
+        const I = T.gi[hv[2]] || (T.gi[hv[2]] = {}), o = I[hv[3] + celle] || (I[hv[3] + celle] = { n: {}, a: [], l: {}, p: {}, m: [] });
+        if (hv[4]) o.n[hv[4]] = (o.n[hv[4]] || 0) + 1;
+        if (!o.m.includes(d)) o.m.push(d);
+        for (const x of [hv[5], hv[6]]) if (x) o.l[x] = (o.l[x] || 0) + 1;
+        for (const x of [hv[7], hv[8]]) if (x) o.p[x] = (o.p[x] || 0) + 1;
+        if (/^https?:\/\//.test(c[5]) && !o.a.some(x => x[1] === d)) { o.a.unshift([c[5], d]); o.a = o.a.slice(0, 6); }
       }
       if (!e) continue;
       const [type, a, b] = e;
@@ -210,7 +220,7 @@ const cacheGr = dagStr(NU.getTime() - CACHE_DAGE * DAG);
 for (const [id, e] of Object.entries(T.ev)) if (e[3] < cacheGr) delete T.ev[id];
 const hvGr = dagStr(NU.getTime() - DAG);
 for (const [id, e] of Object.entries(T.hv)) if (e[2] < hvGr) delete T.hv[id];
-for (const G of [T.g, T.gd]) for (const dag of Object.keys(G)) if (dag < graense('konflikt')) delete G[dag];
+for (const G of [T.g, T.gd, T.gi]) for (const dag of Object.keys(G)) if (dag < graense('konflikt')) delete G[dag];
 for (const [k, p] of Object.entries(T.p)) {
   for (const dag of Object.keys(p.d)) if (dag < graense(p.t)) delete p.d[dag];
   p.art = p.art.filter(x => x[2] >= graense(p.t));
@@ -258,12 +268,38 @@ function landFor(la, lo) {
 const DATOLINJER = [[38.9, -77.0], [40.7, -74.0], [42.0, -75.0], [51.5, -0.1], [48.9, 2.3], [50.8, 4.4], [46.2, 6.1], [52.5, 13.4],
   [48.2, 16.4], [52.1, 4.3], [45.4, -75.7], [-35.3, 149.1], [35.7, 139.7], [39.9, 116.4], [25.3, 51.5], [30.0, 31.2], [55.7, 12.6]];
 const datolinje = (la, lo) => DATOLINJER.some(([a, b]) => Math.abs(a - la) <= .6 && Math.abs(b - lo) <= .6);
-function celler(G) {
+// Samlet oplysning om en celle over vinduets dage: det hyppigste stednavn, antal medier, op til fire
+// artikler (én pr. medie), lande nævnt som part mindst to gange og parternes type.
+function cellInfo(noegle) {
+  const n = {}, l = {}, p = {}, m = new Set(), a = [];
+  for (const dag of Object.keys(T.gi).sort().reverse()) {
+    const o = T.gi[dag][noegle]; if (!o) continue;
+    for (const [k, x] of Object.entries(o.n)) n[k] = (n[k] || 0) + x;
+    for (const [k, x] of Object.entries(o.l)) l[k] = (l[k] || 0) + x;
+    for (const [k, x] of Object.entries(o.p)) p[k] = (p[k] || 0) + x;
+    for (const d of o.m) m.add(d);
+    for (const [url, d] of o.a) if (MEDIER[d] && !a.some(x => x.d === d) && a.length < 4) a.push({ d, url });
+  }
+  const top = Object.entries(n).sort((x, y) => y[1] - x[1])[0];
+  return { navn: top ? top[0] : '', medier: m.size, art: a.map(x => ({ url: x.url, medie: MEDIER[x.d][0] })),
+    lande: Object.entries(l).filter(([, x]) => x >= 2).sort((x, y) => y[1] - x[1]).slice(0, 6).map(([k]) => k),
+    parter: Object.entries(p).sort((x, y) => y[1] - x[1]).slice(0, 4).map(([k, x]) => [k, x]) };
+}
+// Celler uden for 1:110m-kortet (fx Gaza og små øer): navnet afgør Gaza og Vestbredden, ellers det land,
+// hvis hovedstad eller midtpunkt ligger nærmest inden for 1,5 grad.
+function landForCelle(la, lo, info) {
+  if (info && /^(Gaza|West Bank)\b/.test(info.navn)) return 'PS';
+  const f = landFor(la, lo); if (f) return f;
+  let b = null, bd = 1.5 * 1.5;
+  for (const [a2, L] of Object.entries(LANDE)) { const [y, x] = L.hs ? [L.hs[0], L.hs[1]] : [L.lat, L.lon]; const d = (y - la) ** 2 + (x - lo) ** 2; if (d < bd) { bd = d; b = a2; } }
+  return b;
+}
+function celler(G, type) {
   const sum = {};
   for (const g of Object.values(G)) for (const [k, n] of Object.entries(g)) { const [la, lo] = k.split(',').map(Number); if (G === T.g && datolinje(la, lo)) continue; sum[k] = (sum[k] || 0) + n; }
-  return Object.entries(sum).filter(([, n]) => n >= 2).map(([k, n]) => { const [la, lo] = k.split(',').map(Number); return [la, lo, n, landFor(la, lo)]; }).sort((a, b) => b[2] - a[2]);
+  return Object.entries(sum).filter(([, n]) => n >= 2).map(([k, n]) => { const [la, lo] = k.split(',').map(Number); const info = n >= 5 ? cellInfo(type + k) : null; const c = [la, lo, n, landForCelle(la, lo, info)]; if (info) c.push(info); return c; }).sort((a, b) => b[2] - a[2]);
 }
-const v = celler(T.g), vd = celler(T.gd);
+const v = celler(T.g, 'k'), vd = celler(T.gd, 'd');
 // Lande med kampe eller demonstrationer. Alvor efter, hvor meget kampene er omtalt af medierne på
 // listen de sidste 7 dage: fra 20 omtaler 2, fra 100 omtaler 3, fra 400 omtaler 4. Kun demonstrationer giver 1.
 const kl = {};
@@ -278,7 +314,7 @@ streger.sort((x, y) => RANG[x.status] - RANG[y.status] || y.medier - x.medier);
 
 writeFileSync(join(UD, 'medier-tal.json'), JSON.stringify(T) + '\n');
 writeFileSync(join(UD, 'konflikter.json'), JSON.stringify({ genereret: NU.toISOString(), sidste: T.sidste, kilde: 'GDELT 2.0 og vores medieliste',
-  regler: { MIN_MISTANKE, MIN_MEDIER, MIN_LANDE, MIN_DAGE, VINDUE }, s: streger, v, vd: vd.map(x => x.slice(0, 3)), k }) + '\n');
+  regler: { MIN_MISTANKE, MIN_MEDIER, MIN_LANDE, MIN_DAGE, VINDUE }, s: streger, v, vd, k }) + '\n');
 console.log(`Varmekort: ${v.length} celler med kampe, ${vd.length} med demonstrationer. ${k.length} lande.`);
 const tael = s => streger.filter(x => x.status === s).length;
 console.log(`Skrev ${streger.length} streger: ${tael('bekraeftet')} bekræftet, ${tael('afventer')} afventer tjek, ${tael('mistanke')} mistanke.`);

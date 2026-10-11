@@ -71,7 +71,7 @@ html,body{height:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--display);-webkit-font-smoothing:antialiased}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 362px;grid-template-rows:auto minmax(0,1fr) auto auto auto;
+.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 362px;grid-template-rows:auto minmax(0,1fr) auto auto auto auto;
   padding:0 16px;padding-block-end:14px}
 header{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px 16px;padding:12px 0 10px;border-bottom:1px solid var(--rule)}
 header .sub{grid-column:1/-1}
@@ -224,6 +224,28 @@ canvas.drag{cursor:grabbing}
 .detail .x{position:absolute;right:6px;top:6px;background:var(--panel);border:0;color:var(--fg-faint);cursor:pointer;font-size:16px;line-height:1;padding:4px 7px}
 .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c);
   border:1px solid var(--c);border-radius:2px;padding:2px 6px;justify-self:start}
+.lafs .kr.vaelg{cursor:pointer;border-radius:0 6px 6px 0}
+.lafs .kr.vaelg:hover,.lafs .kr.vaelg[aria-pressed="true"]{background:var(--panel-2)}
+.lafs .kr.vaelg[aria-pressed="true"]{border-left-style:solid;border-left-width:3px}
+.artl{display:flex;flex-direction:column;gap:5px;font-size:12.5px}
+.landknap{margin-top:12px;background:var(--panel-2);border:1px solid var(--rule);border-radius:7px;color:var(--fg);font:inherit;font-size:12.5px;padding:8px 12px;cursor:pointer;width:100%;text-align:left}
+.landknap:hover{border-color:var(--c)}
+.landknap::after{content:" →";color:var(--fg-dim)}
+/* Søljen i bunden med alvor 4 og mistanker. Står stille, når man peger på den, og ruller ikke ved reduceret bevægelse. */
+.ticker{grid-column:1/-1;display:flex;align-items:center;gap:12px;margin-top:10px;padding-top:9px;border-top:1px solid var(--rule);min-width:0}
+.tk-lbl{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--s4);white-space:nowrap}
+.tk-lbl::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--s4);animation:tkpuls 1.6s ease-in-out infinite}
+@keyframes tkpuls{50%{opacity:.25}}
+.tk-vindue{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
+.tk-baand{display:flex;gap:30px;width:max-content;animation:tkrul var(--tk-tid,60s) linear infinite}
+.tk-vindue:hover .tk-baand,.tk-vindue:focus-within .tk-baand{animation-play-state:paused}
+@keyframes tkrul{to{transform:translateX(-50%)}}
+.tk-p{display:flex;align-items:center;gap:7px;background:none;border:0;padding:3px 0;font:inherit;font-size:12.5px;color:var(--fg);cursor:pointer;white-space:nowrap}
+.tk-p:hover .t{text-decoration:underline;text-decoration-color:var(--c);text-underline-offset:3px}
+.tk-p .d{display:flex;color:var(--c)}
+.tk-p .m{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);border:1px solid currentColor;border-radius:3px;padding:0 4px;line-height:15px}
+.tk-p .m.mist{border-style:dashed}
+@media (prefers-reduced-motion:reduce){.tk-vindue{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -371,7 +393,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 .g-s b{font-size:13.5px;color:var(--fg)}
 .g-s span{font-size:12.5px;line-height:1.45;color:var(--fg-dim)}
 @media (max-width:900px){
-  .app{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 54vh auto auto auto auto;overflow-y:auto}
+  .app{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 54vh auto auto auto auto auto;overflow-y:auto}
   .stage,.mapctl,.side{grid-column:1;grid-row:auto}
   header{grid-template-columns:minmax(0,1fr) auto auto}
   .temabtn{grid-column:2;grid-row:1;justify-self:end}
@@ -479,6 +501,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <div class="list" id="list"></div>
     </div>
   </aside>
+
+  <div class="ticker" id="ticker" hidden>
+    <span class="tk-lbl">Lige nu</span>
+    <div class="tk-vindue" role="region" aria-label="Alvor 4 og mistanker lige nu"><div class="tk-baand" id="tkbaand"></div></div>
+  </div>
 
   <div class="timebar">
     <span class="cap">Tidspunkt</span>
@@ -1341,8 +1368,12 @@ function stageAt(e, ms){
 }
 const liveAt = (e, ms) => e._feed ? ms >= T1 : e.t0 <= ms;
 // Maskinmeldinger fra feeds.json. De gælder kun i dag og vises ikke, når tidslinjen står tilbage i tiden.
-let FEEDS = [], FEEDINFO = null, GRAENSER = null, HJAELP = {}, FLUGT = {}, KONF = [], KONFINFO = null, HS = null, KRIG = [];
-const erLand = e => !!(e && e._feed && (e.ret === 'rejse' || e.ret === 'krig') && e.a2);
+let FEEDS = [], FEEDINFO = null, GRAENSER = null, HJAELP = {}, FLUGT = {}, KONF = [], KONFINFO = null, HS = null, KRIG = [], STEDER = [];
+// Et land (landesiden) er en rejsevejledning eller landets samlede krig og konflikt. Et sted (en prik for kampe eller
+// demonstrationer ét sted i landet) er ikke et land og får sit eget panel.
+const erLand = e => !!(e && e._feed && !e._sted && (e.ret === 'rejse' || e.ret === 'krig') && e.a2);
+// Konfliktpar, hvis streg vises, fordi man peger på eller har trykket på rækken på landesiden.
+let visPar = null, visParFast = null;
 const ALLE = () => FEEDS.length ? EVENTS.concat(FEEDS) : EVENTS;
 function regionAf(lat, lon, sted){
   if(/Danmark/.test(sted)) return 'Europa';
@@ -1562,7 +1593,8 @@ function draw(){
       if(x.type === 'militaer' && !med) continue;
       // Er noget valgt, vises kun det valgte lands streger. Er det ikke et land under krig og konflikt, vises ingen.
       if(selected && !med) continue;
-      if(!fast && (!med || mistMode === 'aldrig')) continue;
+      // Par, der ikke er bekræftet, tegnes kun, når man peger på eller har trykket på rækken på landesiden.
+      if(!fast && (!med || (visPar !== x.id && visParFast !== x.id))) continue;
       if(med){ partnere.add(x.a); partnere.add(x.b); }
       ctx.save();
       ctx.strokeStyle = x.type === 'militaer' ? T['--stoette'] : retCol({ret:'krig'});
@@ -1571,6 +1603,15 @@ function draw(){
       if(!fast) ctx.setLineDash([5, 4]);
       tegnLinje(greatCircle([x.aLon, x.aLat], [x.bLon, x.bLat], 48));
       ctx.restore();
+    }
+  }
+  // Et valgt sted: streger kun til de lande, GDELT nævner som part i hændelserne netop dér.
+  if(valgt && valgt._sted && valgt.info && HS && retOn.has('krig')){
+    for(const b of valgt.info.lande || []){
+      if(b === valgt.a2 || !HS[b]) continue;
+      partnere.add(b);
+      ctx.save(); ctx.strokeStyle = retCol({ret:'krig'}); ctx.globalAlpha = .75; ctx.lineWidth = 1.4; ctx.setLineDash([5, 4]);
+      tegnLinje(greatCircle([valgt.lon, valgt.lat], [HS[b][2], HS[b][1]], 48)); ctx.restore();
     }
   }
   // Humanitær hjælp (OCHA FTS): grønne streger fra donorlandene til det valgte land.
@@ -1732,9 +1773,11 @@ function visKlyngeliste(c){
   }
   detail.appendChild(ul);
 }
-// Regioner i landene (Natural Earth admin 1). Hentes pr. land, når man zoomer ind til 20 gange.
-// Regionerne toner frem fra 2 gange og står lige så kraftigt som landegrænserne fra 20 gange og op.
-const REGION_ZOOM = 2, REGION_FULD = 20;
+// Regioner i landene (Natural Earth admin 1). Hentes pr. land, når man zoomer ind til 15 gange.
+// Regionerne toner frem fra 15 gange (styrke 0) og står lige så kraftigt som landegrænserne fra 25 gange og op til 40.
+const REGION_ZOOM = 15, REGION_FULD = 25;
+// Hovedstædernes navne kommer frem tidligere end regionerne.
+const HS_ZOOM = 2;
 const regionStyrke = () => Math.max(0, Math.min(1, (zoom - REGION_ZOOM) / (REGION_FULD - REGION_ZOOM)));
 let REG_INDEX = null, regIndexHentes = false;
 const REG = {};
@@ -1796,7 +1839,7 @@ function tegnHovedstadsnavne(partnere){
   // Hovedstad og land, fx "København, Danmark", med fed. Kommer frem sammen med regionerne fra 2 gange
   // og står tydeligt fra 4 gange. Lande med forbindelse til det valgte land står altid.
   ctx.font = '700 11px ' + getComputedStyle(document.body).fontFamily; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
-  const frem = Math.max(0, Math.min(1, (zoom - REGION_ZOOM) / 2));
+  const frem = Math.max(0, Math.min(1, (zoom - HS_ZOOM) / 2));
   const brugt = [], alle = frem > 0;
   // Partnerne først, så de altid får plads.
   const liste = [...partnere].concat(alle ? Object.keys(HS).filter(a => !partnere.has(a)) : []);
@@ -2139,6 +2182,17 @@ function landPunkt(e, tekst){
   b.innerHTML = `<span class="d">${svgIc(retAf(e), 12)}</span>`; b.append(el('span','t', tekst));
   b.addEventListener('click', () => select(e.id, true)); return b;
 }
+// En række på landesiden, hvis streg vises, når man peger på den, og bliver stående, når man trykker.
+function parRaekke(r, kx){
+  r.classList.add('vaelg'); r.tabIndex = 0; r.setAttribute('role', 'button'); r.setAttribute('aria-pressed', String(visParFast === kx.id));
+  r.addEventListener('pointerenter', () => { visPar = kx.id; draw(); });
+  r.addEventListener('pointerleave', () => { visPar = null; draw(); });
+  const skift = ev => { if(ev.target.closest('a')) return; visParFast = visParFast === kx.id ? null : kx.id;
+    for(const x of detail.querySelectorAll('.kr.vaelg')) x.setAttribute('aria-pressed', 'false');
+    r.setAttribute('aria-pressed', String(visParFast === kx.id)); draw(); };
+  r.addEventListener('click', skift);
+  r.addEventListener('keydown', ev => { if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); skift(ev); } });
+}
 function visLand(e){
   const d = landData(e.a2);
   detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
@@ -2167,9 +2221,16 @@ function visLand(e){
   if(d.krig || d.konf.length){
     const b = landAfsnit('Krig og konflikt', 'konf');
     if(d.krig) b.appendChild(el('p','lt', d.krig.tekst));
+    const steder = STEDER.filter(st => st.a2 === d.a2).sort((p, q) => q.n - p.n);
+    if(steder.length){
+      b.appendChild(el('p','dim', 'Steder, medierne nævner. Tryk for at se, hvad der er skrevet om netop dét sted.'));
+      for(const st of steder.slice(0, 8)) b.appendChild(landPunkt(st, `${st.stedKort} · ${st.titel.toLowerCase()} · ${st.n.toLocaleString('da-DK')} omtaler`));
+    }
     const STATUS = {bekraeftet:'Bekræftet af medier', afventer:'Venter på tjek', mistanke:'Mistanke'};
+    if(d.konf.some(kx => kx.status !== 'bekraeftet')) b.appendChild(el('p','dim', 'Kun bekræftede konflikter har en streg på kloden. Peg på eller tryk på et land herunder for at se stregen.'));
     for(const kx of d.konf){
       const r = document.createElement('div'); r.className = 'kr ' + kx.status;
+      if(kx.status !== 'bekraeftet') parRaekke(r, kx);
       r.append(el('b','', kx.a === d.a2 ? kx.bNavn : kx.aNavn), el('span','st', STATUS[kx.status]), el('span','m', `${kx.medier} medier fra ${kx.lande} lande på ${kx.dage} dage`));
       if(kx.kurve){ const s2 = el('span','kv'); s2.innerHTML = sparkKurve(kx.kurve); r.appendChild(s2); }
       if(kx.tjek && kx.tjek.note) r.appendChild(el('span','n', kx.tjek.note));
@@ -2184,6 +2245,7 @@ function visLand(e){
     const b = landAfsnit('Militær støtte ifølge medierne', 'konf militaer');
     for(const kx of d.stoette){
       const r = document.createElement('div'); r.className = 'kr ' + kx.status;
+      if(kx.status !== 'bekraeftet') parRaekke(r, kx);
       r.append(el('b','', kx.b === d.a2 ? `Fra ${kx.aNavn}` : `Til ${kx.bNavn}`), el('span','st', kx.status === 'bekraeftet' ? 'Bekræftet af medier' : kx.status === 'afventer' ? 'Venter på tjek' : 'Mistanke'), el('span','m', `${kx.medier} medier fra ${kx.lande} lande på ${kx.dage} dage`));
       const a = el('span','ar'); for(const art of kx.art.slice(0, 3)) a.appendChild(kildeLink(`${art.medie}, medie`, art.url)); r.appendChild(a); b.appendChild(r);
     }
@@ -2277,7 +2339,7 @@ function select(id, fly){
   // Listen bygges om ved hvert valg. Stod fokus i listen, sættes det tilbage på den valgte hændelse.
   const iListen = list.contains(document.activeElement);
   setFocus(id);
-  selected = id; const e = byId[id];
+  selected = id; const e = byId[id]; visParFast = null; visPar = null; idle = performance.now();
   if(fly) target = {lam:-e.lon, phi: Math.max(-80, Math.min(80, e.lat))};
   showDetail(e); render();
   if(iListen){ const cur = list.querySelector('[aria-current="true"]'); if(cur) cur.focus({preventScroll:true}); }
@@ -2352,6 +2414,7 @@ function kildeLink(t, u){
   return a;
 }
 function showDetail(e){
+  if(e._sted) return visSted(e);
   if(erLand(e)) return visLand(e);
   if(e._feed) return visFeed(e);
   const st = stageAt(e, cutoff), s = SK[st];
@@ -2498,11 +2561,16 @@ function hit(ev){
     if(d < bd){ bd = d; best = e; }
   }
   if(best) select(best.id, false);
-  else { selected = null; setFocus(null); detail.hidden = true; render(); skrivAdresse(); }
+  else {
+    // Ingen prik: et tryk på et land åbner landesiden, et tryk på havet lukker detaljerne.
+    const a2 = landVed(mx, my), lo = a2 && landObj(a2);
+    if(lo) select(lo.id, false);
+    else { selected = null; setFocus(null); detail.hidden = true; render(); skrivAdresse(); }
+  }
 }
 cv.addEventListener('wheel', ev => { ev.preventDefault(); zoomMaal = null;
   skjulTip(); setZoom(zoom*Math.exp(-ev.deltaY*(ev.deltaMode ? 0.05 : 0.0018))); idle = performance.now(); }, {passive:false});
-const ZMAX = 30;
+const ZMAX = 40;
 function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
 document.getElementById('zin').addEventListener('click', () => { zoomMaal = null; setZoom(zoom*1.3); idle = performance.now(); });
 document.getElementById('zout').addEventListener('click', () => { zoomMaal = null; setZoom(zoom/1.3); idle = performance.now(); });
@@ -2603,7 +2671,9 @@ function tick(now){
     rot.lam += d*0.1; rot.phi += (target.phi-rot.phi)*0.1;
     if(Math.abs(d) < 0.3 && Math.abs(target.phi-rot.phi) < 0.3){ rot.lam = target.lam; rot.phi = target.phi; target = null; }
     need = true;
-  } else if(!dragging && !reduce && !rotPause && now-idle > 5000 && !selected && !playing){ rot.lam += 0.04; need = true; }
+  } else if(!dragging && !reduce && !rotPause && now-idle > (selected ? 10000 : 5000) && !playing && !zoomMaal){
+    // Efter et valg venter kloden 10 sekunder, før den drejer igen. Tæt på drejer den langsommere, så det valgte ikke farer forbi.
+    rot.lam += 0.04 / Math.max(1, zoom / START_ZOOM); need = true; }
   if(need) draw();
   requestAnimationFrame(tick);
 }
@@ -2680,7 +2750,7 @@ seg('segMist', [
 ], v => { mistMode = v; });
 document.getElementById('retalle').addEventListener('click', () => { retOn = new Set(alleRet()); foerFokus = null; render(); });
 document.getElementById('retingen').addEventListener('click', () => { retOn = new Set(); foerFokus = null; render(); });
-document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Landenes regioner toner frem fra 2 gange og står fuldt fra 20 gange.');
+document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 40 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange.');
 document.getElementById('zout').dataset.tip = TT('Zoom ud', 'Tilbage mod hele kloden.');
 visRotKnap();
 document.getElementById('zreset').dataset.tip = TT('Nulstil visning', 'Hele kloden, som da siden blev åbnet.');
@@ -2768,7 +2838,7 @@ function bygGuide(){
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 2 gange og står fuldt fra 20 gange, med navn fra cirka 7 gange.'),
+    gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
@@ -2793,16 +2863,42 @@ fetch('/hovedstaeder.json').then(r => r.ok ? r.json() : null).then(j => { if(j &
 // Markører for krig og konflikt: ét pr. land med kampe eller demonstrationer ifølge medierne.
 // Alvor følger omtalen (se tools/hent-medier.mjs). Et land uden rejsevejledning fra orange og op og uden
 // bekræftet konflikt kan højst få alvor 2, så omtale alene ikke gør et roligt land rødt.
+// Parternes type ifølge GDELT (CAMEO-koder) på dansk.
+const PARTER = {MIL:'militær', REB:'oprørere', INS:'opstandsgrupper', SEP:'separatister', UAF:'væbnede grupper', CVL:'civile', COP:'politi',
+  GOV:'regering', OPP:'opposition', LEG:'parlament', MED:'medier', JUD:'retsvæsen', EDU:'uddannelse', BUS:'erhverv', CRM:'kriminelle',
+  LAB:'fagbevægelse', REF:'flygtninge', HLH:'sundhedsvæsen', SPY:'efterretning', IGO:'internationale organisationer', NGO:'organisationer',
+  REL:'religiøse', ELI:'eliten', AGR:'landbrug', ENV:'miljø', RAD:'radikale', MOD:'moderate', HRI:'menneskerettigheder', SET:'bosættere', DEV:'udvikling'};
+// "Fort Hood, Texas, United States" bliver til "Fort Hood, Texas". Gentagne led ("Tigray, Tigray") står én gang.
+// Første led er byen eller stedet. Andet led (fx delstaten) kommer med, hvis det er læsbart og ikke bare en anden
+// stavemåde af det første eller landets navn. GDELT's navne har af og til ødelagte tegn; de fjernes.
+function stedNavn(navn, landNavn){
+  const d = String(navn || '').replace(/\s*\(general\)/gi, '').split(',').map(x => x.trim()).filter(Boolean);
+  const sidst = d.length > 1 ? d.pop() : '';
+  const ren = x => !/[\u0080-\u009f?]/.test(x);
+  const ud = d[0] ? [d[0].replace(/[\u0080-\u009f]/g, "'").replace(/\?/g, '')] : [];
+  if(d[1] && ren(d[1]) && d[1] !== sidst && d[1].slice(0, 2).toLowerCase() !== d[0].slice(0, 2).toLowerCase()) ud.push(d[1]);
+  return ud.join(', ') || landNavn;
+}
+// Landets danske navn: fra hovedstadslisten, ellers browserens egen liste over lande.
+const DN = (() => { try{ return new Intl.DisplayNames(['da'], {type:'region'}); }catch(err){ return null; } })();
+const landNavnAf = a2 => (HS && HS[a2] && HS[a2][0]) || (DN && DN.of(a2)) || a2;
+// Lande uden for 1:110m-kortet (fx Gaza) får det land, hvis hovedstad er nærmest inden for 1,5 grad.
+function naermesteLand(la, lo){
+  let b = null, bd = 1.5*1.5;
+  for(const a2 in HS || {}){ const d = (HS[a2][1]-la)**2 + (HS[a2][2]-lo)**2; if(d < bd){ bd = d; b = a2; } }
+  return b;
+}
 function byggKrig(){
   if(!KONFINFO || !Array.isArray(KONFINFO.k) || !FEEDINFO) return;
   FEEDS = FEEDS.filter(e => e.ret !== 'krig');
   const rejseNiv = {}; for(const e of FEEDS) if(e.ret === 'rejse') rejseNiv[e.a2] = Math.max(rejseNiv[e.a2] || 0, e.alvor);
   const bek = new Set(); for(const x of KONF) if(x.type === 'konflikt' && x.status === 'bekraeftet'){ bek.add(x.a); bek.add(x.b); }
+  // Landets samlede krig og konflikt. Står på landesiden og i listen over fulgte lande, ikke som prik.
   KRIG = KONFINFO.k.map(k => {
     let a = k.alvor; if(!((rejseNiv[k.a2] || 0) >= 3 || bek.has(k.a2))) a = Math.min(a, 2);
     if(bek.has(k.a2)) a = Math.max(a, 3);
     const h = HS && HS[k.a2], top = k.top && k.top[0];
-    const [lat, lon] = top ? [top[0], top[1]] : h ? [h[1], h[2]] : [null, null];
+    const [lat, lon] = h ? [h[1], h[2]] : top ? [top[0], top[1]] : [null, null];
     if(!Number.isFinite(lat)) return null;
     const del = [];
     if(k.kampe) del.push(`Kampe og angreb med væbnede parter er omtalt ${k.kampe.toLocaleString('da-DK')} gange af medierne på listen de sidste 7 dage.`);
@@ -2810,11 +2906,101 @@ function byggKrig(){
     return somFeed({ id:`konflikt-${k.a2}`, ret:'krig', alvor:a, a2:k.a2, titel: k.kampe >= 10 ? 'Kampe og angreb' : 'Demonstrationer', sted:k.navn,
       lat, lon, kilde:'GDELT og medielisten', url:'https://www.gdeltproject.org/', tekst: del.join(' '), tid: KONFINFO.genereret, opd: KONFINFO.genereret, kampe:k.kampe, demo:k.demo, top:k.top });
   }).filter(Boolean);
-  FEEDS = FEEDS.concat(KRIG);
   for(const e of KRIG) byId[e.id] = e;
-  const r = RETNINGER.find(x => x.k === 'krig'); if(r && (KRIG.length || KONF.length)) r.aktiv = true;
+  // Prikkerne: hvert sted (et felt på en halv grad, ca. 50 km) med mange omtaler får sin egen prik.
+  // Kampe fra 8 omtaler, højst 8 steder pr. land. Demonstrationer fra 15 omtaler, højst 3 pr. land, altid alvor 1.
+  // Alvor efter stedets omtaler, men aldrig over landets loft (2, medmindre rejsevejledningen er 3 eller 4, eller en konflikt er bekræftet).
+  const loft = {}; for(const e of KRIG) loft[e.a2] = ((rejseNiv[e.a2] || 0) >= 3 || bek.has(e.a2)) ? 4 : 2;
+  const pr = {};
+  STEDER = [];
+  for(const [liste, demo] of [[KONFINFO.v, false], [KONFINFO.vd, true]]) for(const c of liste || []){
+    const [la, lo, n, a2fil, info] = c;
+    const a2 = info && /^(Gaza|West Bank)\b/.test(info.navn || '') ? 'PS' : a2fil || naermesteLand(la, lo);
+    if(!a2 || !loft[a2] || n < (demo ? 15 : 8)) continue;
+    const nk = a2 + (demo ? 'd' : 'k'); pr[nk] = (pr[nk] || 0) + 1; if(pr[nk] > (demo ? 3 : 8)) continue;
+    let a = demo ? 1 : n >= 150 ? 3 : n >= 40 ? 2 : 1;
+    a = Math.min(a, loft[a2]); if(!demo && bek.has(a2) && n >= 40) a = Math.max(a, 3);
+    const landNavn = landNavnAf(a2), kort = info && info.navn ? stedNavn(info.navn, landNavn) : landNavn;
+    const e = somFeed({ id:`sted-${demo ? 'd' : 'k'}-${la}_${lo}`.replace(/\./g, 'p'), _sted:true, ret:'krig', alvor:a, a2, lat:la, lon:lo,
+      titel: demo ? 'Demonstrationer' : 'Kampe og angreb', sted: kort === landNavn ? landNavn : `${kort}, ${landNavn}`, stedKort:kort, landNavn,
+      kilde:'GDELT og medielisten', url:'https://www.gdeltproject.org/', tid:KONFINFO.genereret, opd:KONFINFO.genereret,
+      tekst:`Omtalt ${n.toLocaleString('da-DK')} gange${info ? ` af ${info.medier} ${info.medier === 1 ? 'medie' : 'medier'} fra listen` : ' af medierne på listen'} de sidste 7 dage.`,
+      n, info: info || null, demo });
+    STEDER.push(e); byId[e.id] = e;
+  }
+  FEEDS = FEEDS.concat(STEDER);
+  const r = RETNINGER.find(x => x.k === 'krig'); if(r && (STEDER.length || KONF.length)) r.aktiv = true;
   if(!foerFokus) retOn = new Set(alleRet());
-  buildRet(); bygGuide(); render(); laesAdresse();
+  buildRet(); bygGuide(); render(); laesAdresse(); bygTicker();
+}
+// Panelet for ét sted: kun det, der er omtalt netop dér.
+function visSted(e){
+  const i = e.info || {}, land = landObj(e.a2);
+  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
+  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk'); x.addEventListener('click', lukDetaljer);
+  const dl = document.createElement('dl'); dl.className = 'kv';
+  const rows = [['Alvor', `${e.alvor} · ${ALV[e.alvor].n}`], ['Omtaler', `${e.n.toLocaleString('da-DK')} de sidste 7 dage`]];
+  if(i.medier) rows.push(['Medier', `${i.medier} fra listen`]);
+  const parter = (i.parter || []).map(([k]) => PARTER[k]).filter(Boolean);
+  if(parter.length) rows.push(['Parter', parter.join(', ')]);
+  const andre = (i.lande || []).filter(a => a !== e.a2).map(landNavnAf);
+  if(andre.length) rows.push(['Andre lande nævnt', andre.join(', ')]);
+  for(const [k, v] of rows){ dl.appendChild(el('dt','',k)); dl.appendChild(el('dd','',v)); }
+  detail.append(x, el('span','chip', e.demo ? 'Demonstrationer' : 'Sted'), el('h2','', `${e.titel} · ${e.stedKort}`),
+    el('div','where', `${e.landNavn} · område på ca. 50 × 50 km omkring ${Math.abs(e.lat).toFixed(1)}° ${e.lat >= 0 ? 'N' : 'S'} ${Math.abs(e.lon).toFixed(1)}° ${e.lon >= 0 ? 'Ø' : 'V'}`),
+    dl, el('p','note', e.tekst + ' GDELT finder stedet automatisk i artiklerne. Det kan være et sted, der kun nævnes, fx en militærbase i en retssag, og ikke nødvendigvis kampe lige nu. Læs artiklerne, før du konkluderer noget.'));
+  const box = document.createElement('div'); box.className = 'lafs';
+  box.appendChild(el('h3','', 'Artikler om stedet'));
+  if(i.art && i.art.length){ const ul = el('div','artl'); for(const a of i.art) ul.appendChild(kildeLink(`${a.medie}, medie`, a.url)); box.appendChild(ul); }
+  else box.appendChild(el('p','dim','Artiklerne om stedet kommer med ved næste optælling.'));
+  if(andre.length) box.appendChild(el('p','dim', 'De røde streger går til de lande, artiklerne nævner som part i hændelserne her.'));
+  detail.appendChild(box);
+  if(land){
+    const b = el('button','landknap', `Se hele ${e.landNavn}`); b.type = 'button';
+    b.addEventListener('click', () => select(land.id, false)); detail.appendChild(b);
+  }
+  const sr = document.createElement('div'); sr.className = 'srcs';
+  sr.appendChild(kildeLink('GDELT 2.0', 'https://www.gdeltproject.org/'));
+  sr.appendChild(el('span','srclegend', 'Optalt automatisk blandt medierne på vores liste. Medier er ikke myndigheder.'));
+  detail.appendChild(sr);
+}
+// Landet under et punkt på skærmen. Bruges, når man trykker på et land uden at ramme en prik.
+function landVed(mx, my){
+  if(!GRAENSER) return null;
+  const x = (mx - view.cx)/view.R, y = (view.cy - my)/view.R, r2 = x*x + y*y; if(r2 >= 1) return null;
+  const z = Math.sqrt(1 - r2), p = rot.phi*DEG, cp = Math.cos(p), sp = Math.sin(p);
+  const lat = Math.asin(Math.max(-1, Math.min(1, cp*y + sp*z)))/DEG;
+  let lon = Math.atan2(x, cp*z - sp*y)/DEG - rot.lam; lon = ((lon + 540) % 360) - 180;
+  for(const a2 in GRAENSER) if(iLand(a2, lat, lon)) return a2;
+  return null;
+}
+// Det, landesiden åbnes med: rejsevejledningen, landets krig og konflikt eller et tomt land.
+function landObj(a2){
+  const r = FEEDS.find(e => e.ret === 'rejse' && e.a2 === a2); if(r) return r;
+  const k = KRIG.find(e => e.a2 === a2); if(k) return k;
+  if(!HS || !HS[a2]) return null;
+  const id = `land-${a2}`;
+  if(!byId[id]) byId[id] = somFeed({ id, ret:'rejse', alvor:1, a2, titel:HS[a2][0], sted:HS[a2][0], lat:HS[a2][1], lon:HS[a2][2], kilde:'', url:'' });
+  return byId[id];
+}
+// Søljen i bunden: alt med alvor 4, der er nyt inden for tre dage, og alle smitteudbrud på mistanke.
+// Et tryk fører hen til hændelsen, og kloden står stille i 10 sekunder.
+function bygTicker(){
+  const boks = document.getElementById('ticker'), baand = document.getElementById('tkbaand'); if(!boks) return;
+  const nu = T1, punkter = [];
+  for(const e of EVENTS){ if(!liveAt(e, nu)) continue; const st = stageAt(e, nu), a = alvorAt(e, st); if(a >= 4 || st === 'mistanke') punkter.push({e, mist: st === 'mistanke', ms: sidste(e).ms}); }
+  for(const e of FEEDS){ if(e.alvor < 4) continue; const ms = Date.parse(e.opd || e.tid || 0) || 0; if(nu - ms <= NY_DAGE*DAY + DAY) punkter.push({e, mist:false, ms}); }
+  punkter.sort((p, q) => q.ms - p.ms);
+  boks.hidden = !punkter.length; baand.innerHTML = ''; if(!punkter.length) return;
+  for(const kopi of [0, 1]) for(const {e, mist} of punkter){
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'tk-p'; b.style.setProperty('--c', retVar(e));
+    if(kopi){ b.tabIndex = -1; b.setAttribute('aria-hidden', 'true'); }
+    b.innerHTML = `<span class="d">${svgIc(retAf(e), 13)}</span><span class="m${mist ? ' mist' : ''}">${mist ? 'Mistanke' : 'Alvor 4'}</span>`;
+    b.append(el('span','t', e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`));
+    b.addEventListener('click', () => { select(e.id, true); zoomMaal = Math.max(zoom, 2.5); idle = performance.now(); });
+    baand.appendChild(b);
+  }
+  requestAnimationFrame(() => { baand.style.setProperty('--tk-tid', Math.max(30, baand.scrollWidth / 2 / 45) + 's'); });
 }
 // Mediesporets streger for krig og konflikt.
 fetch('/konflikter.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => {
@@ -2824,6 +3010,7 @@ fetch('/konflikter.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).
   if(selected && byId[selected]) showDetail(byId[selected]);
   visFoelg(); draw();
 }).catch(() => {});
+bygTicker();
 // Maskinmeldingerne hentes for sig, så siden virker, selv om filen mangler.
 fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {
   FEEDINFO = j;
@@ -2838,7 +3025,7 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   byggKrig();
   for(const r of RETNINGER) if(r.fk && (r.fk.some(k => j.kilder && j.kilder[k] && (j.kilder[k].ok || j.kilder[k].antal)) || FEEDS.some(h => h.ret === r.k))) r.aktiv = true;
   if(!foerFokus) retOn = new Set(alleRet());
-  buildRet(); bygGuide();
+  buildRet(); bygGuide(); bygTicker();
   if(FEEDS.some(h => h.ret === 'rejse' && h.a2))
     fetch('/graenser.json').then(r => r.ok ? r.json() : null).then(g => { if(g && g.l){ GRAENSER = g.l; draw(); } }).catch(() => {});
   subEl.append(' · ', el('span','', `${FEEDS.length} varsler fra ${Object.keys(j.kilder || {}).filter(k => j.kilder[k].antal).length} kilder, hentet ${klok(j.genereret)}`));
