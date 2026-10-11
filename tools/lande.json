@@ -247,6 +247,6 @@
 "WF":{"n":"Wallis og Futuna","i3":"WLF","lat":-13.3,"lon":-176.2,"en":["Wallis and Futuna","Territory of the Wallis and Futuna Islands","Territoire des îles Wallis et Futuna"]},
 "WS":{"n":"Samoa","i3":"WSM","lat":-13.58,"lon":-172.33,"en":["Samoa","Independent State of Samoa","Malo Saʻoloto Tutoʻatasi o Sāmoa"],"hs":[-13.842,-171.739,"Apia"]},
 "YE":{"n":"Yemen","i3":"YEM","lat":15,"lon":48,"en":["Yemen","Republic of Yemen","Yemeni Republic","al-Jumhūriyyah al-Yamaniyyah"],"hs":[15.357,44.205,"Sanaa"]},
-"ZA":{"n":"Sydafrika","i3":"ZAF","lat":-29,"lon":24,"en":["South Africa","Republic of South Africa","Suid-Afrika"],"hs":[-29.12,26.23,"Bloemfontein"]},
+"ZA":{"n":"Sydafrika","i3":"ZAF","lat":-29,"lon":24,"en":["South Africa","Republic of South Africa","Suid-Afrika"],"hs":[-25.746,28.188,"Pretoria"]},
 "ZM":{"n":"Zambia","i3":"ZMB","lat":-15,"lon":30,"en":["Zambia","Republic of Zambia"],"hs":[-15.415,28.281,"Lusaka"]},
 "ZW":{"n":"Zimbabwe","i3":"ZWE","lat":-20,"lon":30,"en":["Zimbabwe","Republic of Zimbabwe"],"hs":[-17.816,31.043,"Harare"]}}}

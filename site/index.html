@@ -530,6 +530,38 @@ const parse = s => s ? s.split("|").map(r => r.split(" ").map(p => {
   const i = p.indexOf(","); return [+p.slice(0,i), +p.slice(i+1)];
 })) : [];
 const land = parse(LAND), borders = parse(BORDERS);
+// Finere kort (Natural Earth 1:50m) med små øer som Fyn, Bornholm og Færøerne. Hentes første gang,
+// man zoomer ind til KORT_ZOOM, og bruges derefter fra den zoom og op.
+const KORT_ZOOM = 2.5;
+let LAND50 = null, BORD50 = null, kort50Hentes = false;
+// Hver ring får et midtpunkt og en vinkelradius, så ringe uden for synsfeltet kan springes over.
+function medKant(ringe){
+  const D = Math.PI/180;
+  for(const r of ringe){
+    let x = 0, y = 0, z = 0;
+    for(const [lo, la] of r){ const c = Math.cos(la*D); x += c*Math.cos(lo*D); y += c*Math.sin(lo*D); z += Math.sin(la*D); }
+    const n = Math.hypot(x, y, z) || 1; x /= n; y /= n; z /= n;
+    let maks = 0;
+    for(const [lo, la] of r){ const c = Math.cos(la*D); const d = Math.acos(Math.max(-1, Math.min(1, c*Math.cos(lo*D)*x + c*Math.sin(lo*D)*y + Math.sin(la*D)*z))); if(d > maks) maks = d; }
+    r.c = [x, y, z]; r.rad = maks;
+    const m = r.length; r.cb = new Float64Array(m); r.sb = new Float64Array(m); r.cl = new Float64Array(m); r.sl = new Float64Array(m);
+    for(let i=0;i<m;i++){ const lo = r[i][0]*D, la = r[i][1]*D; r.cb[i] = Math.cos(la); r.sb[i] = Math.sin(la); r.cl[i] = Math.cos(lo); r.sl[i] = Math.sin(lo); }
+  }
+  return ringe;
+}
+// Synsfeltets midte og vinkelradius. Bruges til at springe ringe over, der ikke kan ses.
+function synsfelt(){
+  const D = Math.PI/180, lo = -rot.lam*D, la = rot.phi*D;
+  const v = Math.min(Math.PI/2, Math.asin(Math.min(1, Math.hypot(W, H)/2/view.R)) + .02);
+  return { c:[Math.cos(la)*Math.cos(lo), Math.cos(la)*Math.sin(lo), Math.sin(la)], v };
+}
+const iSyne = (r, sf) => !r.c || Math.acos(Math.max(-1, Math.min(1, r.c[0]*sf.c[0] + r.c[1]*sf.c[1] + r.c[2]*sf.c[2]))) - r.rad <= sf.v;
+function hentKort50(){
+  if(kort50Hentes) return; kort50Hentes = true;
+  fetch('/kort-50m.txt').then(r => r.ok ? r.text() : Promise.reject(r.status)).then(t => {
+    const [l, b] = t.split('\n'); LAND50 = medKant(parse(l)); BORD50 = medKant(parse(b)); draw();
+  }).catch(() => { kort50Hentes = false; });
+}
 
 const STAGES = [
   {k:'mistanke',  n:'Mistanke',                  d:'Ubekræftet signal, diagnose ikke fastslået', v:'--s1'},
@@ -1296,7 +1328,9 @@ const senestMs = e => e._feed ? Date.parse(e.opd || e.tid || 0) || 0 : sidste(e)
 const DEG = Math.PI/180;
 // Hjem er det sted, kloden starter og nulstilles til: over ens eget område, hvis det kan slås op, ellers Europa og Afrika.
 let HJEM = {lam:-30, phi:22};
-let rot = {lam:HJEM.lam, phi:HJEM.phi}, zoom = 1, target = null;
+// Kloden starter og nulstilles til 1,5 gange zoom.
+const START_ZOOM = 1.5;
+let rot = {lam:HJEM.lam, phi:HJEM.phi}, zoom = START_ZOOM, target = null;
 const view = {cx:0, cy:0, R:0};
 function unit(lon, lat){
   const l = (lon + rot.lam)*DEG, b = lat*DEG, p = rot.phi*DEG;
@@ -1318,9 +1352,19 @@ function arcPts(out, a1, a2){
   for(let i=1;i<=steps;i++){ const a = a1+d*i/steps;
     out.push([view.cx + view.R*Math.cos(a), view.cy - view.R*Math.sin(a)]); }
 }
+// Rotationens sinus og cosinus, regnet én gang pr. tegning. Bruges af ringe med forudregnede
+// vinkler (det fine kort), så hvert punkt ikke skal have sine egne trigonometriske kald.
+let ROT = null;
+function rotNu(){ const l = rot.lam*DEG, p = rot.phi*DEG; ROT = {cL:Math.cos(l), sL:Math.sin(l), cp:Math.cos(p), sp:Math.sin(p), lam:rot.lam, phi:rot.phi}; }
+function ringVek(ring, i){
+  if(!ring.cb) return unit(ring[i][0], ring[i][1]);
+  if(!ROT || ROT.lam !== rot.lam || ROT.phi !== rot.phi) rotNu();
+  const cb = ring.cb[i], sb = ring.sb[i], cl = ring.cl[i]*ROT.cL - ring.sl[i]*ROT.sL, sl = ring.sl[i]*ROT.cL + ring.cl[i]*ROT.sL;
+  return { x: cb*sl, y: ROT.cp*sb - ROT.sp*cb*cl, z: ROT.sp*sb + ROT.cp*cb*cl };
+}
 function ringPath(ring){
   const n = ring.length, pts = new Array(n); let vis = 0;
-  for(let i=0;i<n;i++){ pts[i] = unit(ring[i][0], ring[i][1]); if(pts[i].z > 0) vis++; }
+  for(let i=0;i<n;i++){ pts[i] = ringVek(ring, i); if(pts[i].z > 0) vis++; }
   if(vis === 0) return null;
   if(vis === n) return pts.map(scr);
   const out = []; let pendingExit = null, firstEntry = null;
@@ -1377,7 +1421,9 @@ function draw(){
 
   ctx.fillStyle = T['--land']; ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .7;
   ctx.beginPath();
-  for(const ring of land){ const p = ringPath(ring); if(p) trace(p); }
+  if(zoom >= KORT_ZOOM && !LAND50) hentKort50();
+  const fin = zoom >= KORT_ZOOM && LAND50, sf = fin ? synsfelt() : null;
+  for(const ring of (fin ? LAND50 : land)){ if(fin && !iSyne(ring, sf)) continue; const p = ringPath(ring); if(p) trace(p); }
   ctx.fill(); ctx.stroke();
 
   // Krig og konflikt: lande med en rejsevejledning fra gul og op står en tone mørkere.
@@ -1394,10 +1440,11 @@ function draw(){
   // Landegrænserne står altid fuldt. Regionerne toner op til samme styrke.
   ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .8; ctx.globalAlpha = .75;
   ctx.beginPath();
-  for(const line of borders){
+  for(const line of (fin ? BORD50 : borders)){
+    if(fin && !iSyne(line, sf)) continue;
     let open = false;
     for(let i=0;i<line.length;i++){
-      const u = unit(line[i][0], line[i][1]);
+      const u = ringVek(line, i);
       if(u.z > 0){ const s = scr(u); open ? ctx.lineTo(s[0],s[1]) : (ctx.moveTo(s[0],s[1]), open = true); }
       else open = false;
     }
@@ -1600,7 +1647,8 @@ function tegnRegioner(){
   // Navne på regionerne, kun dem der står på skærmen.
   // Navnene kommer først med, når regionerne står tydeligt (fra ca. 15 gange), og toner frem med dem.
   if(st < .25){ return; }
-  ctx.font = '10.5px ' + MONO; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = T['--fg-faint'];
+  // Altid samme lille størrelse, uanset zoom.
+  ctx.font = '9.5px ' + MONO; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = T['--fg-faint'];
   ctx.globalAlpha = Math.min(1, (st - .25) / .5);
   const brugt = [];
   for(const a3 of lande){
@@ -1615,20 +1663,24 @@ function tegnRegioner(){
   ctx.textAlign = 'start'; ctx.globalAlpha = 1;
 }
 function tegnHovedstadsnavne(partnere){
-  ctx.font = '10.5px ' + getComputedStyle(document.body).fontFamily; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
-  const brugt = [], alle = zoom >= 2.2;
+  // Hovedstad og land, fx "København, Danmark", med fed. Kommer frem sammen med regionerne fra 2 gange
+  // og står tydeligt fra 4 gange. Lande med forbindelse til det valgte land står altid.
+  ctx.font = '700 11px ' + getComputedStyle(document.body).fontFamily; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+  const frem = Math.max(0, Math.min(1, (zoom - REGION_ZOOM) / 2));
+  const brugt = [], alle = frem > 0;
   // Partnerne først, så de altid får plads.
   const liste = [...partnere].concat(alle ? Object.keys(HS).filter(a => !partnere.has(a)) : []);
   for(const a2 of liste){
     const h = HS[a2]; if(!h) continue;
     const u = unit(h[2], h[1]); if(u.z <= .15) continue;
     const [x, y] = scr(u); if(x < 4 || y < 8 || x > W-70 || y > H-46) continue;
-    const w = ctx.measureText(h[0]).width;
-    if(brugt.some(b => x+6 < b[2] && x+6+w > b[0] && Math.abs(y-b[1]) < 12)) continue;
+    const tekst = h[3] ? `${h[3]}, ${h[0]}` : h[0];
+    const w = ctx.measureText(tekst).width;
+    if(brugt.some(b => x+6 < b[2] && x+6+w > b[0] && Math.abs(y-b[1]) < 13)) continue;
     brugt.push([x+6, y, x+6+w]);
-    ctx.globalAlpha = partnere.has(a2) ? .95 : .7;
-    ctx.fillStyle = T['--bg']; ctx.fillText(h[0], x+7, y+1);
-    ctx.fillStyle = T['--hs']; ctx.fillText(h[0], x+6, y);
+    ctx.globalAlpha = partnere.has(a2) ? 1 : .9 * frem;
+    ctx.fillStyle = T['--bg']; ctx.fillText(tekst, x+7, y+1);
+    ctx.fillStyle = T['--hs']; ctx.fillText(tekst, x+6, y);
   }
   ctx.globalAlpha = 1;
 }
@@ -2162,7 +2214,7 @@ const ZMAX = 30;
 function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
 document.getElementById('zin').addEventListener('click', () => { setZoom(zoom*1.3); idle = performance.now(); });
 document.getElementById('zout').addEventListener('click', () => { setZoom(zoom/1.3); idle = performance.now(); });
-document.getElementById('zreset').addEventListener('click', () => { target = {lam:HJEM.lam, phi:HJEM.phi}; setZoom(1); idle = performance.now(); });
+document.getElementById('zreset').addEventListener('click', () => { target = {lam:HJEM.lam, phi:HJEM.phi}; setZoom(START_ZOOM); idle = performance.now(); });
 cv.tabIndex = 0; cv.setAttribute('role', 'img');
 cv.addEventListener('keydown', ev => {
   const s = 6;
