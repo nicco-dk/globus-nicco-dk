@@ -36,7 +36,8 @@
 - Krig og konflikt har nu en prik pr. sted i stedet for én pr. land: kampe fra 8 omtaler (højst 8 steder pr. land) og demonstrationer fra 15 omtaler. Trykker man på en prik, ses kun det, der er omtalt netop dér: stedets navn fra GDELT, antal omtaler og medier, parterne, andre lande nævnt som part og op til fire artikler. Landesiden åbner, når man trykker på selve landet eller på "Se hele landet".
 - Landesiden tegner kun bekræftede konflikter. Par, der venter på tjek, får deres streg, når man peger på eller trykker på rækken.
 - Zoom op til 40 gange. Regionerne toner frem fra 15 gange og står fuldt fra 25 gange. Hovedstædernes navne kommer stadig frem fra 2 gange.
-- Søljen "Lige nu" i bunden viser alt med alvor 4, der er nyt inden for tre dage, og alle smitteudbrud på mistanke. Et tryk fører hen til hændelsen.
+- Nyt alvorstrin 5, akut: alvor 4 med en udvikling inden for tre dage og smitteudbrud på mistanke. Det gives af en fast regel og står ikke i datasættet. Rejsevejledninger bliver aldrig akut. Søljen "Lige nu" i bunden viser kun alvor 5, og et tryk fører hen til hændelsen. Under Alvor er "Kun 4" blevet til "Fra 4", og "Kun 5" er kommet til.
+- Rejsevejledninger er en service: knappen står for sig til højre og er slået fra ved start og ved Vis alle.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag

@@ -83,6 +83,9 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .rchip .d{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--fg-faint);border:1.5px solid currentColor}
 .rchip .d svg{width:16px;height:16px}
 .rchip .n{color:var(--fg-faint);font-variant-numeric:tabular-nums}
+.rchip.service{margin-left:auto;position:relative}
+.rchip.service::before{content:"";position:absolute;left:-12px;top:6px;bottom:6px;width:1px;background:var(--rule)}
+@media (max-width:900px){.rchip.service{margin-left:14px}}
 .rchip[aria-pressed="true"]{border-color:var(--c);color:var(--fg);background:color-mix(in srgb,var(--c) 12%,var(--panel))}
 .rchip[data-fokus="1"]{box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 45%,transparent)}
 .rchip[aria-pressed="true"] .d{color:var(--c);background:color-mix(in srgb,var(--c) 18%,transparent)}
@@ -504,7 +507,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 
   <div class="ticker" id="ticker" hidden>
     <span class="tk-lbl">Lige nu</span>
-    <div class="tk-vindue" role="region" aria-label="Alvor 4 og mistanker lige nu"><div class="tk-baand" id="tkbaand"></div></div>
+    <div class="tk-vindue" role="region" aria-label="Alvor 5, akut lige nu"><div class="tk-baand" id="tkbaand"></div></div>
   </div>
 
   <div class="timebar">
@@ -536,7 +539,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="g-dirs" id="gdirs"></div>
 
     <h3>Alvor</h3>
-    <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Ligger flere prikker tæt, samles de i én prik med antallet, og kanten viser retningernes farver. Zoom ind, eller tryk på prikken, så skilles de. Skalaen har fire trin, ligesom Udenrigsministeriets rejsevejledninger. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
+    <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Ligger flere prikker tæt, samles de i én prik med antallet, og kanten viser retningernes farver. Zoom ind, eller tryk på prikken, så skilles de. Skalaen har fire trin ligesom Udenrigsministeriets rejsevejledninger og et femte, akut, for det nye og kritiske lige nu. Akut står også i søljen i bunden. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
     <div class="g-tbl"><table><thead><tr><th>Alvor</th><th>Markør</th><th>Det betyder</th><th>For smitteudbrud</th></tr></thead><tbody id="galvor"></tbody></table></div>
     <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4. I Smithsonians ugentlige vulkanrapport er ny aktivitet 2 og fortsat aktivitet 1.</p>
     <p>Rejsevejledninger har deres eget ikon med et fly. Lande med en rejsevejledning fra gul og op står en tone mørkere, og regioner, som vejledningen nævner ved navn, farves, når du zoomer ind. Krig og konflikt viser i stedet, hvor der kæmpes og demonstreres ifølge medierne (varmekortet), og hvem der er i konflikt med hvem. Vælger du et land, åbner landesiden med alt om landet, og du kan følge landet.</p>
@@ -662,11 +665,25 @@ const ALV = [null,
   {n:'Til orientering', d:'Godt at vide. Brug sund fornuft.', smitte:'Naturligt reservoir eller mistanke'},
   {n:'Vær opmærksom', d:'Hold øje med det, og forbered dig lidt mere end normalt.', smitte:'Bekræftet udbrud'},
   {n:'Alvorligt', d:'Overvej, om rejsen er nødvendig.', smitte:'WHO vurderer risikoen som høj'},
-  {n:'Kritisk', d:'Myndighederne fraråder rejser eller har erklæret en international krise.', smitte:'WHO\'s internationale sundhedskrise'}
+  {n:'Kritisk', d:'Myndighederne fraråder rejser eller har erklæret en international krise.', smitte:'WHO\'s internationale sundhedskrise'},
+  {n:'Akut', d:'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage, eller en mistanke om et nyt udbrud, der ikke er bekræftet endnu.', smitte:'Mistanke om nyt udbrud, eller alvor 4 med ny udvikling'}
 ];
 // Alvor står i feltet alvor, når en kilde begrunder et højere trin. Ellers følger den trinnet: 1 for reservoir og mistanke, 2 for resten.
-const alvorAt = (e, st) => e.alvor || (st === 'reservoir' || st === 'mistanke' ? 1 : 2);
-const ALV_R = [0, 3.6, 5, 5.6, 6.2];
+// Alvor 5 (akut) gives af reglen og står aldrig i datasættet: et smitteudbrud på mistanke, eller alvor 4 med en
+// udvikling inden for tre dage. Maskinmeldinger får det ved indlæsning (se akutFeed). Rejsevejledninger aldrig.
+const alvorGrund = (e, st) => e.alvor || (st === 'reservoir' || st === 'mistanke' ? 1 : 2);
+const alvorAt = (e, st) => {
+  const a = alvorGrund(e, st);
+  if(e._feed || cutoff < T1 - 14*DAY) return a;
+  if(st === 'mistanke') return 5;
+  return a >= 4 && e.tl && e.tl.length && cutoff - sidste(e).ms <= NY_DAGE*DAY ? 5 : a;
+};
+function akutFeed(e){
+  if(e.ret === 'rejse' || e.alvor !== 4) return;
+  const ms = Date.parse(e.opd || e.tid || 0) || 0;
+  if(T1 - ms <= NY_DAGE*DAY + DAY){ e.alvorKilde = 4; e.alvor = 5; }
+}
+const ALV_R = [0, 3.6, 5, 5.6, 6.2, 6.8];
 
 // Forbindelsestyper. Der tegnes kun en linje, hvor kilderne dokumenterer en retning.
 const LK = {
@@ -1668,8 +1685,8 @@ function draw(){
     // Tæt på bliver markøren større og viser retningens ikon.
     const stor = zoom >= MIST_ZOOM && !res && (a >= 2 || mist);
     const base = res ? 3.4 : stor ? Math.max(ALV_R[a] + 4, 9) : ALV_R[a];
-    // Pulsen er forbeholdt alvor 4, så det kritiske springer i øjnene.
-    const recent = e.live && a >= 4 && cutoff >= T1 - 14*DAY;
+    // Pulsen er forbeholdt alvor 5 (akut), så det nye og kritiske springer i øjnene.
+    const recent = e.live && a >= 5;
     ctx.globalAlpha = depth;
     if(a >= 3){ ctx.beginPath(); ctx.arc(x, y, base+4, 0, 2*Math.PI); ctx.strokeStyle = col; ctx.globalAlpha = depth*.5; ctx.lineWidth = 1.2; ctx.stroke(); ctx.globalAlpha = depth; }
     if(a >= 4){ ctx.beginPath(); ctx.arc(x, y, base+8, 0, 2*Math.PI); ctx.strokeStyle = col; ctx.globalAlpha = depth*.28; ctx.lineWidth = 1.2; ctx.stroke(); ctx.globalAlpha = depth; }
@@ -1950,7 +1967,10 @@ let query = '', off = new Set(), selected = null, focusId = null, region = null,
 // Siden starter med alt fra alle retninger. Klik slår en retning til og fra.
 // Dobbeltklik viser kun den retning, og et nyt dobbeltklik fører tilbage til valget fra før.
 let retOn = new Set(['smitte']), minAlvor = 1, mistMode = 'zoom', foerFokus = null;
-const alleRet = () => RETNINGER.filter(r => r.aktiv).map(r => r.k);
+// Rejsevejledninger er en service, ikke noget man går i dybden med. Den står for sig til højre og er slået fra ved start
+// og ved Vis alle. Man slår den til med et klik, eller med et dobbeltklik, så kun rejsevejledningerne står.
+const SERVICE = new Set(['rejse']);
+const alleRet = () => RETNINGER.filter(r => r.aktiv && !SERVICE.has(r.k)).map(r => r.k);
 const iFokus = k => !!foerFokus && retOn.size === 1 && retOn.has(k);
 function skiftRetning(k){ retOn.has(k) ? retOn.delete(k) : retOn.add(k); foerFokus = null; }
 function fokusRetning(k){
@@ -2701,8 +2721,8 @@ footEl.textContent =
 const rchips = document.getElementById('rchips');
 function buildRet(){
   rchips.innerHTML = '';
-  for(const r of RETNINGER){
-    const b = document.createElement('button'); b.type = 'button'; b.className = 'rchip'; b.dataset.k = r.k;
+  for(const r of RETNINGER.filter(x => !SERVICE.has(x.k)).concat(RETNINGER.filter(x => SERVICE.has(x.k)))){
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'rchip' + (SERVICE.has(r.k) ? ' service' : ''); b.dataset.k = r.k;
     b.style.setProperty('--c', `var(--c-${r.k})`); b.setAttribute('aria-label', r.n);
     b.innerHTML = `<span class="d">${svgIc(r.k, 16)}</span><span class="n"></span>`;
     if(r.aktiv){
@@ -2741,7 +2761,8 @@ seg('segAlvor', [
   [1, 'Alle', TT('Alle hændelser', 'Også det, der kun er til orientering.')],
   [2, 'Fra 2', TT('Fra alvor 2', 'Skjuler det, der kun er til orientering.')],
   [3, 'Fra 3', TT('Fra alvor 3', 'Kun det alvorlige og det kritiske.')],
-  [4, 'Kun 4', TT('Kun alvor 4', 'Kun det kritiske, fx en international sundhedskrise.')]
+  [4, 'Fra 4', TT('Fra alvor 4', 'Det kritiske og det akutte.')],
+  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu og mistanker om nye udbrud. Det samme som søljen i bunden.')]
 ], v => { minAlvor = +v; });
 seg('segMist', [
   ['zoom', 'Ved zoom', TT('Mistanker ved zoom', 'Skjult på den hele klode, vises når du zoomer ind. Står altid i listen.')],
@@ -2826,7 +2847,7 @@ const GI = {
 };
 function bygGuide(){
   document.getElementById('gdirs').innerHTML = RETNINGER.map(r => `<div class="g-dir" style="--c:var(--c-${r.k})"><span class="ic">${svgIc(r.k, 22)}</span><b>${r.n}${r.aktiv ? '' : '<small>Kommer snart</small>'}</b><dl><dt>Hvad</dt><dd>${r.hvad}</dd><dt>Kilder</dt><dd>${r.kilder}</dd></dl></div>`).join('');
-  document.getElementById('galvor').innerHTML = [1,2,3,4].map(a => `<tr><td><b>${a}</b>${ALV[a].n}</td><td>${markoerSVG(a)}</td><td>${ALV[a].d}</td><td>${ALV[a].smitte}</td></tr>`).join('');
+  document.getElementById('galvor').innerHTML = [1,2,3,4,5].map(a => `<tr><td><b>${a}</b>${ALV[a].n}</td><td>${markoerSVG(a)}</td><td>${ALV[a].d}</td><td>${ALV[a].smitte}</td></tr>`).join('');
   document.getElementById('gstatus').innerHTML = [
     ['Bekræftet', 'Fyldt prik. Vises altid.', markoerSVG(2)],
     ['Mistanke', 'Hul og stiplet. Vises på kloden, når du zoomer ind.', markoerSVG(2, {hul:true})],
@@ -2983,19 +3004,23 @@ function landObj(a2){
   if(!byId[id]) byId[id] = somFeed({ id, ret:'rejse', alvor:1, a2, titel:HS[a2][0], sted:HS[a2][0], lat:HS[a2][1], lon:HS[a2][2], kilde:'', url:'' });
   return byId[id];
 }
-// Søljen i bunden: alt med alvor 4, der er nyt inden for tre dage, og alle smitteudbrud på mistanke.
+// Søljen i bunden viser alvor 5 (akut): alvor 4 med en udvikling inden for tre dage og alle smitteudbrud på mistanke.
+// Rejsevejledninger er en service og kommer aldrig med.
 // Et tryk fører hen til hændelsen, og kloden står stille i 10 sekunder.
 function bygTicker(){
   const boks = document.getElementById('ticker'), baand = document.getElementById('tkbaand'); if(!boks) return;
-  const nu = T1, punkter = [];
-  for(const e of EVENTS){ if(!liveAt(e, nu)) continue; const st = stageAt(e, nu), a = alvorAt(e, st); if(a >= 4 || st === 'mistanke') punkter.push({e, mist: st === 'mistanke', ms: sidste(e).ms}); }
-  for(const e of FEEDS){ if(e.alvor < 4) continue; const ms = Date.parse(e.opd || e.tid || 0) || 0; if(nu - ms <= NY_DAGE*DAY + DAY) punkter.push({e, mist:false, ms}); }
+  const punkter = [];
+  for(const e of ALLE()){
+    if(!liveAt(e, T1) || retAf(e) === 'rejse') continue;
+    const st = stageAt(e, T1); if(alvorAt(e, st) !== 5) continue;
+    punkter.push({e, mist: st === 'mistanke', ms: senestMs(e)});
+  }
   punkter.sort((p, q) => q.ms - p.ms);
   boks.hidden = !punkter.length; baand.innerHTML = ''; if(!punkter.length) return;
   for(const kopi of [0, 1]) for(const {e, mist} of punkter){
     const b = document.createElement('button'); b.type = 'button'; b.className = 'tk-p'; b.style.setProperty('--c', retVar(e));
     if(kopi){ b.tabIndex = -1; b.setAttribute('aria-hidden', 'true'); }
-    b.innerHTML = `<span class="d">${svgIc(retAf(e), 13)}</span><span class="m${mist ? ' mist' : ''}">${mist ? 'Mistanke' : 'Alvor 4'}</span>`;
+    b.innerHTML = `<span class="d">${svgIc(retAf(e), 13)}</span><span class="m${mist ? ' mist' : ''}">${mist ? 'Mistanke' : 'Akut'}</span>`;
     b.append(el('span','t', e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`));
     b.addEventListener('click', () => { select(e.id, true); zoomMaal = Math.max(zoom, 2.5); idle = performance.now(); });
     baand.appendChild(b);
@@ -3015,6 +3040,7 @@ bygTicker();
 fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {
   FEEDINFO = j;
   FEEDS = (j.h || []).filter(h => h && h.id && Number.isFinite(h.lat) && Number.isFinite(h.lon) && h.alvor >= 1 && h.alvor <= 4).map(somFeed);
+  for(const h of FEEDS) akutFeed(h);
   for(const h of FEEDS) byId[h.id] = h;
   HJAELP = {};
   for(const x of (j.f || [])) if(x.type === 'hjaelp' && Number.isFinite(x.lat) && Number.isFinite(x.lon)) (HJAELP[x.til] = HJAELP[x.til] || []).push(x);
