@@ -2,6 +2,45 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 11. oktober 2026, eftermiddag
+
+**Side ændret.** Ingen gennemgang af kilder og ingen ændrede tal i denne post. Siden har fået et nyt udseende, som forbereder flere retninger end smitteudbrud.
+
+- Overskriften er nu Nicco-mærket og domænet GLOBUS.NICCO.DK, og browserikonet er skiftet til Nicco-mærket.
+- Øverst står en knap pr. retning med ikon og egen farve: krig og konflikt, smitteudbrud, hedebølger og klimaekstremer, jordskælv, oversvømmelser, storme, naturbrande og vulkaner. Kun smitteudbrud har data. De andre står stiplet som på vej.
+- Prikkerne viser nu alvor på en skala fra 1 til 4 med størrelse og ringe. Under kloden kan man vælge, hvor alvorligt det mindst skal være, og hvornår mistanker vises. Som udgangspunkt vises mistanker først på kloden, når man zoomer ind, men de står altid i listen.
+- Kun alvor 4 pulserer. Før pulserede alle aktive hændelser.
+- Man kan zoome op til 14 gange, også med to fingre, og holder man musen over en prik eller en knap, kommer en kort forklaring.
+- Om siden er afløst af Sådan virker siden, med retninger, alvor, status, eskaleringstrin og hvordan kortet bruges.
+- Tre hændelser har fået feltet `alvor`, begrundet i punkter, der allerede står i forløbet med kilde:
+  - `ebola-drc`: alvor 4. WHO erklærede international sundhedskrise 17. maj.
+  - `polio`: alvor 4. WHO's nødkomité fastholdt den internationale sundhedskrise 25. august: https://www.who.int/news/item/25-08-2026-statement-of-the-forty-fifth-meeting-of-the-polio-ihr-emergency-committee
+  - `kolera`: alvor 3. WHO vurderer risikoen for kolera i Afrika som høj: https://www.who.int/publications/m/item/who-rapid-risk-assessment-cholera--african-region-v.1
+- Alle andre hændelser har alvor efter trinnet: 1 for mistanke og naturligt reservoir, 2 for resten. Reglen står i `OPDATERING.md` under Alvor, og kontrollen afviser en alvor uden for 1 til 4.
+
+**Til gennemgang**
+- `pest-irkutsk`: sygdomsnavn og smittestof er ændret af kørslen, se Ændret og Usikkert. Ret tilbage, hvis hændelsen fortsat skal hedde "Pest, lungeform mistænkt".
+- `pest-irkutsk`: `naeste` siger, at hændelsen lukkes, hvis WHO får et svar, der udelukker pest. Rusland har svaret, at dødsfaldet ikke skyldtes pest, men WHO kan ikke selv bekræfte det. `naeste` rettes kun, når trinnet flytter sig, så teksten står.
+- `pest-irkutsk`: punktet 7. oktober har omkring 5.000 negative prøver. WHO DON 620 skriver over 5.500. Ikke rettet. Det nye tal står i punktet 10. oktober og i `extra`.
+- `pest-irkutsk`: forløbet daterer WHO's opfordring til Rusland til 8. oktober. Al Jazeera og PBS har onsdag 7. oktober. Ifølge DON 620 henvendte WHO sig 3., 5., 6. og 7. oktober og bad om yderligere oplysninger 7. og 8. oktober, så begge datoer har dækning. UKHSA's ugeoversigt skriver, at kvinden døde 1. oktober. ECDC uge 41 skriver natten mellem 1. og 2. oktober, og WHO DON 620 skriver 2. oktober, som forløbet.
+- `gul-feber-gh`: punktet 8. oktober siger efter NaTHNaC, at en målrettet vaccinationskampagne er i gang. Ifølge sundhedsministeriets meddelelse 9. oktober forberedes den og ventes i oktober. Ikke rettet. `note` og `extra` følger meddelelsen.
+- `maesling-bd`: punktet 8. oktober og talserien har 202.625 mistænkte tilfælde. DGHS' egen pressemeddelelse for 8. oktober har 201.625: https://dghs.gov.bd/pages/press-releases/6ac79bd5693754e6a6881711 The Business Standard skrev 2,02,625. Ikke rettet. Det rigtige tal står i punktet 9. oktober og i `extra`.
+- `polio`: punktet 6. oktober siger, at Pakistan bekræfter sit sjette tilfælde. Ifølge nyhedsbureauet APP skete bekræftelsen mandag 5. oktober: https://www.app.com.pk/?p=1286643 Ikke rettet.
+- `cyclospora-us`: punktet 5. oktober har 19.883 tilfælde som nationalt sæsontal. Ifølge US CDC er det tallet pr. 15. september for sæsonen 1. maj til 31. august, og siden opdateres ikke længere ugentligt: https://www.cdc.gov/cyclosporiasis/cases/index.html `extra` kalder kilden af lavere kvalitet, selv om tallet er CDC's eget. Ikke rettet.
+- `anthrax-zm`: de 26 humane tilfælde gælder ifølge Times of Zambia pr. 28. september. Forløbet og talserien har 30. september, som er Lusaka Times' udgivelsesdato: https://times.co.zm/8000-animals-get-anthrax-vaccine/ Ikke rettet.
+- `ebola-ke`: sundhedsministeriets pressemeddelelse hos APO Group skriver, at patienten døde 6. oktober. WHO DON 619 og forløbet har 5. oktober. Ikke rettet.
+- `ebola-drc`: punktet 27. august siger, at WHO erklærede udbruddet i Uganda afsluttet den dag. ECDC's ebolaside skriver 25. august, mens ECDC uge 41 skriver 27. august i brødteksten og 25. august i resuméet. Ikke rettet.
+- `h5n1-dk`: fundene i sæler stammer fra DK-VET 1. oktober, som ikke står blandt kilderne: https://dkvet.dk/nyheder/2026/hoejpatogen-fugleinfluenza/ Statens Serum Instituts side, der står som kilde, er senest redigeret 17. april og handler om andre pattedyr.
+- `maesling-us`: kørslen 8. oktober rettede tallet for hele 2025 fra 2.255 til 2.289 efter US CDC, før reglen om gamle punkter blev ændret. Rettelsen står.
+- `ebola-drc`: WHO, ECDC, UKHSA og sundhedsministeriet regner Sydkivu blandt de syv ramte provinser. Datasættet har ingen stedknude for Sydkivu, men en for Kinshasa.
+- `ebola-drc`: `note` nævner ikke evakueringen til Storbritannien 21. juli, som ECDC's ebolaside har med.
+- `ebola-ke`: `naeste` nævner 28 kontakter. Sundhedsministeriet har 57 pr. 7. oktober, og ministeren nævner 66 i karantæne 8. oktober. `naeste` rettes kun, når trinnet flytter sig, så teksten står.
+- `ebola-ke`: forløbet har 3. oktober for både landrejsen til Kampala og ankomsten til Nairobi. WHO AFRO har 2. oktober for landrejsen.
+- `OPDATERING.md`, To veje til en side: hentningsværktøjet tager i en kørsel uden tilsyn kun adresser, som en søgning har givet i samme kørsel. Adresser fra repoet eller gættede adresser afvises. For US CDC virker det at søge med begrænsning til cdc.gov og derefter hente den adresse, søgningen giver. Det bør stå i afsnittet.
+- `OPDATERING.md`, Sådan hentes kilderne: veje, der virkede med direkte hentning i de seneste kørsler. DR Congos daglige situationsrapport ligger på https://insp.cd og udkommer en til to dage efter rapportdatoen. DGHS' mæslingetal står i pressemeddelelser på https://dghs.gov.bd/pages/press-releases og dengue på https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php Sri Lankas dagstal ligger som PDF på https://www.dengue.health.gov.lk og Floridas ugerapport som PDF på https://www.floridahealth.gov om torsdagen. Hongkongs pressemeddelelser ligger på https://www.info.gov.hk/gia/general/ med en side pr. dag. Kenyas sundhedsministeriums meddelelser hos APO Group står samlet på https://africa-newsroom.com/press/source/ministry-of-health-kenya
+- Repoet har en gren, `udrulning-fra-repo`, ved siden af `main`. Kørslen har ikke rørt den.
+- `ebola-ke` og `ebola-nl`: hører til samme ebolaudbrud, som WHO har erklæret international sundhedskrise, men har ikke fået alvor 4, fordi krisen gælder udbruddet i DR Congo. Ejeren kan tage stilling.
+
 ## 11. oktober 2026
 
 **Gennemgået:** ECDC CDTR uge 41 fra 9. oktober, som fortsat er den seneste, WHO DON siden 10. oktober (DON 620 er ny) og UKHSA's ugeoversigt over udbrud under overvågning, hvor uge 40 fortsat er den seneste. Enkeltkilder: DR Congos sundhedsministeriums situationsrapporter, ECDC's ebolaside, US CDC om ebola og mæslinger, RIVM, GPEI, Bangladeshs sundhedsmyndighed DGHS, Sri Lankas National Dengue Control Unit, Floridas sundhedsmyndighed, Hongkongs sundhedsmyndighed CHP, Kenyas sundhedsministerium gennem APO Group, Ghanas sundhedsministerium, Statens Serum Institut, NaTHNaC, CIDRAP, WHO AFRO, Africa CDC og ECDC's nyheder samt nyhedsmedier om Kenya og Ghana. Kørslen faldt en søndag morgen, hvor de fleste faste udgivelser ikke er nye.

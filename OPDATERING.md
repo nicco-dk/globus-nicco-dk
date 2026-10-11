@@ -85,6 +85,15 @@ Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste h
 | `variant` | Ny variant eller resistens | Dokumenteret ændret smitsomhed eller svigtende behandling |
 | `reservoir` | Naturligt reservoir | Smittestof påvist hos dyr, ingen humane tilfælde |
 
+**Alvor.** Siden viser alvor på en skala fra 1 til 4, som størrelse og ringe på prikken, og man kan filtrere på den. Uden feltet `alvor` følger alvor trinnet: 1 for `reservoir` og `mistanke`, 2 for alle andre. Feltet sættes kun, når en kilde begrunder et højere trin:
+
+| Alvor | Navn | Smitteudbrud |
+| --- | --- | --- |
+| 3 | Alvorligt | WHO vurderer risikoen som høj for regionen eller landet |
+| 4 | Kritisk | WHO har erklæret en international sundhedskrise, der omfatter hændelsen |
+
+Ændres `alvor`, skal grunden stå i et punkt i forløbet med kilde. Erklærer WHO krisen afsluttet eller sænker risikoen, fjernes feltet eller sættes ned. Kan alvor ikke begrundes med en kilde, sættes feltet ikke.
+
 **Afsluttede hændelser slettes ikke.** Når en myndighed erklærer et udbrud for afsluttet, tilføjes et punkt i `tl` om det, og `live` sættes til `false`. Hændelsen bliver stående, så tidslinjen stadig kan vise den. Kontrollen afviser en udgave, hvor en hændelse er forsvundet.
 
 **`live`** betyder, at hændelsen udvikler sig nu. Sæt den til `false`, når der ikke har været nyt fra kilderne i en måned, eller når udbruddet er erklæret afsluttet.
@@ -109,6 +118,7 @@ Datasættet er JavaScript, ikke JSON. Strenge står i enkelte anførselstegn, s�
 | `disease`, `pathogen` | Sygdom og smittestof |
 | `stage` | Trinnet, se tabellen ovenfor |
 | `live` | `true`, mens hændelsen udvikler sig |
+| `alvor` | Valgfri. Et helt tal fra 1 til 4, se Alvor. Udelades, når alvor følger trinnet |
 | `cases` | Omfanget i én linje: tal, kilde og opgørelsesdato |
 | `extra` | Uddybning af tallene |
 | `note` | Hvad hændelsen er, og hvorfor den er med |

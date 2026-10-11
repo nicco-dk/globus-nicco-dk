@@ -132,6 +132,8 @@ if (!Array.isArray(ev) || ev.length === 0) {
     }
     for (const f of ['extra', 'naeste', 'gap', 'plabel']) if (f in e && !tekst(e[f])) fejl.push(`${id}: feltet ${f} er tomt`);
     if ('live' in e && typeof e.live !== 'boolean') fejl.push(`${id}: live skal være true eller false`);
+    // alvor er valgfri: et helt tal fra 1 til 4. Mangler den, følger alvor trinnet.
+    if ('alvor' in e && !(Number.isInteger(e.alvor) && e.alvor >= 1 && e.alvor <= 4)) fejl.push(`${id}: alvor skal være et helt tal fra 1 til 4`);
 
     // Et tal i cases skal stå med opgørelsesdato: "..., US CDC pr. 5. oktober".
     if (tekst(e.cases) && /\d/.test(e.cases) && !/\bpr\. /.test(e.cases)) udenDato.push(id);
