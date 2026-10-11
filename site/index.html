@@ -127,6 +127,12 @@ canvas.drag{cursor:grabbing}
 .zoomer button{font-family:var(--mono);font-size:13px;width:30px;height:30px;border-radius:3px;
   background:var(--panel);color:var(--fg-dim);border:1px solid var(--rule);cursor:pointer;line-height:1}
 .zoomer button:hover{color:var(--fg);border-color:var(--accent)}
+#rotpause{display:grid;place-items:center;padding:0}
+#rotpause svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;grid-area:1/1}
+#rotpause .ia{display:none;fill:currentColor;stroke-width:1.6}
+#rotpause[aria-pressed="true"] .ip{display:none}
+#rotpause[aria-pressed="true"] .ia{display:block}
+#rotpause[aria-pressed="true"]{color:var(--accent);border-color:var(--accent)}
 .side{grid-column:2;grid-row:2/4;min-width:0;min-height:0;display:flex;flex-direction:column;gap:11px;overflow:hidden;padding-left:16px;border-left:1px solid var(--rule)}
 .search{position:relative;flex:0 0 auto}
 .search input{width:100%;font-family:var(--mono);font-size:12.5px;padding:9px 30px 9px 10px;border-radius:3px;
@@ -401,6 +407,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button id="zin" title="Zoom ind" aria-label="Zoom ind">+</button>
       <button id="zout" title="Zoom ud" aria-label="Zoom ud">−</button>
       <button id="zreset" title="Nulstil visning" aria-label="Nulstil visning">⟲</button>
+      <button id="rotpause" type="button" aria-pressed="false" aria-label="Sæt rotationen på pause"><svg class="ip" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg class="ia" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></button>
     </div>
     <button class="scrim" id="scrim" type="button" aria-label="Luk detaljer" hidden></button>
     <div class="detail" id="detail" role="region" aria-label="Detaljer om den valgte hændelse" hidden></div>
@@ -2227,6 +2234,15 @@ playBtn.addEventListener('click', () => {
 });
 document.getElementById('today').addEventListener('click', () => { stopPlay(); slider.value = String(SPAN); setCutoff(SPAN); });
 
+// Pause for den automatiske rotation. Gælder, til man trykker igen eller genindlæser siden.
+let rotPause = false;
+const rotKnap = document.getElementById('rotpause');
+function visRotKnap(){
+  rotKnap.setAttribute('aria-pressed', String(rotPause));
+  rotKnap.setAttribute('aria-label', rotPause ? 'Start rotationen igen' : 'Sæt rotationen på pause');
+  rotKnap.dataset.tip = rotPause ? TT('Start rotationen', 'Kloden drejer langsomt igen, når du ikke rører den.') : TT('Pause rotationen', 'Kloden bliver stående, hvor du har sat den, til du trykker igen eller genindlæser siden.');
+}
+rotKnap.addEventListener('click', () => { rotPause = !rotPause; visRotKnap(); skjulTip(); });
 function tick(now){
   pulse = (now-t0p)/2200;
   let need = !reduce;
@@ -2236,7 +2252,7 @@ function tick(now){
     rot.lam += d*0.1; rot.phi += (target.phi-rot.phi)*0.1;
     if(Math.abs(d) < 0.3 && Math.abs(target.phi-rot.phi) < 0.3){ rot.lam = target.lam; rot.phi = target.phi; target = null; }
     need = true;
-  } else if(!dragging && !reduce && now-idle > 5000 && !selected && !playing){ rot.lam += 0.04; need = true; }
+  } else if(!dragging && !reduce && !rotPause && now-idle > 5000 && !selected && !playing){ rot.lam += 0.04; need = true; }
   if(need) draw();
   requestAnimationFrame(tick);
 }
@@ -2315,6 +2331,7 @@ document.getElementById('retalle').addEventListener('click', () => { retOn = new
 document.getElementById('retingen').addEventListener('click', () => { retOn = new Set(); foerFokus = null; render(); });
 document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Landenes regioner toner frem fra 10 gange.');
 document.getElementById('zout').dataset.tip = TT('Zoom ud', 'Tilbage mod hele kloden.');
+visRotKnap();
 document.getElementById('zreset').dataset.tip = TT('Nulstil visning', 'Hele kloden, som da siden blev åbnet.');
 document.getElementById('ombtn').dataset.tip = TT('Sådan virker siden', 'Retninger, alvor, status, kilder og hvordan du bruger kortet.');
 ['zin','zout','zreset'].forEach(i => document.getElementById(i).removeAttribute('title'));
@@ -2392,7 +2409,7 @@ function bygGuide(){
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 10 gange og står fuldt ved 30 gange, med navn fra cirka 15 gange.'),
+    gs('zoom','Zoom ind og ud','Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 10 gange og står fuldt ved 30 gange, med navn fra cirka 15 gange.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
