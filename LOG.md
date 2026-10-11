@@ -16,6 +16,7 @@
 - Knap til lys og mørk tilstand. Siden starter som maskinens tilstand.
 - Udenrigsministeriet har rejsevejledninger for under halvdelen af verdens lande. For 36 lande uden dansk vejledning, blandt andre Sudan, Syrien, Yemen, Afghanistan, Irak, Libyen, Somalia, Mali og DR Congo, bruges nu det britiske udenrigsministeriums niveau.
 - Mediesporet: røde streger for konflikter og gule for militær støtte, talt op hver time i GDELT blandt ca. 240 medier på vores liste. Ved start: 140 streger i de sidste 7 dage, heraf 39 over tærsklen. Fire par er tjekket og godkendt med to kilder hver: Rusland–Ukraine (Al Jazeera, Euronews), Israel–Palæstina (Middle East Eye, Yeni Şafak), Saudi-Arabien–Yemen (Euronews, The Times of Israel) og Eritrea–Etiopien (Al Jazeera, South China Morning Post). De øvrige 35 venter på tjek i den daglige kørsel og vises stiplet.
+- Kloden starter over det område, ens internetforbindelse ser ud til at komme fra, og Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare i en lille funktion (functions/hvor.js) og gemmes ikke.
 - Pauseknap under zoomknapperne: stopper klodens rotation, til man trykker igen eller genindlæser siden.
 - Landenes regioner toner frem fra 2 gange og står lige så kraftigt som landegrænserne fra 20 gange og op til 30 gange. Navnene kommer med fra cirka 7 gange.
 - Markører, der lå oven i hinanden (fx hede- og oversvømmelsesvarsel i Israel), lægges nu i en lille ring, så forklaringen ved musen passer til den markør, man peger på.

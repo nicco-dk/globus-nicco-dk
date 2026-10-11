@@ -1294,7 +1294,9 @@ const senestMs = e => e._feed ? Date.parse(e.opd || e.tid || 0) || 0 : sidste(e)
 
 // ---------- projektion ----------
 const DEG = Math.PI/180;
-let rot = {lam:-30, phi:22}, zoom = 1, target = null;
+// Hjem er det sted, kloden starter og nulstilles til: over ens eget område, hvis det kan slås op, ellers Europa og Afrika.
+let HJEM = {lam:-30, phi:22};
+let rot = {lam:HJEM.lam, phi:HJEM.phi}, zoom = 1, target = null;
 const view = {cx:0, cy:0, R:0};
 function unit(lon, lat){
   const l = (lon + rot.lam)*DEG, b = lat*DEG, p = rot.phi*DEG;
@@ -2160,7 +2162,7 @@ const ZMAX = 30;
 function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
 document.getElementById('zin').addEventListener('click', () => { setZoom(zoom*1.3); idle = performance.now(); });
 document.getElementById('zout').addEventListener('click', () => { setZoom(zoom/1.3); idle = performance.now(); });
-document.getElementById('zreset').addEventListener('click', () => { target = {lam:-30, phi:22}; setZoom(1); idle = performance.now(); });
+document.getElementById('zreset').addEventListener('click', () => { target = {lam:HJEM.lam, phi:HJEM.phi}; setZoom(1); idle = performance.now(); });
 cv.tabIndex = 0; cv.setAttribute('role', 'img');
 cv.addEventListener('keydown', ev => {
   const s = 6;
@@ -2409,7 +2411,7 @@ function bygGuide(){
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 2 gange og står fuldt fra 20 gange, med navn fra cirka 7 gange.'),
+    gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 2 gange og står fuldt fra 20 gange, med navn fra cirka 7 gange.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
@@ -2419,6 +2421,16 @@ function bygGuide(){
 }
 
 readTokens(); buildLadder(); buildChips(); buildRet(); bygGuide(); renderCmp(); setCutoff(SPAN); resize(); laesAdresse();
+// Omtrentlig placering ud fra IP-adressen (Cloudflare, se functions/hvor.js). Kloden drejer derhen,
+// medmindre et link allerede har valgt en hændelse, eller man selv er begyndt at dreje.
+{
+  const start = performance.now();
+  fetch('/hvor', {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => {
+    if(!j || !Number.isFinite(j.lat) || !Number.isFinite(j.lon)) return;
+    HJEM = {lam:-j.lon, phi:Math.max(-60, Math.min(60, j.lat))};
+    if(!selected && !dragging && idle <= start) target = {lam:HJEM.lam, phi:HJEM.phi};
+  }).catch(() => {});
+}
 // Hovedstæderne (Natural Earth): grå prikker og navne, og stregernes endepunkter.
 fetch('/hovedstaeder.json').then(r => r.ok ? r.json() : null).then(j => { if(j && j.h){ HS = j.h; draw(); } }).catch(() => {});
 // Mediesporets streger for krig og konflikt.

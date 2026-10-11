@@ -14,6 +14,7 @@ on:
     branches: [main]
     paths:
       - "site/**"
+      - "functions/**"
       - "LOG.md"
       - "tools/tjek-data.mjs"
       - "tools/byg-log.mjs"
