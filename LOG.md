@@ -16,6 +16,11 @@
 - Knap til lys og mørk tilstand. Siden starter som maskinens tilstand.
 - Udenrigsministeriet har rejsevejledninger for under halvdelen af verdens lande. For 36 lande uden dansk vejledning, blandt andre Sudan, Syrien, Yemen, Afghanistan, Irak, Libyen, Somalia, Mali og DR Congo, bruges nu det britiske udenrigsministeriums niveau.
 - Mediesporet: røde streger for konflikter og gule for militær støtte, talt op hver time i GDELT blandt ca. 240 medier på vores liste. Ved start: 140 streger i de sidste 7 dage, heraf 39 over tærsklen. Fire par er tjekket og godkendt med to kilder hver: Rusland–Ukraine (Al Jazeera, Euronews), Israel–Palæstina (Middle East Eye, Yeni Şafak), Saudi-Arabien–Yemen (Euronews, The Times of Israel) og Eritrea–Etiopien (Al Jazeera, South China Morning Post). De øvrige 35 venter på tjek i den daglige kørsel og vises stiplet.
+- Rejsevejledninger har fået deres egen retning med et fly. Krig og konflikt viser nu kampe, borgerkrig, konflikter og demonstrationer ifølge medierne: et varmekort over, hvor der kæmpes, og en markør pr. land.
+- Landeside: vælger man et land, samles alt om det, med samlet vurdering øverst. Man kan følge et land og abonnere på det som RSS.
+- Regioner, som Udenrigsministeriets rejsevejledning nævner ved navn, farves, når man zoomer ind (fx Tigray, Amhara og Afar i Etiopien).
+- Flygtninge fra UNHCR: prikkede streger til de lande, der huser flest flygtninge fra det valgte land.
+- Konflikternes udvikling vises som en lille kurve over medier pr. dag.
 - Kloden starter og nulstilles til 1,5 gange zoom.
 - Hovedstæder står som fx "København, Danmark" med fed og kommer frem sammen med regionerne. Danske navne på hovedstæderne er fra Wikidata. Regionernes navne står altid i samme lille størrelse.
 - Fra 2,5 gange bruges et finere kort (Natural Earth 1:50m), så små øer som Fyn, Bornholm og Færøerne kommer med.

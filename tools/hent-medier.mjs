@@ -38,14 +38,14 @@ const MIN_MISTANKE = 2, MIN_MEDIER = 5, MIN_LANDE = 3, MIN_DAGE = 3;
 const MAKS_FILER = 700;          // højst så mange kvarterer pr. kørsel (ca. 7 døgn)
 const CACHE_DAGE = 7;            // hvor længe en hændelse huskes, så senere omtaler kan kobles på
 const MAKS_ARTIKLER = 12;
-const VERSION = 1;
+const VERSION = 4;
 const NU = new Date(), DAG = 864e5;
 const dagStr = ms => new Date(ms).toISOString().slice(0, 10);
 const stamp = d => d.toISOString().replace(/[-:T]/g, '').slice(0, 14);
 const fraStamp = s => Date.UTC(+s.slice(0, 4), +s.slice(4, 6) - 1, +s.slice(6, 8), +s.slice(8, 10), +s.slice(10, 12));
 
 // ---------- forrige tilstand ----------
-let T = { v: VERSION, sidste: null, ev: {}, p: {} };
+let T = { v: VERSION, sidste: null, ev: {}, p: {}, hv: {}, g: {}, gd: {} };
 if (FORRIGE) {
   try {
     const r = await fetch(FORRIGE + (FORRIGE.includes('?') ? '&' : '?') + 'v=' + Date.now(), { signal: AbortSignal.timeout(30000) });
@@ -95,6 +95,15 @@ for (let i = 0; i < kvarterer.length; i += 12) {
     const dagK = dagStr(fraStamp(k));
     for (const linje of ex.split('\n')) {
       const c = linje.split('\t'); if (c.length < 61) continue;
+      // Varmekortet: steder på by- eller regionsniveau (GDELT's geotype 3 til 5; type 2 er en amerikansk delstats midtpunkt),
+      // også interne konflikter. Huskes et døgn, så omtaler kan kobles på.
+      // Kun kampe med væbnede parter: kode 19x og 20x eller bombeangreb (183), og mindst én part er
+      // militær, oprørere, opstandsgruppe, separatister eller anden væbnet gruppe. Det holder almindelig
+      // kriminalitet og overført brug af ord som "fight" ude.
+      const vaebnet = /^(MIL|REB|INS|SEP|UAF)/.test(c[12]) || /^(MIL|REB|INS|SEP|UAF)/.test(c[22]) || /^(MIL|REB|INS|SEP|UAF)/.test(c[13]) || /^(MIL|REB|INS|SEP|UAF)/.test(c[23]);
+      if ((c[28] === '19' || c[28] === '20' || c[26] === '183') && vaebnet && +c[51] > 2 && c[56] && c[57]) T.hv[c[0]] = [+c[56], +c[57], dagK, 'k'];
+      // Demonstrationer og protester (rod 14) tælles for sig.
+      else if (c[28] === '14' && +c[51] > 2 && c[56] && c[57]) T.hv[c[0]] = [+c[56], +c[57], dagK, 'd'];
       const a = I3.get(c[7]), b = I3.get(c[17]); if (!a || !b || a === b) continue;
       const kode = c[26], rod = c[28];
       let type = null;
@@ -105,8 +114,15 @@ for (let i = 0; i < kvarterer.length; i += 12) {
     }
     for (const linje of me.split('\n')) {
       const c = linje.split('\t'); if (c.length < 6) continue;
-      const e = T.ev[c[0]]; if (!e) continue;
+      const hv = T.hv[c[0]], e = T.ev[c[0]]; if (!e && !hv) continue;
       const d = dom(c[4]); if (!MEDIER[d]) continue;
+      if (hv) {
+        // Celler på et halvt grad. Hver omtale fra et medie på listen tæller én.
+        const G = hv[3] === 'd' ? T.gd : T.g;
+        const celle = `${Math.round(hv[0] * 2) / 2},${Math.round(hv[1] * 2) / 2}`, g = G[hv[2]] || (G[hv[2]] = {});
+        g[celle] = (g[celle] || 0) + 1;
+      }
+      if (!e) continue;
       const [type, a, b] = e;
       const nogle = type === 'konflikt' ? [a, b].sort().join('-') : `${a}>${b}`;
       const p = T.p[nogle] || (T.p[nogle] = { t: type, a: type === 'konflikt' ? [a, b].sort()[0] : a, b: type === 'konflikt' ? [a, b].sort()[1] : b, d: {}, art: [] });
@@ -192,6 +208,9 @@ console.log(`${antalEv} hændelser og ${antalOmt} omtaler fra listen. ${mangler}
 const graense = t => dagStr(NU.getTime() - VINDUE[t] * DAG);
 const cacheGr = dagStr(NU.getTime() - CACHE_DAGE * DAG);
 for (const [id, e] of Object.entries(T.ev)) if (e[3] < cacheGr) delete T.ev[id];
+const hvGr = dagStr(NU.getTime() - DAG);
+for (const [id, e] of Object.entries(T.hv)) if (e[2] < hvGr) delete T.hv[id];
+for (const G of [T.g, T.gd]) for (const dag of Object.keys(G)) if (dag < graense('konflikt')) delete G[dag];
 for (const [k, p] of Object.entries(T.p)) {
   for (const dag of Object.keys(p.d)) if (dag < graense(p.t)) delete p.d[dag];
   p.art = p.art.filter(x => x[2] >= graense(p.t));
@@ -214,14 +233,53 @@ for (const [k, p] of Object.entries(T.p)) {
   for (const [url, d, dag, titel] of p.art) { if (set.has(d)) continue; set.add(d); art.push({ url, medie: MEDIER[d][0], dag, ...(titel ? { titel } : {}) }); if (art.length >= 6) break; }
   streger.push({ id: `gdelt-${k}`, type: p.t, status, a: p.a, b: p.b, aNavn: A.n, bNavn: B.n, aLat: (A.hs || [A.lat])[0], aLon: A.hs ? A.hs[1] : A.lon, bLat: (B.hs || [B.lat])[0], bLon: B.hs ? B.hs[1] : B.lon,
     medier: medier.size, lande: lande.size, dage, mNavne: [...medier].map(d => MEDIER[d][0]).filter((x, i, l) => l.indexOf(x) === i).sort((x, y) => x.localeCompare(y, 'da')),
-    art, tjek: TJEK.godkendt?.[k] || null });
+    art, tjek: TJEK.godkendt?.[k] || null,
+    // Antal medier pr. dag i vinduet, ældste først. Til kurven i detaljerne.
+    kurve: Array.from({ length: VINDUE[p.t] }, (_, i) => { const dag = dagStr(NU.getTime() - (VINDUE[p.t] - 1 - i) * DAG); return [dag, (p.d[dag] || []).length]; }) });
 }
+// Varmekort: celler med mindst 2 omtaler i vinduet. Hver celle får det land, den ligger i
+// (Natural Earth 1:110m, site/graenser.json), så landene kan få en markør for krig og konflikt.
+const GR = JSON.parse(readFileSync(join(UD, 'graenser.json'), 'utf8')).l;
+const BOKS = Object.fromEntries(Object.entries(GR).map(([a2, rr]) => {
+  let x0 = 180, x1 = -180, y0 = 90, y1 = -90;
+  for (const r of rr) for (const [x, y] of r) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  return [a2, [x0, y0, x1, y1]];
+}));
+const iRing = (x, y, r) => { let ind = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++) { const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > y) !== (yj > y) && x < (xj - xi) * (y - yi) / (yj - yi) + xi) ind = !ind; } return ind; };
+function landFor(la, lo) {
+  for (const [a2, b] of Object.entries(BOKS)) {
+    if (lo < b[0] - .5 || lo > b[2] + .5 || la < b[1] - .5 || la > b[3] + .5) continue;
+    if (GR[a2].some(r => iRing(lo, la, r))) return a2;
+  }
+  return null;
+}
+// Byer, der oftest er datolinje eller mødested i nyheder om andre landes krige (fx "WASHINGTON —"),
+// og ikke selv er kampområder. Omtaler placeret der tæller ikke på varmekortet.
+const DATOLINJER = [[38.9, -77.0], [40.7, -74.0], [42.0, -75.0], [51.5, -0.1], [48.9, 2.3], [50.8, 4.4], [46.2, 6.1], [52.5, 13.4],
+  [48.2, 16.4], [52.1, 4.3], [45.4, -75.7], [-35.3, 149.1], [35.7, 139.7], [39.9, 116.4], [25.3, 51.5], [30.0, 31.2], [55.7, 12.6]];
+const datolinje = (la, lo) => DATOLINJER.some(([a, b]) => Math.abs(a - la) <= .6 && Math.abs(b - lo) <= .6);
+function celler(G) {
+  const sum = {};
+  for (const g of Object.values(G)) for (const [k, n] of Object.entries(g)) { const [la, lo] = k.split(',').map(Number); if (G === T.g && datolinje(la, lo)) continue; sum[k] = (sum[k] || 0) + n; }
+  return Object.entries(sum).filter(([, n]) => n >= 2).map(([k, n]) => { const [la, lo] = k.split(',').map(Number); return [la, lo, n, landFor(la, lo)]; }).sort((a, b) => b[2] - a[2]);
+}
+const v = celler(T.g), vd = celler(T.gd);
+// Lande med kampe eller demonstrationer. Alvor efter, hvor meget kampene er omtalt af medierne på
+// listen de sidste 7 dage: fra 20 omtaler 2, fra 100 omtaler 3, fra 400 omtaler 4. Kun demonstrationer giver 1.
+const kl = {};
+for (const [la, lo, n, a2] of v) if (a2) { const o = kl[a2] || (kl[a2] = { kampe: 0, demo: 0, top: [] }); o.kampe += n; if (o.top.length < 5) o.top.push([la, lo, n]); }
+for (const [, , n, a2] of vd) if (a2) { const o = kl[a2] || (kl[a2] = { kampe: 0, demo: 0, top: [] }); o.demo += n; }
+const k = Object.entries(kl).map(([a2, o]) => {
+  const alvor = o.kampe >= 400 ? 4 : o.kampe >= 100 ? 3 : o.kampe >= 20 ? 2 : 1;
+  return { a2, navn: LANDE[a2]?.n || a2, kampe: o.kampe, demo: o.demo, alvor, top: o.top };
+}).filter(x => x.kampe >= 10 || x.demo >= 20).sort((a, b) => b.kampe - a.kampe);
 const RANG = { bekraeftet: 0, afventer: 1, mistanke: 2 };
 streger.sort((x, y) => RANG[x.status] - RANG[y.status] || y.medier - x.medier);
 
 writeFileSync(join(UD, 'medier-tal.json'), JSON.stringify(T) + '\n');
 writeFileSync(join(UD, 'konflikter.json'), JSON.stringify({ genereret: NU.toISOString(), sidste: T.sidste, kilde: 'GDELT 2.0 og vores medieliste',
-  regler: { MIN_MISTANKE, MIN_MEDIER, MIN_LANDE, MIN_DAGE, VINDUE }, s: streger }) + '\n');
+  regler: { MIN_MISTANKE, MIN_MEDIER, MIN_LANDE, MIN_DAGE, VINDUE }, s: streger, v, vd: vd.map(x => x.slice(0, 3)), k }) + '\n');
+console.log(`Varmekort: ${v.length} celler med kampe, ${vd.length} med demonstrationer. ${k.length} lande.`);
 const tael = s => streger.filter(x => x.status === s).length;
 console.log(`Skrev ${streger.length} streger: ${tael('bekraeftet')} bekræftet, ${tael('afventer')} afventer tjek, ${tael('mistanke')} mistanke.`);
 for (const x of streger.filter(x => x.status !== 'mistanke')) console.log(`  ${x.status}: ${x.type} ${x.aNavn}${x.type === 'konflikt' ? '–' : ' → '}${x.bNavn}, ${x.medier} medier fra ${x.lande} lande på ${x.dage} dage`);

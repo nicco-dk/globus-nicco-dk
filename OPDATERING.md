@@ -25,12 +25,18 @@ Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, st
 
 | Retning | Kilde | Hvad tages med | Alvor |
 | --- | --- | --- | --- |
-| Krig og konflikt | Udenrigsministeriets rejsevejledninger, hver 6. time | Lande med mindst gul | Gul 2, orange 3, rød 4 |
-| Krig og konflikt, lande uden dansk rejsevejledning | Det britiske udenrigsministerium (FCDO) via GOV.UK's API, hver 6. time | Lande med "fraråder" | Alle rejser 4, alle ikke-nødvendige 3 |
+| Rejsevejledninger | Udenrigsministeriets rejsevejledninger, hver 6. time | Lande med mindst gul. Regioner, der nævnes ved navn, matches mod Natural Earth (tools/regionsnavne.json), hovedstaden undtaget | Gul 2, orange 3, rød 4 |
+| Rejsevejledninger, lande uden dansk vejledning | Det britiske udenrigsministerium (FCDO) via GOV.UK's API, hver 6. time | Lande med "fraråder" | Alle rejser 4, alle ikke-nødvendige 3 |
 | Jordskælv | USGS, seneste 7 døgn | Fra M5,5 eller med PAGER-varsel | PAGER grøn 1, gul 2, orange 3, rød 4. Uden varsel 1 |
 | Storme, oversvømmelser, brande, tørke, vulkaner | GDACS | Igangværende hændelser, for storme også banen | Grøn 1, orange 3, rød 4 |
 | Hede, kulde, brandfare, oversvømmelse, vind i Europa | Meteoalarm | Gyldige varsler, ét punkt pr. land og retning | Gul 2, orange 3, rød 4 |
 | Vulkaner | Smithsonian GVP, ugentlig rapport | Alle vulkaner i rapporten | Ny aktivitet 2, fortsat 1 |
+
+**Krig og konflikt (markører og varmekort).** `tools/hent-medier.mjs` placerer GDELT-hændelser på et halvgradsnet: kampe (kode 19x, 20x og bombeangreb 183) med mindst én væbnet part (militær, oprørere, opstandsgruppe, separatister) og demonstrationer (kode 14), kun på by- eller regionsniveau, og kun omtaler fra medierne på listen. Datolinjebyer som Washington, London og Bruxelles tæller ikke. Hvert land får alvor efter omtalen af kampe de sidste 7 dage: 20 omtaler 2, 100 omtaler 3, 400 omtaler 4. Siden giver højst alvor 2, hvis landet hverken har rejsevejledning fra orange og op eller en bekræftet konflikt, og mindst 3 ved en bekræftet konflikt.
+
+**Flygtninge (lilla prikkede streger).** UNHCR's åbne API, én gang i døgnet: for lande med niveau 3 eller 4 de højst 10 lande, der huser flest flygtninge og asylansøgere fra landet (mindst 10.000), efter seneste opgørelse.
+
+**Landeside, følg og RSS.** Vælger man et land, samler siden rejsevejledning, krig og konflikt, militær støtte, nødhjælp, flygtninge, smitteudbrud og varsler. Man kan følge et land (gemmes kun i browseren), og https://globus.nicco.dk/feed?land=XX giver RSS for landet (functions/feed.js).
 
 **Forbindelser.** Grønne streger for humanitær hjælp kommer fra OCHA Financial Tracking Service én gang i døgnet: for lande med niveau 3 eller 4 tages alle donorlande og EU med mindst 1 mio. USD i indeværende år, udbetalt eller forpligtet (ikke løfter). Røde streger (konflikt) og gule (militær støtte) er ikke bygget endnu. Se projektets opgave om konfliktdata.
 

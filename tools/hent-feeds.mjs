@@ -20,16 +20,35 @@ const fi = process.argv.indexOf('--forrige');
 const FORRIGE = fi > 0 ? process.argv[fi + 1] : null;
 
 const LANDE = JSON.parse(readFileSync(new URL('./lande.json', import.meta.url), 'utf8'));
+const REGNAVNE = JSON.parse(readFileSync(new URL('./regionsnavne.json', import.meta.url), 'utf8')).r;
+// Finder regionsnavne (Natural Earth) i en tekst fra rejsevejledningen. Tekst efter "undtagen" i samme
+// sætning tæller ikke. Kun hele ord, uden accenter og store bogstaver. Korte navne (under 4 tegn) bruges ikke.
+const norm = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[’'`]/g, '');
+function findRegioner(a2, tekst) {
+  const liste = REGNAVNE[a2]; if (!liste) return [];
+  // Hovedstaden nævnes ofte som udgangspunkt for en rute ("fra Islamabad til ...") og tæller ikke som region.
+  const hoved = norm((LANDE.lande[a2]?.hs || [])[2] || '');
+  const dele = norm(tekst).split(/(?<=[.;])\s+/).map(x => x.split(/\bundtagen\b/)[0]).join(' | ');
+  const fundet = [];
+  for (const varianter of liste) {
+    for (const v of varianter) {
+      const n = norm(v).replace(/\s+(region|province|governorate|oblast|state|district|department)$/, '');
+      if (n.length < 4 || (hoved && n.includes(hoved))) continue;
+      if (new RegExp(`(^|[^a-z])${n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}([^a-z]|$)`).test(dele)) { fundet.push(varianter[0]); break; }
+    }
+  }
+  return fundet;
+}
 const NU = new Date();
 const UA = 'globus.nicco.dk/1.0 (+https://globus.nicco.dk; feedlaeser)';
 const DAG = 864e5;
 
 // Hvor ofte en kilde hentes. Rejsevejledningerne er ca. 200 sider og ændres sjældent.
-const INTERVAL = { um: 6 * 36e5, fcdo: 6 * 36e5, fts: 24 * 36e5 };
+const INTERVAL = { um: 6 * 36e5, fcdo: 6 * 36e5, fts: 24 * 36e5, unhcr: 24 * 36e5 };
 // Lande, hvor Udenrigsministeriet ingen rejsevejledning har. Sættes af um() og bruges af fcdo().
 let UM_UDEN = null;
 // Hæves, når en kildes felter ændres, så gamle meldinger hentes forfra.
-const VERSION = 5;
+const VERSION = 7;
 
 // ---------- hjælpere ----------
 async function hent(url, { tekst = true, forsoeg = 2 } = {}) {
@@ -198,6 +217,11 @@ const KILDER = {
       const top = Math.max(...niv.map(n => n[0])); if (top < 2) continue;
       const a2 = LANDE.um[slug], L = LANDE.lande[a2];
       const omr = niv.filter(n => n[0] >= 2 && n[1]).sort((a, b) => b[0] - a[0]).map(([a, t]) => `${NIV[a]}: ${t.replace(/\.$/, '')}.`);
+      // Regioner, der nævnes ved navn for niveau 2 til 4. Højeste niveau vinder, hvis en region nævnes flere gange.
+      const regMap = new Map();
+      for (const [a, t] of niv.filter(n => n[0] >= 2 && n[1]).sort((x, y) => y[0] - x[0]))
+        for (const r of findRegioner(LANDE.um[slug], t)) if (!regMap.has(r)) regMap.set(r, a);
+      const regioner = [...regMap.entries()];
       const hele = niv.some(([a, t]) => a === top && /^hele landet\b/i.test(t) && !/undtagen/i.test(t));
       // Basis er det niveau, der gælder for resten af landet ("Hele landet" eller "Hele landet undtagen ...").
       // Siden farver landet efter basis og markerer, at dele af landet har et højere niveau.
@@ -206,7 +230,7 @@ const KILDER = {
       const dm = ren((s.match(/id="tg-accordion-dato-for-seneste-opdatering"[\s\S]*?<\/li>/) || [''])[0]).match(/senest opdateret den (\d{1,2})\. (\w+) (\d{4})/);
       const MDR = ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'];
       const opd = dm && MDR.includes(dm[2]) ? new Date(Date.UTC(+dm[3], MDR.indexOf(dm[2]), +dm[1])) : null;
-      ud.push({ id: 'um-' + slug, ret: 'krig', alvor: top, basis, a2, titel: NIV[top] + (hele ? '' : ' til dele af landet'), sted: L.n, ...hs(L),
+      ud.push({ id: 'um-' + slug, ret: 'rejse', alvor: top, basis, a2, ...(regioner.length ? { regioner } : {}), titel: NIV[top] + (hele ? '' : ' til dele af landet'), sted: L.n, ...hs(L),
         tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'Udenrigsministeriet',
         url: `https://um.dk/rejse-og-ophold/rejse-til-udlandet/rejsevejledninger/${slug}/`,
         tekst: omr.join(' ') + (opd ? ` Rejsevejledningen er senest opdateret ${datoDa(opd)}.` : '') });
@@ -231,7 +255,7 @@ const KILDER = {
       if (!st.length) continue;
       const top = Math.max(...st.map(x => x[0])), hel = st.filter(x => x[1]).map(x => x[1]);
       const basis = hel.length ? Math.max(...hel) : 1, L = LANDE.lande[a2], opd = d.public_updated_at;
-      ud.push({ id: 'fcdo-' + a2, ret: 'krig', alvor: top, basis, a2, titel: `Storbritannien ${TXT[top]}` + (basis >= top ? '' : ' til dele af landet'),
+      ud.push({ id: 'fcdo-' + a2, ret: 'rejse', alvor: top, basis, a2, titel: `Storbritannien ${TXT[top]}` + (basis >= top ? '' : ' til dele af landet'),
         sted: L.n, ...hs(L), tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'FCDO (UK)',
         url: `https://www.gov.uk/foreign-travel-advice/${slugs.get(a2)}`,
         tekst: `Udenrigsministeriet har ingen rejsevejledning for ${L.n}. Det britiske udenrigsministerium ${TXT[top]}${basis >= top ? ' til hele landet' : ' til dele af landet'}.` + (opd ? ` Opdateret ${datoDa(opd)}.` : '') });
@@ -259,7 +283,7 @@ const KILDER = {
 };
 
 // ---------- kontrol ----------
-const RETNINGER = new Set(['krig', 'smitte', 'hede', 'jord', 'flod', 'storm', 'brand', 'vulkan']);
+const RETNINGER = new Set(['rejse', 'krig', 'smitte', 'hede', 'jord', 'flod', 'storm', 'brand', 'vulkan']);
 function gyldig(h) {
   return h && typeof h.id === 'string' && RETNINGER.has(h.ret) && Number.isInteger(h.alvor) && h.alvor >= 1 && h.alvor <= 4
     && Number.isFinite(h.lat) && Number.isFinite(h.lon) && Math.abs(h.lat) <= 90 && Math.abs(h.lon) <= 180
@@ -311,7 +335,7 @@ let f = [];
   } else {
     try {
       const aar = NU.getUTCFullYear(), t0 = Date.now();
-      const lande = [...new Set(h.filter(x => x.ret === 'krig' && x.alvor >= 3 && x.a2).map(x => x.a2))];
+      const lande = [...new Set(h.filter(x => x.ret === 'rejse' && x.alvor >= 3 && x.a2).map(x => x.a2))];
       const svar = await iKoe(lande, 3, async a2 => ({ a2, j: await hent(`https://api.hpc.tools/v1/public/fts/flow?countryISO3=${LANDE.lande[a2].i3}&year=${aar}`, { tekst: false }) }));
       const fejl = svar.filter(x => x.fejl); if (fejl.length > lande.length / 2) throw new Error(`${fejl.length} lande fejlede`);
       const ukendt = new Set();
@@ -347,6 +371,47 @@ let f = [];
     }
   }
   f = f.filter(x => x && Number.isFinite(x.lat) && Number.isFinite(x.lon) && /^https:\/\//.test(x.url) && x.usd >= MIN_USD);
+}
+
+// ---------- forbindelser: flygtninge fra UNHCR ----------
+// For lande med niveau 3 eller 4: de lande, der huser flest flygtninge og asylansøgere fra landet,
+// ifølge UNHCR's seneste opgørelse. Mindst 10.000 personer, højst 10 lande pr. oprindelsesland.
+{
+  const gl = forrige.kilder?.unhcr, MIN_PERS = 10000;
+  if (gl?.ok && gl.v === VERSION && NU - new Date(gl.hentet) < INTERVAL.unhcr && Array.isArray(forrige.f)) {
+    const genbrug = forrige.f.filter(x => x.type === 'flygtninge'); f.push(...genbrug); kilder.unhcr = gl;
+    console.log(`unhcr: genbrugt ${genbrug.length} forbindelser fra ${gl.hentet}`);
+  } else {
+    try {
+      const t0 = Date.now(), lande = [...new Set(h.filter(x => x.ret === 'rejse' && x.alvor >= 3 && x.a2).map(x => x.a2))];
+      const I3 = new Map(Object.entries(LANDE.lande).map(([a2, L]) => [L.i3, a2]));
+      const tal = v => (/^\d+$/.test(String(v)) ? +v : 0);
+      let aar = null, antal = 0;
+      for (const y of [NU.getUTCFullYear() - 1, NU.getUTCFullYear() - 2]) {
+        const prove = await hent(`https://api.unhcr.org/population/v1/population/?limit=1&year=${y}&coo=SDN&coa_all=true&cf_type=ISO`, { tekst: false });
+        if ((prove.items || []).length) { aar = y; break; }
+      }
+      if (!aar) throw new Error('ingen år med data');
+      const svar = await iKoe(lande, 3, async a2 => ({ a2, j: await hent(`https://api.unhcr.org/population/v1/population/?limit=500&year=${aar}&coo=${LANDE.lande[a2].i3}&coa_all=true&cf_type=ISO`, { tekst: false }) }));
+      for (const { a2, j } of svar.filter(x => !x.fejl)) {
+        const rk = (j.items || []).map(x => ({ til: I3.get(x.coa_iso), n: tal(x.refugees) + tal(x.asylum_seekers) }))
+          .filter(x => x.til && x.til !== a2 && x.n >= MIN_PERS).sort((a, b) => b.n - a.n).slice(0, 10);
+        for (const x of rk) {
+          const L = LANDE.lande[x.til];
+          f.push({ id: `unhcr-${a2}-${x.til}`, type: 'flygtninge', fra: a2, til: x.til, tilNavn: L.n, ...hs(L), personer: x.n, aar,
+            kilde: 'UNHCR', url: 'https://www.unhcr.org/refugee-statistics/' });
+          antal++;
+        }
+      }
+      kilder.unhcr = { ok: true, v: VERSION, hentet: NU.toISOString(), antal, aar };
+      console.log(`unhcr: ${antal} forbindelser fra ${lande.length} lande, opgørelse ${aar} (${((Date.now() - t0) / 1000).toFixed(1)} s)`);
+    } catch (e) {
+      const genbrug = Array.isArray(forrige.f) ? forrige.f.filter(x => x.type === 'flygtninge') : [];
+      f.push(...genbrug);
+      kilder.unhcr = { ok: false, hentet: forrige.kilder?.unhcr?.hentet || null, antal: genbrug.length, fejl: String(e.message).slice(0, 200) };
+      console.log(`::warning::unhcr fejlede (${e.message}). Genbruger ${genbrug.length} forbindelser.`);
+    }
+  }
 }
 
 // Samme id to gange kan ikke forekomme. Den første vinder.
