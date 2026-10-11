@@ -336,6 +336,31 @@ canvas.drag{cursor:grabbing}
 .filtre{display:flex;flex-direction:column;gap:10px}
 .arkfilter:empty{display:none}
 .ark-greb{display:none}
+/* Bred læsevisning (kun computer). */
+@media (min-width:901px){
+  .detail.bred{width:min(820px,calc(100% - 70px));padding:16px 18px;gap:10px}
+  .detail.bred h2{font-size:20px}
+  .detail.bred .k-fortalt{font-size:14.5px}
+  .k-kolonner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px 22px;align-items:start}
+  .k-kol{display:grid;gap:10px;min-width:0}
+  .k-kol>.k-afs:first-child,.k-kol>.k-fold:first-child,.k-kol>.lafs:first-child{border-top:0;padding-top:0}
+}
+@media (max-width:900px){.k-udvid{display:none!important}}
+.k-afs.tl>h3{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.k-afspil{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:none;background:none;border:1px solid var(--rule);color:var(--accent);border-radius:999px;padding:3px 9px;cursor:pointer}
+.k-afspil:hover{border-color:var(--accent)}
+.tlrow.vaelg{cursor:pointer;border-radius:0 5px 5px 0}
+.tlrow.vaelg:hover{background:var(--panel-2)}
+.tlrow.nu{background:color-mix(in srgb,var(--c) 14%,var(--panel-2))}
+.k-tidslinje{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px;scroll-behavior:smooth;scrollbar-width:thin}
+.k-tidslinje .tlrow{flex:0 0 190px;display:grid;grid-template-columns:1fr;gap:4px;padding:8px 10px;margin:0;border-left:0;border-top:3px solid var(--d,var(--rule));background:var(--panel-2);border-radius:0 0 6px 6px}
+.k-tidslinje .tlrow::before{display:none}
+.k-tidslinje .tlrow.future{opacity:.45}
+.k-tidslinje .tlrow.nu{outline:1.5px solid var(--c);outline-offset:-1.5px}
+.k-tidslinje .tx{font-size:12px;line-height:1.4}
+.nymaerke{flex:none;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:3px;padding:0 4px;line-height:15px;align-self:center}
+.nytgruppe{border-top:0;margin-bottom:6px}
+.nytgruppe>summary{color:var(--fg)}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -1587,12 +1612,14 @@ function readTokens(){
   ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--accent','--bg',
    '--panel','--krig-tone','--hjaelp','--stoette','--hs','--flugt','--c-rejse','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
 }
-let TOP = 0, VH = 0, CY_MAAL = 0;
+let TOP = 0, VH = 0, CY_MAAL = 0, CX_MAAL = 0;
 // På mobilen glider klodens midte op over detaljearket, så det valgte står i det synlige stykke kort.
 function opdaterCY(){
   let bund = H;
   try{ if(MOBIL.matches && !detail.hidden){ const d = parseFloat(detail.style.getPropertyValue('--ark-d')) || innerHeight * .58; bund = Math.max(TOP + 120, Math.min(H, innerHeight - d)); } }catch(err){ /* detail findes endnu ikke */ }
   CY_MAAL = TOP + (bund - TOP) / 2;
+  CX_MAAL = W / 2;
+  try{ if(!MOBIL.matches && !detail.hidden && detail.classList.contains('bred')){ const pw = detail.offsetWidth + 10; CX_MAAL = pw + (W - pw) / 2; } }catch(err){}
 }
 const MOBIL = matchMedia('(max-width:900px)');
 function resize(){
@@ -1604,7 +1631,7 @@ function resize(){
   // På mobilen ligger toppen (retninger og sølje) oven på kortet. Kloden centreres i det, der er frit under den.
   TOP = MOBIL.matches ? Math.min(H*.4, (document.querySelector('header').offsetHeight || 0) + (document.getElementById('ticker').hidden ? 0 : document.getElementById('ticker').offsetHeight)) : 0;
   VH = H - TOP;
-  view.cx = W/2; view.cy = TOP + VH/2; view.R = Math.min(W,VH)/2*0.88*zoom; opdaterCY(); view.cy = CY_MAAL;
+  view.cx = W/2; view.cy = TOP + VH/2; view.R = Math.min(W,VH)/2*0.88*zoom; opdaterCY(); view.cy = CY_MAAL; view.cx = CX_MAAL;
   draw();
 }
 const retCol = e => T['--c-' + retAf(e)];
@@ -1831,6 +1858,8 @@ function draw(){
       ctx.strokeStyle = col; ctx.lineWidth = 2.1; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       ctx.stroke(ICP[retAf(e)]); ctx.restore();
     }
+    // Nyt siden sidst: en lille prik i accentfarven oppe til højre for markøren.
+    if(FORRIGE && nytStatus(e)){ ctx.beginPath(); ctx.arc(x + base*.85, y - base*.85, 2.8, 0, 2*Math.PI); ctx.fillStyle = T['--accent']; ctx.fill(); ctx.strokeStyle = T['--bg']; ctx.lineWidth = 1.2; ctx.stroke(); }
     if(e.id === selected){
       ctx.beginPath(); ctx.arc(x, y, base+7, 0, 2*Math.PI);
       ctx.strokeStyle = T['--fg']; ctx.lineWidth = 1.2; ctx.stroke();
@@ -2207,6 +2236,23 @@ function render(){
   // Søgning og fokus giver én flad liste. Ellers: det akutte øverst som kort, derefter én gruppe pr. retning.
   if(query || focusId || !vis.length){ for(const e of sorteret) list.appendChild(punkt(e)); }
   else {
+    // Nyt siden sidst: nye ting fra alvor 2 og op, og alt, der har skiftet alvor eller fået ny udvikling.
+    const nyt = sorteret.map(e => [e, nytStatus(e)]).filter(([e, n]) => n && (n !== 'ny' || alvorAt(e, stageAt(e, cutoff)) >= 2));
+    if(nyt.length){
+      const g = document.createElement('details'); g.className = 'gruppe nytgruppe'; g.style.setProperty('--c', 'var(--accent)');
+      g.open = grupperLaes().has('_nyt') || !grupperLaes().has('_nyt_lukket');
+      const sm = document.createElement('summary'); const d = new Date(FORRIGE.t);
+      sm.innerHTML = `<span class="gi"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></span><span class="gn"></span><span class="ga">${nyt.length}</span><span class="gm"></span>`;
+      sm.querySelector('.gn').textContent = 'Nyt siden sidst';
+      sm.querySelector('.gm').textContent = d.toLocaleString('da-DK', {day:'numeric', month:'short', hour:'2-digit', minute:'2-digit'});
+      g.appendChild(sm);
+      const gl = el('div','gl');
+      for(const [e, n] of nyt.slice(0, 40)){ const k = punkt(e); k.querySelector('.top').prepend(el('span','nymaerke', NYT_TEKST[n])); gl.appendChild(k); }
+      if(nyt.length > 40) gl.appendChild(el('p','dim', `Og ${nyt.length - 40} mere.`));
+      g.appendChild(gl);
+      g.addEventListener('toggle', () => { const a = grupperLaes(); if(g.open){ a.add('_nyt'); a.delete('_nyt_lukket'); } else { a.delete('_nyt'); a.add('_nyt_lukket'); } grupperGem(a); });
+      list.appendChild(g);
+    }
     const akut = sorteret.filter(e => alvorAt(e, stageAt(e, cutoff)) >= 5);
     if(akut.length){
       const box = el('div','akutbox'); box.appendChild(el('p','lbl', 'Akut lige nu'));
@@ -2254,6 +2300,33 @@ function eventItem(e, iDag){
   b.addEventListener('click', () => select(e.id, true));
   return b;
 }
+// ---------- nyt siden sidst ----------
+// Siden husker i browseren, hvad der stod på den, da man sidst forlod den (efter mindst et minut). Ved næste besøg
+// markeres det, der er kommet til, og det, der har skiftet alvor eller har fået et nyt punkt i forløbet.
+const SNAP_NOEGLE = 'globus-sidst', SIDE_START = Date.now();
+const FORRIGE = (() => { try{ const j = JSON.parse(localStorage.getItem(SNAP_NOEGLE) || 'null'); return j && j.s ? j : null; }catch(err){ return null; } })();
+function signatur(e){
+  if(e._feed) return String(e.alvorKilde || e.alvor);
+  const sidst = e.tl && e.tl.length ? e.tl[e.tl.length - 1][0] : '';
+  return `${alvorGrund(e, stageAt(e, T1))}|${sidst}`;
+}
+// 'ny', 'op', 'ned', 'opdateret' eller null.
+function nytStatus(e){
+  if(!FORRIGE || cutoff < T1 || !liveAt(e, T1)) return null;
+  const g = FORRIGE.s[e.id];
+  if(g === undefined) return 'ny';
+  const n = signatur(e); if(g === n) return null;
+  const a0 = parseInt(g, 10), a1 = parseInt(n, 10);
+  return a1 > a0 ? 'op' : a1 < a0 ? 'ned' : 'opdateret';
+}
+function gemSnapshot(){
+  if(Date.now() - SIDE_START < 60000 || !FEEDINFO) return;
+  const s2 = {}; for(const e of ALLE()) if(liveAt(e, T1)) s2[e.id] = signatur(e);
+  try{ localStorage.setItem(SNAP_NOEGLE, JSON.stringify({t: Date.now(), s: s2})); }catch(err){}
+}
+document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'hidden') gemSnapshot(); });
+window.addEventListener('pagehide', gemSnapshot);
+const NYT_TEKST = {ny:'Ny', op:'Højere alvor', ned:'Lavere alvor', opdateret:'Ny udvikling'};
 // Hvilke grupper i overblikket der er åbne. Huskes i browseren.
 let LISTE = [];
 const GRP_NOEGLE = 'globus-grupper';
@@ -2492,6 +2565,7 @@ function select(id, fly){
 // På smalle skærme, hvor detaljerne er et ark, ryddes fokus også, ellers ligger Vis alle langt nede på siden.
 const SMAL = matchMedia('(max-width:900px)');
 function lukDetaljer(){
+  stopForloeb(); FL_NU = null;
   TUR = null; detail.dataset.id = '';
   if(SMAL.matches) setFocus(null);
   selected = null; detail.hidden = true; render(); skrivAdresse();
@@ -2574,7 +2648,7 @@ function a2Af(e){
 const IKN = {
   foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z',
   del:'M8.6 13.5l6.8 4M15.4 6.5l-6.8 4M18 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM18 19a2 2 0 1 1-4 0 2 2 0 0 1 4 0z',
-  cmp:'M4 5h6v14H4zM14 9h6v10h-6z', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16'
+  cmp:'M4 5h6v14H4zM14 9h6v10h-6z', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16'
 };
 const ikon = (k, s=16) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IKN[k]}"/></svg>`;
 function ikonKnap(k, navn, tip, fn, presset){
@@ -2597,6 +2671,7 @@ function startTur(){
   TUR = {ids, i:0}; select(ids[0], true); zoomMaal = Math.max(zoom, 2.2);
 }
 function kortTop(e, o){
+  if(!MOBIL.matches && detail.hidden) detail.classList.toggle('bred', bredLaes());
   const nyt = detail.dataset.id !== e.id;
   detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = ''; detail.dataset.id = e.id;
   if(nyt) detail.scrollTop = 0;
@@ -2637,6 +2712,15 @@ function kortTop(e, o){
     ik.appendChild(ikonKnap('cmp', i2 ? 'Fjern fra sammenligning' : 'Sammenlign', 'Op til tre smitteudbrud side om side øverst i overblikket.', () => {
       const j = cmp.indexOf(e.id); if(j >= 0) cmp.splice(j,1); else { cmp.push(e.id); if(cmp.length > 3) cmp.shift(); } renderCmp(); showDetail(e);
     }, i2));
+  }
+  if(!MOBIL.matches){
+    const br = detail.classList.contains('bred');
+    const ub = ikonKnap('udvid', br ? 'Smal visning' : 'Bred visning', br ? 'Tilbage til det smalle kort.' : 'Kortet fylder mere af skærmen, med indholdet i to spalter og hele forløbet som tidslinje.', () => {
+      const ny = !detail.classList.contains('bred'); detail.classList.toggle('bred', ny);
+      try{ localStorage.setItem(BRED_NOEGLE, ny ? '1' : '0'); }catch(err){}
+      showDetail(e);
+    }, br);
+    ub.classList.add('k-udvid'); ik.appendChild(ub);
   }
   if(o.rss) ik.appendChild(Object.assign(document.createElement('a'), {className:'k-ik', href:o.rss, target:'_blank', rel:'noopener', innerHTML:ikon('rss'), ariaLabel:'Abonnér (RSS)'}));
   meta.appendChild(ik);
@@ -2724,26 +2808,81 @@ function fold(titel, indhold, aaben){
   for(const x of [].concat(indhold)) if(x) d.appendChild(x);
   detail.appendChild(d); return d;
 }
-function forloebRaekke(r){
-  const row = el('div','tlrow ' + (r.ms <= cutoff ? 'past' : 'future'));
+// Et punkt i forløbet. Tryk sætter tidsskyderen til datoen og flyver til stedet, hvis kilderne har et sted på den dato.
+function forloebRaekke(r, e){
+  const nu = FL_NU && FL_NU.id === (e && e.id) && FL_NU.ms === r.ms;
+  const row = el('div','tlrow ' + (r.ms <= cutoff ? 'past' : 'future') + (nu ? ' nu' : ''));
   if(r[2]) row.style.setProperty('--d', `var(${SK[r[2]].v})`);
   row.appendChild(el('span','dt', shortDate(r[0])));
   const tx = el('span','tx', r[1]); if(r[3]) tx.append(' ', kildeLink(r[3][0], r[3][1])); row.appendChild(tx);
+  if(e){ row.classList.add('vaelg'); row.tabIndex = 0; row.setAttribute('role', 'button'); row.title = 'Vis kloden på denne dato';
+    const gaa = ev => { if(ev.target.closest('a')) return; stopForloeb(); hopTil(e, r); };
+    row.addEventListener('click', gaa); row.addEventListener('keydown', ev => { if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); gaa(ev); } }); }
   return row;
 }
-function forloeb(tl){
+// Afspil udbruddet: tidsskyderen går punkt for punkt gennem forløbet, og kloden følger med til stederne.
+let FL_NU = null, FL_TIMER = null;
+function hopTil(e, r){
+  const dage = Math.max(0, Math.min(SPAN, Math.round((r.ms - T0) / DAY)));
+  stopPlay(); slider.value = String(dage);
+  FL_NU = {id: e.id, ms: r.ms};
+  const n = (e.nodes || []).find(x => x[3] === r[0]);
+  if(n) target = {lam:-n[1], phi:Math.max(-80, Math.min(80, n[2]))};
+  setCutoff(dage);
+}
+function stopForloeb(){ if(FL_TIMER){ clearTimeout(FL_TIMER); FL_TIMER = null; } const k = detail.querySelector('.k-afspil'); if(k) k.textContent = '▶ Afspil udbruddet'; }
+function afspilForloeb(e){
+  if(FL_TIMER){ stopForloeb(); return; }
+  const tl = e.tl; let i = 0;
+  const trin = () => {
+    if(selected !== e.id){ stopForloeb(); return; }
+    if(i >= tl.length){ FL_TIMER = null; FL_NU = null; slider.value = String(SPAN); setCutoff(SPAN); return; }
+    hopTil(e, tl[i++]); FL_TIMER = setTimeout(trin, 1700);
+    const k = detail.querySelector('.k-afspil'); if(k) k.textContent = '■ Stop';
+  };
+  trin();
+}
+function forloeb(tl, e){
   if(!tl || !tl.length) return;
   const b = afsnit('Forløb', 'tl');
+  if(e && tl.length > 1){
+    const k = el('button','k-afspil', FL_TIMER ? '■ Stop' : '▶ Afspil udbruddet'); k.type = 'button';
+    k.addEventListener('click', () => afspilForloeb(e)); b.querySelector('h3').appendChild(k);
+  }
+  // Den brede visning viser hele forløbet som en vandret tidslinje.
+  if(detail.classList.contains('bred') && !MOBIL.matches){
+    const lin = el('div','k-tidslinje');
+    for(const r of tl) lin.appendChild(forloebRaekke(r, e));
+    b.appendChild(lin);
+    requestAnimationFrame(() => { const x = lin.querySelector('.nu') || [...lin.querySelectorAll('.past')].pop(); if(x) lin.scrollLeft = x.offsetLeft - lin.clientWidth / 2 + x.clientWidth / 2; });
+    return;
+  }
   const set = tl.filter(r => r.ms <= cutoff), vis = (set.length ? set : tl).slice(-3);
-  for(const r of vis) b.appendChild(forloebRaekke(r));
+  for(const r of vis) b.appendChild(forloebRaekke(r, e));
   const rest = tl.filter(r => !vis.includes(r));
   if(rest.length){
     const d = document.createElement('details'); d.className = 'k-mere';
     const sm = document.createElement('summary'); sm.textContent = `Vis hele forløbet (${tl.length} punkter)`; d.appendChild(sm);
-    for(const r of tl) d.appendChild(forloebRaekke(r));
+    for(const r of tl) d.appendChild(forloebRaekke(r, e));
     d.addEventListener('toggle', () => { for(const x of b.querySelectorAll(':scope > .tlrow')) x.hidden = d.open; });
     b.appendChild(d);
   }
+}
+// Bred læsevisning på computeren: kortet fylder op til 820 px, og indholdet står i to spalter.
+// Billede, kort fortalt, nøgletal og udvikling til venstre; kilder, læs mere og det foldede til højre; forløbet nederst.
+const BRED_NOEGLE = 'globus-bred';
+function bredLaes(){ try{ return localStorage.getItem(BRED_NOEGLE) === '1'; }catch(err){ return false; } }
+function bredLayout(){
+  if(!detail.classList.contains('bred') || MOBIL.matches || detail.hidden) return;
+  const kids = [...detail.children];
+  const hoved = kids.filter(x => x.matches('.k-greb,.k-nav,.k-meta,h2,.where'));
+  const bund = kids.filter(x => x.matches('.k-afs.tl'));
+  const venstre = kids.filter(x => x.matches('.k-fig,.k-fortalt,.k-tal,.curve,.samlet'));
+  const hoejre = kids.filter(x => !hoved.includes(x) && !bund.includes(x) && !venstre.includes(x));
+  const v = el('div','k-kol'), h = el('div','k-kol');
+  v.append(...venstre); h.append(...hoejre);
+  const g = el('div','k-kolonner'); g.append(v, h);
+  detail.append(g, ...bund);
 }
 // Læs mere: tre artikler fra laes.json (tools/hent-laes.mjs). Den første fra et medie i brugerens land, hvis der er et.
 function laesMere(id){
@@ -2773,6 +2912,9 @@ const SYG_WIKI = [[/^Mæslinger/, 'Measles'], [/^Fugleinfluenza/, 'Avian influen
   [/^Gul feber/, 'Yellow fever'], [/^Difteri/, 'Diphtheria'], [/^Cyclospor/, 'Cyclosporiasis'], [/^Chikungunya/, 'Chikungunya'], [/^Carbapenem/, 'Carbapenem-resistant enterobacteriaceae']];
 const sygWiki = d => (SYG_WIKI.find(([r]) => r.test(d)) || [])[1] || null;
 function showDetail(e){
+  visDetalje(e); bredLayout();
+}
+function visDetalje(e){
   if(e._sted) return visSted(e);
   if(erLand(e)) return visLand(e);
   if(e._feed) return visFeed(e);
@@ -2789,7 +2931,7 @@ function showDetail(e){
     if(last[2] !== null && last[2] !== undefined) cap = e.plabel + ' · seneste dødstal ' + NUM(last[2]) + ' den ' + fmtDate(last[0]) + '.';
     cv.appendChild(el('span','cap', cap));
   }
-  forloeb(e.tl);
+  forloeb(e.tl, e);
   const kv = afsnit('Kilder og vurdering', 'srcs-afs');
   const sr = el('div','srcs'); for(const [t,u] of e.src) sr.appendChild(kildeLink(t, u)); kv.appendChild(sr);
   kv.appendChild(el('span','srclegend','Fremhævet = myndighed · dæmpet = medie · stiplet = sekundær'));
@@ -2953,6 +3095,7 @@ function tick(now){
   let need = !reduce;
   opdaterCY();
   if(Math.abs(view.cy - CY_MAAL) > .5){ view.cy += (CY_MAAL - view.cy) * .15; need = true; }
+  if(Math.abs(view.cx - CX_MAAL) > .5){ view.cx += (CX_MAAL - view.cx) * .15; need = true; }
   if(zoomMaal){
     const z = zoom * Math.pow(zoomMaal/zoom, .12);
     if(Math.abs(Math.log(zoomMaal/zoom)) < .01){ setZoom(zoomMaal); zoomMaal = null; } else setZoom(z);

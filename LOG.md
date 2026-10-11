@@ -44,6 +44,9 @@
 - Læs mere: tre artikler fundet i GDELT DOC af `tools/hent-laes.mjs` hver time, den første fra et dansk medie for brugere i Danmark. Til videre læsning, ikke kilde til tal eller alvor.
 - Overblikket: søgning og filtre er foldet væk bag to knapper, det akutte står øverst, og resten er samlet pr. retning med antal. Udforsk giver en tur gennem de tolv alvorligste lige nu.
 - Mobilen er bygget som en app: kortet står fast i hele skærmen, retningerne ligger i en bjælke øverst med søljen under, og overblik og detaljer er ark, der trækkes op fra bunden. Et swipe til siden skifter hændelse.
+- Bred læsevisning på computeren: knappen med pilene i detaljekortet gør kortet op til 820 px bredt med indholdet i to spalter og hele forløbet som en vandret tidslinje. Kloden rykker til højre for kortet. Valget huskes i browseren.
+- Afspil udbruddet: et tryk på et punkt i forløbet sætter tidsskyderen til datoen og flyver til stedet. Knappen Afspil udbruddet går punkt for punkt gennem forløbet.
+- Nyt siden sidst: siden husker i browseren, hvad der stod på den, da man sidst forlod den. Ved næste besøg står det nye øverst i overblikket (ny, højere eller lavere alvor, ny udvikling), og prikkerne har en lille markering på kloden.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag
