@@ -26,8 +26,10 @@ on:
       - "tools/overskrifter.json"
       - "tools/ord.json"
       - ".github/workflows/udrul.yml"
+  # GitHub kører tidsplanen som den bruger, der sidst ændrede cron-linjen. Linjen skal derfor
+  # være ændret af en rigtig GitHub-bruger (ejeren), ikke af en bot, ellers kører den ikke.
   schedule:
-    - cron: "7 * * * *"
+    - cron: "17 * * * *"
   workflow_dispatch:
 
 # Kun én udrulning ad gangen. En ny venter, til den igangværende er færdig.
