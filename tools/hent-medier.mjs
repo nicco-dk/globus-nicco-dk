@@ -319,3 +319,9 @@ console.log(`Varmekort: ${v.length} celler med kampe, ${vd.length} med demonstra
 const tael = s => streger.filter(x => x.status === s).length;
 console.log(`Skrev ${streger.length} streger: ${tael('bekraeftet')} bekræftet, ${tael('afventer')} afventer tjek, ${tael('mistanke')} mistanke.`);
 for (const x of streger.filter(x => x.status !== 'mistanke')) console.log(`  ${x.status}: ${x.type} ${x.aNavn}${x.type === 'konflikt' ? '–' : ' → '}${x.bNavn}, ${x.medier} medier fra ${x.lande} lande på ${x.dage} dage`);
+
+// "Læs mere" til detaljekortene (tools/hent-laes.mjs). Kører efter mediesporet, så stederne er talt op.
+// En fejl her stopper ikke resten af kørslen.
+try {
+  execFileSync(process.execPath, [new URL('./hent-laes.mjs', import.meta.url).pathname, UD, ...(FORRIGE ? ['--forrige', FORRIGE.replace(/medier-tal\.json.*$/, 'laes.json')] : [])], { stdio: 'inherit', timeout: 240000 });
+} catch (e) { console.log(`::warning::Læs mere fejlede: ${e.message}`); }

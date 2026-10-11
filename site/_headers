@@ -20,3 +20,5 @@ https://:udgave.globus-nicco-dk.pages.dev/*
 /manifest.webmanifest
   Content-Type: application/manifest+json
   Cache-Control: public, max-age=3600
+/laes.json
+  Cache-Control: public, max-age=300

@@ -39,6 +39,11 @@
 - Nyt alvorstrin 5, akut: alvor 4 med en udvikling inden for tre dage og smitteudbrud på mistanke. Det gives af en fast regel og står ikke i datasættet. Rejsevejledninger bliver aldrig akut. Søljen "Lige nu" i bunden viser alvor 5 og 4, akut først, i én ubrudt række, og et tryk fører hen til hændelsen. Under Alvor er "Kun 4" blevet til "Fra 4", og "Kun 5" er kommet til.
 - Rejsevejledninger er en service: knappen står for sig til højre og er slået fra ved start og ved Vis alle.
 - Siden kan hentes som app (webapp) på computer og telefon: manifest, ikoner og en service worker, der viser de sidst hentede data uden net. Knappen Hent app vises, når browseren tilbyder installation. På iPhone bruges Del, Føj til hjemmeskærm.
+- Detaljerne er et kort med samme rækkefølge for alle typer: retning, titel, sted, alvor og dato med knapper til følg, del og sammenlign; billede; kort fortalt; nøgletal; forløb (de seneste tre punkter, resten foldet sammen); kilder og vurdering; læs mere; og foldet sammen: hvad ville flytte trinnet, udbredelse, detaljer og hvad der hører sammen. Pilene øverst blader i listen.
+- Billedet er et frit billede fra Wikimedia Commons fra Wikipedia-artiklen om emnet (fx sygdommen eller byen), med fotograf og licens, og der står, at det ikke viser selve hændelsen. Findes der intet, vises et kortudsnit.
+- Læs mere: tre artikler fundet i GDELT DOC af `tools/hent-laes.mjs` hver time, den første fra et dansk medie for brugere i Danmark. Til videre læsning, ikke kilde til tal eller alvor.
+- Overblikket: søgning og filtre er foldet væk bag to knapper, det akutte står øverst, og resten er samlet pr. retning med antal. Udforsk giver en tur gennem de tolv alvorligste lige nu.
+- Mobilen er bygget som en app: kortet står fast i hele skærmen, retningerne ligger i en bjælke øverst med søljen under, og overblik og detaljer er ark, der trækkes op fra bunden. Et swipe til siden skifter hændelse.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag

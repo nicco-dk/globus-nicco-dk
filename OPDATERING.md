@@ -222,3 +222,7 @@ Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker
 Skriv konkret, hvad der blev ændret, og hvilken kilde det bygger på. Posten er det eneste sted, et menneske kan se, hvad kørslen gjorde og hvorfor.
 
 Til gennemgang er det, kun ejeren må rette: gamle punkter, hvor en kilde har rettet sig selv, og alt uden for `DATA_DATO`, `EVENTS` og loggen, der ser forkert ud. Er der intet, skrives `- Intet.` Et punkt bliver stående i hver ny post, til ejeren har rettet det eller afvist det, så det ikke forsvinder ned i loggen.
+
+**Læs mere (artikler i detaljekortet).** `tools/hent-laes.mjs` kører efter mediesporet og søger i GDELT DOC 2.0 efter artikler om smitteudbruddene, maskinmeldinger fra alvor 3 og steder med mindst 40 omtaler af kampe. To søgninger pr. hændelse: engelsksprogede medier (sidste 7 eller 14 dage, kun overskrifter, der nævner søgeordet) og danske medier. Kendte internationale medier (Reuters, AP, BBC, The Guardian m.fl.) foretrækkes. Højst 12 søgninger pr. kørsel med 6,5 sekunder imellem, som GDELT beder om. En hændelse søges igen efter et døgn. Resultatet ligger i `site/laes.json` og bruges kun som henvisning til videre læsning.
+
+**Billeder i detaljekortet.** Siden henter selv billedet fra Wikipedia-artiklen om emnet og bruger det kun, hvis det ligger på Wikimedia Commons (fri licens). Fotograf og licens står under billedet sammen med, at det ikke viser selve hændelsen.

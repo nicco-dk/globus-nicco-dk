@@ -262,6 +262,80 @@ canvas.drag{cursor:grabbing}
 .tk-p .d svg{width:16px;height:16px}
 .tk-p .m{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
 @media (prefers-reduced-motion:reduce){.tk-vindue{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
+/* Detaljekortet: samme rækkefølge for alle typer. */
+.detail{gap:10px}
+.k-greb{display:none}
+.k-nav{display:flex;align-items:center;gap:6px;min-height:24px;margin:-4px 0 -2px}
+.k-nav .x{position:static;margin-left:auto}
+.k-pil{width:26px;height:26px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);font-size:16px;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0 0 2px}
+.k-pil:hover{border-color:var(--c)}
+.k-pos{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);letter-spacing:.04em}
+.k-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
+.k-alv{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--a);display:inline-flex;align-items:center;gap:5px}
+.k-alv::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a)}
+.k-dato{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint)}
+.k-iks{display:flex;gap:4px;margin-left:auto}
+.k-ik{width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);display:grid;place-items:center;cursor:pointer;padding:0}
+.k-ik:hover{color:var(--fg);border-color:var(--c)}
+.k-ik[aria-pressed="true"]{color:var(--c);border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--panel-2))}
+.k-ik[aria-pressed="true"] path{fill:color-mix(in srgb,currentColor 35%,transparent)}
+.k-ik.ok{color:var(--accent);border-color:var(--accent)}
+.k-fig{margin:2px 0 0;display:grid;gap:5px}
+.k-fig img,.k-fig canvas{display:block;width:100%;aspect-ratio:32/15;object-fit:cover;border-radius:6px;background:var(--panel-2)}
+.k-fig figcaption{font-family:var(--mono);font-size:10px;line-height:1.45;color:var(--fg-faint)}
+.k-fig figcaption a{color:var(--fg-dim)}
+.k-fortalt{margin:0;font-size:13.5px;line-height:1.55;color:var(--fg)}
+.k-tal{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0;padding:9px 0 0;border-top:1px solid var(--rule)}
+.k-tal>div{min-width:0;flex:1 1 120px}
+.k-tal dt{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-faint)}
+.k-tal dd{margin:2px 0 0;font-size:12.5px;line-height:1.4;font-variant-numeric:tabular-nums}
+.k-afs{border-top:1px solid var(--rule);padding-top:9px;display:grid;gap:6px}
+.k-afs>h3{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:0}
+.k-afs .srcs{border:0;padding:0}
+.k-afs .dim{font-size:11px;color:var(--fg-faint);margin:0;line-height:1.45}
+.k-mere>summary,.k-fold>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--accent)}
+.k-mere>summary::-webkit-details-marker,.k-fold>summary::-webkit-details-marker{display:none}
+.k-mere[open]>summary{margin-bottom:6px}
+.k-fold{border-top:1px solid var(--rule);padding-top:9px}
+.k-fold>summary{display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--fg-dim)}
+.k-fold>summary::after{content:"";margin-left:auto;width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg);transition:transform .15s}
+.k-fold[open]>summary::after{transform:rotate(-135deg)}
+.k-fold>summary:hover{color:var(--fg)}
+.k-fold[open]>summary{margin-bottom:8px}
+.k-fold p{margin:0 0 6px;font-size:12.5px;line-height:1.5}
+.k-fold .vurd{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--warn);display:block}
+.lafs.k-fold{margin-top:0}
+.lafs.k-fold>summary{font-size:11px}
+.k-art{display:grid;gap:1px;text-decoration:none;padding:6px 8px;border-radius:6px;background:var(--panel-2);border:1px solid transparent}
+.k-art:hover{border-color:var(--rule)}
+.k-art .m{font-family:var(--mono);font-size:10.5px;color:var(--fg-dim)}
+.k-art .t{font-size:12.5px;line-height:1.35;color:var(--fg)}
+/* Overblikket: akutte kort og grupper pr. retning. */
+.akutbox{display:grid;gap:4px;margin-bottom:10px}
+.akutbox .lbl{color:var(--s5);margin:0 0 2px}
+.item.akutkort{border-left-width:3px;background:color-mix(in srgb,var(--c) 7%,var(--panel))}
+.gruppe{border-top:1px solid var(--rule)}
+.gruppe:last-child{border-bottom:1px solid var(--rule)}
+.gruppe>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:9px;padding:8px 2px;font-size:13px;font-weight:600}
+.gruppe>summary::-webkit-details-marker{display:none}
+.gruppe>summary::after{content:"";width:6px;height:6px;border-right:1.5px solid var(--fg-faint);border-bottom:1.5px solid var(--fg-faint);transform:rotate(45deg);transition:transform .15s;margin:0 4px 0 2px}
+.gruppe[open]>summary::after{transform:rotate(-135deg)}
+.gruppe .gi{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent);flex:none}
+.gruppe .gn{flex:1;min-width:0}
+.gruppe .ga{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--fg)}
+.gruppe .gm{font-family:var(--mono);font-size:10.5px;font-weight:400;color:var(--fg-faint);min-width:58px;text-align:right}
+.gruppe .gl{display:flex;flex-direction:column;gap:1px;padding:0 0 8px}
+.ovtop{display:flex;align-items:center;gap:6px}
+.ovt{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--fg-faint);margin-right:auto}
+.ovik{position:relative;width:32px;height:32px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);display:grid;place-items:center;cursor:pointer;padding:0}
+.ovik svg,.udforsk svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ovik:hover,.ovik[aria-expanded="true"]{color:var(--fg);border-color:var(--accent)}
+.fprik{position:absolute;top:3px;right:3px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.udforsk{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px 0 9px;border-radius:999px;border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel-2));color:var(--fg);font:600 12.5px/1 var(--display);cursor:pointer}
+.udforsk:hover{background:color-mix(in srgb,var(--accent) 22%,var(--panel-2))}
+.filtre{display:flex;flex-direction:column;gap:10px}
+.arkfilter:empty{display:none}
+.ark-greb{display:none}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -409,34 +483,48 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 .g-s b{font-size:13.5px;color:var(--fg)}
 .g-s span{font-size:12.5px;line-height:1.45;color:var(--fg-dim)}
 @media (max-width:900px){
-  .app{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 54vh auto auto auto auto auto;overflow-y:auto}
-  .stage,.mapctl,.side{grid-column:1;grid-row:auto}
-  header{grid-template-columns:minmax(0,1fr) auto auto}
-  .temabtn{grid-column:2;grid-row:1;justify-self:end}
-  header .rchips{grid-column:1/-1;grid-row:2}
-  h1.logo{border-right:0;padding-right:0;--ch:12px}
+  /* Mobil som app: kortet står fast i hele skærmen, toppen ligger oven på, og overblik og detaljer er ark fra bunden. */
+  html,body{height:100%;overflow:hidden;overscroll-behavior:none}
+  .app{position:fixed;inset:0;display:block;padding:0;overflow:hidden}
+  .stage{position:fixed;left:0;right:0;top:0;bottom:var(--ark-min,150px);z-index:0}
+  header{position:fixed;top:0;left:0;right:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+    padding:calc(env(safe-area-inset-top) + 8px) 12px 6px;border:0;background:linear-gradient(var(--bg) 70%,color-mix(in srgb,var(--bg) 0%,transparent))}
+  h1.logo{border-right:0;padding-right:0;margin-right:auto;--ch:12px}
+  h1.logo .dom{display:none}
+  .hacts{display:flex;gap:6px}
   .guidebtn .t{display:none}
   .guidebtn{padding:5px}
-  .hacts{display:contents}
-  .hentapp{grid-column:1/-1;grid-row:5;justify-self:start}
-  .guidebtn{grid-column:3;grid-row:1;justify-self:end}
-  header .sub{grid-row:3}
-  header .proto{grid-column:1/-1;grid-row:4;justify-self:start}
-  .side{padding-left:0;border-left:0;border-top:1px solid var(--rule);padding-top:12px;overflow:visible;min-height:auto}
+  header .sub{display:none}
+  header .rchips{order:5;flex:1 1 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -12px;padding:0 12px 2px}
+  header .rchips::-webkit-scrollbar{display:none}
+  .rchip.service{margin-left:14px}
+  .ticker{position:fixed;left:0;right:0;top:var(--hdr,96px);z-index:5;margin:0;padding:4px 12px;border:0;background:color-mix(in srgb,var(--bg) 82%,transparent)}
+  .tk-lbl{display:none}
+  .hud{display:none}
+  .zoomer{position:fixed;right:10px;bottom:calc(var(--ark-h,150px) + 12px);z-index:4;transition:bottom .25s ease}
+  #zin,#zout{display:none}
+  .side{position:fixed;left:0;right:0;bottom:0;z-index:20;height:var(--ark,150px);background:var(--panel);
+    border:1px solid var(--rule);border-bottom:0;border-radius:16px 16px 0 0;box-shadow:0 -10px 30px rgba(0,0,0,.35);
+    padding:0 14px calc(env(safe-area-inset-bottom) + 8px);gap:10px;overflow:hidden;transition:height .25s ease}
+  .side.drar,.detail.drar{transition:none}
+  .ark-greb{display:block;flex:none;height:20px;margin:0 -14px;cursor:grab;touch-action:none;position:relative}
+  .ark-greb::after,.k-greb::after{content:"";position:absolute;left:50%;top:7px;width:40px;height:5px;margin-left:-20px;border-radius:3px;background:var(--rule)}
+  .side .listwrap{overflow-y:auto;overscroll-behavior:contain;min-height:0}
   .list{max-height:none;overflow:visible}
-  .timebar{flex-wrap:wrap}
-  /* Detaljerne åbner som et ark fra bunden, så de ses, uanset hvor på siden man står. */
-  .detail{position:fixed;left:0;right:0;top:auto;bottom:0;width:100%;max-height:76vh;z-index:30;
-    border-width:1px 0 0;border-radius:14px 14px 0 0;padding:0 16px 26px;
-    box-shadow:0 -14px 40px rgba(0,0,0,.5);overscroll-behavior:contain}
-  /* Lukkeknappen er en fast bjælke øverst i arket, så teksten ruller under den og ikke bag et kryds. */
-  .detail .x{position:sticky;top:0;right:auto;z-index:2;justify-self:stretch;width:auto;height:46px;margin:0 -16px 2px;padding:0 18px;
-    text-align:right;font-size:22px;line-height:44px;border-radius:14px 14px 0 0;border-bottom:1px solid var(--rule);
-    background:var(--panel);color:var(--fg-dim)}
-  .detail .x::before{content:"Luk";font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;margin-right:9px;vertical-align:3px}
-  .detail h2{padding-right:0}
-  /* Laget bag arket. Et tryk på det lukker arket i stedet for at ramme det, der ligger bagved. */
-  .scrim{display:block;position:fixed;inset:0;z-index:29;background:rgba(3,8,13,.5);border:0;padding:0;width:100%;height:100%;cursor:default}
+  .filtre{max-height:none}
+  .arkfilter{display:flex;flex-direction:column;gap:12px}
+  .arkfilter .mapctl{padding:0}
+  .arkfilter .timebar{flex-wrap:wrap;margin:0;padding:10px 0 0}
+  .arkfilter footer{padding:4px 0}
+  .detail{position:fixed;left:0;right:0;top:auto;bottom:0;width:100%;height:var(--ark-d,58vh);max-height:none;z-index:30;
+    border-width:1px 0 0;border-radius:16px 16px 0 0;padding:0 16px calc(env(safe-area-inset-bottom) + 24px);
+    box-shadow:0 -14px 40px rgba(0,0,0,.45);overscroll-behavior:contain;transition:height .25s ease;align-content:start}
+  .detail .k-greb{display:block;position:sticky;top:0;height:20px;margin:0 -16px -10px;background:var(--panel);z-index:3;touch-action:none;cursor:grab}
+  .detail .k-nav{position:sticky;top:20px;z-index:3;background:var(--panel);margin:0 -16px;padding:4px 16px 8px;border-bottom:1px solid var(--rule)}
+  .detail .x{min-width:36px;min-height:36px;font-size:20px}
+  .detail h2{padding-right:0;font-size:18px}
+  .k-fortalt{font-size:15px}
+  .scrim{display:none!important}
 }
 @media (pointer:coarse){
   .zoomer button{width:42px;height:42px;font-size:17px}
@@ -488,13 +576,22 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <span><button class="linkbtn" id="retalle" type="button">Vis alle</button><button class="linkbtn" id="retingen" type="button">Skjul alle</button></span>
   </div>
 
-  <aside class="side">
-    <div class="search">
+  <aside class="side" id="side">
+    <div class="ark-greb" id="arkgreb" aria-hidden="true"></div>
+    <div class="ovtop">
+      <span class="ovt">Overblik</span>
+      <button class="udforsk" id="udforsk" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><span>Udforsk</span></button>
+      <button class="ovik" id="soegknap" type="button" aria-label="Søg" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></button>
+      <button class="ovik" id="filterknap" type="button" aria-label="Filtre" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span class="fprik" id="fprik" hidden></span></button>
+    </div>
+    <div class="search" id="soegfelt" hidden>
       <label class="lbl" for="q">Søg sted, sygdom eller hændelse</label>
       <input id="q" type="search" placeholder="fx Ukraine, ebola, jordskælv, Bangladesh" autocomplete="off">
       <button class="clr" id="clr" title="Ryd søgning" aria-label="Ryd søgning" hidden>×</button>
     </div>
 
+    <div class="filtre" id="filtre" hidden>
+    <div class="arkfilter" id="arkfilter"></div>
     <details class="flere" id="flere">
       <summary><span>Område og trin</span><span class="fn" id="flerefn"></span></summary>
     <div>
@@ -507,6 +604,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <div class="ladder" id="ladder"></div>
     </div>
     </details>
+    </div>
 
     <div class="listwrap">
       <div class="foelgbox" id="foelgbox" hidden></div>
@@ -1489,13 +1587,24 @@ function readTokens(){
   ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--accent','--bg',
    '--panel','--krig-tone','--hjaelp','--stoette','--hs','--flugt','--c-rejse','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
 }
+let TOP = 0, VH = 0, CY_MAAL = 0;
+// På mobilen glider klodens midte op over detaljearket, så det valgte står i det synlige stykke kort.
+function opdaterCY(){
+  let bund = H;
+  try{ if(MOBIL.matches && !detail.hidden){ const d = parseFloat(detail.style.getPropertyValue('--ark-d')) || innerHeight * .58; bund = Math.max(TOP + 120, Math.min(H, innerHeight - d)); } }catch(err){ /* detail findes endnu ikke */ }
+  CY_MAAL = TOP + (bund - TOP) / 2;
+}
+const MOBIL = matchMedia('(max-width:900px)');
 function resize(){
   const r = cv.parentElement.getBoundingClientRect();
   dpr = Math.min(window.devicePixelRatio || 1, 2);
   W = Math.max(240, r.width); H = Math.max(240, r.height);
   cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr);
   ctx.setTransform(dpr,0,0,dpr,0,0);
-  view.cx = W/2; view.cy = H/2; view.R = Math.min(W,H)/2*0.88*zoom;
+  // På mobilen ligger toppen (retninger og sølje) oven på kortet. Kloden centreres i det, der er frit under den.
+  TOP = MOBIL.matches ? Math.min(H*.4, (document.querySelector('header').offsetHeight || 0) + (document.getElementById('ticker').hidden ? 0 : document.getElementById('ticker').offsetHeight)) : 0;
+  VH = H - TOP;
+  view.cx = W/2; view.cy = TOP + VH/2; view.R = Math.min(W,VH)/2*0.88*zoom; opdaterCY(); view.cy = CY_MAAL;
   draw();
 }
 const retCol = e => T['--c-' + retAf(e)];
@@ -1776,7 +1885,7 @@ function aabnKlynge(c){
   // så de fleste skilles, uden at kloden springer helt ind for to prikker, der næsten ligger oven i hinanden.
   const vink = (p, q) => Math.acos(Math.max(-1, Math.min(1, Math.sin(p.lat*DEG)*Math.sin(q.lat*DEG) + Math.cos(p.lat*DEG)*Math.cos(q.lat*DEG)*Math.cos((p.lon-q.lon)*DEG))));
   const nn = c.m.map((k, i) => Math.min(...c.m.filter((_, j) => j !== i).map(q => vink(k.e, q.e)))).sort((x, y) => x - y);
-  const med = nn[Math.floor(nn.length/2)], grund = Math.min(W, H)/2*0.88;
+  const med = nn[Math.floor(nn.length/2)], grund = Math.min(W, VH || H)/2*0.88;
   const behov = med > 2e-4 ? KLYNGE_AF*1.3/(grund*med) : Infinity;
   if(behov <= ZMAX && zoom < ZMAX*.98){
     const lat = c.m.reduce((s, k) => s + k.e.lat, 0)/c.m.length;
@@ -2079,7 +2188,7 @@ function render(){
   document.getElementById('shown').textContent = off.size ? `${STAGES.length-off.size} af ${STAGES.length} til` : '';
   const aktive = (region ? 1 : 0) + (off.size ? 1 : 0);
   document.getElementById('flerefn').textContent = [region, off.size ? `${STAGES.length-off.size} af ${STAGES.length} trin` : ''].filter(Boolean).join(' · ');
-  if(aktive) document.getElementById('flere').open = true;
+  document.getElementById('fprik').hidden = !aktive;
   list.innerHTML = '';
   if(!vis.length){
     const d = document.createElement('p'); d.className = 'empty';
@@ -2088,34 +2197,68 @@ function render(){
     list.appendChild(d);
   }
   const iDag = cutoff >= T1;
-  vis.slice().sort((a,b) => (nyeste ? senestMs(b)-senestMs(a) : alvorAt(b, stageAt(b,cutoff))-alvorAt(a, stageAt(a,cutoff)))
+  const sorteret = vis.slice().sort((a,b) => (nyeste ? senestMs(b)-senestMs(a) : alvorAt(b, stageAt(b,cutoff))-alvorAt(a, stageAt(a,cutoff)))
       || (b.live?1:0)-(a.live?1:0)
       || (ORDER[stageAt(a,cutoff)] ?? 6)-(ORDER[stageAt(b,cutoff)] ?? 6)
       || senestMs(b)-senestMs(a)
-      || a.place.localeCompare(b.place,'da'))
-    .forEach(e => {
-      if(e._feed){ list.appendChild(feedItem(e)); return; }
-      const st = stageAt(e, cutoff), sl = sidste(e);
-      const b = document.createElement('button');
-      b.className = 'item'; b.type = 'button'; b.style.setProperty('--c', retVar(e));
-      b.setAttribute('aria-current', String(e.id === selected));
-      if(focusId && e.id !== focusId) b.dataset.dim = '1';
-      b.innerHTML = `<span class="top"><span class="t"></span><span class="d"></span></span><span class="m"></span>`;
-      b.querySelector('.t').textContent = `${e.disease} · ${e.country}`;
-      b.querySelector('.m').textContent = `${SK[st].n} · alvor ${alvorAt(e, st)} · ${e.place}`;
-      // Datoen for seneste udvikling. Markeres, når den er højst NY_DAGE gammel på det valgte tidspunkt.
-      const d = b.querySelector('.d'), ny = cutoff - sl.ms <= NY_DAGE*DAY;
-      d.textContent = kortDato(sl[0]);
-      d.title = ny ? 'Seneste udvikling, højst tre dage gammel' : 'Seneste udvikling';
-      if(ny) d.classList.add('ny');
-      // Omfanget er det aktuelle tal og vises derfor kun, når skyderen står på i dag.
-      if(iDag) b.appendChild(el('span','c', e.cases));
-      b.addEventListener('click', () => select(e.id, true));
-      list.appendChild(b);
-    });
+      || a.place.localeCompare(b.place,'da'));
+  LISTE = sorteret.map(e => e.id);
+  const punkt = e => e._feed ? feedItem(e) : eventItem(e, iDag);
+  // Søgning og fokus giver én flad liste. Ellers: det akutte øverst som kort, derefter én gruppe pr. retning.
+  if(query || focusId || !vis.length){ for(const e of sorteret) list.appendChild(punkt(e)); }
+  else {
+    const akut = sorteret.filter(e => alvorAt(e, stageAt(e, cutoff)) >= 5);
+    if(akut.length){
+      const box = el('div','akutbox'); box.appendChild(el('p','lbl', 'Akut lige nu'));
+      for(const e of akut){ const k = punkt(e); k.classList.add('akutkort'); box.appendChild(k); }
+      list.appendChild(box);
+    }
+    const aabne = grupperLaes();
+    const vRet = sel => selected && byId[selected] && retAf(byId[selected]) === sel;
+    for(const r of RETNINGER.filter(x => !SERVICE.has(x.k)).concat(RETNINGER.filter(x => SERVICE.has(x.k)))){
+      const ii = sorteret.filter(e => retAf(e) === r.k); if(!ii.length) continue;
+      const g = document.createElement('details'); g.className = 'gruppe'; g.style.setProperty('--c', `var(--c-${r.k})`);
+      g.open = aabne.has(r.k) || vRet(r.k);
+      const maks = Math.max(...ii.map(e => alvorAt(e, stageAt(e, cutoff))));
+      const sm = document.createElement('summary');
+      sm.innerHTML = `<span class="gi">${svgIc(r.k, 15)}</span><span class="gn"></span><span class="ga">${ii.length}</span><span class="gm">højest ${maks}</span>`;
+      sm.querySelector('.gn').textContent = r.n;
+      g.appendChild(sm);
+      const indhold = el('div','gl'); g.appendChild(indhold);
+      // Punkterne bygges først, når gruppen åbnes. Naturbrande alene kan være flere hundrede.
+      const fyld = () => { if(indhold.childElementCount) return; for(const e of ii) indhold.appendChild(punkt(e)); };
+      if(g.open) fyld();
+      g.addEventListener('toggle', () => { const a = grupperLaes(); g.open ? (a.add(r.k), fyld()) : a.delete(r.k); grupperGem(a); });
+      list.appendChild(g);
+    }
+  }
   if(selected && byId[selected] && liveAt(byId[selected], cutoff)) showDetail(byId[selected]);
   draw();
 }
+function eventItem(e, iDag){
+  const st = stageAt(e, cutoff), sl = sidste(e);
+  const b = document.createElement('button');
+  b.className = 'item'; b.type = 'button'; b.style.setProperty('--c', retVar(e));
+  b.setAttribute('aria-current', String(e.id === selected));
+  if(focusId && e.id !== focusId) b.dataset.dim = '1';
+  b.innerHTML = `<span class="top"><span class="t"></span><span class="d"></span></span><span class="m"></span>`;
+  b.querySelector('.t').textContent = `${e.disease} · ${e.country}`;
+  b.querySelector('.m').textContent = `${SK[st].n} · alvor ${alvorAt(e, st)} · ${e.place}`;
+  // Datoen for seneste udvikling. Markeres, når den er højst NY_DAGE gammel på det valgte tidspunkt.
+  const d = b.querySelector('.d'), ny = cutoff - sl.ms <= NY_DAGE*DAY;
+  d.textContent = kortDato(sl[0]);
+  d.title = ny ? 'Seneste udvikling, højst tre dage gammel' : 'Seneste udvikling';
+  if(ny) d.classList.add('ny');
+  // Omfanget er det aktuelle tal og vises derfor kun, når skyderen står på i dag.
+  if(iDag) b.appendChild(el('span','c', e.cases));
+  b.addEventListener('click', () => select(e.id, true));
+  return b;
+}
+// Hvilke grupper i overblikket der er åbne. Huskes i browseren.
+let LISTE = [];
+const GRP_NOEGLE = 'globus-grupper';
+function grupperLaes(){ try{ return new Set(JSON.parse(localStorage.getItem(GRP_NOEGLE) || '[]')); }catch(err){ return new Set(); } }
+function grupperGem(a){ try{ localStorage.setItem(GRP_NOEGLE, JSON.stringify([...a])); }catch(err){} }
 function feedItem(e){
   const b = document.createElement('button');
   b.className = 'item'; b.type = 'button'; b.style.setProperty('--c', retVar(e));
@@ -2133,53 +2276,20 @@ function feedItem(e){
 const RNAVN = {rejse:'Rejsevejledning', krig:'Krig og konflikt', smitte:'Smitte', hede:'Hede og klima', jord:'Jordskælv', flod:'Oversvømmelse', storm:'Storm', brand:'Naturbrand', vulkan:'Vulkan'};
 const klok = iso => new Date(iso).toLocaleString('da-DK', {day:'numeric', month:'long', hour:'2-digit', minute:'2-digit', timeZone:'Europe/Copenhagen'});
 function visFeed(e){
-  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
-  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk');
-  x.addEventListener('click', lukDetaljer);
-  const dl = document.createElement('dl'); dl.className = 'kv';
-  const rows = [['Alvor', `${e.alvor} · ${ALV[e.alvor].n}`], ['Kilde', e.kilde]];
-  if(e.tid) rows.push([e.ret === 'krig' ? 'Opdateret af kilden' : 'Startet', e.ret === 'krig' ? fmtDate(e.tid.slice(0,10)) : klok(e.tid)]);
-  if(e.opd && e.opd !== e.tid && e.ret !== 'krig') rows.push(['Seneste ændring', klok(e.opd)]);
-  for(const [k,v] of rows){ dl.appendChild(el('dt','',k)); dl.appendChild(el('dd','',v)); }
-  const sr = document.createElement('div'); sr.className = 'srcs';
-  sr.appendChild(kildeLink(`${e.kilde}: original melding`, e.url));
+  const krigLand = e.ret === 'krig';
+  kortTop(e, {chip: RNAVN[e.ret], titel: e.titel, sted: e.sted || `${Math.abs(e.lat).toFixed(2)}° ${e.lat>=0?'N':'S'} ${Math.abs(e.lon).toFixed(2)}° ${e.lon>=0?'Ø':'V'}`,
+    alvor: e.alvor, dato: e.opd || e.tid ? `Opdateret ${klok(e.opd || e.tid)}` : ''});
+  billede(e, e.ret === 'vulkan' ? [['en', (e.titel || '').split(' · ').pop()], ['en', (e.sted || '').split(',')[0]]] : null, a2Af(e));
+  kortFortalt(e.tekst);
+  noegletal([['Kilde', e.kilde], ['Startet', e.tid && !krigLand ? klok(e.tid) : ''], ['Alvor fra kilden', e.alvorKilde ? `${e.alvorKilde}, akut fordi det er nyt` : ''],
+    ['Sted', `${Math.abs(e.lat).toFixed(2)}° ${e.lat>=0?'N':'S'} ${Math.abs(e.lon).toFixed(2)}° ${e.lon>=0?'Ø':'V'}`]]);
+  const kv = afsnit('Kilder og vurdering', 'srcs-afs');
+  const sr = el('div','srcs'); sr.appendChild(kildeLink(`${e.kilde}: original melding`, e.url)); kv.appendChild(sr);
   const hentet = FEEDINFO && FEEDINFO.genereret ? klok(FEEDINFO.genereret) : '';
-  sr.appendChild(el('span','srclegend', `Hentet automatisk${hentet ? ' ' + hentet : ''}. Teksten er sat sammen af kildens egne felter. Alvor er kildens egen farve oversat efter faste regler.`));
-  detail.append(x, el('span','chip', RNAVN[e.ret]), el('h2','', e.sted ? `${e.titel} · ${e.sted}` : e.titel),
-    el('div','where', `${Math.abs(e.lat).toFixed(2)}° ${e.lat>=0?'N':'S'} ${Math.abs(e.lon).toFixed(2)}° ${e.lon>=0?'Ø':'V'}`),
-    dl, el('p','note', e.tekst || ''));
-  if(e.ret === 'krig'){
-    const STATUS = {bekraeftet:'Bekræftet af medier', afventer:'Venter på tjek', mistanke:'Mistanke'};
-    for(const [type, overskrift] of [['konflikt','Konflikter ifølge medierne'], ['militaer','Militær støtte ifølge medierne']]){
-      const l = KONF.filter(x => x.type === type && (x.a === e.a2 || x.b === e.a2));
-      if(!l.length) continue;
-      const box = document.createElement('div'); box.className = 'konf ' + type;
-      box.appendChild(el('h3','', overskrift));
-      for(const x of l){
-        const anden = x.a === e.a2 ? x.bNavn : x.aNavn;
-        const navn = type === 'militaer' ? (x.b === e.a2 ? `Fra ${x.aNavn}` : `Til ${x.bNavn}`) : anden;
-        const r = document.createElement('div'); r.className = 'kr ' + x.status;
-        r.append(el('b','', navn), el('span','st', STATUS[x.status]), el('span','m', `${x.medier} medier fra ${x.lande} lande på ${x.dage} dage`));
-        if(x.tjek && x.tjek.note) r.appendChild(el('span','n', x.tjek.note));
-        const a = document.createElement('span'); a.className = 'ar';
-        for(const art of (x.tjek && x.tjek.kilder ? x.tjek.kilder.map(([m, u]) => ({medie:m, url:u})) : x.art.slice(0, 3))) a.appendChild(kildeLink(`${art.medie}, medie`, art.url));
-        r.appendChild(a); box.appendChild(r);
-      }
-      box.appendChild(el('p','dim', 'Optalt automatisk i GDELT blandt medierne på vores liste. Bekræftet kræver mindst 5 medier fra 3 lande uden for parterne på 3 forskellige dage, og at artiklerne er læst igennem. Medier er ikke myndigheder.'));
-      detail.appendChild(box);
-    }
-  }
-  if(e.ret === 'krig' && HJAELP[e.a2]){
-    const hj = HJAELP[e.a2], box = document.createElement('div'); box.className = 'hjaelp';
-    box.appendChild(el('h3','', `Humanitær hjælp i ${hj[0].aar}`));
-    box.appendChild(el('p','dim', `${hj.length} lande og EU har givet mindst 1 mio. USD. De grønne streger på kloden går fra dem. Beløbene er udbetalt eller forpligtet, ikke løfter.`));
-    const ol = document.createElement('ol');
-    for(const x of hj){ const li = document.createElement('li'); li.append(el('span','', x.fraNavn), el('span','b', `${(x.usd/1e6).toLocaleString('da-DK', {maximumFractionDigits: x.usd < 1e7 ? 1 : 0})} mio. USD`)); ol.appendChild(li); }
-    box.appendChild(ol);
-    box.appendChild(kildeLink('OCHA Financial Tracking Service', hj[0].url));
-    detail.appendChild(box);
-  }
-  detail.appendChild(sr);
+  kv.appendChild(el('span','srclegend', `Hentet automatisk${hentet ? ' ' + hentet : ''}. Teksten er sat sammen af kildens egne felter. Alvor er kildens egen farve oversat efter faste regler.`));
+  laesMere(e.id);
+  if(e.ret === 'rejse' && e.regioner && e.regioner.length) fold('Regioner nævnt ved navn', el('p','note', e.regioner.map(([n, a]) => `${n} (${a})`).join(', ')));
+  seHeleLand(e);
 }
 // Landesiden: alt om ét land samlet, når man vælger en rejsevejledning eller et land under krig og konflikt.
 const FOELG_NOEGLE = 'globus-foelg';
@@ -2211,7 +2321,11 @@ function sparkKurve(kurve){
   const d = pts.map((q, i) => (i ? 'L' : 'M') + q[0].toFixed(1) + ' ' + q[1].toFixed(1)).join(' ');
   return `<svg class="kurve" viewBox="0 0 ${w} ${hh}" width="${w}" height="${hh}" role="img" aria-label="Medier pr. dag de sidste ${kurve.length} dage"><path d="${d}" fill="none" stroke="var(--c-krig)" stroke-width="1.5" stroke-linejoin="round"/>${pts.map(q => `<circle cx="${q[0].toFixed(1)}" cy="${q[1].toFixed(1)}" r="1.4" fill="var(--c-krig)"/>`).join('')}</svg>`;
 }
-function landAfsnit(titel, klasse){ const b = document.createElement('div'); b.className = 'lafs ' + (klasse || ''); b.appendChild(el('h3','', titel)); return b; }
+// Landesidens afsnit kan foldes sammen. Rejsevejledning og krig og konflikt står åbne.
+function landAfsnit(titel, klasse){
+  const b = document.createElement('details'); b.className = 'lafs k-fold ' + (klasse || ''); b.open = klasse === 'rejse' || klasse === 'konf';
+  const sm = document.createElement('summary'); sm.textContent = titel; b.appendChild(sm); return b;
+}
 function landPunkt(e, tekst){
   const b = document.createElement('button'); b.type = 'button'; b.className = 'lp'; b.style.setProperty('--c', retVar(e));
   b.innerHTML = `<span class="d">${svgIc(retAf(e), 12)}</span>`; b.append(el('span','t', tekst));
@@ -2230,18 +2344,10 @@ function parRaekke(r, kx){
 }
 function visLand(e){
   const d = landData(e.a2);
-  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
-  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk'); x.addEventListener('click', lukDetaljer);
-  const foelg = foelgLaes(), foelger = !!foelg[d.a2];
-  const fb = el('button','foelg', foelger ? 'Følger landet' : 'Følg landet'); fb.type = 'button'; fb.setAttribute('aria-pressed', String(foelger));
-  fb.addEventListener('click', () => { const o = foelgLaes(); if(o[d.a2]) delete o[d.a2]; else o[d.a2] = landSignatur(d); foelgGem(o); visLand(e); visFoelg(); });
-  const rss = document.createElement('a'); rss.className = 'rss'; rss.href = `/feed?land=${d.a2}`; rss.textContent = 'Abonnér (RSS)'; rss.target = '_blank'; rss.rel = 'noopener';
-  const top = el('div','ltop'); top.append(fb, rss);
-  detail.append(x, el('span','chip', 'Land'), el('h2','', d.navn), el('div','where', d.hoved ? `Hovedstad: ${d.hoved}` : ''), top);
-  // Samlet vurdering for rejsende.
-  const maks = Math.max(0, ...d.rejse.map(r => r.alvor), d.krig ? d.krig.alvor : 0, ...d.varsler.map(v => v.alvor), ...d.smitte.map(s => alvorAt(s, stageAt(s, cutoff))));
-  const sam = el('p','samlet', maks ? `Højeste alvor lige nu: ${maks}, ${ALV[maks].n.toLowerCase()}. ${ALV[maks].d}` : 'Siden har intet om landet lige nu.');
-  sam.style.setProperty('--a', maks); detail.appendChild(sam);
+  const maks = Math.max(0, ...d.rejse.map(r => r.alvor), d.krig ? d.krig.alvor : 0, ...d.varsler.map(v => v.alvor), ...d.smitte.map(s2 => alvorAt(s2, stageAt(s2, cutoff))));
+  kortTop(e, {chip: 'Land', titel: d.navn, sted: d.hoved ? `Hovedstad: ${d.hoved}` : '', alvor: maks || 0, a2: d.a2, rss: `/feed?land=${d.a2}`});
+  billede(Object.assign(Object.create(e), {_land: true}), [['da', d.navn]], d.a2);
+  kortFortalt(maks ? `Højeste alvor lige nu: ${maks}, ${ALV[maks].n.toLowerCase()}. ${ALV[maks].d}` : 'Siden har intet om landet lige nu.');
   // Rejsevejledning
   if(d.rejse.length){
     const b = landAfsnit('Rejsevejledning', 'rejse');
@@ -2374,7 +2480,9 @@ function select(id, fly){
   // Listen bygges om ved hvert valg. Stod fokus i listen, sættes det tilbage på den valgte hændelse.
   const iListen = list.contains(document.activeElement);
   setFocus(id);
+  if(TUR && !TUR.ids.includes(id)) TUR = null;
   selected = id; const e = byId[id]; visParFast = null; visPar = null; idle = performance.now();
+  if(MOBIL.matches){ if(detail.hidden) detHoejde('halv'); arkHoejde('lille'); }
   if(fly) target = {lam:-e.lon, phi: Math.max(-80, Math.min(80, e.lat))};
   showDetail(e); render();
   if(iListen){ const cur = list.querySelector('[aria-current="true"]'); if(cur) cur.focus({preventScroll:true}); }
@@ -2384,6 +2492,7 @@ function select(id, fly){
 // På smalle skærme, hvor detaljerne er et ark, ryddes fokus også, ellers ligger Vis alle langt nede på siden.
 const SMAL = matchMedia('(max-width:900px)');
 function lukDetaljer(){
+  TUR = null; detail.dataset.id = '';
   if(SMAL.matches) setFocus(null);
   selected = null; detail.hidden = true; render(); skrivAdresse();
 }
@@ -2448,114 +2557,261 @@ function kildeLink(t, u){
   a.title = m ? (m[1] === 'medie' ? 'Nyhedsmedie' : 'Sekundær kilde') : 'Myndighed eller fagtidsskrift';
   return a;
 }
+
+// ---------- detaljekortet ----------
+// Alle typer bruger samme rækkefølge: top (retning, titel, sted, alvor, dato og knapper), billede, kort fortalt,
+// nøgletal, forløb, kilder og vurdering, læs mere og til sidst det, der er foldet sammen.
+let BRUGER_LAND = null, LAES = null, TUR = null;
+fetch('/laes.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => { if(j && j.l){ LAES = j; if(selected && byId[selected]) showDetail(byId[selected]); } }).catch(() => {});
+const DN_EN = (() => { try{ return new Intl.DisplayNames(['en'], {type:'region'}); }catch(err){ return null; } })();
+// Landekoden for en hændelse: feltet a2, ellers det første land, hvis danske navn står i teksten.
+function a2Af(e){
+  if(e.a2) return e.a2;
+  const t = e._feed ? (e.sted || '') : (e.country || '');
+  for(const a2 in HS || {}) if(t.startsWith(HS[a2][0])) return a2;
+  return null;
+}
+const IKN = {
+  foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z',
+  del:'M8.6 13.5l6.8 4M15.4 6.5l-6.8 4M18 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM18 19a2 2 0 1 1-4 0 2 2 0 0 1 4 0z',
+  cmp:'M4 5h6v14H4zM14 9h6v10h-6z', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16'
+};
+const ikon = (k, s=16) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IKN[k]}"/></svg>`;
+function ikonKnap(k, navn, tip, fn, presset){
+  const b = document.createElement('button'); b.type = 'button'; b.className = 'k-ik'; b.innerHTML = ikon(k); b.setAttribute('aria-label', navn);
+  if(presset !== undefined) b.setAttribute('aria-pressed', String(!!presset));
+  b.dataset.tip = TT(navn, tip); b.addEventListener('click', fn); return b;
+}
+// Bladring: i Udforsk mellem turens hændelser, ellers i listens rækkefølge.
+function raekke(){ return TUR ? TUR.ids : LISTE; }
+function bladr(d){
+  const r = raekke(), i = r.indexOf(selected); if(!r.length) return;
+  const n = r[(i < 0 ? 0 : i + d + r.length) % r.length];
+  if(TUR) TUR.i = r.indexOf(n);
+  select(n, true); if(zoom < 2) zoomMaal = 2.2;
+}
+function startTur(){
+  const ids = ALLE().filter(e => matches(e) && retAf(e) !== 'rejse')
+    .sort((a, b) => alvorAt(b, stageAt(b, cutoff)) - alvorAt(a, stageAt(a, cutoff)) || senestMs(b) - senestMs(a)).slice(0, 12).map(e => e.id);
+  if(!ids.length) return;
+  TUR = {ids, i:0}; select(ids[0], true); zoomMaal = Math.max(zoom, 2.2);
+}
+function kortTop(e, o){
+  const nyt = detail.dataset.id !== e.id;
+  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = ''; detail.dataset.id = e.id;
+  if(nyt) detail.scrollTop = 0;
+  const greb = el('div','k-greb'); greb.setAttribute('aria-hidden','true'); detail.appendChild(greb);
+  const nav = el('div','k-nav');
+  const r = raekke(), i = r.indexOf(e.id);
+  if(r.length > 1 && (i >= 0 || TUR)){
+    const f = el('button','k-pil','‹'); f.type = 'button'; f.setAttribute('aria-label','Forrige'); f.addEventListener('click', () => bladr(-1));
+    const n = el('button','k-pil','›'); n.type = 'button'; n.setAttribute('aria-label','Næste'); n.addEventListener('click', () => bladr(1));
+    nav.append(f, el('span','k-pos', TUR ? `Udforsk · ${i + 1} af ${r.length}` : `${i + 1} af ${r.length}`), n);
+  }
+  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk'); x.addEventListener('click', lukDetaljer);
+  nav.appendChild(x); detail.appendChild(nav);
+  const meta = el('div','k-meta');
+  meta.appendChild(el('span','chip', o.chip));
+  if(o.alvor) { const a = el('span','k-alv', `Alvor ${o.alvor} · ${ALV[o.alvor].n}`); a.style.setProperty('--a', `var(--s${Math.min(o.alvor, 5)})`); meta.appendChild(a); }
+  if(o.dato) meta.appendChild(el('span','k-dato', o.dato));
+  detail.append(meta, el('h2','', o.titel));
+  if(o.sted) detail.appendChild(el('div','where', o.sted));
+  const ik = el('div','k-iks');
+  const a2 = o.a2 || a2Af(e);
+  if(a2){
+    const fo = foelgLaes(), f = !!fo[a2];
+    ik.appendChild(ikonKnap('foelg', f ? `Følger ${landNavnAf(a2)}` : `Følg ${landNavnAf(a2)}`, 'Landet står øverst i overblikket og markeres, når noget er ændret siden sidst. Gemmes kun i denne browser.', () => {
+      const o2 = foelgLaes(); if(o2[a2]) delete o2[a2]; else o2[a2] = landSignatur(landData(a2)); foelgGem(o2); visFoelg(); showDetail(e);
+    }, f));
+  }
+  const kanDele = typeof navigator.share === 'function' && matchMedia('(pointer:coarse)').matches;
+  const dk = ikonKnap('del', kanDele ? 'Del' : 'Kopiér link', 'Et link direkte til det her.', async () => {
+    const url = location.origin + location.pathname + '#' + e.id;
+    if(kanDele){ try{ await navigator.share({title: `${o.titel} · globus.nicco.dk`, url}); }catch(err){} return; }
+    let ok = false; try{ await navigator.clipboard.writeText(url); ok = true; }catch(err){}
+    dk.dataset.tip = TT(ok ? 'Link kopieret' : 'Kunne ikke kopiere', url); dk.classList.toggle('ok', ok); setTimeout(() => dk.classList.remove('ok'), 1600);
+  });
+  ik.appendChild(dk);
+  if(o.cmp){
+    const i2 = cmp.indexOf(e.id) >= 0;
+    ik.appendChild(ikonKnap('cmp', i2 ? 'Fjern fra sammenligning' : 'Sammenlign', 'Op til tre smitteudbrud side om side øverst i overblikket.', () => {
+      const j = cmp.indexOf(e.id); if(j >= 0) cmp.splice(j,1); else { cmp.push(e.id); if(cmp.length > 3) cmp.shift(); } renderCmp(); showDetail(e);
+    }, i2));
+  }
+  if(o.rss) ik.appendChild(Object.assign(document.createElement('a'), {className:'k-ik', href:o.rss, target:'_blank', rel:'noopener', innerHTML:ikon('rss'), ariaLabel:'Abonnér (RSS)'}));
+  meta.appendChild(ik);
+}
+// Billede: et frit billede fra Wikimedia Commons, fundet via Wikipedia-artiklen om emnet. Billedet illustrerer
+// emnet (fx virusset eller byen), ikke selve hændelsen, og det står under billedet. Findes intet, vises et kortudsnit.
+const BILLEDE = new Map();
+async function commonsBillede(termer){
+  for(const [lang, titel] of termer){
+    if(!titel) continue;
+    const key = lang + ':' + titel;
+    if(BILLEDE.has(key)){ const v = await BILLEDE.get(key); if(v) return v; continue; }
+    const p = (async () => {
+      try{
+        const r = await fetch(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(titel.replace(/ /g, '_'))}`);
+        if(!r.ok) return null;
+        const j = await r.json(); if(j.type === 'disambiguation') return null;
+        const src = (j.originalimage || j.thumbnail || {}).source || '';
+        const m = /\/wikipedia\/commons\/(?:thumb\/)?[0-9a-f]\/[0-9a-f]{2}\/([^/?]+)/.exec(src);
+        if(!m || /\.(svg|gif)$/i.test(m[1])) return null;
+        const q = await fetch(`https://commons.wikimedia.org/w/api.php?action=query&titles=File:${encodeURIComponent(decodeURIComponent(m[1].split('?')[0]))}&prop=imageinfo&iiprop=extmetadata|url&iiurlwidth=720&format=json&origin=*`).then(x => x.json());
+        const side = Object.values((q.query || {}).pages || {})[0], ii = side && side.imageinfo && side.imageinfo[0];
+        if(!ii) return null;
+        const md = ii.extmetadata || {}, txt = h => { const d = document.createElement('div'); d.innerHTML = String(h || ''); return d.textContent.replace(/\s+/g, ' ').trim(); };
+        return { src: ii.thumburl || ii.url, side: ii.descriptionurl, kunstner: txt(md.Artist && md.Artist.value).slice(0, 70) || 'ukendt', licens: txt(md.LicenseShortName && md.LicenseShortName.value), emne: j.title, wiki: j.content_urls && j.content_urls.desktop && j.content_urls.desktop.page };
+      }catch(err){ return null; }
+    })();
+    BILLEDE.set(key, p);
+    const v = await p; if(v) return v;
+  }
+  return null;
+}
+function billede(e, termer, a2){
+  const fig = el('figure','k-fig');
+  fig.appendChild(miniKort(e, a2));
+  const cap = el('figcaption','', 'Kortudsnit. Landegrænser: Natural Earth.');
+  fig.appendChild(cap);
+  detail.appendChild(fig);
+  if(!termer || !termer.length) return;
+  commonsBillede(termer).then(v => {
+    if(!v || detail.dataset.id !== e.id || !fig.isConnected) return;
+    const img = new Image(); img.alt = `Illustration: ${v.emne}`; img.decoding = 'async'; img.loading = 'lazy';
+    img.onload = () => {
+      fig.replaceChildren(img);
+      const c = el('figcaption'); c.append(`Illustration fra artiklen om ${v.emne}, ikke af selve hændelsen. Foto: ${v.kunstner}${v.licens ? ', ' + v.licens : ''}, `);
+      const a = document.createElement('a'); a.href = v.side; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Wikimedia Commons'; c.append(a, '.');
+      fig.appendChild(c);
+    };
+    img.src = v.src;
+  });
+}
+// Lille kort over stedet: verdenskortet i en simpel projektion om punktet, landet fremhævet, prikken i retningens farve.
+function miniKort(e, a2){
+  const c = document.createElement('canvas'), W2 = 640, H2 = 300; c.width = W2; c.height = H2; c.className = 'k-mini';
+  const g = c.getContext('2d');
+  let lon0 = e.lon, lat0 = e.lat, span = 14;
+  if(e._land || erLand(e)){
+    const rr = GRAENSER && GRAENSER[a2];
+    if(rr){ const ref = rr[0][0][0]; let x0 = 999, x1 = -999, y0 = 99, y1 = -99; for(const r of rr) for(const [x, y] of r){ const xx = ((x - ref + 540) % 360) - 180; if(xx < x0) x0 = xx; if(xx > x1) x1 = xx; if(y < y0) y0 = y; if(y > y1) y1 = y; }
+      lon0 = ref + (x0 + x1) / 2; lat0 = (y0 + y1) / 2; span = Math.min(120, Math.max(6, (x1 - x0) * 1.6, (y1 - y0) * 3.4)); }
+  }
+  const k = W2 / span, kc = Math.cos(Math.max(-70, Math.min(70, lat0)) * DEG);
+  const P = (lon, lat) => [W2/2 + (((lon - lon0 + 540) % 360) - 180) * kc * k, H2/2 - (lat - lat0) * k];
+  g.fillStyle = T['--ocean']; g.fillRect(0, 0, W2, H2);
+  const ring = r => { g.beginPath(); let f = true, px = null; for(const pt of r){ const [x, y] = P(pt[0], pt[1]); if(f || (px !== null && Math.abs(x - px) > W2)){ g.moveTo(x, y); f = false; } else g.lineTo(x, y); px = x; } g.closePath(); };
+  g.fillStyle = T['--land']; g.strokeStyle = T['--land-line']; g.lineWidth = 1;
+  for(const r of (LAND50 || land)){ ring(r); g.fill(); }
+  if(GRAENSER) for(const rr of Object.values(GRAENSER)) for(const r of rr){ ring(r); g.stroke(); }
+  if(a2 && GRAENSER && GRAENSER[a2]){ g.fillStyle = T['--krig-tone']; for(const r of GRAENSER[a2]){ ring(r); g.fill(); g.stroke(); } }
+  const col = retCol(e);
+  if(e.bane){ g.save(); g.strokeStyle = col; g.lineWidth = 2; g.setLineDash([6, 4]); for(const l of e.bane){ g.beginPath(); l.forEach((pt, i) => { const [x, y] = P(pt[0], pt[1]); i ? g.lineTo(x, y) : g.moveTo(x, y); }); g.stroke(); } g.restore(); }
+  if(!erLand(e)){ const [x, y] = P(e.lon, e.lat); g.beginPath(); g.arc(x, y, 16, 0, 2*Math.PI); g.strokeStyle = col; g.globalAlpha = .45; g.lineWidth = 2; g.stroke(); g.globalAlpha = 1;
+    g.beginPath(); g.arc(x, y, 7, 0, 2*Math.PI); g.fillStyle = col; g.fill(); g.strokeStyle = T['--bg']; g.lineWidth = 2; g.stroke(); }
+  return c;
+}
+function kortFortalt(t){ if(t) detail.appendChild(el('p','k-fortalt', t)); }
+function noegletal(rows){
+  const r = rows.filter(x => x && x[1]); if(!r.length) return;
+  const d = el('dl','k-tal'); for(const [k, v] of r){ const w = el('div'); w.append(el('dt','', k), el('dd','', v)); d.appendChild(w); } detail.appendChild(d);
+}
+function afsnit(titel, klasse){ const b = el('section','k-afs ' + (klasse || '')); b.appendChild(el('h3','', titel)); detail.appendChild(b); return b; }
+function fold(titel, indhold, aaben){
+  const d = document.createElement('details'); d.className = 'k-fold'; d.open = !!aaben;
+  const s2 = document.createElement('summary'); s2.textContent = titel; d.appendChild(s2);
+  for(const x of [].concat(indhold)) if(x) d.appendChild(x);
+  detail.appendChild(d); return d;
+}
+function forloebRaekke(r){
+  const row = el('div','tlrow ' + (r.ms <= cutoff ? 'past' : 'future'));
+  if(r[2]) row.style.setProperty('--d', `var(${SK[r[2]].v})`);
+  row.appendChild(el('span','dt', shortDate(r[0])));
+  const tx = el('span','tx', r[1]); if(r[3]) tx.append(' ', kildeLink(r[3][0], r[3][1])); row.appendChild(tx);
+  return row;
+}
+function forloeb(tl){
+  if(!tl || !tl.length) return;
+  const b = afsnit('Forløb', 'tl');
+  const set = tl.filter(r => r.ms <= cutoff), vis = (set.length ? set : tl).slice(-3);
+  for(const r of vis) b.appendChild(forloebRaekke(r));
+  const rest = tl.filter(r => !vis.includes(r));
+  if(rest.length){
+    const d = document.createElement('details'); d.className = 'k-mere';
+    const sm = document.createElement('summary'); sm.textContent = `Vis hele forløbet (${tl.length} punkter)`; d.appendChild(sm);
+    for(const r of tl) d.appendChild(forloebRaekke(r));
+    d.addEventListener('toggle', () => { for(const x of b.querySelectorAll(':scope > .tlrow')) x.hidden = d.open; });
+    b.appendChild(d);
+  }
+}
+// Læs mere: tre artikler fra laes.json (tools/hent-laes.mjs). Den første fra et medie i brugerens land, hvis der er et.
+function laesMere(id){
+  const x = LAES && LAES.l && LAES.l[id]; if(!x) return;
+  const valgt = [];
+  if(BRUGER_LAND === 'DK' && x.dk && x.dk[0]) valgt.push(Object.assign({lokal:true}, x.dk[0]));
+  else if(BRUGER_LAND && DN_EN){ const en = DN_EN.of(BRUGER_LAND); const a = (x.intl || []).find(a => a.l === en); if(a) valgt.push(Object.assign({lokal:true}, a)); }
+  for(const a of x.intl || []){ if(valgt.length >= 3) break; if(!valgt.some(v => v.d === a.d)) valgt.push(a); }
+  if(!valgt.length) return;
+  const b = afsnit('Læs mere', 'laes');
+  for(const a of valgt){
+    const l = document.createElement('a'); l.className = 'k-art'; l.href = a.u; l.target = '_blank'; l.rel = 'noopener';
+    l.append(el('span','m', a.m + (a.lokal ? ' · fra dit land' : '')), el('span','t', a.t || a.u));
+    b.appendChild(l);
+  }
+  b.appendChild(el('p','dim', 'Fundet automatisk i GDELT blandt nyere artikler. Til videre læsning. Siden bruger dem ikke som kilde til tal eller alvor.'));
+}
+function seHeleLand(e){
+  const a2 = a2Af(e), lo = a2 && landObj(a2); if(!lo || lo.id === e.id) return;
+  const b = el('button','landknap', `Se hele ${landNavnAf(a2)}`); b.type = 'button'; b.addEventListener('click', () => select(lo.id, false)); detail.appendChild(b);
+}
+// Engelske Wikipedia-artikler til smitteudbruddenes billeder.
+const SYG_WIKI = [[/^Mæslinger/, 'Measles'], [/^Fugleinfluenza/, 'Avian influenza'], [/^Salmonell/, 'Salmonella'], [/^Mpox/, 'Mpox'],
+  [/^Krim-Congo/, 'Crimean–Congo hemorrhagic fever'], [/^Ebola/, 'Ebola'], [/^Dengue/, 'Dengue fever'], [/^West Nile/, 'West Nile fever'],
+  [/^Sindbis/, 'Sindbis virus'], [/SFTS/, 'Severe fever with thrombocytopenia syndrome'], [/^Polio/, 'Polio'], [/^Miltbrand/, 'Anthrax'],
+  [/^MERS/, 'Middle East respiratory syndrome'], [/pest/i, 'Plague (disease)'], [/malaria/i, 'Malaria'], [/^Kolera/, 'Cholera'],
+  [/^Gul feber/, 'Yellow fever'], [/^Difteri/, 'Diphtheria'], [/^Cyclospor/, 'Cyclosporiasis'], [/^Chikungunya/, 'Chikungunya'], [/^Carbapenem/, 'Carbapenem-resistant enterobacteriaceae']];
+const sygWiki = d => (SYG_WIKI.find(([r]) => r.test(d)) || [])[1] || null;
 function showDetail(e){
   if(e._sted) return visSted(e);
   if(erLand(e)) return visLand(e);
   if(e._feed) return visFeed(e);
-  const st = stageAt(e, cutoff), s = SK[st];
-  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
-  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk');
-  x.addEventListener('click', lukDetaljer);
-  const dl = document.createElement('dl'); dl.className = 'kv';
-  const rows = [['Smittestof', e.pathogen], ['Omfang', e.cases], ['Startet', fmtDate(e.tl[0][0])]];
-  if(e.extra) rows.push(['Detaljer', e.extra]);
-  for(const [k,v] of rows){ dl.appendChild(el('dt','',k)); dl.appendChild(el('dd','',v)); }
-  const tl = document.createElement('div'); tl.className = 'tl';
-  tl.appendChild(el('h3','','Forløb'));
-  for(const r of e.tl){
-    const row = document.createElement('div');
-    row.className = 'tlrow ' + (r.ms <= cutoff ? 'past' : 'future');
-    if(r[2]) row.style.setProperty('--d', `var(${SK[r[2]].v})`);
-    row.appendChild(el('span','dt', shortDate(r[0])));
-    const tx = el('span','tx', r[1]);
-    // Fjerde felt er punktets egen kilde. Ældre punkter har den ikke.
-    if(r[3]) tx.append(' ', kildeLink(r[3][0], r[3][1]));
-    row.appendChild(tx);
-    tl.appendChild(row);
-  }
-  const sr = document.createElement('div'); sr.className = 'srcs';
-  for(const [t,u] of e.src) sr.appendChild(kildeLink(t, u));
-  sr.appendChild(el('span','srclegend','Fremhævet = myndighed · dæmpet = medie · stiplet = sekundær'));
-  detail.append(x, el('span','chip', s.n), el('h2','', `${e.disease} · ${e.country}`),
-    el('div','where', `${e.place} · ${Math.abs(e.lat).toFixed(2)}° ${e.lat>=0?'N':'S'} ${Math.abs(e.lon).toFixed(2)}° ${e.lon>=0?'Ø':'V'}`),
-    dl, el('p','note', e.note));
+  const st = stageAt(e, cutoff), s = SK[st], a = alvorAt(e, st), sl = sidste(e);
+  kortTop(e, {chip: s.n, titel: `${e.disease} · ${e.country}`, sted: e.place, alvor: a, dato: `Seneste ${fmtDate(sl[0])}`, cmp: true});
+  billede(e, [['en', sygWiki(e.disease)], ['da', e.disease.split(',')[0]]], a2Af(e));
+  kortFortalt(e.note);
+  noegletal([['Omfang', cutoff >= T1 ? e.cases : ''], ['Startet', fmtDate(e.tl[0][0])], ['Smittestof', e.pathogen]]);
   if(e.pts && e.pts.length > 1){
-    const cv = document.createElement('div'); cv.className = 'curve';
-    cv.appendChild(el('h3','','Udvikling'));
-    const holder = document.createElement('div');
-    holder.innerHTML = sparkSVG(e, 300, 74, true);
-    cv.appendChild(holder);
+    const cv = afsnit('Udvikling', 'curve');
+    const holder = document.createElement('div'); holder.innerHTML = sparkSVG(e, 300, 74, true); cv.appendChild(holder);
     const last = e.pts[e.pts.length-1];
     let cap = e.plabel + '. Den stiplede streg er det tidspunkt, skyderen står på.';
     if(last[2] !== null && last[2] !== undefined) cap = e.plabel + ' · seneste dødstal ' + NUM(last[2]) + ' den ' + fmtDate(last[0]) + '.';
     cv.appendChild(el('span','cap', cap));
-    detail.appendChild(cv);
   }
-  if(e.naeste){
-    const nx = document.createElement('div'); nx.className = 'naeste';
-    nx.appendChild(el('h3','','Hvad ville flytte trinnet'));
-    nx.appendChild(el('p','', e.naeste));
-    nx.appendChild(el('span','vurd','Vurdering, ikke kildebelagt'));
-    detail.appendChild(nx);
-  }
-  if(e.gap) detail.appendChild(el('span','flag', 'Usikkert: ' + e.gap));
+  forloeb(e.tl);
+  const kv = afsnit('Kilder og vurdering', 'srcs-afs');
+  const sr = el('div','srcs'); for(const [t,u] of e.src) sr.appendChild(kildeLink(t, u)); kv.appendChild(sr);
+  kv.appendChild(el('span','srclegend','Fremhævet = myndighed · dæmpet = medie · stiplet = sekundær'));
+  if(e.gap) kv.appendChild(el('span','flag', 'Usikkert: ' + e.gap));
+  laesMere(e.id);
+  if(e.naeste){ const p2 = el('p','', e.naeste); fold('Hvad ville flytte trinnet', [p2, el('span','vurd','Vurdering, ikke kildebelagt')]); }
   if(e.links && e.links.length){
-    const nds = e.nodes || [], sp = document.createElement('div');
-    sp.className = 'spread'; sp.appendChild(el('h3','','Dokumenteret udbredelse'));
+    const nds = e.nodes || [], rows = [];
     for(const L of e.links){
-      const r = document.createElement('div'); r.className = 'sprow';
-      r.appendChild(el('span','dt', shortDate(L[2])));
-      const w = document.createElement('span');
-      w.appendChild(el('span','', (nds[L[0]] ? nds[L[0]][0] : '?') + ' til ' + (nds[L[1]] ? nds[L[1]][0] : '?')));
-      w.appendChild(el('span','spkind', (LK[L[3]] || {n:L[3]}).n));
-      r.appendChild(w); sp.appendChild(r);
+      const r = el('div','sprow'); r.appendChild(el('span','dt', shortDate(L[2])));
+      const w = document.createElement('span'); w.appendChild(el('span','', (nds[L[0]] ? nds[L[0]][0] : '?') + ' til ' + (nds[L[1]] ? nds[L[1]][0] : '?')));
+      w.appendChild(el('span','spkind', (LK[L[3]] || {n:L[3]}).n)); r.appendChild(w); rows.push(r);
     }
-    detail.appendChild(sp);
-  } else if(e.nodes && e.nodes.length > 1){
-    const sp = document.createElement('div');
-    sp.className = 'spread'; sp.appendChild(el('h3','','Berørte steder'));
-    sp.appendChild(el('p','note', 'Kilderne dokumenterer ikke en retning mellem stederne, så der tegnes ingen linjer. Knuderne dukker op på kloden, efterhånden som tiden rykker frem.'));
-    detail.appendChild(sp);
-  }
-  detail.append(tl, sr);
-  const ac = el('button','addcmp', cmp.indexOf(e.id) >= 0 ? 'Fjern fra sammenligning' : 'Tilføj til sammenligning');
-  ac.type = 'button';
-  ac.addEventListener('click', () => {
-    const i = cmp.indexOf(e.id);
-    if(i >= 0) cmp.splice(i,1); else { cmp.push(e.id); if(cmp.length > 3) cmp.shift(); }
-    renderCmp(); showDetail(e);
-  });
-  // Del på telefoner med delingsark, ellers kopiér adressen til den valgte hændelse.
-  const kanDele = typeof navigator.share === 'function' && matchMedia('(pointer:coarse)').matches;
-  const kl = el('button','addcmp', kanDele ? 'Del' : 'Kopiér link'); kl.type = 'button';
-  kl.addEventListener('click', async () => {
-    const url = location.origin + location.pathname + '#' + e.id;
-    if(kanDele){ try{ await navigator.share({title: `${e.disease} · ${e.country} · globus.nicco.dk`, url}); }catch(err){ /* afbrudt */ } return; }
-    let ok = false;
-    try{ await navigator.clipboard.writeText(url); ok = true; }
-    catch(err){
-      const t = document.createElement('textarea'); t.value = url; t.setAttribute('readonly', '');
-      t.style.position = 'fixed'; t.style.opacity = '0'; document.body.appendChild(t); t.select();
-      try{ ok = document.execCommand('copy'); }catch(err2){ ok = false; }
-      t.remove();
-    }
-    kl.textContent = ok ? 'Link kopieret' : 'Kunne ikke kopiere';
-    setTimeout(() => { kl.textContent = 'Kopiér link'; }, 1800);
-  });
-  const acts = el('div','acts'); acts.append(ac, kl);
-  detail.appendChild(acts);
+    fold(`Dokumenteret udbredelse (${e.links.length})`, rows);
+  } else if(e.nodes && e.nodes.length > 1) fold('Berørte steder', el('p','note', 'Kilderne dokumenterer ikke en retning mellem stederne, så der tegnes ingen linjer. Knuderne dukker op på kloden, efterhånden som tiden rykker frem.'));
+  if(e.extra) fold('Detaljer', el('p','note', e.extra));
   if(e.rel && e.rel.length){
-    const rl = document.createElement('div'); rl.className = 'rels';
-    rl.appendChild(el('span','spkind','Hører sammen med'));
-    for(const rid of e.rel){
-      const o = byId[rid]; if(!o) continue;
-      const b = document.createElement('button'); b.type = 'button';
-      b.textContent = o.disease + ' · ' + o.country;
-      b.addEventListener('click', () => select(rid, true));
-      rl.appendChild(b);
-    }
-    detail.appendChild(rl);
+    const rl = el('div','rels');
+    for(const rid of e.rel){ const o = byId[rid]; if(!o) continue; const b2 = el('button','', o.disease + ' · ' + o.country); b2.type = 'button'; b2.addEventListener('click', () => select(rid, true)); rl.appendChild(b2); }
+    fold('Hører sammen med', rl);
   }
+  seHeleLand(e);
 }
 
 // ---------- interaktion ----------
@@ -2606,7 +2862,7 @@ function hit(ev){
 cv.addEventListener('wheel', ev => { ev.preventDefault(); zoomMaal = null;
   skjulTip(); setZoom(zoom*Math.exp(-ev.deltaY*(ev.deltaMode ? 0.05 : 0.0018))); idle = performance.now(); }, {passive:false});
 const ZMAX = 40;
-function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
+function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,VH || H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
 document.getElementById('zin').addEventListener('click', () => { zoomMaal = null; setZoom(zoom*1.3); idle = performance.now(); });
 document.getElementById('zout').addEventListener('click', () => { zoomMaal = null; setZoom(zoom/1.3); idle = performance.now(); });
 document.getElementById('zreset').addEventListener('click', () => { zoomMaal = null; target = {lam:HJEM.lam, phi:HJEM.phi}; setZoom(START_ZOOM); idle = performance.now(); });
@@ -2695,6 +2951,8 @@ rotKnap.addEventListener('click', () => { rotPause = !rotPause; visRotKnap(); sk
 function tick(now){
   pulse = (now-t0p)/2200;
   let need = !reduce;
+  opdaterCY();
+  if(Math.abs(view.cy - CY_MAAL) > .5){ view.cy += (CY_MAAL - view.cy) * .15; need = true; }
   if(zoomMaal){
     const z = zoom * Math.pow(zoomMaal/zoom, .12);
     if(Math.abs(Math.log(zoomMaal/zoom)) < .01){ setZoom(zoomMaal); zoomMaal = null; } else setZoom(z);
@@ -2891,7 +3149,7 @@ readTokens(); buildLadder(); buildChips(); buildRet(); bygGuide(); renderCmp(); 
   const start = performance.now();
   fetch('/hvor', {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => {
     if(!j || !Number.isFinite(j.lat) || !Number.isFinite(j.lon)) return;
-    HJEM = {lam:-j.lon, phi:Math.max(-60, Math.min(60, j.lat))};
+    HJEM = {lam:-j.lon, phi:Math.max(-60, Math.min(60, j.lat))}; if(j.land) BRUGER_LAND = String(j.land).toUpperCase();
     if(!selected && !dragging && idle <= start) target = {lam:HJEM.lam, phi:HJEM.phi};
   }).catch(() => {});
 }
@@ -2972,34 +3230,20 @@ function byggKrig(){
 }
 // Panelet for ét sted: kun det, der er omtalt netop dér.
 function visSted(e){
-  const i = e.info || {}, land = landObj(e.a2);
-  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
-  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk'); x.addEventListener('click', lukDetaljer);
-  const dl = document.createElement('dl'); dl.className = 'kv';
-  const rows = [['Alvor', `${e.alvor} · ${ALV[e.alvor].n}`], ['Omtaler', `${e.n.toLocaleString('da-DK')} de sidste 7 dage`]];
-  if(i.medier) rows.push(['Medier', `${i.medier} fra listen`]);
+  const i = e.info || {};
+  kortTop(e, {chip: e.demo ? 'Demonstrationer' : 'Kampe og angreb', titel: e.stedKort, sted: `${e.landNavn} · område på ca. 50 × 50 km`, alvor: e.alvor,
+    dato: KONFINFO ? `Optalt ${klok(KONFINFO.genereret)}` : '', a2: e.a2});
+  billede(e, [['en', (e.stedKort || '').split(',')[0]]], e.a2);
+  kortFortalt(e.tekst + ' GDELT finder stedet automatisk i artiklerne. Det kan være et sted, der kun nævnes, fx en militærbase i en retssag, og ikke nødvendigvis kampe lige nu.');
   const parter = (i.parter || []).map(([k]) => PARTER[k]).filter(Boolean);
-  if(parter.length) rows.push(['Parter', parter.join(', ')]);
   const andre = (i.lande || []).filter(a => a !== e.a2).map(landNavnAf);
-  if(andre.length) rows.push(['Andre lande nævnt', andre.join(', ')]);
-  for(const [k, v] of rows){ dl.appendChild(el('dt','',k)); dl.appendChild(el('dd','',v)); }
-  detail.append(x, el('span','chip', e.demo ? 'Demonstrationer' : 'Sted'), el('h2','', `${e.titel} · ${e.stedKort}`),
-    el('div','where', `${e.landNavn} · område på ca. 50 × 50 km omkring ${Math.abs(e.lat).toFixed(1)}° ${e.lat >= 0 ? 'N' : 'S'} ${Math.abs(e.lon).toFixed(1)}° ${e.lon >= 0 ? 'Ø' : 'V'}`),
-    dl, el('p','note', e.tekst + ' GDELT finder stedet automatisk i artiklerne. Det kan være et sted, der kun nævnes, fx en militærbase i en retssag, og ikke nødvendigvis kampe lige nu. Læs artiklerne, før du konkluderer noget.'));
-  const box = document.createElement('div'); box.className = 'lafs';
-  box.appendChild(el('h3','', 'Artikler om stedet'));
-  if(i.art && i.art.length){ const ul = el('div','artl'); for(const a of i.art) ul.appendChild(kildeLink(`${a.medie}, medie`, a.url)); box.appendChild(ul); }
-  else box.appendChild(el('p','dim','Artiklerne om stedet kommer med ved næste optælling.'));
-  if(andre.length) box.appendChild(el('p','dim', 'De røde streger går til de lande, artiklerne nævner som part i hændelserne her.'));
-  detail.appendChild(box);
-  if(land){
-    const b = el('button','landknap', `Se hele ${e.landNavn}`); b.type = 'button';
-    b.addEventListener('click', () => select(land.id, false)); detail.appendChild(b);
-  }
-  const sr = document.createElement('div'); sr.className = 'srcs';
-  sr.appendChild(kildeLink('GDELT 2.0', 'https://www.gdeltproject.org/'));
-  sr.appendChild(el('span','srclegend', 'Optalt automatisk blandt medierne på vores liste. Medier er ikke myndigheder.'));
-  detail.appendChild(sr);
+  noegletal([['Omtaler', `${e.n.toLocaleString('da-DK')} på 7 dage`], ['Medier', i.medier ? `${i.medier} fra listen` : ''], ['Parter', parter.join(', ')], ['Andre lande nævnt', andre.join(', ')]]);
+  const kv = afsnit('Kilder og vurdering', 'srcs-afs');
+  if(i.art && i.art.length){ const ul = el('div','artl'); for(const a of i.art) ul.appendChild(kildeLink(`${a.medie}, medie`, a.url)); kv.appendChild(ul); }
+  else kv.appendChild(el('p','dim','Artiklerne om stedet kommer med ved næste optælling.'));
+  kv.appendChild(el('span','srclegend', 'Optalt automatisk i GDELT 2.0 blandt medierne på vores liste. Medier er ikke myndigheder.' + (andre.length ? ' De røde streger går til de lande, artiklerne nævner som part.' : '')));
+  laesMere(e.id);
+  seHeleLand(e);
 }
 // Landet under et punkt på skærmen. Bruges, når man trykker på et land uden at ramme en prik.
 function landVed(mx, my){
@@ -3087,6 +3331,64 @@ window.addEventListener('beforeinstallprompt', ev => { ev.preventDefault(); inst
 window.addEventListener('appinstalled', () => { installer = null; hentKnap.hidden = true; });
 hentKnap.addEventListener('click', async () => { if(!installer) return; installer.prompt(); try{ await installer.userChoice; }catch(err){} installer = null; hentKnap.hidden = true; });
 hentKnap.dataset.tip = TT('Hent som app', 'Læg globus på din computer eller telefon. Den åbner i sit eget vindue og viser de sidst hentede data, også uden net.');
+// Overblikkets knapper: søgning og filtre er foldet væk, til man trykker.
+{
+  const sk = document.getElementById('soegknap'), sf = document.getElementById('soegfelt'), fk = document.getElementById('filterknap'), ff = document.getElementById('filtre');
+  sk.addEventListener('click', () => { sf.hidden = !sf.hidden; sk.setAttribute('aria-expanded', String(!sf.hidden)); if(!sf.hidden) document.getElementById('q').focus(); });
+  fk.addEventListener('click', () => { ff.hidden = !ff.hidden; fk.setAttribute('aria-expanded', String(!ff.hidden)); if(!ff.hidden) document.getElementById('flere').open = true; });
+  document.getElementById('udforsk').addEventListener('click', () => { startTur(); arkHoejde && arkHoejde('fuld'); });
+  sk.dataset.tip = TT('Søg', 'Sted, sygdom eller hændelse.'); fk.dataset.tip = TT('Filtre', 'Område og trin for smitteudbrud.');
+  document.getElementById('udforsk').dataset.tip = TT('Udforsk', 'En tur gennem det alvorligste lige nu, ét kort ad gangen. Bladr med pilene eller ved at swipe.');
+}
+// ---------- mobil som app ----------
+// Overblikket er et ark fra bunden i tre højder (lille, halv, fuld), og detaljerne er et ark oven på det.
+// Arkene trækkes i grebet øverst. Et swipe til siden i detaljerne skifter til næste eller forrige hændelse.
+const side = document.getElementById('side');
+const ARK = {lille: () => 150, halv: () => Math.round(innerHeight * .52), fuld: () => innerHeight - 70};
+let arkTilstand = 'lille', detTilstand = 'halv';
+function arkHoejde(t, h){
+  if(!MOBIL.matches) return;
+  arkTilstand = t; const v = h || ARK[t]();
+  side.style.setProperty('--ark', v + 'px'); document.documentElement.style.setProperty('--ark-h', v + 'px');
+}
+function detHoejde(t){ if(!MOBIL.matches) return; detTilstand = t; detail.style.setProperty('--ark-d', t === 'fuld' ? (innerHeight - 56) + 'px' : Math.round(innerHeight * .58) + 'px'); }
+function naermest(h, liste){ return liste.reduce((b, t) => Math.abs(ARK[t]() - h) < Math.abs(ARK[b]() - h) ? t : b, liste[0]); }
+// Træk i et greb: højden følger fingeren, og ved slip vælges den nærmeste højde.
+function traek(greb, boks, hent, saet, slut){
+  let y0 = null, h0 = 0, flyt = 0;
+  greb.addEventListener('pointerdown', ev => { if(!ev.target.closest(greb.dataset.sel || '*')) return; y0 = ev.clientY; h0 = hent(); flyt = 0; boks.classList.add('drar'); ev.target.setPointerCapture && ev.target.setPointerCapture(ev.pointerId); });
+  greb.addEventListener('pointermove', ev => { if(y0 === null) return; const dy = ev.clientY - y0; flyt = Math.max(flyt, Math.abs(dy)); saet(Math.max(60, Math.min(innerHeight - 40, h0 - dy))); });
+  const op = ev => { if(y0 === null) return; boks.classList.remove('drar'); slut(hent(), flyt < 6); y0 = null; };
+  greb.addEventListener('pointerup', op); greb.addEventListener('pointercancel', op);
+}
+traek(document.getElementById('arkgreb'), side, () => side.getBoundingClientRect().height, h => side.style.setProperty('--ark', h + 'px'),
+  (h, tryk) => arkHoejde(tryk ? (arkTilstand === 'lille' ? 'halv' : 'lille') : naermest(h, ['lille', 'halv', 'fuld'])));
+// Detaljearket: grebet sidder i kortets top og bygges om ved hvert valg, så trækket lyttes på selve arket.
+detail.dataset.sel = '.k-greb';
+traek(detail, detail, () => detail.getBoundingClientRect().height, h => detail.style.setProperty('--ark-d', h + 'px'),
+  (h, tryk) => { if(tryk){ detHoejde(detTilstand === 'halv' ? 'fuld' : 'halv'); return; } if(h < innerHeight * .3) lukDetaljer(); else detHoejde(h > innerHeight * .75 ? 'fuld' : 'halv'); });
+{
+  let sx = null, sy = 0;
+  detail.addEventListener('touchstart', ev => { if(ev.touches.length !== 1 || ev.target.closest('.k-greb,a,button,summary,input')) { sx = null; return; } sx = ev.touches[0].clientX; sy = ev.touches[0].clientY; }, {passive:true});
+  detail.addEventListener('touchend', ev => {
+    if(sx === null) return; const t = ev.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy; sx = null;
+    if(Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 1.6) bladr(dx < 0 ? 1 : -1);
+  }, {passive:true});
+}
+// Filtre, tidsskyder og fod ligger i overblikkets filtre på mobilen og vender tilbage på større skærme.
+const FLYT = ['mapctl', 'timebar', 'foot'].map(id => document.getElementById(id) || document.querySelector('.' + id)).filter(Boolean)
+  .map(n => ({n, far:n.parentNode, efter:n.nextSibling}));
+function placer(){
+  const af = document.getElementById('arkfilter');
+  // Detaljearket skal ligge uden for kortets lag på mobilen, ellers kommer det bag overblikket.
+  if(MOBIL.matches){ for(const f of FLYT) af.appendChild(f.n); document.querySelector('.app').appendChild(detail); arkHoejde(arkTilstand); detHoejde(detTilstand); }
+  else { for(const f of FLYT.slice().reverse()) f.far.insertBefore(f.n, f.efter && f.efter.parentNode === f.far ? f.efter : null); document.querySelector('.stage').appendChild(detail); }
+  const hd = document.querySelector('header'); document.documentElement.style.setProperty('--hdr', hd.offsetHeight + 'px');
+  resize();
+}
+MOBIL.addEventListener('change', placer);
+window.addEventListener('resize', () => { if(MOBIL.matches){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); arkHoejde(arkTilstand); detHoejde(detTilstand); } });
+placer();
 bygTicker();
 // Maskinmeldingerne hentes for sig, så siden virker, selv om filen mangler.
 fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {
