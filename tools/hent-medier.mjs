@@ -150,6 +150,7 @@ rmSync(TMP, { recursive: true, force: true });
 T.sidste = sidsteOk;
 console.log(`${antalEv} hændelser og ${antalOmt} omtaler fra listen. ${mangler} kvarterer manglede hos GDELT.`);
 
+const ALLE_OVERSKRIFTER = [];
 // ---------- overskrifter fra store medier ----------
 // Reuters, AP, CNN, New York Times og andre, som GDELT dækker dårligt. Overskriften (og for RSS
 // også resuméet) skal nævne to eller tre lande og et ord for kamp eller angreb. Så tæller mediet
@@ -198,6 +199,8 @@ console.log(`${antalEv} hændelser og ${antalOmt} omtaler fra listen. ${mangler}
       const dag = dagStr(ms); if (dag < graenseDag) continue;
       artikler++;
       const sprog = k.sprog || 'en';
+      // Alle overskrifter gemmes til "Læs mere" (tools/hent-laes.mjs), også dem uden kamp.
+      ALLE_OVERSKRIFTER.push({ t: titel.slice(0, 200), u: link, d: k.domaene, dag, sprog, l: lande(tekst, sprog) });
       if (!KAMP[sprog].test(tekst)) continue;
       const fl = lande(tekst, sprog);
       if (fl.length < 2 || fl.length > 3) continue;
@@ -323,5 +326,8 @@ for (const x of streger.filter(x => x.status !== 'mistanke')) console.log(`  ${x
 // "Læs mere" til detaljekortene (tools/hent-laes.mjs). Kører efter mediesporet, så stederne er talt op.
 // En fejl her stopper ikke resten af kørslen.
 try {
-  execFileSync(process.execPath, [new URL('./hent-laes.mjs', import.meta.url).pathname, UD, ...(FORRIGE ? ['--forrige', FORRIGE.replace(/medier-tal\.json.*$/, 'laes.json')] : [])], { stdio: 'inherit', timeout: 240000 });
+  const fil = join(tmpdir(), `overskrifter-${process.pid}.json`); writeFileSync(fil, JSON.stringify(ALLE_OVERSKRIFTER));
+  execFileSync(process.execPath, [new URL('./hent-laes.mjs', import.meta.url).pathname, UD, ...(FORRIGE ? ['--forrige', FORRIGE.replace(/medier-tal\.json.*$/, 'laes.json')] : [])],
+    { stdio: 'inherit', timeout: 240000, env: { ...process.env, OVERSKRIFTER: fil } });
+  rmSync(fil, { force: true });
 } catch (e) { console.log(`::warning::Læs mere fejlede: ${e.message}`); }

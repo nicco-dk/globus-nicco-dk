@@ -55,12 +55,13 @@ const maal = [];
     if (!ev.live) continue;
     const kw = sygOrd(ev.disease || ''); if (!kw) continue;
     const a2 = landFraTekst(ev.country), land = a2 && engelsk(a2);
-    maal.push({ id: ev.id, kw, q: frase(kw) + (land ? ' ' + frase(land) : ''), dage: 14 });
+    maal.push({ id: ev.id, kw, kwDa: (ev.disease || '').split(/[ ,]/)[0], a2, q: frase(kw) + (land ? ' ' + frase(land) : ''), dage: 14 });
   }
 }
 {
   const f = laesJson('feeds.json');
   const TYPE = { jord: 'earthquake', flod: 'flood', brand: 'wildfire', hede: 'heat', storm: 'storm', vulkan: 'volcano' };
+  const TYPE_DA = { jord: 'jordskælv', flod: 'oversvømmelse', brand: 'brand', hede: 'hede', storm: 'storm', vulkan: 'vulkan' };
   for (const h of f?.h || []) {
     if (h.ret === 'rejse' || h.alvor < 3 || !TYPE[h.ret]) continue;
     const a2 = h.a2 || landFraTekst(h.sted) || landFraTekst((h.titel || '').split(', ').pop());
@@ -69,7 +70,7 @@ const maal = [];
     let q = TYPE[h.ret];
     if (h.ret === 'storm') { const m = /([A-Z][A-Z]+)-\d\d/.exec(h.titel || ''); if (m) q = `${m[1][0]}${m[1].slice(1).toLowerCase()} storm`; }
     if (land && /^[\x20-\x7e]+$/.test(land)) q += ' ' + frase(land);
-    maal.push({ id: h.id, kw: q.split(' ')[0], q, dage: 7 });
+    maal.push({ id: h.id, kw: q.split(' ')[0], kwDa: h.ret === 'storm' && q !== 'storm' ? q.split(' ')[0] : TYPE_DA[h.ret], a2, q, dage: 7 });
   }
 }
 {
@@ -77,7 +78,7 @@ const maal = [];
   for (const c of k?.v || []) {
     const [la, lo, n, a2, info] = c; if (n < 40 || !info || !info.navn) continue;
     const sted = info.navn.split(',')[0].replace(/[^\x20-\x7e]/g, '').trim(); if (sted.length < 3) continue;
-    maal.push({ id: `sted-k-${la}_${lo}`.replace(/\./g, 'p'), kw: sted, q: `${frase(sted)} (attack OR strike OR fighting OR clashes)`, dage: 7 });
+    maal.push({ id: `sted-k-${la}_${lo}`.replace(/\./g, 'p'), kw: sted, kwDa: sted, a2, q: `${frase(sted)} (attack OR strike OR fighting OR clashes)`, dage: 7 });
   }
 }
 
@@ -120,16 +121,34 @@ function udvaelg(liste, maks, kw) {
   return ud;
 }
 
-const koe = maal.filter(m => !L.l[m.id]).concat(maal.filter(m => L.l[m.id] && NU - Date.parse(L.l[m.id].t || 0) > DOEGN).sort((a, b) => Date.parse(L.l[a.id].t) - Date.parse(L.l[b.id].t)));
+// Først overskrifterne fra de store medier, som mediesporet lige har læst (Reuters, AP, BBC, DR m.fl.).
+// En overskrift passer, når den nævner søgeordet og, hvis hændelsen har et land, også landet.
+let OV = [];
+try { if (process.env.OVERSKRIFTER) OV = JSON.parse(readFileSync(process.env.OVERSKRIFTER, 'utf8')); } catch {}
+const ordRe = w => new RegExp(`(^|[^\\p{L}])${String(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'iu');
+let fraOv = 0;
+if (OV.length) for (const m of maal) {
+  const passer = (o, ord) => ord && ordRe(ord).test(o.t) && (!m.a2 || o.l.includes(m.a2) || m.id.startsWith('sted-'));
+  const en = OV.filter(o => o.sprog !== 'da' && passer(o, m.kw)), da = OV.filter(o => o.sprog === 'da' && passer(o, m.kwDa));
+  if (!en.length && !da.length) continue;
+  const som = o => ({ u: o.u, t: o.t, m: MEDIER[o.d]?.[0] || o.d, d: o.d, l: '' });
+  const gl = L.l[m.id] || { intl: [], dk: [] };
+  const flet = (nye, gamle, maks) => { const set = new Set(), ud = []; for (const a of nye.concat(gamle)) { if (set.has(a.d)) continue; set.add(a.d); ud.push(a); } return ud.sort((x, y) => rang(x.d) - rang(y.d)).slice(0, maks); };
+  L.l[m.id] = { t: gl.t || new Date(0).toISOString(), q: m.q, intl: flet(en.map(som), gl.intl || [], 6), dk: flet(da.map(som), gl.dk || [], 2), ov: true };
+  fraOv++;
+}
+const koe = maal.filter(m => !L.l[m.id] || (L.l[m.id].ov && !L.l[m.id].intl.length)).concat(maal.filter(m => L.l[m.id] && NU - Date.parse(L.l[m.id].t || 0) > DOEGN).sort((a, b) => Date.parse(L.l[a.id].t) - Date.parse(L.l[b.id].t)));
 let fundet = 0;
 for (const m of koe) {
   if (brugt + 2 > MAKS_SOEG) break;
   const intl = await soeg(`${m.q} sourcelang:english`, m.dage, 50);
   const dk = await soeg(`${m.q} sourcecountry:denmark`, Math.max(m.dage, 14), 10);
   if (intl === null && dk === null) continue;
-  L.l[m.id] = { t: new Date().toISOString(), q: m.q, intl: udvaelg(intl, 6, m.kw), dk: udvaelg(dk, 2, null) };
+  const gl = L.l[m.id] || { intl: [], dk: [] }, nyI = udvaelg(intl, 6, m.kw), nyD = udvaelg(dk, 2, null);
+  const flet = (a, b, maks) => { const set = new Set(), ud = []; for (const x of a.concat(b)) { if (set.has(x.d)) continue; set.add(x.d); ud.push(x); } return ud.sort((x, y) => rang(x.d) - rang(y.d)).slice(0, maks); };
+  L.l[m.id] = { t: new Date().toISOString(), q: m.q, intl: flet(gl.intl || [], nyI, 6), dk: flet(gl.dk || [], nyD, 2) };
   fundet++;
 }
 L.genereret = new Date().toISOString();
 writeFileSync(join(UD, 'laes.json'), JSON.stringify(L) + '\n');
-console.log(`Læs mere: ${maal.length} hændelser, ${fundet} søgt nu (${brugt} søgninger), ${Object.keys(L.l).length} har artikler.`);
+console.log(`Læs mere: ${maal.length} hændelser, ${fraOv} fra overskrifterne, ${fundet} søgt i GDELT nu (${brugt} søgninger), ${Object.keys(L.l).length} har artikler.`);
