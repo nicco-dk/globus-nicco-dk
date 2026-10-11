@@ -640,24 +640,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <button type="button" id="omluk" aria-label="Luk">×</button>
   </div>
   <div class="ombody">
-    <p class="led">Kloden viser, hvad myndighederne har meldt om udbrud verden over, så du kan se, hvad der sker der, hvor du skal hen. Hver prik er en hændelse med tal, et dateret forløb og kilder.</p>
+    <p class="led">Kloden viser smitteudbrud, krig og konflikt, naturkatastrofer og rejsevejledninger verden over, så du kan se, hvad der sker der, hvor du skal hen. Hver prik er en hændelse med kilder, og tryk på den giver et kort med billede, forløb og læs mere.</p>
     <div class="g-pr">
-      <div><b>Det store kort viser kun det bekræftede</b><span>Mistanker kommer frem, når du zoomer ind, og de er hule og stiplede.</span></div>
+      <div><b>Det ubekræftede er mærket</b><span>Mistanker om smitteudbrud er hule og stiplede og kommer frem, når du zoomer ind. Krig og konflikt bygger på medier og står mærket sådan.</span></div>
       <div><b>Siden siger aldrig, at et sted er sikkert</b><span>Et tomt område betyder, at vi ikke har set noget. Læs altid Udenrigsministeriets rejsevejledning, før du rejser.</span></div>
       <div><b>Alvor kommer fra kilden</b><span>Trinnene oversættes efter faste regler fra myndighedernes egne skalaer, ikke efter vores fornemmelse.</span></div>
     </div>
 
     <h3>Retningerne</h3>
-    <p>Hver retning har sit eget ikon og sin egen farve. Knapperne øverst slår dem til og fra, og tallet viser, hvor mange hændelser der er. Smitteudbrud er med i dag. De andre syv er på vej og står stiplet, indtil de har data.</p>
+    <p>Hver retning har sit eget ikon og sin egen farve. Knapperne øverst slår dem til og fra, og tallet viser, hvor mange hændelser der er. Et klik slår en retning til eller fra, og et dobbeltklik viser kun den. Rejsevejledninger er en service: knappen står for sig til højre og er slået fra, til du slår den til.</p>
     <div class="g-dirs" id="gdirs"></div>
 
     <h3>Alvor</h3>
     <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Ligger flere prikker tæt, samles de i én prik med antallet, og kanten viser retningernes farver. Zoom ind, eller tryk på prikken, så skilles de. Skalaen har fire trin ligesom Udenrigsministeriets rejsevejledninger og et femte, akut, for det nye og kritiske lige nu. Akut står også i søljen i bunden. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
     <div class="g-tbl"><table><thead><tr><th>Alvor</th><th>Markør</th><th>Det betyder</th><th>For smitteudbrud</th></tr></thead><tbody id="galvor"></tbody></table></div>
     <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4. I Smithsonians ugentlige vulkanrapport er ny aktivitet 2 og fortsat aktivitet 1.</p>
-    <p>Rejsevejledninger har deres eget ikon med et fly. Lande med en rejsevejledning fra gul og op står en tone mørkere, og regioner, som vejledningen nævner ved navn, farves, når du zoomer ind. Krig og konflikt viser i stedet, hvor der kæmpes og demonstreres ifølge medierne (varmekortet), og hvem der er i konflikt med hvem. Vælger du et land, åbner landesiden med alt om landet, og du kan følge landet.</p>
+    <p>Rejsevejledninger har deres eget ikon med et fly. Lande med en rejsevejledning fra gul og op står en tone mørkere, og regioner, som vejledningen nævner ved navn, farves, når du zoomer ind. Krig og konflikt har en prik for hvert sted, hvor medierne skriver om kampe eller demonstrationer, og et varmekort. Trykker du på en prik, ser du kun det, der er skrevet om netop dét sted. Trykker du på selve landet, åbner landesiden med alt om landet, og du kan følge landet.</p>
     <p>Ved rejsevejledninger står lande med en rejsevejledning fra gul og op en tone mørkere. Prikken viser det højeste niveau i landet. Hvilke områder det gælder, står i detaljerne og på um.dk. Udenrigsministeriet har kun rejsevejledninger for en del af verdens lande. For de andre bruges det britiske udenrigsministeriums (FCDO) niveau: fraråder alle rejser er 4, fraråder alle ikke-nødvendige rejser er 3.</p>
-    <p>Røde streger viser, hvilke lande der er i konflikt med hinanden ifølge medierne, og gule streger hvem der støtter et land militært. De tælles automatisk hver time i GDELT, som læser nyheder fra hele verden, men kun omtaler fra vores liste med ca. 240 medier tæller. Store medier, som GDELT ikke når, læses direkte: Reuters, AP, CNN, The New York Times, The Wall Street Journal, The Washington Post og flere. En streg er en mistanke (stiplet), når mindst 2 medier har skrevet om den inden for 7 dage (30 dage for militær støtte). Den bliver fast, når mindst 5 medier fra mindst 3 lande uden for parterne har skrevet om den på mindst 3 forskellige dage, og artiklerne er læst igennem. Mistanker og militær støtte vises kun for det land, du har valgt. Stregerne går mellem hovedstæderne, som står som små grå prikker.</p>
+    <p>Røde streger viser, hvilke lande der er i konflikt med hinanden ifølge medierne, og gule streger hvem der støtter et land militært. De tælles automatisk hver time i GDELT, som læser nyheder fra hele verden, men kun omtaler fra vores liste med ca. 240 medier tæller. Store medier, som GDELT ikke når, læses direkte: Reuters, AP, CNN, The New York Times, The Wall Street Journal, The Washington Post og flere. En streg er en mistanke (stiplet), når mindst 2 medier har skrevet om den inden for 7 dage (30 dage for militær støtte). Den bliver fast, når mindst 5 medier fra mindst 3 lande uden for parterne har skrevet om den på mindst 3 forskellige dage, og artiklerne er læst igennem. Kun bekræftede konflikter har en streg på kloden. På landesiden får de andre deres streg, når du peger på eller trykker på rækken. Stregerne går mellem hovedstæderne, som står som små grå prikker.</p>
     <p>Vælger du et land, viser grønne streger, hvilke lande og EU der i år har givet mindst 1 mio. USD i humanitær hjælp, ifølge FN's Financial Tracking Service (OCHA FTS). Ved storme viser en stiplet streg stormens bane fra GDACS.</p>
 
     <h3>Status</h3>
@@ -685,7 +685,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 
     <h3 id="om-opdatering">Opdatering og prototypedata</h3>
     <ul>
-      <li>Varslerne om krig og konflikt, jordskælv, storme, oversvømmelser, brande, hede og vulkaner hentes automatisk hver time fra kildernes egne feeds. Rejsevejledningerne hentes hver 6. time. Fejler en kilde, vises dens seneste meldinger, til den svarer igen. Varslerne vises kun for i dag, ikke bagud på tidslinjen.</li>
+      <li>Varslerne om krig og konflikt, jordskælv, storme, oversvømmelser, brande, hede og vulkaner hentes automatisk hver time fra kildernes egne feeds. Rejsevejledningerne hentes hver 6. time. Fejler en kilde, vises dens seneste meldinger, til den svarer igen. Varslerne vises kun for i dag, ikke bagud på tidslinjen. Læs mere-artiklerne findes hver time blandt overskrifterne fra de store medier og i GDELT. Billederne kommer fra Wikipedia-artiklen om emnet og bruges kun med fri licens fra Wikimedia Commons.</li>
       <li>Datasættet gennemgås automatisk hver dag efter faste regler. Hvad der er ændret, og på hvilken kilde, står i <a href="/log">ændringsloggen</a>.</li>
       <li>Ændringerne går på siden uden at være set igennem af et menneske først.</li>
       <li>Siden er en prototype. Datasættet blev sammenstillet 8. oktober 2026, og ældre punkter i forløbene har endnu ikke deres egen kilde. Det er det, mærket Prototypedata øverst på siden betyder.</li>
@@ -3119,7 +3119,7 @@ const GI = {
   cmp:'M4 19V9M10 19V5M16 19v-7M22 19H2'
 };
 function bygGuide(){
-  document.getElementById('gdirs').innerHTML = RETNINGER.map(r => `<div class="g-dir" style="--c:var(--c-${r.k})"><span class="ic">${svgIc(r.k, 22)}</span><b>${r.n}${r.aktiv ? '' : '<small>Kommer snart</small>'}</b><dl><dt>Hvad</dt><dd>${r.hvad}</dd><dt>Kilder</dt><dd>${r.kilder}</dd></dl></div>`).join('');
+  document.getElementById('gdirs').innerHTML = RETNINGER.filter(r => !SERVICE.has(r.k)).concat(RETNINGER.filter(r => SERVICE.has(r.k))).map(r => `<div class="g-dir" style="--c:var(--c-${r.k})"><span class="ic">${svgIc(r.k, 22)}</span><b>${r.n}${r.aktiv ? '' : '<small>Kommer snart</small>'}</b><dl><dt>Hvad</dt><dd>${r.hvad}</dd><dt>Kilder</dt><dd>${r.kilder}</dd></dl></div>`).join('');
   document.getElementById('galvor').innerHTML = [1,2,3,4,5].map(a => `<tr><td><b>${a}</b>${ALV[a].n}</td><td>${markoerSVG(a)}</td><td>${ALV[a].d}</td><td>${ALV[a].smitte}</td></tr>`).join('');
   document.getElementById('gstatus').innerHTML = [
     ['Bekræftet', 'Fyldt prik. Vises altid.', markoerSVG(2)],
@@ -3130,12 +3130,12 @@ function bygGuide(){
   const gs = (k, t, d) => `<div class="g-s"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GI[k]}"/></svg></span><b>${t}</b><span>${d}</span></div>`;
   document.getElementById('gsteps').innerHTML = [
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage. Rejsevejledninger står for sig til højre og er slået fra, til du slår dem til.'),
-    gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
+    gs('klik','Tryk på en prik','Kortet viser billede, kort fortalt, nøgletal, forløb, kilder og læs mere. Pilene øverst blader videre. Udforsk i overblikket tager dig gennem det alvorligste lige nu.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
     gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
     gs('klik','Hent som app','På computer og Android: tryk Hent app øverst, når knappen står der, eller vælg Installér i browserens menu. På iPhone og iPad: tryk Del i Safari og vælg Føj til hjemmeskærm. Appen åbner i sit eget vindue og viser de sidst hentede data, også uden net.'),
-    gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
-    gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
+    gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises. Søljen i bunden viser alvor 5 og 4. På mobilen ligger det under filterknappen.'),
+    gs('sog','Søg og filtrér','Forstørrelsesglasset i overblikket søger på sygdom, sted eller hændelse. Filterknappen vælger område og trin.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
     gs('cmp','Sammenlign','Læg op til tre hændelser ved siden af hinanden med deres kurver.'),
     gs('del','Del et link','Adressen følger den valgte hændelse, så et link fører direkte til den.')
