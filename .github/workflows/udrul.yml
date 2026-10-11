@@ -29,7 +29,7 @@ on:
   # GitHub kører tidsplanen som den bruger, der sidst ændrede cron-linjen. Linjen skal derfor
   # være ændret af en rigtig GitHub-bruger (ejeren), ikke af en bot, ellers kører den ikke.
   schedule:
-    - cron: "17 * * * *"
+    - cron: "23 * * * *"
   workflow_dispatch:
 
 # Kun én udrulning ad gangen. En ny venter, til den igangværende er færdig.
