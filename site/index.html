@@ -130,7 +130,15 @@ canvas.drag{cursor:grabbing}
 .rung{display:grid;grid-template-columns:3px 1fr auto;align-items:stretch;gap:9px;padding:0 9px 0 0;
   background:var(--panel);border:0;cursor:pointer;text-align:left;font-family:var(--display);
   color:var(--fg-dim);font-size:12.5px;width:100%;min-height:26px}
-.rung .bar{background:var(--c)}
+.rung .bar{background:var(--rule)}
+.flere{display:flex;flex-direction:column;gap:10px}
+.flere>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);padding:6px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.flere>summary::-webkit-details-marker{display:none}
+.flere>summary::before{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.flere[open]>summary::before{transform:rotate(45deg)}
+.flere>summary:hover{color:var(--fg)}
+.flere .fn{margin-left:auto;text-transform:none;letter-spacing:0;color:var(--accent)}
+.flere[open]>div{margin-top:10px}
 .rung .nm{align-self:center;padding:5px 0}
 .rung .n{font-family:var(--mono);font-size:11.5px;color:var(--fg-faint);font-variant-numeric:tabular-nums;align-self:center}
 .rung[aria-pressed="true"]{color:var(--fg);background:var(--panel-2)}
@@ -383,6 +391,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button class="clr" id="clr" title="Ryd søgning" aria-label="Ryd søgning" hidden>×</button>
     </div>
 
+    <details class="flere" id="flere">
+      <summary><span>Område og trin</span><span class="fn" id="flerefn"></span></summary>
     <div>
       <p class="lbl" id="omrlbl">Område</p>
       <div class="chips" id="chips" role="group" aria-labelledby="omrlbl"></div>
@@ -392,6 +402,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <p class="lbl">Eskaleringstrin <span class="ret"><span id="shown"></span><button id="trinhj" type="button">Hvad betyder trinnene?</button></span></p>
       <div class="ladder" id="ladder"></div>
     </div>
+    </details>
 
     <div class="listwrap">
       <div class="cmpbox" id="cmpbox" hidden></div>
@@ -399,7 +410,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
         <span class="fname" id="fname"></span>
         <button id="showall" type="button">Vis alle</button>
       </div>
-      <p class="lbl">Hændelser <span class="ret"><button id="sortbtn" type="button" aria-pressed="false" title="Sortér efter seneste udvikling i stedet for trin">Nyeste først</button><span id="count" aria-live="polite"></span></span></p>
+      <p class="lbl"><span id="listlbl">Alvorligste først</span> <span class="ret"><button id="sortbtn" type="button" aria-pressed="false" title="Sortér efter seneste udvikling i stedet for alvor">Nyeste først</button><span id="count" aria-live="polite"></span></span></p>
       <div class="list" id="list"></div>
     </div>
   </aside>
@@ -440,7 +451,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="g-lg" id="gstatus"></div>
 
     <h3 id="om-trin">Eskaleringstrin for smitteudbrud</h3>
-    <p>Farven på en smitteprik viser, hvor langt udbruddet er nået. Trinnet beskriver, hvordan smitten opfører sig. Det siger ikke, hvor mange der er ramt, eller hvor stor risikoen er for dig. Trinnene kan slås til og fra i sidesporet.</p>
+    <p>Alle smitteprikker er grønne. Trinnet står i listen og i detaljerne og viser, hvor langt udbruddet er nået. Trinnet beskriver, hvordan smitten opfører sig. Det siger ikke, hvor mange der er ramt, eller hvor stor risikoen er for dig. Trinnene kan slås til og fra under Område og trin i sidesporet.</p>
     <div class="trin" id="omtrin"></div>
 
     <h3>Sådan bruger du kortet</h3>
@@ -489,6 +500,9 @@ const STAGES = [
   {k:'reservoir', n:'Naturligt reservoir',       d:'Smittestof påvist hos dyr, ingen humane tilfælde', v:'--s0'}
 ];
 const SK = Object.fromEntries(STAGES.map(s => [s.k, s]));
+// Farven fortæller altid retningen. Trinnet står som tekst og som markørens form.
+const retAf = e => e.ret || 'smitte';
+const retVar = e => `var(--c-${retAf(e)})`;
 
 // Retninger. Kun smitteudbrud har data endnu. De andre vises stiplet, indtil de har.
 const IC = {
@@ -1273,7 +1287,7 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 function readTokens(){
   T = {};
   ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--accent','--bg',
-   '--s1','--s2','--s3','--s4','--s5','--s0'].forEach(k => T[k] = css(k));
+   '--panel','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
 }
 function resize(){
   const r = cv.parentElement.getBoundingClientRect();
@@ -1284,7 +1298,8 @@ function resize(){
   view.cx = W/2; view.cy = H/2; view.R = Math.min(W,H)/2*0.88*zoom;
   draw();
 }
-const stageColor = k => T[SK[k].v];
+const retCol = e => T['--c-' + retAf(e)];
+const ICP = Object.fromEntries(Object.entries(IC).map(([k,v]) => [k, new Path2D(v)]));
 let t0p = performance.now(), pulse = 0;
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -1326,7 +1341,7 @@ function draw(){
 
   const fe = focusId && byId[focusId] && liveAt(byId[focusId], cutoff) ? byId[focusId] : null;
   if(fe){
-    const col = stageColor(stageAt(fe, cutoff));
+    const col = retCol(fe);
     const nds = fe.nodes || [[fe.place, fe.lon, fe.lat, fe.tl[0][0]]];
     for(const L of (fe.links || [])){
       if(pdate(L[2]) > cutoff) continue;
@@ -1351,12 +1366,14 @@ function draw(){
   for(const e of vis){
     if(fe && fe.nodes && e.id === fe.id) continue;
     const u = unit(e.lon, e.lat); if(u.z <= 0.015) continue;
-    const [x,y] = scr(u), st = stageAt(e, cutoff), col = stageColor(st);
+    const [x,y] = scr(u), st = stageAt(e, cutoff), col = retCol(e);
     // Mistanker vises først på kloden, når der er zoomet ind, medmindre andet er valgt.
     if(st === 'mistanke' && !mistPaaKloden() && e.id !== selected) continue;
     const depth = 0.35 + 0.65*u.z;
     const res = st === 'reservoir', mist = st === 'mistanke', a = alvorAt(e, st);
-    const base = res ? 3.4 : ALV_R[a];
+    // Tæt på bliver markøren større og viser retningens ikon.
+    const stor = zoom >= MIST_ZOOM && !res && (a >= 2 || mist);
+    const base = res ? 3.4 : stor ? Math.max(ALV_R[a] + 4, 9) : ALV_R[a];
     // Pulsen er forbeholdt alvor 4, så det kritiske springer i øjnene.
     const recent = e.live && a >= 4 && cutoff >= T1 - 14*DAY;
     ctx.globalAlpha = depth;
@@ -1369,9 +1386,16 @@ function draw(){
       ctx.globalAlpha = depth;
     }
     ctx.beginPath(); ctx.arc(x, y, base, 0, 2*Math.PI);
-    if(mist){ ctx.fillStyle = T['--bg']; ctx.fill(); ctx.setLineDash([2.6, 2.2]); ctx.strokeStyle = col; ctx.lineWidth = 1.7; ctx.stroke(); ctx.setLineDash([]); }
+    if(mist){ ctx.fillStyle = T['--panel']; ctx.fill(); ctx.setLineDash([2.6, 2.2]); ctx.strokeStyle = col; ctx.lineWidth = 1.7; ctx.stroke(); ctx.setLineDash([]); }
     else if(res){ ctx.strokeStyle = col; ctx.lineWidth = 1.6; ctx.stroke(); }
+    else if(stor){ ctx.fillStyle = T['--panel']; ctx.fill(); ctx.strokeStyle = col; ctx.lineWidth = 1.8; ctx.stroke(); }
     else { ctx.fillStyle = col; ctx.fill(); ctx.strokeStyle = T['--bg']; ctx.lineWidth = 1.4; ctx.stroke(); }
+    if(stor){
+      const k = (base*1.25)/24;
+      ctx.save(); ctx.translate(x-12*k, y-12*k); ctx.scale(k, k);
+      ctx.strokeStyle = col; ctx.lineWidth = 2.1; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.stroke(ICP[retAf(e)]); ctx.restore();
+    }
     if(e.id === selected){
       ctx.beginPath(); ctx.arc(x, y, base+7, 0, 2*Math.PI);
       ctx.strokeStyle = T['--fg']; ctx.lineWidth = 1.2; ctx.stroke();
@@ -1479,7 +1503,7 @@ function buildLadder(){
   ladder.innerHTML = '';
   for(const s of STAGES){
     const b = document.createElement('button');
-    b.className = 'rung'; b.type = 'button'; b.style.setProperty('--c', `var(${s.v})`);
+    b.className = 'rung'; b.type = 'button';
     b.title = s.d;
     b.innerHTML = `<span class="bar"></span><span class="nm"></span><span class="n"></span>`;
     b.querySelector('.nm').textContent = s.n;
@@ -1525,6 +1549,9 @@ function render(){
   cv.setAttribute('aria-label', `Klode med ${vis.length} hændelser. Drej med piletasterne, og zoom med plus og minus. Alle hændelser står også i listen.`);
   document.getElementById('count').textContent = `${vis.length} af ${EVENTS.length}`;
   document.getElementById('shown').textContent = off.size ? `${STAGES.length-off.size} af ${STAGES.length} til` : '';
+  const aktive = (region ? 1 : 0) + (off.size ? 1 : 0);
+  document.getElementById('flerefn').textContent = [region, off.size ? `${STAGES.length-off.size} af ${STAGES.length} trin` : ''].filter(Boolean).join(' · ');
+  if(aktive) document.getElementById('flere').open = true;
   list.innerHTML = '';
   if(!vis.length){
     const d = document.createElement('p'); d.className = 'empty';
@@ -1533,14 +1560,14 @@ function render(){
     list.appendChild(d);
   }
   const iDag = cutoff >= T1;
-  vis.slice().sort((a,b) => (nyeste ? sidste(b).ms-sidste(a).ms : 0)
+  vis.slice().sort((a,b) => (nyeste ? sidste(b).ms-sidste(a).ms : alvorAt(b, stageAt(b,cutoff))-alvorAt(a, stageAt(a,cutoff)))
       || (b.live?1:0)-(a.live?1:0)
       || ORDER[stageAt(a,cutoff)]-ORDER[stageAt(b,cutoff)]
       || a.place.localeCompare(b.place,'da'))
     .forEach(e => {
       const st = stageAt(e, cutoff), sl = sidste(e);
       const b = document.createElement('button');
-      b.className = 'item'; b.type = 'button'; b.style.setProperty('--c', `var(${SK[st].v})`);
+      b.className = 'item'; b.type = 'button'; b.style.setProperty('--c', retVar(e));
       b.setAttribute('aria-current', String(e.id === selected));
       if(focusId && e.id !== focusId) b.dataset.dim = '1';
       b.innerHTML = `<span class="top"><span class="t"></span><span class="d"></span></span><span class="m"></span>`;
@@ -1581,7 +1608,7 @@ function renderCmp(){
     const e = byId[id]; if(!e) continue;
     const st = stageAt(e, cutoff);
     const r = document.createElement('div'); r.className = 'cmprow';
-    r.style.setProperty('--c', 'var(' + SK[st].v + ')');
+    r.style.setProperty('--c', retVar(e));
     r.appendChild(el('span','bar'));
     const mid = document.createElement('div');
     const t = el('div','t', e.disease + ' · ' + e.country); mid.appendChild(t);
@@ -1676,7 +1703,7 @@ function kildeLink(t, u){
 }
 function showDetail(e){
   const st = stageAt(e, cutoff), s = SK[st];
-  detail.hidden = false; detail.style.setProperty('--c', `var(${s.v})`); detail.innerHTML = '';
+  detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = '';
   const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk');
   x.addEventListener('click', lukDetaljer);
   const dl = document.createElement('dl'); dl.className = 'kv';
@@ -1848,14 +1875,14 @@ window.addEventListener('keydown', ev => {
   if(ev.key === 'Escape' && !om.open && (focusId || selected)){ setFocus(null); selected = null; detail.hidden = true; render(); skrivAdresse(); }
 });
 const sortbtn = document.getElementById('sortbtn');
-sortbtn.addEventListener('click', () => { nyeste = !nyeste; sortbtn.setAttribute('aria-pressed', String(nyeste)); render(); });
+sortbtn.addEventListener('click', () => { nyeste = !nyeste; sortbtn.setAttribute('aria-pressed', String(nyeste)); sortbtn.textContent = nyeste ? 'Alvorligste først' : 'Nyeste først'; document.getElementById('listlbl').textContent = nyeste ? 'Nyeste først' : 'Alvorligste først'; render(); });
 
 // ---------- om siden ----------
 const om = document.getElementById('om');
 {
   const box = document.getElementById('omtrin');
   for(const s of STAGES){
-    const i = document.createElement('i'); i.style.setProperty('--c', `var(${s.v})`);
+    const i = document.createElement('i'); i.style.setProperty('--c', 'var(--fg-faint)');
     const t = document.createElement('span'); t.append(el('strong','', s.n), '. ' + s.d + '.');
     box.append(i, t);
   }
