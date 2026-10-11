@@ -1,0 +1,17 @@
+{
+  "name": "Globus · globus.nicco.dk",
+  "short_name": "Globus",
+  "description": "Smitteudbrud, krig og konflikt, naturkatastrofer og rejsevejledninger på én klode, fra navngivne kilder.",
+  "lang": "da",
+  "start_url": "/?app=1",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#070d14",
+  "theme_color": "#070d14",
+  "icons": [
+    { "src": "/ikon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/ikon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/ikon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

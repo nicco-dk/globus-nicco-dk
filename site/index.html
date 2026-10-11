@@ -8,6 +8,14 @@
 <link rel="canonical" href="https://globus.nicco.dk/">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#070d14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e9eff4" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Globus">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>globus.nicco.dk</title>
 <meta name="description" content="Aktuelle udbrud af smitsom sygdom vist på en klode, med tal, dateret forløb og kilde for hver hændelse. Gennemgås dagligt ud fra WHO, ECDC og nationale myndigheder.">
 <meta property="og:type" content="website">
@@ -83,6 +91,9 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .rchip .d{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--fg-faint);border:1.5px solid currentColor}
 .rchip .d svg{width:16px;height:16px}
 .rchip .n{color:var(--fg-faint);font-variant-numeric:tabular-nums}
+.hentapp{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 11px 5px 8px;font:500 12px/1 var(--mono);cursor:pointer;min-height:32px}
+.hentapp svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hentapp:hover{border-color:var(--accent)}
 .rchip.service{margin-left:auto;position:relative}
 .rchip.service::before{content:"";position:absolute;left:-12px;top:6px;bottom:6px;width:1px;background:var(--rule)}
 @media (max-width:900px){.rchip.service{margin-left:14px}}
@@ -405,6 +416,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .guidebtn .t{display:none}
   .guidebtn{padding:5px}
   .hacts{display:contents}
+  .hentapp{grid-column:1/-1;grid-row:5;justify-self:start}
   .guidebtn{grid-column:3;grid-row:1;justify-self:end}
   header .sub{grid-row:3}
   header .proto{grid-column:1/-1;grid-row:4;justify-self:start}
@@ -447,6 +459,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <h1 class="logo"><svg class="mk" viewBox="17 17 366 366" aria-hidden="true"><path fill="currentColor" d="M271.493,496.141c126.623-8.169,225.147-113.254,225.147-240.141S398.117,24.029,271.493,15.859l-.133-.008v226.565l66.56,83.2v-197.616h40.96v314.384l-107.52-134.4v188.165l.133-.008ZM240.507,15.859C113.883,24.029,15.36,129.113,15.36,256s98.523,231.971,225.147,240.141l.133.008v-226.565l-66.56-83.2v197.616h-40.96V69.616l107.52,134.4V15.851l-.133.008Z" transform="translate(17.021,17.021) scale(0.714761)"/></svg><span class="dom">GLOBUS.NICCO.DK</span></h1>
     <div class="rchips" id="rchips" role="group" aria-label="Retninger"></div>
     <div class="hacts">
+      <button class="hentapp" id="hentapp" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg><span>Hent app</span></button>
       <button class="proto" id="protobtn" type="button" title="Læs hvad prototypedata betyder">Prototypedata</button>
       <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
       <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
@@ -2856,10 +2869,11 @@ function bygGuide(){
   ].map(([b, t, m]) => `<div>${m}<span><b>${b}</b>${t}</span></div>`).join('');
   const gs = (k, t, d) => `<div class="g-s"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GI[k]}"/></svg></span><b>${t}</b><span>${d}</span></div>`;
   document.getElementById('gsteps').innerHTML = [
-    gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
+    gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage. Rejsevejledninger står for sig til højre og er slået fra, til du slår dem til.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
     gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
+    gs('klik','Hent som app','På computer og Android: tryk Hent app øverst, når knappen står der, eller vælg Installér i browserens menu. På iPhone og iPad: tryk Del i Safari og vælg Føj til hjemmeskærm. Appen åbner i sit eget vindue og viser de sidst hentede data, også uden net.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
@@ -3035,6 +3049,15 @@ fetch('/konflikter.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).
   if(selected && byId[selected]) showDetail(byId[selected]);
   visFoelg(); draw();
 }).catch(() => {});
+// Webapp: service worker, så siden kan installeres og åbner med de sidst hentede data uden net.
+// Knappen Hent app vises, når browseren tilbyder installation (Chrome, Edge, Android). På iPhone bruges Del, Føj til hjemmeskærm.
+if('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('/sw.js').catch(() => {});
+let installer = null;
+const hentKnap = document.getElementById('hentapp');
+window.addEventListener('beforeinstallprompt', ev => { ev.preventDefault(); installer = ev; hentKnap.hidden = false; });
+window.addEventListener('appinstalled', () => { installer = null; hentKnap.hidden = true; });
+hentKnap.addEventListener('click', async () => { if(!installer) return; installer.prompt(); try{ await installer.userChoice; }catch(err){} installer = null; hentKnap.hidden = true; });
+hentKnap.dataset.tip = TT('Hent som app', 'Læg globus på din computer eller telefon. Den åbner i sit eget vindue og viser de sidst hentede data, også uden net.');
 bygTicker();
 // Maskinmeldingerne hentes for sig, så siden virker, selv om filen mangler.
 fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {

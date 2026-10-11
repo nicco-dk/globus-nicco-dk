@@ -38,6 +38,7 @@
 - Zoom op til 40 gange. Regionerne toner frem fra 15 gange og står fuldt fra 25 gange. Hovedstædernes navne kommer stadig frem fra 2 gange.
 - Nyt alvorstrin 5, akut: alvor 4 med en udvikling inden for tre dage og smitteudbrud på mistanke. Det gives af en fast regel og står ikke i datasættet. Rejsevejledninger bliver aldrig akut. Søljen "Lige nu" i bunden viser kun alvor 5, og et tryk fører hen til hændelsen. Under Alvor er "Kun 4" blevet til "Fra 4", og "Kun 5" er kommet til.
 - Rejsevejledninger er en service: knappen står for sig til højre og er slået fra ved start og ved Vis alle.
+- Siden kan hentes som app (webapp) på computer og telefon: manifest, ikoner og en service worker, der viser de sidst hentede data uden net. Knappen Hent app vises, når browseren tilbyder installation. På iPhone bruges Del, Føj til hjemmeskærm.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag
