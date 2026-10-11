@@ -10,7 +10,9 @@
 - Ved første hentning: 43 lande med mindst gul rejsevejledning, 14 jordskælv, 17 storme og vindvarsler, 12 oversvømmelser, 185 naturbrande, 3 hede-, kulde- og tørkevarsler og 1 vulkanudbrud.
 - Smithsonian GVP svarede ikke (HTTP 403, siden var midlertidigt nede). Vulkaner kommer derfor kun fra GDACS, til GVP svarer igen.
 - Smitteprikkerne er nu grønne som retningens farve. Trinnet står som tekst. Før brugte prikkerne trinfarver, som lignede de andre retninger.
-- Som udgangspunkt vises kun smitteudbrud. De andre retninger slås til med knapperne øverst.
+- Siden åbner med et overblik: det alvorligste (alvor 3 og 4) fra alle retninger. Et tryk på en retning viser alt i den retning, et tryk mere fører tilbage.
+- Krig og konflikt farver landene i Udenrigsministeriets farve. Landegrænserne er Natural Earth 1:110m.
+- Knap til lys og mørk tilstand. Siden starter mørk.
 
 ## 11. oktober 2026, eftermiddag
 

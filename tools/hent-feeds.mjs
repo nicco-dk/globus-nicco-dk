@@ -26,6 +26,8 @@ const DAG = 864e5;
 
 // Hvor ofte en kilde hentes. Rejsevejledningerne er ca. 200 sider og ændres sjældent.
 const INTERVAL = { um: 6 * 36e5 };
+// Hæves, når en kildes felter ændres, så gamle meldinger hentes forfra.
+const VERSION = 2;
 
 // ---------- hjælpere ----------
 async function hent(url, { tekst = true, forsoeg = 2 } = {}) {
@@ -170,10 +172,14 @@ const KILDER = {
       const a2 = LANDE.um[slug], L = LANDE.lande[a2];
       const omr = niv.filter(n => n[0] >= 2 && n[1]).sort((a, b) => b[0] - a[0]).map(([a, t]) => `${NIV[a]}: ${t.replace(/\.$/, '')}.`);
       const hele = niv.some(([a, t]) => a === top && /^hele landet\b/i.test(t) && !/undtagen/i.test(t));
+      // Basis er det niveau, der gælder for resten af landet ("Hele landet" eller "Hele landet undtagen ...").
+      // Siden farver landet efter basis og markerer, at dele af landet har et højere niveau.
+      const hel = niv.filter(([, t]) => /^hele\b/i.test(t)).map(n => n[0]);
+      const basis = hel.length ? Math.min(...hel) : Math.min(...niv.map(n => n[0]));
       const dm = ren((s.match(/id="tg-accordion-dato-for-seneste-opdatering"[\s\S]*?<\/li>/) || [''])[0]).match(/senest opdateret den (\d{1,2})\. (\w+) (\d{4})/);
       const MDR = ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'];
       const opd = dm && MDR.includes(dm[2]) ? new Date(Date.UTC(+dm[3], MDR.indexOf(dm[2]), +dm[1])) : null;
-      ud.push({ id: 'um-' + slug, ret: 'krig', alvor: top, titel: NIV[top] + (hele ? '' : ' til dele af landet'), sted: L.n, lat: L.lat, lon: L.lon,
+      ud.push({ id: 'um-' + slug, ret: 'krig', alvor: top, basis, a2, titel: NIV[top] + (hele ? '' : ' til dele af landet'), sted: L.n, lat: L.lat, lon: L.lon,
         tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'Udenrigsministeriet',
         url: `https://um.dk/rejse-og-ophold/rejse-til-udlandet/rejsevejledninger/${slug}/`,
         tekst: omr.join(' ') + (opd ? ` Rejsevejledningen er senest opdateret ${datoDa(opd)}.` : '') });
@@ -218,7 +224,8 @@ if (FORRIGE) {
 const kilder = {}, h = [];
 for (const [navn, f] of Object.entries(KILDER)) {
   const gl = forrige.kilder?.[navn];
-  if (INTERVAL[navn] && gl?.ok && NU - new Date(gl.hentet) < INTERVAL[navn]) {
+  // Genbrug kræver, at de gemte meldinger har samme felter som nu (version).
+  if (INTERVAL[navn] && gl?.ok && gl.v === VERSION && NU - new Date(gl.hentet) < INTERVAL[navn]) {
     const genbrug = (forrige.h || []).filter(x => x.id.startsWith(navn === 'um' ? 'um-' : navn + '-'));
     kilder[navn] = gl; h.push(...genbrug);
     console.log(`${navn}: genbrugt ${genbrug.length} fra ${gl.hentet} (hentes højst hver ${INTERVAL[navn] / 36e5}. time)`);
@@ -228,7 +235,7 @@ for (const [navn, f] of Object.entries(KILDER)) {
     const t0 = Date.now();
     const alle = await f(), ok = alle.filter(gyldig);
     if (ok.length < alle.length) console.log(`${navn}: ${alle.length - ok.length} meldinger afvist i kontrollen`);
-    kilder[navn] = { ok: true, hentet: NU.toISOString(), antal: ok.length };
+    kilder[navn] = { ok: true, v: VERSION, hentet: NU.toISOString(), antal: ok.length };
     h.push(...ok);
     console.log(`${navn}: ${ok.length} meldinger (${((Date.now() - t0) / 1000).toFixed(1)} s)`);
   } catch (e) {
