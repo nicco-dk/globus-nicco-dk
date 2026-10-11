@@ -10,11 +10,12 @@ Kørslen gør tre ting: bringer de eksisterende hændelser ajour, tilføjer nye 
 
 ## Hvad der må ændres
 
-Kun disse tre steder:
+Kun disse fire steder:
 
 1. Konstanten `DATA_DATO` i `site/index.html`.
 2. Listen `EVENTS` i `site/index.html`.
 3. `LOG.md`, hvor der tilføjes én post øverst.
+4. `tools/par-tjek.json`, når par fra mediesporet skal godkendes eller afvises (se Mediesporet nedenfor).
 
 Alt andet står urørt: resten af `site/index.html` (markup, CSS, kortgeometri, kode, `DATA_STATUS`), de øvrige filer i `site/`, `tools/`, workflowet og denne fil. Ser noget andet forkert ud, så skriv det i loggen og i den afsluttende rapport i stedet for at rette det.
 
@@ -32,6 +33,30 @@ Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, st
 | Vulkaner | Smithsonian GVP, ugentlig rapport | Alle vulkaner i rapporten | Ny aktivitet 2, fortsat 1 |
 
 **Forbindelser.** Grønne streger for humanitær hjælp kommer fra OCHA Financial Tracking Service én gang i døgnet: for lande med niveau 3 eller 4 tages alle donorlande og EU med mindst 1 mio. USD i indeværende år, udbetalt eller forpligtet (ikke løfter). Røde streger (konflikt) og gule (militær støtte) er ikke bygget endnu. Se projektets opgave om konfliktdata.
+
+### Mediesporet (røde og gule streger)
+
+`tools/hent-medier.mjs` kører i workflowet hver time. Det læser GDELT 2.0 (hændelser og omtaler, hvert kvarter), finder hændelser mellem to lande af typen kamp, angreb eller massevold (rød) og militær hjælp (gul) og tæller, hvilke medier fra `tools/medier.json` der har skrevet om dem. Resultatet står i `site/konflikter.json`, som kan læses på https://globus.nicco.dk/konflikter.json.
+
+| Status | Regel | Vises |
+| --- | --- | --- |
+| Mistanke | Mindst 2 medier fra listen inden for 7 dage (30 for militær støtte) | Stiplet, når man zoomer ind eller vælger et af landene |
+| Venter på tjek | Mindst 5 medier fra listen, fra mindst 3 lande uden for parterne, på mindst 3 forskellige dage | Som mistanke |
+| Bekræftet af medier | Som ovenfor, og parret står under `godkendt` i `tools/par-tjek.json` | Fast streg. Militær støtte kun, når et af landene er valgt |
+| Afvist | Parret står under `afvist` | Vises ikke |
+
+**Tjek af par (den daglige kørsel).** Hent https://globus.nicco.dk/konflikter.json og tag alle streger med status `afventer`, mest omtalte først, højst 10 pr. kørsel. For hvert par:
+
+1. Søg efter parret (landenes navne og ordet for kamp eller angreb, fx "Ethiopia Eritrea fighting") og læs mindst to artikler fra forskellige medier. Brug gerne artiklerne i stregens `art`.
+2. **Godkend**, når mindst to medier inden for vinduet beskriver væbnede angreb eller kampe mellem de to landes styrker, eller mellem et land og den myndighed, der kontrollerer det andet land eller en del af det (fx Houthi-bevægelsen i Yemen). Ved militær støtte: når mindst to medier beskriver levering af våben, tropper eller militært udstyr fra det ene land til det andet.
+3. **Afvis**, når artiklerne handler om noget andet: diplomatisk strid, handelskrig, sanktioner, sport, retssager, demonstrationer, historiske årsdage, eller når landet kun er nævnt, fx fordi en borger fra landet er involveret.
+4. Skriv parret i `tools/par-tjek.json` med nøglen fra stregens id uden `gdelt-` (fx `ER-ET` eller `KP>RU`):
+   - godkendt: `{"dato": "ÅÅÅÅ-MM-DD", "note": "én sætning på dansk om, hvad der sker", "kilder": [["Medie", "url"], ["Medie", "url"]]}`
+   - afvist: `{"dato": "ÅÅÅÅ-MM-DD", "grund": "én sætning"}`
+5. Et godkendt par, hvor konflikten er slut ifølge to medier (fx fredsaftale), flyttes til afvist med grunden.
+6. Skriv i loggen under en overskrift **Mediesporet**, hvilke par der blev godkendt og afvist, med kilderne.
+
+Medielisten `tools/medier.json` rettes ikke af den daglige kørsel. Forslag til medier, der mangler, skrives under Til gennemgang.
 
 Smittekørslen rører hverken `feeds.json`, `tools/hent-feeds.mjs` eller `tools/lande.json`. Ser en maskinmelding forkert ud, skrives det under Til gennemgang.
 

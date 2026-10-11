@@ -1,0 +1,10 @@
+{
+  "om": "Tjek af par fra mediesporet. Den daglige kørsel flytter par, der har nået tærsklen, til godkendt eller afvist efter at have læst artiklerne. Nøgle: A-B for konflikt (landekoder i alfabetisk rækkefølge), A>B for militær støtte fra A til B.",
+  "godkendt": {
+    "RU-UA": { "dato": "2026-10-11", "note": "Russiske angreb på Sloviansk og Kyiv og ukrainske droneangreb i Rusland.", "kilder": [["Al Jazeera", "https://www.aljazeera.com/news/2026/10/9/ukraine-takes-aim-at-russias-ai-data-infrastructure"], ["Euronews", "https://www.euronews.com/2026/10/11/russian-army-strikes-sloviansk-and-kyiv-as-ukrainian-drones-hit-third-yandex-data-centre"]] },
+    "ER-ET": { "dato": "2026-10-11", "note": "Etiopien og Eritrea anklager hinanden for at have startet krig. Kampe i det nordlige Etiopien.", "kilder": [["Al Jazeera", "https://www.aljazeera.com/news/2026/10/9/ethiopia-and-eritrea-accuse-one-another-of-launching-war"], ["South China Morning Post", "https://www.scmp.com/news/world/africa/article/3369512/ethiopia-and-eritrea-sever-diplomatic-ties-northern-fighting-escalates"]] },
+    "SA-YE": { "dato": "2026-10-11", "note": "Houthi-bevægelsen, der kontrollerer det nordlige Yemen, har angrebet lufthavne i Saudi-Arabien. Tre dræbt i Riyadh ifølge saudiske myndigheder.", "kilder": [["Euronews", "https://www.euronews.com/2026/10/09/houthi-missile-strikes-kill-three-at-riyadh-airport-including-airline-captain"], ["The Times of Israel", "https://www.timesofisrael.com/three-killed-in-latest-houthi-attacks-on-riyah-airport-saudi-authorities-say/"]] },
+    "IL-PS": { "dato": "2026-10-11", "note": "Fortsat israelsk beskydning i Gaza trods våbenhvilen, med dræbte civile.", "kilder": [["Middle East Eye", "https://www.middleeasteye.net/live-blog/live-blog-update/palestinian-child-killed-israeli-gunfire-northern-gaza"], ["Yeni Şafak", "https://en.yenisafak.com/world/palestinian-child-killed-by-israeli-fire-in-gaza-3712658"]] }
+  },
+  "afvist": {}
+}

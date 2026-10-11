@@ -10,3 +10,8 @@ https://:udgave.globus-nicco-dk.pages.dev/*
   X-Robots-Tag: noindex
 /feeds.json
   Cache-Control: public, max-age=300
+/konflikter.json
+  Cache-Control: public, max-age=300
+/medier-tal.json
+  Cache-Control: no-store
+  X-Robots-Tag: noindex

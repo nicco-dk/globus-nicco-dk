@@ -6,7 +6,8 @@ name: Udrul til Cloudflare Pages
 #
 # Kører også hver time og henter maskinmeldingerne (jordskælv, storme,
 # oversvømmelser, brande, hede, vulkaner og rejsevejledninger) til
-# site/feeds.json. Den timevise kørsel udruller kun, hvis meldingerne er ændret.
+# site/feeds.json, og tæller mediesporet for krig og konflikt op i
+# site/konflikter.json. Den timevise kørsel udruller kun, hvis noget er ændret.
 
 on:
   push:
@@ -18,6 +19,9 @@ on:
       - "tools/byg-log.mjs"
       - "tools/hent-feeds.mjs"
       - "tools/lande.json"
+      - "tools/hent-medier.mjs"
+      - "tools/medier.json"
+      - "tools/par-tjek.json"
       - ".github/workflows/udrul.yml"
   schedule:
     - cron: "7 * * * *"
@@ -81,20 +85,26 @@ jobs:
       - name: Hent maskinmeldinger
         run: node tools/hent-feeds.mjs site/feeds.json --forrige https://globus.nicco.dk/feeds.json
 
-      # Den timevise kørsel udruller kun, når meldingerne er ændret.
+      # Mediesporet for krig og konflikt: GDELT-omtaler fra medierne på vores liste.
+      # Optællingen fortsætter fra den udgave, der er live nu.
+      - name: Hent mediesporet
+        run: node tools/hent-medier.mjs site --forrige https://globus.nicco.dk/medier-tal.json
+
+      # Den timevise kørsel udruller kun, når meldingerne eller stregerne er ændret.
       - name: Er meldingerne ændret?
         id: aendret
         if: github.event_name == 'schedule'
         run: |
           set -euo pipefail
           curl -fsS "https://globus.nicco.dk/feeds.json?v=$(date +%s)" -o "$RUNNER_TEMP/live.json" || echo '{}' > "$RUNNER_TEMP/live.json"
+          curl -fsS "https://globus.nicco.dk/konflikter.json?v=$(date +%s)" -o "$RUNNER_TEMP/live-k.json" || echo '{}' > "$RUNNER_TEMP/live-k.json"
           node -e '
             const fs = require("fs");
-            const kerne = f => { try { return JSON.stringify(JSON.parse(fs.readFileSync(f, "utf8")).h || []); } catch { return ""; } };
-            const ens = kerne(process.argv[1]) === kerne(process.argv[2]);
+            const kerne = (f, k) => { try { return JSON.stringify(JSON.parse(fs.readFileSync(f, "utf8"))[k] || []); } catch { return ""; } };
+            const ens = kerne(process.argv[1], "h") === kerne(process.argv[2], "h") && kerne(process.argv[3], "s") === kerne(process.argv[4], "s");
             console.log(ens ? "Ingen ændringer i meldingerne. Udrulning springes over." : "Meldingerne er ændret.");
             fs.appendFileSync(process.env.GITHUB_OUTPUT, `udrul=${ens ? "nej" : "ja"}\n`);
-          ' site/feeds.json "$RUNNER_TEMP/live.json"
+          ' site/feeds.json "$RUNNER_TEMP/live.json" site/konflikter.json "$RUNNER_TEMP/live-k.json"
 
       # Den offentlige ændringslog bygges af LOG.md og ligger ikke i repoet.
       # Siden linker til den fra foden.

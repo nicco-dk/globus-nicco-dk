@@ -15,6 +15,7 @@
 - Zoom op til 30 gange. Fra 20 gange vises landenes regioner med navn (Natural Earth 1:10m).
 - Knap til lys og mørk tilstand. Siden starter som maskinens tilstand.
 - Udenrigsministeriet har rejsevejledninger for under halvdelen af verdens lande. For 36 lande uden dansk vejledning, blandt andre Sudan, Syrien, Yemen, Afghanistan, Irak, Libyen, Somalia, Mali og DR Congo, bruges nu det britiske udenrigsministeriums niveau.
+- Mediesporet: røde streger for konflikter og gule for militær støtte, talt op hver time i GDELT blandt ca. 240 medier på vores liste. Ved start: 140 streger i de sidste 7 dage, heraf 39 over tærsklen. Fire par er tjekket og godkendt med to kilder hver: Rusland–Ukraine (Al Jazeera, Euronews), Israel–Palæstina (Middle East Eye, Yeni Şafak), Saudi-Arabien–Yemen (Euronews, The Times of Israel) og Eritrea–Etiopien (Al Jazeera, South China Morning Post). De øvrige 35 venter på tjek i den daglige kørsel og vises stiplet.
 - Vælger man et land under krig og konflikt, viser grønne streger, hvem der i år har givet mindst 1 mio. USD i humanitær hjælp (OCHA FTS). Storme viser deres bane fra GDACS.
 
 ## 11. oktober 2026, eftermiddag
