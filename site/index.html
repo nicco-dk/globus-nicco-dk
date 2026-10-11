@@ -40,7 +40,7 @@
   --bg:#070d14; --panel:#0d1721; --panel-2:#122032; --fg:#e4ecf3; --fg-dim:#8ba0b4; --fg-faint:#6f8aa1;
   --rule:#1d2d3d; --accent:#4fb3c9; --warn:#e2b443;
   --s1:#6f93ad; --s2:#e2b443; --s3:#e8803a; --s4:#dc4a4a; --s5:#b253d8; --s0:#49796b;
-  --krig-tone:#13304a;
+  --krig-tone:#13304a; --hjaelp:#8fdc6c;
   --c-krig:#ef5d5b; --c-smitte:#3fcf9e; --c-hede:#f2c94c; --c-jord:#cda57c; --c-flod:#5b95f6; --c-storm:#55cbe0; --c-brand:#f5893c; --c-vulkan:#b691f7;
   --shadow:0 10px 30px rgba(0,0,0,.45);
   color-scheme:dark;
@@ -53,7 +53,7 @@
     --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
     --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
     --s1:#49708c; --s2:#b5861c; --s3:#c4601c; --s4:#c22f2f; --s5:#8c2fb0; --s0:#2f6354;
-    --krig-tone:#d9e4ec; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
+    --krig-tone:#d9e4ec; --hjaelp:#3f8a1c; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
     --shadow:0 8px 24px rgba(20,40,60,.14);
     color-scheme:light;
   }
@@ -63,7 +63,7 @@
   --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
   --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
   --s1:#49708c; --s2:#b5861c; --s3:#c4601c; --s4:#c22f2f; --s5:#8c2fb0; --s0:#2f6354;
-  --krig-tone:#d9e4ec; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
+  --krig-tone:#d9e4ec; --hjaelp:#3f8a1c; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
   --shadow:0 8px 24px rgba(20,40,60,.14);
   color-scheme:light;
 }
@@ -141,6 +141,12 @@ canvas.drag{cursor:grabbing}
   background:var(--panel);border:0;cursor:pointer;text-align:left;font-family:var(--display);
   color:var(--fg-dim);font-size:12.5px;width:100%;min-height:26px}
 .rung .bar{background:var(--rule)}
+.hjaelp{margin-top:14px;padding-top:12px;border-top:1px solid var(--rule)}
+.hjaelp h3{margin:0 0 4px;font-size:13px}
+.hjaelp .dim{font-size:12px;color:var(--fg-dim);margin:0 0 8px;line-height:1.45}
+.hjaelp ol{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:2px}
+.hjaelp li{display:flex;justify-content:space-between;gap:10px;font-size:12.5px;padding:3px 0 3px 10px;border-left:2px solid var(--hjaelp)}
+.hjaelp li .b{font-family:var(--mono);font-size:11.5px;color:var(--fg-dim);white-space:nowrap}
 .flere{display:flex;flex-direction:column;gap:10px}
 .flere>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);padding:6px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
 .flere>summary::-webkit-details-marker{display:none}
@@ -459,7 +465,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Skalaen har fire trin, ligesom Udenrigsministeriets rejsevejledninger. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
     <div class="g-tbl"><table><thead><tr><th>Alvor</th><th>Markør</th><th>Det betyder</th><th>For smitteudbrud</th></tr></thead><tbody id="galvor"></tbody></table></div>
     <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4. I Smithsonians ugentlige vulkanrapport er ny aktivitet 2 og fortsat aktivitet 1.</p>
-    <p>Ved krig og konflikt står lande med en rejsevejledning fra gul og op en tone mørkere. Prikken viser det højeste niveau i landet. Hvilke områder det gælder, står i detaljerne og på um.dk.</p>
+    <p>Ved krig og konflikt står lande med en rejsevejledning fra gul og op en tone mørkere. Prikken viser det højeste niveau i landet. Hvilke områder det gælder, står i detaljerne og på um.dk. Udenrigsministeriet har kun rejsevejledninger for en del af verdens lande. For de andre bruges det britiske udenrigsministeriums (FCDO) niveau: fraråder alle rejser er 4, fraråder alle ikke-nødvendige rejser er 3.</p>
+    <p>Vælger du et land, viser grønne streger, hvilke lande og EU der i år har givet mindst 1 mio. USD i humanitær hjælp, ifølge FN's Financial Tracking Service (OCHA FTS). Ved storme viser en stiplet streg stormens bane fra GDACS.</p>
 
     <h3>Status</h3>
     <div class="g-lg" id="gstatus"></div>
@@ -532,7 +539,7 @@ const IC = {
 };
 const svgIc = (k, s=24) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
 const RETNINGER = [
-  {k:'krig', n:'Krig og konflikt', hvad:'Lande, hvor Udenrigsministeriet beder dig være ekstra forsigtig eller fraråder rejser, helt eller delvis.', kilder:'Udenrigsministeriets rejsevejledninger, hentet hver 6. time', fk:['um']},
+  {k:'krig', n:'Krig og konflikt', hvad:'Lande, hvor Udenrigsministeriet beder dig være ekstra forsigtig eller fraråder rejser, helt eller delvis. Har Udenrigsministeriet ingen rejsevejledning, bruges den britiske. Vælg et land for at se, hvem der sender humanitær hjælp.', kilder:'Udenrigsministeriets rejsevejledninger, det britiske udenrigsministerium (FCDO) og OCHA FTS', fk:['um','fcdo']},
   {k:'smitte', n:'Smitteudbrud og pandemier', aktiv:true, hvad:'Udbrud af smitsom sygdom med de seks trin fra mistanke til ny variant.', kilder:'WHO, ECDC, UKHSA, US CDC, nationale sundhedsmyndigheder'},
   {k:'hede', n:'Hedebølger og klimaekstremer', hvad:'Varsler om hede og kulde i Europa og tørke i hele verden.', kilder:'Meteoalarm (Europas vejrtjenester, også DMI) og GDACS', fk:['meteoalarm','gdacs']},
   {k:'jord', n:'Jordskælv', hvad:'Skælv fra styrke 5,5 eller med PAGER-varsel de seneste 7 døgn.', kilder:'USGS', fk:['usgs']},
@@ -1251,7 +1258,7 @@ function stageAt(e, ms){
 }
 const liveAt = (e, ms) => e._feed ? ms >= T1 : e.t0 <= ms;
 // Maskinmeldinger fra feeds.json. De gælder kun i dag og vises ikke, når tidslinjen står tilbage i tiden.
-let FEEDS = [], FEEDINFO = null, GRAENSER = null;
+let FEEDS = [], FEEDINFO = null, GRAENSER = null, HJAELP = {};
 const ALLE = () => FEEDS.length ? EVENTS.concat(FEEDS) : EVENTS;
 function regionAf(lat, lon, sted){
   if(/Danmark/.test(sted)) return 'Europa';
@@ -1319,7 +1326,7 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 function readTokens(){
   T = {};
   ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--accent','--bg',
-   '--panel','--krig-tone','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
+   '--panel','--krig-tone','--hjaelp','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
 }
 function resize(){
   const r = cv.parentElement.getBoundingClientRect();
@@ -1407,6 +1414,26 @@ function draw(){
       if(label){ ctx.fillStyle = T['--fg-dim']; ctx.fillText(n[0], sp[0] + 9, sp[1]); }
       ctx.globalAlpha = 1;
     });
+  }
+
+  // Stormenes bane fra GDACS.
+  for(const e of vis){
+    if(!e.bane || e._sz === undefined) continue;
+    ctx.save(); ctx.strokeStyle = retCol(e); ctx.lineWidth = e.id === selected ? 2.2 : 1.3; ctx.globalAlpha = e.id === selected ? .95 : .6; ctx.setLineDash([5, 3]);
+    for(const l of e.bane){ tegnLinje(l); }
+    ctx.restore();
+  }
+  // Humanitær hjælp (OCHA FTS): grønne streger fra donorlandene til det valgte land.
+  const valgt = selected && byId[selected];
+  if(valgt && valgt._feed && valgt.ret === 'krig' && HJAELP[valgt.a2]){
+    const maks = Math.max(...HJAELP[valgt.a2].map(x => x.usd));
+    for(const x of HJAELP[valgt.a2]){
+      ctx.save(); ctx.strokeStyle = T['--hjaelp']; ctx.globalAlpha = .8; ctx.lineWidth = .8 + 2.6*Math.sqrt(x.usd/maks);
+      tegnLinje(greatCircle([x.lon, x.lat], [valgt.lon, valgt.lat], 48));
+      const u = unit(x.lon, x.lat);
+      if(u.z > 0){ const [sx, sy] = scr(u); ctx.globalAlpha = 1; ctx.fillStyle = T['--hjaelp']; ctx.beginPath(); ctx.arc(sx, sy, 2.6, 0, 2*Math.PI); ctx.fill(); }
+      ctx.restore();
+    }
   }
 
   for(const e of vis){
@@ -1506,6 +1533,15 @@ function tegnRegioner(){
     }
   }
   ctx.textAlign = 'start';
+}
+function tegnLinje(l){
+  ctx.beginPath(); let open = false;
+  for(const pt of l){
+    const u = unit(pt[0], pt[1]);
+    if(u.z > 0){ const q = scr(u); open ? ctx.lineTo(q[0], q[1]) : (ctx.moveTo(q[0], q[1]), open = true); }
+    else open = false;
+  }
+  ctx.stroke();
 }
 function trace(p){ ctx.moveTo(p[0][0],p[0][1]); for(let i=1;i<p.length;i++) ctx.lineTo(p[i][0],p[i][1]); ctx.closePath(); }
 function graticule(v, isLat){
@@ -1727,7 +1763,18 @@ function visFeed(e){
   sr.appendChild(el('span','srclegend', `Hentet automatisk${hentet ? ' ' + hentet : ''}. Teksten er sat sammen af kildens egne felter. Alvor er kildens egen farve oversat efter faste regler.`));
   detail.append(x, el('span','chip', RNAVN[e.ret]), el('h2','', e.sted ? `${e.titel} · ${e.sted}` : e.titel),
     el('div','where', `${Math.abs(e.lat).toFixed(2)}° ${e.lat>=0?'N':'S'} ${Math.abs(e.lon).toFixed(2)}° ${e.lon>=0?'Ø':'V'}`),
-    dl, el('p','note', e.tekst || ''), sr);
+    dl, el('p','note', e.tekst || ''));
+  if(e.ret === 'krig' && HJAELP[e.a2]){
+    const hj = HJAELP[e.a2], box = document.createElement('div'); box.className = 'hjaelp';
+    box.appendChild(el('h3','', `Humanitær hjælp i ${hj[0].aar}`));
+    box.appendChild(el('p','dim', `${hj.length} lande og EU har givet mindst 1 mio. USD. De grønne streger på kloden går fra dem. Beløbene er udbetalt eller forpligtet, ikke løfter.`));
+    const ol = document.createElement('ol');
+    for(const x of hj){ const li = document.createElement('li'); li.append(el('span','', x.fraNavn), el('span','b', `${(x.usd/1e6).toLocaleString('da-DK', {maximumFractionDigits: x.usd < 1e7 ? 1 : 0})} mio. USD`)); ol.appendChild(li); }
+    box.appendChild(ol);
+    box.appendChild(kildeLink('OCHA Financial Tracking Service', hj[0].url));
+    detail.appendChild(box);
+  }
+  detail.appendChild(sr);
 }
 function setFocus(id){
   focusId = id;
@@ -2250,6 +2297,9 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   FEEDINFO = j;
   FEEDS = (j.h || []).filter(h => h && h.id && Number.isFinite(h.lat) && Number.isFinite(h.lon) && h.alvor >= 1 && h.alvor <= 4).map(somFeed);
   for(const h of FEEDS) byId[h.id] = h;
+  HJAELP = {};
+  for(const x of (j.f || [])) if(x.type === 'hjaelp' && Number.isFinite(x.lat) && Number.isFinite(x.lon)) (HJAELP[x.til] = HJAELP[x.til] || []).push(x);
+  for(const k in HJAELP) HJAELP[k].sort((a, b) => b.usd - a.usd);
   for(const r of RETNINGER) if(r.fk && (r.fk.some(k => j.kilder && j.kilder[k] && (j.kilder[k].ok || j.kilder[k].antal)) || FEEDS.some(h => h.ret === r.k))) r.aktiv = true;
   if(!foerFokus) retOn = new Set(alleRet());
   buildRet(); bygGuide();

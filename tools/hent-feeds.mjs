@@ -25,9 +25,11 @@ const UA = 'globus.nicco.dk/1.0 (+https://globus.nicco.dk; feedlaeser)';
 const DAG = 864e5;
 
 // Hvor ofte en kilde hentes. Rejsevejledningerne er ca. 200 sider og ændres sjældent.
-const INTERVAL = { um: 6 * 36e5 };
+const INTERVAL = { um: 6 * 36e5, fcdo: 6 * 36e5, fts: 24 * 36e5 };
+// Lande, hvor Udenrigsministeriet ingen rejsevejledning har. Sættes af um() og bruges af fcdo().
+let UM_UDEN = null;
 // Hæves, når en kildes felter ændres, så gamle meldinger hentes forfra.
-const VERSION = 2;
+const VERSION = 4;
 
 // ---------- hjælpere ----------
 async function hent(url, { tekst = true, forsoeg = 2 } = {}) {
@@ -54,6 +56,12 @@ const EN = new Map();
 for (const L of Object.values(LANDE.lande)) for (const n of L.en || []) EN.set(n.toLowerCase(), L.n);
 Object.entries({ 'russia': 'RU', 'the democratic republic of congo': 'CD', 'democratic republic of congo': 'CD', 'republic of congo': 'CG', 'the bahamas': 'BS', 'czech republic': 'CZ', 'bosnia & herzegovina': 'BA', 'united states': 'US', 'brunei': 'BN' })
   .forEach(([k, a2]) => EN.set(k, LANDE.lande[a2].n));
+// Engelske landenavne til landekode, til donorlandene i FTS.
+const EN2 = new Map();
+for (const [a2, L] of Object.entries(LANDE.lande)) for (const n of L.en || []) EN2.set(n.toLowerCase(), a2);
+Object.entries({ 'russia': 'RU', 'russian federation': 'RU', 'türkiye': 'TR', 'turkey': 'TR', 'united states': 'US', 'united kingdom': 'GB', 'korea, republic of': 'KR',
+  'republic of korea': 'KR', 'czech republic': 'CZ', 'czechia': 'CZ', 'the netherlands': 'NL', 'netherlands': 'NL', 'viet nam': 'VN', 'iran, islamic republic of': 'IR' })
+  .forEach(([k, a2]) => EN2.set(k, a2));
 const landDa = s => { const l = s.split(/,\s*/).filter(Boolean).map(n => EN.get(n.toLowerCase()) || n); return l.length > 4 ? `${l.slice(0, 3).join(', ')} og ${l.length - 3} andre lande` : l.join(', '); };
 async function iKoe(liste, n, f) {
   const ud = []; let i = 0;
@@ -109,8 +117,24 @@ const KILDER = {
       ud.push({ id: `gdacs-${type}${tag(it, 'gdacs:eventid')}`, ret: RET[type], alvor: a,
         titel: NAVN[type] + (navn && type !== 'WF' && type !== 'DR' ? ' ' + navn : ''), sted: land, lat, lon,
         tid: iso(fra || tag(it, 'pubDate')), opd: iso(tag(it, 'gdacs:datemodified') || tag(it, 'pubDate')),
-        kilde: 'GDACS', url: tag(it, 'link'), tekst: del.join(' ') });
+        kilde: 'GDACS', url: tag(it, 'link'), tekst: del.join(' '), _ep: tag(it, 'gdacs:episodeid') });
     }
+    // Stormenes bane fra GDACS' geometri. Linjestykkerne sættes sammen i rækkefølge.
+    await iKoe(ud.filter(x => x.ret === 'storm'), 4, async x => {
+      const id = x.id.replace('gdacs-TC', '');
+      const g = await hent(`https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?eventtype=TC&eventid=${id}&episodeid=${x._ep || 1}`, { tekst: false });
+      const stk = (g.features || []).filter(f => f.geometry && f.geometry.type === 'LineString' && /^Line_Line_\d+$/.test(f.properties.Class || ''))
+        .sort((a, b) => +a.properties.Class.split('_').pop() - +b.properties.Class.split('_').pop())
+        .map(f => f.geometry.coordinates.map(([lo, la]) => [Math.round(lo * 100) / 100, Math.round(la * 100) / 100]));
+      const bane = [];
+      for (const l of stk) {
+        const sidste = bane[bane.length - 1];
+        if (sidste && sidste[sidste.length - 1][0] === l[0][0] && sidste[sidste.length - 1][1] === l[0][1]) sidste.push(...l.slice(1));
+        else bane.push(l);
+      }
+      if (bane.length) x.bane = bane;
+    });
+    for (const x of ud) delete x._ep;
     return ud;
   },
 
@@ -154,6 +178,7 @@ const KILDER = {
   // Udenrigsministeriets rejsevejledninger. Lande med mindst gul (vær ekstra forsigtig).
   async um() {
     const slugs = Object.keys(LANDE.um);
+    UM_UDEN = [];
     const sider = await iKoe(slugs, 5, async slug => ({ slug, s: await hent(`https://um.dk/rejse-og-ophold/rejse-til-udlandet/rejsevejledninger/${slug}/`) }));
     const fejl = sider.filter(s => s.fejl); if (fejl.length > slugs.length / 4) throw new Error(`${fejl.length} sider fejlede`);
     const NIV = { 2: 'Vær ekstra forsigtig', 3: 'Vi fraråder alle ikke-nødvendige rejser', 4: 'Vi fraråder alle rejser' };
@@ -167,7 +192,7 @@ const KILDER = {
         const omr = ren((m[2].match(/class="travel-guide-accordion__subtitle"[^>]*>([\s\S]*?)<\/(?:span|div|p)>/) || [, ''])[1]);
         niv.push([a, omr]);
       }
-      if (!niv.length) continue;
+      if (!niv.length) { if (/Vi har ingen rejsevejledning/.test(s)) UM_UDEN.push(LANDE.um[slug]); continue; }
       const top = Math.max(...niv.map(n => n[0])); if (top < 2) continue;
       const a2 = LANDE.um[slug], L = LANDE.lande[a2];
       const omr = niv.filter(n => n[0] >= 2 && n[1]).sort((a, b) => b[0] - a[0]).map(([a, t]) => `${NIV[a]}: ${t.replace(/\.$/, '')}.`);
@@ -188,6 +213,30 @@ const KILDER = {
   },
 
   // Smithsonians ugentlige vulkanrapport. Ny aktivitet er alvor 2, fortsat aktivitet alvor 1.
+  // Lande uden dansk rejsevejledning: det britiske udenrigsministeriums (FCDO) niveau fra GOV.UK's åbne API.
+  async fcdo() {
+    const uden = UM_UDEN ?? forrige.kilder?.um?.uden ?? [];
+    if (!uden.length) return [];
+    const idx = await hent('https://www.gov.uk/api/content/foreign-travel-advice', { tekst: false });
+    const slugs = new Map();
+    for (const c of idx.links?.children || []) { const n = c.details?.country?.name, sl = c.details?.country?.slug; if (n && sl) slugs.set(EN2.get(n.toLowerCase()) || n, sl); }
+    const NIV = { avoid_all_travel_to_whole_country: [4, 4], avoid_all_travel_to_parts: [4, 0], avoid_all_but_essential_travel_to_whole_country: [3, 3], avoid_all_but_essential_travel_to_parts: [3, 0] };
+    const TXT = { 4: 'fraråder alle rejser', 3: 'fraråder alle ikke-nødvendige rejser' };
+    const svar = await iKoe(uden.filter(a2 => slugs.has(a2)), 4, async a2 => ({ a2, d: await hent(`https://www.gov.uk/api/content/foreign-travel-advice/${slugs.get(a2)}`, { tekst: false }) }));
+    const ud = [];
+    for (const { a2, d } of svar.filter(x => !x.fejl)) {
+      const st = (d.details?.alert_status || []).map(k => NIV[k]).filter(Boolean);
+      if (!st.length) continue;
+      const top = Math.max(...st.map(x => x[0])), hel = st.filter(x => x[1]).map(x => x[1]);
+      const basis = hel.length ? Math.max(...hel) : 1, L = LANDE.lande[a2], opd = d.public_updated_at;
+      ud.push({ id: 'fcdo-' + a2, ret: 'krig', alvor: top, basis, a2, titel: `Storbritannien ${TXT[top]}` + (basis >= top ? '' : ' til dele af landet'),
+        sted: L.n, lat: L.lat, lon: L.lon, tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'FCDO (UK)',
+        url: `https://www.gov.uk/foreign-travel-advice/${slugs.get(a2)}`,
+        tekst: `Udenrigsministeriet har ingen rejsevejledning for ${L.n}. Det britiske udenrigsministerium ${TXT[top]}${basis >= top ? ' til hele landet' : ' til dele af landet'}.` + (opd ? ` Opdateret ${datoDa(opd)}.` : '') });
+    }
+    return ud;
+  },
+
   async gvp() {
     const x = await hent('https://volcano.si.edu/news/WeeklyVolcanoRSS.xml');
     const ud = [];
@@ -236,6 +285,7 @@ for (const [navn, f] of Object.entries(KILDER)) {
     const alle = await f(), ok = alle.filter(gyldig);
     if (ok.length < alle.length) console.log(`${navn}: ${alle.length - ok.length} meldinger afvist i kontrollen`);
     kilder[navn] = { ok: true, v: VERSION, hentet: NU.toISOString(), antal: ok.length };
+    if (navn === 'um') kilder.um.uden = UM_UDEN;
     h.push(...ok);
     console.log(`${navn}: ${ok.length} meldinger (${((Date.now() - t0) / 1000).toFixed(1)} s)`);
   } catch (e) {
@@ -246,9 +296,60 @@ for (const [navn, f] of Object.entries(KILDER)) {
     console.log(`::warning::${navn} fejlede (${e.message}). Genbruger ${genbrug.length} meldinger fra forrige udgave.`);
   }
 }
+// ---------- forbindelser: humanitær hjælp fra OCHA FTS ----------
+// For lande med rejsevejledning fra orange og op: alle donorlande med mindst 1 mio. USD i år
+// (udbetalt eller forpligtet, ikke løfter). EU's organer samles som EU.
+const MIN_USD = 1e6;
+let f = [];
+{
+  const gl = forrige.kilder?.fts;
+  if (gl?.ok && gl.v === VERSION && NU - new Date(gl.hentet) < INTERVAL.fts && Array.isArray(forrige.f)) {
+    f = forrige.f; kilder.fts = gl;
+    console.log(`fts: genbrugt ${f.length} forbindelser fra ${gl.hentet}`);
+  } else {
+    try {
+      const aar = NU.getUTCFullYear(), t0 = Date.now();
+      const lande = [...new Set(h.filter(x => x.ret === 'krig' && x.alvor >= 3 && x.a2).map(x => x.a2))];
+      const svar = await iKoe(lande, 3, async a2 => ({ a2, j: await hent(`https://api.hpc.tools/v1/public/fts/flow?countryISO3=${LANDE.lande[a2].i3}&year=${aar}`, { tekst: false }) }));
+      const fejl = svar.filter(x => x.fejl); if (fejl.length > lande.length / 2) throw new Error(`${fejl.length} lande fejlede`);
+      const ukendt = new Set();
+      for (const { a2, j } of svar.filter(x => !x.fejl)) {
+        const sum = new Map(); let locId = null;
+        for (const fl of j.data?.flows || []) {
+          if (fl.status === 'pledge') continue;
+          const dest = (fl.destinationObjects || []).find(o => o.type === 'Location');
+          if (!dest) continue; locId = locId || dest.id;
+          const org = (fl.sourceObjects || []).find(o => o.type === 'Organization');
+          const loc = (fl.sourceObjects || []).find(o => o.type === 'Location');
+          let nogle = null;
+          if (org && /^European Commission/i.test(org.name)) nogle = 'EU';
+          else if (loc && org && (org.organizationTypes || []).includes('Governments')) { nogle = EN2.get(loc.name.toLowerCase()); if (!nogle) ukendt.add(loc.name); }
+          if (!nogle || nogle === a2) continue;
+          sum.set(nogle, (sum.get(nogle) || 0) + (+fl.amountUSD || 0));
+        }
+        for (const [d, usd] of sum) {
+          if (usd < MIN_USD) continue;
+          const L = d === 'EU' ? { n: 'EU', lat: 50.85, lon: 4.35 } : LANDE.lande[d];
+          if (!L) continue;
+          f.push({ id: `fts-${a2}-${d}`, type: 'hjaelp', til: a2, fra: d, fraNavn: L.n, lat: L.lat, lon: L.lon, usd: Math.round(usd), aar,
+            kilde: 'OCHA FTS', url: locId ? `https://fts.unocha.org/countries/${locId}/summary/${aar}` : 'https://fts.unocha.org/' });
+        }
+      }
+      if (ukendt.size) console.log(`fts: ukendte donorlande sprunget over: ${[...ukendt].slice(0, 15).join(', ')}`);
+      kilder.fts = { ok: true, v: VERSION, hentet: NU.toISOString(), antal: f.length };
+      console.log(`fts: ${f.length} forbindelser til ${lande.length} lande (${((Date.now() - t0) / 1000).toFixed(1)} s)`);
+    } catch (e) {
+      f = Array.isArray(forrige.f) ? forrige.f : [];
+      kilder.fts = { ok: false, hentet: forrige.kilder?.fts?.hentet || null, antal: f.length, fejl: String(e.message).slice(0, 200) };
+      console.log(`::warning::fts fejlede (${e.message}). Genbruger ${f.length} forbindelser.`);
+    }
+  }
+  f = f.filter(x => x && Number.isFinite(x.lat) && Number.isFinite(x.lon) && /^https:\/\//.test(x.url) && x.usd >= MIN_USD);
+}
+
 // Samme id to gange kan ikke forekomme. Den første vinder.
 const set = new Set(), ud = h.filter(x => !set.has(x.id) && set.add(x.id));
 ud.sort((a, b) => b.alvor - a.alvor || (b.opd || '').localeCompare(a.opd || ''));
-writeFileSync(UD, JSON.stringify({ genereret: NU.toISOString(), kilder, h: ud }) + '\n');
+writeFileSync(UD, JSON.stringify({ genereret: NU.toISOString(), kilder, h: ud, f }) + '\n');
 const pr = {}; for (const x of ud) pr[x.ret] = (pr[x.ret] || 0) + 1;
 console.log(`Skrev ${ud.length} meldinger til ${UD}: ${Object.entries(pr).map(([k, v]) => `${k} ${v}`).join(', ')}`);

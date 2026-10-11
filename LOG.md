@@ -14,6 +14,8 @@
 - Lande med en rejsevejledning fra gul og op står en tone mørkere blå. Landegrænserne er Natural Earth 1:110m.
 - Zoom op til 30 gange. Fra 20 gange vises landenes regioner med navn (Natural Earth 1:10m).
 - Knap til lys og mørk tilstand. Siden starter som maskinens tilstand.
+- Udenrigsministeriet har rejsevejledninger for under halvdelen af verdens lande. For 36 lande uden dansk vejledning, blandt andre Sudan, Syrien, Yemen, Afghanistan, Irak, Libyen, Somalia, Mali og DR Congo, bruges nu det britiske udenrigsministeriums niveau.
+- Vælger man et land under krig og konflikt, viser grønne streger, hvem der i år har givet mindst 1 mio. USD i humanitær hjælp (OCHA FTS). Storme viser deres bane fra GDACS.
 
 ## 11. oktober 2026, eftermiddag
 
