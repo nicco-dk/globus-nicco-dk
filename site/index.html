@@ -251,14 +251,16 @@ canvas.drag{cursor:grabbing}
 .tk-lbl::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--s4);animation:tkpuls 1.6s ease-in-out infinite}
 @keyframes tkpuls{50%{opacity:.25}}
 .tk-vindue{flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent,#000 28px,#000 calc(100% - 28px),transparent)}
-.tk-baand{display:flex;gap:30px;width:max-content;animation:tkrul var(--tk-tid,60s) linear infinite}
+.tk-baand{display:flex;width:max-content;animation:tkrul var(--tk-tid,60s) linear infinite}
+.tk-blok,.tk-gang{display:flex;flex:none}
+.tk-gang{padding-right:0}
 .tk-vindue:hover .tk-baand,.tk-vindue:focus-within .tk-baand{animation-play-state:paused}
 @keyframes tkrul{to{transform:translateX(-50%)}}
-.tk-p{display:flex;align-items:center;gap:7px;background:none;border:0;padding:3px 0;font:inherit;font-size:12.5px;color:var(--fg);cursor:pointer;white-space:nowrap}
+.tk-p{display:flex;align-items:center;gap:8px;background:none;border:0;padding:3px 30px 3px 0;font:inherit;font-size:12.5px;color:var(--fg);cursor:pointer;white-space:nowrap}
 .tk-p:hover .t{text-decoration:underline;text-decoration-color:var(--c);text-underline-offset:3px}
-.tk-p .d{display:flex;color:var(--c)}
-.tk-p .m{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);border:1px solid currentColor;border-radius:3px;padding:0 4px;line-height:15px}
-.tk-p .m.mist{border-style:dashed}
+.tk-p .d{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
+.tk-p .d svg{width:16px;height:16px}
+.tk-p .m{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
 @media (prefers-reduced-motion:reduce){.tk-vindue{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
@@ -520,7 +522,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 
   <div class="ticker" id="ticker" hidden>
     <span class="tk-lbl">Lige nu</span>
-    <div class="tk-vindue" role="region" aria-label="Alvor 5, akut lige nu"><div class="tk-baand" id="tkbaand"></div></div>
+    <div class="tk-vindue" role="region" aria-label="Alvor 4 og 5 lige nu"><div class="tk-baand" id="tkbaand"></div></div>
   </div>
 
   <div class="timebar">
@@ -2775,7 +2777,7 @@ seg('segAlvor', [
   [2, 'Fra 2', TT('Fra alvor 2', 'Skjuler det, der kun er til orientering.')],
   [3, 'Fra 3', TT('Fra alvor 3', 'Kun det alvorlige og det kritiske.')],
   [4, 'Fra 4', TT('Fra alvor 4', 'Det kritiske og det akutte.')],
-  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu og mistanker om nye udbrud. Det samme som søljen i bunden.')]
+  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu og mistanker om nye udbrud. De står først i søljen i bunden.')]
 ], v => { minAlvor = +v; });
 seg('segMist', [
   ['zoom', 'Ved zoom', TT('Mistanker ved zoom', 'Skjult på den hele klode, vises når du zoomer ind. Står altid i listen.')],
@@ -3018,28 +3020,55 @@ function landObj(a2){
   if(!byId[id]) byId[id] = somFeed({ id, ret:'rejse', alvor:1, a2, titel:HS[a2][0], sted:HS[a2][0], lat:HS[a2][1], lon:HS[a2][2], kilde:'', url:'' });
   return byId[id];
 }
-// Søljen i bunden viser alvor 5 (akut): alvor 4 med en udvikling inden for tre dage og alle smitteudbrud på mistanke.
+// Søljen i bunden viser alvor 4 og 5 (akut: alvor 4 med en udvikling inden for tre dage og alle smitteudbrud på mistanke).
 // Rejsevejledninger er en service og kommer aldrig med.
 // Et tryk fører hen til hændelsen, og kloden står stille i 10 sekunder.
+let tkNr = 0;
 function bygTicker(){
   const boks = document.getElementById('ticker'), baand = document.getElementById('tkbaand'); if(!boks) return;
   const punkter = [];
   for(const e of ALLE()){
     if(!liveAt(e, T1) || retAf(e) === 'rejse') continue;
-    const st = stageAt(e, T1); if(alvorAt(e, st) !== 5) continue;
-    punkter.push({e, mist: st === 'mistanke', ms: senestMs(e)});
+    const st = stageAt(e, T1), a = alvorAt(e, st); if(a < 4) continue;
+    punkter.push({e, a, mist: st === 'mistanke', ms: senestMs(e)});
   }
-  punkter.sort((p, q) => q.ms - p.ms);
+  // Akut først, derefter alvor 4, nyeste først inden for hver.
+  punkter.sort((p, q) => q.a - p.a || q.ms - p.ms);
   boks.hidden = !punkter.length; baand.innerHTML = ''; if(!punkter.length) return;
-  for(const kopi of [0, 1]) for(const {e, mist} of punkter){
-    const b = document.createElement('button'); b.type = 'button'; b.className = 'tk-p'; b.style.setProperty('--c', retVar(e));
-    if(kopi){ b.tabIndex = -1; b.setAttribute('aria-hidden', 'true'); }
-    b.innerHTML = `<span class="d">${svgIc(retAf(e), 13)}</span><span class="m${mist ? ' mist' : ''}">${mist ? 'Mistanke' : 'Akut'}</span>`;
-    b.append(el('span','t', e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`));
-    b.addEventListener('click', () => { select(e.id, true); zoomMaal = Math.max(zoom, 2.5); idle = performance.now(); });
-    baand.appendChild(b);
-  }
-  requestAnimationFrame(() => { baand.style.setProperty('--tk-tid', Math.max(30, baand.scrollWidth / 2 / 45) + 's'); });
+  const lav = (skjult) => {
+    const g = document.createElement('div'); g.className = 'tk-gang';
+    if(skjult) g.setAttribute('aria-hidden', 'true');
+    for(const {e, a, mist} of punkter){
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'tk-p'; b.style.setProperty('--c', retVar(e));
+      if(skjult) b.tabIndex = -1;
+      b.innerHTML = `<span class="d">${svgIc(retAf(e), 16)}</span><span class="m">${mist ? 'Mistanke' : a >= 5 ? 'Akut' : 'Alvor 4'}</span>`;
+      b.append(el('span','t', e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`));
+      b.addEventListener('click', () => { select(e.id, true); zoomMaal = Math.max(zoom, 2.5); idle = performance.now(); });
+      g.appendChild(b);
+    }
+    return g;
+  };
+  // Punkterne kører lige efter hinanden: gentages, til en gang er mindst lige så bred som vinduet, og to ens gange
+  // ligger efter hinanden, så rulningen kan starte forfra uden hul.
+  const vindue = boks.querySelector('.tk-vindue');
+  const g1 = lav(false); baand.appendChild(g1);
+  const nr = ++tkNr;
+  requestAnimationFrame(() => {
+    // En nyere opbygning har overtaget, eller rækken er ikke målt endnu.
+    if(nr !== tkNr || !g1.isConnected || g1.scrollWidth < 40) return;
+    const w = vindue.clientWidth || 800, enkelt = g1.scrollWidth;
+    const gange = Math.max(1, Math.ceil(w / enkelt));
+    baand.innerHTML = '';
+    const blok = document.createElement('div'); blok.className = 'tk-blok';
+    for(let i = 0; i < gange; i++) blok.appendChild(lav(i > 0));
+    const blok2 = blok.cloneNode(true); blok2.setAttribute('aria-hidden', 'true');
+    for(const b of blok2.querySelectorAll('button')) b.tabIndex = -1;
+    // Klonen har ikke klik-håndtering; hvert punkt finder sin hændelse via sin plads i rækken.
+    const alle = [...blok.querySelectorAll('button')];
+    [...blok2.querySelectorAll('button')].forEach((b, i) => b.addEventListener('click', () => alle[i].click()));
+    baand.append(blok, blok2);
+    baand.style.setProperty('--tk-tid', Math.max(25, blok.scrollWidth / 45) + 's');
+  });
 }
 // Mediesporets streger for krig og konflikt.
 fetch('/konflikter.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => {
