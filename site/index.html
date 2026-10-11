@@ -1382,7 +1382,8 @@ function draw(){
     ctx.fillStyle = T['--krig-tone']; ctx.fill();
   }
 
-  ctx.strokeStyle = T['--border-line']; ctx.lineWidth = .5; ctx.globalAlpha = .9;
+  // Landegrænserne står altid fuldt. Regionerne toner op til samme styrke.
+  ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .8; ctx.globalAlpha = .75;
   ctx.beginPath();
   for(const line of borders){
     let open = false;
@@ -1446,7 +1447,7 @@ function draw(){
   }
   const valgt = selected && byId[selected];
   // Mediesporet: røde streger for konflikt, gule for militær støtte.
-  // Bekræftede konflikter vises altid, når krig og konflikt er slået til. Mistanker, par der venter
+  // Bekræftede konflikter vises, når intet er valgt, og krig og konflikt er slået til. Mistanker, par der venter
   // på tjek, og militær støtte vises kun for det valgte land, så kloden ikke fyldes af streger.
   const va2 = valgt && valgt._feed && valgt.ret === 'krig' ? valgt.a2 : null;
   const partnere = new Set(va2 ? [va2] : []);
@@ -1455,6 +1456,8 @@ function draw(){
     for(const x of KONF){
       const med = va2 && (x.a === va2 || x.b === va2), fast = x.status === 'bekraeftet';
       if(x.type === 'militaer' && !med) continue;
+      // Er noget valgt, vises kun det valgte lands streger. Er det ikke et land under krig og konflikt, vises ingen.
+      if(selected && !med) continue;
       if(!fast && (!med || mistMode === 'aldrig')) continue;
       if(med){ partnere.add(x.a); partnere.add(x.b); }
       ctx.save();
@@ -1478,10 +1481,29 @@ function draw(){
     }
   }
 
+  // Markører, der ville ligge oven i hinanden (fx flere varsler for samme land), lægges i en lille
+  // ring om punktet, så hver kan ses og vælges, og forklaringen ved musen passer til den rigtige.
+  const pos = new Map(), klynger = [];
   for(const e of vis){
     if(fe && fe.nodes && e.id === fe.id) continue;
     const u = unit(e.lon, e.lat); if(u.z <= 0.015) continue;
-    const [x,y] = scr(u), st = stageAt(e, cutoff), col = retCol(e);
+    if(stageAt(e, cutoff) === 'mistanke' && !mistPaaKloden() && e.id !== selected) continue;
+    const [x, y] = scr(u);
+    const k = klynger.find(c => Math.abs(c.x - x) < 7 && Math.abs(c.y - y) < 7);
+    if(k) k.e.push(e); else klynger.push({x, y, e:[e]});
+  }
+  for(const c of klynger){
+    if(c.e.length === 1){ pos.set(c.e[0], [c.x, c.y]); continue; }
+    const r = 9 + c.e.length*1.6;
+    c.e.forEach((e, i) => { const v = -Math.PI/2 + i*2*Math.PI/c.e.length; pos.set(e, [c.x + r*Math.cos(v), c.y + r*Math.sin(v)]); });
+    ctx.fillStyle = T['--fg-faint']; ctx.globalAlpha = .5; ctx.beginPath(); ctx.arc(c.x, c.y, 1.6, 0, 2*Math.PI); ctx.fill(); ctx.globalAlpha = 1;
+  }
+
+  for(const e of vis){
+    if(fe && fe.nodes && e.id === fe.id) continue;
+    const u = unit(e.lon, e.lat); if(u.z <= 0.015) continue;
+    if(!pos.has(e)) continue;
+    const [x,y] = pos.get(e), st = stageAt(e, cutoff), col = retCol(e);
     // Mistanker vises først på kloden, når der er zoomet ind, medmindre andet er valgt.
     if(st === 'mistanke' && !mistPaaKloden() && e.id !== selected) continue;
     const depth = 0.35 + 0.65*u.z;
@@ -1525,7 +1547,9 @@ function draw(){
     `${fmtLon(-rot.lam)}  ${fmtLat(rot.phi)}   ·   zoom ${zoom.toFixed(1)}×` + (mistMode === 'zoom' && zoom < MIST_ZOOM ? '   ·   zoom ind for mistanker' : '');
 }
 // Regioner i landene (Natural Earth admin 1). Hentes pr. land, når man zoomer ind til 20 gange.
-const REGION_ZOOM = 20;
+// Regionerne toner frem fra 10 gange og står lige så kraftigt som landegrænserne ved 30 gange.
+const REGION_ZOOM = 10, REGION_FULD = 30;
+const regionStyrke = () => Math.max(0, Math.min(1, (zoom - REGION_ZOOM) / (REGION_FULD - REGION_ZOOM)));
 let REG_INDEX = null, regIndexHentes = false;
 const REG = {};
 function regionerISyne(){
@@ -1547,7 +1571,8 @@ function tegnRegioner(){
     return;
   }
   const lande = regionerISyne();
-  ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .7; ctx.globalAlpha = .55; ctx.setLineDash([4, 3]);
+  const st = regionStyrke();
+  ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .8; ctx.globalAlpha = .75 * st; ctx.setLineDash([4, 3]);
   ctx.beginPath();
   for(const a3 of lande){
     const d = REG[a3];
@@ -1564,7 +1589,10 @@ function tegnRegioner(){
   }
   ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
   // Navne på regionerne, kun dem der står på skærmen.
+  // Navnene kommer først med, når regionerne står tydeligt (fra ca. 15 gange), og toner frem med dem.
+  if(st < .25){ return; }
   ctx.font = '10.5px ' + MONO; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = T['--fg-faint'];
+  ctx.globalAlpha = Math.min(1, (st - .25) / .5);
   const brugt = [];
   for(const a3 of lande){
     const d = REG[a3]; if(!d) continue;
@@ -1575,7 +1603,7 @@ function tegnRegioner(){
       brugt.push([x, y]); ctx.fillText(n, x, y);
     }
   }
-  ctx.textAlign = 'start';
+  ctx.textAlign = 'start'; ctx.globalAlpha = 1;
 }
 function tegnHovedstadsnavne(partnere){
   ctx.font = '10.5px ' + getComputedStyle(document.body).fontFamily; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
@@ -2285,7 +2313,7 @@ seg('segMist', [
 ], v => { mistMode = v; });
 document.getElementById('retalle').addEventListener('click', () => { retOn = new Set(alleRet()); foerFokus = null; render(); });
 document.getElementById('retingen').addEventListener('click', () => { retOn = new Set(); foerFokus = null; render(); });
-document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Fra 20 gange vises landenes regioner.');
+document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Landenes regioner toner frem fra 10 gange.');
 document.getElementById('zout').dataset.tip = TT('Zoom ud', 'Tilbage mod hele kloden.');
 document.getElementById('zreset').dataset.tip = TT('Nulstil visning', 'Hele kloden, som da siden blev åbnet.');
 document.getElementById('ombtn').dataset.tip = TT('Sådan virker siden', 'Retninger, alvor, status, kilder og hvordan du bruger kortet.');
@@ -2364,7 +2392,7 @@ function bygGuide(){
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Med musehjulet, knapperne eller to fingre, op til 30 gange. Fra 20 gange vises landenes regioner med navn.'),
+    gs('zoom','Zoom ind og ud','Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 10 gange og står fuldt ved 30 gange, med navn fra cirka 15 gange.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
