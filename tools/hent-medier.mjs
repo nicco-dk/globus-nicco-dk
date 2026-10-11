@@ -7,6 +7,7 @@
 // to lande af typen kamp, angreb eller massevold (rød) og militær hjælp (gul) og tæller,
 // hvilke medier fra vores egen liste (tools/medier.json) der har skrevet om dem.
 // Optællingen gemmes i site/medier-tal.json, så næste kørsel kan fortsætte, hvor den slap.
+// Derudover læses overskrifter fra store medier, som GDELT dækker dårligt (tools/overskrifter.json).
 // Stregerne skrives til site/konflikter.json efter reglerne nedenfor. Ingen AI i dette trin.
 //
 // Regler (står også i OPDATERING.md):
@@ -18,7 +19,7 @@
 //   Vindue:     7 dage for konflikt, 30 dage for militær støtte.
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
-import { execFileSync } from 'node:child_process';
+import { execFileSync, execFile } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -123,6 +124,70 @@ rmSync(TMP, { recursive: true, force: true });
 T.sidste = sidsteOk;
 console.log(`${antalEv} hændelser og ${antalOmt} omtaler fra listen. ${mangler} kvarterer manglede hos GDELT.`);
 
+// ---------- overskrifter fra store medier ----------
+// Reuters, AP, CNN, New York Times og andre, som GDELT dækker dårligt. Overskriften (og for RSS
+// også resuméet) skal nævne to eller tre lande og et ord for kamp eller angreb. Så tæller mediet
+// med for parret, præcis som en omtale i GDELT. Kun røde streger. Militær støtte kræver GDELT.
+{
+  const KILDER = JSON.parse(readFileSync(new URL('./overskrifter.json', import.meta.url), 'utf8')).kilder;
+  const ORD = JSON.parse(readFileSync(new URL('./ord.json', import.meta.url), 'utf8')).lande;
+  const KAMP = {
+    en: /\b(attack(s|ed|ing)?|strike[sd]?|air ?strikes?|missiles?|drones?|shell(s|ed|ing)|bomb(s|ed|ing|ardment)?|invasion|invade[sd]?|war|warplanes?|fighting|fight(s)?|clash(es|ed)?|troops|offensive|incursion|killed|kills|ceasefire|truce|front ?line|artillery|rockets?|militants?|insurgen\w*)\b/i,
+    da: /\b(angreb\w*|krig\w*|kamp(e|ene)?|missil\w*|droner?\w*|bomb\w*|dræbt\w*|invasion\w*|våbenhvile\w*|tropper\w*|offensiv\w*|beskyd\w*|luftangreb\w*|raket\w*)\b/i
+  };
+  // Navne, længste først, så "Papua New Guinea" ikke også tæller som "Guinea".
+  const navne = { en: [], da: [] };
+  for (const [a2, o] of Object.entries(ORD)) {
+    for (const n of [...o.en, ...o.dem, ...o.hoved]) navne.en.push([n, a2]);
+    for (const n of o.da) navne.da.push([n, a2]);
+  }
+  for (const k in navne) navne[k].sort((x, y) => y[0].length - x[0].length);
+  const esc = t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = {};
+  for (const k in navne) re[k] = navne[k].map(([n, a2]) => [new RegExp(`(^|[^\\p{L}])${esc(n)}(?=$|[^\\p{L}])`, 'u'), a2]);
+  const lande = (tekst, sprog) => {
+    let t = tekst; const fundet = new Set();
+    for (const [r, a2] of re[sprog]) { if (r.test(t)) { fundet.add(a2); t = t.replace(r, '$1 '); } }
+    return [...fundet];
+  };
+  const ent = x => x.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(+d)).replace(/<[^>]+>/g, ' ');
+  const tag = (x, n) => { const m = x.match(new RegExp(`<${n}(?:\\s[^>]*)?>([\\s\\S]*?)</${n}>`)); return m ? ent(m[1]).trim() : ''; };
+  let artikler = 0, traef = 0, fejl = 0;
+  const graenseDag = dagStr(NU.getTime() - VINDUE.konflikt * DAG);
+  await iKoe(KILDER, 4, async k => {
+    if (!MEDIER[k.domaene]) return;
+    let xml;
+    // Hentes med curl: flere af medierne afviser Nodes indbyggede fetch, men ikke curl.
+    try {
+      xml = await new Promise((ok, nej) => execFile('curl', ['-sSL', '--fail', '--max-time', '30', '-A', 'Mozilla/5.0 (compatible; globus.nicco.dk feedlaeser)', k.url],
+        { maxBuffer: 64 * 1024 * 1024 }, (e, ud) => e ? nej(new Error(String(e.message).split('\n').pop() || 'curl fejlede')) : ok(ud)));
+    } catch (e) { fejl++; console.log(`::warning::overskrifter ${k.domaene}: ${e.message}`); return; }
+    const poster = k.type === 'sitemap' ? xml.split('<url>').slice(1) : xml.split(/<item[\s>]/).slice(1);
+    for (const p of poster) {
+      let titel, link, dato, tekst;
+      if (k.type === 'sitemap') { titel = tag(p, 'news:title'); link = tag(p, 'loc'); dato = tag(p, 'news:publication_date'); tekst = titel; }
+      else { titel = tag(p, 'title'); link = tag(p, 'link'); dato = tag(p, 'pubDate') || tag(p, 'dc:date'); tekst = titel + ' ' + (k.type === 'rss' ? tag(p, 'description') : ''); }
+      if (k.type === 'gnews') titel = titel.replace(/\s+-\s+[^-]+$/, '');
+      const ms = Date.parse(dato); if (!titel || !link || !Number.isFinite(ms)) continue;
+      const dag = dagStr(ms); if (dag < graenseDag) continue;
+      artikler++;
+      const sprog = k.sprog || 'en';
+      if (!KAMP[sprog].test(tekst)) continue;
+      const fl = lande(tekst, sprog);
+      if (fl.length < 2 || fl.length > 3) continue;
+      traef++;
+      for (let i = 0; i < fl.length; i++) for (let j = i + 1; j < fl.length; j++) {
+        const [a, b] = [fl[i], fl[j]].sort(), nogle = `${a}-${b}`;
+        const pp = T.p[nogle] || (T.p[nogle] = { t: 'konflikt', a, b, d: {}, art: [] });
+        const liste = pp.d[dag] || (pp.d[dag] = []);
+        if (!liste.includes(k.domaene)) liste.push(k.domaene);
+        if (!pp.art.some(x => x[0] === link)) { pp.art.unshift([link, k.domaene, dag, titel.slice(0, 200)]); pp.art = pp.art.slice(0, MAKS_ARTIKLER); }
+      }
+    }
+  });
+  console.log(`Overskrifter: ${artikler} artikler læst fra ${KILDER.length - fejl} af ${KILDER.length} medier, ${traef} med to eller tre lande og et ord for kamp.`);
+}
+
 // ---------- ryd op ----------
 const graense = t => dagStr(NU.getTime() - VINDUE[t] * DAG);
 const cacheGr = dagStr(NU.getTime() - CACHE_DAGE * DAG);
@@ -146,7 +211,7 @@ for (const [k, p] of Object.entries(T.p)) {
   const A = LANDE[p.a], B = LANDE[p.b];
   // Artikler: nyeste først, højst én pr. medie.
   const set = new Set(), art = [];
-  for (const [url, d, dag] of p.art) { if (set.has(d)) continue; set.add(d); art.push({ url, medie: MEDIER[d][0], dag }); if (art.length >= 6) break; }
+  for (const [url, d, dag, titel] of p.art) { if (set.has(d)) continue; set.add(d); art.push({ url, medie: MEDIER[d][0], dag, ...(titel ? { titel } : {}) }); if (art.length >= 6) break; }
   streger.push({ id: `gdelt-${k}`, type: p.t, status, a: p.a, b: p.b, aNavn: A.n, bNavn: B.n, aLat: A.lat, aLon: A.lon, bLat: B.lat, bLon: B.lon,
     medier: medier.size, lande: lande.size, dage, mNavne: [...medier].map(d => MEDIER[d][0]).filter((x, i, l) => l.indexOf(x) === i).sort((x, y) => x.localeCompare(y, 'da')),
     art, tjek: TJEK.godkendt?.[k] || null });

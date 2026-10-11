@@ -36,7 +36,7 @@ Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, st
 
 ### Mediesporet (røde og gule streger)
 
-`tools/hent-medier.mjs` kører i workflowet hver time. Det læser GDELT 2.0 (hændelser og omtaler, hvert kvarter), finder hændelser mellem to lande af typen kamp, angreb eller massevold (rød) og militær hjælp (gul) og tæller, hvilke medier fra `tools/medier.json` der har skrevet om dem. Resultatet står i `site/konflikter.json`, som kan læses på https://globus.nicco.dk/konflikter.json.
+`tools/hent-medier.mjs` kører i workflowet hver time. Det læser GDELT 2.0 (hændelser og omtaler, hvert kvarter), finder hændelser mellem to lande af typen kamp, angreb eller massevold (rød) og militær hjælp (gul) og tæller, hvilke medier fra `tools/medier.json` der har skrevet om dem. Derudover læses overskrifter fra store medier, som GDELT dækker dårligt, blandt andre Reuters, AP, CNN, The New York Times, The Wall Street Journal og The Washington Post (listen står i `tools/overskrifter.json`). En overskrift tæller for et par, når den nævner to eller tre lande (ordene står i `tools/ord.json`) og et ord for kamp eller angreb. Overskrifterne tæller kun til røde streger. Resultatet står i `site/konflikter.json`, som kan læses på https://globus.nicco.dk/konflikter.json.
 
 | Status | Regel | Vises |
 | --- | --- | --- |

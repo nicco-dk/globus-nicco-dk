@@ -22,6 +22,8 @@ on:
       - "tools/hent-medier.mjs"
       - "tools/medier.json"
       - "tools/par-tjek.json"
+      - "tools/overskrifter.json"
+      - "tools/ord.json"
       - ".github/workflows/udrul.yml"
   schedule:
     - cron: "7 * * * *"
