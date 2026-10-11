@@ -224,6 +224,7 @@ canvas.drag{cursor:grabbing}
 .detail .x{position:absolute;right:6px;top:6px;background:var(--panel);border:0;color:var(--fg-faint);cursor:pointer;font-size:16px;line-height:1;padding:4px 7px}
 .chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c);
   border:1px solid var(--c);border-radius:2px;padding:2px 6px;justify-self:start}
+.klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12px;border-top:1px solid var(--rule);padding-top:9px;margin:0}
@@ -508,7 +509,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="g-dirs" id="gdirs"></div>
 
     <h3>Alvor</h3>
-    <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Skalaen har fire trin, ligesom Udenrigsministeriets rejsevejledninger. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
+    <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Ligger flere prikker tæt, samles de i én prik med antallet, og kanten viser retningernes farver. Zoom ind, eller tryk på prikken, så skilles de. Skalaen har fire trin, ligesom Udenrigsministeriets rejsevejledninger. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
     <div class="g-tbl"><table><thead><tr><th>Alvor</th><th>Markør</th><th>Det betyder</th><th>For smitteudbrud</th></tr></thead><tbody id="galvor"></tbody></table></div>
     <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4. I Smithsonians ugentlige vulkanrapport er ny aktivitet 2 og fortsat aktivitet 1.</p>
     <p>Rejsevejledninger har deres eget ikon med et fly. Lande med en rejsevejledning fra gul og op står en tone mørkere, og regioner, som vejledningen nævner ved navn, farves, når du zoomer ind. Krig og konflikt viser i stedet, hvor der kæmpes og demonstreres ifølge medierne (varmekortet), og hvem der er i konflikt med hvem. Vælger du et land, åbner landesiden med alt om landet, og du kan følge landet.</p>
@@ -1593,23 +1594,26 @@ function draw(){
     }
   }
 
-  // Markører, der ville ligge oven i hinanden (fx flere varsler for samme land), lægges i en lille
-  // ring om punktet, så hver kan ses og vælges, og forklaringen ved musen passer til den rigtige.
-  const pos = new Map(), klynger = [];
+  // Markører, der ligger tæt på skærmen, samles i én prik med antallet. Jo længere man zoomer ind,
+  // jo længere fra hinanden kommer de, og prikken deler sig. Det alvorligste bestemmer, hvor prikken står.
+  // Det valgte står altid for sig selv.
+  const pos = new Map(); KLYNGER = [];
+  const afstand = KLYNGE_AF;
+  const kand = [];
   for(const e of vis){
     if(fe && fe.nodes && e.id === fe.id) continue;
     const u = unit(e.lon, e.lat); if(u.z <= 0.015) continue;
     if(stageAt(e, cutoff) === 'mistanke' && !mistPaaKloden() && e.id !== selected) continue;
     const [x, y] = scr(u);
-    const k = klynger.find(c => Math.abs(c.x - x) < 7 && Math.abs(c.y - y) < 7);
-    if(k) k.e.push(e); else klynger.push({x, y, e:[e]});
+    if(e.id === selected){ pos.set(e, [x, y]); continue; }
+    kand.push({e, x, y, z:u.z, a:alvorAt(e, stageAt(e, cutoff))});
   }
-  for(const c of klynger){
-    if(c.e.length === 1){ pos.set(c.e[0], [c.x, c.y]); continue; }
-    const r = 9 + c.e.length*1.6;
-    c.e.forEach((e, i) => { const v = -Math.PI/2 + i*2*Math.PI/c.e.length; pos.set(e, [c.x + r*Math.cos(v), c.y + r*Math.sin(v)]); });
-    ctx.fillStyle = T['--fg-faint']; ctx.globalAlpha = .5; ctx.beginPath(); ctx.arc(c.x, c.y, 1.6, 0, 2*Math.PI); ctx.fill(); ctx.globalAlpha = 1;
+  kand.sort((p, q) => q.a - p.a);
+  for(const k of kand){
+    const c = KLYNGER.find(c => (c.x - k.x)**2 + (c.y - k.y)**2 < afstand*afstand);
+    if(c){ c.m.push(k); } else KLYNGER.push({x:k.x, y:k.y, z:k.z, m:[k]});
   }
+  KLYNGER = KLYNGER.filter(c => { if(c.m.length === 1){ pos.set(c.m[0].e, [c.x, c.y]); return false; } return true; });
 
   for(const e of vis){
     if(fe && fe.nodes && e.id === fe.id) continue;
@@ -1652,11 +1656,81 @@ function draw(){
     ctx.globalAlpha = 1;
     e._sx = x; e._sy = y; e._sz = u.z;
   }
+  for(const c of KLYNGER) tegnKlynge(c);
 
   if(HS) tegnHovedstadsnavne(partnere);
   document.getElementById('hud').textContent =
     (selected || focusId ? '' : 'Træk for at dreje · vælg en prik for tal, forløb og kilder\n') +
     `${fmtLon(-rot.lam)}  ${fmtLat(rot.phi)}   ·   zoom ${zoom.toFixed(1)}×` + (mistMode === 'zoom' && zoom < MIST_ZOOM ? '   ·   zoom ind for mistanker' : '');
+}
+// Samlede prikker. Kanten er delt i retningernes farver efter, hvor mange der er af hver.
+// Ringene udenom følger det alvorligste i prikken, ligesom på en enkelt markør.
+let KLYNGER = [];
+const KLYNGE_AF = 26;
+const klyngeR = n => Math.min(22, 9 + 3*Math.log2(n));
+function tegnKlynge(c){
+  const n = c.m.length, r = klyngeR(n), top = c.m[0], depth = 0.35 + 0.65*c.z, colTop = retCol(top.e);
+  ctx.globalAlpha = depth;
+  if(top.a >= 3){ ctx.beginPath(); ctx.arc(c.x, c.y, r+4, 0, 2*Math.PI); ctx.strokeStyle = colTop; ctx.globalAlpha = depth*.5; ctx.lineWidth = 1.2; ctx.stroke(); }
+  if(top.a >= 4){ ctx.beginPath(); ctx.arc(c.x, c.y, r+8, 0, 2*Math.PI); ctx.strokeStyle = colTop; ctx.globalAlpha = depth*.28; ctx.lineWidth = 1.2; ctx.stroke(); }
+  ctx.globalAlpha = depth;
+  ctx.beginPath(); ctx.arc(c.x, c.y, r, 0, 2*Math.PI); ctx.fillStyle = T['--panel']; ctx.fill();
+  const dele = new Map();
+  for(const k of c.m){ const col = retCol(k.e); dele.set(col, (dele.get(col) || 0) + 1); }
+  let v = -Math.PI/2; const mel = dele.size > 1 ? .12 : 0;
+  ctx.lineWidth = 3.2; ctx.lineCap = 'butt';
+  for(const [col, m] of dele){
+    const b = m/n*2*Math.PI;
+    ctx.beginPath(); ctx.arc(c.x, c.y, r-1.6, v + mel/2, v + b - mel/2); ctx.strokeStyle = col; ctx.stroke();
+    v += b;
+  }
+  ctx.font = `700 ${n >= 100 ? 10 : 11}px ` + getComputedStyle(document.body).fontFamily;
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = T['--fg'];
+  ctx.fillText(String(n), c.x, c.y + .5);
+  ctx.textAlign = 'start'; ctx.globalAlpha = 1;
+  c.r = r;
+}
+function klyngeVed(mx, my){
+  let best = null, bd = Infinity;
+  for(const c of KLYNGER){ const d = (c.x-mx)**2 + (c.y-my)**2; if(d < (c.r+5)**2 && d < bd){ bd = d; best = c; } }
+  return best;
+}
+// Klik på en samlet prik: zoom ind, til prikkerne skilles. Ligger de samme sted (fx flere varsler for
+// ét land), eller er kloden allerede zoomet helt ind, vises de som en liste i stedet.
+let zoomMaal = null;
+function aabnKlynge(c){
+  // Vinkelafstanden til nærmeste nabo for hver prik. Medianen afgør, hvor langt der zoomes ind,
+  // så de fleste skilles, uden at kloden springer helt ind for to prikker, der næsten ligger oven i hinanden.
+  const vink = (p, q) => Math.acos(Math.max(-1, Math.min(1, Math.sin(p.lat*DEG)*Math.sin(q.lat*DEG) + Math.cos(p.lat*DEG)*Math.cos(q.lat*DEG)*Math.cos((p.lon-q.lon)*DEG))));
+  const nn = c.m.map((k, i) => Math.min(...c.m.filter((_, j) => j !== i).map(q => vink(k.e, q.e)))).sort((x, y) => x - y);
+  const med = nn[Math.floor(nn.length/2)], grund = Math.min(W, H)/2*0.88;
+  const behov = med > 2e-4 ? KLYNGE_AF*1.3/(grund*med) : Infinity;
+  if(behov <= ZMAX && zoom < ZMAX*.98){
+    const lat = c.m.reduce((s, k) => s + k.e.lat, 0)/c.m.length;
+    target = {lam:-c.m[0].e.lon, phi:Math.max(-80, Math.min(80, lat))};
+    zoomMaal = Math.min(ZMAX, zoom*6, Math.max(zoom*1.6, behov));
+    idle = performance.now();
+    return;
+  }
+  visKlyngeliste(c);
+}
+function visKlyngeliste(c){
+  detail.hidden = false; detail.style.setProperty('--c', retVar(c.m[0].e)); detail.innerHTML = '';
+  const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk'); x.addEventListener('click', lukDetaljer);
+  detail.appendChild(x);
+  const steder = [...new Set(c.m.map(k => k.e._feed ? (k.e.sted || '') : k.e.country).filter(Boolean))];
+  detail.appendChild(el('h2', '', `${c.m.length} hændelser her`));
+  if(steder.length) detail.appendChild(el('p', 'sub', steder.slice(0, 4).join(', ') + (steder.length > 4 ? ' m.fl.' : '')));
+  const ul = el('div', 'klist');
+  for(const k of c.m){
+    const e = k.e, b = document.createElement('button'); b.type = 'button'; b.className = 'item'; b.style.setProperty('--c', retVar(e));
+    b.innerHTML = `<span class="top"><span class="t"></span></span><span class="m"></span>`;
+    b.querySelector('.t').textContent = e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`;
+    b.querySelector('.m').textContent = `${e._feed ? RNAVN[e.ret] : 'Smitte'} · alvor ${k.a}`;
+    b.addEventListener('click', () => select(e.id, false));
+    ul.appendChild(b);
+  }
+  detail.appendChild(ul);
 }
 // Regioner i landene (Natural Earth admin 1). Hentes pr. land, når man zoomer ind til 20 gange.
 // Regionerne toner frem fra 2 gange og står lige så kraftigt som landegrænserne fra 20 gange og op.
@@ -2391,6 +2465,7 @@ let dragging = false, moved = 0, last = null, idle = performance.now();
 // To fingre zoomer. Afstanden mellem fingrene ved start og nu giver faktoren.
 const ptrs = new Map(); let knib = null;
 cv.addEventListener('pointerdown', ev => {
+  zoomMaal = null;
   ptrs.set(ev.pointerId, [ev.clientX, ev.clientY]); skjulTip();
   if(ptrs.size === 2){ const [p1, p2] = [...ptrs.values()]; knib = {d:Math.hypot(p1[0]-p2[0], p1[1]-p2[1]), z:zoom}; dragging = false; return; }
   dragging = true; moved = 0; last = [ev.clientX, ev.clientY];
@@ -2415,6 +2490,7 @@ cv.addEventListener('pointercancel', ev => { ptrs.delete(ev.pointerId); knib = n
 cv.addEventListener('pointerleave', () => skjulTip());
 function hit(ev){
   const r = cv.getBoundingClientRect(), mx = ev.clientX-r.left, my = ev.clientY-r.top;
+  const kl = klyngeVed(mx, my); if(kl){ skjulTip(); aabnKlynge(kl); return; }
   let best = null, bd = 420;
   for(const e of visible()){
     if(!(e._sz > 0)) continue;
@@ -2424,13 +2500,13 @@ function hit(ev){
   if(best) select(best.id, false);
   else { selected = null; setFocus(null); detail.hidden = true; render(); skrivAdresse(); }
 }
-cv.addEventListener('wheel', ev => { ev.preventDefault();
+cv.addEventListener('wheel', ev => { ev.preventDefault(); zoomMaal = null;
   skjulTip(); setZoom(zoom*Math.exp(-ev.deltaY*(ev.deltaMode ? 0.05 : 0.0018))); idle = performance.now(); }, {passive:false});
 const ZMAX = 30;
 function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
-document.getElementById('zin').addEventListener('click', () => { setZoom(zoom*1.3); idle = performance.now(); });
-document.getElementById('zout').addEventListener('click', () => { setZoom(zoom/1.3); idle = performance.now(); });
-document.getElementById('zreset').addEventListener('click', () => { target = {lam:HJEM.lam, phi:HJEM.phi}; setZoom(START_ZOOM); idle = performance.now(); });
+document.getElementById('zin').addEventListener('click', () => { zoomMaal = null; setZoom(zoom*1.3); idle = performance.now(); });
+document.getElementById('zout').addEventListener('click', () => { zoomMaal = null; setZoom(zoom/1.3); idle = performance.now(); });
+document.getElementById('zreset').addEventListener('click', () => { zoomMaal = null; target = {lam:HJEM.lam, phi:HJEM.phi}; setZoom(START_ZOOM); idle = performance.now(); });
 cv.tabIndex = 0; cv.setAttribute('role', 'img');
 cv.addEventListener('keydown', ev => {
   const s = 6;
@@ -2516,6 +2592,11 @@ rotKnap.addEventListener('click', () => { rotPause = !rotPause; visRotKnap(); sk
 function tick(now){
   pulse = (now-t0p)/2200;
   let need = !reduce;
+  if(zoomMaal){
+    const z = zoom * Math.pow(zoomMaal/zoom, .12);
+    if(Math.abs(Math.log(zoomMaal/zoom)) < .01){ setZoom(zoomMaal); zoomMaal = null; } else setZoom(z);
+    need = true;
+  }
   if(target){
     let d = target.lam-rot.lam;
     while(d > 180) d -= 360; while(d < -180) d += 360;
@@ -2618,6 +2699,14 @@ function visTip(html, x, y){
 function skjulTip(){ tip.hidden = true; }
 function svaev(ev){
   const r = cv.getBoundingClientRect(), mx = ev.clientX-r.left, my = ev.clientY-r.top;
+  const kl = klyngeVed(mx, my);
+  if(kl){
+    cv.style.cursor = 'pointer';
+    const navne = kl.m.slice(0, 5).map(k => `<div class="ts" style="color:${retCol(k.e)}">${esc(k.e._feed ? (k.e.sted ? k.e.titel + ' · ' + k.e.sted : k.e.titel) : k.e.disease + ' · ' + k.e.country)}</div>`).join('');
+    visTip(`<div class="tt">${kl.m.length} hændelser her</div>` + navne + (kl.m.length > 5 ? `<div class="tm">og ${kl.m.length - 5} flere</div>` : '')
+      + `<div class="th">Klik for at zoome ind</div>`, ev.clientX, ev.clientY);
+    return;
+  }
   let best = null, bd = 260;
   for(const e of visible()){ if(!(e._sz > 0)) continue; const d = (e._sx-mx)**2 + (e._sy-my)**2; if(d < bd){ bd = d; best = e; } }
   cv.style.cursor = best ? 'pointer' : '';
