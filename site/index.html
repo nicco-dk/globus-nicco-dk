@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="da" data-theme="dark">
 <meta charset="utf-8">
-<!-- Siden starter altid mørk. Et valg med knappen huskes i browseren. -->
-<script id="tema">try{var t=localStorage.getItem("globus-tema");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<!-- Siden starter som maskinens tilstand. Et valg med knappen gælder resten af besøget. -->
+<script id="tema">(function(){var t;try{t=sessionStorage.getItem("globus-tema")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t})()</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://globus.nicco.dk/">
@@ -40,7 +40,7 @@
   --bg:#070d14; --panel:#0d1721; --panel-2:#122032; --fg:#e4ecf3; --fg-dim:#8ba0b4; --fg-faint:#6f8aa1;
   --rule:#1d2d3d; --accent:#4fb3c9; --warn:#e2b443;
   --s1:#6f93ad; --s2:#e2b443; --s3:#e8803a; --s4:#dc4a4a; --s5:#b253d8; --s0:#49796b;
-  --um2:#e8c547; --um3:#ee8a3a; --um4:#e5484d;
+  --krig-tone:#13304a;
   --c-krig:#ef5d5b; --c-smitte:#3fcf9e; --c-hede:#f2c94c; --c-jord:#cda57c; --c-flod:#5b95f6; --c-storm:#55cbe0; --c-brand:#f5893c; --c-vulkan:#b691f7;
   --shadow:0 10px 30px rgba(0,0,0,.45);
   color-scheme:dark;
@@ -53,7 +53,7 @@
     --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
     --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
     --s1:#49708c; --s2:#b5861c; --s3:#c4601c; --s4:#c22f2f; --s5:#8c2fb0; --s0:#2f6354;
-    --um2:#c9a000; --um3:#d0661f; --um4:#c4302e; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
+    --krig-tone:#d9e4ec; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
     --shadow:0 8px 24px rgba(20,40,60,.14);
     color-scheme:light;
   }
@@ -63,7 +63,7 @@
   --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
   --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
   --s1:#49708c; --s2:#b5861c; --s3:#c4601c; --s4:#c22f2f; --s5:#8c2fb0; --s0:#2f6354;
-  --um2:#c9a000; --um3:#d0661f; --um4:#c4302e; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
+  --krig-tone:#d9e4ec; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
   --shadow:0 8px 24px rgba(20,40,60,.14);
   color-scheme:light;
 }
@@ -393,7 +393,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   <div class="mapctl" id="mapctl">
     <span><span class="mlbl" id="alvlbl">Alvor</span><span class="seg" id="segAlvor" role="group" aria-labelledby="alvlbl"></span></span>
     <span><span class="mlbl" id="mistlbl">Mistanker</span><span class="seg" id="segMist" role="group" aria-labelledby="mistlbl"></span></span>
-    <span><button class="linkbtn" id="retalle" type="button" hidden>Tilbage til overblikket</button></span>
+    <span><button class="linkbtn" id="retalle" type="button">Vis alle</button><button class="linkbtn" id="retingen" type="button">Skjul alle</button></span>
   </div>
 
   <aside class="side">
@@ -459,7 +459,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Skalaen har fire trin, ligesom Udenrigsministeriets rejsevejledninger. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
     <div class="g-tbl"><table><thead><tr><th>Alvor</th><th>Markør</th><th>Det betyder</th><th>For smitteudbrud</th></tr></thead><tbody id="galvor"></tbody></table></div>
     <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4. I Smithsonians ugentlige vulkanrapport er ny aktivitet 2 og fortsat aktivitet 1.</p>
-    <p>Ved krig og konflikt farves landet i Udenrigsministeriets farve for resten af landet: gul, orange eller rød. Har dele af landet et højere niveau, har landet en stiplet kant i den farve, og prikken viser det højeste niveau. Hvilke områder det gælder, står i detaljerne og på um.dk.</p>
+    <p>Ved krig og konflikt står lande med en rejsevejledning fra gul og op en tone mørkere. Prikken viser det højeste niveau i landet. Hvilke områder det gælder, står i detaljerne og på um.dk.</p>
 
     <h3>Status</h3>
     <div class="g-lg" id="gstatus"></div>
@@ -1319,7 +1319,7 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 function readTokens(){
   T = {};
   ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--accent','--bg',
-   '--panel','--um2','--um3','--um4','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
+   '--panel','--krig-tone','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
 }
 function resize(){
   const r = cv.parentElement.getBoundingClientRect();
@@ -1353,18 +1353,15 @@ function draw(){
   for(const ring of land){ const p = ringPath(ring); if(p) trace(p); }
   ctx.fill(); ctx.stroke();
 
-  // Krig og konflikt: landet farves i Udenrigsministeriets farve for resten af landet.
-  // Har dele af landet et højere niveau, får landet en stiplet kant i den farve.
+  // Krig og konflikt: lande med en rejsevejledning fra gul og op står en tone mørkere.
+  // Prikken viser niveauet. Hvilke områder det gælder, står i detaljerne.
   if(GRAENSER && retOn.has('krig') && cutoff >= T1){
+    ctx.beginPath();
     for(const e of FEEDS){
       if(e.ret !== 'krig' || !e.a2 || !GRAENSER[e.a2] || !matches(e)) continue;
-      const b = e.basis || e.alvor;
-      ctx.beginPath();
       for(const ring of GRAENSER[e.a2]){ const q = ringPath(ring); if(q) trace(q); }
-      if(b >= 2){ ctx.fillStyle = T['--um' + b]; ctx.globalAlpha = .42; ctx.fill(); }
-      if(e.alvor > b){ ctx.setLineDash([3, 2.5]); ctx.strokeStyle = T['--um' + e.alvor]; ctx.globalAlpha = .95; ctx.lineWidth = 1.3; ctx.stroke(); ctx.setLineDash([]); }
-      ctx.globalAlpha = 1;
     }
+    ctx.fillStyle = T['--krig-tone']; ctx.fill();
   }
 
   ctx.strokeStyle = T['--border-line']; ctx.lineWidth = .5; ctx.globalAlpha = .9;
@@ -1377,7 +1374,9 @@ function draw(){
       else open = false;
     }
   }
-  ctx.stroke(); ctx.globalAlpha = 1; ctx.restore();
+  ctx.stroke(); ctx.globalAlpha = 1;
+  if(zoom >= REGION_ZOOM) tegnRegioner();
+  ctx.restore();
 
   ctx.beginPath(); ctx.arc(cx,cy,R,0,2*Math.PI);
   ctx.strokeStyle = T['--land-line']; ctx.globalAlpha = .5; ctx.lineWidth = 1; ctx.stroke(); ctx.globalAlpha = 1;
@@ -1455,6 +1454,59 @@ function draw(){
     (selected || focusId ? '' : 'Træk for at dreje · vælg en prik for tal, forløb og kilder\n') +
     `${fmtLon(-rot.lam)}  ${fmtLat(rot.phi)}   ·   zoom ${zoom.toFixed(1)}×` + (mistMode === 'zoom' && zoom < MIST_ZOOM ? '   ·   zoom ind for mistanker' : '');
 }
+// Regioner i landene (Natural Earth admin 1). Hentes pr. land, når man zoomer ind til 20 gange.
+const REGION_ZOOM = 20;
+let REG_INDEX = null, regIndexHentes = false;
+const REG = {};
+function regionerISyne(){
+  const R = view.R, rad = Math.asin(Math.min(1, Math.hypot(W, H)/2/R))/DEG + 1;
+  const clat = rot.phi, clon = -rot.lam, dlon = rad/Math.max(.15, Math.cos(Math.min(85, Math.abs(clat))*DEG));
+  const ud = [];
+  for(const [a3, b] of Object.entries(REG_INDEX)){
+    if(b[3] < clat - rad || b[1] > clat + rad) continue;
+    const d = x => ((x - clon + 540) % 360) - 180;
+    const vest = d(b[0]), oest = d(b[2]);
+    if(b[2] - b[0] > 300 || (vest <= dlon && oest >= -dlon) || Math.abs(vest) <= dlon || Math.abs(oest) <= dlon) ud.push(a3);
+  }
+  return ud;
+}
+function tegnRegioner(){
+  if(!REG_INDEX){
+    if(!regIndexHentes){ regIndexHentes = true;
+      fetch('/regioner/index.json').then(r => r.json()).then(j => { REG_INDEX = j.b; draw(); }).catch(() => { regIndexHentes = false; }); }
+    return;
+  }
+  const lande = regionerISyne();
+  ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .7; ctx.globalAlpha = .55; ctx.setLineDash([4, 3]);
+  ctx.beginPath();
+  for(const a3 of lande){
+    const d = REG[a3];
+    if(d === undefined){ REG[a3] = null; fetch(`/regioner/${a3}.json`).then(r => r.json()).then(j => { REG[a3] = j; draw(); }).catch(() => { delete REG[a3]; }); continue; }
+    if(!d) continue;
+    for(const line of d.l){
+      let open = false;
+      for(const pt of line){
+        const u = unit(pt[0], pt[1]);
+        if(u.z > 0){ const q = scr(u); open ? ctx.lineTo(q[0], q[1]) : (ctx.moveTo(q[0], q[1]), open = true); }
+        else open = false;
+      }
+    }
+  }
+  ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = 1;
+  // Navne på regionerne, kun dem der står på skærmen.
+  ctx.font = '10.5px ' + MONO; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillStyle = T['--fg-faint'];
+  const brugt = [];
+  for(const a3 of lande){
+    const d = REG[a3]; if(!d) continue;
+    for(const [n, lon, lat] of d.n){
+      const u = unit(lon, lat); if(u.z <= .2) continue;
+      const [x, y] = scr(u); if(x < 20 || y < 12 || x > W-60 || y > H-48) continue;
+      if(brugt.some(([bx, by]) => Math.abs(bx-x) < 70 && Math.abs(by-y) < 14)) continue;
+      brugt.push([x, y]); ctx.fillText(n, x, y);
+    }
+  }
+  ctx.textAlign = 'start';
+}
 function trace(p){ ctx.moveTo(p[0][0],p[0][1]); for(let i=1;i<p.length;i++) ctx.lineTo(p[i][0],p[i][1]); ctx.closePath(); }
 function graticule(v, isLat){
   ctx.beginPath(); let open = false;
@@ -1510,11 +1562,16 @@ const fmtLon = v => { let x = ((v+180)%360+360)%360-180; return Math.abs(x).toFi
 // ---------- tilstand ----------
 const byId = Object.fromEntries(EVENTS.map(e => [e.id, e]));
 let query = '', off = new Set(), selected = null, focusId = null, region = null, nyeste = false;
-// Overblik: alle retninger, alvor fra 3. Et tryk på en retning viser kun den, med alt fra alvor 1.
-let retOn = new Set(['smitte']), minAlvor = 3, mistMode = 'zoom', fokusRet = null;
-const OVERBLIK_ALVOR = 3;
-function overblik(){ fokusRet = null; retOn = new Set(RETNINGER.filter(r => r.aktiv).map(r => r.k)); minAlvor = OVERBLIK_ALVOR; }
-function visRetning(k){ if(fokusRet === k) return overblik(); fokusRet = k; retOn = new Set([k]); minAlvor = 1; }
+// Siden starter med alt fra alle retninger. Klik slår en retning til og fra.
+// Dobbeltklik viser kun den retning, og et nyt dobbeltklik fører tilbage til valget fra før.
+let retOn = new Set(['smitte']), minAlvor = 1, mistMode = 'zoom', foerFokus = null;
+const alleRet = () => RETNINGER.filter(r => r.aktiv).map(r => r.k);
+const iFokus = k => !!foerFokus && retOn.size === 1 && retOn.has(k);
+function skiftRetning(k){ retOn.has(k) ? retOn.delete(k) : retOn.add(k); foerFokus = null; }
+function fokusRetning(k){
+  if(iFokus(k)){ retOn = new Set(foerFokus); foerFokus = null; }
+  else { foerFokus = [...retOn]; retOn = new Set([k]); }
+}
 // Mistanker vises på kloden fra dette zoomniveau, når valget er Ved zoom.
 const MIST_ZOOM = 1.8;
 const mistPaaKloden = () => mistMode === 'altid' || (mistMode === 'zoom' && zoom >= MIST_ZOOM);
@@ -1595,7 +1652,6 @@ function render(){
       ALLE().filter(e => { const st = stageAt(e, cutoff); return liveAt(e, cutoff) && !off.has(st) && textMatch(e) && (!o || iOmraade(e, o)) && filterOk(e, st); }).length;
   });
   renderRet();
-  document.getElementById('retalle').hidden = !fokusRet;
   [...document.querySelectorAll('#segAlvor button')].forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === minAlvor)));
   [...document.querySelectorAll('#segMist button')].forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === mistMode)));
   cv.setAttribute('aria-label', `Klode med ${vis.length} hændelser. Drej med piletasterne, og zoom med plus og minus. Alle hændelser står også i listen.`);
@@ -1936,7 +1992,7 @@ function hit(ev){
 }
 cv.addEventListener('wheel', ev => { ev.preventDefault();
   skjulTip(); setZoom(zoom*Math.exp(-ev.deltaY*(ev.deltaMode ? 0.05 : 0.0018))); idle = performance.now(); }, {passive:false});
-const ZMAX = 14;
+const ZMAX = 30;
 function setZoom(z){ const før = zoom >= MIST_ZOOM; zoom = Math.max(0.6, Math.min(ZMAX, z)); view.R = Math.min(W,H)/2*0.88*zoom; if(før !== (zoom >= MIST_ZOOM)) render(); else draw(); }
 document.getElementById('zin').addEventListener('click', () => { setZoom(zoom*1.3); idle = performance.now(); });
 document.getElementById('zout').addEventListener('click', () => { setZoom(zoom/1.3); idle = performance.now(); });
@@ -2056,7 +2112,12 @@ function buildRet(){
     b.style.setProperty('--c', `var(--c-${r.k})`); b.setAttribute('aria-label', r.n);
     b.innerHTML = `<span class="d">${svgIc(r.k, 16)}</span><span class="n"></span>`;
     if(r.aktiv){
-      b.addEventListener('click', () => { visRetning(r.k); skjulTip(); render(); });
+      // Et dobbeltklik giver først et almindeligt klik. Det andet klik fortryder det og skifter fokus.
+      b.addEventListener('click', ev => {
+        if(ev.detail === 2){ const gem = foerFokus; skiftRetning(r.k); foerFokus = gem; fokusRetning(r.k); }
+        else { const gem = foerFokus, var_fokus = iFokus(r.k); skiftRetning(r.k); if(var_fokus) foerFokus = gem; }
+        skjulTip(); render();
+      });
     } else b.setAttribute('aria-disabled', 'true');
     rchips.appendChild(b);
   }
@@ -2067,10 +2128,10 @@ function renderRet(){
     if(!r.aktiv){ b.querySelector('.n').textContent = '';
       b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">Kommer snart</div><div class="ts">${r.hvad} Kilder: ${r.kilder}.</div>`; continue; }
     const n = ALLE().filter(e => { const st = stageAt(e, cutoff); return retAf(e) === r.k && liveAt(e, cutoff) && alvorAt(e, st) >= minAlvor && !(mistMode === 'aldrig' && st === 'mistanke'); }).length;
-    b.setAttribute('aria-pressed', String(fokusRet ? fokusRet === r.k : retOn.has(r.k)));
-    b.dataset.fokus = fokusRet === r.k ? '1' : '';
+    b.setAttribute('aria-pressed', String(retOn.has(r.k)));
+    b.dataset.fokus = iFokus(r.k) ? '1' : '';
     b.querySelector('.n').textContent = n;
-    b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">${n} ${minAlvor > 1 ? 'fra alvor ' + minAlvor : 'i alt'}</div><div class="ts">${r.hvad}</div><div class="th">${fokusRet === r.k ? 'Klik: tilbage til overblikket' : 'Klik: vis kun denne retning'}</div>`;
+    b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">${n} ${minAlvor > 1 ? 'fra alvor ' + minAlvor : 'i alt'}</div><div class="ts">${r.hvad}</div><div class="th">Klik: til eller fra · Dobbeltklik: ${iFokus(r.k) ? 'tilbage til før' : 'vis kun denne'}</div>`;
   }
 }
 const TT = (h, m) => `<div class="tt">${h}</div><div class="ts">${m}</div>`;
@@ -2093,8 +2154,9 @@ seg('segMist', [
   ['altid', 'Altid', TT('Mistanker altid', 'Vises som hule, stiplede prikker.')],
   ['aldrig', 'Aldrig', TT('Mistanker aldrig', 'Kun det bekræftede, også i listen.')]
 ], v => { mistMode = v; });
-document.getElementById('retalle').addEventListener('click', () => { overblik(); render(); });
-document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 14 gange. Musehjul og to fingre virker også.');
+document.getElementById('retalle').addEventListener('click', () => { retOn = new Set(alleRet()); foerFokus = null; render(); });
+document.getElementById('retingen').addEventListener('click', () => { retOn = new Set(); foerFokus = null; render(); });
+document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Fra 20 gange vises landenes regioner.');
 document.getElementById('zout').dataset.tip = TT('Zoom ud', 'Tilbage mod hele kloden.');
 document.getElementById('zreset').dataset.tip = TT('Nulstil visning', 'Hele kloden, som da siden blev åbnet.');
 document.getElementById('ombtn').dataset.tip = TT('Sådan virker siden', 'Retninger, alvor, status, kilder og hvordan du bruger kortet.');
@@ -2170,10 +2232,10 @@ function bygGuide(){
   ].map(([b, t, m]) => `<div>${m}<span><b>${b}</b>${t}</span></div>`).join('');
   const gs = (k, t, d) => `<div class="g-s"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GI[k]}"/></svg></span><b>${t}</b><span>${d}</span></div>`;
   document.getElementById('gsteps').innerHTML = [
-    gs('filter','Overblik eller én retning','Siden åbner med det alvorligste fra alle retninger. Tryk på et ikon øverst for at se alt i den retning. Tryk igen for at komme tilbage.'),
+    gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Med musehjulet, knapperne eller to fingre, op til 14 gange.'),
+    gs('zoom','Zoom ind og ud','Med musehjulet, knapperne eller to fingre, op til 30 gange. Fra 20 gange vises landenes regioner med navn.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
@@ -2189,7 +2251,7 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   FEEDS = (j.h || []).filter(h => h && h.id && Number.isFinite(h.lat) && Number.isFinite(h.lon) && h.alvor >= 1 && h.alvor <= 4).map(somFeed);
   for(const h of FEEDS) byId[h.id] = h;
   for(const r of RETNINGER) if(r.fk && (r.fk.some(k => j.kilder && j.kilder[k] && (j.kilder[k].ok || j.kilder[k].antal)) || FEEDS.some(h => h.ret === r.k))) r.aktiv = true;
-  if(!fokusRet) overblik();
+  if(!foerFokus) retOn = new Set(alleRet());
   buildRet(); bygGuide();
   if(FEEDS.some(h => h.ret === 'krig' && h.a2))
     fetch('/graenser.json').then(r => r.ok ? r.json() : null).then(g => { if(g && g.l){ GRAENSER = g.l; draw(); } }).catch(() => {});
@@ -2197,19 +2259,25 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   render(); laesAdresse();
 }).catch(() => { /* uden maskinmeldinger vises kun smitteudbruddene */ });
 window.addEventListener('resize', resize);
-// Lys eller mørk tilstand. Siden starter mørk, og valget huskes i browseren.
+// Lys eller mørk tilstand. Siden starter som maskinens tilstand. Et valg med knappen gælder resten af besøget.
 const temabtn = document.getElementById('temabtn');
 function visTema(){
   const lys = document.documentElement.dataset.theme === 'light';
   temabtn.setAttribute('aria-label', lys ? 'Skift til mørk tilstand' : 'Skift til lys tilstand');
-  temabtn.dataset.tip = TT(lys ? 'Mørk tilstand' : 'Lys tilstand', lys ? 'Skift til mørk baggrund. Valget huskes i denne browser.' : 'Skift til lys baggrund. Valget huskes i denne browser.');
+  temabtn.dataset.tip = TT(lys ? 'Mørk tilstand' : 'Lys tilstand', lys ? 'Skift til mørk baggrund.' : 'Skift til lys baggrund.');
 }
 temabtn.addEventListener('click', () => {
   const ny = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
   document.documentElement.dataset.theme = ny;
-  try{ localStorage.setItem('globus-tema', ny); }catch(err){}
+  try{ sessionStorage.setItem('globus-tema', ny); }catch(err){}
   skjulTip(); readTokens(); render(); visTema();
 });
 visTema();
+// Skifter maskinen tilstand, følger siden med, så længe man ikke selv har valgt.
+matchMedia('(prefers-color-scheme: light)').addEventListener('change', ev => {
+  let valgt = null; try{ valgt = sessionStorage.getItem('globus-tema'); }catch(err){}
+  if(valgt) return;
+  document.documentElement.dataset.theme = ev.matches ? 'light' : 'dark'; readTokens(); render(); visTema();
+});
 requestAnimationFrame(tick);
 </script>
