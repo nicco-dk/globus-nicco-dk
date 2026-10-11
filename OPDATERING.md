@@ -40,7 +40,7 @@ Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, st
 
 | Status | Regel | Vises |
 | --- | --- | --- |
-| Mistanke | Mindst 2 medier fra listen inden for 7 dage (30 for militær støtte) | Stiplet, når man zoomer ind eller vælger et af landene |
+| Mistanke | Mindst 2 medier fra listen inden for 7 dage (30 for militær støtte) | Stiplet, kun når et af landene er valgt |
 | Venter på tjek | Mindst 5 medier fra listen, fra mindst 3 lande uden for parterne, på mindst 3 forskellige dage | Som mistanke |
 | Bekræftet af medier | Som ovenfor, og parret står under `godkendt` i `tools/par-tjek.json` | Fast streg. Militær støtte kun, når et af landene er valgt |
 | Afvist | Parret står under `afvist` | Vises ikke |

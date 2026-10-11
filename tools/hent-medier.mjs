@@ -212,7 +212,7 @@ for (const [k, p] of Object.entries(T.p)) {
   // Artikler: nyeste først, højst én pr. medie.
   const set = new Set(), art = [];
   for (const [url, d, dag, titel] of p.art) { if (set.has(d)) continue; set.add(d); art.push({ url, medie: MEDIER[d][0], dag, ...(titel ? { titel } : {}) }); if (art.length >= 6) break; }
-  streger.push({ id: `gdelt-${k}`, type: p.t, status, a: p.a, b: p.b, aNavn: A.n, bNavn: B.n, aLat: A.lat, aLon: A.lon, bLat: B.lat, bLon: B.lon,
+  streger.push({ id: `gdelt-${k}`, type: p.t, status, a: p.a, b: p.b, aNavn: A.n, bNavn: B.n, aLat: (A.hs || [A.lat])[0], aLon: A.hs ? A.hs[1] : A.lon, bLat: (B.hs || [B.lat])[0], bLon: B.hs ? B.hs[1] : B.lon,
     medier: medier.size, lande: lande.size, dage, mNavne: [...medier].map(d => MEDIER[d][0]).filter((x, i, l) => l.indexOf(x) === i).sort((x, y) => x.localeCompare(y, 'da')),
     art, tjek: TJEK.godkendt?.[k] || null });
 }

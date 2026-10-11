@@ -29,7 +29,7 @@ const INTERVAL = { um: 6 * 36e5, fcdo: 6 * 36e5, fts: 24 * 36e5 };
 // Lande, hvor Udenrigsministeriet ingen rejsevejledning har. Sættes af um() og bruges af fcdo().
 let UM_UDEN = null;
 // Hæves, når en kildes felter ændres, så gamle meldinger hentes forfra.
-const VERSION = 4;
+const VERSION = 5;
 
 // ---------- hjælpere ----------
 async function hent(url, { tekst = true, forsoeg = 2 } = {}) {
@@ -50,6 +50,8 @@ const attr = (s, n, a) => { const m = s.match(new RegExp(`<${n}\\s[^>]*${a}="([^
 const ren = s => ent(s.replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim();
 const iso = d => new Date(d).toISOString().slice(0, 16) + 'Z';
 const tal = n => Number(n).toLocaleString('da-DK');
+// Hovedstaden, hvis den kendes, ellers landets midtpunkt. Krig og konflikt og forbindelser tegnes fra hovedstaden.
+const hs = L => L.hs ? { lat: L.hs[0], lon: L.hs[1] } : { lat: L.lat, lon: L.lon };
 const datoDa = d => { const x = new Date(d); return x.toLocaleDateString('da-DK', { day: 'numeric', month: 'long', timeZone: 'UTC', ...(x.getUTCFullYear() !== NU.getUTCFullYear() ? { year: 'numeric' } : {}) }); };
 // Engelske landenavne fra GDACS oversættes til dansk. Ukendte navne bliver stående.
 const EN = new Map();
@@ -204,7 +206,7 @@ const KILDER = {
       const dm = ren((s.match(/id="tg-accordion-dato-for-seneste-opdatering"[\s\S]*?<\/li>/) || [''])[0]).match(/senest opdateret den (\d{1,2})\. (\w+) (\d{4})/);
       const MDR = ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december'];
       const opd = dm && MDR.includes(dm[2]) ? new Date(Date.UTC(+dm[3], MDR.indexOf(dm[2]), +dm[1])) : null;
-      ud.push({ id: 'um-' + slug, ret: 'krig', alvor: top, basis, a2, titel: NIV[top] + (hele ? '' : ' til dele af landet'), sted: L.n, lat: L.lat, lon: L.lon,
+      ud.push({ id: 'um-' + slug, ret: 'krig', alvor: top, basis, a2, titel: NIV[top] + (hele ? '' : ' til dele af landet'), sted: L.n, ...hs(L),
         tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'Udenrigsministeriet',
         url: `https://um.dk/rejse-og-ophold/rejse-til-udlandet/rejsevejledninger/${slug}/`,
         tekst: omr.join(' ') + (opd ? ` Rejsevejledningen er senest opdateret ${datoDa(opd)}.` : '') });
@@ -230,7 +232,7 @@ const KILDER = {
       const top = Math.max(...st.map(x => x[0])), hel = st.filter(x => x[1]).map(x => x[1]);
       const basis = hel.length ? Math.max(...hel) : 1, L = LANDE.lande[a2], opd = d.public_updated_at;
       ud.push({ id: 'fcdo-' + a2, ret: 'krig', alvor: top, basis, a2, titel: `Storbritannien ${TXT[top]}` + (basis >= top ? '' : ' til dele af landet'),
-        sted: L.n, lat: L.lat, lon: L.lon, tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'FCDO (UK)',
+        sted: L.n, ...hs(L), tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'FCDO (UK)',
         url: `https://www.gov.uk/foreign-travel-advice/${slugs.get(a2)}`,
         tekst: `Udenrigsministeriet har ingen rejsevejledning for ${L.n}. Det britiske udenrigsministerium ${TXT[top]}${basis >= top ? ' til hele landet' : ' til dele af landet'}.` + (opd ? ` Opdateret ${datoDa(opd)}.` : '') });
     }
@@ -331,7 +333,7 @@ let f = [];
           if (usd < MIN_USD) continue;
           const L = d === 'EU' ? { n: 'EU', lat: 50.85, lon: 4.35 } : LANDE.lande[d];
           if (!L) continue;
-          f.push({ id: `fts-${a2}-${d}`, type: 'hjaelp', til: a2, fra: d, fraNavn: L.n, lat: L.lat, lon: L.lon, usd: Math.round(usd), aar,
+          f.push({ id: `fts-${a2}-${d}`, type: 'hjaelp', til: a2, fra: d, fraNavn: L.n, ...hs(L), usd: Math.round(usd), aar,
             kilde: 'OCHA FTS', url: locId ? `https://fts.unocha.org/countries/${locId}/summary/${aar}` : 'https://fts.unocha.org/' });
         }
       }
