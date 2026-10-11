@@ -1554,8 +1554,8 @@ function draw(){
     `${fmtLon(-rot.lam)}  ${fmtLat(rot.phi)}   ·   zoom ${zoom.toFixed(1)}×` + (mistMode === 'zoom' && zoom < MIST_ZOOM ? '   ·   zoom ind for mistanker' : '');
 }
 // Regioner i landene (Natural Earth admin 1). Hentes pr. land, når man zoomer ind til 20 gange.
-// Regionerne toner frem fra 10 gange og står lige så kraftigt som landegrænserne ved 30 gange.
-const REGION_ZOOM = 10, REGION_FULD = 30;
+// Regionerne toner frem fra 2 gange og står lige så kraftigt som landegrænserne fra 20 gange og op.
+const REGION_ZOOM = 2, REGION_FULD = 20;
 const regionStyrke = () => Math.max(0, Math.min(1, (zoom - REGION_ZOOM) / (REGION_FULD - REGION_ZOOM)));
 let REG_INDEX = null, regIndexHentes = false;
 const REG = {};
@@ -2329,7 +2329,7 @@ seg('segMist', [
 ], v => { mistMode = v; });
 document.getElementById('retalle').addEventListener('click', () => { retOn = new Set(alleRet()); foerFokus = null; render(); });
 document.getElementById('retingen').addEventListener('click', () => { retOn = new Set(); foerFokus = null; render(); });
-document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Landenes regioner toner frem fra 10 gange.');
+document.getElementById('zin').dataset.tip = TT('Zoom ind', 'Op til 30 gange. Landenes regioner toner frem fra 2 gange og står fuldt fra 20 gange.');
 document.getElementById('zout').dataset.tip = TT('Zoom ud', 'Tilbage mod hele kloden.');
 visRotKnap();
 document.getElementById('zreset').dataset.tip = TT('Nulstil visning', 'Hele kloden, som da siden blev åbnet.');
@@ -2409,7 +2409,7 @@ function bygGuide(){
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage.'),
     gs('klik','Tryk på en prik','Detaljerne viser tal, forløb, kilder og hvad der er usikkert.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 10 gange og står fuldt ved 30 gange, med navn fra cirka 15 gange.'),
+    gs('zoom','Zoom ind og ud','Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 30 gange. Landenes regioner toner frem fra 2 gange og står fuldt fra 20 gange, med navn fra cirka 7 gange.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises.'),
     gs('sog','Søg og vælg område','Søg på sygdom, smittestof eller sted, eller vælg et område i sidesporet.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
