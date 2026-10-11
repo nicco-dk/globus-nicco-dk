@@ -18,6 +18,20 @@ Kun disse tre steder:
 
 Alt andet står urørt: resten af `site/index.html` (markup, CSS, kortgeometri, kode, `DATA_STATUS`), de øvrige filer i `site/`, `tools/`, workflowet og denne fil. Ser noget andet forkert ud, så skriv det i loggen og i den afsluttende rapport i stedet for at rette det.
 
+### Maskinmeldinger (de syv andre retninger)
+
+Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, storme, naturbrande og vulkaner kommer ikke fra denne kørsel. De hentes af workflowet `udrul.yml` hver time med `tools/hent-feeds.mjs` til `site/feeds.json`, som ikke ligger i repoet. Scriptet bruger ingen AI og skriver kun kildens egne felter.
+
+| Retning | Kilde | Hvad tages med | Alvor |
+| --- | --- | --- | --- |
+| Krig og konflikt | Udenrigsministeriets rejsevejledninger, hver 6. time | Lande med mindst gul | Gul 2, orange 3, rød 4 |
+| Jordskælv | USGS, seneste 7 døgn | Fra M5,5 eller med PAGER-varsel | PAGER grøn 1, gul 2, orange 3, rød 4. Uden varsel 1 |
+| Storme, oversvømmelser, brande, tørke, vulkaner | GDACS | Igangværende hændelser | Grøn 1, orange 3, rød 4 |
+| Hede, kulde, brandfare, oversvømmelse, vind i Europa | Meteoalarm | Gyldige varsler, ét punkt pr. land og retning | Gul 2, orange 3, rød 4 |
+| Vulkaner | Smithsonian GVP, ugentlig rapport | Alle vulkaner i rapporten | Ny aktivitet 2, fortsat 1 |
+
+Smittekørslen rører hverken `feeds.json`, `tools/hent-feeds.mjs` eller `tools/lande.json`. Ser en maskinmelding forkert ud, skrives det under Til gennemgang.
+
 ## Kilder
 
 Brug dem i denne rækkefølge.

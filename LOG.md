@@ -2,6 +2,16 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 11. oktober 2026, aften
+
+**Side ændret og nye kilder.** Ingen ændringer i smitteudbruddene.
+
+- Siden viser nu alle otte retninger. De syv nye hentes automatisk hver time af workflowet fra navngivne kilder: Udenrigsministeriets rejsevejledninger, USGS, GDACS, Meteoalarm og Smithsonian GVP. Reglerne står i `OPDATERING.md` under Maskinmeldinger.
+- Ved første hentning: 43 lande med mindst gul rejsevejledning, 14 jordskælv, 17 storme og vindvarsler, 12 oversvømmelser, 185 naturbrande, 3 hede-, kulde- og tørkevarsler og 1 vulkanudbrud.
+- Smithsonian GVP svarede ikke (HTTP 403, siden var midlertidigt nede). Vulkaner kommer derfor kun fra GDACS, til GVP svarer igen.
+- Smitteprikkerne er nu grønne som retningens farve. Trinnet står som tekst. Før brugte prikkerne trinfarver, som lignede de andre retninger.
+- Som udgangspunkt vises kun smitteudbrud. De andre retninger slås til med knapperne øverst.
+
 ## 11. oktober 2026, eftermiddag
 
 **Side ændret.** Ingen gennemgang af kilder og ingen ændrede tal i denne post. Siden har fået et nyt udseende, som forbereder flere retninger end smitteudbrud.

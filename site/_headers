@@ -8,3 +8,5 @@ https://globus-nicco-dk.pages.dev/*
   X-Robots-Tag: noindex
 https://:udgave.globus-nicco-dk.pages.dev/*
   X-Robots-Tag: noindex
+/feeds.json
+  Cache-Control: public, max-age=300

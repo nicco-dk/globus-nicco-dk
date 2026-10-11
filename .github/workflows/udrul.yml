@@ -3,6 +3,10 @@ name: Udrul til Cloudflare Pages
 # Udruller mappen site/ til Pages-projektet globus-nicco-dk, som svarer på
 # https://globus.nicco.dk. Kører ved hvert commit på main, der rører site/,
 # LOG.md, værktøjerne eller denne fil, og kan startes manuelt under Actions.
+#
+# Kører også hver time og henter maskinmeldingerne (jordskælv, storme,
+# oversvømmelser, brande, hede, vulkaner og rejsevejledninger) til
+# site/feeds.json. Den timevise kørsel udruller kun, hvis meldingerne er ændret.
 
 on:
   push:
@@ -12,7 +16,11 @@ on:
       - "LOG.md"
       - "tools/tjek-data.mjs"
       - "tools/byg-log.mjs"
+      - "tools/hent-feeds.mjs"
+      - "tools/lande.json"
       - ".github/workflows/udrul.yml"
+  schedule:
+    - cron: "7 * * * *"
   workflow_dispatch:
 
 # Kun én udrulning ad gangen. En ny venter, til den igangværende er færdig.
@@ -68,12 +76,33 @@ jobs:
             node tools/tjek-data.mjs site/index.html
           fi
 
+      # Maskinmeldingerne hentes ved hver kørsel. En kilde, der fejler, beholder
+      # sine meldinger fra den udgave, der er live nu.
+      - name: Hent maskinmeldinger
+        run: node tools/hent-feeds.mjs site/feeds.json --forrige https://globus.nicco.dk/feeds.json
+
+      # Den timevise kørsel udruller kun, når meldingerne er ændret.
+      - name: Er meldingerne ændret?
+        id: aendret
+        if: github.event_name == 'schedule'
+        run: |
+          set -euo pipefail
+          curl -fsS "https://globus.nicco.dk/feeds.json?v=$(date +%s)" -o "$RUNNER_TEMP/live.json" || echo '{}' > "$RUNNER_TEMP/live.json"
+          node -e '
+            const fs = require("fs");
+            const kerne = f => { try { return JSON.stringify(JSON.parse(fs.readFileSync(f, "utf8")).h || []); } catch { return ""; } };
+            const ens = kerne(process.argv[1]) === kerne(process.argv[2]);
+            console.log(ens ? "Ingen ændringer i meldingerne. Udrulning springes over." : "Meldingerne er ændret.");
+            fs.appendFileSync(process.env.GITHUB_OUTPUT, `udrul=${ens ? "nej" : "ja"}\n`);
+          ' site/feeds.json "$RUNNER_TEMP/live.json"
+
       # Den offentlige ændringslog bygges af LOG.md og ligger ikke i repoet.
       # Siden linker til den fra foden.
       - name: Byg ændringsloggen
         run: node tools/byg-log.mjs LOG.md site/log.html
 
       - name: Udrul til Pages
+        if: steps.aendret.outputs.udrul != 'nej'
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
