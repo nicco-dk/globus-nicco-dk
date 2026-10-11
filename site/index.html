@@ -1,6 +1,8 @@
 <!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <meta charset="utf-8">
+<!-- Siden starter altid mørk. Et valg med knappen huskes i browseren. -->
+<script>try{var t=localStorage.getItem("globus-tema");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://globus.nicco.dk/">
@@ -86,6 +88,12 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .rchip[aria-disabled="true"] .d{color:var(--c)}
 .hacts{display:flex;align-items:center;gap:8px;justify-self:end}
 .guidebtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 14px 5px 5px;font:600 13px/1 var(--display);cursor:pointer;min-height:36px;white-space:nowrap}
+.temabtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);display:grid;place-items:center;cursor:pointer;padding:0;flex:none}
+.temabtn:hover{border-color:var(--accent);color:var(--accent)}
+.temabtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;grid-area:1/1}
+.temabtn .sol{display:none}
+:root[data-theme="dark"] .temabtn .sol{display:block}
+:root[data-theme="dark"] .temabtn .maane{display:none}
 .guidebtn .q{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--accent);color:var(--accent);font:700 14px/1 var(--display)}
 .guidebtn:hover{border-color:var(--accent)}
 .mapctl{grid-column:1;grid-row:3;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:9px 0 0;font-size:12px}
@@ -312,13 +320,14 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 @media (max-width:900px){
   .app{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 54vh auto auto auto auto;overflow-y:auto}
   .stage,.mapctl,.side{grid-column:1;grid-row:auto}
-  header{grid-template-columns:minmax(0,1fr) auto}
+  header{grid-template-columns:minmax(0,1fr) auto auto}
+  .temabtn{grid-column:2;grid-row:1;justify-self:end}
   header .rchips{grid-column:1/-1;grid-row:2}
   h1.logo{border-right:0;padding-right:0;--ch:12px}
   .guidebtn .t{display:none}
   .guidebtn{padding:5px}
   .hacts{display:contents}
-  .guidebtn{grid-column:2;grid-row:1;justify-self:end}
+  .guidebtn{grid-column:3;grid-row:1;justify-self:end}
   header .sub{grid-row:3}
   header .proto{grid-column:1/-1;grid-row:4;justify-self:start}
   .side{padding-left:0;border-left:0;border-top:1px solid var(--rule);padding-top:12px;overflow:visible;min-height:auto}
@@ -361,6 +370,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="rchips" id="rchips" role="group" aria-label="Retninger"></div>
     <div class="hacts">
       <button class="proto" id="protobtn" type="button" title="Læs hvad prototypedata betyder">Prototypedata</button>
+      <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
       <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
     </div>
     <span class="sub" id="sub"></span>
@@ -2165,6 +2175,19 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   render(); laesAdresse();
 }).catch(() => { /* uden maskinmeldinger vises kun smitteudbruddene */ });
 window.addEventListener('resize', resize);
-matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { readTokens(); draw(); });
+// Lys eller mørk tilstand. Siden starter mørk, og valget huskes i browseren.
+const temabtn = document.getElementById('temabtn');
+function visTema(){
+  const lys = document.documentElement.dataset.theme === 'light';
+  temabtn.setAttribute('aria-label', lys ? 'Skift til mørk tilstand' : 'Skift til lys tilstand');
+  temabtn.dataset.tip = TT(lys ? 'Mørk tilstand' : 'Lys tilstand', lys ? 'Skift til mørk baggrund. Valget huskes i denne browser.' : 'Skift til lys baggrund. Valget huskes i denne browser.');
+}
+temabtn.addEventListener('click', () => {
+  const ny = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = ny;
+  try{ localStorage.setItem('globus-tema', ny); }catch(err){}
+  skjulTip(); readTokens(); render(); visTema();
+});
+visTema();
 requestAnimationFrame(tick);
 </script>

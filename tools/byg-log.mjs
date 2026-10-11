@@ -56,8 +56,9 @@ lukListe();
 if (post) dele.push('</section>');
 
 const html = `<!doctype html>
-<html lang="da">
+<html lang="da" data-theme="dark">
 <meta charset="utf-8">
+<script>try{var t=localStorage.getItem("globus-tema");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -74,9 +75,7 @@ const html = `<!doctype html>
   --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
   --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;
 }
-@media (prefers-color-scheme: light){
-  :root{--bg:#e9eff4; --panel:#ffffff; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80; --rule:#d8e2ea; --accent:#196f84; color-scheme:light}
-}
+:root[data-theme="light"]{--bg:#e9eff4; --panel:#ffffff; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80; --rule:#d8e2ea; --accent:#196f84; color-scheme:light}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--display);-webkit-font-smoothing:antialiased;padding:0 16px 48px}
 main{width:min(720px,100%);margin:0 auto}
