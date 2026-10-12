@@ -13,6 +13,7 @@
 - Push-beskeder om de lande, man følger (klokken i landets kort og i listen over fulgte lande). Workeren `globus-besked` sender én besked pr. time højst, når noget er ændret.
 - Engelsk: knappen EN oversætter brugerfladen. Datatekster i kortene maskinoversættes med Cloudflare Workers AI og er mærket som maskinoversat.
 - Tilgængelighed: gennemgået med axe-core på computer og mobil, lys og mørk. Rettet: kontrast på tal og i søljen, navne på knapper, overskrifternes rækkefølge, sidens hovedområder, og forløbets rækker, der var knapper med links indeni (nu er datoen knappen).
+- Rettet: et link direkte til en hændelse på mobilen stoppede sidens script, før bundbjælken og arkene var sat op. Links direkte til en landeside (fx #land-DK) virker nu, og et link zoomer ind på landet, når landegrænserne er hentet. Maskinmeldinger uden landekode (fx et jordskælv ud for kysten) zoomer ind på det land, punktet ligger i eller nærmest.
 - OPDATERING.md: flere faste kilder (WHO AFRO, PAHO, WHO SEARO og WPRO, Africa CDC, SSI og DK-VET), en rundtur på levende udbrud uden nyt i 10 dage, reglen om at alder ikke er en afvisningsgrund, og nye veje til kilderne.
 
 ## 12. oktober 2026, mobilen

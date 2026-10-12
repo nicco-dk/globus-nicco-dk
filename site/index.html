@@ -2923,6 +2923,8 @@ function skrivAdresse(){
 function laesAdresse(){
   let id = '';
   try{ id = decodeURIComponent(location.hash.slice(1)); }catch(err){ id = ''; }
+  // Landesider findes først, når hovedstæderne er hentet (land-DK og lignende).
+  if(id && !byId[id] && HS){ const m = id.match(/^land-([A-Z]{2})$/); if(m) landObj(m[1]); }
   if(id && byId[id]){ if(id !== selected) select(id, true); }
   else if(!id && selected){ setFocus(null); selected = null; detail.hidden = true; render(); skrivAdresse(); }
 }
@@ -3667,7 +3669,7 @@ readTokens(); buildLadder(); buildChips(); buildRet(); bygGuide(); renderCmp(); 
   }).catch(() => {});
 }
 // Hovedstæderne (Natural Earth): grå prikker og navne, og stregernes endepunkter.
-fetch('/hovedstaeder.json').then(r => r.ok ? r.json() : null).then(j => { if(j && j.h){ HS = j.h; draw(); } }).catch(() => {});
+fetch('/hovedstaeder.json').then(r => r.ok ? r.json() : null).then(j => { if(j && j.h){ HS = j.h; draw(); laesAdresse(); flyvIgen(); } }).catch(() => {});
 // Markører for krig og konflikt: ét pr. land med kampe eller demonstrationer ifølge medierne.
 // Alvor følger omtalen (se tools/hent-medier.mjs). Et land uden rejsevejledning fra orange og op og uden
 // bekræftet konflikt kan højst få alvor 2, så omtale alene ikke gør et roligt land rødt.
@@ -3883,19 +3885,20 @@ hentKnap.dataset.tip = TT('Hent som app', 'Læg globus på din computer eller te
 // ---------- mobil som app ----------
 // Overblikket er et ark fra bunden i tre højder (lille, halv, fuld), og detaljerne er et ark oven på det.
 // Arkene trækkes i grebet øverst. Et swipe til siden i detaljerne skifter til næste eller forrige hændelse.
-const side = document.getElementById('side');
+var side = document.getElementById('side');
 // Bundbjælken står under arkene, så højderne regnes fra dens overkant.
 function BAR(){ const b = document.getElementById('bundbar'); return MOBIL.matches && b ? b.offsetHeight : 0; }
 // Fuld højde går op til underkanten af Lige nu (eller toppen, hvis søljen er tom).
 function TOPKANT(){ const tk = document.getElementById('ticker'); const r = (tk && !tk.hidden ? tk : document.querySelector('header')).getBoundingClientRect(); return Math.round(r.bottom); }
-const ARK = {lille: () => 118, halv: () => Math.round((innerHeight - BAR()) * .55), fuld: () => innerHeight - BAR() - TOPKANT()};
-let arkTilstand = 'lille', detTilstand = 'halv';
+var ARK = {lille: () => 118, halv: () => Math.round((innerHeight - BAR()) * .55), fuld: () => innerHeight - BAR() - TOPKANT()};
+// var, ikke let: et link direkte til en hændelse vælger den, før denne del af scriptet er nået.
+var arkTilstand = 'lille', detTilstand = 'halv';
 function arkHoejde(t, h){
-  if(!MOBIL.matches) return;
+  if(!MOBIL.matches || !ARK) return;
   arkTilstand = t; const v = h || ARK[t]();
   side.style.setProperty('--ark', v + 'px'); document.documentElement.style.setProperty('--ark-h', v + 'px');
 }
-function detHoejde(t){ if(!MOBIL.matches) return; detTilstand = t; detail.style.setProperty('--ark-d', t === 'fuld' ? (innerHeight - BAR() - TOPKANT()) + 'px' : Math.round((innerHeight - BAR()) * .56) + 'px'); }
+function detHoejde(t){ if(!MOBIL.matches) return; if(!ARK){ detTilstand = t; return; } detTilstand = t; detail.style.setProperty('--ark-d', t === 'fuld' ? (innerHeight - BAR() - TOPKANT()) + 'px' : Math.round((innerHeight - BAR()) * .56) + 'px'); }
 function naermest(h, liste){ return liste.reduce((b, t) => Math.abs(ARK[t]() - h) < Math.abs(ARK[b]() - h) ? t : b, liste[0]); }
 // Træk i et greb: højden følger fingeren, og ved slip vælges den nærmeste højde.
 function traek(greb, boks, hent, saet, slut){
@@ -3968,8 +3971,8 @@ function landPunkter(a2){
   }
   return ud;
 }
-const boksPunkter = (v, s, o, n) => { const ud = []; for(let i = 0; i <= 4; i++) for(let j = 0; j <= 4; j++) ud.push([s + (n - s)*i/4, v + (o - v)*j/4]); return ud; };
-const OMR_BOKS = {Europa:[-12, 35, 40, 71], Afrika:[-18, -35, 52, 37], Asien:[60, -10, 145, 55], Amerika:[-125, -55, -35, 62], 'Mellemøsten':[34, 12, 60, 40]};
+function boksPunkter(v, s, o, n){ const ud = []; for(let i = 0; i <= 4; i++) for(let j = 0; j <= 4; j++) ud.push([s + (n - s)*i/4, v + (o - v)*j/4]); return ud; }
+var OMR_BOKS = {Europa:[-12, 35, 40, 71], Afrika:[-18, -35, 52, 37], Asien:[60, -10, 145, 55], Amerika:[-125, -55, -35, 62], 'Mellemøsten':[34, 12, 60, 40]};
 // Rotation og zoom, der får punkterne til at fylde det synlige stykke kort.
 function passer(pkt){
   if(!pkt || !pkt.length) return null;
@@ -3991,12 +3994,20 @@ function passer(pkt){
   const R = Math.min(bred/2/(ex*LUFT), hoej/2/(ey*LUFT));
   return {lam:-lo0, phi:Math.max(-80, Math.min(80, la0)), zoom:Math.max(0.8, Math.min(ZMAX, R/grund))};
 }
+// Åbnes siden med et link direkte til noget, er landegrænserne måske ikke hentet endnu. Så zoomes der igen, når de er.
+// Uden startværdi: en tildeling her ville nulstille et valg, der er sket, før scriptet nåede hertil.
+var FLYV_VENT, START_KLAR;
+function flyvIgen(){ if(START_KLAR && FLYV_VENT && FLYV_VENT === selected && byId[selected] && GRAENSER && HS){ FLYV_VENT = null; flyvTil(byId[selected]); } }
 function flyvTil(e){
+  if(!GRAENSER || !HS || !START_KLAR) FLYV_VENT = e.id;
   let pkt = null;
   if(e._sted){ const d = 0.23, dl = d/Math.max(.2, Math.cos(e.lat*DEG)); pkt = boksPunkter(e.lon - dl, e.lat - d, e.lon + dl, e.lat + d); }
   else if(erLand(e)) pkt = landPunkter(e.a2);
   else {
-    const a2 = a2Af(e); pkt = a2 && landPunkter(a2);
+    // Landet efter navnet, ellers det land, punktet ligger i (fx et jordskælv), ellers den nærmeste hovedstad.
+    let a2 = a2Af(e);
+    if(!a2 && GRAENSER && Number.isFinite(e.lat)) a2 = Object.keys(GRAENSER).find(k => iLand(k, e.lat, e.lon)) || (HS ? naermesteLand(e.lat, e.lon) : null);
+    pkt = a2 && landPunkter(a2);
     if(!pkt && e.nodes && e.nodes.length > 1) pkt = e.nodes.map(n => [n[2], n[1]]);
     if(pkt && Number.isFinite(e.lat)) pkt = pkt.concat([[e.lat, e.lon]]);
   }
@@ -4497,6 +4508,8 @@ visFoelg();
 MOBIL.addEventListener('change', placer);
 window.addEventListener('resize', () => { if(MOBIL.matches){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); arkHoejde(arkTilstand); detHoejde(detTilstand); } });
 placer();
+// Layoutet er på plads. Et link direkte til noget kan nu zoomes rigtigt ind.
+START_KLAR = true; requestAnimationFrame(() => flyvIgen());
 // ---------- nyt på siden ----------
 // Nyhederne står i site/nyheder.json. Tallet på knappen er de nyheder, man ikke har set, siden man sidst åbnede vinduet.
 // Første gang tæller kun nyheder fra de sidste 14 dage. Det, man har set, huskes i browseren.
@@ -4648,7 +4661,7 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   if(!foerFokus) retOn = new Set(alleRet());
   buildRet(); bygGuide(); bygTicker();
   if(FEEDS.some(h => h.ret === 'rejse' && h.a2))
-    fetch('/graenser.json').then(r => r.ok ? r.json() : null).then(g => { if(g && g.l){ GRAENSER = g.l; draw(); } }).catch(() => {});
+    fetch('/graenser.json').then(r => r.ok ? r.json() : null).then(g => { if(g && g.l){ GRAENSER = g.l; draw(); flyvIgen(); } }).catch(() => {});
   subEl.append(' · ', el('span','', `${FEEDS.length} varsler fra ${Object.keys(j.kilder || {}).filter(k => j.kilder[k].antal).length} kilder, hentet ${klok(j.genereret)}`));
   render(); laesAdresse(); visFoelg();
 }).catch(() => { /* uden maskinmeldinger vises kun smitteudbruddene */ });
