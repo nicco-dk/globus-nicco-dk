@@ -52,10 +52,11 @@ function laes(filsti) {
   const js = html.slice(a + 8, b);
   new vm.Script(js, { filename: filsti }); // kaster ved syntaksfejl i hele scriptet
   const m = js.match(/const DATA_DATO = '([^']*)';/);
+  const mt = js.match(/const DATA_TID = '([^']*)';/);
   const s = js.indexOf('const EVENTS = ['), e = js.indexOf('\n];', s);
   if (s < 0 || e < 0) throw new Error('fandt ikke EVENTS');
   const events = vm.runInNewContext('(' + js.slice(s + 'const EVENTS = '.length, e + 2) + ')', Object.create(null), { timeout: 2000 });
-  return { html, dato: m ? m[1] : null, events };
+  return { html, dato: m ? m[1] : null, tid: mt ? mt[1] : null, events };
 }
 
 const tekst = (v) => typeof v === 'string' && v.trim().length > 0;
@@ -110,6 +111,17 @@ if (!nu.dato) {
   slut = ms(nu.dato);
   // Én dags slør, så en kørsel sent om aftenen dansk tid ikke fejler på UTC.
   if (slut > Date.now() + 36 * 3600 * 1000) fejl.push(`DATA_DATO ${nu.dato} ligger i fremtiden`);
+}
+
+// Tidspunktet for gennemgangen (DATA_TID): ISO med tidszone, samme dag som DATA_DATO i dansk tid, ikke i fremtiden.
+if (nu.tid !== null && nu.tid !== undefined) {
+  const t = Date.parse(nu.tid);
+  if (!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?([+-]\d{2}:\d{2}|Z)$/.test(nu.tid) || Number.isNaN(t)) fejl.push(`DATA_TID er ugyldig: ${nu.tid}. Brug fx 2026-10-12T11:40+02:00`);
+  else {
+    if (t > Date.now() + 10 * 60 * 1000) fejl.push(`DATA_TID ${nu.tid} ligger i fremtiden`);
+    const dag = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Copenhagen', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(t));
+    if (nu.dato && dag !== nu.dato) fejl.push(`DATA_TID ${nu.tid} er ikke samme dag som DATA_DATO ${nu.dato} i dansk tid`);
+  }
 }
 
 // ---------- hændelserne ----------

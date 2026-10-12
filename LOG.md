@@ -2,6 +2,15 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 12. oktober 2026, sen eftermiddag
+
+**Side og arbejdsgang ændret.** Ingen ændringer i data.
+
+- Vagtplan: smitteudbruddene gennemgås nu fire gange i døgnet (kl. 00.20, 05.20, 11.20 og 17.20), hver gang med fokus på sin del af verden. Reglerne står i OPDATERING.md under Vagtplan: ingen overlap mellem kørsler, intet commit uden ændringer, og én logpost pr. døgn med et underafsnit pr. kørsel.
+- `DATA_TID`: tidspunktet for seneste gennemgang, vist som "Gennemgået for 2 timer siden". Kontrollen afviser et tidspunkt i fremtiden eller på en anden dag end `DATA_DATO`.
+- Engelsk: også Sådan virker siden, Nyt på siden, Data og kilder og listernes linjer maskinoversættes nu, først når de åbnes.
+- Beskeder: prøvet hele vejen gennem Mozillas push-tjeneste (tilmelding, krypteret besked modtaget og læst). https://globus.nicco.dk/besked/tilstand viser antal abonnementer og den seneste timevise gennemgang, uden persondata.
+
 ## 12. oktober 2026, eftermiddag
 
 **Side ændret.** Ingen ændringer i data.

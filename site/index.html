@@ -1033,7 +1033,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <h3 id="om-opdatering">Opdatering og prototypedata</h3>
     <ul>
       <li>Varslerne om krig og konflikt, jordskælv, storme, oversvømmelser, brande, hede og vulkaner hentes automatisk hver time fra kildernes egne feeds. Rejsevejledningerne hentes hver 6. time. Fejler en kilde, vises dens seneste meldinger, til den svarer igen. Varslerne vises kun for i dag, ikke bagud på tidslinjen. Læs mere-artiklerne findes hver time blandt overskrifterne fra de store medier og i GDELT. Billederne kommer fra Wikipedia-artiklen om emnet og bruges kun med fri licens fra Wikimedia Commons.</li>
-      <li>Datasættet gennemgås automatisk hver dag efter faste regler. Hvad der er ændret, og på hvilken kilde, står i <a href="/log">ændringsloggen</a>.</li>
+      <li>Smitteudbruddene gennemgås automatisk fire gange i døgnet efter faste regler og en vagtplan, så hver verdensdel får sin tid. De andre retninger hentes hver time. Hvad der er ændret, og på hvilken kilde, står i <a href="/log">ændringsloggen</a>.</li>
       <li>Ændringerne går på siden uden at være set igennem af et menneske først.</li>
       <li>Siden er en prototype. Datasættet blev sammenstillet 8. oktober 2026, og ældre punkter i forløbene har endnu ikke deres egen kilde. Det er det, mærket Prototypedata øverst på siden betyder.</li>
       <li>Siden dækker ikke alle udbrud i verden. Den almindelige sæson for kendte sygdomme er ikke med, medmindre en myndighed kalder den usædvanlig.</li>
@@ -1156,8 +1156,10 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-10-12';
+// Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
+const DATA_TID = '2026-10-12T05:54+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
-const DATA_STATUS = 'opdateres automatisk hver dag';
+const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere dage end dette uden en gennemgang, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
 const DATA_MAX_ALDER = 2;
 
@@ -4020,7 +4022,7 @@ function flyvTil(e){
 // Smitteudbrud gennemgås hver dag efter OPDATERING.md. Krig og konflikt tælles op hver time. De andre hentes hver time fra deres kilder.
 function retTid(k){
   const RET_KILDER = {rejse:['um', 'fcdo'], jord:['usgs'], storm:['gdacs'], flod:['gdacs'], brand:['gdacs'], vulkan:['gdacs', 'gvp'], hede:['meteoalarm', 'gdacs']};
-  if(k === 'smitte') return DATA_DATO ? {ms: Date.parse(DATA_DATO), dag: true, hvad: 'Gennemgået'} : null;
+  if(k === 'smitte'){ const t = Date.parse(typeof DATA_TID === 'string' ? DATA_TID : ''); return t ? {ms: t, hvad: 'Gennemgået'} : DATA_DATO ? {ms: Date.parse(DATA_DATO), dag: true, hvad: 'Gennemgået'} : null; }
   if(k === 'krig') return KONFINFO && KONFINFO.genereret ? {ms: Date.parse(KONFINFO.genereret), hvad: 'Talt op'} : null;
   const ki = (FEEDINFO && FEEDINFO.kilder) || {};
   const ms = Math.max(0, ...(RET_KILDER[k] || []).map(n => ki[n] && ki[n].ok && ki[n].hentet ? Date.parse(ki[n].hentet) : 0));
@@ -4184,9 +4186,15 @@ if(SPROG === 'en'){
   // Datatekster i detaljekortet: maskinoversat, husket i denne fane.
   const MT_NOEGLE = 'globus-mt';
   const MT = (() => { try{ return new Map(JSON.parse(sessionStorage.getItem(MT_NOEGLE) || '[]')); }catch(err){ return new Map(); } })();
-  const MT_SEL = '.k-fortalt, .where, .k-tal dd, .tlrow .tx, .k-afs > p, .k-fold p, .cap, .flag, .vk-led, .vk-r .rt span, .sa-r .rt span, .srclegend, .item .nt';
+  // Også guiden (Sådan virker siden), Nyt på siden, Data og kilder og listernes linjer. Kun elementer, der alene indeholder tekst.
+  const MT_SEL = '.k-fortalt, .where, .k-tal dd, .tlrow .tx, .k-afs > p, .k-afs p.lt, .k-afs p.dim, .k-fold p, .cap, .flag, .vurd, .vk-led, .vk-r .rt span, .sa-r .rt span, .srclegend, '
+    + '.item .c, .item .t, .item .m, .kr .m, .kr .n, .kr b, '
+    + '.om .ombody p, .om .ombody li, .om .ombody span, .om .ombody b, .om .ombody dd, .om .ombody td, .om .ombody h3, .om .ombody summary, '
+    + '.nyt-p p, .nyt-p b, .datadlg .ombody p, .datadlg .dk p, .datadlg .dk b, .datadlg .r .n, #nytled, .appbanner p, .appbanner b, #appvejltekst li';
   let venter = new Map(), timer = null;
   function mtElement(elm){
+    // Lukkede vinduer og skjulte dele oversættes først, når de åbnes, så der ikke bruges oversættelser på det, ingen ser.
+    if(elm.closest('dialog:not([open]), [hidden]')) return;
     if(elm.dataset.mt || [...elm.childNodes].some(c => c.nodeType === 1 && c.tagName !== 'BR')) return;
     const t = elm.textContent.trim(); if(!t || !/[a-zæøå]{3}/i.test(t) || oversaet(t) !== null) return;
     elm.dataset.mt = '1';
@@ -4216,12 +4224,13 @@ if(SPROG === 'en'){
   const obs = new MutationObserver(ms => {
     for(const m of ms){
       if(m.type === 'characterData'){ const v = oversaet(m.target.nodeValue); if(v !== null && v !== m.target.nodeValue) m.target.nodeValue = v; continue; }
+      if(m.type === 'attributes' && (m.attributeName === 'open' || m.attributeName === 'hidden')){ if(m.target.hasAttribute('open') || !m.target.hasAttribute('hidden')) kør(m.target); continue; }
       if(m.type === 'attributes'){ const x = m.target.getAttribute(m.attributeName); const v = x && oversaet(x); if(v && v !== x) m.target.setAttribute(m.attributeName, v); continue; }
       for(const n of m.addedNodes) kør(n);
     }
     mtMaerke();
   });
-  obs.observe(document.body, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:ATTR});
+  obs.observe(document.body, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:ATTR.concat(['open', 'hidden'])});
   // Landenavne: det danske navn fra hovedstadsfilen bliver det engelske fra browseren.
   const LAND_EN_EGEN = {CD:'DR Congo', CG:'Republic of the Congo', PS:'Palestine', HK:'Hong Kong', MO:'Macao'};
   const landeEn = () => { if(!HS || !DN_EN) return false; for(const a2 in HS){ try{ const en = LAND_EN_EGEN[a2] || DN_EN.of(a2); if(en && HS[a2][0] !== en) LANDE_EN[HS[a2][0]] = en; }catch(err){} } return true; };
@@ -4629,7 +4638,7 @@ START_KLAR = true; requestAnimationFrame(() => flyvIgen());
     m('Hændelser og varsler nu:', String(ALLE().filter(e => liveAt(e, T1)).length));
     const rt = el('dl','rettider'); rt.style.cssText = 'margin-top:8px;flex-basis:100%'; bygRetTider(rt); meta.appendChild(rt);
     const box = document.getElementById('datakilder'); box.innerHTML = '';
-    box.appendChild(kildeKort('Smitteudbrud', 'WHO, ECDC, UKHSA, US CDC, PAHO, Statens Serum Institut og nationale sundhedsmyndigheder. Gennemgås hver morgen efter faste regler.', '', 'ok', `${EVENTS.filter(e => liveAt(e, T1)).length} udbrud · datasæt pr. ${fmtDate(DATA_DATO)}`));
+    box.appendChild(kildeKort('Smitteudbrud', 'WHO, ECDC, UKHSA, US CDC, PAHO, Statens Serum Institut og nationale sundhedsmyndigheder. Gennemgås fire gange i døgnet efter faste regler.', '', 'ok', `${EVENTS.filter(e => liveAt(e, T1)).length} udbrud · datasæt pr. ${fmtDate(DATA_DATO)}`));
     for(const [k, [navn, tekst, url]] of Object.entries(KILDEINFO)){
       const ki = FEEDINFO && FEEDINFO.kilder && FEEDINFO.kilder[k]; if(!ki) continue;
       box.appendChild(kildeKort(navn, tekst, url, ki.ok ? 'ok' : 'fejl', ki.ok ? `${ki.antal} poster · hentet ${ki.hentet ? klok(ki.hentet) : 'ukendt'}` : `Fejl: ${String(ki.fejl || 'ukendt').replace(/^https?:\/\/\S+: /, '')}. Vi viser de seneste meldinger, til kilden svarer igen.`));

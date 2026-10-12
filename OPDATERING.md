@@ -12,7 +12,7 @@ Kørslen gør tre ting: bringer de eksisterende hændelser ajour, tilføjer nye 
 
 Kun disse fire steder:
 
-1. Konstanten `DATA_DATO` i `site/index.html`.
+1. Konstanterne `DATA_DATO` og `DATA_TID` i `site/index.html`.
 2. Listen `EVENTS` i `site/index.html`.
 3. `LOG.md`, hvor der tilføjes én post øverst.
 4. `tools/par-tjek.json`, når par fra mediesporet skal godkendes eller afvises (se Mediesporet nedenfor).
@@ -96,6 +96,21 @@ Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længe
 - **Hurtige faste veje.** CIDRAP: `https://www.cidrap.umn.edu/all-news?page=N`. Outbreak News Today: `https://outbreaknewstoday.substack.com/api/v1/archive?sort=new&limit=25`. NaTHNaC: `https://travelhealthpro.org.uk/rss-outbreaks.php`. UKHSA: `https://www.gov.uk/api/search.json?filter_organisations=uk-health-security-agency&order=-public_timestamp`.
 - **Faste udgivelser.** UKHSA's ugeoversigt kommer torsdag, ECDC's ugerapport fredag, GPEI's poliooversigt og US CDC's mæslingetal én gang om ugen. Mellem udgivelserne er der intet nyt at hente dér, og hændelsen lades urørt.
 
+## Vagtplan
+
+Kørslen startes fire gange i døgnet, kl. 00.20, 05.20, 11.20 og 17.20 dansk tid. Læs timen med `TZ=Europe/Copenhagen date +%H`, og følg rækken for den time. De andre retninger (jordskælv, storme, oversvømmelser, brande, hede, vulkaner, rejsevejledninger og mediesporets optælling) hentes automatisk hver time af workflowet og hører ikke til kørslen. Rækken siger, hvor kørslen lægger sin tid. Alt i Fremgangsmåde gælder stadig, og en alvorlig ny hændelse et andet sted tages med uanset rækken.
+
+| Kl. | Fokus |
+| --- | --- |
+| 00 | Smitte i Europa og Danmark: ECDC, Statens Serum Institut, DK-VET, UKHSA, RIVM og RKI. Kvalitet: koordinater, gamle punkter og Til gennemgang fra de seneste poster i loggen. |
+| 05 | Bred gennemgang: alle samlede kilder i trin 2, rundturen (trin 3a) og tjek af par i mediesporet. |
+| 11 | Smitte i Asien og Mellemøsten med Bangladeshs dagstal (DGHS, omkring kl. 10), WHO SEARO, WHO WPRO og WHO EMRO. WHO DON siden forrige kørsel. |
+| 17 | Smitte i Afrika og Amerika: WHO AFRO, Africa CDC, PAHO og US CDC. WHO DON siden forrige kørsel. Tjek af par i mediesporet. |
+
+**Ingen overlap.** Hent `main` først. Er der et commit fra en anden kørsel inden for de sidste 15 minutter, og er dens udrulning ikke færdig, så vent, til den er, eller spring kørslen over og skriv det i rapporten.
+
+**Intet nyt, intet commit.** En kørsel, der hverken ændrer hændelser eller par, laver intet commit og ingen logpost. Den eneste undtagelse er kl. 05: den sætter `DATA_DATO` og `DATA_TID` og skriver dagens post, også når intet er ændret, så siden viser, at datasættet er gennemgået den dag.
+
 ## Fremgangsmåde
 
 Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra tre samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
@@ -112,7 +127,7 @@ Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres
 3. **Bring nævnte hændelser ajour.** Slå kun enkeltkilder op for de hændelser, de samlede kilder nævner, og for hændelser med `live:true` og trin `spredning` eller `smitte`, hvor der er grund til at tro, at tallene har flyttet sig. En hændelse uden nyt lades urørt. Det er det normale udfald for de fleste hændelser på en given dag.
 3a. **Rundtur.** Hver hændelse med `live:true`, der ikke har fået et nyt punkt i 10 dage, slås op i sin egen hovedkilde, også selv om ingen samlet kilde nævner den. Er der intet nyt, lades den urørt, og det skrives i loggen under Urørt med antal dage siden seneste punkt.
 4. **Tilføj nye hændelser**, højst fem pr. kørsel. Er der flere, så tag de alvorligste og nævn resten i loggen.
-5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret. Datoen betyder, at datasættet er gennemgået den dag.
+5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret, og **`DATA_TID`** til tidspunktet, gennemgangen blev afsluttet, med tidszone: `TZ=Europe/Copenhagen date +%Y-%m-%dT%H:%M%:z` (fx `2026-10-12T11:40+02:00`). Siden viser det som "Gennemgået for 2 timer siden". Kontrollen afviser et tidspunkt i fremtiden eller på en anden dag end `DATA_DATO`.
 6. **Kør kontrollen:** `node tools/tjek-data.mjs site/index.html --forrige <forrige udgave> --links`, hvor forrige udgave hentes med `git show HEAD:site/index.html`. Ret alle fejl. Kan en fejl ikke rettes, så fortryd ændringen i den hændelse. Læs også advarslerne, se afsnittet Kontrollens advarsler.
 7. **Skriv posten i `LOG.md`.**
 8. **Commit og send til `main`** med beskeden `Data: <dato> · <kort opsummering>`.
@@ -209,7 +224,7 @@ En fejl standser udrulningen. En advarsel gør ikke, men den skal læses og besv
 
 Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker til fra foden, og den bygges af `LOG.md` ved hver udrulning. Skriv den, så en læser udefra kan følge, hvad der blev ændret og hvorfor. Ingen HTML i loggen, og adresser skrives fuldt ud med `https://`.
 
-`LOG.md` får én post øverst pr. kørsel, også når intet blev ændret:
+`LOG.md` får én post pr. døgn med overskriften `## <dato>` øverst. Hver kørsel med ændringer tilføjer et underafsnit i dagens post med klokkeslættet, fx `### Kl. 11.20, Asien og Mellemøsten`, og det, der er under Til gennemgang, samles i bunden af dagens post. Findes dagens post ikke, oprettes den. En kørsel uden ændringer skriver ikke i loggen (se Vagtplan). Formatet for indholdet:
 
 ```
 ## 9. oktober 2026
