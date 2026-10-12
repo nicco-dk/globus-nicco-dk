@@ -126,6 +126,7 @@
 - På telefonen kommer et lille banner, der tilbyder at hente siden som app. På iPhone viser det, hvordan man føjer siden til hjemmeskærmen. Lukkes banneret, kommer det ikke igen i 30 dage.
 - Prototypedata-mærket åbner Data og kilder: hvilke data siden henter, hvorfra og hvornår de sidst blev hentet, og de seneste opdateringer ti ad gangen med Vis mere.
 - Toppen: undertitlen starter ved stregen efter logoet, tema og Nyt på siden står ved stregen til overblikket. Positionsteksten står øverst til højre over kloden, og klodens felt har bløde overgange i top og bund.
+- Når kloden begynder at dreje af sig selv, bruger den den første halve omgang på at glide til ækvator og 1,5 gange zoom og drejer derefter rundt om ækvator, til man rører den.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag

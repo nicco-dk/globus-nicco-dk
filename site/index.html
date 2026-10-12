@@ -3228,6 +3228,7 @@ function visRotKnap(){
   rotKnap.dataset.tip = rotPause ? TT('Start rotationen', 'Kloden drejer langsomt igen, når du ikke rører den.') : TT('Pause rotationen', 'Kloden bliver stående, hvor du har sat den, til du trykker igen eller genindlæser siden.');
 }
 rotKnap.addEventListener('click', () => { rotPause = !rotPause; visRotKnap(); skjulTip(); });
+let ROT_START = null;
 function tick(now){
   pulse = (now-t0p)/2200;
   let need = !reduce;
@@ -3246,8 +3247,20 @@ function tick(now){
     if(Math.abs(d) < 0.3 && Math.abs(target.phi-rot.phi) < 0.3){ rot.lam = target.lam; rot.phi = target.phi; target = null; }
     need = true;
   } else if(!dragging && !reduce && !rotPause && now-idle > (selected ? 10000 : 5000) && !playing && !zoomMaal){
-    // Efter et valg venter kloden 10 sekunder, før den drejer igen. Tæt på drejer den langsommere, så det valgte ikke farer forbi.
-    rot.lam += 0.04 / Math.max(1, zoom / START_ZOOM); need = true; }
+    // Efter et valg venter kloden 10 sekunder, før den drejer igen. Når rotationen går i gang, bruger kloden den første
+    // halve omgang på at glide til ækvator og til 1,5 gange zoom. Derefter drejer den rundt om ækvator, til man rører den.
+    // En ny rotation starter efter hver handling (idle er tidspunktet for den seneste).
+    if(!ROT_START || ROT_START.idle !== idle) ROT_START = {drejet:0, phi:rot.phi, zoom, idle};
+    const halv = ROT_START.drejet < 180, trin = halv ? 0.07 : 0.04;
+    rot.lam += trin; ROT_START.drejet += trin;
+    if(halv){
+      const p = Math.min(1, ROT_START.drejet / 180), g = p < .5 ? 2*p*p : 1 - Math.pow(-2*p + 2, 2)/2;
+      rot.phi = ROT_START.phi * (1 - g);
+      const z = ROT_START.zoom * Math.pow(START_ZOOM / ROT_START.zoom, g);
+      if(Math.abs(z - zoom) > 1e-4) setZoom(z);
+    }
+    need = true;
+  }
   if(need) draw();
   requestAnimationFrame(tick);
 }
