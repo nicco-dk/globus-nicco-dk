@@ -1,14 +1,95 @@
 {
-  "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
-  "n": [
-    {"id": "nyheder", "dato": "2026-10-12", "titel": "Nyt på siden", "tekst": "Knappen her samler det, der er nyt på siden, siden du sidst var inde. Tallet på knappen viser, hvor mange nyheder du ikke har set endnu.", "ikon": "nyt"},
-    {"id": "bred", "dato": "2026-10-11", "titel": "Bred læsevisning", "tekst": "Knappen med de to pile i detaljekortet gør kortet bredt, med indholdet i to spalter og hele forløbet som en vandret tidslinje. Kloden rykker til højre, så du stadig kan se stedet. Kun på computer.", "ikon": "udvid", "proev": "bred"},
-    {"id": "afspil", "dato": "2026-10-11", "titel": "Afspil udbruddet", "tekst": "Tryk på et punkt i forløbet for et smitteudbrud, så hopper tidslinjen til datoen, og kloden flyver til stedet. Knappen Afspil udbruddet går hele forløbet igennem.", "ikon": "afspil", "proev": "afspil"},
-    {"id": "nytsidst", "dato": "2026-10-11", "titel": "Nyt siden sidst", "tekst": "Øverst i overblikket står det, der er kommet til eller har skiftet alvor, siden du sidst var inde. Prikkerne har en lille blå markering på kloden. Siden husker dit sidste besøg i din egen browser.", "ikon": "nyt"},
-    {"id": "kort", "dato": "2026-10-11", "titel": "Detaljekort med billede og læs mere", "tekst": "Alle hændelser har nu samme kort: billede, kort fortalt, nøgletal, forløb, kilder og tre artikler at læse videre i. For brugere i Danmark er den første artikel fra DR, når DR har skrevet om det.", "ikon": "kort"},
-    {"id": "udforsk", "dato": "2026-10-11", "titel": "Udforsk", "tekst": "Knappen Udforsk i overblikket tager dig gennem de tolv alvorligste hændelser lige nu, ét kort ad gangen. Bladr med pilene eller ved at swipe på telefonen.", "ikon": "udforsk", "proev": "udforsk"},
-    {"id": "app", "dato": "2026-10-11", "titel": "Hent som app og ny mobil", "tekst": "Siden kan lægges på computeren eller telefonen som en app og åbner også uden net. På telefonen står kortet fast i hele skærmen, og overblik og detaljer trækkes op fra bunden.", "ikon": "app"},
-    {"id": "akut", "dato": "2026-10-11", "titel": "Alvor 5, akut, og søljen Lige nu", "tekst": "Det nye og kritiske lige nu har fået sit eget trin, alvor 5. Det og alvor 4 ruller i søljen i bunden af siden, og et tryk fører dig derhen.", "ikon": "akut"},
-    {"id": "steder", "dato": "2026-10-11", "titel": "Krig og konflikt pr. sted", "tekst": "Hvert sted, medierne skriver om kampe eller demonstrationer, har sin egen prik. Trykker du på prikken, ser du kun det, der er skrevet om netop dét sted. Trykker du på selve landet, åbner landesiden.", "ikon": "krig", "proev": "krig"}
-  ]
+ "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
+ "n": [
+  {
+   "id": "nyheder",
+   "dato": "2026-10-12",
+   "titel": "Nyt på siden",
+   "tekst": "Her kommer en kort forklaring, hver gang der er noget nyt på siden. Tallet på knappen viser, hvor mange du ikke har set. Når du har set en nyhed, forsvinder den herfra, men den står stadig under Det kan du på siden i Sådan virker siden.",
+   "ikon": "nyt"
+  },
+  {
+   "id": "foelg",
+   "dato": "2026-10-11",
+   "titel": "Følg et land",
+   "tekst": "Stjernen i detaljekortet følger landet. Lande, du følger, står øverst i overblikket og markeres, når noget er ændret, siden du sidst kiggede. Det gemmes kun i din egen browser.",
+   "ikon": "foelg",
+   "proev": "land"
+  },
+  {
+   "id": "landeside",
+   "dato": "2026-10-11",
+   "titel": "Landesiden",
+   "tekst": "Tryk på et land på kloden, så samles alt om landet ét sted: rejsevejledning, krig og konflikt, smitteudbrud, varsler, nødhjælp og flygtninge, med højeste alvor øverst.",
+   "ikon": "land",
+   "proev": "land"
+  },
+  {
+   "id": "rss",
+   "dato": "2026-10-11",
+   "titel": "Abonnér på et land",
+   "tekst": "På landesiden giver RSS-knappen et feed for netop det land, som du kan følge i din nyhedslæser. Et punkt dukker op igen, når det ændrer sig.",
+   "ikon": "rss"
+  },
+  {
+   "id": "bred",
+   "dato": "2026-10-11",
+   "titel": "Bred læsevisning",
+   "tekst": "Knappen med de to pile i detaljekortet gør kortet bredt, med indholdet i to spalter og hele forløbet som en vandret tidslinje. Kloden rykker til højre, så du stadig kan se stedet. Kun på computer.",
+   "ikon": "udvid",
+   "proev": "bred"
+  },
+  {
+   "id": "afspil",
+   "dato": "2026-10-11",
+   "titel": "Afspil udbruddet",
+   "tekst": "Tryk på et punkt i forløbet for et smitteudbrud, så hopper tidslinjen til datoen, og kloden flyver til stedet. Knappen Afspil udbruddet går hele forløbet igennem.",
+   "ikon": "afspil",
+   "proev": "afspil"
+  },
+  {
+   "id": "nytsidst",
+   "dato": "2026-10-11",
+   "titel": "Nyt siden sidst",
+   "tekst": "Øverst i overblikket står det, der er kommet til eller har skiftet alvor, siden du sidst var inde. Prikkerne har en lille blå markering på kloden. Siden husker dit sidste besøg i din egen browser.",
+   "ikon": "nyt"
+  },
+  {
+   "id": "kort",
+   "dato": "2026-10-11",
+   "titel": "Detaljekort med billede og læs mere",
+   "tekst": "Alle hændelser har nu samme kort: billede, kort fortalt, nøgletal, forløb, kilder og tre artikler at læse videre i. For brugere i Danmark er den første artikel fra DR, når DR har skrevet om det.",
+   "ikon": "kort"
+  },
+  {
+   "id": "udforsk",
+   "dato": "2026-10-11",
+   "titel": "Udforsk",
+   "tekst": "Knappen Udforsk i overblikket tager dig gennem de tolv alvorligste hændelser lige nu, ét kort ad gangen. Bladr med pilene eller ved at swipe på telefonen.",
+   "ikon": "udforsk",
+   "proev": "udforsk"
+  },
+  {
+   "id": "app",
+   "dato": "2026-10-11",
+   "titel": "Hent som app og ny mobil",
+   "tekst": "Siden kan lægges på computeren eller telefonen som en app og åbner også uden net. På telefonen står kortet fast i hele skærmen, og overblik og detaljer trækkes op fra bunden.",
+   "ikon": "app"
+  },
+  {
+   "id": "akut",
+   "dato": "2026-10-11",
+   "titel": "Alvor 5, akut, og søljen Lige nu",
+   "tekst": "Det nye og kritiske lige nu har fået sit eget trin, alvor 5. Det og alvor 4 ruller i søljen i bunden af siden, og et tryk fører dig derhen.",
+   "ikon": "akut"
+  },
+  {
+   "id": "steder",
+   "dato": "2026-10-11",
+   "titel": "Krig og konflikt pr. sted",
+   "tekst": "Hvert sted, medierne skriver om kampe eller demonstrationer, har sin egen prik. Trykker du på prikken, ser du kun det, der er skrevet om netop dét sted. Trykker du på selve landet, åbner landesiden.",
+   "ikon": "krig",
+   "proev": "krig"
+  }
+ ]
 }

@@ -687,7 +687,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   <div class="ombody">
     <p class="led" id="nytled">Det, der er nyt på siden, nyeste først. Det, du ikke har set før, er markeret.</p>
     <div class="nytliste" id="nytliste"></div>
-    <p class="nytfod">Ændringer i tal og kilder står i <a href="/log">ændringsloggen</a>. Hvordan siden virker, står i <button type="button" class="linkbtn" id="nyttilom">Sådan virker siden</button>.</p>
+    <p class="nytfod">Ændringer i tal og kilder står i <a href="/log">ændringsloggen</a>. Alt, du har set, står under <button type="button" class="linkbtn" id="nyttilom">Det kan du på siden</button> i Sådan virker siden.</p>
   </div>
 </dialog>
 
@@ -739,6 +739,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <li><strong>Hvad ville flytte trinnet</strong> er sidens egen vurdering og bygger ikke på en kilde.</li>
       <li>Linjer mellem steder tegnes kun, hvor en kilde dokumenterer retningen.</li>
     </ul>
+
+    <h3 id="om-funktioner">Det kan du på siden</h3>
+    <p>Alt det, der er kommet til siden, med en kort forklaring. Når noget nyt kommer til, står det først under Nyt på siden og kommer samtidig her.</p>
+    <div class="nytliste" id="gfunk"></div>
 
     <h3 id="om-opdatering">Opdatering og prototypedata</h3>
     <ul>
@@ -3575,7 +3579,7 @@ placer();
   const NYT_SET = 'globus-nyt-set', knap = document.getElementById('nytbtn'), tal = document.getElementById('nyttal'), dlg = document.getElementById('nytdlg');
   const IK = { nyt:'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6',
     afspil:'M7 4l13 8-13 8z', kort:'M4 4h16v16H4zM4 14l5-5 5 5 3-3 3 3', udforsk:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z',
-    app:'M7 2h10v20H7zM11 18h2', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' };
+    app:'M7 2h10v20H7zM11 18h2', foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z', land:'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' };
   let NYT = [];
   const laesSet = () => { try{ return JSON.parse(localStorage.getItem(NYT_SET) || 'null'); }catch(err){ return null; } };
   const usete = () => { const set = laesSet(); const graense = Date.now() - 14*DAY;
@@ -3587,30 +3591,41 @@ placer();
     udforsk: () => { dlg.close(); startTur(); },
     bred: () => { dlg.close(); try{ localStorage.setItem(BRED_NOEGLE, '1'); }catch(err){} detail.classList.add('bred'); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed); if(e) select(e.id, true); },
     afspil: () => { dlg.close(); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed && x.tl && x.tl.length > 2); if(e){ select(e.id, true); setTimeout(() => afspilForloeb(e), 600); } },
+    land: () => { dlg.close(); const a2 = (HS && HS.DK) ? 'DK' : null; const lo = a2 && landObj(a2); if(lo) select(lo.id, true); },
     krig: () => { dlg.close(); const e = STEDER.slice().sort((a, b) => b.n - a.n)[0]; if(e){ retOn.add('krig'); select(e.id, true); zoomMaal = Math.max(zoom, 3); } }
   };
+  // Kort for en nyhed. Bruges både i vinduet og under Det kan du på siden i Sådan virker siden.
+  function kort(n, ny){
+    const d = el('div', 'nyt-p' + (ny ? ' ny' : ''));
+    d.innerHTML = `<span class="gi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IK[n.ikon] || IK.nyt}"/></svg></span>`;
+    const hd = el('div','hd'); hd.append(el('b','', n.titel), el('span','dt', fmtDate(n.dato))); if(ny) hd.appendChild(el('span','mk','Ny'));
+    d.append(hd, el('p','', n.tekst));
+    if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches)){ const b = el('button','proev','Prøv det'); b.type = 'button'; b.addEventListener('click', () => { if(om.open) om.close(); PROEV[n.proev](); }); d.appendChild(b); }
+    return d;
+  }
+  // Vinduet viser kun det, man ikke har set. Det, man har set, står i Sådan virker siden.
   function byg(){
-    const u = new Set(usete().map(n => n.id)), liste = document.getElementById('nytliste'); liste.innerHTML = '';
-    for(const n of NYT){
-      const d = el('div', 'nyt-p' + (u.has(n.id) ? ' ny' : ''));
-      d.innerHTML = `<span class="gi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IK[n.ikon] || IK.nyt}"/></svg></span>`;
-      const hd = el('div','hd'); hd.append(el('b','', n.titel), el('span','dt', fmtDate(n.dato))); if(u.has(n.id)) hd.appendChild(el('span','mk','Ny'));
-      d.append(hd, el('p','', n.tekst));
-      if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches)){ const b = el('button','proev','Prøv det'); b.type = 'button'; b.addEventListener('click', PROEV[n.proev]); d.appendChild(b); }
-      liste.appendChild(d);
-    }
+    const liste = document.getElementById('nytliste'); liste.innerHTML = '';
+    const u = usete();
+    document.getElementById('nytled').textContent = u.length ? 'Det er nyt, siden du sidst kiggede. Når du har set det, forsvinder det herfra og står i Sådan virker siden.' : 'Du har set alt det nye. Alt, siden kan, står under Det kan du på siden i Sådan virker siden.';
+    for(const n of u) liste.appendChild(kort(n, true));
+  }
+  function bygGuideFunktioner(){
+    const box = document.getElementById('gfunk'); if(!box) return; box.innerHTML = '';
+    for(const n of NYT.filter(n => n.id !== 'nyheder')) box.appendChild(kort(n, false));
   }
   knap.addEventListener('click', () => {
-    byg(); if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); dlg.scrollTop = 0;
+    byg(); if(!usete().length){ aabnOm('om-funktioner'); return; }
+    if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); dlg.scrollTop = 0;
     // Når vinduet er åbnet, er nyhederne set. Markeringen "Ny" bliver stående, til vinduet lukkes.
     try{ localStorage.setItem(NYT_SET, JSON.stringify(NYT.map(n => n.id))); }catch(err){}
     visTal();
   });
   document.getElementById('nytluk').addEventListener('click', () => dlg.close());
   dlg.addEventListener('click', ev => { if(ev.target === dlg) dlg.close(); });
-  document.getElementById('nyttilom').addEventListener('click', () => { dlg.close(); aabnOm(); });
+  document.getElementById('nyttilom').addEventListener('click', () => { dlg.close(); aabnOm('om-funktioner'); });
   knap.dataset.tip = TT('Nyt på siden', 'Nye funktioner, siden du sidst var inde.');
-  fetch('/nyheder.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => { if(j && Array.isArray(j.n)){ NYT = j.n; visTal(); } }).catch(() => {});
+  fetch('/nyheder.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => { if(j && Array.isArray(j.n)){ NYT = j.n; visTal(); bygGuideFunktioner(); } }).catch(() => {});
 }
 bygTicker();
 // Maskinmeldingerne hentes for sig, så siden virker, selv om filen mangler.
