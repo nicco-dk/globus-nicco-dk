@@ -89,7 +89,15 @@ export class Abonnenter extends DurableObject {
         } catch (e) { console.log(`Kunne ikke sende: ${e.message}`); }
       }
     }
-    return { lande: Object.keys(lande).length, aendrede: beskeder.size, sendt, fjernet };
+    const ud = { tid: new Date().toISOString(), lande: Object.keys(lande).length, aendrede: [...beskeder.keys()], sendt, fjernet, foersteGang: foer.size === 0 };
+    await this.ctx.storage.put('sidst', ud);
+    return ud;
+  }
+  // Tal uden persondata: hvor mange abonnementer, hvor mange lande der følges, og hvordan seneste gennemgang gik.
+  async tilstand() {
+    const abo = this.sql.exec('SELECT lande FROM abo').toArray();
+    const lande = new Set(); for (const r of abo) for (const a2 of JSON.parse(r.lande)) lande.add(a2);
+    return { abonnementer: abo.length, lande: lande.size, sidst: (await this.ctx.storage.get('sidst')) || null };
   }
 }
 
@@ -100,6 +108,7 @@ export default {
     const url = new URL(request.url), sti = url.pathname.replace(/^\/+/, '');
     const o = stub(env);
     if (request.method === 'GET' && sti === 'noegle') return json({ k: await o.noegle() });
+    if (request.method === 'GET' && sti === 'tilstand') return json(await o.tilstand());
     if (request.method !== 'POST') return json({ fejl: 'ukendt' }, 404);
     let j; try { j = await request.json(); } catch { return json({ fejl: 'ikke json' }, 400); }
     const ep = j && j.sub && j.sub.endpoint, k = j && j.sub && j.sub.keys;
