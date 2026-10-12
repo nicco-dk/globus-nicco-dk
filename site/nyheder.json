@@ -2,6 +2,13 @@
  "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
  "n": [
   {
+   "id": "rotation",
+   "dato": "2026-10-12",
+   "titel": "Kloden står stille, mens du kigger",
+   "tekst": "Mens et kort er åbent, drejer kloden ikke. Når du har rørt den, venter den 2 minutter og bruger så 10 sekunder på at komme op i fart, så du kan nå at stoppe den, hvor den står. Pauseknappen står nu for sig selv øverst til højre i klodens felt.",
+   "ikon": "udforsk"
+  },
+  {
    "id": "bundbar",
    "dato": "2026-10-12",
    "titel": "Bundbjælke på mobilen",

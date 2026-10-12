@@ -11,6 +11,8 @@
 - Lag er et ark over bjælken med rejsevejledninger som kontakt, alvor, mistanker, tidslinjen, område og trin, og knapperne for lys og mørk, Prototypedata og Hent app. Toppen har nu kun logoet, retningerne, Nyt på siden og Sådan virker siden.
 - Trin for trin: overblikket starter i Verden med områderne som knapper. Et område zoomer kloden derhen og viser de tre vigtigste, retningerne i området og landene. Se alle folder hele listen ud. Kortet har en sti øverst, fx Verden › Afrika › DR Congo › Ebola, hvor hvert led kan trykkes på. Træk kortet nedad for at gå et trin op. På en landeside blader pilene og swipe mellem landene i samme område.
 - I halv højde viser kortet først titel, kort fortalt og nøgletal. Billede, forløb og kilder kommer, når arket trækkes op.
+- Bundbjælken er højere og hævet fra skærmens kant. Kortet og overblikket går i fuld højde op til Lige nu.
+- Rotationen: mens et kort er åbent, står kloden stille. Efter en handling venter den 2 minutter og bruger 10 sekunder på at nå fuld fart. Pauseknappen står for sig selv øverst til højre i klodens felt, rund og blå, på mobil og computer.
 
 ## 12. oktober 2026
 
