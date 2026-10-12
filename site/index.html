@@ -361,6 +361,25 @@ canvas.drag{cursor:grabbing}
 .nymaerke{flex:none;font-family:var(--mono);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:3px;padding:0 4px;line-height:15px;align-self:center}
 .nytgruppe{border-top:0;margin-bottom:6px}
 .nytgruppe>summary{color:var(--fg)}
+/* Nyt på siden: knap med tal og et vindue som Sådan virker siden. */
+.nytbtn{position:relative;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 14px 5px 8px;font:600 13px/1 var(--display);cursor:pointer;min-height:36px;white-space:nowrap}
+.nytbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;color:var(--accent)}
+.nytbtn:hover{border-color:var(--accent)}
+.nytbtn .tal{position:absolute;top:-5px;left:20px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--s4);color:#fff;font:700 10.5px/18px var(--mono);text-align:center;box-shadow:0 0 0 2px var(--bg)}
+@media (max-width:900px){.nytbtn .t{display:none}.nytbtn{padding:5px;width:36px;justify-content:center}.nytbtn .tal{left:22px}}
+.nytliste{display:grid;gap:10px;margin:14px 0 16px}
+.nyt-p{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;background:var(--panel-2);border:1px solid var(--rule);border-radius:9px;padding:13px}
+.nyt-p.ny{border-color:color-mix(in srgb,var(--accent) 55%,var(--rule))}
+.nyt-p .gi{grid-row:span 3;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent)}
+.nyt-p .gi svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nyt-p .hd{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.nyt-p b{font-size:14px;color:var(--fg)}
+.nyt-p .dt{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint)}
+.nyt-p .mk{font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.nyt-p p{margin:0;font-size:13px;line-height:1.5;color:var(--fg-dim)}
+.nyt-p .proev{justify-self:start;margin-top:4px;font:600 12px/1 var(--display);color:var(--accent);background:none;border:1px solid var(--rule);border-radius:999px;padding:6px 11px;cursor:pointer}
+.nyt-p .proev:hover{border-color:var(--accent)}
+.nytfod{font-size:12.5px;color:var(--fg-faint)}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -577,6 +596,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button class="hentapp" id="hentapp" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg><span>Hent app</span></button>
       <button class="proto" id="protobtn" type="button" title="Læs hvad prototypedata betyder">Prototypedata</button>
       <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+      <button class="nytbtn" id="nytbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="t">Nyt på siden</span><span class="tal" id="nyttal" hidden></span></button>
       <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
     </div>
     <span class="sub" id="sub"></span>
@@ -658,6 +678,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 
   <footer id="foot"></footer>
 </div>
+
+<dialog class="om nytdlg" id="nytdlg" aria-labelledby="nyttitel">
+  <div class="omhead">
+    <h2 id="nyttitel">Nyt på siden</h2>
+    <button type="button" id="nytluk" aria-label="Luk">×</button>
+  </div>
+  <div class="ombody">
+    <p class="led" id="nytled">Det, der er nyt på siden, nyeste først. Det, du ikke har set før, er markeret.</p>
+    <div class="nytliste" id="nytliste"></div>
+    <p class="nytfod">Ændringer i tal og kilder står i <a href="/log">ændringsloggen</a>. Hvordan siden virker, står i <button type="button" class="linkbtn" id="nyttilom">Sådan virker siden</button>.</p>
+  </div>
+</dialog>
 
 <dialog class="om" id="om" aria-labelledby="omtitel">
   <div class="omhead">
@@ -3536,6 +3568,50 @@ function placer(){
 MOBIL.addEventListener('change', placer);
 window.addEventListener('resize', () => { if(MOBIL.matches){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); arkHoejde(arkTilstand); detHoejde(detTilstand); } });
 placer();
+// ---------- nyt på siden ----------
+// Nyhederne står i site/nyheder.json. Tallet på knappen er de nyheder, man ikke har set, siden man sidst åbnede vinduet.
+// Første gang tæller kun nyheder fra de sidste 14 dage. Det, man har set, huskes i browseren.
+{
+  const NYT_SET = 'globus-nyt-set', knap = document.getElementById('nytbtn'), tal = document.getElementById('nyttal'), dlg = document.getElementById('nytdlg');
+  const IK = { nyt:'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6',
+    afspil:'M7 4l13 8-13 8z', kort:'M4 4h16v16H4zM4 14l5-5 5 5 3-3 3 3', udforsk:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z',
+    app:'M7 2h10v20H7zM11 18h2', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' };
+  let NYT = [];
+  const laesSet = () => { try{ return JSON.parse(localStorage.getItem(NYT_SET) || 'null'); }catch(err){ return null; } };
+  const usete = () => { const set = laesSet(); const graense = Date.now() - 14*DAY;
+    return NYT.filter(n => set ? !set.includes(n.id) : Date.parse(n.dato) >= graense); };
+  const visTal = () => { const u = usete().length; tal.hidden = !u; tal.textContent = u > 9 ? '9+' : String(u);
+    knap.setAttribute('aria-label', u ? `Nyt på siden, ${u} ${u === 1 ? 'ny' : 'nye'}` : 'Nyt på siden'); };
+  // Prøv det: viser funktionen frem på siden.
+  const PROEV = {
+    udforsk: () => { dlg.close(); startTur(); },
+    bred: () => { dlg.close(); try{ localStorage.setItem(BRED_NOEGLE, '1'); }catch(err){} detail.classList.add('bred'); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed); if(e) select(e.id, true); },
+    afspil: () => { dlg.close(); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed && x.tl && x.tl.length > 2); if(e){ select(e.id, true); setTimeout(() => afspilForloeb(e), 600); } },
+    krig: () => { dlg.close(); const e = STEDER.slice().sort((a, b) => b.n - a.n)[0]; if(e){ retOn.add('krig'); select(e.id, true); zoomMaal = Math.max(zoom, 3); } }
+  };
+  function byg(){
+    const u = new Set(usete().map(n => n.id)), liste = document.getElementById('nytliste'); liste.innerHTML = '';
+    for(const n of NYT){
+      const d = el('div', 'nyt-p' + (u.has(n.id) ? ' ny' : ''));
+      d.innerHTML = `<span class="gi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IK[n.ikon] || IK.nyt}"/></svg></span>`;
+      const hd = el('div','hd'); hd.append(el('b','', n.titel), el('span','dt', fmtDate(n.dato))); if(u.has(n.id)) hd.appendChild(el('span','mk','Ny'));
+      d.append(hd, el('p','', n.tekst));
+      if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches)){ const b = el('button','proev','Prøv det'); b.type = 'button'; b.addEventListener('click', PROEV[n.proev]); d.appendChild(b); }
+      liste.appendChild(d);
+    }
+  }
+  knap.addEventListener('click', () => {
+    byg(); if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); dlg.scrollTop = 0;
+    // Når vinduet er åbnet, er nyhederne set. Markeringen "Ny" bliver stående, til vinduet lukkes.
+    try{ localStorage.setItem(NYT_SET, JSON.stringify(NYT.map(n => n.id))); }catch(err){}
+    visTal();
+  });
+  document.getElementById('nytluk').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', ev => { if(ev.target === dlg) dlg.close(); });
+  document.getElementById('nyttilom').addEventListener('click', () => { dlg.close(); aabnOm(); });
+  knap.dataset.tip = TT('Nyt på siden', 'Nye funktioner, siden du sidst var inde.');
+  fetch('/nyheder.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => { if(j && Array.isArray(j.n)){ NYT = j.n; visTal(); } }).catch(() => {});
+}
 bygTicker();
 // Maskinmeldingerne hentes for sig, så siden virker, selv om filen mangler.
 fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {
