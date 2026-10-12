@@ -81,12 +81,13 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--display);-w
 [hidden]{display:none!important}
 .app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 362px;grid-template-rows:auto minmax(0,1fr) auto auto auto auto;
   padding:0 16px;padding-block-end:14px}
-header{grid-column:1/-1;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px 16px;padding:12px 0 10px;border-bottom:1px solid var(--rule)}
+header{grid-column:1/-1;display:grid;grid-template-columns:340px minmax(0,1fr) 362px;align-items:center;gap:8px 0;padding:12px 0 10px;border-bottom:1px solid var(--rule)}
 header .sub{grid-column:1/-1}
-h1.logo{margin:0;display:flex;align-items:center;gap:10px;color:var(--fg);padding-right:16px;border-right:1px solid var(--rule);--mh:26px;--ch:13px;font-size:inherit}
+h1.logo{margin:0;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--fg);padding:0 12px;border-right:1px solid var(--rule);align-self:stretch;--mh:26px;--ch:13px;font-size:inherit}
 h1.logo .mk{height:var(--mh);width:var(--mh);display:block;flex:none}
 h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);letter-spacing:.05em;white-space:nowrap;text-box:trim-both cap alphabetic}
-.rchips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.rchips{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:6px;min-width:0;padding:0 12px}
+.rmidt{grid-column:2;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;min-width:0}
 .rchip{flex:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);border-radius:999px;padding:4px 9px 4px 4px;font:500 12px/1 var(--mono);cursor:pointer;min-height:36px}
 .rchip .d{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--fg-faint);border:1.5px solid currentColor}
 .rchip .d svg{width:16px;height:16px}
@@ -94,15 +95,14 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .hentapp{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 11px 5px 8px;font:500 12px/1 var(--mono);cursor:pointer;min-height:32px}
 .hentapp svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hentapp:hover{border-color:var(--accent)}
-.rchip.service{margin-left:auto;position:relative}
-.rchip.service::before{content:"";position:absolute;left:-12px;top:6px;bottom:6px;width:1px;background:var(--rule)}
+.rchip.service{grid-column:3;justify-self:end}
 @media (max-width:900px){.rchip.service{margin-left:14px}}
 .rchip[aria-pressed="true"]{border-color:var(--c);color:var(--fg);background:color-mix(in srgb,var(--c) 12%,var(--panel))}
 .rchip[data-fokus="1"]{box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 45%,transparent)}
 .rchip[aria-pressed="true"] .d{color:var(--c);background:color-mix(in srgb,var(--c) 18%,transparent)}
 .rchip[aria-disabled="true"]{cursor:default;border-style:dashed;border-color:color-mix(in srgb,var(--c) 45%,var(--rule));opacity:.7}
 .rchip[aria-disabled="true"] .d{color:var(--c)}
-.hacts{display:flex;align-items:center;gap:8px;justify-self:end}
+.hacts{display:flex;align-items:center;justify-content:flex-end;gap:8px;align-self:stretch;padding-left:16px;border-left:1px solid var(--rule);min-width:0}
 .guidebtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 14px 5px 5px;font:600 13px/1 var(--display);cursor:pointer;min-height:36px;white-space:nowrap}
 .temabtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);display:grid;place-items:center;cursor:pointer;padding:0;flex:none}
 .temabtn:hover{border-color:var(--accent);color:var(--accent)}
@@ -135,7 +135,7 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .stage{position:relative;min-width:0;min-height:0;grid-column:1;grid-row:2}
 canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
 canvas.drag{cursor:grabbing}
-.hud{position:absolute;left:0;bottom:0;font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);
+.hud{position:absolute;left:0;top:4px;font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);
   letter-spacing:.03em;pointer-events:none;line-height:1.7}
 .zoomer{position:absolute;right:4px;bottom:4px;display:flex;flex-direction:column;gap:5px}
 .zoomer button{font-family:var(--mono);font-size:13px;width:30px;height:30px;border-radius:3px;
@@ -380,6 +380,32 @@ canvas.drag{cursor:grabbing}
 .nyt-p .proev{justify-self:start;margin-top:4px;font:600 12px/1 var(--display);color:var(--accent);background:none;border:1px solid var(--rule);border-radius:999px;padding:6px 11px;cursor:pointer}
 .nyt-p .proev:hover{border-color:var(--accent)}
 .nytfod{font-size:12.5px;color:var(--fg-faint)}
+/* Alvor og mistanker oven på klodens felt, centreret i bunden uden baggrund. */
+.stage>.mapctl{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);z-index:3;padding:0;justify-content:center;flex-wrap:nowrap;white-space:nowrap;pointer-events:none}
+.stage>.mapctl>*{pointer-events:auto}
+.stage>.mapctl .seg{border-color:color-mix(in srgb,var(--rule) 80%,transparent);background:none}
+.stage>.mapctl .seg button{background:transparent}
+.stage>.mapctl .seg button:hover{background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.stage>.mapctl .seg button[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 85%,transparent)}
+@media (min-width:901px){
+  .nytbtn .t,.hentapp span{display:none}
+  .nytbtn{width:36px;padding:0;justify-content:center}
+  .nytbtn .tal{left:21px}
+  .hentapp{width:36px;height:36px;padding:0;justify-content:center}
+  #protoplads .proto{margin-right:10px;padding:1px 6px;font-size:9.5px;vertical-align:1px}
+}
+/* Smallere skærme: retningerne centreres i det, der er tilbage, og rejsevejledninger står lige efter. Knapperne bliver lidt mindre. */
+@media (min-width:901px) and (max-width:1560px){
+  .rchips{grid-template-columns:minmax(0,1fr) auto}
+  .rmidt{grid-column:1}
+  .rchip.service{grid-column:2}
+}
+@media (min-width:901px) and (max-width:1380px){
+  .rchip{padding:3px 7px 3px 3px;gap:4px;min-height:32px;font-size:11px}
+  .rchip .d{width:24px;height:24px}
+  .rchip .d svg{width:14px;height:14px}
+  .rmidt,.rchips{gap:4px}
+}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -542,6 +568,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   header .rchips{order:5;flex:1 1 100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -12px;padding:0 12px 2px}
   header .rchips::-webkit-scrollbar{display:none}
   .rchip.service{margin-left:14px}
+  header .rchips{display:flex;padding:0 12px 2px}
+  .rmidt{display:contents}
+  .hacts{border-left:0;padding-left:0}
+  h1.logo{border-right:0;justify-content:flex-start;padding:0}
   .ticker{position:fixed;left:0;right:0;top:var(--hdr,96px);z-index:5;margin:0;padding:4px 12px;border:0;background:color-mix(in srgb,var(--bg) 82%,transparent)}
   .tk-lbl{display:none}
   .hud{display:none}
@@ -599,7 +629,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button class="nytbtn" id="nytbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="t">Nyt på siden</span><span class="tal" id="nyttal" hidden></span></button>
       <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
     </div>
-    <span class="sub" id="sub"></span>
+    <span class="sub"><span id="protoplads"></span><span id="sub"></span></span>
   </header>
 
   <div class="stage">
@@ -3177,6 +3207,8 @@ footEl.textContent =
 const rchips = document.getElementById('rchips');
 function buildRet(){
   rchips.innerHTML = '';
+  // Retningerne står i midten over kloden. Rejsevejledninger står for sig ved stregen til overblikket.
+  const midt = el('div','rmidt'); rchips.appendChild(midt);
   for(const r of RETNINGER.filter(x => !SERVICE.has(x.k)).concat(RETNINGER.filter(x => SERVICE.has(x.k)))){
     const b = document.createElement('button'); b.type = 'button'; b.className = 'rchip' + (SERVICE.has(r.k) ? ' service' : ''); b.dataset.k = r.k;
     b.style.setProperty('--c', `var(--c-${r.k})`); b.setAttribute('aria-label', r.n);
@@ -3189,11 +3221,11 @@ function buildRet(){
         skjulTip(); render();
       });
     } else b.setAttribute('aria-disabled', 'true');
-    rchips.appendChild(b);
+    (SERVICE.has(r.k) ? rchips : midt).appendChild(b);
   }
 }
 function renderRet(){
-  for(const b of rchips.children){
+  for(const b of rchips.querySelectorAll('.rchip')){
     const r = RETNINGER.find(x => x.k === b.dataset.k);
     if(!r.aktiv){ b.querySelector('.n').textContent = '';
       b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">Kommer snart</div><div class="ts">${r.hvad} Kilder: ${r.kilder}.</div>`; continue; }
@@ -3564,8 +3596,12 @@ const FLYT = ['mapctl', 'timebar', 'foot'].map(id => document.getElementById(id)
 function placer(){
   const af = document.getElementById('arkfilter');
   // Detaljearket skal ligge uden for kortets lag på mobilen, ellers kommer det bag overblikket.
-  if(MOBIL.matches){ for(const f of FLYT) af.appendChild(f.n); document.querySelector('.app').appendChild(detail); arkHoejde(arkTilstand); detHoejde(detTilstand); }
-  else { for(const f of FLYT.slice().reverse()) f.far.insertBefore(f.n, f.efter && f.efter.parentNode === f.far ? f.efter : null); document.querySelector('.stage').appendChild(detail); }
+  if(MOBIL.matches){ for(const f of FLYT) af.appendChild(f.n); document.querySelector('.hacts').insertBefore(document.getElementById('protobtn'), document.getElementById('temabtn')); document.querySelector('.app').appendChild(detail); arkHoejde(arkTilstand); detHoejde(detTilstand); }
+  else { for(const f of FLYT.slice().reverse()) f.far.insertBefore(f.n, f.efter && f.efter.parentNode === f.far ? f.efter : null); document.querySelector('.stage').appendChild(detail);
+    // Prototypedata står forrest i undertitlen, så højre side af toppen kun har knapperne.
+    document.getElementById('protoplads').appendChild(document.getElementById('protobtn'));
+    // Alvor og mistanker ligger i bunden af klodens felt, centreret og uden baggrund.
+    const mc = document.getElementById('mapctl'); document.querySelector('.stage').insertBefore(mc, document.getElementById('scrim')); }
   const hd = document.querySelector('header'); document.documentElement.style.setProperty('--hdr', hd.offsetHeight + 'px');
   resize();
 }
