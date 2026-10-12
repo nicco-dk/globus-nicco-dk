@@ -1,0 +1,28 @@
+name: Udrul beskeder
+
+# Udruller Cloudflare Workeren i worker-besked/, som sender push-beskeder om de lande, man følger.
+# Startes manuelt under Actions, når worker-besked/ er ændret. Workeren skal findes, før siden kan udrulles
+# med service bindingen BESKED i wrangler.toml. Den har ingen hemmeligheder: VAPID-nøglerne laves af
+# Workeren selv første gang og gemmes i dens Durable Object.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  udrul:
+    name: Udrul Workeren
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent repoet
+        uses: actions/checkout@v6
+
+      - name: Udrul Workeren
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: b8e531774d257d9555c444b444dd71b5
+          workingDirectory: worker-besked
+          command: deploy

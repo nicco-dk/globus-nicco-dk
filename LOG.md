@@ -2,6 +2,19 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 12. oktober 2026, eftermiddag
+
+**Side ændret.** Ingen ændringer i data.
+
+- Velkomst ved første besøg: det vigtigste lige nu i tre linjer og en vej ind i Udforsk.
+- Tilbage på telefonen (og swipe tilbage på iPhone) lukker søgningen og Lag i stedet for at forlade siden.
+- Hvornår hver retning sidst blev opdateret, står under Lag, i Data og kilder og i forklaringen på hver retning.
+- Delte links (/h/<id>) viser titel, tekst og billede for netop den hændelse, det sted eller det land. Sidens beskrivelse nævner nu alle retninger.
+- Push-beskeder om de lande, man følger (klokken i landets kort og i listen over fulgte lande). Workeren `globus-besked` sender én besked pr. time højst, når noget er ændret.
+- Engelsk: knappen EN oversætter brugerfladen. Datatekster i kortene maskinoversættes med Cloudflare Workers AI og er mærket som maskinoversat.
+- Tilgængelighed: gennemgået med axe-core på computer og mobil, lys og mørk. Rettet: kontrast på tal og i søljen, navne på knapper, overskrifternes rækkefølge, sidens hovedområder, og forløbets rækker, der var knapper med links indeni (nu er datoen knappen).
+- OPDATERING.md: flere faste kilder (WHO AFRO, PAHO, WHO SEARO og WPRO, Africa CDC, SSI og DK-VET), en rundtur på levende udbrud uden nyt i 10 dage, reglen om at alder ikke er en afvisningsgrund, og nye veje til kilderne.
+
 ## 12. oktober 2026, mobilen
 
 **Side ændret.** Ingen ændringer i data.

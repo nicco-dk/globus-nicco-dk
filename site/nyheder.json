@@ -2,6 +2,43 @@
  "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
  "n": [
   {
+   "id": "besked",
+   "dato": "2026-10-12",
+   "titel": "Få besked om de lande, du følger",
+   "tekst": "Følg et land med stjernen, og tryk på klokken i landets kort. Så får du en besked, når rejsevejledningen ændres, eller der kommer et nyt smitteudbrud, et varsel fra alvor 3 eller en bekræftet konflikt. På iPhone og iPad virker det, når siden ligger på hjemmeskærmen som app.",
+   "ikon": "nyt",
+   "proev": "land"
+  },
+  {
+   "id": "engelsk",
+   "dato": "2026-10-12",
+   "titel": "Siden på engelsk",
+   "tekst": "Knappen EN øverst (på mobilen under Lag) viser siden på engelsk. Fortællingen og forløbet i kortene maskinoversættes og er mærket som maskinoversat. Sproget vælges efter din browser første gang.",
+   "ikon": "land"
+  },
+  {
+   "id": "velkomst",
+   "dato": "2026-10-12",
+   "titel": "Verden lige nu, når du kommer ind",
+   "tekst": "Første gang du åbner siden, står det vigtigste lige nu i tre linjer med en vej ind i Udforsk.",
+   "ikon": "udforsk",
+   "proev": "udforsk"
+  },
+  {
+   "id": "deling",
+   "dato": "2026-10-12",
+   "titel": "Links med titel og billede",
+   "tekst": "Deler du en hændelse, et sted eller et land med del-knappen, viser linket nu sin egen titel, tekst og billede, fx på Facebook og i Messenger.",
+   "ikon": "land"
+  },
+  {
+   "id": "tilbage",
+   "dato": "2026-10-12",
+   "titel": "Tilbage lukker søgning og lag",
+   "tekst": "På telefonen lukker Tilbage (og swipe tilbage på iPhone) nu søgningen og Lag i stedet for at forlade siden. Under Lag og i Data og kilder står det også, hvornår hver retning sidst blev opdateret.",
+   "ikon": "app"
+  },
+  {
    "id": "zoomtil",
    "dato": "2026-10-12",
    "titel": "Kloden zoomer ind på det, du vælger",

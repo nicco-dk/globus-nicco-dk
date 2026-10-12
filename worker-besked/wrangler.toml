@@ -1,0 +1,18 @@
+# Cloudflare Worker, der sender push-beskeder om de lande, man følger. Se besked.js.
+name = "globus-besked"
+main = "besked.js"
+compatibility_date = "2026-09-01"
+account_id = "b8e531774d257d9555c444b444dd71b5"
+# Ingen offentlig adresse. Siden når Workeren gennem en service binding fra Pages Functionen /besked.
+workers_dev = false
+
+[triggers]
+crons = ["47 * * * *"]
+
+[[durable_objects.bindings]]
+name = "ABONNENTER"
+class_name = "Abonnenter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Abonnenter"]

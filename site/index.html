@@ -17,11 +17,11 @@
 <meta name="apple-mobile-web-app-title" content="Globus">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>globus.nicco.dk</title>
-<meta name="description" content="Aktuelle udbrud af smitsom sygdom vist på en klode, med tal, dateret forløb og kilde for hver hændelse. Gennemgås dagligt ud fra WHO, ECDC og nationale myndigheder.">
+<meta name="description" content="Verden lige nu på en klode: krig og konflikt, smitteudbrud, hede, jordskælv, oversvømmelser, storme, naturbrande, vulkaner og rejsevejledninger. Hver oplysning med sin navngivne kilde.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="globus.nicco.dk">
 <meta property="og:title" content="globus.nicco.dk">
-<meta property="og:description" content="Aktuelle udbrud af smitsom sygdom vist på en klode, med tal, dateret forløb og kilde for hver hændelse.">
+<meta property="og:description" content="Verden lige nu på en klode: krig og konflikt, smitteudbrud, naturkatastrofer og rejsevejledninger. Hver oplysning med sin navngivne kilde.">
 <meta property="og:url" content="https://globus.nicco.dk/">
 <meta property="og:image" content="https://globus.nicco.dk/og.png">
 <meta property="og:image:width" content="1200">
@@ -91,7 +91,7 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .rchip{flex:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);border-radius:999px;padding:4px 9px 4px 4px;font:500 12px/1 var(--mono);cursor:pointer;min-height:36px}
 .rchip .d{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--fg-faint);border:1.5px solid currentColor}
 .rchip .d svg{width:16px;height:16px}
-.rchip .n{color:var(--fg-faint);font-variant-numeric:tabular-nums}
+.rchip .n{color:var(--fg-dim);font-variant-numeric:tabular-nums}
 .hentapp{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 11px 5px 8px;font:500 12px/1 var(--mono);cursor:pointer;min-height:32px}
 .hentapp svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hentapp:hover{border-color:var(--accent)}
@@ -104,6 +104,9 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .rchip[aria-disabled="true"] .d{color:var(--c)}
 .hacts{display:flex;align-items:center;justify-content:flex-end;gap:8px;align-self:stretch;padding-left:16px;border-left:1px solid var(--rule);min-width:0}
 .guidebtn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 14px 5px 5px;font:600 13px/1 var(--display);cursor:pointer;min-height:36px;white-space:nowrap}
+.sprogbtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);display:grid;place-items:center;cursor:pointer;padding:0;flex:none;font:700 11.5px/1 var(--mono);letter-spacing:.04em}
+.sprogbtn:hover{border-color:var(--accent)}
+.mt-mrk{margin:0;font-size:11.5px;line-height:1.4;color:var(--fg-faint);font-style:italic}
 .temabtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);display:grid;place-items:center;cursor:pointer;padding:0;flex:none}
 .temabtn:hover{border-color:var(--accent);color:var(--accent)}
 .temabtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;grid-area:1/1}
@@ -264,7 +267,7 @@ canvas.drag{cursor:grabbing}
 .tk-p:hover .t{text-decoration:underline;text-decoration-color:var(--c);text-underline-offset:3px}
 .tk-p .d{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
 .tk-p .d svg{width:16px;height:16px}
-.tk-p .m{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--c)}
+.tk-p .m{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--c) 82%,var(--fg))}
 @media (prefers-reduced-motion:reduce){.tk-vindue{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 /* Detaljekortet: samme rækkefølge for alle typer. */
 .detail{gap:10px}
@@ -369,7 +372,7 @@ canvas.drag{cursor:grabbing}
 .nytbtn{position:relative;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 14px 5px 8px;font:600 13px/1 var(--display);cursor:pointer;min-height:36px;white-space:nowrap}
 .nytbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;color:var(--accent)}
 .nytbtn:hover{border-color:var(--accent)}
-.nytbtn .tal{position:absolute;top:-5px;left:20px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--s4);color:#fff;font:700 10.5px/18px var(--mono);text-align:center;box-shadow:0 0 0 2px var(--bg)}
+.nytbtn .tal{position:absolute;top:-5px;left:20px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#c23b3b;color:#fff;font:700 10.5px/18px var(--mono);text-align:center;box-shadow:0 0 0 2px var(--bg)}
 @media (max-width:900px){.nytbtn .t{display:none}.nytbtn{padding:5px;width:36px;justify-content:center}.nytbtn .tal{left:22px}}
 .nytliste{display:grid;gap:10px;margin:14px 0 16px}
 .nyt-p{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;background:var(--panel-2);border:1px solid var(--rule);border-radius:9px;padding:13px}
@@ -465,6 +468,8 @@ dialog.appvejl{width:min(440px,calc(100% - 24px))}
 .tlrow::before{content:"";position:absolute;left:-3.5px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--d, var(--fg-faint))}
 .tlrow.past::before{background:var(--d, var(--accent))}
 .tlrow .dt{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);padding-top:1px;font-variant-numeric:tabular-nums}
+button.dt{background:none;border:0;padding:1px 0 0;text-align:left;cursor:pointer;align-self:start;color:var(--fg-dim)}
+button.dt:hover{color:var(--accent)}
 .tlrow .tx{font-size:12px;line-height:1.45;color:var(--fg-dim)}
 .tlrow.future{opacity:.38}
 .srcs{display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--rule);padding-top:9px}
@@ -606,7 +611,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   header{position:fixed;top:0;left:0;right:0;z-index:6;display:flex;flex-wrap:wrap;align-items:center;gap:8px;
     padding:calc(env(safe-area-inset-top) + 8px) 12px 6px;border:0;background:linear-gradient(var(--bg) 70%,color-mix(in srgb,var(--bg) 0%,transparent))}
   h1.logo{border-right:0;padding-right:0;margin-right:auto;--ch:12px}
-  h1.logo .dom{display:none}
+  h1.logo .dom{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .hacts{display:flex;gap:6px}
   .guidebtn .t{display:none}
   .guidebtn{padding:5px}
@@ -653,6 +658,34 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .k-fortalt{font-size:15px}
   .scrim{display:none!important}
 }
+.toast{position:fixed;left:50%;bottom:calc(var(--bar,0px) + 20px);transform:translate(-50%,20px);z-index:80;max-width:min(420px,calc(100vw - 32px));padding:11px 16px;border-radius:12px;background:var(--fg);color:var(--bg);font:500 13.5px/1.4 var(--display);box-shadow:0 10px 30px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.vis{opacity:1;transform:translate(-50%,0)}
+.foelghd{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.foelghd .lbl{margin:0}
+/* Velkomst ved første besøg. */
+.velkommen{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:16px;background:rgba(3,8,14,.62);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.velkommen[hidden]{display:none}
+.vk-kort{width:min(460px,100%);max-height:calc(100vh - 32px);overflow-y:auto;background:var(--panel);border:1px solid var(--rule);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.5);padding:22px 20px 18px;display:flex;flex-direction:column;gap:12px}
+.vk-kort h2{margin:0;font:700 21px/1.2 var(--display);color:var(--fg)}
+.vk-led{margin:0;font-size:14.5px;line-height:1.5;color:var(--fg-dim)}
+.vk-liste{display:flex;flex-direction:column;gap:6px}
+.vk-r{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:10px;width:100%;text-align:left;padding:9px 10px;border:1px solid var(--rule);border-radius:10px;background:var(--panel-2);color:var(--fg);cursor:pointer;font:inherit}
+.vk-r:hover{border-color:var(--c,var(--accent))}
+.vk-r .ri{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,var(--panel));color:var(--c)}
+.vk-r .rt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.vk-r .rt b{font:600 14px var(--display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vk-r .rt span{font-size:12px;color:var(--fg-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vk-r .ra{font:11px var(--mono);color:var(--fg-faint)}
+.vk-knap{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.vk-knap button{flex:1 1 160px;min-height:44px;border-radius:999px;font:600 14px var(--display);cursor:pointer}
+.vk-prim{background:var(--accent);color:var(--bg);border:1px solid var(--accent)}
+.vk-sek{background:none;color:var(--fg);border:1px solid var(--rule)}
+.vk-fod{margin:0;font-size:12px;line-height:1.45;color:var(--fg-faint)}
+/* Hvornår hver retning sidst blev hentet. */
+.rettider{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:12.5px;color:var(--fg-dim);margin:0}
+.rettider dt{display:flex;align-items:center;gap:6px;color:var(--fg)}
+.rettider dt svg{width:14px;height:14px;color:var(--c)}
+.rettider dd{margin:0;font-family:var(--mono);font-size:11.5px;align-self:center}
 /* Bundbjælke, søgning, lag og trin. Kun på mobilen. */
 .bundbar,.lagark,.soegark,.broed,.niv,.k-sti{display:none}
 @media (max-width:900px){
@@ -666,8 +699,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   #rotpause{right:12px;top:calc(var(--top-fri,0px) + 12px);width:42px;height:42px}
   #rotpause svg{width:18px;height:18px}
   .rchip .d{--s:clamp(26px,calc((100vw - 100px) / 8),38px)}
-  #protobtn,#temabtn,#hentapp{display:none}
-  .lagmere #protobtn,.lagmere #temabtn{display:inline-flex}
+  #protobtn,#temabtn,#hentapp,#sprogbtn{display:none}
+  .lagmere #protobtn,.lagmere #temabtn,.lagmere #sprogbtn{display:inline-flex}
+  .lagmere #sprogbtn{width:auto}
+  .lagmere #sprogbtn::after{content:" · sprog / language";font-weight:500;letter-spacing:0}
   .lagmere #hentapp:not([hidden]){display:inline-flex}
   .bundbar{display:grid;grid-template-columns:repeat(5,1fr);align-items:end;position:fixed;left:0;right:0;bottom:0;z-index:35;
     height:var(--bar);padding:0 6px var(--bar-luft);background:var(--panel);border-top:1px solid var(--rule)}
@@ -710,7 +745,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   #q2{flex:1;min-width:0;height:44px;border-radius:22px;border:1px solid var(--rule);background:var(--panel);color:var(--fg);padding:0 16px;font:16px var(--display)}
   #q2:focus{outline:none;border-color:var(--accent)}
   .sa-ind{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:6px 12px calc(env(safe-area-inset-bottom) + 24px)}
-  .sa-ind h3{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:16px 4px 8px}
+  .sa-ind .sa-h{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:16px 4px 8px}
   .sa-chips{display:flex;flex-wrap:wrap;gap:7px}
   .sa-chips button{min-height:36px;padding:0 13px;border-radius:999px;border:1px solid var(--rule);background:var(--panel);color:var(--fg);font:13px var(--display);cursor:pointer}
   .sa-chips button.nyt{border-color:var(--warn)}
@@ -783,14 +818,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="hacts">
       <button class="hentapp" id="hentapp" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg><span>Hent app</span></button>
       <button class="proto" id="protobtn" type="button" title="Se hvilke data vi henter, hvorfra og hvornår">Prototypedata</button>
+      <button class="sprogbtn" id="sprogbtn" type="button">EN</button>
       <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
       <button class="nytbtn" id="nytbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="t">Nyt på siden</span><span class="tal" id="nyttal" hidden></span></button>
-      <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
+      <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog" aria-label="Sådan virker siden"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
     </div>
     <span class="sub"><span id="protoplads"></span><span id="sub"></span></span>
   </header>
 
-  <div class="stage">
+  <div class="stage" role="main" aria-label="Kloden">
     <canvas id="c"></canvas>
     <div class="hud" id="hud"></div>
     <button id="rotpause" type="button" aria-pressed="false" aria-label="Sæt rotationen på pause"><svg class="ip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="ia" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l9 6-9 6z"/></svg></button>
@@ -853,12 +889,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     </div>
   </aside>
 
-  <div class="ticker" id="ticker" hidden>
+  <div class="ticker" id="ticker" role="region" aria-label="Lige nu" hidden>
     <span class="tk-lbl">Lige nu</span>
     <div class="tk-vindue" role="region" aria-label="Alvor 4 og 5 lige nu"><div class="tk-baand" id="tkbaand"></div></div>
   </div>
 
-  <div class="timebar">
+  <div class="timebar" role="region" aria-label="Tidspunkt">
     <span class="cap">Tidspunkt</span>
     <input id="time" type="range" min="0" max="280" value="280" step="1" aria-label="Vælg dato">
     <span class="now" id="nowlbl"></span>
@@ -873,6 +909,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="lag-ind" id="lagind">
       <label class="lag-sw"><input type="checkbox" id="lagrejse"><span class="sw-t"><b>Rejsevejledninger</b><span>Udenrigsministeriets og det britiske udenrigsministeriums råd for hvert land</span></span><span class="sw" aria-hidden="true"></span></label>
       <div id="lagfiltre"></div>
+      <div><p class="lbl">Senest opdateret</p><dl class="rettider" id="lagtider"></dl></div>
       <div><p class="lbl">Visning og data</p><div class="lagmere" id="lagmere"></div></div>
     </div>
   </div>
@@ -880,6 +917,16 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   <div class="soegark" id="soegark" role="dialog" aria-label="Søg" hidden>
     <div class="sa-top"><button class="sa-tilbage" id="satilbage" type="button" aria-label="Luk søgning">‹</button><input id="q2" type="search" placeholder="Land, sted, sygdom eller hændelse" autocomplete="off" enterkeyhint="search" aria-label="Søg"></div>
     <div class="sa-ind" id="saind"></div>
+  </div>
+
+  <div class="velkommen" id="velkommen" role="dialog" aria-modal="true" aria-labelledby="vktitel" hidden>
+    <div class="vk-kort">
+      <h2 id="vktitel">Verden lige nu</h2>
+      <p class="vk-led" id="vkled"></p>
+      <div class="vk-liste" id="vkliste"></div>
+      <div class="vk-knap"><button class="vk-prim" id="vktur" type="button">Tag turen gennem det vigtigste</button><button class="vk-sek" id="vkselv" type="button">Se selv</button></div>
+      <p class="vk-fod">Alt på siden kommer fra navngivne kilder, og kilden står ved hver oplysning. Tryk på en prik, et land eller en linje i overblikket for at se mere.</p>
+    </div>
   </div>
 
   <nav class="bundbar" id="bundbar" aria-label="Hovedmenu">
@@ -2787,8 +2834,11 @@ function visFoelg(){
   box.hidden = !lande.length; box.innerHTML = '';
   const tal = document.getElementById('foelgtal');
   if(tal){ const n = lande.filter(a2 => o[a2] !== landSignatur(landData(a2))).length; tal.hidden = !n; tal.textContent = n; }
+  beskedSync();
   if(!lande.length) return;
-  box.appendChild(el('p','lbl','Lande du følger'));
+  const hd = el('div','foelghd'); hd.appendChild(el('p','lbl','Lande du følger'));
+  if(typeof beskedKnap === 'function') hd.appendChild(beskedKnap(null, visFoelg));
+  box.appendChild(hd);
   for(const a2 of lande){
     const dd = landData(a2), nyt = o[a2] !== landSignatur(dd);
     const e = dd.rejse[0] || dd.krig; 
@@ -2934,7 +2984,7 @@ function a2Af(e){
 const IKN = {
   foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z',
   del:'M8.6 13.5l6.8 4M15.4 6.5l-6.8 4M18 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM18 19a2 2 0 1 1-4 0 2 2 0 0 1 4 0z',
-  cmp:'M4 5h6v14H4zM14 9h6v10h-6z', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16'
+  cmp:'M4 5h6v14H4zM14 9h6v10h-6z', klokke:'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16'
 };
 const ikon = (k, s=16) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IKN[k]}"/></svg>`;
 function ikonKnap(k, navn, tip, fn, presset){
@@ -2991,10 +3041,12 @@ function kortTop(e, o){
     ik.appendChild(ikonKnap('foelg', f ? `Følger ${landNavnAf(a2)}` : `Følg ${landNavnAf(a2)}`, 'Landet står øverst i overblikket og markeres, når noget er ændret siden sidst. Gemmes kun i denne browser.', () => {
       const o2 = foelgLaes(); if(o2[a2]) delete o2[a2]; else o2[a2] = landSignatur(landData(a2)); foelgGem(o2); visFoelg(); showDetail(e);
     }, f));
+    if(erLand(e)) ik.appendChild(beskedKnap(a2, () => showDetail(e)));
   }
   const kanDele = typeof navigator.share === 'function' && matchMedia('(pointer:coarse)').matches;
   const dk = ikonKnap('del', kanDele ? 'Del' : 'Kopiér link', 'Et link direkte til det her.', async () => {
-    const url = location.origin + location.pathname + '#' + e.id;
+    // Delte links går over /h/<id>, så et delt link får sin egen titel, tekst og billede (functions/h/[id].js).
+    const url = location.origin + '/h/' + encodeURIComponent(e.id);
     if(kanDele){ try{ await navigator.share({title: `${o.titel} · globus.nicco.dk`, url}); }catch(err){} return; }
     let ok = false; try{ await navigator.clipboard.writeText(url); ok = true; }catch(err){}
     dk.dataset.tip = TT(ok ? 'Link kopieret' : 'Kunne ikke kopiere', url); dk.classList.toggle('ok', ok); setTimeout(() => dk.classList.remove('ok'), 1600);
@@ -3106,11 +3158,13 @@ function forloebRaekke(r, e){
   const nu = FL_NU && FL_NU.id === (e && e.id) && FL_NU.ms === r.ms;
   const row = el('div','tlrow ' + (r.ms <= cutoff ? 'past' : 'future') + (nu ? ' nu' : ''));
   if(r[2]) row.style.setProperty('--d', `var(${SK[r[2]].v})`);
-  row.appendChild(el('span','dt', shortDate(r[0])));
+  // Datoen er knappen, der viser kloden på datoen. Hele rækken kan også trykkes på, men kun datoen kan nås med tastaturet,
+  // så rækken ikke er en knap med et link indeni.
+  const dt = el(e ? 'button' : 'span', 'dt', shortDate(r[0])); row.appendChild(dt);
   const tx = el('span','tx', r[1]); if(r[3]) tx.append(' ', kildeLink(r[3][0], r[3][1])); row.appendChild(tx);
-  if(e){ row.classList.add('vaelg'); row.tabIndex = 0; row.setAttribute('role', 'button'); row.title = 'Vis kloden på denne dato';
+  if(e){ row.classList.add('vaelg'); dt.type = 'button'; dt.title = 'Vis kloden på denne dato'; dt.setAttribute('aria-label', `${shortDate(r[0])}: vis kloden på denne dato`);
     const gaa = ev => { if(ev.target.closest('a')) return; stopForloeb(); hopTil(e, r); };
-    row.addEventListener('click', gaa); row.addEventListener('keydown', ev => { if(ev.key === 'Enter' || ev.key === ' '){ ev.preventDefault(); gaa(ev); } }); }
+    row.addEventListener('click', gaa); }
   return row;
 }
 // Afspil udbruddet: tidsskyderen går punkt for punkt gennem forløbet, og kloden følger med til stederne.
@@ -3474,7 +3528,7 @@ function renderRet(){
     b.setAttribute('aria-pressed', String(retOn.has(r.k)));
     b.dataset.fokus = iFokus(r.k) ? '1' : '';
     b.querySelector('.n').textContent = n;
-    b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">${n} ${minAlvor > 1 ? 'fra alvor ' + minAlvor : 'i alt'}</div><div class="ts">${r.hvad}</div><div class="th">Klik: til eller fra · Dobbeltklik: ${iFokus(r.k) ? 'tilbage til før' : 'vis kun denne'}</div>`;
+    b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">${n} ${minAlvor > 1 ? 'fra alvor ' + minAlvor : 'i alt'}</div><div class="ts">${r.hvad}</div><div class="ts">${(t => t ? t.hvad + ' ' + sidenTekst(t) : '')(retTid(r.k))}</div><div class="th">Klik: til eller fra · Dobbeltklik: ${iFokus(r.k) ? 'tilbage til før' : 'vis kun denne'}</div>`;
   }
 }
 const TT = (h, m) => `<div class="tt">${h}</div><div class="ts">${m}</div>`;
@@ -3595,7 +3649,9 @@ function bygGuide(){
     gs('zoom','Trin for trin på mobilen','Overblikket starter i hele verden. Vælg et område, så zoomer kloden derhen og viser det vigtigste, retningerne og landene i området. Linjen øverst i kortet viser vejen, fx Verden › Afrika › DR Congo › Ebola, og hvert led kan trykkes på. Træk kortet nedad for at gå et trin op, og swipe til siden for det næste på samme trin.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
     gs('cmp','Sammenlign','Læg op til tre hændelser ved siden af hinanden med deres kurver.'),
-    gs('del','Del et link','Adressen følger den valgte hændelse, så et link fører direkte til den.')
+    gs('del','Del et link','Adressen følger den valgte hændelse, så et link fører direkte til den. Del-knappen i kortet giver et link, der viser titel, tekst og billede, når det deles på fx Facebook eller Messenger.'),
+    gs('klik','Få besked','Følg et land med stjernen, og tryk på klokken. Så får du en besked på telefonen eller computeren, når rejsevejledningen ændres, eller der kommer et nyt smitteudbrud, et varsel fra alvor 3 eller en bekræftet konflikt i landet. På iPhone og iPad skal siden først lægges på hjemmeskærmen. Der gemmes kun browserens adresse til beskeder og landene.'),
+    gs('mus','English','Knappen EN øverst (på mobilen under Lag) viser siden på engelsk. Knapper og overskrifter er oversat på forhånd. Fortællingen og forløbet i kortene maskinoversættes og er mærket sådan.')
   ].join('');
 }
 
@@ -3872,12 +3928,12 @@ function placer(){
   if(MOBIL.matches){ for(const f of FLYT) af.appendChild(f.n); document.querySelector('.app').appendChild(detail);
     // Filtrene ligger i Lag, og knapperne for tema, data og app ligger nederst i Lag.
     const ff = document.getElementById('filtre'); document.getElementById('lagfiltre').appendChild(ff); ff.hidden = false;
-    const lm = document.getElementById('lagmere'); for(const id of ['protobtn', 'temabtn', 'hentapp']) lm.appendChild(document.getElementById(id));
+    const lm = document.getElementById('lagmere'); for(const id of ['sprogbtn', 'protobtn', 'temabtn', 'hentapp']) lm.appendChild(document.getElementById(id));
     arkHoejde(arkTilstand); detHoejde(detTilstand); }
   else { for(const f of FLYT.slice().reverse()) f.far.insertBefore(f.n, f.efter && f.efter.parentNode === f.far ? f.efter : null); document.querySelector('.stage').appendChild(detail);
     const ff = document.getElementById('filtre');
     if(ff.parentNode.id === 'lagfiltre'){ document.getElementById('side').insertBefore(ff, document.querySelector('.side .listwrap')); ff.hidden = true; document.getElementById('filterknap').setAttribute('aria-expanded', 'false'); }
-    const ha = document.querySelector('.hacts'); ha.insertBefore(document.getElementById('hentapp'), ha.firstChild); ha.insertBefore(document.getElementById('temabtn'), document.getElementById('nytbtn'));
+    const ha = document.querySelector('.hacts'); ha.insertBefore(document.getElementById('hentapp'), ha.firstChild); ha.insertBefore(document.getElementById('temabtn'), document.getElementById('nytbtn')); ha.insertBefore(document.getElementById('sprogbtn'), document.getElementById('temabtn'));
     // Prototypedata står forrest i undertitlen, så højre side af toppen kun har knapperne.
     document.getElementById('protoplads').appendChild(document.getElementById('protobtn'));
     // Alvor og mistanker ligger i bunden af klodens felt, centreret og uden baggrund.
@@ -3947,6 +4003,271 @@ function flyvTil(e){
   const f = passer(pkt);
   if(!f){ target = {lam:-e.lon, phi:Math.max(-80, Math.min(80, e.lat))}; zoomMaal = Math.max(zoom, 4); return; }
   target = {lam:f.lam, phi:f.phi}; zoomMaal = f.zoom;
+}
+// ---------- hvornår hver retning sidst blev opdateret ----------
+// Smitteudbrud gennemgås hver dag efter OPDATERING.md. Krig og konflikt tælles op hver time. De andre hentes hver time fra deres kilder.
+function retTid(k){
+  const RET_KILDER = {rejse:['um', 'fcdo'], jord:['usgs'], storm:['gdacs'], flod:['gdacs'], brand:['gdacs'], vulkan:['gdacs', 'gvp'], hede:['meteoalarm', 'gdacs']};
+  if(k === 'smitte') return DATA_DATO ? {ms: Date.parse(DATA_DATO), dag: true, hvad: 'Gennemgået'} : null;
+  if(k === 'krig') return KONFINFO && KONFINFO.genereret ? {ms: Date.parse(KONFINFO.genereret), hvad: 'Talt op'} : null;
+  const ki = (FEEDINFO && FEEDINFO.kilder) || {};
+  const ms = Math.max(0, ...(RET_KILDER[k] || []).map(n => ki[n] && ki[n].ok && ki[n].hentet ? Date.parse(ki[n].hentet) : 0));
+  return ms ? {ms, hvad: 'Hentet'} : null;
+}
+function sidenTekst(t){
+  if(!t) return 'ukendt';
+  if(t.dag) return fmtDate(new Date(t.ms).toISOString().slice(0, 10));
+  const m = Math.round((Date.now() - t.ms) / 60000);
+  if(m < 2) return 'lige nu';
+  if(m < 60) return `for ${m} min. siden`;
+  const h = Math.round(m / 60); if(h < 24) return `for ${h} ${h === 1 ? 'time' : 'timer'} siden`;
+  const d = Math.round(h / 24); return `for ${d} ${d === 1 ? 'dag' : 'dage'} siden`;
+}
+function bygRetTider(box){
+  if(!box) return; box.innerHTML = '';
+  for(const r of RETNINGER.filter(x => x.aktiv)){
+    const t = retTid(r.k); const dt = document.createElement('dt'); dt.style.setProperty('--c', `var(--c-${r.k})`);
+    dt.innerHTML = svgIc(r.k, 14); dt.appendChild(document.createTextNode(r.n));
+    box.append(dt, el('dd','', t ? `${t.hvad} ${sidenTekst(t)}` : 'ukendt'));
+  }
+}
+// ---------- velkomst ----------
+// Første besøg: det vigtigste lige nu i tre linjer, og en vej ind i Udforsk. Vises ikke, når et link peger på noget bestemt.
+{
+  const VK = 'globus-velkommen', boks = document.getElementById('velkommen');
+  let set = false; try{ set = !!localStorage.getItem(VK); }catch(err){ set = true; }
+  const luk = () => { boks.hidden = true; try{ localStorage.setItem(VK, String(Date.now())); }catch(err){} };
+  const vis = () => {
+    if(set || location.hash || location.search.includes('ingenvelkomst')) return;
+    const levende = ALLE().filter(e => liveAt(e, T1) && retAf(e) !== 'rejse' && !e._sted);
+    const a = e => alvorAt(e, stageAt(e, T1));
+    const akut = levende.filter(e => a(e) >= 5).length, krit = levende.filter(e => a(e) === 4).length;
+    const lande = new Set(levende.map(a2Af).filter(Boolean)).size;
+    document.getElementById('vkled').textContent = `${akut} ${akut === 1 ? 'hændelse er' : 'hændelser er'} akut, og ${krit} kritisk, fordelt på ${lande} lande. Her er de tre alvorligste:`;
+    const liste = document.getElementById('vkliste'); liste.innerHTML = '';
+    for(const e of levende.sort((p, q) => a(q) - a(p) || senestMs(q) - senestMs(p)).slice(0, 3)){
+      const r = el('button','vk-r'); r.type = 'button'; r.style.setProperty('--c', `var(--c-${retAf(e)})`);
+      const ri = el('span','ri'); ri.innerHTML = svgIc(retAf(e), 17);
+      const rt = el('span','rt'); rt.append(el('b','', e._feed ? e.titel : e.disease), el('span','', e._feed ? (e.sted || '') : `${e.country} · ${e.place}`));
+      r.append(ri, rt, el('span','ra', `Alvor ${a(e)}`));
+      r.addEventListener('click', () => { luk(); select(e.id, true); });
+      liste.appendChild(r);
+    }
+    boks.hidden = false; document.getElementById('vktur').focus();
+  };
+  document.getElementById('vktur').addEventListener('click', () => { luk(); startTur(); });
+  document.getElementById('vkselv').addEventListener('click', luk);
+  boks.addEventListener('click', ev => { if(ev.target === boks) luk(); });
+  boks.addEventListener('keydown', ev => { if(ev.key === 'Escape') luk(); });
+  // Venter på maskinmeldingerne, så det vigtigste også tæller jordskælv, storme og konflikter.
+  let forsoeg = 0; const vent = () => { if(FEEDINFO || ++forsoeg > 20) vis(); else setTimeout(vent, 300); }; setTimeout(vent, 900);
+}
+// ---------- sprog ----------
+// Siden er skrevet på dansk. Med engelsk valgt oversættes brugerfladen efter ordbogen herunder, og datateksterne i
+// detaljekortet (fortællingen, forløbet, nøgletallene) maskinoversættes af Cloudflare Workers AI gennem /oversaet og
+// mærkes som maskinoversat. Tal, navne på kilder og links står som i originalen. Sproget vælges efter browseren,
+// og knappen DA/EN skifter. Valget huskes i browseren.
+const SPROG_NOEGLE = 'globus-sprog';
+const SPROG = (() => { let v = null; try{ v = localStorage.getItem(SPROG_NOEGLE); }catch(err){} if(v === 'da' || v === 'en') return v;
+  return /^da|^nb|^no|^sv/i.test(navigator.language || 'da') ? 'da' : 'en'; })();
+{
+  const knap = document.getElementById('sprogbtn');
+  knap.textContent = SPROG === 'da' ? 'EN' : 'DA';
+  knap.setAttribute('aria-label', SPROG === 'da' ? 'Switch to English' : 'Skift til dansk');
+  knap.setAttribute('lang', SPROG === 'da' ? 'en' : 'da');
+  knap.dataset.tip = SPROG === 'da' ? TT('English', 'Show the page in English. Data texts are machine translated.') : TT('Dansk', 'Vis siden på dansk.');
+  knap.addEventListener('click', () => { try{ localStorage.setItem(SPROG_NOEGLE, SPROG === 'da' ? 'en' : 'da'); }catch(err){} location.reload(); });
+}
+if(SPROG === 'en'){
+  document.documentElement.lang = 'en';
+  const OVS = {
+    'Overblik':'Overview','Udforsk':'Explore','Søg':'Search','Følger':'Following','Lag':'Layers','Verden':'World','Hovedmenu':'Main menu',
+    'Sådan virker siden':'How the page works','Nyt på siden':"What's new",'Prototypedata':'Prototype data','Hent app':'Get the app','Hent som app':'Get as app',
+    'Lige nu':'Right now','Alvor 4 og 5 lige nu':'Severity 4 and 5 right now','Alvorligste først':'Most severe first','Nyeste først':'Newest first',
+    'Akut lige nu':'Acute right now','Nyt siden sidst':'New since last visit','Lande du følger':'Countries you follow','Uændret':'Unchanged',
+    'Vis alle':'Show all','Skjul alle':'Hide all','Alvor':'Severity','Mistanker':'Suspicions','Alle':'All','Fra 2':'From 2','Fra 3':'From 3','Fra 4':'From 4','Kun 5':'Only 5',
+    'Ved zoom':'On zoom','Altid':'Always','Aldrig':'Never','Tidspunkt':'Date','Afspil året':'Play the year','I dag':'Today','Stop':'Stop','Vælg dato':'Choose date',
+    'Område og trin':'Area and stage','Område':'Area','Eskaleringstrin':'Escalation stage','Hvad betyder trinnene?':'What do the stages mean?',
+    'Rejsevejledninger':'Travel advice','Rejsevejledning':'Travel advice','Krig og konflikt':'War and conflict','Smitteudbrud og pandemier':'Outbreaks and pandemics',
+    'Smitteudbrud':'Outbreaks','Hedebølger og klimaekstremer':'Heatwaves and climate extremes','Hede og klima':'Heat and climate','Jordskælv':'Earthquakes',
+    'Oversvømmelser':'Floods','Oversvømmelse':'Flood','Orkaner, tyfoner og storme':'Hurricanes, typhoons and storms','Storm':'Storm','Naturbrande':'Wildfires','Naturbrand':'Wildfire',
+    'Vulkaner, aktive og i udbrud':'Volcanoes, active and erupting','Vulkan':'Volcano','Til orientering':'For information','Smitte':'Outbreaks',
+    'Under opsyn':'Under watch','Vær opmærksom':'Be aware','Alvorligt':'Serious','Kritisk':'Critical','Akut':'Acute',
+    'Mistanke':'Suspected','Bekræftet udbrud':'Confirmed outbreak','Smitte mellem mennesker':'Human-to-human spread','Geografisk spredning':'Geographic spread',
+    'Ny variant eller resistens':'New variant or resistance','Naturligt reservoir':'Natural reservoir','Bekræftet':'Confirmed',
+    'Afrika':'Africa','Europa':'Europe','Asien':'Asia','Amerika':'Americas','Mellemøsten':'Middle East','Danmark':'Denmark',
+    'Land':'Country','Kampe og angreb':'Fighting and attacks','Demonstrationer':'Protests',
+    'Kilder og vurdering':'Sources and assessment','Læs mere':'Read more','Udvikling':'Trend','Forløb':'Timeline','Detaljer':'Details',
+    'Hvad ville flytte trinnet':'What would move the stage','Hører sammen med':'Related','Berørte steder':'Affected places','Regioner nævnt ved navn':'Regions named',
+    'Militær støtte ifølge medierne':'Military support according to the media','Varsler i landet':'Warnings in the country',
+    'Omfang':'Scale','Startet':'Started','Smittestof':'Pathogen','Omtaler':'Mentions','Medier':'Media','Parter':'Parties','Andre lande nævnt':'Other countries named',
+    'Kilde':'Source','Sted':'Place','Alvor fra kilden':'Severity from the source','Usikkert':'Uncertain','Vurdering, ikke kildebelagt':'Assessment, not sourced',
+    'Fremhævet = myndighed · dæmpet = medie · stiplet = sekundær':'Highlighted = authority · dimmed = media · dashed = secondary',
+    'Bekræftet af medier':'Confirmed by media','Venter på tjek':'Awaiting check',
+    'Luk':'Close','Luk detaljer':'Close details','Luk lag':'Close layers','Luk søgning':'Close search','Forrige':'Previous','Næste':'Next',
+    'Følg':'Follow','Del':'Share','Kopiér link':'Copy link','Link kopieret':'Link copied','Sammenlign':'Compare','Fjern fra sammenligning':'Remove from comparison',
+    'Sammenligning':'Comparison','Ryd':'Clear','Bred visning':'Wide view','Smal visning':'Narrow view','Abonnér (RSS)':'Subscribe (RSS)',
+    'Zoom ind':'Zoom in','Zoom ud':'Zoom out','Nulstil visning':'Reset view','Sæt rotationen på pause':'Pause rotation','Start rotationen igen':'Resume rotation',
+    'Pause rotationen':'Pause rotation','Start rotationen':'Start rotation','Kloden drejer langsomt igen, når du ikke rører den.':'The globe slowly turns again when you leave it alone.',
+    'Kloden bliver stående, hvor du har sat den, til du trykker igen eller genindlæser siden.':'The globe stays where you left it until you tap again or reload the page.',
+    'Filtre':'Filters','Område og trin for smitteudbrud.':'Area and stage for outbreaks.','Sted, sygdom eller hændelse.':'Place, disease or event.',
+    'Søg sted, sygdom eller hændelse':'Search place, disease or event','fx Ukraine, ebola, jordskælv, Bangladesh':'e.g. Ukraine, ebola, earthquake, Bangladesh',
+    'Ryd søgning':'Clear search','Land, sted, sygdom eller hændelse':'Country, place, disease or event','Vis søgningen i overblikket':'Show the search in the overview',
+    'Nær mig':'Near me','Seneste søgninger':'Recent searches','Populære emner':'Popular topics','Mest alvorligt lige nu':'Most severe right now','Lande':'Countries',
+    'Dit land, ud fra din forbindelse':'Your country, based on your connection','Alt om landet samlet ét sted':'Everything about the country in one place',
+    'Visning og data':'Display and data','Senest opdateret':'Last updated','Lys eller mørk':'Light or dark',
+    'Udenrigsministeriets og det britiske udenrigsministeriums råd for hvert land':"The Danish and British foreign ministries' advice for each country",
+    'Tilbage til hele verden':'Back to the whole world','Hvor du er':'Where you are','Hvor i verden':'Where in the world',
+    'Du følger ingen lande endnu. Åbn et land, og tryk på stjernen. Så står det her og markeres, når der er nyt.':'You do not follow any countries yet. Open a country and tap the star. It will appear here and be marked when there is news.',
+    'En tur gennem det alvorligste lige nu, ét kort ad gangen. Bladr med pilene eller ved at swipe.':'A tour of the most severe right now, one card at a time. Browse with the arrows or by swiping.',
+    'Verden lige nu':'The world right now','Tag turen gennem det vigtigste':'Take the tour of what matters most','Se selv':'Explore on my own',
+    'Alt på siden kommer fra navngivne kilder, og kilden står ved hver oplysning. Tryk på en prik, et land eller en linje i overblikket for at se mere.':'Everything on the page comes from named sources, and the source is shown with each piece of information. Tap a dot, a country or a line in the overview to see more.',
+    'Data og kilder':'Data and sources','Kilderne':'Sources','Seneste opdateringer':'Latest updates','Vis mere':'Show more','Hentet':'Fetched','Svarer ikke':'Not responding',
+    'Nye funktioner, siden du sidst var inde.':'New features since your last visit.','Vis mig det':'Show me','Hent appen':'Get the app','Ny':'New',
+    'Se hvilke data vi henter, hvorfra og hvornår':'See what data we fetch, from where and when','Skift til lys tilstand':'Switch to light mode','Skift til mørk tilstand':'Switch to dark mode',
+    'Kortudsnit. Landegrænser: Natural Earth.':'Map excerpt. Borders: Natural Earth.','Ikke nu':'Not now','Hent':'Get',
+    '▶ Afspil udbruddet':'▶ Play the outbreak','■ Stop':'■ Stop','Linjer mellem steder tegnes kun, hvor en kilde dokumenterer retningen.':'Lines between places are only drawn where a source documents the direction.',
+    'Steder, medierne nævner. Tryk for at se, hvad der er skrevet om netop dét sted.':'Places the media mention. Tap to see what has been written about that place.',
+    'Artiklerne om stedet kommer med ved næste optælling.':'Articles about the place will be included in the next count.',
+    'Fundet automatisk i GDELT blandt nyere artikler. Til videre læsning. Siden bruger dem ikke som kilde til tal eller alvor.':'Found automatically in GDELT among recent articles. For further reading. The page does not use them as a source for figures or severity.',
+    'i dag':'today','Hent':'Get',
+    'Få besked':'Get notified','Beskeder er slået til':'Notifications are on','Beskeder er slået til. Du får besked, når der sker noget nyt i de lande, du følger.':'Notifications are on. You will be notified when something new happens in the countries you follow.','Beskeder er slået fra.':'Notifications are off.',
+    'Du får en besked, når der sker noget nyt i de lande, du følger. Tryk for at slå beskeder fra.':'You get a notification when something new happens in the countries you follow. Tap to turn notifications off.','Får besked':'Notifications on','Status':'Status','Retninger':'Directions','Markør':'Marker','Vigtigst':'Most important'
+  };
+  const MD = {januar:'January',februar:'February',marts:'March',april:'April',maj:'May',juni:'June',juli:'July',august:'August',september:'September',oktober:'October',november:'November',december:'December',
+    'jan.':'Jan.','feb.':'Feb.','mar.':'Mar.','apr.':'Apr.','aug.':'Aug.','sep.':'Sep.','okt.':'Oct.','nov.':'Nov.','dec.':'Dec.'};
+  const maaned = t => t.replace(/\b(\d{1,2})\. (januar|februar|marts|april|maj|juni|juli|august|september|oktober|november|december|jan\.|feb\.|mar\.|apr\.|aug\.|sep\.|okt\.|nov\.|dec\.)/g, (m, d, mm) => `${d} ${MD[mm]}`);
+  let LANDE_EN = {};
+  const navn = k => OVS[k] || LANDE_EN[k] || k;
+  const MOENSTRE = [
+    [/^Alvor (\d) · (.+)$/, m => `Severity ${m[1]} · ${navn(m[2])}`], [/^Alvor (\d)$/, m => `Severity ${m[1]}`], [/^alvor (\d)$/, m => `severity ${m[1]}`],
+    [/^Se alle (\d+)$/, m => `See all ${m[1]}`], [/^(\d+) vises$/, m => `${m[1]} shown`], [/^Vigtigst i (.+)$/, m => `Most important in ${navn(m[1])}`],
+    [/^Lande i (.+)$/, m => `Countries in ${navn(m[1])}`], [/^Se hele (.+)$/, m => `See all of ${navn(m[1])}`], [/^Følg (.+)$/, m => `Follow ${navn(m[1])}`], [/^Følger (.+)$/, m => `Following ${navn(m[1])}`],
+    [/^Hovedstad: (.+)$/, m => `Capital: ${m[1]}`], [/^Seneste (.+)$/, m => `Latest ${maaned(m[1])}`], [/^Udforsk · (\d+) af (\d+)$/, m => `Explore · ${m[1]} of ${m[2]}`],
+    [/^(\d+) af (\d+)$/, m => `${m[1]} of ${m[2]}`], [/^Hentet (.+)$/, m => `Fetched ${siden_en(m[1])}`], [/^Gennemgået (.+)$/, m => `Reviewed ${maaned(m[1])}`], [/^Talt op (.+)$/, m => `Counted ${siden_en(m[1])}`],
+    [/^højest (\d)$/, m => `highest ${m[1]}`], [/^Humanitær hjælp i (\d+)$/, m => `Humanitarian aid in ${m[1]}`], [/^Flygtninge fra (.+)$/, m => `Refugees from ${navn(m[1])}`],
+    [/^Hændelser \((\d+)\)$/, m => `Events (${m[1]})`], [/^Dokumenteret udbredelse \((\d+)\)$/, m => `Documented spread (${m[1]})`], [/^Optalt (.+)$/, m => `Counted ${maaned(m[1])}`],
+    [/^(\d+) km$/, m => `${m[1]} km`], [/^Følg (.+)$/, m => `Follow ${navn(m[1])}`]
+  ];
+  function siden_en(t){ return maaned(t).replace(/^for (\d+) min\. siden$/, '$1 min. ago').replace(/^for (\d+) timer? siden$/, '$1 h ago').replace(/^for (\d+) dage? siden$/, '$1 d ago').replace(/^lige nu$/, 'just now'); }
+  function oversaet(t){
+    const k = t.trim(); if(!k || k.length > 400) return null;
+    let v = OVS[k] || LANDE_EN[k];
+    if(!v) for(const [re, f] of MOENSTRE){ const m = k.match(re); if(m){ v = f(m); break; } }
+    if(!v && k.includes(' · ')){ const dele = k.split(' · '), ny = dele.map(d => OVS[d] || LANDE_EN[d] || maaned(d)); if(ny.some((x, i) => x !== dele[i])) v = ny.join(' · '); }
+    if(!v && /\d{1,2}\. (januar|februar|marts|april|maj|juni|juli|august|september|oktober|november|december|jan\.|feb\.|mar\.|apr\.|aug\.|sep\.|okt\.|nov\.|dec\.)/.test(k)){ const mm = maaned(k); if(mm !== k) v = mm; }
+    return v ? t.replace(k, v) : null;
+  }
+  const ATTR = ['aria-label', 'placeholder', 'title'];
+  function ovsNode(n){
+    if(n.nodeType === 3){ const v = oversaet(n.nodeValue); if(v !== null && v !== n.nodeValue) n.nodeValue = v; return; }
+    if(n.nodeType !== 1 || n.tagName === 'SCRIPT' || n.tagName === 'STYLE' || n.tagName === 'CANVAS') return;
+    for(const a of ATTR){ const x = n.getAttribute(a); if(x){ const v = oversaet(x); if(v !== null && v !== x) n.setAttribute(a, v); } }
+    const w = document.createTreeWalker(n, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    let c; while((c = w.nextNode())){
+      if(c.nodeType === 3){ const v = oversaet(c.nodeValue); if(v !== null && v !== c.nodeValue) c.nodeValue = v; }
+      else for(const a of ATTR){ const x = c.getAttribute(a); if(x){ const v = oversaet(x); if(v !== null && v !== x) c.setAttribute(a, v); } }
+    }
+  }
+  // Datatekster i detaljekortet: maskinoversat, husket i denne fane.
+  const MT_NOEGLE = 'globus-mt';
+  const MT = (() => { try{ return new Map(JSON.parse(sessionStorage.getItem(MT_NOEGLE) || '[]')); }catch(err){ return new Map(); } })();
+  const MT_SEL = '.k-fortalt, .where, .k-tal dd, .tlrow .tx, .k-afs > p, .k-fold p, .cap, .flag, .vk-led, .vk-r .rt span, .sa-r .rt span, .srclegend, .item .nt';
+  let venter = new Map(), timer = null;
+  function mtElement(elm){
+    if(elm.dataset.mt || [...elm.childNodes].some(c => c.nodeType === 1 && c.tagName !== 'BR')) return;
+    const t = elm.textContent.trim(); if(!t || !/[a-zæøå]{3}/i.test(t) || oversaet(t) !== null) return;
+    elm.dataset.mt = '1';
+    if(MT.has(t)){ elm.textContent = MT.get(t); elm.lang = 'en'; return; }
+    if(!venter.has(t)) venter.set(t, []); venter.get(t).push(elm);
+    clearTimeout(timer); timer = setTimeout(send, 120);
+  }
+  async function send(){
+    const job = venter; venter = new Map(); const tekster = [...job.keys()];
+    for(let i = 0; i < tekster.length; i += 25){
+      const del = tekster.slice(i, i + 25);
+      try{
+        const r = await fetch('/oversaet', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({til:'en', tekster: del})});
+        const j = r.ok ? await r.json() : null; if(!j || !Array.isArray(j.o)) continue;
+        del.forEach((t, k) => { const o = j.o[k]; if(!o) return; MT.set(t, o); for(const e of job.get(t) || []) if(e.isConnected){ e.textContent = o; e.lang = 'en'; } });
+      }catch(err){}
+    }
+    try{ sessionStorage.setItem(MT_NOEGLE, JSON.stringify([...MT].slice(-400))); }catch(err){}
+  }
+  function mtMaerke(){
+    if(detail.hidden || detail.querySelector('.mt-mrk')) return;
+    const h = detail.querySelector('h2'); if(!h) return;
+    const m = el('p','mt-mrk', 'Text machine translated from Danish by Cloudflare Workers AI. Figures, names and sources are as in the original.');
+    h.insertAdjacentElement('afterend', m);
+  }
+  function kør(rod){ ovsNode(rod); if(rod.nodeType === 1){ if(rod.matches && rod.matches(MT_SEL)) mtElement(rod); if(rod.querySelectorAll) rod.querySelectorAll(MT_SEL).forEach(mtElement); } }
+  const obs = new MutationObserver(ms => {
+    for(const m of ms){
+      if(m.type === 'characterData'){ const v = oversaet(m.target.nodeValue); if(v !== null && v !== m.target.nodeValue) m.target.nodeValue = v; continue; }
+      if(m.type === 'attributes'){ const x = m.target.getAttribute(m.attributeName); const v = x && oversaet(x); if(v && v !== x) m.target.setAttribute(m.attributeName, v); continue; }
+      for(const n of m.addedNodes) kør(n);
+    }
+    mtMaerke();
+  });
+  obs.observe(document.body, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:ATTR});
+  // Landenavne: det danske navn fra hovedstadsfilen bliver det engelske fra browseren.
+  const LAND_EN_EGEN = {CD:'DR Congo', CG:'Republic of the Congo', PS:'Palestine', HK:'Hong Kong', MO:'Macao'};
+  const landeEn = () => { if(!HS || !DN_EN) return false; for(const a2 in HS){ try{ const en = LAND_EN_EGEN[a2] || DN_EN.of(a2); if(en && HS[a2][0] !== en) LANDE_EN[HS[a2][0]] = en; }catch(err){} } return true; };
+  let lf = 0; const lv = () => { if(landeEn()) kør(document.body); else if(++lf < 40) setTimeout(lv, 250); }; lv();
+  kør(document.body);
+}
+// ---------- beskeder ----------
+// Push-beskeder om de lande, man følger: et nyt niveau i rejsevejledningen, et nyt smitteudbrud, et nyt varsel fra alvor 3
+// eller en bekræftet konflikt. Tilmeldingen sendes til /besked (functions/besked/, worker-besked/besked.js) med browserens
+// push-adresse og landekoderne, intet andet. På iPhone og iPad virker det kun, når siden er lagt på hjemmeskærmen som app.
+var BESKED_NOEGLE = 'globus-besked';
+var KAN_PUSH = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window && location.protocol === 'https:';
+function beskedTil(){ try{ return localStorage.getItem(BESKED_NOEGLE) === '1' && Notification.permission === 'granted'; }catch(err){ return false; } }
+function b64uTilBytes(s){ const t = s.replace(/-/g, '+').replace(/_/g, '/'); return Uint8Array.from(atob(t + '='.repeat((4 - t.length % 4) % 4)), c => c.charCodeAt(0)); }
+function toast(tekst){
+  let t = document.getElementById('toast'); if(!t){ t = el('div','toast'); t.id = 'toast'; t.setAttribute('role','status'); document.body.appendChild(t); }
+  t.textContent = tekst; t.classList.add('vis'); clearTimeout(t._tid); t._tid = setTimeout(() => t.classList.remove('vis'), 5000);
+}
+async function beskedSend(sti, krop){ const r = await fetch('/besked/' + sti, {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify(krop)}); if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }
+var beskedTimer = null;
+function beskedSync(){
+  if(!KAN_PUSH || !beskedTil()) return;
+  clearTimeout(beskedTimer);
+  beskedTimer = setTimeout(async () => { try{ const reg = await navigator.serviceWorker.ready, sub = await reg.pushManager.getSubscription(); if(sub) await beskedSend('tilmeld', {sub: sub.toJSON(), lande: Object.keys(foelgLaes())}); }catch(err){} }, 600);
+}
+async function beskedSlaaTil(a2){
+  if(!KAN_PUSH){
+    if(ER_IOS && !ER_APP){ toast('På iPhone og iPad kan siden kun sende beskeder, når den er lagt på hjemmeskærmen som app.'); const v = document.getElementById('appvejl'); if(v.showModal) v.showModal(); else v.setAttribute('open', ''); }
+    else toast('Din browser kan ikke modtage beskeder fra siden.');
+    return false;
+  }
+  if(a2){ const o = foelgLaes(); if(!o[a2]){ o[a2] = landSignatur(landData(a2)); foelgGem(o); visFoelg(); } }
+  try{
+    if(await Notification.requestPermission() !== 'granted'){ toast('Beskeder er ikke tilladt i browseren. Det kan ændres i browserens indstillinger for siden.'); return false; }
+    const k = await (await fetch('/besked/noegle')).json();
+    const reg = await navigator.serviceWorker.ready;
+    let sub = await reg.pushManager.getSubscription();
+    if(!sub) sub = await reg.pushManager.subscribe({userVisibleOnly: true, applicationServerKey: b64uTilBytes(k.k)});
+    await beskedSend('tilmeld', {sub: sub.toJSON(), lande: Object.keys(foelgLaes())});
+    try{ localStorage.setItem(BESKED_NOEGLE, '1'); }catch(err){}
+    beskedSend('proev', {sub: sub.toJSON()}).catch(() => {});
+    toast('Beskeder er slået til. Du får besked, når der sker noget nyt i de lande, du følger.');
+    return true;
+  }catch(err){ toast('Beskeder kunne ikke slås til lige nu. Prøv igen senere.'); return false; }
+}
+async function beskedSlaaFra(){
+  try{ const reg = await navigator.serviceWorker.ready, sub = await reg.pushManager.getSubscription();
+    if(sub){ await beskedSend('afmeld', {sub: sub.toJSON()}).catch(() => {}); await sub.unsubscribe(); } }catch(err){}
+  try{ localStorage.removeItem(BESKED_NOEGLE); }catch(err){}
+  toast('Beskeder er slået fra.');
+}
+// Klokken i kortet og i listen over fulgte lande.
+function beskedKnap(a2, efter){
+  const til = beskedTil();
+  return ikonKnap('klokke', til ? 'Beskeder er slået til' : 'Få besked', til
+    ? 'Du får en besked, når der sker noget nyt i de lande, du følger. Tryk for at slå beskeder fra.'
+    : `Følg ${a2 ? landNavnAf(a2) : 'landene'}, og få en besked på telefonen eller computeren, når rejsevejledningen ændres, eller der kommer et nyt smitteudbrud, et varsel fra alvor 3 eller en bekræftet konflikt.`,
+    async () => { if(beskedTil()) await beskedSlaaFra(); else await beskedSlaaTil(a2); if(efter) efter(); }, til);
 }
 // ---------- trin: verden, område, land, sted, hændelse ----------
 // På mobilen står man altid et sted i trinene. Brødkrummen i overblikket viser området, og kortet viser vejen ned til det valgte.
@@ -4054,8 +4375,24 @@ function bygNiveau(sorteret){
 // Overblik, Udforsk, Søg, Følger og Lag. Søgningen fylder hele skærmen, og lagene er et ark over bjælken.
 const bundbar = document.getElementById('bundbar'), lagark = document.getElementById('lagark'), soegark = document.getElementById('soegark'),
   q2 = document.getElementById('q2'), saind = document.getElementById('saind');
-function lukLag(){ lagark.hidden = true; bundbar.querySelector('[data-b="lag"]').setAttribute('aria-expanded', 'false'); }
-function lukSoeg(){ soegark.hidden = true; q2.blur(); }
+// Søgningen og Lag lægger et trin i browserens historik, så telefonens Tilbage (og swipe tilbage på iPhone) lukker dem
+// i stedet for at forlade siden. Lukkes de med knapperne, går siden selv et trin tilbage. Lukkes de, fordi man går videre
+// til noget andet, fjernes markeringen bare, så Tilbage ikke ryger ud af siden.
+function ovAaben(navn){ try{ if(!(history.state && history.state.ov === navn)) history.pushState(Object.assign({}, history.state, {ov:navn}), '', location.href); }catch(err){} }
+function ovLuk(navn, tilbage){
+  try{
+    if(!(history.state && history.state.ov === navn)) return;
+    if(tilbage) history.back();
+    else { const st = Object.assign({}, history.state); delete st.ov; history.replaceState(st, '', location.href); }
+  }catch(err){}
+}
+window.addEventListener('popstate', ev => {
+  const ov = ev.state && ev.state.ov;
+  if(ov !== 'soeg' && !soegark.hidden){ soegark.hidden = true; q2.blur(); }
+  if(ov !== 'lag' && !lagark.hidden){ lagark.hidden = true; bundbar.querySelector('[data-b="lag"]').setAttribute('aria-expanded', 'false'); }
+});
+function lukLag(tilbage){ if(lagark.hidden) return; lagark.hidden = true; bundbar.querySelector('[data-b="lag"]').setAttribute('aria-expanded', 'false'); ovLuk('lag', tilbage); }
+function lukSoeg(tilbage){ if(soegark.hidden) return; soegark.hidden = true; q2.blur(); ovLuk('soeg', tilbage); }
 bundbar.addEventListener('click', ev => {
   const b = ev.target.closest('button'); if(!b) return; const k = b.dataset.b;
   if(k !== 'lag') lukLag();
@@ -4070,15 +4407,15 @@ bundbar.addEventListener('click', ev => {
     if(box.hidden){ box.hidden = false; box.innerHTML = ''; box.append(el('p','lbl','Lande du følger'), el('p','dim','Du følger ingen lande endnu. Åbn et land, og tryk på stjernen. Så står det her og markeres, når der er nyt.')); }
     arkHoejde('halv'); box.parentNode.scrollTop = 0;
   }
-  else if(k === 'lag'){ lagark.hidden = !lagark.hidden; b.setAttribute('aria-expanded', String(!lagark.hidden)); }
+  else if(k === 'lag'){ if(lagark.hidden){ bygRetTider(document.getElementById('lagtider')); lagark.hidden = false; b.setAttribute('aria-expanded', 'true'); ovAaben('lag'); } else lukLag(true); }
 });
-document.getElementById('lagluk').addEventListener('click', lukLag);
+document.getElementById('lagluk').addEventListener('click', () => lukLag(true));
 document.getElementById('lagrejse').addEventListener('change', ev => { if(ev.target.checked !== retOn.has('rejse')){ skiftRetning('rejse'); render(); } });
 // Søgningen: forslag, når feltet er tomt, og lande og hændelser, mens man skriver.
 const SOEGT = 'globus-soegt';
 function soegt(){ try{ return JSON.parse(localStorage.getItem(SOEGT) || '[]') || []; }catch(err){ return []; } }
 function husk(t){ t = (t || '').trim(); if(t.length < 2) return; const a = soegt().filter(x => x.toLowerCase() !== t.toLowerCase()); a.unshift(t); try{ localStorage.setItem(SOEGT, JSON.stringify(a.slice(0, 6))); }catch(err){} }
-function aabnSoeg(){ lukLag(); soegark.hidden = false; q2.value = query || ''; bygSoeg(); setTimeout(() => q2.focus(), 40); }
+function aabnSoeg(){ lukLag(); const var_lukket = soegark.hidden; soegark.hidden = false; if(var_lukket) ovAaben('soeg'); q2.value = query || ''; bygSoeg(); setTimeout(() => q2.focus(), 40); }
 function gaaTil(e, term){
   husk(term); lukSoeg();
   if(erLand(e)){ gaaLand(e.a2); return; }
@@ -4108,7 +4445,7 @@ function saChips(liste, fn, kl){
 const alvorFoerst = (p, q) => alvorAt(q, stageAt(q, cutoff)) - alvorAt(p, stageAt(p, cutoff)) || senestMs(q) - senestMs(p);
 function bygSoeg(){
   const t = q2.value.trim().toLowerCase(); saind.innerHTML = '';
-  const sek = titel => saind.appendChild(el('h3','', titel));
+  const sek = titel => saind.appendChild(el('h2','sa-h', titel));
   const levende = ALLE().filter(e => liveAt(e, cutoff) && !erLand(e));
   if(!t){
     const naer = [];
@@ -4154,8 +4491,8 @@ function visIListen(){
   if(!detail.hidden) lukDetaljer(); arkHoejde('halv');
 }
 q2.addEventListener('input', bygSoeg);
-q2.addEventListener('keydown', ev => { if(ev.key === 'Enter'){ ev.preventDefault(); if(q2.value.trim()) visIListen(); } else if(ev.key === 'Escape') lukSoeg(); });
-document.getElementById('satilbage').addEventListener('click', lukSoeg);
+q2.addEventListener('keydown', ev => { if(ev.key === 'Enter'){ ev.preventDefault(); if(q2.value.trim()) visIListen(); } else if(ev.key === 'Escape') lukSoeg(true); });
+document.getElementById('satilbage').addEventListener('click', () => lukSoeg(true));
 visFoelg();
 MOBIL.addEventListener('change', placer);
 window.addEventListener('resize', () => { if(MOBIL.matches){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); arkHoejde(arkTilstand); detHoejde(detTilstand); } });
@@ -4276,6 +4613,7 @@ placer();
     m('Smitteudbrud gennemgået:', fmtDate(DATA_DATO));
     if(KONFINFO && KONFINFO.genereret) m('Mediesporet talt op:', klok(KONFINFO.genereret));
     m('Hændelser og varsler nu:', String(ALLE().filter(e => liveAt(e, T1)).length));
+    const rt = el('dl','rettider'); rt.style.cssText = 'margin-top:8px;flex-basis:100%'; bygRetTider(rt); meta.appendChild(rt);
     const box = document.getElementById('datakilder'); box.innerHTML = '';
     box.appendChild(kildeKort('Smitteudbrud', 'WHO, ECDC, UKHSA, US CDC, PAHO, Statens Serum Institut og nationale sundhedsmyndigheder. Gennemgås hver morgen efter faste regler.', '', 'ok', `${EVENTS.filter(e => liveAt(e, T1)).length} udbrud · datasæt pr. ${fmtDate(DATA_DATO)}`));
     for(const [k, [navn, tekst, url]] of Object.entries(KILDEINFO)){

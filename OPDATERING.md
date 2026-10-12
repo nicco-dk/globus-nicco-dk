@@ -91,6 +91,9 @@ Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længe
 - **To veje til en side.** Hentningsværktøjet og et direkte opslag fra skallen med `curl -sL` rammer ikke de samme spærringer. Helt nye WHO-sider har fejlet i hentningsværktøjet, men kunne hentes direkte. US CDC afviser direkte opslag med 403, men kan læses med hentningsværktøjet. Fejler den ene vej, skal den anden prøves, før kilden opgives eller erstattes af et medie. Det er et krav, ikke et råd. Skriv i loggen under Usikkert, hvilke sider der ikke kunne hentes ad nogen af de to veje.
 - **Læs tal to gange.** Hentningsværktøjet genfortæller siden, det citerer den ikke. Bed om den ordrette sætning med tallet, og læs den to gange uafhængigt af hinanden, eller hent sidens rå tekst direkte og find tallet dér, før det skrives.
 - **Myndigheder gennem medier.** Kan myndighedens egen side ikke hentes, som hos Kenyas sundhedsministerium, så brug mediet, der gengiver udmeldingen, med tilføjelsen `, medie`. Kenyas sundhedsministeriums pressemeddelelser udsendes af APO Group og kan læses på https://www.africa-newsroom.com. Kilden mærkes stadig `, medie`, fordi det ikke er ministeriets egen side. Gengiver to medier forskellige tal fra samme udmelding, så lad tallet stå og skriv det under Usikkert.
+- **DGHS i Bangladesh** lægger dagens mæslingetal som PDF-bilag på en anden server. Bilagets adresse står i pressemeddelelsens HTML og begynder med `https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/`. Tabellen er et billede af tekst. Læs den ved at gøre siden til et billede og læse tallene dér. Meddelelsen kommer omkring kl. 10 dansk tid.
+- **Hentningsværktøjet** tager kun adresser, som en søgning i samme kørsel har givet. Søg derfor først med `allowed_domains`, fx `cdc.gov`, og hent den adresse, søgningen giver.
+- **Hurtige faste veje.** CIDRAP: `https://www.cidrap.umn.edu/all-news?page=N`. Outbreak News Today: `https://outbreaknewstoday.substack.com/api/v1/archive?sort=new&limit=25`. NaTHNaC: `https://travelhealthpro.org.uk/rss-outbreaks.php`. UKHSA: `https://www.gov.uk/api/search.json?filter_organisations=uk-health-security-agency&order=-public_timestamp`.
 - **Faste udgivelser.** UKHSA's ugeoversigt kommer torsdag, ECDC's ugerapport fredag, GPEI's poliooversigt og US CDC's mæslingetal én gang om ugen. Mellem udgivelserne er der intet nyt at hente dér, og hændelsen lades urørt.
 
 ## Fremgangsmåde
@@ -98,8 +101,16 @@ Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længe
 Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra tre samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
 
 1. **Hent repoet** og læs `EVENTS` og de seneste poster i `LOG.md`, så du ved, hvad der står, og hvad forrige kørsel var i tvivl om.
-2. **Læs de tre samlede kilder:** ECDC's seneste Communicable Disease Threats Report, WHO's liste over Disease Outbreak News siden forrige kørsel og UKHSA's seneste ugeoversigt over udbrud under overvågning. Notér hvilke hændelser på siden de nævner, og hvilke nye hændelser de melder.
+2. **Læs de samlede kilder:** ECDC's seneste Communicable Disease Threats Report, WHO's liste over Disease Outbreak News siden forrige kørsel og UKHSA's seneste ugeoversigt over udbrud under overvågning. Læs desuden:
+   - WHO AFRO's ugentlige bulletin over udbrud og nødsituationer (iris.who.int)
+   - PAHO's seneste epidemiologiske opdateringer og situationsrapporter
+   - WHO SEARO's epidemiologiske bulletin og WHO WPRO's ugentlige oversigt over fugleinfluenza
+   - Africa CDC's ugentlige rapport
+   - Statens Serum Instituts liste over aktuelle sygdomsudbrud (https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud) og DK-VET's nyheder (https://dkvet.dk/nyheder)
+
+   Notér hvilke hændelser på siden de nævner, og hvilke nye hændelser de melder.
 3. **Bring nævnte hændelser ajour.** Slå kun enkeltkilder op for de hændelser, de samlede kilder nævner, og for hændelser med `live:true` og trin `spredning` eller `smitte`, hvor der er grund til at tro, at tallene har flyttet sig. En hændelse uden nyt lades urørt. Det er det normale udfald for de fleste hændelser på en given dag.
+3a. **Rundtur.** Hver hændelse med `live:true`, der ikke har fået et nyt punkt i 10 dage, slås op i sin egen hovedkilde, også selv om ingen samlet kilde nævner den. Er der intet nyt, lades den urørt, og det skrives i loggen under Urørt med antal dage siden seneste punkt.
 4. **Tilføj nye hændelser**, højst fem pr. kørsel. Er der flere, så tag de alvorligste og nævn resten i loggen.
 5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret. Datoen betyder, at datasættet er gennemgået den dag.
 6. **Kør kontrollen:** `node tools/tjek-data.mjs site/index.html --forrige <forrige udgave> --links`, hvor forrige udgave hentes med `git show HEAD:site/index.html`. Ret alle fejl. Kan en fejl ikke rettes, så fortryd ændringen i den hændelse. Læs også advarslerne, se afsnittet Kontrollens advarsler.
@@ -149,6 +160,8 @@ Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste h
 **Usikkerhed** skrives i `gap`, som siden viser under overskriften Usikkert. Brug feltet, når noget væsentligt ikke er bekræftet. Fjern det, når det er afklaret.
 
 **`naeste`** er en vurdering af, hvad der ville flytte trinnet, og siden mærker den som ikke kildebelagt. Ret den kun, når trinnet har flyttet sig, så teksten ikke længere passer.
+
+**Alder er ingen afvisningsgrund.** En hændelse, der er i gang, og som en myndighed har meldt, kan tages med, selv om meldingen er ældre end forrige kørsel. "Ikke nyt siden forrige kørsel" er ikke en grund til at lade den være. Det afgørende er, om udbruddet er i gang, og om det hører til på siden.
 
 **Nye hændelser** kræver en myndighedskilde, eller en mediekilde med trin `mistanke` og et udfyldt `gap`. Tag hændelser med, som en læser ville forvente at finde på en side om udbrud: nye eller usædvanlige udbrud, udbrud med smitte mellem mennesker, og udbrud i eller med forbindelse til Danmark og Europa. Tag ikke den almindelige sæson for kendte sygdomme med, medmindre en myndighed kalder den usædvanlig.
 
@@ -228,5 +241,15 @@ Til gennemgang er det, kun ejeren må rette: gamle punkter, hvor en kilde har re
 **Billeder i detaljekortet.** Siden henter selv billedet fra Wikipedia-artiklen om emnet og bruger det kun, hvis det ligger på Wikimedia Commons (fri licens). Fotograf og licens står under billedet sammen med, at det ikke viser selve hændelsen.
 
 **Udløseren.** GitHubs tidsplan i `udrul.yml` er ikke gået i gang. I stedet starter Cloudflare Workeren `globus-udloeser` (`worker/udloeser.js`) workflowet hver time kl. xx.23 gennem GitHubs API. Den bruger et fine-grained GitHub-token med kun Actions: Read and write på dette repo (repo-hemmeligheden `UDLOESER_TOKEN`, udløber 12. oktober 2027 og skal fornyes inden). Workeren udrulles med workflowet `udloeser.yml`, som startes manuelt. Kørsler startet af Workeren udrulles altid, også når meldingerne ikke er ændret.
+
+**Delte links.** Del-knappen i kortet giver et link på formen https://globus.nicco.dk/h/<id>. Pages Functionen `functions/h/[id].js` svarer med titel, tekst og billede for netop det (til fx Facebook og Messenger) og sender en person videre til https://globus.nicco.dk/#<id>. Billedet er et frit billede fra Wikimedia Commons, fundet gennem den engelske Wikipedia-artikel om emnet, ellers `og.png`.
+
+**Status pr. land.** https://globus.nicco.dk/status (`functions/status.js`) giver for hvert land rejsevejledningens niveau, levende smitteudbrud, varsler fra alvor 3, bekræftede konflikter og alvor for krig og konflikt. Den bygges af de samme filer som siden. EVENTS læses af `site/index.html` med JSON5 (`lib/json5.mjs`), uden at sidens script køres.
+
+**Beskeder.** Man kan få push-beskeder om de lande, man følger. Tilmeldingen går gennem `functions/besked/[[sti]].js` til Cloudflare Workeren `globus-besked` (`worker-besked/`), som gemmer browserens push-adresse og landekoderne i en Durable Object og intet andet. Hver time kl. xx.47 henter Workeren /status, sammenligner med forrige time og sender én besked pr. person om den alvorligste ændring: nyt niveau i rejsevejledningen, et nyt smitteudbrud, et nyt varsel fra alvor 3, en bekræftet konflikt, eller at krig og konflikt er steget til alvor 3 eller mere. VAPID-nøglerne laves af Workeren selv og ligger i dens Durable Object. Workeren udrulles med workflowet `besked.yml`, som startes manuelt, og den skal findes, før siden udrulles, fordi `wrangler.toml` binder siden til den.
+
+**Engelsk.** Knappen EN skifter siden til engelsk (valget huskes i browseren, ellers vælges efter browserens sprog). Knapper og overskrifter oversættes efter ordbogen i siden. Datatekster i kortene maskinoversættes af Cloudflare Workers AI (`functions/oversaet.js`, modellen m2m100) og mærkes som maskinoversat. Tal, navne på kilder og links oversættes ikke. Den daglige dataopdatering skriver fortsat kun dansk.
+
+**`wrangler.toml` i roden** er Pages-projektets indstillinger: Workers AI (`AI`) og service bindingen til `globus-besked` (`BESKED`). Den læses af `wrangler pages deploy` i `udrul.yml`.
 
 **Nyt på siden.** Knappen Nyt på siden læser `site/nyheder.json`. Når en ny funktion går live, tilføjes en post øverst med et nyt `id`, dato, titel og en kort forklaring i samme stil som Sådan virker siden. `proev` kan pege på en lille demonstration i siden (udforsk, bred, afspil, krig). Tallet på knappen er de poster, brugeren ikke har set. Første gang tæller kun poster fra de sidste 14 dage. Vinduet viser kun det, brugeren ikke har set. Alle poster (undtagen den om selve knappen) står samtidig under Det kan du på siden i Sådan virker siden, bygget af den samme fil. Den daglige dataopdatering ændrer ikke filen.
