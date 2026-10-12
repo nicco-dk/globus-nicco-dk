@@ -18,16 +18,25 @@ export async function onRequest({ request, env, waitUntil }) {
   const tekster = Array.isArray(j && j.tekster) ? j.tekster.slice(0, 25).map(t => String(t || '').slice(0, 1500)) : [];
   if (!til || !tekster.length) return svar({ fejl: 'angiv til og tekster' }, 400);
   const cache = caches.default;
-  const o = await Promise.all(tekster.map(async t => {
-    if (!t.trim()) return '';
+  // Én sætning ad gangen: modellen springer ellers sætninger over i længere tekster.
+  // Tal må ikke ændre sig. Har oversættelsen andre tal end originalen, beholdes den danske sætning.
+  const tal = t => (t.match(/\d[\d.,]*/g) || []).map(x => x.replace(/[.,](?=\d{3}\b)/g, '').replace(/[.,]$/, '').replace(',', '.')).sort().join('|');
+  const saetning = async t => {
     const k = await noegle(t, til);
     const hit = await cache.match(k); if (hit) return (await hit.json()).o;
     try {
       const r = await env.AI.run(MODEL, { text: t, source_lang: 'danish', target_lang: 'english' });
-      const ud = r && r.translated_text ? String(r.translated_text) : null;
+      let ud = r && r.translated_text ? String(r.translated_text).trim() : null;
+      if (ud && tal(ud) !== tal(t)) ud = t;
       if (ud) waitUntil(cache.put(k, new Response(JSON.stringify({ o: ud }), { headers: { 'content-type': 'application/json', 'cache-control': 'public, max-age=2592000' } })));
       return ud;
     } catch { return null; }
+  };
+  const o = await Promise.all(tekster.map(async t => {
+    if (!t.trim()) return '';
+    const dele = t.split(/(?<=[.!?])\s+(?=[A-ZÆØÅ"«(])/).filter(Boolean).slice(0, 12);
+    const ud = await Promise.all(dele.map(saetning));
+    return ud.some(x => x === null) ? null : ud.join(' ');
   }));
   return svar({ o, model: MODEL });
 }
