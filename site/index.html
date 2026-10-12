@@ -611,6 +611,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   header .rchips::-webkit-scrollbar{display:none}
   .rchip.service{margin-left:14px}
   header .rchips{display:flex;padding:0 12px 2px}
+  /* Kun ikonerne på telefonen, så alle retninger kan ses uden at rulle. Tallet står i forklaringen ved tryk og hold. */
+  .rchip .n{display:none}
+  .rchip{padding:2px;min-height:0;border-radius:50%;border-width:1.5px}
+  .rchip .d{--s:clamp(24px,calc((100vw - 124px) / 9),34px);width:var(--s);height:var(--s)}
+  .rchip .d svg{width:calc(var(--s) * .52);height:calc(var(--s) * .52)}
+  header .rchips{justify-content:space-between;overflow-x:visible;gap:3px}
+  .rchip.service{margin-left:6px}
   .rmidt{display:contents}
   .hacts{border-left:0;padding-left:0}
   h1.logo{border-right:0;justify-content:flex-start;padding:0}
