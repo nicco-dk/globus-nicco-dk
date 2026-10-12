@@ -1,0 +1,14 @@
+# Indstillinger for Pages-projektet globus-nicco-dk (siden i site/ og funktionerne i functions/).
+# Læses af "wrangler pages deploy" i .github/workflows/udrul.yml.
+name = "globus-nicco-dk"
+pages_build_output_dir = "site"
+compatibility_date = "2026-09-01"
+
+# Workers AI til maskinoversættelse af datatekster, når man har valgt engelsk (functions/oversaet.js).
+[ai]
+binding = "AI"
+
+# Workeren globus-besked, der gemmer tilmeldinger til push-beskeder og sender dem (worker-besked/, functions/besked/).
+[[services]]
+binding = "BESKED"
+service = "globus-besked"
