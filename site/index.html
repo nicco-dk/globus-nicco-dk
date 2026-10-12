@@ -649,6 +649,109 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .k-fortalt{font-size:15px}
   .scrim{display:none!important}
 }
+/* Bundbjælke, søgning, lag og trin. Kun på mobilen. */
+.bundbar,.lagark,.soegark,.broed,.niv,.k-sti{display:none}
+@media (max-width:900px){
+  :root{--bar:calc(58px + env(safe-area-inset-bottom));--ark-lille:118px}
+  .stage{bottom:calc(var(--bar) + var(--ark-lille))}
+  .side{bottom:var(--bar);padding-bottom:8px}
+  .detail{bottom:var(--bar);padding-bottom:24px}
+  .zoomer{bottom:calc(var(--ark-h,118px) + var(--bar) + 12px)}
+  .ovtop .udforsk,#soegknap,#filterknap{display:none}
+  .rchip.service{display:none}
+  .rchip .d{--s:clamp(26px,calc((100vw - 100px) / 8),38px)}
+  #protobtn,#temabtn,#hentapp{display:none}
+  .lagmere #protobtn,.lagmere #temabtn{display:inline-flex}
+  .lagmere #hentapp:not([hidden]){display:inline-flex}
+  .bundbar{display:grid;grid-template-columns:repeat(5,1fr);align-items:end;position:fixed;left:0;right:0;bottom:0;z-index:35;
+    height:var(--bar);padding:0 6px env(safe-area-inset-bottom);background:var(--panel);border-top:1px solid var(--rule)}
+  .bundbar button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:58px;
+    background:none;border:0;color:var(--fg-dim);font:600 10.5px/1 var(--display);cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
+  .bundbar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .bundbar button[aria-current="true"]{color:var(--accent)}
+  .bundbar .soeg{justify-content:flex-end;padding-bottom:7px}
+  .bundbar .soeg .rund{display:grid;place-items:center;width:52px;height:52px;margin-top:-22px;border-radius:50%;background:var(--accent);color:var(--bg);
+    box-shadow:0 4px 14px rgba(0,0,0,.35);border:3px solid var(--panel)}
+  .bundbar .soeg .rund svg{width:24px;height:24px;stroke-width:2.2}
+  .bb-tal{position:absolute;top:6px;left:calc(50% + 6px);min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--warn);color:#111;font:700 10px/16px var(--mono)}
+  /* Lag: et ark over bjælken, som kortlagene i Windy. */
+  .lagark:not([hidden]){display:flex;flex-direction:column;position:fixed;left:0;right:0;bottom:var(--bar);z-index:32;max-height:78vh;
+    background:var(--panel);border:1px solid var(--rule);border-bottom:0;border-radius:16px 16px 0 0;box-shadow:0 -14px 40px rgba(0,0,0,.45)}
+  .lag-top{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 6px}
+  .lag-top b{font:700 16px var(--display);color:var(--fg)}
+  .lag-top .x{background:none;border:0;color:var(--fg-dim);font-size:22px;min-width:40px;min-height:40px;cursor:pointer}
+  .lag-ind{overflow-y:auto;overscroll-behavior:contain;padding:0 16px 16px;display:flex;flex-direction:column;gap:14px}
+  .lag-ind .filtre{display:flex}
+  .lag-sw{display:flex;align-items:center;gap:12px;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--panel-2);cursor:pointer}
+  .lag-sw input{position:absolute;opacity:0;pointer-events:none}
+  .lag-sw .sw-t{flex:1;display:flex;flex-direction:column;gap:2px}
+  .lag-sw .sw-t b{font:600 14px var(--display);color:var(--fg)}
+  .lag-sw .sw-t span{font-size:12px;color:var(--fg-dim)}
+  .lag-sw .sw{flex:none;width:42px;height:24px;border-radius:12px;background:var(--rule);position:relative;transition:background .2s}
+  .lag-sw .sw::after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:var(--fg-dim);transition:transform .2s,background .2s}
+  .lag-sw input:checked ~ .sw{background:color-mix(in srgb,var(--c-rejse) 55%,var(--rule))}
+  .lag-sw input:checked ~ .sw::after{transform:translateX(18px);background:var(--fg)}
+  .lag-sw input:focus-visible ~ .sw{outline:2px solid var(--accent);outline-offset:2px}
+  .lagmere{display:flex;flex-wrap:wrap;gap:8px}
+  .lagmere button{min-height:40px;align-items:center;gap:7px;padding:0 14px;border-radius:999px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);font:600 13px var(--display)}
+  .lagmere .temabtn{width:auto}
+  .lagmere .temabtn::after{content:"Lys eller mørk";}
+  .lagmere .hentapp span{display:inline}
+  /* Søgning i hele skærmen. */
+  .soegark:not([hidden]){display:flex;flex-direction:column;position:fixed;inset:0;z-index:50;background:var(--bg)}
+  .sa-top{display:flex;align-items:center;gap:8px;padding:calc(env(safe-area-inset-top) + 10px) 12px 10px;border-bottom:1px solid var(--rule)}
+  .sa-tilbage{flex:none;width:40px;height:40px;border-radius:50%;border:0;background:var(--panel-2);color:var(--fg);font-size:24px;line-height:1;cursor:pointer}
+  #q2{flex:1;min-width:0;height:44px;border-radius:22px;border:1px solid var(--rule);background:var(--panel);color:var(--fg);padding:0 16px;font:16px var(--display)}
+  #q2:focus{outline:none;border-color:var(--accent)}
+  .sa-ind{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:6px 12px calc(env(safe-area-inset-bottom) + 24px)}
+  .sa-ind h3{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:16px 4px 8px}
+  .sa-chips{display:flex;flex-wrap:wrap;gap:7px}
+  .sa-chips button{min-height:36px;padding:0 13px;border-radius:999px;border:1px solid var(--rule);background:var(--panel);color:var(--fg);font:13px var(--display);cursor:pointer}
+  .sa-chips button.nyt{border-color:var(--warn)}
+  .sa-r{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:10px;width:100%;text-align:left;padding:10px 6px;border:0;border-bottom:1px solid var(--rule);background:none;color:var(--fg);cursor:pointer}
+  .sa-r .ri{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--c,var(--accent)) 16%,var(--panel));color:var(--c,var(--accent))}
+  .sa-r .ri svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .sa-r .rt{display:flex;flex-direction:column;gap:2px;min-width:0}
+  .sa-r .rt b{font:600 14px var(--display);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sa-r .rt span{font-size:12px;color:var(--fg-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sa-r .ra{font:11px var(--mono);color:var(--fg-faint)}
+  .sa-alle{width:100%;margin-top:12px;min-height:44px;border-radius:10px;border:1px solid var(--accent);background:none;color:var(--fg);font:600 14px var(--display);cursor:pointer}
+  .sa-tom{color:var(--fg-dim);font-size:14px;padding:18px 6px}
+  /* Trin: Verden, område, land, sted, hændelse. */
+  .broed{display:flex;align-items:center;gap:6px;margin:-4px -14px 0;padding:0 14px 2px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;flex:none}
+  .broed::-webkit-scrollbar{display:none}
+  .broed .bt{flex:none;background:none;border:0;padding:6px 0;color:var(--fg-dim);font:600 13.5px var(--display);cursor:pointer}
+  .broed .bt[aria-current="page"]{color:var(--fg);cursor:default}
+  .broed .sep{flex:none;color:var(--fg-faint)}
+  .broed .omr{flex:none;min-height:32px;padding:0 11px;border-radius:999px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);font:13px var(--display);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+  .broed .omr .n{font:11px var(--mono);color:var(--fg-faint)}
+  .broed .ud{flex:none;margin-left:auto;background:none;border:0;color:var(--fg-faint);font-size:20px;min-width:36px;min-height:36px;cursor:pointer}
+  .niv:not(:empty){display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+  .niv-ret{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px}
+  .niv-ret::-webkit-scrollbar{display:none}
+  .niv-ret button{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 11px 0 8px;border-radius:999px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);font:12.5px var(--display);cursor:pointer}
+  .niv-ret button svg{width:15px;height:15px;color:var(--c)}
+  .niv-ret button[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 18%,var(--panel-2))}
+  .niv-ret button .n{font:11px var(--mono);color:var(--fg-faint)}
+  .niv-top{display:flex;flex-direction:column;gap:6px}
+  .niv-top .item{border-radius:10px}
+  .niv .lbl{margin:0}
+  .niv-lande{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px}
+  .niv-lande::-webkit-scrollbar{display:none}
+  .niv-lande button{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--rule);background:var(--panel);color:var(--fg);font:13px var(--display);cursor:pointer}
+  .niv-lande button i{width:8px;height:8px;border-radius:50%;background:var(--a)}
+  .seealle{min-height:42px;border-radius:10px;border:1px solid var(--accent);background:none;color:var(--fg);font:600 13.5px var(--display);cursor:pointer}
+  .list.skjult{display:none}
+  .k-sti{display:flex;flex-wrap:wrap;align-items:center;gap:2px 5px;min-height:24px;font:12.5px var(--display);color:var(--fg-faint)}
+  .k-sti button{flex:none;background:none;border:0;padding:4px 0;color:var(--fg-dim);font:600 12.5px var(--display);cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
+  .k-sti b{flex:none;color:var(--fg);font-weight:600}
+  /* Det vigtigste først i halv højde: titel, fortælling og nøgletal. Billede, forløb og kilder kommer, når arket trækkes op. */
+  .detail>*{order:4}
+  .detail>.k-greb,.detail>.k-nav,.detail>.k-sti,.detail>.k-meta,.detail>h2,.detail>.where{order:0}
+  .detail>.k-fortalt{order:1}
+  .detail>.k-tal{order:2}
+  .detail>.k-fig{order:3}
+}
 @media (pointer:coarse){
   .zoomer button{width:42px;height:42px;font-size:17px}
   .rung{min-height:42px}
@@ -708,6 +811,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button class="ovik" id="soegknap" type="button" aria-label="Søg" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></svg></button>
       <button class="ovik" id="filterknap" type="button" aria-label="Filtre" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg><span class="fprik" id="fprik" hidden></span></button>
     </div>
+    <nav class="broed" id="broed" aria-label="Hvor du er"></nav>
     <div class="search" id="soegfelt" hidden>
       <label class="lbl" for="q">Søg sted, sygdom eller hændelse</label>
       <input id="q" type="search" placeholder="fx Ukraine, ebola, jordskælv, Bangladesh" autocomplete="off">
@@ -732,6 +836,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 
     <div class="listwrap">
       <div class="foelgbox" id="foelgbox" hidden></div>
+      <div class="niv" id="niv"></div>
       <div class="cmpbox" id="cmpbox" hidden></div>
       <div class="focusbar" id="focusbar" hidden>
         <span class="fname" id="fname"></span>
@@ -756,6 +861,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   </div>
 
   <footer id="foot"></footer>
+
+  <div class="lagark" id="lagark" role="dialog" aria-label="Lag" hidden>
+    <div class="lag-top"><b>Lag</b><button class="x" id="lagluk" type="button" aria-label="Luk lag">×</button></div>
+    <div class="lag-ind" id="lagind">
+      <label class="lag-sw"><input type="checkbox" id="lagrejse"><span class="sw-t"><b>Rejsevejledninger</b><span>Udenrigsministeriets og det britiske udenrigsministeriums råd for hvert land</span></span><span class="sw" aria-hidden="true"></span></label>
+      <div id="lagfiltre"></div>
+      <div><p class="lbl">Visning og data</p><div class="lagmere" id="lagmere"></div></div>
+    </div>
+  </div>
+
+  <div class="soegark" id="soegark" role="dialog" aria-label="Søg" hidden>
+    <div class="sa-top"><button class="sa-tilbage" id="satilbage" type="button" aria-label="Luk søgning">‹</button><input id="q2" type="search" placeholder="Land, sted, sygdom eller hændelse" autocomplete="off" enterkeyhint="search" aria-label="Søg"></div>
+    <div class="sa-ind" id="saind"></div>
+  </div>
+
+  <nav class="bundbar" id="bundbar" aria-label="Hovedmenu">
+    <button type="button" data-b="overblik"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span>Overblik</span></button>
+    <button type="button" data-b="udforsk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z"/></svg><span>Udforsk</span></button>
+    <button type="button" data-b="soeg" class="soeg" aria-label="Søg"><span class="rund"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4.5a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM15 15l5 5"/></svg></span><span>Søg</span></button>
+    <button type="button" data-b="foelger"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><span>Følger</span><span class="bb-tal" id="foelgtal" hidden></span></button>
+    <button type="button" data-b="lag"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17.5l9 5 9-5"/></svg><span>Lag</span></button>
+  </nav>
 </div>
 
 <div class="appbanner" id="appbanner" hidden role="dialog" aria-label="Hent som app">
@@ -1695,7 +1822,7 @@ const DEG = Math.PI/180;
 let HJEM = {lam:-30, phi:22};
 // Kloden starter og nulstilles til 1,5 gange zoom.
 const START_ZOOM = 1.5;
-let rot = {lam:HJEM.lam, phi:HJEM.phi}, zoom = START_ZOOM, target = null;
+let rot = {lam:HJEM.lam, phi:HJEM.phi}, zoom = START_ZOOM, target = null, HJEM_KENDT = false;
 const view = {cx:0, cy:0, R:0};
 function unit(lon, lat){
   const l = (lon + rot.lam)*DEG, b = lat*DEG, p = rot.phi*DEG;
@@ -1761,7 +1888,7 @@ let TOP = 0, VH = 0, CY_MAAL = 0, CX_MAAL = 0;
 // På mobilen glider klodens midte op over detaljearket, så det valgte står i det synlige stykke kort.
 function opdaterCY(){
   let bund = H;
-  try{ if(MOBIL.matches && !detail.hidden){ const d = parseFloat(detail.style.getPropertyValue('--ark-d')) || innerHeight * .58; bund = Math.max(TOP + 120, Math.min(H, innerHeight - d)); } }catch(err){ /* detail findes endnu ikke */ }
+  try{ if(MOBIL.matches && !detail.hidden){ const d = parseFloat(detail.style.getPropertyValue('--ark-d')) || innerHeight * .58; bund = Math.max(TOP + 120, Math.min(H, innerHeight - d - BAR())); } }catch(err){ /* detail findes endnu ikke */ }
   CY_MAAL = TOP + (bund - TOP) / 2;
   CX_MAAL = W / 2;
   try{ if(!MOBIL.matches && !detail.hidden && detail.classList.contains('bred')){ const pw = detail.offsetWidth + 10; CX_MAAL = pw + (W - pw) / 2; } }catch(err){}
@@ -2262,6 +2389,8 @@ const fmtLon = v => { let x = ((v+180)%360+360)%360-180; return Math.abs(x).toFi
 // ---------- tilstand ----------
 const byId = Object.fromEntries(EVENTS.map(e => [e.id, e]));
 let query = '', off = new Set(), selected = null, focusId = null, region = null, nyeste = false;
+// Trinene på mobilen: en retning valgt inde i et område, og om hele listen er foldet ud.
+let nivRet = null, seAlle = false;
 // Siden starter med alt fra alle retninger. Klik slår en retning til og fra.
 // Dobbeltklik viser kun den retning, og et nyt dobbeltklik fører tilbage til valget fra før.
 let retOn = new Set(['smitte']), minAlvor = 1, mistMode = 'zoom', foerFokus = null;
@@ -2302,7 +2431,7 @@ function hay(e){
   return [e.place, e.country, e.region, e.disease, e.pathogen, e.note].join(' ').toLowerCase();
 }
 function textMatch(e){ return !query || query.split(/\s+/).every(w => hay(e).includes(w)); }
-function matches(e){ const st = stageAt(e, cutoff); return liveAt(e, cutoff) && !off.has(st) && textMatch(e) && regionMatch(e) && filterOk(e, st); }
+function matches(e){ const st = stageAt(e, cutoff); return liveAt(e, cutoff) && !off.has(st) && textMatch(e) && regionMatch(e) && filterOk(e, st) && (!nivRet || retAf(e) === nivRet); }
 const listItems = () => ALLE().filter(matches);
 const visible = () => focusId
   ? (byId[focusId] && liveAt(byId[focusId], cutoff) ? [byId[focusId]] : [])
@@ -2423,6 +2552,7 @@ function render(){
       list.appendChild(g);
     }
   }
+  bygNiveau(sorteret);
   if(selected && byId[selected] && liveAt(byId[selected], cutoff)) showDetail(byId[selected]);
   draw();
 }
@@ -2646,6 +2776,8 @@ function visFoelg(){
   const box = document.getElementById('foelgbox'); if(!box) return;
   const o = foelgLaes(), lande = Object.keys(o);
   box.hidden = !lande.length; box.innerHTML = '';
+  const tal = document.getElementById('foelgtal');
+  if(tal){ const n = lande.filter(a2 => o[a2] !== landSignatur(landData(a2))).length; tal.hidden = !n; tal.textContent = n; }
   if(!lande.length) return;
   box.appendChild(el('p','lbl','Lande du følger'));
   for(const a2 of lande){
@@ -2802,7 +2934,13 @@ function ikonKnap(k, navn, tip, fn, presset){
   b.dataset.tip = TT(navn, tip); b.addEventListener('click', fn); return b;
 }
 // Bladring: i Udforsk mellem turens hændelser, ellers i listens rækkefølge.
-function raekke(){ return TUR ? TUR.ids : LISTE; }
+function raekke(){
+  if(TUR) return TUR.ids;
+  // På en landeside er søskende de andre lande i samme område.
+  const e = selected && byId[selected];
+  if(e && erLand(e)) return landeI(e.region).map(x => x.lo.id);
+  return LISTE;
+}
 function bladr(d){
   const r = raekke(), i = r.indexOf(selected); if(!r.length) return;
   const n = r[(i < 0 ? 0 : i + d + r.length) % r.length];
@@ -2830,6 +2968,7 @@ function kortTop(e, o){
   }
   const x = el('button','x','×'); x.type = 'button'; x.setAttribute('aria-label','Luk'); x.addEventListener('click', lukDetaljer);
   nav.appendChild(x); detail.appendChild(nav);
+  if(MOBIL.matches) detail.appendChild(kortSti(e, o));
   const meta = el('div','k-meta');
   meta.appendChild(el('span','chip', o.chip));
   if(o.alvor) { const a = el('span','k-alv', `Alvor ${o.alvor} · ${ALV[o.alvor].n}`); a.style.setProperty('--a', `var(--s${Math.min(o.alvor, 5)})`); meta.appendChild(a); }
@@ -3313,6 +3452,7 @@ function buildRet(){
   }
 }
 function renderRet(){
+  const lr = document.getElementById('lagrejse'); if(lr) lr.checked = retOn.has('rejse');
   for(const b of rchips.querySelectorAll('.rchip')){
     const r = RETNINGER.find(x => x.k === b.dataset.k);
     if(!r.aktiv){ b.querySelector('.n').textContent = '';
@@ -3437,8 +3577,9 @@ function bygGuide(){
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
     gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Pauseknappen under zoomknapperne stopper klodens rotation. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
     gs('klik','Hent som app','På computer og Android: tryk Hent app øverst, når knappen står der, eller vælg Installér i browserens menu. På iPhone og iPad: tryk Del i Safari og vælg Føj til hjemmeskærm. Appen åbner i sit eget vindue og viser de sidst hentede data, også uden net.'),
-    gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises. Søljen i bunden viser alvor 5 og 4. På mobilen ligger det under filterknappen.'),
-    gs('sog','Søg og filtrér','Forstørrelsesglasset i overblikket søger på sygdom, sted eller hændelse. Filterknappen vælger område og trin.'),
+    gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises. Søljen i bunden viser alvor 5 og 4. På mobilen ligger det under Lag i bundbjælken, sammen med rejsevejledningerne og tidslinjen.'),
+    gs('sog','Søg og filtrér','Forstørrelsesglasset i overblikket søger på sygdom, sted eller hændelse. Filterknappen vælger område og trin. På mobilen står Søg midt i bundbjælken og foreslår steder nær dig, lande du følger, dine seneste søgninger og populære emner.'),
+    gs('zoom','Trin for trin på mobilen','Overblikket starter i hele verden. Vælg et område, så zoomer kloden derhen og viser det vigtigste, retningerne og landene i området. Linjen øverst i kortet viser vejen, fx Verden › Afrika › DR Congo › Ebola, og hvert led kan trykkes på. Træk kortet nedad for at gå et trin op, og swipe til siden for det næste på samme trin.'),
     gs('tid','Tidslinjen','Træk i den for at se en tidligere dato, eller tryk Afspil året.'),
     gs('cmp','Sammenlign','Læg op til tre hændelser ved siden af hinanden med deres kurver.'),
     gs('del','Del et link','Adressen følger den valgte hændelse, så et link fører direkte til den.')
@@ -3452,7 +3593,7 @@ readTokens(); buildLadder(); buildChips(); buildRet(); bygGuide(); renderCmp(); 
   const start = performance.now();
   fetch('/hvor', {cache:'no-store'}).then(r => r.ok ? r.json() : null).then(j => {
     if(!j || !Number.isFinite(j.lat) || !Number.isFinite(j.lon)) return;
-    HJEM = {lam:-j.lon, phi:Math.max(-60, Math.min(60, j.lat))}; if(j.land) BRUGER_LAND = String(j.land).toUpperCase();
+    HJEM = {lam:-j.lon, phi:Math.max(-60, Math.min(60, j.lat))}; HJEM_KENDT = true; if(j.land) BRUGER_LAND = String(j.land).toUpperCase();
     if(!selected && !dragging && idle <= start) target = {lam:HJEM.lam, phi:HJEM.phi};
   }).catch(() => {});
 }
@@ -3670,14 +3811,16 @@ hentKnap.dataset.tip = TT('Hent som app', 'Læg globus på din computer eller te
 // Overblikket er et ark fra bunden i tre højder (lille, halv, fuld), og detaljerne er et ark oven på det.
 // Arkene trækkes i grebet øverst. Et swipe til siden i detaljerne skifter til næste eller forrige hændelse.
 const side = document.getElementById('side');
-const ARK = {lille: () => 150, halv: () => Math.round(innerHeight * .52), fuld: () => innerHeight - 70};
+// Bundbjælken står under arkene, så højderne regnes fra dens overkant.
+function BAR(){ const b = document.getElementById('bundbar'); return MOBIL.matches && b ? b.offsetHeight : 0; }
+const ARK = {lille: () => 118, halv: () => Math.round((innerHeight - BAR()) * .55), fuld: () => innerHeight - BAR() - 64};
 let arkTilstand = 'lille', detTilstand = 'halv';
 function arkHoejde(t, h){
   if(!MOBIL.matches) return;
   arkTilstand = t; const v = h || ARK[t]();
   side.style.setProperty('--ark', v + 'px'); document.documentElement.style.setProperty('--ark-h', v + 'px');
 }
-function detHoejde(t){ if(!MOBIL.matches) return; detTilstand = t; detail.style.setProperty('--ark-d', t === 'fuld' ? (innerHeight - 56) + 'px' : Math.round(innerHeight * .58) + 'px'); }
+function detHoejde(t){ if(!MOBIL.matches) return; detTilstand = t; detail.style.setProperty('--ark-d', t === 'fuld' ? (innerHeight - BAR() - 52) + 'px' : Math.round((innerHeight - BAR()) * .56) + 'px'); }
 function naermest(h, liste){ return liste.reduce((b, t) => Math.abs(ARK[t]() - h) < Math.abs(ARK[b]() - h) ? t : b, liste[0]); }
 // Træk i et greb: højden følger fingeren, og ved slip vælges den nærmeste højde.
 function traek(greb, boks, hent, saet, slut){
@@ -3692,7 +3835,7 @@ traek(document.getElementById('arkgreb'), side, () => side.getBoundingClientRect
 // Detaljearket: grebet sidder i kortets top og bygges om ved hvert valg, så trækket lyttes på selve arket.
 detail.dataset.sel = '.k-greb';
 traek(detail, detail, () => detail.getBoundingClientRect().height, h => detail.style.setProperty('--ark-d', h + 'px'),
-  (h, tryk) => { if(tryk){ detHoejde(detTilstand === 'halv' ? 'fuld' : 'halv'); return; } if(h < innerHeight * .3) lukDetaljer(); else detHoejde(h > innerHeight * .75 ? 'fuld' : 'halv'); });
+  (h, tryk) => { if(tryk){ detHoejde(detTilstand === 'halv' ? 'fuld' : 'halv'); return; } if(h < innerHeight * .3){ detHoejde(detTilstand); opNiveau(); } else detHoejde(h > innerHeight * .75 ? 'fuld' : 'halv'); });
 {
   let sx = null, sy = 0;
   detail.addEventListener('touchstart', ev => { if(ev.touches.length !== 1 || ev.target.closest('.k-greb,a,button,summary,input')) { sx = null; return; } sx = ev.touches[0].clientX; sy = ev.touches[0].clientY; }, {passive:true});
@@ -3707,8 +3850,15 @@ const FLYT = ['mapctl', 'timebar', 'foot'].map(id => document.getElementById(id)
 function placer(){
   const af = document.getElementById('arkfilter');
   // Detaljearket skal ligge uden for kortets lag på mobilen, ellers kommer det bag overblikket.
-  if(MOBIL.matches){ for(const f of FLYT) af.appendChild(f.n); document.querySelector('.hacts').insertBefore(document.getElementById('protobtn'), document.getElementById('temabtn')); document.querySelector('.app').appendChild(detail); arkHoejde(arkTilstand); detHoejde(detTilstand); }
+  if(MOBIL.matches){ for(const f of FLYT) af.appendChild(f.n); document.querySelector('.app').appendChild(detail);
+    // Filtrene ligger i Lag, og knapperne for tema, data og app ligger nederst i Lag.
+    const ff = document.getElementById('filtre'); document.getElementById('lagfiltre').appendChild(ff); ff.hidden = false;
+    const lm = document.getElementById('lagmere'); for(const id of ['protobtn', 'temabtn', 'hentapp']) lm.appendChild(document.getElementById(id));
+    arkHoejde(arkTilstand); detHoejde(detTilstand); }
   else { for(const f of FLYT.slice().reverse()) f.far.insertBefore(f.n, f.efter && f.efter.parentNode === f.far ? f.efter : null); document.querySelector('.stage').appendChild(detail);
+    const ff = document.getElementById('filtre');
+    if(ff.parentNode.id === 'lagfiltre'){ document.getElementById('side').insertBefore(ff, document.querySelector('.side .listwrap')); ff.hidden = true; document.getElementById('filterknap').setAttribute('aria-expanded', 'false'); }
+    const ha = document.querySelector('.hacts'); ha.insertBefore(document.getElementById('hentapp'), ha.firstChild); ha.insertBefore(document.getElementById('temabtn'), document.getElementById('nytbtn'));
     // Prototypedata står forrest i undertitlen, så højre side af toppen kun har knapperne.
     document.getElementById('protoplads').appendChild(document.getElementById('protobtn'));
     // Alvor og mistanker ligger i bunden af klodens felt, centreret og uden baggrund.
@@ -3716,6 +3866,213 @@ function placer(){
   const hd = document.querySelector('header'); document.documentElement.style.setProperty('--hdr', hd.offsetHeight + 'px');
   resize();
 }
+// ---------- trin: verden, område, land, sted, hændelse ----------
+// På mobilen står man altid et sted i trinene. Brødkrummen i overblikket viser området, og kortet viser vejen ned til det valgte.
+// Et træk nedad i kortet går et trin op: fra hændelsen til landet, fra landet til området.
+var NIV_CACHE;
+function landeI(r){
+  const o = r && OMRAADER.find(x => x.k === r), alle = ALLE(), noegle = `${r}|${cutoff}|${alle.length}`;
+  if(!NIV_CACHE) NIV_CACHE = new Map();
+  if(NIV_CACHE.has(noegle)) return NIV_CACHE.get(noegle);
+  const m = new Map();
+  for(const e of alle){
+    if(!liveAt(e, cutoff) || retAf(e) === 'rejse' || (o && !iOmraade(e, o)) || (r && !o && e.region !== r)) continue;
+    const a2 = a2Af(e); if(!a2) continue;
+    const a = alvorAt(e, stageAt(e, cutoff)), x = m.get(a2); if(!x || a > x.a) m.set(a2, {a2, a});
+  }
+  const ud = [...m.values()].map(x => Object.assign(x, {lo: landObj(x.a2)})).filter(x => x.lo)
+    .sort((p, q) => q.a - p.a || landNavnAf(p.a2).localeCompare(landNavnAf(q.a2), 'da')).slice(0, 40);
+  if(NIV_CACHE.size > 30) NIV_CACHE.clear(); NIV_CACHE.set(noegle, ud); return ud;
+}
+function gaaOmraade(k){
+  region = k || null; nivRet = null; seAlle = false;
+  const o = k && OMRAADER.find(x => x.k === k);
+  if(o){ target = {lam:-o.lon, phi:o.lat}; zoomMaal = k === 'Danmark' ? 6 : 2.2; }
+  else { target = {lam:HJEM.lam, phi:HJEM.phi}; zoomMaal = START_ZOOM; }
+  idle = performance.now(); setFocus(null);
+  render();
+  if(MOBIL.matches && k) arkHoejde('halv');
+  const lw = document.querySelector('.side .listwrap'); if(lw) lw.scrollTop = 0;
+}
+function gaaLand(a2){
+  const lo = landObj(a2); if(!lo) return;
+  select(lo.id, true); zoomMaal = 2.6; idle = performance.now();
+}
+function opNiveau(){
+  const e = selected && byId[selected]; if(!e){ lukDetaljer(); return; }
+  if(!erLand(e)){ const a2 = a2Af(e), lo = a2 && landObj(a2); if(lo && lo.id !== e.id){ gaaLand(a2); return; } }
+  const r = e.region; lukDetaljer();
+  if(r && OMRAADER.some(x => x.k === r)) gaaOmraade(r); else arkHoejde('halv');
+}
+function kortNavn(e){ const t = (e._sted ? e.stedKort : e._feed ? e.titel : e.disease) || ''; return t.length > 42 ? t.slice(0, 40) + '…' : t; }
+function kortSti(e, o){
+  const n = el('nav','k-sti'); n.setAttribute('aria-label','Hvor i verden');
+  const led = (t, fn) => { const b = el('button','', t); b.type = 'button'; b.addEventListener('click', fn); n.append(b, el('span','', '›')); };
+  led('Verden', () => { lukDetaljer(); gaaOmraade(null); });
+  const r = e.region; if(r && OMRAADER.some(x => x.k === r)) led(r, () => { lukDetaljer(); gaaOmraade(r); });
+  const a2 = o.a2 || a2Af(e);
+  if(a2 && !erLand(e) && landObj(a2)) led(landNavnAf(a2), () => gaaLand(a2));
+  n.appendChild(el('b','', erLand(e) ? o.titel : kortNavn(e)));
+  return n;
+}
+function bygNiveau(sorteret){
+  const br = document.getElementById('broed'), nv = document.getElementById('niv'); if(!br || !nv) return;
+  br.innerHTML = ''; nv.innerHTML = ''; list.classList.remove('skjult');
+  const sortLinje = document.getElementById('listlbl').parentNode; sortLinje.hidden = false;
+  if(!MOBIL.matches) return;
+  const vb = el('button','bt','Verden'); vb.type = 'button'; br.appendChild(vb);
+  if(!region){
+    vb.setAttribute('aria-current','page'); br.appendChild(el('span','sep','›'));
+    for(const o of OMRAADER){
+      const n = ALLE().filter(e => { const st = stageAt(e, cutoff); return liveAt(e, cutoff) && !off.has(st) && textMatch(e) && iOmraade(e, o) && filterOk(e, st); }).length;
+      if(!n) continue;
+      const b = el('button','omr'); b.type = 'button'; b.append(el('span','', o.k), el('span','n', String(n)));
+      b.addEventListener('click', () => gaaOmraade(o.k)); br.appendChild(b);
+    }
+    return;
+  }
+  vb.addEventListener('click', () => gaaOmraade(null));
+  br.appendChild(el('span','sep','›'));
+  const cur = el('button','bt', region); cur.type = 'button'; cur.setAttribute('aria-current','page'); br.appendChild(cur);
+  const ud = el('button','ud','×'); ud.type = 'button'; ud.setAttribute('aria-label','Tilbage til hele verden'); ud.addEventListener('click', () => gaaOmraade(null)); br.appendChild(ud);
+  if(query || focusId) return;
+  // Retningerne i området, hver med sit antal. Et tryk viser kun den retning i området.
+  const o = OMRAADER.find(x => x.k === region);
+  const iOmr = ALLE().filter(e => { const st = stageAt(e, cutoff); return liveAt(e, cutoff) && !off.has(st) && textMatch(e) && (!o || iOmraade(e, o)) && filterOk(e, st); });
+  const rr = el('div','niv-ret');
+  for(const r of RETNINGER){
+    const n = iOmr.filter(e => retAf(e) === r.k).length; if(!n) continue;
+    const b = el('button'); b.type = 'button'; b.style.setProperty('--c', `var(--c-${r.k})`); b.setAttribute('aria-pressed', String(nivRet === r.k));
+    b.innerHTML = `${svgIc(r.k, 15)}<span></span><span class="n">${n}</span>`; b.querySelector('span').textContent = r.n;
+    b.addEventListener('click', () => { nivRet = nivRet === r.k ? null : r.k; seAlle = false; render(); });
+    rr.appendChild(b);
+  }
+  if(rr.childElementCount > 1 || nivRet) nv.appendChild(rr);
+  const top = sorteret.slice(0, 3);
+  if(top.length){
+    nv.appendChild(el('p','lbl', `Vigtigst i ${region}${nivRet ? ' · ' + RNAVN[nivRet].toLowerCase() : ''}`));
+    const t = el('div','niv-top'); for(const e of top) t.appendChild(e._feed ? feedItem(e) : eventItem(e, cutoff >= T1)); nv.appendChild(t);
+  }
+  const lande = landeI(region).slice(0, 14);
+  if(lande.length){
+    nv.appendChild(el('p','lbl', `Lande i ${region}`));
+    const l = el('div','niv-lande');
+    for(const x of lande){ const b = el('button'); b.type = 'button'; b.style.setProperty('--a', `var(--s${Math.min(Math.max(x.a, 1), 5)})`); b.append(el('i'), el('span','', landNavnAf(x.a2))); b.addEventListener('click', () => gaaLand(x.a2)); l.appendChild(b); }
+    nv.appendChild(l);
+  }
+  if(sorteret.length > 3 && !seAlle){
+    const b = el('button','seealle', `Se alle ${sorteret.length}`); b.type = 'button';
+    b.addEventListener('click', () => { seAlle = true; render(); }); nv.appendChild(b);
+    list.classList.add('skjult'); sortLinje.hidden = true;
+  }
+}
+// ---------- bundbjælken på mobilen ----------
+// Overblik, Udforsk, Søg, Følger og Lag. Søgningen fylder hele skærmen, og lagene er et ark over bjælken.
+const bundbar = document.getElementById('bundbar'), lagark = document.getElementById('lagark'), soegark = document.getElementById('soegark'),
+  q2 = document.getElementById('q2'), saind = document.getElementById('saind');
+function lukLag(){ lagark.hidden = true; bundbar.querySelector('[data-b="lag"]').setAttribute('aria-expanded', 'false'); }
+function lukSoeg(){ soegark.hidden = true; q2.blur(); }
+bundbar.addEventListener('click', ev => {
+  const b = ev.target.closest('button'); if(!b) return; const k = b.dataset.b;
+  if(k !== 'lag') lukLag();
+  if(k !== 'soeg') lukSoeg();
+  if(k === 'overblik'){ if(!detail.hidden){ lukDetaljer(); arkHoejde('halv'); } else arkHoejde(arkTilstand === 'lille' ? 'halv' : 'lille'); }
+  else if(k === 'udforsk'){ startTur(); }
+  else if(k === 'soeg'){ aabnSoeg(); }
+  else if(k === 'foelger'){
+    if(!detail.hidden) lukDetaljer();
+    visFoelg();
+    const box = document.getElementById('foelgbox');
+    if(box.hidden){ box.hidden = false; box.innerHTML = ''; box.append(el('p','lbl','Lande du følger'), el('p','dim','Du følger ingen lande endnu. Åbn et land, og tryk på stjernen. Så står det her og markeres, når der er nyt.')); }
+    arkHoejde('halv'); box.parentNode.scrollTop = 0;
+  }
+  else if(k === 'lag'){ lagark.hidden = !lagark.hidden; b.setAttribute('aria-expanded', String(!lagark.hidden)); }
+});
+document.getElementById('lagluk').addEventListener('click', lukLag);
+document.getElementById('lagrejse').addEventListener('change', ev => { if(ev.target.checked !== retOn.has('rejse')){ skiftRetning('rejse'); render(); } });
+// Søgningen: forslag, når feltet er tomt, og lande og hændelser, mens man skriver.
+const SOEGT = 'globus-soegt';
+function soegt(){ try{ return JSON.parse(localStorage.getItem(SOEGT) || '[]') || []; }catch(err){ return []; } }
+function husk(t){ t = (t || '').trim(); if(t.length < 2) return; const a = soegt().filter(x => x.toLowerCase() !== t.toLowerCase()); a.unshift(t); try{ localStorage.setItem(SOEGT, JSON.stringify(a.slice(0, 6))); }catch(err){} }
+function aabnSoeg(){ lukLag(); soegark.hidden = false; q2.value = query || ''; bygSoeg(); setTimeout(() => q2.focus(), 40); }
+function gaaTil(e, term){
+  husk(term); lukSoeg();
+  if(erLand(e)){ gaaLand(e.a2); return; }
+  if(!retOn.has(retAf(e))){ retOn.add(retAf(e)); foerFokus = null; }
+  select(e.id, true); zoomMaal = Math.max(zoom, 2.6); idle = performance.now();
+}
+const LANDIK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>';
+function saRaekke(ik, farve, titel, under, hoejre, fn){
+  const b = el('button','sa-r'); b.type = 'button'; if(farve) b.style.setProperty('--c', farve);
+  const ri = el('span','ri'); ri.innerHTML = ik; const rt = el('span','rt'); rt.append(el('b','', titel), el('span','', under || ''));
+  b.append(ri, rt, el('span','ra', hoejre || '')); b.addEventListener('click', fn); return b;
+}
+function saHaendelse(e, term, hoejre){
+  const a = alvorAt(e, stageAt(e, cutoff)), r = retAf(e);
+  const under = e._sted ? e.landNavn : e._feed ? (e.sted || RNAVN[r] || '') : `${e.country} · ${e.place}`;
+  return saRaekke(svgIc(r, 17), `var(--c-${r})`, kortNavn(e), under, hoejre || (a ? `Alvor ${a}` : ''), () => gaaTil(e, term));
+}
+function afstandKm(la1, lo1, la2, lo2){
+  const d = Math.sin((la2 - la1)*DEG/2)**2 + Math.cos(la1*DEG)*Math.cos(la2*DEG)*Math.sin((lo2 - lo1)*DEG/2)**2;
+  return 12742 * Math.asin(Math.min(1, Math.sqrt(d)));
+}
+function saChips(liste, fn, kl){
+  const c = el('div','sa-chips');
+  for(const x of liste){ const b = el('button', kl ? kl(x) : '', typeof x === 'string' ? x : x.t); b.type = 'button'; b.addEventListener('click', () => fn(x)); c.appendChild(b); }
+  saind.appendChild(c);
+}
+const alvorFoerst = (p, q) => alvorAt(q, stageAt(q, cutoff)) - alvorAt(p, stageAt(p, cutoff)) || senestMs(q) - senestMs(p);
+function bygSoeg(){
+  const t = q2.value.trim().toLowerCase(); saind.innerHTML = '';
+  const sek = titel => saind.appendChild(el('h3','', titel));
+  const levende = ALLE().filter(e => liveAt(e, cutoff) && !erLand(e));
+  if(!t){
+    const naer = [];
+    if(BRUGER_LAND && landObj(BRUGER_LAND)) naer.push(saRaekke(LANDIK, 'var(--accent)', landNavnAf(BRUGER_LAND), 'Dit land, ud fra din forbindelse', 'Land', () => { lukSoeg(); gaaLand(BRUGER_LAND); }));
+    if(HJEM_KENDT){
+      const la = HJEM.phi, lo = -HJEM.lam;
+      for(const [e, d] of levende.filter(e => retAf(e) !== 'rejse' && alvorAt(e, stageAt(e, cutoff)) >= 2 && Number.isFinite(e.lat))
+        .map(e => [e, afstandKm(la, lo, e.lat, e.lon)]).filter(([, d]) => d < 2500).sort((p, q) => p[1] - q[1]).slice(0, 3))
+        naer.push(saHaendelse(e, '', `${Math.round(d / 10) * 10} km`));
+    }
+    if(naer.length){ sek('Nær mig'); for(const n of naer) saind.appendChild(n); }
+    const fo = foelgLaes(), lande = Object.keys(fo);
+    if(lande.length){ sek('Lande du følger');
+      saChips(lande.map(a2 => ({a2, nyt: fo[a2] !== landSignatur(landData(a2)), t: landNavnAf(a2)})).map(x => Object.assign(x, {t: x.t + (x.nyt ? ' · nyt' : '')})),
+        x => { lukSoeg(); gaaLand(x.a2); }, x => x.nyt ? 'nyt' : ''); }
+    const s2 = soegt(); if(s2.length){ sek('Seneste søgninger'); saChips(s2, x => { q2.value = x; bygSoeg(); }); }
+    const emner = [];
+    for(const e of levende.filter(e => retAf(e) !== 'rejse' && !e._sted).sort(alvorFoerst)){
+      const n = (e._feed ? (e.sted || '') : e.disease).split(/[,(·]/)[0].trim();
+      if(n && n.length <= 26 && !emner.some(x => x.toLowerCase() === n.toLowerCase())) emner.push(n); if(emner.length >= 8) break;
+    }
+    if(emner.length){ sek('Populære emner'); saChips(emner, x => { q2.value = x; bygSoeg(); }); }
+    sek('Mest alvorligt lige nu');
+    for(const e of levende.filter(e => retAf(e) !== 'rejse').sort(alvorFoerst).slice(0, 5)) saind.appendChild(saHaendelse(e, ''));
+    return;
+  }
+  const ord = t.split(/\s+/);
+  const lande = HS ? Object.keys(HS).filter(a2 => { const n = landNavnAf(a2).toLowerCase(); return ord.every(w => n.includes(w)); })
+    .sort((a, b) => (landNavnAf(a).toLowerCase().startsWith(t) ? 0 : 1) - (landNavnAf(b).toLowerCase().startsWith(t) ? 0 : 1)).slice(0, 4) : [];
+  if(lande.length){ sek('Lande'); for(const a2 of lande) saind.appendChild(saRaekke(LANDIK, 'var(--accent)', landNavnAf(a2), HS[a2][0] !== landNavnAf(a2) ? HS[a2][0] : 'Alt om landet samlet ét sted', 'Land', () => { husk(q2.value); lukSoeg(); gaaLand(a2); })); }
+  const fund = levende.filter(e => { const h = hay(e) + ' ' + (e.stedKort || '').toLowerCase(); return ord.every(w => h.includes(w)); }).sort(alvorFoerst);
+  if(fund.length){
+    sek(`Hændelser (${fund.length})`);
+    for(const e of fund.slice(0, 25)) saind.appendChild(saHaendelse(e, q2.value));
+    const b = el('button','sa-alle', 'Vis søgningen i overblikket'); b.type = 'button'; b.addEventListener('click', visIListen); saind.appendChild(b);
+  }
+  if(!lande.length && !fund.length) saind.appendChild(el('p','sa-tom', `Intet fundet for "${q2.value.trim()}". Prøv et land, en by eller en sygdom.`));
+}
+function visIListen(){
+  const v = q2.value.trim(); husk(v); lukSoeg();
+  const qq = document.getElementById('q'); qq.value = v; qq.dispatchEvent(new Event('input'));
+  document.getElementById('soegfelt').hidden = !v;
+  if(!detail.hidden) lukDetaljer(); arkHoejde('halv');
+}
+q2.addEventListener('input', bygSoeg);
+q2.addEventListener('keydown', ev => { if(ev.key === 'Enter'){ ev.preventDefault(); if(q2.value.trim()) visIListen(); } else if(ev.key === 'Escape') lukSoeg(); });
+document.getElementById('satilbage').addEventListener('click', lukSoeg);
+visFoelg();
 MOBIL.addEventListener('change', placer);
 window.addEventListener('resize', () => { if(MOBIL.matches){ document.documentElement.style.setProperty('--hdr', document.querySelector('header').offsetHeight + 'px'); arkHoejde(arkTilstand); detHoejde(detTilstand); } });
 placer();
@@ -3726,7 +4083,7 @@ placer();
   const NYT_SET = 'globus-nyt-set', knap = document.getElementById('nytbtn'), tal = document.getElementById('nyttal'), dlg = document.getElementById('nytdlg');
   const IK = { nyt:'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6',
     afspil:'M7 4l13 8-13 8z', kort:'M4 4h16v16H4zM4 14l5-5 5 5 3-3 3 3', udforsk:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z',
-    app:'M7 2h10v20H7zM11 18h2', foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z', land:'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' };
+    app:'M7 2h10v20H7zM11 18h2', sog:'M10.5 4.5a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM15 15l5 5', trin:'M4 6h16M8 12h12M12 18h8', foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z', land:'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' };
   let NYT = [];
   const laesSet = () => { try{ return JSON.parse(localStorage.getItem(NYT_SET) || 'null'); }catch(err){ return null; } };
   const usete = () => { const set = laesSet(); const graense = Date.now() - 14*DAY;
@@ -3745,6 +4102,9 @@ placer();
     nyt: () => { dlg.close(); lukDetaljer(); const g = document.querySelector('.nytgruppe'); arkHoejde('halv');
       if(g){ g.open = true; g.scrollIntoView({block:'start', behavior:'smooth'}); } else { const gr = document.querySelector('.gruppe'); if(gr) gr.scrollIntoView({block:'start'}); } },
     app: () => { dlg.close(); installer_start(); },
+    soeg: () => { dlg.close(); aabnSoeg(); },
+    trin: () => { dlg.close(); lukDetaljer(); gaaOmraade('Afrika'); },
+    bundbar: () => { dlg.close(); lukDetaljer(); arkHoejde('halv'); },
     data: () => { dlg.close(); document.getElementById('protobtn').click(); },
     rss: () => { dlg.close(); const lo = landObj('DK'); if(lo){ select(lo.id, true); setTimeout(() => { const r = detail.querySelector('a.k-ik[href^="/feed"]'); if(r){ r.focus(); r.classList.add('ok'); } }, 600); } }
   };
@@ -3754,7 +4114,7 @@ placer();
     d.innerHTML = `<span class="gi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IK[n.ikon] || IK.nyt}"/></svg></span>`;
     const hd = el('div','hd'); hd.append(el('b','', n.titel), el('span','dt', fmtDate(n.dato))); if(ny) hd.appendChild(el('span','mk','Ny'));
     d.append(hd, el('p','', n.tekst));
-    if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches) && !(n.proev === 'app' && ER_APP)){
+    if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches) && !(['soeg', 'trin', 'bundbar'].includes(n.proev) && !MOBIL.matches) && !(n.proev === 'app' && ER_APP)){
       const gaa = () => { if(om.open) om.close(); PROEV[n.proev](); };
       const b = el('button','proev', n.proev === 'app' ? 'Hent appen' : 'Vis mig det'); b.type = 'button'; b.addEventListener('click', ev => { ev.stopPropagation(); gaa(); }); d.appendChild(b);
       // Hele kortet kan trykkes på og fører hen til det nye.

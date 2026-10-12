@@ -2,6 +2,16 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 12. oktober 2026, mobilen
+
+**Side ændret.** Ingen ændringer i data.
+
+- Mobilen har en bundbjælke med Overblik, Udforsk, Søg, Følger og Lag. Søg står i midten og er størst. Følger har et tal, når et land, man følger, har noget nyt.
+- Søg fylder hele skærmen. Før man skriver, foreslår den steder nær en (ud fra forbindelsens placering), lande man følger, de seneste søgninger, populære emner og det mest alvorlige lige nu. Søgningerne huskes kun i browseren.
+- Lag er et ark over bjælken med rejsevejledninger som kontakt, alvor, mistanker, tidslinjen, område og trin, og knapperne for lys og mørk, Prototypedata og Hent app. Toppen har nu kun logoet, retningerne, Nyt på siden og Sådan virker siden.
+- Trin for trin: overblikket starter i Verden med områderne som knapper. Et område zoomer kloden derhen og viser de tre vigtigste, retningerne i området og landene. Se alle folder hele listen ud. Kortet har en sti øverst, fx Verden › Afrika › DR Congo › Ebola, hvor hvert led kan trykkes på. Træk kortet nedad for at gå et trin op. På en landeside blader pilene og swipe mellem landene i samme område.
+- I halv højde viser kortet først titel, kort fortalt og nøgletal. Billede, forløb og kilder kommer, når arket trækkes op.
+
 ## 12. oktober 2026
 
 **Gennemgået:** ECDC CDTR uge 41 fra 9. oktober, som fortsat er den seneste, WHO DON siden 11. oktober (ingen nye efter DON 620) og UKHSA's ugeoversigt over udbrud under overvågning, hvor uge 40 fortsat er den seneste. Enkeltkilder: DR Congos sundhedsministeriums situationsrapporter 147, 148 og 149, ECDC's ebolaside, Bangladeshs sundhedsmyndighed DGHS om mæslinger og dengue, Sri Lankas National Dengue Control Unit, GPEI, Floridas sundhedsmyndighed, Hongkongs pressemeddelelser, RIVM, Kenyas sundhedsministerium gennem APO Group, WHO AFRO, Africa CDC, ECDC's nyheder, Statens Serum Institut, CIDRAP og WHO's mpox-rapporter samt nyhedsmedier om Kenya, Ghana, Irkutsk og Bangladesh. Kørslen faldt natten til mandag, hvor de faste ugeudgivelser ikke er nye.

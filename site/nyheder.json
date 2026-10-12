@@ -2,6 +2,30 @@
  "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
  "n": [
   {
+   "id": "bundbar",
+   "dato": "2026-10-12",
+   "titel": "Bundbjælke på mobilen",
+   "tekst": "På telefonen har siden nu en bjælke i bunden som en app: Overblik, Udforsk, Søg, Følger og Lag. Følger viser de lande, du følger, med et tal, når der er nyt. Lag samler alvor, mistanker, tidslinjen og rejsevejledningerne, så toppen kun har retningerne.",
+   "ikon": "app",
+   "proev": "bundbar"
+  },
+  {
+   "id": "soeg",
+   "dato": "2026-10-12",
+   "titel": "Søg i hele skærmen",
+   "tekst": "Søg midt i bundbjælken åbner en søgning, der fylder skærmen. Før du skriver, foreslår den steder nær dig, lande du følger, dine seneste søgninger og populære emner. Mens du skriver, kommer lande og hændelser frem med det samme.",
+   "ikon": "sog",
+   "proev": "soeg"
+  },
+  {
+   "id": "trin",
+   "dato": "2026-10-12",
+   "titel": "Fra verden til hændelsen, trin for trin",
+   "tekst": "På mobilen vælger du først et område, så et land og så det enkelte sted eller den enkelte hændelse. Kloden zoomer med for hvert trin. Linjen øverst i kortet viser vejen, fx Verden › Afrika › DR Congo › Ebola. Træk kortet nedad for at gå et trin op.",
+   "ikon": "trin",
+   "proev": "trin"
+  },
+  {
    "id": "nyheder",
    "dato": "2026-10-12",
    "titel": "Nyt på siden",
