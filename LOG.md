@@ -122,7 +122,8 @@
 - Bred læsevisning på computeren: knappen med pilene i detaljekortet gør kortet op til 820 px bredt med indholdet i to spalter og hele forløbet som en vandret tidslinje. Kloden rykker til højre for kortet. Valget huskes i browseren.
 - Afspil udbruddet: et tryk på et punkt i forløbet sætter tidsskyderen til datoen og flyver til stedet. Knappen Afspil udbruddet går punkt for punkt gennem forløbet.
 - Nyt siden sidst: siden husker i browseren, hvad der stod på den, da man sidst forlod den. Ved næste besøg står det nye øverst i overblikket (ny, højere eller lavere alvor, ny udvikling), og prikkerne har en lille markering på kloden.
-- Knappen Nyt på siden ved siden af Sådan virker siden samler nye funktioner med en kort forklaring og en Prøv det-knap. Et lille tal på knappen viser, hvor mange nyheder man ikke har set endnu. En nyhed forsvinder fra vinduet, når man har set den, og står samtidig under Det kan du på siden i Sådan virker siden.
+- Knappen Nyt på siden ved siden af Sådan virker siden samler nye funktioner med en kort forklaring og en Prøv det-knap. Et lille tal på knappen viser, hvor mange nyheder man ikke har set endnu. En nyhed forsvinder fra vinduet, når man har set den, og står samtidig under Det kan du på siden i Sådan virker siden. Et tryk på en nyhed fører hen til funktionen.
+- På telefonen kommer et lille banner, der tilbyder at hente siden som app. På iPhone viser det, hvordan man føjer siden til hjemmeskærmen. Lukkes banneret, kommer det ikke igen i 30 dage.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag

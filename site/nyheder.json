@@ -5,7 +5,7 @@
    "id": "nyheder",
    "dato": "2026-10-12",
    "titel": "Nyt på siden",
-   "tekst": "Her kommer en kort forklaring, hver gang der er noget nyt på siden. Tallet på knappen viser, hvor mange du ikke har set. Når du har set en nyhed, forsvinder den herfra, men den står stadig under Det kan du på siden i Sådan virker siden.",
+   "tekst": "Her kommer en kort forklaring, hver gang der er noget nyt på siden. Tryk på en nyhed, så fører den dig hen til det nye. Tallet på knappen viser, hvor mange du ikke har set. Når du har set en nyhed, forsvinder den herfra, men den står stadig under Det kan du på siden i Sådan virker siden.",
    "ikon": "nyt"
   },
   {
@@ -29,7 +29,8 @@
    "dato": "2026-10-11",
    "titel": "Abonnér på et land",
    "tekst": "På landesiden giver RSS-knappen et feed for netop det land, som du kan følge i din nyhedslæser. Et punkt dukker op igen, når det ændrer sig.",
-   "ikon": "rss"
+   "ikon": "rss",
+   "proev": "rss"
   },
   {
    "id": "bred",
@@ -52,14 +53,16 @@
    "dato": "2026-10-11",
    "titel": "Nyt siden sidst",
    "tekst": "Øverst i overblikket står det, der er kommet til eller har skiftet alvor, siden du sidst var inde. Prikkerne har en lille blå markering på kloden. Siden husker dit sidste besøg i din egen browser.",
-   "ikon": "nyt"
+   "ikon": "nyt",
+   "proev": "nyt"
   },
   {
    "id": "kort",
    "dato": "2026-10-11",
    "titel": "Detaljekort med billede og læs mere",
    "tekst": "Alle hændelser har nu samme kort: billede, kort fortalt, nøgletal, forløb, kilder og tre artikler at læse videre i. For brugere i Danmark er den første artikel fra DR, når DR har skrevet om det.",
-   "ikon": "kort"
+   "ikon": "kort",
+   "proev": "kort"
   },
   {
    "id": "udforsk",
@@ -73,15 +76,17 @@
    "id": "app",
    "dato": "2026-10-11",
    "titel": "Hent som app og ny mobil",
-   "tekst": "Siden kan lægges på computeren eller telefonen som en app og åbner også uden net. På telefonen står kortet fast i hele skærmen, og overblik og detaljer trækkes op fra bunden.",
-   "ikon": "app"
+   "tekst": "Siden kan lægges på computeren eller telefonen som en app og åbner også uden net. Tryk her for at hente den. På telefonen står kortet fast i hele skærmen, og overblik og detaljer trækkes op fra bunden.",
+   "ikon": "app",
+   "proev": "app"
   },
   {
    "id": "akut",
    "dato": "2026-10-11",
    "titel": "Alvor 5, akut, og søljen Lige nu",
    "tekst": "Det nye og kritiske lige nu har fået sit eget trin, alvor 5. Det og alvor 4 ruller i søljen i bunden af siden, og et tryk fører dig derhen.",
-   "ikon": "akut"
+   "ikon": "akut",
+   "proev": "akut"
   },
   {
    "id": "steder",

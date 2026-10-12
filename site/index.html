@@ -86,8 +86,8 @@ header .sub{grid-column:1/-1}
 h1.logo{margin:0;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--fg);padding:0 12px;border-right:1px solid var(--rule);align-self:stretch;--mh:26px;--ch:13px;font-size:inherit}
 h1.logo .mk{height:var(--mh);width:var(--mh);display:block;flex:none}
 h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);letter-spacing:.05em;white-space:nowrap;text-box:trim-both cap alphabetic}
-.rchips{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:6px;min-width:0;padding:0 12px}
-.rmidt{grid-column:2;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;min-width:0}
+.rchips{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:6px;min-width:0;padding:0 12px}
+.rmidt{grid-column:1;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:6px;min-width:0}
 .rchip{flex:none;display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);border-radius:999px;padding:4px 9px 4px 4px;font:500 12px/1 var(--mono);cursor:pointer;min-height:36px}
 .rchip .d{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--fg-faint);border:1.5px solid currentColor}
 .rchip .d svg{width:16px;height:16px}
@@ -95,7 +95,7 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .hentapp{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 11px 5px 8px;font:500 12px/1 var(--mono);cursor:pointer;min-height:32px}
 .hentapp svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hentapp:hover{border-color:var(--accent)}
-.rchip.service{grid-column:3;justify-self:end}
+.rchip.service{grid-column:2;justify-self:end}
 @media (max-width:900px){.rchip.service{margin-left:14px}}
 .rchip[aria-pressed="true"]{border-color:var(--c);color:var(--fg);background:color-mix(in srgb,var(--c) 12%,var(--panel))}
 .rchip[data-fokus="1"]{box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 45%,transparent)}
@@ -395,17 +395,26 @@ canvas.drag{cursor:grabbing}
   #protoplads .proto{margin-right:10px;padding:1px 6px;font-size:9.5px;vertical-align:1px}
 }
 /* Smallere skærme: retningerne centreres i det, der er tilbage, og rejsevejledninger står lige efter. Knapperne bliver lidt mindre. */
-@media (min-width:901px) and (max-width:1560px){
-  .rchips{grid-template-columns:minmax(0,1fr) auto}
-  .rmidt{grid-column:1}
-  .rchip.service{grid-column:2}
-}
 @media (min-width:901px) and (max-width:1380px){
   .rchip{padding:3px 7px 3px 3px;gap:4px;min-height:32px;font-size:11px}
   .rchip .d{width:24px;height:24px}
   .rchip .d svg{width:14px;height:14px}
   .rmidt,.rchips{gap:4px}
 }
+/* Banner på telefonen: hent som app. */
+.appbanner{position:fixed;left:10px;right:10px;bottom:calc(var(--ark-h,150px) + 12px);z-index:25;display:grid;grid-template-columns:40px 1fr auto auto;align-items:center;gap:10px;
+  background:var(--panel);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);padding:10px 8px 10px 10px}
+.appbanner img{border-radius:9px}
+.appbanner b{display:block;font-size:14px}
+.appbanner span{display:block;font-size:12px;color:var(--fg-dim);line-height:1.35}
+.appbanner .ja{font:600 13px/1 var(--display);background:var(--accent);color:var(--bg);border:0;border-radius:999px;padding:9px 14px;cursor:pointer}
+.appbanner .nej{background:none;border:0;color:var(--fg-faint);font-size:20px;padding:6px 8px;cursor:pointer}
+dialog.appvejl{width:min(440px,calc(100% - 24px))}
+.appvejl ol{margin:0 0 10px;padding-left:20px}
+.appvejl li{font-size:14px;line-height:1.5;margin-bottom:6px;color:var(--fg)}
+/* Nyheder kan trykkes på og fører hen til funktionen. */
+.nyt-p.kan{cursor:pointer}
+.nyt-p.kan:hover{border-color:var(--accent)}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -708,6 +717,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 
   <footer id="foot"></footer>
 </div>
+
+<div class="appbanner" id="appbanner" hidden role="dialog" aria-label="Hent som app">
+  <img src="/ikon-192.png" alt="" width="40" height="40">
+  <div><b>Hent Globus som app</b><span>Åbner direkte på kloden og virker også uden net.</span></div>
+  <button type="button" class="ja" id="appja">Hent</button>
+  <button type="button" class="nej" id="appnej" aria-label="Ikke nu">×</button>
+</div>
+
+<dialog class="om appvejl" id="appvejl" aria-labelledby="appvejltitel">
+  <div class="omhead"><h2 id="appvejltitel">Hent Globus som app</h2><button type="button" id="appvejlluk" aria-label="Luk">×</button></div>
+  <div class="ombody"><ol id="appvejltekst"></ol><p class="nytfod">Appen er den samme side. Den gemmer intet om dig ud over det, siden selv husker i browseren.</p></div>
+</dialog>
 
 <dialog class="om nytdlg" id="nytdlg" aria-labelledby="nyttitel">
   <div class="omhead">
@@ -3544,7 +3565,30 @@ let installer = null;
 const hentKnap = document.getElementById('hentapp');
 window.addEventListener('beforeinstallprompt', ev => { ev.preventDefault(); installer = ev; hentKnap.hidden = false; });
 window.addEventListener('appinstalled', () => { installer = null; hentKnap.hidden = true; });
-hentKnap.addEventListener('click', async () => { if(!installer) return; installer.prompt(); try{ await installer.userChoice; }catch(err){} installer = null; hentKnap.hidden = true; });
+// Installation: browserens egen dialog, hvor den findes (Chrome, Edge, Android). På iPhone og iPad, og i browsere
+// uden dialogen, vises en kort vejledning i stedet.
+const ER_APP = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const ER_IOS = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+async function installer_start(){
+  if(installer){ installer.prompt(); try{ await installer.userChoice; }catch(err){} installer = null; hentKnap.hidden = true; skjulAppBanner(); return; }
+  const v = document.getElementById('appvejl'); if(v.showModal) v.showModal(); else v.setAttribute('open', '');
+}
+hentKnap.addEventListener('click', installer_start);
+// Banner på telefonen: kommer frem efter et halvt minut, ikke hvis siden allerede er en app, og ikke igen i 30 dage, når det er lukket.
+const BANNER_NOEGLE = 'globus-appbanner';
+function skjulAppBanner(){ document.getElementById('appbanner').hidden = true; }
+if(!ER_APP) setTimeout(() => {
+  if(!MOBIL.matches) return;
+  let t = 0; try{ t = +localStorage.getItem(BANNER_NOEGLE) || 0; }catch(err){}
+  if(Date.now() - t < 30*DAY) return;
+  document.getElementById('appbanner').hidden = false;
+}, 30000);
+document.getElementById('appja').addEventListener('click', () => { try{ localStorage.setItem(BANNER_NOEGLE, String(Date.now())); }catch(err){} skjulAppBanner(); installer_start(); });
+document.getElementById('appnej').addEventListener('click', () => { try{ localStorage.setItem(BANNER_NOEGLE, String(Date.now())); }catch(err){} skjulAppBanner(); });
+document.getElementById('appvejlluk').addEventListener('click', () => document.getElementById('appvejl').close());
+document.getElementById('appvejltekst').innerHTML = ER_IOS
+  ? '<li>Tryk på <b>Del</b> nederst i Safari (firkanten med pilen op).</li><li>Rul ned og vælg <b>Føj til hjemmeskærm</b>.</li><li>Tryk <b>Tilføj</b>. Globus ligger nu som en app på din hjemmeskærm.</li>'
+  : '<li>Åbn browserens menu (de tre prikker).</li><li>Vælg <b>Installér app</b> eller <b>Føj til startskærm</b>.</li><li>Bekræft. Globus åbner nu i sit eget vindue og virker også uden net.</li>';
 hentKnap.dataset.tip = TT('Hent som app', 'Læg globus på din computer eller telefon. Den åbner i sit eget vindue og viser de sidst hentede data, også uden net.');
 // Overblikkets knapper: søgning og filtre er foldet væk, til man trykker.
 {
@@ -3628,7 +3672,13 @@ placer();
     bred: () => { dlg.close(); try{ localStorage.setItem(BRED_NOEGLE, '1'); }catch(err){} detail.classList.add('bred'); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed); if(e) select(e.id, true); },
     afspil: () => { dlg.close(); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed && x.tl && x.tl.length > 2); if(e){ select(e.id, true); setTimeout(() => afspilForloeb(e), 600); } },
     land: () => { dlg.close(); const a2 = (HS && HS.DK) ? 'DK' : null; const lo = a2 && landObj(a2); if(lo) select(lo.id, true); },
-    krig: () => { dlg.close(); const e = STEDER.slice().sort((a, b) => b.n - a.n)[0]; if(e){ retOn.add('krig'); select(e.id, true); zoomMaal = Math.max(zoom, 3); } }
+    krig: () => { dlg.close(); const e = STEDER.slice().sort((a, b) => b.n - a.n)[0]; if(e){ retOn.add('krig'); select(e.id, true); zoomMaal = Math.max(zoom, 3); } },
+    kort: () => { dlg.close(); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed); if(e) select(e.id, true); },
+    akut: () => { dlg.close(); const e = ALLE().find(x => liveAt(x, T1) && alvorAt(x, stageAt(x, T1)) >= 5); if(e){ select(e.id, true); zoomMaal = Math.max(zoom, 2.5); } document.getElementById('ticker').scrollIntoView({block:'nearest'}); },
+    nyt: () => { dlg.close(); lukDetaljer(); const g = document.querySelector('.nytgruppe'); arkHoejde('halv');
+      if(g){ g.open = true; g.scrollIntoView({block:'start', behavior:'smooth'}); } else { const gr = document.querySelector('.gruppe'); if(gr) gr.scrollIntoView({block:'start'}); } },
+    app: () => { dlg.close(); installer_start(); },
+    rss: () => { dlg.close(); const lo = landObj('DK'); if(lo){ select(lo.id, true); setTimeout(() => { const r = detail.querySelector('a.k-ik[href^="/feed"]'); if(r){ r.focus(); r.classList.add('ok'); } }, 600); } }
   };
   // Kort for en nyhed. Bruges både i vinduet og under Det kan du på siden i Sådan virker siden.
   function kort(n, ny){
@@ -3636,7 +3686,12 @@ placer();
     d.innerHTML = `<span class="gi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${IK[n.ikon] || IK.nyt}"/></svg></span>`;
     const hd = el('div','hd'); hd.append(el('b','', n.titel), el('span','dt', fmtDate(n.dato))); if(ny) hd.appendChild(el('span','mk','Ny'));
     d.append(hd, el('p','', n.tekst));
-    if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches)){ const b = el('button','proev','Prøv det'); b.type = 'button'; b.addEventListener('click', () => { if(om.open) om.close(); PROEV[n.proev](); }); d.appendChild(b); }
+    if(n.proev && PROEV[n.proev] && !(n.proev === 'bred' && MOBIL.matches) && !(n.proev === 'app' && ER_APP)){
+      const gaa = () => { if(om.open) om.close(); PROEV[n.proev](); };
+      const b = el('button','proev', n.proev === 'app' ? 'Hent appen' : 'Vis mig det'); b.type = 'button'; b.addEventListener('click', ev => { ev.stopPropagation(); gaa(); }); d.appendChild(b);
+      // Hele kortet kan trykkes på og fører hen til det nye.
+      d.classList.add('kan'); d.addEventListener('click', ev => { if(!ev.target.closest('a')) gaa(); });
+    }
     return d;
   }
   // Vinduet viser kun det, man ikke har set. Det, man har set, står i Sådan virker siden.
