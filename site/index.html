@@ -652,7 +652,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 /* Bundbjælke, søgning, lag og trin. Kun på mobilen. */
 .bundbar,.lagark,.soegark,.broed,.niv,.k-sti{display:none}
 @media (max-width:900px){
-  :root{--bar:calc(58px + env(safe-area-inset-bottom));--ark-lille:118px}
+  :root{--bar-luft:max(16px, env(safe-area-inset-bottom));--bar:calc(64px + var(--bar-luft));--ark-lille:118px}
   .stage{bottom:calc(var(--bar) + var(--ark-lille))}
   .side{bottom:var(--bar);padding-bottom:8px}
   .detail{bottom:var(--bar);padding-bottom:24px}
@@ -664,12 +664,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .lagmere #protobtn,.lagmere #temabtn{display:inline-flex}
   .lagmere #hentapp:not([hidden]){display:inline-flex}
   .bundbar{display:grid;grid-template-columns:repeat(5,1fr);align-items:end;position:fixed;left:0;right:0;bottom:0;z-index:35;
-    height:var(--bar);padding:0 6px env(safe-area-inset-bottom);background:var(--panel);border-top:1px solid var(--rule)}
-  .bundbar button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:58px;
-    background:none;border:0;color:var(--fg-dim);font:600 10.5px/1 var(--display);cursor:pointer;padding:0;-webkit-tap-highlight-color:transparent}
+    height:var(--bar);padding:0 6px var(--bar-luft);background:var(--panel);border-top:1px solid var(--rule)}
+  .bundbar button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:4px;height:64px;
+    background:none;border:0;color:var(--fg-dim);font:600 10.5px/1 var(--display);cursor:pointer;padding:0 0 10px;-webkit-tap-highlight-color:transparent}
   .bundbar svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .bundbar button[aria-current="true"]{color:var(--accent)}
-  .bundbar .soeg{justify-content:flex-end;padding-bottom:7px}
+  .bundbar .soeg{padding-bottom:10px}
   .bundbar .soeg .rund{display:grid;place-items:center;width:52px;height:52px;margin-top:-22px;border-radius:50%;background:var(--accent);color:var(--bg);
     box-shadow:0 4px 14px rgba(0,0,0,.35);border:3px solid var(--panel)}
   .bundbar .soeg .rund svg{width:24px;height:24px;stroke-width:2.2}
