@@ -28,7 +28,16 @@ jobs:
             exit 1
           fi
 
-      - name: Udrul til Cloudflare
+      # Første gang skal Workeren findes, før hemmeligheden kan lægges i den. Derfor udrulles den først uden.
+      - name: Udrul Workeren
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: b8e531774d257d9555c444b444dd71b5
+          workingDirectory: worker
+          command: deploy
+
+      - name: Læg tokenet i Workeren
         uses: cloudflare/wrangler-action@v4
         env:
           GH_TOKEN: ${{ secrets.UDLOESER_TOKEN }}
