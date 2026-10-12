@@ -1,0 +1,41 @@
+name: Udrul udløseren
+
+# Udruller Cloudflare Workeren i worker/, som starter "Udrul til Cloudflare Pages" hver time.
+# Startes manuelt under Actions, når worker/ er ændret, eller når GitHub-tokenet er skiftet.
+# Kræver repo-hemmeligheden UDLOESER_TOKEN: et fine-grained token med adgang til dette repo
+# og kun rettigheden Actions: Read and write. Det lægges i Workeren som hemmeligheden GH_TOKEN.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  udrul:
+    name: Udrul Workeren
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent repoet
+        uses: actions/checkout@v6
+
+      - name: Tjek at tokenet findes
+        env:
+          GH_TOKEN: ${{ secrets.UDLOESER_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Repo-hemmeligheden UDLOESER_TOKEN mangler. Se worker/udloeser.js."
+            exit 1
+          fi
+
+      - name: Udrul til Cloudflare
+        uses: cloudflare/wrangler-action@v4
+        env:
+          GH_TOKEN: ${{ secrets.UDLOESER_TOKEN }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: b8e531774d257d9555c444b444dd71b5
+          workingDirectory: worker
+          command: deploy
+          secrets: |
+            GH_TOKEN

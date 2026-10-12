@@ -1,0 +1,10 @@
+# Cloudflare Worker, der starter udrulningen hver time. Se udloeser.js.
+name = "globus-udloeser"
+main = "udloeser.js"
+compatibility_date = "2026-09-01"
+account_id = "b8e531774d257d9555c444b444dd71b5"
+# Ingen offentlig adresse. Workeren køres kun af tidsplanen.
+workers_dev = false
+
+[triggers]
+crons = ["23 * * * *"]
