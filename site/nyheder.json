@@ -2,6 +2,14 @@
  "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
  "n": [
   {
+   "id": "zoomtil",
+   "dato": "2026-10-12",
+   "titel": "Kloden zoomer ind på det, du vælger",
+   "tekst": "Trykker du på et land, et område, et sted eller en hændelse, zoomer kloden ind, så netop det fylder kortet med lidt luft omkring. Vælger du Danmark, ser du Danmark og ikke hele Nordeuropa. En hændelse vises med sit land, og et udbrud i flere lande med alle sine steder.",
+   "ikon": "land",
+   "proev": "land"
+  },
+  {
    "id": "rotation",
    "dato": "2026-10-12",
    "titel": "Kloden står stille, mens du kigger",

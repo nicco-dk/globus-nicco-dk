@@ -1894,7 +1894,9 @@ let TOP = 0, VH = 0, CY_MAAL = 0, CX_MAAL = 0;
 // På mobilen glider klodens midte op over detaljearket, så det valgte står i det synlige stykke kort.
 function opdaterCY(){
   let bund = H;
-  try{ if(MOBIL.matches && !detail.hidden){ const d = parseFloat(detail.style.getPropertyValue('--ark-d')) || innerHeight * .58; bund = Math.max(TOP + 120, Math.min(H, innerHeight - d - BAR())); } }catch(err){ /* detail findes endnu ikke */ }
+  try{ if(MOBIL.matches && !detail.hidden){ const d = parseFloat(detail.style.getPropertyValue('--ark-d')) || innerHeight * .58; bund = Math.max(TOP + 120, Math.min(H, innerHeight - d - BAR())); }
+    // Står overblikket i halv højde, står kloden over det.
+    else if(MOBIL.matches && arkTilstand === 'halv') bund = Math.max(TOP + 120, Math.min(H, innerHeight - ARK.halv() - BAR())); }catch(err){ /* detail findes endnu ikke */ }
   CY_MAAL = TOP + (bund - TOP) / 2;
   CX_MAAL = W / 2;
   try{ if(!MOBIL.matches && !detail.hidden && detail.classList.contains('bred')){ const pw = detail.offsetWidth + 10; CX_MAAL = pw + (W - pw) / 2; } }catch(err){}
@@ -2840,8 +2842,8 @@ function select(id, fly){
   if(TUR && !TUR.ids.includes(id)) TUR = null;
   selected = id; const e = byId[id]; visParFast = null; visPar = null; idle = performance.now();
   if(MOBIL.matches){ if(detail.hidden) detHoejde('halv'); arkHoejde('lille'); }
-  if(fly) target = {lam:-e.lon, phi: Math.max(-80, Math.min(80, e.lat))};
   showDetail(e); render();
+  if(fly) flyvTil(e);
   if(iListen){ const cur = list.querySelector('[aria-current="true"]'); if(cur) cur.focus({preventScroll:true}); }
   skrivAdresse();
 }
@@ -2952,13 +2954,13 @@ function bladr(d){
   const r = raekke(), i = r.indexOf(selected); if(!r.length) return;
   const n = r[(i < 0 ? 0 : i + d + r.length) % r.length];
   if(TUR) TUR.i = r.indexOf(n);
-  select(n, true); if(zoom < 2) zoomMaal = 2.2;
+  select(n, true);
 }
 function startTur(){
   const ids = ALLE().filter(e => matches(e) && retAf(e) !== 'rejse')
     .sort((a, b) => alvorAt(b, stageAt(b, cutoff)) - alvorAt(a, stageAt(a, cutoff)) || senestMs(b) - senestMs(a)).slice(0, 12).map(e => e.id);
   if(!ids.length) return;
-  TUR = {ids, i:0}; select(ids[0], true); zoomMaal = Math.max(zoom, 2.2);
+  TUR = {ids, i:0}; select(ids[0], true);
 }
 function kortTop(e, o){
   if(!MOBIL.matches && detail.hidden) detail.classList.toggle('bred', bredLaes());
@@ -3286,11 +3288,11 @@ function hit(ev){
     const d = (e._sx-mx)**2 + (e._sy-my)**2;
     if(d < bd){ bd = d; best = e; }
   }
-  if(best) select(best.id, false);
+  if(best) select(best.id, true);
   else {
     // Ingen prik: et tryk på et land åbner landesiden, et tryk på havet lukker detaljerne.
     const a2 = landVed(mx, my), lo = a2 && landObj(a2);
-    if(lo) select(lo.id, false);
+    if(lo) select(lo.id, true);
     else { selected = null; setFocus(null); detail.hidden = true; render(); skrivAdresse(); }
   }
 }
@@ -3746,7 +3748,7 @@ function bygTicker(){
       if(skjult) b.tabIndex = -1;
       b.innerHTML = `<span class="d">${svgIc(retAf(e), 16)}</span><span class="m">${mist ? 'Mistanke' : a >= 5 ? 'Akut' : 'Alvor 4'}</span>`;
       b.append(el('span','t', e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`));
-      b.addEventListener('click', () => { select(e.id, true); zoomMaal = Math.max(zoom, 2.5); idle = performance.now(); });
+      b.addEventListener('click', () => { select(e.id, true); idle = performance.now(); });
       g.appendChild(b);
     }
     return g;
@@ -3883,6 +3885,69 @@ function placer(){
   const hd = document.querySelector('header'); document.documentElement.style.setProperty('--hdr', hd.offsetHeight + 'px');
   resize();
 }
+// ---------- zoom til det valgte ----------
+// Når man vælger et land, et område, et sted eller en hændelse, drejer og zoomer kloden, så netop det fylder det synlige
+// stykke kort med 5 procent luft på hver side. En hændelse vises med hele sit land, et sted med sit område på 50 × 50 km,
+// og et udbrud i flere lande med alle sine steder. Kloden zoomer højst 40 gange.
+function projTil(lat, lon, la0, lo0){
+  const p = lat*DEG, d = (lon - lo0)*DEG, p0 = la0*DEG;
+  return [Math.cos(p)*Math.sin(d), Math.cos(p0)*Math.sin(p) - Math.sin(p0)*Math.cos(p)*Math.cos(d)];
+}
+function projFra(x, y, la0, lo0){
+  const rho = Math.hypot(x, y); if(rho < 1e-9) return [la0, lo0];
+  const c = Math.asin(Math.min(1, rho)), p0 = la0*DEG;
+  return [Math.asin(Math.cos(c)*Math.sin(p0) + y*Math.sin(c)*Math.cos(p0)/rho)/DEG,
+    lo0 + Math.atan2(x*Math.sin(c), rho*Math.cos(p0)*Math.cos(c) - y*Math.sin(p0)*Math.sin(c))/DEG];
+}
+// Landets omrids som [lat, lon]. Fjerne dele (fx Alaska eller Fransk Guyana) tæller ikke med.
+function landPunkter(a2){
+  const rr = GRAENSER && GRAENSER[a2]; if(!rr || !rr.length) return null;
+  const midt = r => { let sx = 0, sy = 0; for(const [x, y] of r){ sx += x; sy += y; } return [sx/r.length, sy/r.length]; };
+  const areal = r => { let a = 0; for(let i = 0, j = r.length - 1; i < r.length; j = i++) a += (r[j][0] + r[i][0])*(r[j][1] - r[i][1]); return Math.abs(a/2); };
+  const stor = rr.reduce((b, r) => areal(r) > areal(b) ? r : b, rr[0]), [mx, my] = midt(stor), ud = [];
+  for(const r of rr){
+    const [cx, cy] = midt(r), dl = ((cx - mx + 540) % 360) - 180;
+    if(r !== stor && Math.hypot(dl, cy - my) > 25) continue;
+    for(const [x, y] of r) ud.push([y, x]);
+  }
+  return ud;
+}
+const boksPunkter = (v, s, o, n) => { const ud = []; for(let i = 0; i <= 4; i++) for(let j = 0; j <= 4; j++) ud.push([s + (n - s)*i/4, v + (o - v)*j/4]); return ud; };
+const OMR_BOKS = {Europa:[-12, 35, 40, 71], Afrika:[-18, -35, 52, 37], Asien:[60, -10, 145, 55], Amerika:[-125, -55, -35, 62], 'Mellemøsten':[34, 12, 60, 40]};
+// Rotation og zoom, der får punkterne til at fylde det synlige stykke kort.
+function passer(pkt){
+  if(!pkt || !pkt.length) return null;
+  const ref = pkt[0][1]; let l0 = Infinity, l1 = -Infinity, a0 = Infinity, a1 = -Infinity;
+  for(const [la, lo] of pkt){ const l = ref + ((lo - ref + 540) % 360) - 180; l0 = Math.min(l0, l); l1 = Math.max(l1, l); a0 = Math.min(a0, la); a1 = Math.max(a1, la); }
+  let la0 = (a0 + a1)/2, lo0 = (l0 + l1)/2, ex = 0, ey = 0;
+  for(let it = 0; it < 4; it++){
+    let x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for(const [la, lo] of pkt){ const [x, y] = projTil(la, lo, la0, lo0); x0 = Math.min(x0, x); x1 = Math.max(x1, x); y0 = Math.min(y0, y); y1 = Math.max(y1, y); }
+    ex = Math.max((x1 - x0)/2, 1e-4); ey = Math.max((y1 - y0)/2, 1e-4);
+    if(it < 3) [la0, lo0] = projFra((x0 + x1)/2, (y0 + y1)/2, la0, lo0);
+  }
+  // Det synlige stykke: under toppen og over arkene på mobilen, uden om kortet på computeren.
+  opdaterCY();
+  const hoej = Math.max(120, 2*(CY_MAAL - TOP));
+  let bred = W;
+  if(!MOBIL.matches && !detail.hidden) bred = detail.classList.contains('bred') ? W - detail.offsetWidth - 10 : Math.max(W*.4, W - 2*(detail.offsetWidth + 12));
+  const LUFT = 1.1, grund = Math.min(W, VH || H)/2*0.88;
+  const R = Math.min(bred/2/(ex*LUFT), hoej/2/(ey*LUFT));
+  return {lam:-lo0, phi:Math.max(-80, Math.min(80, la0)), zoom:Math.max(0.8, Math.min(ZMAX, R/grund))};
+}
+function flyvTil(e){
+  let pkt = null;
+  if(e._sted){ const d = 0.23, dl = d/Math.max(.2, Math.cos(e.lat*DEG)); pkt = boksPunkter(e.lon - dl, e.lat - d, e.lon + dl, e.lat + d); }
+  else if(erLand(e)) pkt = landPunkter(e.a2);
+  else {
+    const a2 = a2Af(e); pkt = a2 && landPunkter(a2);
+    if(!pkt && e.nodes && e.nodes.length > 1) pkt = e.nodes.map(n => [n[2], n[1]]);
+    if(pkt && Number.isFinite(e.lat)) pkt = pkt.concat([[e.lat, e.lon]]);
+  }
+  const f = passer(pkt);
+  if(!f){ target = {lam:-e.lon, phi:Math.max(-80, Math.min(80, e.lat))}; zoomMaal = Math.max(zoom, 4); return; }
+  target = {lam:f.lam, phi:f.phi}; zoomMaal = f.zoom;
+}
 // ---------- trin: verden, område, land, sted, hændelse ----------
 // På mobilen står man altid et sted i trinene. Brødkrummen i overblikket viser området, og kortet viser vejen ned til det valgte.
 // Et træk nedad i kortet går et trin op: fra hændelsen til landet, fra landet til området.
@@ -3904,16 +3969,18 @@ function landeI(r){
 function gaaOmraade(k){
   region = k || null; nivRet = null; seAlle = false;
   const o = k && OMRAADER.find(x => x.k === k);
-  if(o){ target = {lam:-o.lon, phi:o.lat}; zoomMaal = k === 'Danmark' ? 6 : 2.2; }
+  if(MOBIL.matches && k) arkHoejde('halv');
+  const f = o && passer(k === 'Danmark' ? landPunkter('DK') : OMR_BOKS[k] ? boksPunkter(...OMR_BOKS[k]) : null);
+  if(f){ target = {lam:f.lam, phi:f.phi}; zoomMaal = f.zoom; }
+  else if(o){ target = {lam:-o.lon, phi:o.lat}; zoomMaal = 2.2; }
   else { target = {lam:HJEM.lam, phi:HJEM.phi}; zoomMaal = START_ZOOM; }
   idle = performance.now(); setFocus(null);
   render();
-  if(MOBIL.matches && k) arkHoejde('halv');
   const lw = document.querySelector('.side .listwrap'); if(lw) lw.scrollTop = 0;
 }
 function gaaLand(a2){
   const lo = landObj(a2); if(!lo) return;
-  select(lo.id, true); zoomMaal = 2.6; idle = performance.now();
+  select(lo.id, true); idle = performance.now();
 }
 function opNiveau(){
   const e = selected && byId[selected]; if(!e){ lukDetaljer(); return; }
@@ -4016,7 +4083,7 @@ function gaaTil(e, term){
   husk(term); lukSoeg();
   if(erLand(e)){ gaaLand(e.a2); return; }
   if(!retOn.has(retAf(e))){ retOn.add(retAf(e)); foerFokus = null; }
-  select(e.id, true); zoomMaal = Math.max(zoom, 2.6); idle = performance.now();
+  select(e.id, true); idle = performance.now();
 }
 const LANDIK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>';
 function saRaekke(ik, farve, titel, under, hoejre, fn){
@@ -4113,9 +4180,9 @@ placer();
     bred: () => { dlg.close(); try{ localStorage.setItem(BRED_NOEGLE, '1'); }catch(err){} detail.classList.add('bred'); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed); if(e) select(e.id, true); },
     afspil: () => { dlg.close(); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed && x.tl && x.tl.length > 2); if(e){ select(e.id, true); setTimeout(() => afspilForloeb(e), 600); } },
     land: () => { dlg.close(); const a2 = (HS && HS.DK) ? 'DK' : null; const lo = a2 && landObj(a2); if(lo) select(lo.id, true); },
-    krig: () => { dlg.close(); const e = STEDER.slice().sort((a, b) => b.n - a.n)[0]; if(e){ retOn.add('krig'); select(e.id, true); zoomMaal = Math.max(zoom, 3); } },
+    krig: () => { dlg.close(); const e = STEDER.slice().sort((a, b) => b.n - a.n)[0]; if(e){ retOn.add('krig'); select(e.id, true); } },
     kort: () => { dlg.close(); const e = byId['ebola-drc'] || ALLE().find(x => !x._feed); if(e) select(e.id, true); },
-    akut: () => { dlg.close(); const e = ALLE().find(x => liveAt(x, T1) && alvorAt(x, stageAt(x, T1)) >= 5); if(e){ select(e.id, true); zoomMaal = Math.max(zoom, 2.5); } document.getElementById('ticker').scrollIntoView({block:'nearest'}); },
+    akut: () => { dlg.close(); const e = ALLE().find(x => liveAt(x, T1) && alvorAt(x, stageAt(x, T1)) >= 5); if(e) select(e.id, true); document.getElementById('ticker').scrollIntoView({block:'nearest'}); },
     nyt: () => { dlg.close(); lukDetaljer(); const g = document.querySelector('.nytgruppe'); arkHoejde('halv');
       if(g){ g.open = true; g.scrollIntoView({block:'start', behavior:'smooth'}); } else { const gr = document.querySelector('.gruppe'); if(gr) gr.scrollIntoView({block:'start'}); } },
     app: () => { dlg.close(); installer_start(); },
