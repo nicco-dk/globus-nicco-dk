@@ -21,7 +21,7 @@ Alt andet står urørt: resten af `site/index.html` (markup, CSS, kortgeometri, 
 
 ### Maskinmeldinger (de syv andre retninger)
 
-Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, storme, naturbrande og vulkaner kommer ikke fra denne kørsel. De hentes af workflowet `udrul.yml` hver time med `tools/hent-feeds.mjs` til `site/feeds.json`, som ikke ligger i repoet. Scriptet bruger ingen AI og skriver kun kildens egne felter.
+Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, storme, naturbrande og vulkaner kommer ikke fra denne kørsel. De hentes af workflowet `udrul.yml` hver time (startet kl. xx.23 af Cloudflare Workeren i `worker/`, fordi GitHubs egen tidsplan ikke går i gang) med `tools/hent-feeds.mjs` til `site/feeds.json`, som ikke ligger i repoet. Scriptet bruger ingen AI og skriver kun kildens egne felter.
 
 | Retning | Kilde | Hvad tages med | Alvor |
 | --- | --- | --- | --- |
@@ -226,3 +226,5 @@ Til gennemgang er det, kun ejeren må rette: gamle punkter, hvor en kilde har re
 **Læs mere (artikler i detaljekortet).** `tools/hent-laes.mjs` kører efter mediesporet. Først matches overskrifterne fra de 17 store medier, som mediesporet lige har læst (Reuters, AP, BBC, DR m.fl.): en overskrift passer, når den nævner søgeordet og hændelsens land. Mangler der artikler, søges i GDELT DOC 2.0 efter artikler om smitteudbruddene, maskinmeldinger fra alvor 3 og steder med mindst 40 omtaler af kampe. To søgninger pr. hændelse: engelsksprogede medier (sidste 7 eller 14 dage, kun overskrifter, der nævner søgeordet) og danske medier. Kendte internationale medier (Reuters, AP, BBC, The Guardian m.fl.) foretrækkes. Højst 12 søgninger pr. kørsel med 6,5 sekunder imellem, som GDELT beder om. En hændelse søges igen efter et døgn. Resultatet ligger i `site/laes.json` og bruges kun som henvisning til videre læsning.
 
 **Billeder i detaljekortet.** Siden henter selv billedet fra Wikipedia-artiklen om emnet og bruger det kun, hvis det ligger på Wikimedia Commons (fri licens). Fotograf og licens står under billedet sammen med, at det ikke viser selve hændelsen.
+
+**Udløseren.** GitHubs tidsplan i `udrul.yml` er ikke gået i gang. I stedet starter Cloudflare Workeren `globus-udloeser` (`worker/udloeser.js`) workflowet hver time kl. xx.23 gennem GitHubs API. Den bruger et fine-grained GitHub-token med kun Actions: Read and write på dette repo (repo-hemmeligheden `UDLOESER_TOKEN`, udløber 12. oktober 2027 og skal fornyes inden). Workeren udrulles med workflowet `udloeser.yml`, som startes manuelt. Kørsler startet af Workeren udrulles altid, også når meldingerne ikke er ændret.
