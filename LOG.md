@@ -124,6 +124,8 @@
 - Nyt siden sidst: siden husker i browseren, hvad der stod på den, da man sidst forlod den. Ved næste besøg står det nye øverst i overblikket (ny, højere eller lavere alvor, ny udvikling), og prikkerne har en lille markering på kloden.
 - Knappen Nyt på siden ved siden af Sådan virker siden samler nye funktioner med en kort forklaring og en Prøv det-knap. Et lille tal på knappen viser, hvor mange nyheder man ikke har set endnu. En nyhed forsvinder fra vinduet, når man har set den, og står samtidig under Det kan du på siden i Sådan virker siden. Et tryk på en nyhed fører hen til funktionen.
 - På telefonen kommer et lille banner, der tilbyder at hente siden som app. På iPhone viser det, hvordan man føjer siden til hjemmeskærmen. Lukkes banneret, kommer det ikke igen i 30 dage.
+- Prototypedata-mærket åbner Data og kilder: hvilke data siden henter, hvorfra og hvornår de sidst blev hentet, og de seneste opdateringer ti ad gangen med Vis mere.
+- Toppen: undertitlen starter ved stregen efter logoet, tema og Nyt på siden står ved stregen til overblikket. Positionsteksten står øverst til højre over kloden, og klodens felt har bløde overgange i top og bund.
 - Efter et tryk på en prik står kloden stille i 10 sekunder, før den drejer igen. Tæt på drejer den langsommere.
 
 ## 11. oktober 2026, eftermiddag

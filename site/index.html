@@ -415,6 +415,39 @@ dialog.appvejl{width:min(440px,calc(100% - 24px))}
 /* Nyheder kan trykkes på og fører hen til funktionen. */
 .nyt-p.kan{cursor:pointer}
 .nyt-p.kan:hover{border-color:var(--accent)}
+@media (min-width:901px){
+  /* Bløde overgange i top og bund af klodens felt, så tekst og knapper står tydeligt. */
+  .stage::before,.stage::after{content:"";position:absolute;left:0;right:0;pointer-events:none;z-index:2}
+  .stage::before{top:0;height:64px;background:linear-gradient(var(--bg),color-mix(in srgb,var(--bg) 0%,transparent))}
+  .stage::after{bottom:0;height:84px;background:linear-gradient(color-mix(in srgb,var(--bg) 0%,transparent),var(--bg))}
+  .stage>.hud,.stage>.zoomer,.stage>.detail,.stage>.mapctl{z-index:3}
+  /* Positionsteksten står øverst til højre, inden overblikket. */
+  .stage>.hud{left:auto;right:6px;text-align:right}
+  /* Undertitlen med prototypedata starter ved stregen efter logoet. */
+  header .sub{grid-column:2/-1;padding-left:12px}
+  /* Tema og Nyt på siden står ved stregen, Sådan virker siden helt til højre. */
+  .hacts{justify-content:flex-start}
+  .hacts .guidebtn{margin-left:auto}
+}
+.datameta{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--mono);font-size:11.5px;color:var(--fg-dim);margin:10px 0 4px}
+.datameta b{color:var(--fg);font-weight:600}
+.datakilder{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px;margin:8px 0 18px}
+.dk{background:var(--panel-2);border:1px solid var(--rule);border-radius:9px;padding:11px 12px;display:grid;gap:3px}
+.dk .hd{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.dk b{font-size:13.5px;color:var(--fg)}
+.dk .st{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--hjaelp)}
+.dk .st.fejl{color:var(--s4)}
+.dk p{margin:0;font-size:12.5px;line-height:1.45;color:var(--fg-dim)}
+.dk .m{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint)}
+.dk a{font-size:12px;color:var(--accent)}
+.dataopd{display:grid;gap:1px;margin:8px 0 10px}
+.dataopd .r{display:grid;grid-template-columns:160px 1fr auto;gap:10px;align-items:baseline;padding:7px 4px;border-bottom:1px solid var(--rule);cursor:pointer;background:none;border-left:0;border-right:0;border-top:0;text-align:left;font:inherit;color:inherit}
+.dataopd .r:hover{background:var(--panel-2)}
+.dataopd .t{font-family:var(--mono);font-size:11px;color:var(--fg-faint)}
+.dataopd .n{font-size:13px;color:var(--fg)}
+.dataopd .n i{font-style:normal;color:var(--c)}
+.dataopd .k{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);white-space:nowrap}
+@media (max-width:600px){.dataopd .r{grid-template-columns:1fr}.dataopd .k{white-space:normal}}
 .klist{display:flex;flex-direction:column;gap:4px;margin-top:12px}
 .detail h2{margin:0;font-size:16px;font-weight:700;letter-spacing:-.01em;text-wrap:balance;padding-right:20px}
 .detail .where{font-family:var(--mono);font-size:11px;color:var(--fg-dim)}
@@ -633,7 +666,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="rchips" id="rchips" role="group" aria-label="Retninger"></div>
     <div class="hacts">
       <button class="hentapp" id="hentapp" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg><span>Hent app</span></button>
-      <button class="proto" id="protobtn" type="button" title="Læs hvad prototypedata betyder">Prototypedata</button>
+      <button class="proto" id="protobtn" type="button" title="Se hvilke data vi henter, hvorfra og hvornår">Prototypedata</button>
       <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
       <button class="nytbtn" id="nytbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="t">Nyt på siden</span><span class="tal" id="nyttal" hidden></span></button>
       <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
@@ -728,6 +761,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 <dialog class="om appvejl" id="appvejl" aria-labelledby="appvejltitel">
   <div class="omhead"><h2 id="appvejltitel">Hent Globus som app</h2><button type="button" id="appvejlluk" aria-label="Luk">×</button></div>
   <div class="ombody"><ol id="appvejltekst"></ol><p class="nytfod">Appen er den samme side. Den gemmer intet om dig ud over det, siden selv husker i browseren.</p></div>
+</dialog>
+
+<dialog class="om datadlg" id="datadlg" aria-labelledby="datatitel">
+  <div class="omhead"><h2 id="datatitel">Data og kilder</h2><button type="button" id="dataluk" aria-label="Luk">×</button></div>
+  <div class="ombody">
+    <p class="led">Siden er en prototype. Her står, hvilke data vi henter, hvorfra, og hvornår de sidst blev hentet. Alt bliver hentet automatisk fra kildernes egne feeds og vist, som kilden har skrevet det.</p>
+    <div class="datameta" id="datameta"></div>
+    <h3>Kilderne</h3>
+    <div class="datakilder" id="datakilder"></div>
+    <h3>Seneste opdateringer</h3>
+    <div class="dataopd" id="dataopd"></div>
+    <button type="button" class="proev datamere" id="datamere">Vis mere</button>
+    <p class="nytfod">Ændringer i smitteudbruddenes tal og kilder står i <a href="/log">ændringsloggen</a>. Hvad prototypedata betyder, står i <button type="button" class="linkbtn" id="datatilom">Sådan virker siden</button>.</p>
+  </div>
 </dialog>
 
 <dialog class="om nytdlg" id="nytdlg" aria-labelledby="nyttitel">
@@ -3139,7 +3186,7 @@ function aabnOm(anker){
   if(m) m.scrollIntoView({block:'start'}); else om.scrollTop = 0;
 }
 document.getElementById('ombtn').addEventListener('click', () => aabnOm());
-document.getElementById('protobtn').addEventListener('click', () => aabnOm('om-opdatering'));
+
 document.getElementById('trinhj').addEventListener('click', () => aabnOm('om-trin'));
 document.getElementById('omluk').addEventListener('click', () => om.close());
 // Baggrundslaget følger detaljepanelet og vises kun på smalle skærme.
@@ -3678,6 +3725,7 @@ placer();
     nyt: () => { dlg.close(); lukDetaljer(); const g = document.querySelector('.nytgruppe'); arkHoejde('halv');
       if(g){ g.open = true; g.scrollIntoView({block:'start', behavior:'smooth'}); } else { const gr = document.querySelector('.gruppe'); if(gr) gr.scrollIntoView({block:'start'}); } },
     app: () => { dlg.close(); installer_start(); },
+    data: () => { dlg.close(); document.getElementById('protobtn').click(); },
     rss: () => { dlg.close(); const lo = landObj('DK'); if(lo){ select(lo.id, true); setTimeout(() => { const r = detail.querySelector('a.k-ik[href^="/feed"]'); if(r){ r.focus(); r.classList.add('ok'); } }, 600); } }
   };
   // Kort for en nyhed. Bruges både i vinduet og under Det kan du på siden i Sådan virker siden.
@@ -3717,6 +3765,68 @@ placer();
   document.getElementById('nyttilom').addEventListener('click', () => { dlg.close(); aabnOm('om-funktioner'); });
   knap.dataset.tip = TT('Nyt på siden', 'Nye funktioner, siden du sidst var inde.');
   fetch('/nyheder.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => { if(j && Array.isArray(j.n)){ NYT = j.n; visTal(); bygGuideFunktioner(); } }).catch(() => {});
+}
+// ---------- data og kilder ----------
+// Prototypedata-mærket åbner en oversigt: hvilke data vi henter, hvorfra og hvornår, og de seneste opdateringer, ti ad gangen.
+{
+  const dlg = document.getElementById('datadlg');
+  const KILDEINFO = {
+    um: ['Udenrigsministeriet', 'Rejsevejledninger for de lande, ministeriet har en vejledning for.', 'https://um.dk/rejse-og-ophold/rejse-til-udlandet/rejsevejledninger'],
+    fcdo: ['Det britiske udenrigsministerium (FCDO)', 'Rejsevejledninger for lande uden en dansk vejledning.', 'https://www.gov.uk/foreign-travel-advice'],
+    usgs: ['USGS', 'Jordskælv fra styrke 5,5, eller med et PAGER-varsel.', 'https://earthquake.usgs.gov/earthquakes/map/'],
+    gdacs: ['GDACS', 'Storme, oversvømmelser, naturbrande, vulkaner og tørke, med FN og EU\'s varselsniveau.', 'https://www.gdacs.org/'],
+    meteoalarm: ['Meteoalarm', 'Vejrvarsler fra Europas vejrtjenester, også DMI.', 'https://meteoalarm.org/'],
+    gvp: ['Smithsonian GVP', 'Ugentlig rapport om vulkaner i udbrud.', 'https://volcano.si.edu/'],
+    fts: ['OCHA Financial Tracking Service', 'Humanitær hjælp fra lande og EU i år.', 'https://fts.unocha.org/'],
+    unhcr: ['UNHCR', 'Flygtninge og asylansøgere pr. oprindelsesland.', 'https://www.unhcr.org/refugee-statistics/']
+  };
+  let vist = 10;
+  const kildeKort = (navn, tekst, url, status, meta) => {
+    const d = el('div','dk'); const hd = el('div','hd'); hd.append(el('b','', navn));
+    const st = el('span', 'st' + (status === 'ok' ? '' : ' fejl'), status === 'ok' ? 'Hentet' : 'Svarer ikke'); hd.appendChild(st);
+    d.append(hd, el('p','', tekst)); if(meta) d.appendChild(el('span','m', meta));
+    if(url){ const a = document.createElement('a'); a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); d.appendChild(a); }
+    return d;
+  };
+  function opdateringer(){
+    // Mediesporets steder tælles op samlet hver time og står under kilderne, ikke som enkelte opdateringer.
+    return ALLE().filter(e => liveAt(e, T1) && !e._sted).map(e => ({e, ms: senestMs(e)})).filter(x => x.ms).sort((a, b) => b.ms - a.ms);
+  }
+  function bygOpd(){
+    const box = document.getElementById('dataopd'); box.innerHTML = '';
+    const l = opdateringer();
+    for(const {e, ms} of l.slice(0, vist)){
+      const r = document.createElement('button'); r.type = 'button'; r.className = 'r'; r.style.setProperty('--c', retVar(e));
+      const tid = e._feed ? klok(new Date(ms).toISOString()) : fmtDate(new Date(ms).toISOString().slice(0, 10));
+      const n = el('span','n'); const ty = document.createElement('i'); ty.textContent = (e._feed ? RNAVN[e.ret] : 'Smitte') + ' · '; n.append(ty, e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`);
+      r.append(el('span','t', tid), n, el('span','k', e._feed ? e.kilde : (e.src && e.src[0] ? e.src[0][0] : '')));
+      r.addEventListener('click', () => { dlg.close(); select(e.id, true); });
+      box.appendChild(r);
+    }
+    document.getElementById('datamere').hidden = vist >= l.length;
+  }
+  function byg(){
+    const meta = document.getElementById('datameta'); meta.innerHTML = '';
+    const m = (k, v) => { const sp = el('span'); sp.append(k + ' '); sp.appendChild(el('b','', v)); meta.appendChild(sp); };
+    if(FEEDINFO && FEEDINFO.genereret) m('Seneste hentning:', klok(FEEDINFO.genereret));
+    m('Smitteudbrud gennemgået:', fmtDate(DATA_DATO));
+    if(KONFINFO && KONFINFO.genereret) m('Mediesporet talt op:', klok(KONFINFO.genereret));
+    m('Hændelser og varsler nu:', String(ALLE().filter(e => liveAt(e, T1)).length));
+    const box = document.getElementById('datakilder'); box.innerHTML = '';
+    box.appendChild(kildeKort('Smitteudbrud', 'WHO, ECDC, UKHSA, US CDC, PAHO, Statens Serum Institut og nationale sundhedsmyndigheder. Gennemgås hver morgen efter faste regler.', '', 'ok', `${EVENTS.filter(e => liveAt(e, T1)).length} udbrud · datasæt pr. ${fmtDate(DATA_DATO)}`));
+    for(const [k, [navn, tekst, url]] of Object.entries(KILDEINFO)){
+      const ki = FEEDINFO && FEEDINFO.kilder && FEEDINFO.kilder[k]; if(!ki) continue;
+      box.appendChild(kildeKort(navn, tekst, url, ki.ok ? 'ok' : 'fejl', ki.ok ? `${ki.antal} poster · hentet ${ki.hentet ? klok(ki.hentet) : 'ukendt'}` : `Fejl: ${String(ki.fejl || 'ukendt').replace(/^https?:\/\/\S+: /, '')}. Vi viser de seneste meldinger, til kilden svarer igen.`));
+    }
+    if(KONFINFO) box.appendChild(kildeKort('GDELT og medielisten', 'Krig og konflikt: omtaler fra ca. 240 medier og overskrifter fra 17 store medier. Medier er ikke myndigheder.', 'https://www.gdeltproject.org/', 'ok', `${(KONFINFO.s || []).length} konfliktpar · ${STEDER.length} steder · talt op ${klok(KONFINFO.genereret)}`));
+    if(LAES && LAES.genereret) box.appendChild(kildeKort('Læs mere', 'Artikler til videre læsning fra store medier og GDELT. Bruges ikke som kilde til tal eller alvor.', '', 'ok', `${Object.keys(LAES.l || {}).length} hændelser · hentet ${klok(LAES.genereret)}`));
+    vist = 10; bygOpd();
+  }
+  document.getElementById('protobtn').addEventListener('click', ev => { ev.stopImmediatePropagation(); byg(); if(dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); dlg.scrollTop = 0; }, true);
+  document.getElementById('datamere').addEventListener('click', () => { vist += 10; bygOpd(); });
+  document.getElementById('dataluk').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', ev => { if(ev.target === dlg) dlg.close(); });
+  document.getElementById('datatilom').addEventListener('click', () => { dlg.close(); aabnOm('om-opdatering'); });
 }
 bygTicker();
 // Maskinmeldingerne hentes for sig, så siden virker, selv om filen mangler.

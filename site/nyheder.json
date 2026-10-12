@@ -9,6 +9,14 @@
    "ikon": "nyt"
   },
   {
+   "id": "data",
+   "dato": "2026-10-12",
+   "titel": "Data og kilder",
+   "tekst": "Tryk på Prototypedata øverst, så ser du, hvilke data siden henter, hvorfra og hvornår de sidst blev hentet, og de seneste opdateringer, ti ad gangen.",
+   "ikon": "kort",
+   "proev": "data"
+  },
+  {
    "id": "foelg",
    "dato": "2026-10-11",
    "titel": "Følg et land",
