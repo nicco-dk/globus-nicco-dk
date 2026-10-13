@@ -21,6 +21,8 @@ on:
       - "tools/hent-feeds.mjs"
       - "tools/lande.json"
       - "tools/hent-medier.mjs"
+      - "tools/hent-laes.mjs"
+      - "tools/byg-ord.mjs"
       - "tools/medier.json"
       - "tools/par-tjek.json"
       - "tools/overskrifter.json"
