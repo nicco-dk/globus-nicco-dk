@@ -1194,9 +1194,9 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-10-13';
+const DATA_DATO = '2026-10-14';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-13T17:29+02:00';
+const DATA_TID = '2026-10-14T00:24+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1389,8 +1389,8 @@ const EVENTS = [
 
 {id:'ebola-nl',place:'Leiden University Medical Center',country:'Nederlandene',region:'Europa',lat:52.1601,lon:4.4970,
  disease:'Ebola, importeret',pathogen:'Orthoebolavirus bundibugyoense',stage:'udbrud',live:true,
- cases:'1 tilfælde, ingen dødsfald',
- extra:'Fjerde ebolatilfælde importeret til Europa under dette udbrud. Patientens tilstand pr. 8. oktober er ikke offentliggjort.',
+ cases:'1 tilfælde, ingen dødsfald, RIVM pr. 10. oktober',
+ extra:'Fjerde ebolatilfælde importeret til Europa under dette udbrud. RIVM oplyser 10. oktober, at patienten er rask og tester negativ, at isolationen er ophævet, og at patienten forlod hospitalet dagen før.',
  note:'En sundhedsarbejder fra Læger uden Grænser blev smittet i DR Congo og evakueret til en højisolationsenhed. ECDC vurderer risikoen for befolkningen i Europa som meget lav.',
  nodes:[['DR Congo',30.2479,1.5587,'2026-09-29'],['Leiden',4.4970,52.1601,'2026-10-01']],
  links:[[0,1,'2026-10-01','eksport']],
@@ -1399,7 +1399,8 @@ const EVENTS = [
  tl:[['2026-09-29','Sundhedsarbejderen tester positiv i DR Congo','udbrud'],
      ['2026-10-01','Repatrieres med privatfly og indlægges om aftenen i højisolationsenheden i Leiden',''],
      ['2026-10-02','ECDC vurderer risikoen i EU og EØS som meget lav',''],
-     ['2026-10-08','WHO oplyser i DON 619, at patienten fortsat er i behandling i Nederlandene, og at tilfældet ikke tælles som et lokalt tilfælde','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']]],
+     ['2026-10-08','WHO oplyser i DON 619, at patienten fortsat er i behandling i Nederlandene, og at tilfældet ikke tælles som et lokalt tilfælde','',['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619']],
+     ['2026-10-10','RIVM melder, at patienten er rask og tester negativ for ebolavirus. Isolationen er ophævet, og patienten forlod hospitalet dagen før','',['RIVM','https://www.rivm.nl/en/ebola/current-information']]],
  src:[['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['ECDC','https://www.ecdc.europa.eu/en/news-events/risk-general-population-remains-very-low-following-fourth-imported-ebola-case-europe'],['RIVM','https://www.rivm.nl/en/ebola/current-information']]},
 
 {id:'wnv-eu',place:'208 områder i 18 lande',country:'EU, EØS og nabolande',region:'Europa',lat:42.5,lon:12.5,
@@ -1463,7 +1464,7 @@ const EVENTS = [
 
 {id:'cchf-es',place:'Salamanca og Ciudad Real',country:'Spanien',region:'Europa',lat:40.9701,lon:-5.6635,
  disease:'Krim-Congo hæmoragisk feber',pathogen:'CCHF-virus',stage:'udbrud',
- cases:'4 lokalt erhvervede tilfælde og 1 dødsfald',
+ cases:'4 lokalt erhvervede tilfælde og 1 dødsfald, ECDC pr. 7. oktober',
  extra:'Salamanca 3 tilfælde og Ciudad Real 1. Alle fire blev smittet ved flåtbid, og der var ingen smitte på hospital. Ciudad Real meldte sit første lokalt erhvervede tilfælde nogensinde.',
  note:'Spanien er det eneste land i Europa med lokalt erhvervede tilfælde i 2026. Risikoen er lav for befolkningen og højere for personer med udendørs flåteksponering.',
  gap:'Datoen for dødsfaldet og hvilket af de tre tilfælde fra Salamanca der døde, fremgår ikke af kilderne.',
@@ -1473,7 +1474,7 @@ const EVENTS = [
      ['2026-07-22','Tredje tilfælde får symptomdebut i Ciudad Real, provinsens første nogensinde. Patienten overlevede',''],
      ['2026-08-07','Fjerde tilfælde får symptomdebut i Salamanca',''],
      ['2026-09-30','Status uændret: 4 tilfælde og 1 dødsfald blandt de tre fra Salamanca','']],
- src:[['ECDC CCHF case-CSV','https://cchf-weekly.ecdc.europa.eu/case_summary.csv'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf']]},
+ src:[['ECDC CCHF case-CSV','https://cchf-weekly.ecdc.europa.eu/case_summary.csv'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]},
 
 {id:'maesling-il',place:'Jerusalem',country:'Israel',region:'Mellemøsten',lat:31.7683,lon:35.2137,
  disease:'Mæslinger',pathogen:'Measles morbillivirus, genotype B3',stage:'spredning',live:false,
@@ -1550,7 +1551,7 @@ const EVENTS = [
 
 {id:'salmonella-dk',place:'Sjælland',country:'Danmark',region:'Europa',lat:55.6761,lon:12.5683,
  disease:'Salmonellose',pathogen:'Salmonella Enteritidis, sekvenstype 11',stage:'udbrud',live:true,
- cases:'33 tilfælde, 17 mandlige og 16 kvindelige',
+ cases:'33 tilfælde, 17 mandlige og 16 kvindelige, Statens Serum Institut pr. 1. oktober',
  extra:'Overvejende børn mellem 3 og 15 år. Koblet til en fælles skolemadsordning på flere skoler.',
  note:'Statens Serum Institut, Styrelsen for Fødevarer, Landbrug og Fiskeri samt DTU Fødevareinstituttet efterforsker udbruddet. Efterforskningen blev genoptaget i oktober efter nye tilfælde.',
  naeste:'Lukkes, når kilden i skolemadsordningen er fundet og fjernet, og der går en måned uden nye tilfælde.',

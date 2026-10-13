@@ -2,6 +2,33 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 14. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** ECDC's ugerapport uge 41 (3. til 9. oktober, allerede indarbejdet, næste udkommer fredag) og ECDC's tilfældeliste for Krim-Congo hæmoragisk feber. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober) og siden om Salmonella Enteritidis. DK-VET's nyheder. RIVM's side om ebola på engelsk og nederlandsk. UKHSA's udgivelser (ugeoversigten over udbrud kommer torsdag). Kildescriptet: WHO DON (ingen nye efter DON 620), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Søgninger efter nyt fra ECDC og Robert Koch Institut.
+
+**Ændret**
+- `ebola-nl`: nyt punkt 10. oktober. RIVM melder, at patienten i Leiden er rask og tester negativ for ebolavirus, at isolationen er ophævet, og at patienten forlod hospitalet dagen før: https://www.rivm.nl/en/ebola/current-information Meldingen er læst på engelsk og nederlandsk (https://www.rivm.nl/ebola/actuele-informatie). `extra` siger det samme i stedet for, at tilstanden ikke var offentliggjort. `cases` har fået kilde og dato: RIVM pr. 10. oktober.
+- `cchf-es`: `cases` har fået kilde og dato: 4 lokalt erhvervede tilfælde og 1 dødsfald, ECDC pr. 7. oktober. Ugerapport uge 41 skriver fire tilfælde i Spanien pr. 7. oktober og ingen nye på en uge: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf ECDC's tilfældeliste har ét dødsfald i Salamanca: https://cchf-weekly.ecdc.europa.eu/case_summary.csv Uge 41 er sat i `src`. Uge 40 står der stadig, fordi punktet 30. september ikke selv bærer en kilde.
+- `salmonella-dk`: `cases` har fået kilde og dato: Statens Serum Institut pr. 1. oktober, sidens seneste redigering: https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/2026_salmonella-enteritidis-i-danmark Tallene er uændrede.
+
+**Nye**
+- Ingen. Statens Serum Instituts udbrud af Salmonella Typhimurium ST19 står stadig på listen, men er fortsat ikke taget med, som besluttet tidligere.
+
+**Urørt**
+- 36 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Europa op. Resten hører til de andre kørsler i vagtplanen.
+- Rundtur i Europa: `cchf-es` 14 dage siden seneste punkt, ECDC melder ingen nye tilfælde. `h5n1-dk` 13 dage, intet nyt hos DK-VET. `salmonella-dk` 13 dage, SSI's side er ikke ændret siden 1. oktober. `cre-eu` 12 dage, ikke nævnt i ECDC's ugerapport uge 41.
+
+**Usikkert**
+- `ebola-nl`: RIVM erklærer ikke hændelsen afsluttet og nævner ikke sekundære tilfælde. `live` står derfor som `true`, se GENNEMGANG.md.
+- `cchf-es`: ugerapporten nævner ikke dødsfaldet. Dødstallet er læst i ECDC's tilfældeliste, som ikke har dato. Tallet er det samme som pr. 30. september.
+- Kontrollen advarer nu om 12 hændelser, hvor `cases` har tal uden opgørelsesdato.
+- `main` var skrevet om siden klonen blev lavet (tvungen opdatering). Kørslen arbejder på det seneste commit 7b96680.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `ebola-nl`, skal `live` sættes til `false`, nu da patienten er rask og udskrevet.
+
 ## 13. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
