@@ -121,7 +121,7 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `EG-SD` i mediesporet.
 
-### Kl. 22.15, ejerens afgørelser i gennemgangen
+### Kl. 21.40, ejerens afgørelser i gennemgangen
 
 Ejeren har afgjort alle punkter i GENNEMGANG.md i et svarark. Punkterne er fjernet derfra, undtagen de 15 hændelser, der mangler opgørelsesdato i `cases`.
 

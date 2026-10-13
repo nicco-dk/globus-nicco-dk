@@ -1,6 +1,6 @@
 # Udkast: privatliv på globus.nicco.dk
 
-Bygget 13. oktober 2026 kl. 22.00. Udkast, ikke live. Ligger uden for `site/`, så det udrulles ikke. Flettet af overblikkets skabelon (`nicco-dk/projekt-nicco-dk`, `skabeloner/privatliv.md`, commit 0533e56) og globus' eget udkast (punkt 29 i `claude/beslutningsliste-globus.md`). Ejeren læser teksten, før den går live (S-01).
+Bygget 13. oktober 2026 kl. 21.30. Udkast, ikke live. Ligger uden for `site/`, så det udrulles ikke. Flettet af overblikkets skabelon (`nicco-dk/projekt-nicco-dk`, `skabeloner/privatliv.md`, commit 0533e56) og globus' eget udkast (punkt 29 i `claude/beslutningsliste-globus.md`). Ejeren læser teksten, før den går live (S-01).
 
 Før teksten går live:
 
