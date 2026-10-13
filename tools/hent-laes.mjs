@@ -4,7 +4,7 @@
 //   node tools/hent-laes.mjs site [--forrige https://globus.nicco.dk/laes.json]
 //
 // Finder artikler om de vigtigste hændelser i GDELT DOC 2.0 (api.gdeltproject.org): to søgninger pr. hændelse,
-// én blandt engelsksprogede medier og én blandt danske. Skriver site/laes.json. Siden viser derefter tre links:
+// én blandt engelsksprogede medier med engelske søgeord og én blandt dansksprogede med danske søgeord. Skriver site/laes.json. Siden viser derefter tre links:
 // det første fra et medie i brugerens land, hvis der er et, de to andre fra de mest kendte internationale medier.
 // Artiklerne er henvisninger til videre læsning. Siden bruger dem ikke som kilde til tal eller alvor.
 //
@@ -44,6 +44,8 @@ const sygOrd = navn => (SYG.find(([r]) => r.test(navn)) || [])[1] || null;
 const engelsk = a2 => { const L = LANDE[a2]; if (!L) return null; return (L.en || []).filter(x => !x.includes(',') && /^[\x20-\x7e]+$/.test(x)).sort((a, b) => a.length - b.length)[0] || null; };
 const landFraTekst = t => { t = String(t || ''); for (const [a2, L] of Object.entries(LANDE)) if (t.startsWith(L.n) || t.includes(', ' + L.n) || t.endsWith(' ' + L.n)) return a2; return null; };
 const frase = s => /\s/.test(s) ? `"${s}"` : s;
+// Den danske søgning: det danske ord og landets danske navn, fx "Mæslinger Bangladesh".
+const dansk = (ord, a2) => frase(ord) + (a2 && LANDE[a2]?.n ? ' ' + frase(LANDE[a2].n) : '');
 
 // ---------- hændelser ----------
 const maal = [];
@@ -55,7 +57,8 @@ const maal = [];
     if (!ev.live) continue;
     const kw = sygOrd(ev.disease || ''); if (!kw) continue;
     const a2 = landFraTekst(ev.country), land = a2 && engelsk(a2);
-    maal.push({ id: ev.id, kw, kwDa: (ev.disease || '').split(/[ ,]/)[0], a2, q: frase(kw) + (land ? ' ' + frase(land) : ''), dage: 14 });
+    const kwDa = (ev.disease || '').split(/[ ,]/)[0];
+    maal.push({ id: ev.id, kw, kwDa, a2, q: frase(kw) + (land ? ' ' + frase(land) : ''), qDa: dansk(kwDa, a2), dage: 14 });
   }
 }
 {
@@ -70,7 +73,8 @@ const maal = [];
     let q = TYPE[h.ret];
     if (h.ret === 'storm') { const m = /([A-Z][A-Z]+)-\d\d/.exec(h.titel || ''); if (m) q = `${m[1][0]}${m[1].slice(1).toLowerCase()} storm`; }
     if (land && /^[\x20-\x7e]+$/.test(land)) q += ' ' + frase(land);
-    maal.push({ id: h.id, kw: q.split(' ')[0], kwDa: h.ret === 'storm' && q !== 'storm' ? q.split(' ')[0] : TYPE_DA[h.ret], a2, q, dage: 7 });
+    const kwDa = h.ret === 'storm' && q !== 'storm' ? q.split(' ')[0] : TYPE_DA[h.ret];
+    maal.push({ id: h.id, kw: q.split(' ')[0], kwDa, a2, q, qDa: dansk(kwDa, a2), dage: 7 });
   }
 }
 {
@@ -78,7 +82,7 @@ const maal = [];
   for (const c of k?.v || []) {
     const [la, lo, n, a2, info] = c; if (n < 40 || !info || !info.navn) continue;
     const sted = info.navn.split(',')[0].replace(/[^\x20-\x7e]/g, '').trim(); if (sted.length < 3) continue;
-    maal.push({ id: `sted-k-${la}_${lo}`.replace(/\./g, 'p'), kw: sted, kwDa: sted, a2, q: `${frase(sted)} (attack OR strike OR fighting OR clashes)`, dage: 7 });
+    maal.push({ id: `sted-k-${la}_${lo}`.replace(/\./g, 'p'), kw: sted, kwDa: sted, a2, q: `${frase(sted)} (attack OR strike OR fighting OR clashes)`, qDa: `${frase(sted)} (angreb OR luftangreb OR kampe OR dræbt)`, dage: 7 });
   }
 }
 
@@ -134,19 +138,20 @@ if (OV.length) for (const m of maal) {
   const som = o => ({ u: o.u, t: o.t, m: MEDIER[o.d]?.[0] || o.d, d: o.d, l: '' });
   const gl = L.l[m.id] || { intl: [], dk: [] };
   const flet = (nye, gamle, maks) => { const set = new Set(), ud = []; for (const a of nye.concat(gamle)) { if (set.has(a.d)) continue; set.add(a.d); ud.push(a); } return ud.sort((x, y) => rang(x.d) - rang(y.d)).slice(0, maks); };
-  L.l[m.id] = { t: gl.t || new Date(0).toISOString(), q: m.q, intl: flet(en.map(som), gl.intl || [], 6), dk: flet(da.map(som), gl.dk || [], 2), ov: true };
+  L.l[m.id] = { t: gl.t || new Date(0).toISOString(), q: m.q, qd: gl.qd, intl: flet(en.map(som), gl.intl || [], 6), dk: flet(da.map(som), gl.dk || [], 2), ov: true };
   fraOv++;
 }
-const koe = maal.filter(m => !L.l[m.id] || (L.l[m.id].ov && !L.l[m.id].intl.length)).concat(maal.filter(m => L.l[m.id] && NU - Date.parse(L.l[m.id].t || 0) > DOEGN).sort((a, b) => Date.parse(L.l[a.id].t) - Date.parse(L.l[b.id].t)));
+// Først de hændelser, der mangler artikler eller endnu ikke er søgt med danske søgeord.
+const koe = maal.filter(m => !L.l[m.id] || (L.l[m.id].ov && !L.l[m.id].intl.length) || L.l[m.id].qd !== m.qDa).concat(maal.filter(m => L.l[m.id] && NU - Date.parse(L.l[m.id].t || 0) > DOEGN).sort((a, b) => Date.parse(L.l[a.id].t) - Date.parse(L.l[b.id].t)));
 let fundet = 0;
 for (const m of koe) {
   if (brugt + 2 > MAKS_SOEG) break;
   const intl = await soeg(`${m.q} sourcelang:english`, m.dage, 50);
-  const dk = await soeg(`${m.q} sourcecountry:denmark`, Math.max(m.dage, 14), 10);
+  const dk = await soeg(`${m.qDa} sourcelang:danish`, Math.max(m.dage, 14), 10);
   if (intl === null && dk === null) continue;
   const gl = L.l[m.id] || { intl: [], dk: [] }, nyI = udvaelg(intl, 6, m.kw), nyD = udvaelg(dk, 2, null);
   const flet = (a, b, maks) => { const set = new Set(), ud = []; for (const x of a.concat(b)) { if (set.has(x.d)) continue; set.add(x.d); ud.push(x); } return ud.sort((x, y) => rang(x.d) - rang(y.d)).slice(0, maks); };
-  L.l[m.id] = { t: new Date().toISOString(), q: m.q, intl: flet(gl.intl || [], nyI, 6), dk: flet(gl.dk || [], nyD, 2) };
+  L.l[m.id] = { t: new Date().toISOString(), q: m.q, qd: m.qDa, intl: flet(gl.intl || [], nyI, 6), dk: flet(gl.dk || [], nyD, 2) };
   fundet++;
 }
 L.genereret = new Date().toISOString();

@@ -1031,7 +1031,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <h3>Alvor</h3>
     <p>Farven fortæller, hvad det er. Størrelsen og ringene fortæller, hvor alvorligt det er. Ligger flere prikker tæt, samles de i én prik med antallet, og kanten viser retningernes farver. Zoom ind, eller tryk på prikken, så skilles de. Skalaen har fire trin ligesom Udenrigsministeriets rejsevejledninger og et femte, akut, for det nye og kritiske lige nu. Akut står også i søljen i bunden. Nederst under kloden vælger du, hvor alvorligt det mindst skal være.</p>
     <div class="g-tbl"><table><thead><tr><th>Alvor</th><th>Markør</th><th>Det betyder</th><th>For smitteudbrud</th></tr></thead><tbody id="galvor"></tbody></table></div>
-    <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4. I Smithsonians ugentlige vulkanrapport er ny aktivitet 2 og fortsat aktivitet 1.</p>
+    <p>For de andre retninger oversættes kildens egen farve: Udenrigsministeriets gul, orange og rød bliver til 2, 3 og 4. USGS' PAGER-varsel grøn, gul, orange og rød bliver til 1 til 4, og et skælv uden PAGER-varsel er 1. GDACS' grøn, orange og rød bliver til 1, 3 og 4. Meteoalarms gul, orange og rød bliver til 2, 3 og 4.</p>
     <p>Rejsevejledninger har deres eget ikon med et fly. Lande med en rejsevejledning fra gul og op står en tone mørkere, og regioner, som vejledningen nævner ved navn, farves, når du zoomer ind. Krig og konflikt har en prik for hvert sted, hvor medierne skriver om kampe eller demonstrationer, og et varmekort. Trykker du på en prik, ser du kun det, der er skrevet om netop dét sted. Trykker du på selve landet, åbner landesiden med alt om landet, og du kan følge landet.</p>
     <p>Ved rejsevejledninger står lande med en rejsevejledning fra gul og op en tone mørkere. Prikken viser det højeste niveau i landet. Hvilke områder det gælder, står i detaljerne og på um.dk. Udenrigsministeriet har kun rejsevejledninger for en del af verdens lande. For de andre bruges det britiske udenrigsministeriums (FCDO) niveau: fraråder alle rejser er 4, fraråder alle ikke-nødvendige rejser er 3.</p>
     <p>Røde streger viser, hvilke lande der er i konflikt med hinanden ifølge medierne, og gule streger hvem der støtter et land militært. De tælles automatisk hver time i GDELT, som læser nyheder fra hele verden, men kun omtaler fra vores liste med ca. 240 medier tæller. Store medier, som GDELT ikke når, læses direkte: Reuters, AP, CNN, The New York Times, The Wall Street Journal, The Washington Post og flere. En streg er en mistanke (stiplet), når mindst 2 medier har skrevet om den inden for 7 dage (30 dage for militær støtte). Den bliver fast, når mindst 5 medier fra mindst 3 lande uden for parterne har skrevet om den på mindst 3 forskellige dage, og artiklerne er læst igennem. Kun bekræftede konflikter har en streg på kloden. På landesiden får de andre deres streg, når du peger på eller trykker på rækken. Stregerne går mellem hovedstæderne, som står som små grå prikker.</p>
@@ -1153,7 +1153,7 @@ const RETNINGER = [
   {k:'flod', n:'Oversvømmelser', hvad:'Igangværende oversvømmelser og varsler om oversvømmelse og højvande i Europa.', kilder:'GDACS og Meteoalarm', fk:['gdacs','meteoalarm']},
   {k:'storm', n:'Orkaner, tyfoner og storme', hvad:'Tropiske cykloner i hele verden og vindvarsler i Europa.', kilder:'GDACS og Meteoalarm', fk:['gdacs','meteoalarm']},
   {k:'brand', n:'Naturbrande', hvad:'Igangværende skov- og naturbrande og varsler om brandfare i Europa.', kilder:'GDACS og Meteoalarm', fk:['gdacs','meteoalarm']},
-  {k:'vulkan', n:'Vulkaner, aktive og i udbrud', hvad:'Vulkanudbrud med GDACS-varsel og vulkaner i Smithsonians ugentlige rapport.', kilder:'GDACS og Smithsonian GVP', fk:['gdacs','gvp']}
+  {k:'vulkan', n:'Vulkaner, aktive og i udbrud', hvad:'Vulkanudbrud med GDACS-varsel. Smithsonians ugentlige rapport er taget ud, fordi den ikke kan hentes automatisk.', kilder:'GDACS', fk:['gdacs']}
 ];
 const ALV = [null,
   {n:'Til orientering', d:'Godt at vide. Brug sund fornuft.', smitte:'Naturligt reservoir'},
@@ -1211,8 +1211,8 @@ const EVENTS = [
  disease:'Ebola',pathogen:'Orthoebolavirus bundibugyoense',stage:'spredning',live:true,alvor:4,
  cases:'8.978 bekræftede tilfælde og 4.336 dødsfald, DR Congos sundhedsministerium pr. 10. oktober',
  extra:'Dødelighed 48,3 procent ifølge sundhedsministeriet. 65 af 167 sundhedszoner i syv provinser, efter at Dakwa i Bas-Uélé kom til 8. oktober. Ituri 6.639 tilfælde, Nordkivu 1.883, Haut-Uélé 379, Tshopo 59, Bas-Uélé 13, Sydkivu 3 og Sud-Ubangi 2. 2.356 patienter er erklæret raske. Sundhedsministeriet opgjorde 8.787 og 4.242 pr. 7. oktober, og US CDC havde samme tal for DR Congo. WHO og ECDC opgjorde 8.728 og 4.205 pr. 6. oktober. Forskellene skyldes opgørelsesdatoer.',
- note:'Det største registrerede Bundibugyo-udbrud nogensinde og det næststørste ebolaudbrud overhovedet. Der findes ingen licenseret vaccine eller specifik behandling mod denne art. Udbruddet har givet importerede eller evakuerede tilfælde i Uganda, Tyskland, Frankrig, Nederlandene og Kenya.',
- nodes:[['Bunia, Ituri',30.2479,1.5587,'2026-04-24'],['Kinshasa',15.2663,-4.4419,'2026-05-16'],['Kampala, Uganda',32.5825,0.3476,'2026-05-16'],['Nordkivu',29.2837,0.1400,'2026-05-18'],['Tyskland',13.4050,52.5200,'2026-05-18'],['Frankrig',2.3522,48.8566,'2026-06-24'],['Tshopo',25.1900,0.5153,'2026-09-23'],['Haut-Uélé',28.5700,3.6167,'2026-09-23'],['Bas-Uélé',24.7400,2.7800,'2026-09-23'],['Sud-Ubangi',19.7667,3.2500,'2026-09-23'],['Leiden, Nederlandene',4.4970,52.1601,'2026-10-01'],['Nairobi, Kenya',36.8172,-1.2864,'2026-10-06']],
+ note:'Det største registrerede Bundibugyo-udbrud nogensinde og det næststørste ebolaudbrud overhovedet. Der findes ingen licenseret vaccine eller specifik behandling mod denne art. Udbruddet har givet importerede eller evakuerede tilfælde i Uganda, Tyskland, Frankrig, Nederlandene og Kenya. Desuden blev en britisk nødhjælpsarbejder evakueret til London 21. juli efter mulig smitte i arbejdet, uden symptomer og i forebyggende isolation, ifølge Spaniens sundhedsministerium.',
+ nodes:[['Bunia, Ituri',30.2479,1.5587,'2026-04-24'],['Kinshasa',15.2663,-4.4419,'2026-05-16'],['Kampala, Uganda',32.5825,0.3476,'2026-05-16'],['Nordkivu',29.2837,0.1400,'2026-05-18'],['Tyskland',13.4050,52.5200,'2026-05-18'],['Frankrig',2.3522,48.8566,'2026-06-24'],['Tshopo',25.1900,0.5153,'2026-09-23'],['Haut-Uélé',28.5700,3.6167,'2026-09-23'],['Bas-Uélé',24.7400,2.7800,'2026-09-23'],['Sud-Ubangi',19.7667,3.2500,'2026-09-23'],['Leiden, Nederlandene',4.4970,52.1601,'2026-10-01'],['Nairobi, Kenya',36.8172,-1.2864,'2026-10-06'],['Sydkivu',28.8608,-2.5083,'2026-05']],
  links:[[0,1,'2026-05-16','udbredelse'],[0,2,'2026-05-16','eksport'],[0,3,'2026-05-18','udbredelse'],[0,4,'2026-05-18','eksport'],[0,5,'2026-06-24','eksport'],[0,6,'2026-09-23','udbredelse'],[0,7,'2026-09-23','udbredelse'],[0,8,'2026-09-23','udbredelse'],[0,9,'2026-09-23','udbredelse'],[0,10,'2026-10-01','eksport'],[3,11,'2026-10-06','eksport']],
  rel:['ebola-ke','ebola-nl'],
  naeste:'Trinnet falder først, når der går 42 dage, altså to inkubationsperioder, uden nye bekræftede tilfælde i en zone. Det stiger kun, hvis der opstår vedvarende smitte uden for Afrika.',
@@ -1228,7 +1228,7 @@ const EVENTS = [
      ['2026-05-23','Lufthavnen i Bunia lukkes. Den genåbner 2. juni med screening, og kommercielle fly suspenderes igen fra 6. juni',''],
      ['2026-06-15','Hurtig stigning i tre provinser: 598 bekræftede 8. juni og 837 den 15. juni',''],
      ['2026-06-24','Dekret om 21 dages bevægelsesrestriktioner for kontakter. Frankrig melder et tilfælde hos en hjemvendt læge',''],
-     ['2026-08-27','Vaccination af frontpersonale med Ervebo starter i Kisangani. WHO erklærer udbruddet i Uganda afsluttet med 20 tilfælde og 2 døde',''],
+     ['2026-08-27','Vaccination af frontpersonale med Ervebo starter i Kisangani. WHO erklærer udbruddet i Uganda afsluttet med 20 tilfælde og 2 døde','',['UKHSA, uge 35','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-35-week-ending-30-august-2026']],
      ['2026-09-23','Udbruddet når sin syvende provins, Sud-Ubangi, samt Dungu i Haut-Uélé. 7.890 bekræftede og 3.799 døde i 63 zoner','',['WHO DON 618','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON618']],
      ['2026-09-29','ECDC opgør 8.224 bekræftede og 3.982 døde. Ituri 6.250, Nordkivu 1.570, Haut-Uélé 344','',['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf']],
      ['2026-10-05','US CDC opgør 8.665 bekræftede tilfælde og 4.178 dødsfald','',['US CDC','https://www.cdc.gov/ebola/situation-summary/index.html']],
@@ -1236,20 +1236,21 @@ const EVENTS = [
      ['2026-10-07','Sundhedsministeriet opgør 8.787 bekræftede tilfælde og 4.242 dødsfald. 59 nye tilfælde på et døgn: 29 i Ituri, 26 i Nordkivu og 4 i Haut-Uélé. Fortsat 64 ramte sundhedszoner. US CDC har samme tal for DR Congo','',['DR Congos sundhedsministerium, situationsrapport 146','https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_146_07_10_2026.pdf']],
      ['2026-10-08','Sundhedsministeriet opgør 8.845 bekræftede tilfælde og 4.275 dødsfald. Sundhedszonen Dakwa i Bas-Uélé er kommet til med et bekræftet tilfælde, så 65 af 167 sundhedszoner er ramt','',['DR Congos sundhedsministerium, situationsrapport 147','https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_147_08_10_2026.pdf']],
      ['2026-10-10','Sundhedsministeriet opgør 8.978 bekræftede tilfælde og 4.336 dødsfald. 64 nye tilfælde på et døgn: 30 i Ituri, 25 i Nordkivu, 7 i Haut-Uélé og 2 i Tshopo. Fortsat 65 ramte sundhedszoner','',['DR Congos sundhedsministerium, situationsrapport 149','https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_149_10_10_2026.pdf']]],
- src:[['WHO DON 603','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603'],['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['DR Congos sundhedsministerium, situationsrapport 149','https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_149_10_10_2026.pdf'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf'],['US CDC','https://www.cdc.gov/ebola/situation-summary/index.html']]},
+ src:[['WHO DON 603','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON603'],['Spaniens sundhedsministerium, situationsrapport 23. juli','https://www.sanidad.gob.es/areas/alertasEmergenciasSanitarias/alertasActuales/ebola/docs/20260723_Informe_de_situacion_ebola.pdf'],['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['DR Congos sundhedsministerium, situationsrapport 149','https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_149_10_10_2026.pdf'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf'],['US CDC','https://www.cdc.gov/ebola/situation-summary/index.html']]},
 
 {id:'ebola-ke',place:'Nairobi',country:'Kenya',region:'Afrika',lat:-1.2864,lon:36.8172,
  disease:'Ebola, importeret',pathogen:'Orthoebolavirus bundibugyoense',stage:'udbrud',live:true,
  cases:'1 bekræftet tilfælde og 1 dødsfald, US CDC pr. 7. oktober',
- extra:'Sundhedsministeriet opgjorde 11. oktober 122 kontakter, heraf 108 i karantæne uden symptomer, og 293 testede prøver fra 289 alarmer, hvoraf kun det bekræftede tilfælde var positivt, gengivet af The Standard og Citizen Digital. Sundhedsministeriet opgjorde 57 identificerede kontakter pr. 7. oktober, heraf 10 i karantæne. Sundhedsministeren oplyste 8. oktober, at 66 er i karantæne på National Police Service Hospital i Nairobi, gengivet af Citizen Digital. WHO AFRO opgjorde 28 kontakter plus 23 passagerer og 4 besætningsmedlemmer pr. 6. oktober. Kenya har testet 267 prøver siden maj. WHO har leveret omkring 1.000 ebolatest og 1.000 værnemiddelsæt til højrisikoamter.',
+ extra:'Sundhedsministeriet opgjorde 11. oktober 122 kontakter, heraf 108 i karantæne uden symptomer, og 293 testede prøver fra 289 alarmer, hvoraf kun det bekræftede tilfælde var positivt, gengivet af The Standard og Citizen Digital. Sundhedsministeriet opgjorde 57 identificerede kontakter pr. 7. oktober, heraf 10 i karantæne. Sundhedsministeren oplyste 8. oktober, at 66 er i karantæne på National Police Service Hospital i Nairobi, gengivet af Citizen Digital. WHO AFRO opgjorde 28 kontakter plus 23 passagerer og 4 besætningsmedlemmer pr. 6. oktober. WHO DON 619 har dødsdatoen 5. oktober, sundhedsministeriets pressemeddelelse hos APO Group 6. oktober. Kenya har testet 267 prøver siden maj. WHO har leveret omkring 1.000 ebolatest og 1.000 værnemiddelsæt til højrisikoamter.',
  note:'Kenyas første bekræftede ebolatilfælde nogensinde, importeret fra udbruddet i DR Congo. Patienten var kenyansk statsborger og havde boet syv år i DR Congo. WHO fraråder rejserestriktioner.',
  gap:'Kontakttallene kendes kun gennem medier, der gengiver sundhedsministeriets udmeldinger. Sundhedsministeren nævnte 8. oktober både 57 identificerede kontakter og 66 i karantæne, og ministeriet opgjorde 122 kontakter 11. oktober.',
- nodes:[['Beni, Nordkivu',29.4719,0.4917,'2026-09'],['Kampala, Uganda',32.5825,0.3476,'2026-10-03'],['Nairobi',36.8172,-1.2864,'2026-10-03']],
- links:[[0,1,'2026-10-03','rute'],[1,2,'2026-10-03','rute']],
+ nodes:[['Beni, Nordkivu',29.4719,0.4917,'2026-09'],['Kampala, Uganda',32.5825,0.3476,'2026-10-02'],['Nairobi',36.8172,-1.2864,'2026-10-03']],
+ links:[[0,1,'2026-10-02','rute'],[1,2,'2026-10-03','rute']],
  rel:['ebola-drc','ebola-nl'],
- naeste:'Rykker til smitte, hvis en af de 28 kontakter bliver syg. Lukkes, hvis ingen bliver det inden 42 dage efter 6. oktober.',
+ naeste:'Rykker til smitte, hvis en af de 122 kontakter bliver syg. Lukkes, hvis ingen bliver det inden 42 dage efter 6. oktober.',
  tl:[['2026-09','Patienten bliver syg i DR Congo og behandles på flere hospitaler der. Omtrentlig','mistanke'],
-     ['2026-10-03','Rejser over land til Kampala, flyver til Nairobi og isoleres på Nairobi Hospital',''],
+     ['2026-10-02','Rejser over land fra DR Congo gennem Beni til Kampala','',['WHO AFRO','https://www.afro.who.int/countries/kenya/news/kenya-confirms-first-imported-bundibugyo-virus-disease-case-who-supports-control-efforts']],
+     ['2026-10-03','Flyver fra Kampala til Nairobi og isoleres på Nairobi Hospital','',['WHO AFRO','https://www.afro.who.int/countries/kenya/news/kenya-confirms-first-imported-bundibugyo-virus-disease-case-who-supports-control-efforts']],
      ['2026-10-05','Patienten dør sent mandag aften',''],
      ['2026-10-06','Sundhedsminister Aden Duale bekræfter Kenyas første Bundibugyo-tilfælde','udbrud'],
      ['2026-10-07','Sundhedsministeriet oplyser, at 57 kontakter er identificeret, og at ti af dem er gjort rede for og sat i karantæne på National Police Service Hospital i Nairobi','',['Kenyas sundhedsministerium via APO Group, medie','https://www.africa-newsroom.com/press/kenya-strengthens-ebola-preparedness-and-contact-tracing?lang=en']],
@@ -1344,20 +1345,20 @@ const EVENTS = [
 
 {id:'anthrax-zm',place:'Munyamadzi, Mpika i Muchinga',country:'Zambia',region:'Afrika',lat:-11.8333,lon:31.4500,
  disease:'Miltbrand',pathogen:'Bacillus anthracis',stage:'spredning',live:true,
- cases:'26 humane tilfælde',
+ cases:'26 humane tilfælde, Times of Zambia pr. 28. september',
  extra:'49 flodheste, 9 elefanter og 6 bøfler døde. Southern Province fandt 257 positive kvæg blandt over 33.000 testede.',
  note:'Udbruddet begyndte blandt vilde dyr og spredte sig til mennesker gennem indtag af kød fra selvdøde dyr. Myndighederne har foreslået at suspendere jagt og indført krav om flyttetilladelse for kvæg.',
  nodes:[['Munyamadzi, Mpika',31.4500,-11.8333,'2026-07'],['Southern Province',26.9900,-16.8100,'2026-09-21']],
  naeste:'Rykker ikke højere, da miltbrand ikke smitter mellem mennesker. Falder, når indtag af kød fra selvdøde dyr stopper og kvæget er vaccineret.',
  plabel:'Humane tilfælde',
- pts:[['2026-08-31',3,null],['2026-09-12',12,0],['2026-09-13',14,null],['2026-09-30',26,null]],
+ pts:[['2026-08-31',3,null],['2026-09-12',12,0],['2026-09-13',14,null],['2026-09-28',26,null]],
  tl:[['2026-07','Vilde dyr begynder at dø i Munyamadzi-området. Omtrentlig','reservoir'],
      ['2026-08-31','Distriktet modtager anmeldelse af tre mistænkte humane tilfælde','mistanke'],
      ['2026-09-10','Katastrofeberedskabet advarer mod kød fra selvdøde dyr. Omtrentlig',''],
      ['2026-09-12','Myndighederne bekræfter 12 humane tilfælde. 46 flodheste, 8 elefanter, 5 bøfler og 1 krokodille er døde','udbrud'],
      ['2026-09-13','Omkring 14 patienter er i behandling',''],
      ['2026-09-21','Southern Province finder 257 positive kvæg blandt over 33.000 testede','spredning'],
-     ['2026-09-30','26 humane tilfælde kumulativt efter feltindsats. 49 flodheste, 9 elefanter og 6 bøfler','']],
+     ['2026-09-28','26 humane tilfælde kumulativt efter feltindsats. 49 flodheste, 9 elefanter og 6 bøfler','',['Times of Zambia, medie','https://times.co.zm/8000-animals-get-anthrax-vaccine/']]],
  src:[['IFRC GO','https://go.ifrc.org/emergencies/8091/overview'],['Lusaka Times, medie','https://www.lusakatimes.com/2026/09/30/nabwalya-gma-records-five-more-anthrax-deaths/'],['Mongabay, medie','https://news.mongabay.com/short-article/2026/09/anthrax-suspected-in-46-hippo-deaths-in-zambia-amid-potential-spillover-to-humans/']]},
 
 {id:'pest-irkutsk',place:'Shelekhov, Irkutsk oblast',country:'Rusland',region:'Asien',lat:52.2122,lon:104.1011,
@@ -1544,8 +1545,8 @@ const EVENTS = [
  tl:[['2026-03','En død sæl på Solrød Strand viser sig at have H5N1. Omtrentlig','reservoir'],
      ['2026-04','Statens Serum Institut melder H5N1 i vilde pattedyr og antistoffer hos en hund. Omtrentlig',''],
      ['2026-08','To gråsæler og en spættet sæl findes døde ved Lillebælt. Omtrentlig',''],
-     ['2026-10-01','Københavns Universitet og Statens Serum Institut offentliggør fundene. Fire sæler i 2026','']],
- src:[['Statens Serum Institut','https://www.ssi.dk/aktuelt/nyheder/2026/fugleinfluenza-paavist-i-pattedyr-i-danmark'],['TV 2, medie','https://nyheder.tv2.dk/udland/2026-10-01-fugleinfluenza-fundet-i-flere-saeler-kan-smitte-videre-ifoelge-forsker'],['TV2 Kosmopol, medie','https://www.tv2kosmopol.dk/solroed/fugleinfluenza-fundet-i-dod-sael-3f00f']]},
+     ['2026-10-01','Københavns Universitet og Statens Serum Institut offentliggør fundene. Fire sæler i 2026','',['DK-VET','https://dkvet.dk/nyheder/2026/hoejpatogen-fugleinfluenza/']]],
+ src:[['DK-VET','https://dkvet.dk/nyheder/2026/hoejpatogen-fugleinfluenza/'],['Statens Serum Institut','https://www.ssi.dk/aktuelt/nyheder/2026/fugleinfluenza-paavist-i-pattedyr-i-danmark'],['TV 2, medie','https://nyheder.tv2.dk/udland/2026-10-01-fugleinfluenza-fundet-i-flere-saeler-kan-smitte-videre-ifoelge-forsker'],['TV2 Kosmopol, medie','https://www.tv2kosmopol.dk/solroed/fugleinfluenza-fundet-i-dod-sael-3f00f']]},
 
 {id:'salmonella-dk',place:'Sjælland',country:'Danmark',region:'Europa',lat:55.6761,lon:12.5683,
  disease:'Salmonellose',pathogen:'Salmonella Enteritidis, sekvenstype 11',stage:'udbrud',live:true,
@@ -1636,7 +1637,7 @@ const EVENTS = [
  nodes:[['Rangpur',89.2752,25.7439,'2026-03-15'],['Dhaka',90.4125,23.8103,'2026-04-14']],
  naeste:'Falder, når vaccinationsdækningen holder og der går 42 dage uden nye tilfælde. Kurven flader, men dødstallet stiger fortsat.',
  plabel:'Mistænkte tilfælde',
- pts:[['2026-04-14',19161,166],['2026-05-27',75913,560],['2026-10-08',202625,1144],['2026-10-09',202893,1147],['2026-10-11',205028,1162],['2026-10-12',206297,1164],['2026-10-13',207371,1170]],
+ pts:[['2026-04-14',19161,166],['2026-05-27',75913,560],['2026-10-08',201625,1144],['2026-10-09',202893,1147],['2026-10-11',205028,1162],['2026-10-12',206297,1164],['2026-10-13',207371,1170]],
  tl:[['2026-03-15','Officiel startdato for overvågningsperioden. Stigningen begyndte ifølge WHO allerede i januar','udbrud'],
      ['2026-03-30','Vaccinationsudvalget godkender en målrettet kampagne',''],
      ['2026-04-04','Bangladesh notificerer formelt WHO','spredning'],
@@ -1646,7 +1647,7 @@ const EVENTS = [
      ['2026-04-20','Den landsdækkende kampagne lanceres med et mål på omkring 18 millioner børn',''],
      ['2026-05-13','Kampagnen passerer 100 procent af det administrative måltal',''],
      ['2026-05-27','75.913 tilfælde og 560 dødsfald på 56 dage. Alle 64 distrikter er ramt',''],
-     ['2026-10-08','202.625 mistænkte og 22.116 bekræftede tilfælde, 1.144 dødsfald i alt','',['DGHS via The Business Standard, medie','https://www.tbsnews.net/bangladesh/health/measles-death-toll-1144-4-more-children-die-1566281']],
+     ['2026-10-08','201.625 mistænkte og 22.116 bekræftede tilfælde, 1.144 dødsfald i alt','',['DGHS','https://dghs.gov.bd/pages/press-releases/6ac79bd5693754e6a6881711']],
      ['2026-10-09','202.893 mistænkte og 22.197 bekræftede tilfælde, 1.147 dødsfald i alt efter 1.268 nye mistænkte tilfælde og 3 dødsfald på et døgn. Ifølge DGHS selv var tallet 201.625 mistænkte tilfælde 8. oktober, ikke 202.625','',['DGHS','https://dghs.gov.bd/pages/press-releases/6ac91a1e734da992ba70ebd9']],
      ['2026-10-11','205.028 mistænkte og 22.421 bekræftede tilfælde. 1.058 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.180 nye mistænkte tilfælde, 93 nye bekræftede og 7 dødsfald blandt mistænkte','',['DGHS','https://dghs.gov.bd/pages/press-releases/6acb551cba7fabe195e07849']],
      ['2026-10-12','206.297 mistænkte og 22.573 bekræftede tilfælde. 1.060 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.269 nye mistænkte tilfælde, 152 nye bekræftede og 2 dødsfald blandt mistænkte','',['DGHS','https://dghs.gov.bd/pages/press-releases/6accaf9ce0cf9948292ece3c']],
@@ -1687,6 +1688,7 @@ const EVENTS = [
  pts:[['2026-10-05',86458,262],['2026-10-08',94151,294],['2026-10-09',95451,295],['2026-10-10',97082,299],['2026-10-11',99275,303],['2026-10-12',101442,307],['2026-10-13',103396,316]],
  tl:[['2026-07','Antallet af denguetilfælde begynder at stige hurtigt i begyndelsen af juli','udbrud',['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']],
      ['2026-10-05','86.458 tilfælde og 262 dødsfald i 2026. Smitten tager til uden for Dhaka, og der oprettes denguestuer på store hospitaler i Chattogram og Mymensingh og senge på upazila-hospitaler i Khulna','spredning',['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']],
+     ['2026-10-06','90.356 indlagte og 281 dødsfald i 2026 ifølge den officielle opgørelse','',['DGHS via bdnews24, medie','https://bdnews24.com/health/7d4zguh4hx']],
      ['2026-10-08','94.151 indlagte og 294 dødsfald efter 5 nye dødsfald og 1.935 nye indlagte på et døgn','',['DGHS via The Business Standard, medie','https://www.tbsnews.net/bangladesh/health/dengue-claims-5-more-lives-1935-hospitalised-24-hours-1566516']],
      ['2026-10-09','95.451 indlagte og 295 dødsfald efter 1 nyt dødsfald og 1.300 nye indlagte på et døgn','',['DGHS via The Business Standard, medie','https://www.tbsnews.net/bangladesh/health/one-dies-1300-hospitalised-dengue-24-hours-1567591']],
      ['2026-10-10','97.082 indlagte og 299 dødsfald efter 4 nye dødsfald og 1.631 nye indlagte på et døgn','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
@@ -1722,7 +1724,7 @@ const EVENTS = [
      ['2026-08-25','Nødkomiteen fastholder den internationale sundhedskrise','spredning'],
      ['2026-08-31','Seneste lammelsesdebut i Afghanistan i perioden',''],
      ['2026-09-30','GPEI opgør 35 tilfælde af vild poliovirus type 1 i Afghanistan. Tre nye i Kandahar, Nangarhar og Logar',''],
-     ['2026-10-06','Pakistan bekræfter sit sjette tilfælde i 2026, en syvårig dreng i Khyber-distriktet',''],
+     ['2026-10-05','Pakistan bekræfter sit sjette tilfælde i 2026, en syvårig dreng i Khyber-distriktet','',['APP, medie','https://www.app.com.pk/?p=1286643']],
      ['2026-10-07','GPEI melder seks nye tilfælde af vaccineafledt type 2 i Tanganyika og Lualaba i DR Congo, i alt 64 i 2026, og fem nye af vaccineafledt type 1 i Sydsudan, i alt 15. Afghanistan er uændret på 35 tilfælde af vild poliovirus. GPEI har fem tilfælde i Pakistan, hvor landets polioprogram har bekræftet seks','',['GPEI Polio This Week','https://polioeradication.org/about-polio/polio-this-week/']]],
  src:[['GPEI Polio This Week','https://polioeradication.org/about-polio/polio-this-week/'],['WHO nødkomite, 45. møde','https://www.who.int/news/item/25-08-2026-statement-of-the-forty-fifth-meeting-of-the-polio-ihr-emergency-committee'],['Xinhua om Pakistan, medie','https://english.news.cn/20261006/c693c0cfea9b4198afeeb074edf5afef/c.html']]},
 
@@ -1808,8 +1810,8 @@ const EVENTS = [
 
 {id:'cyclospora-us',place:'49 stater, klynge i Michigan og nabostater',country:'USA',region:'Amerika',lat:42.7325,lon:-84.5555,
  disease:'Cyclosporiasis',pathogen:'Cyclospora cayetanensis',stage:'spredning',live:true,
- cases:'19.883 tilfælde i 49 stater plus Washington DC, 1.064 indlagte og 2 dødsfald',
- extra:'Salatudbruddet alene: 12.883 tilfælde i 21 stater, 570 indlagte og 2 dødsfald, erklæret afsluttet 11. september. Sæsontallet stammer fra en kilde af lavere kvalitet.',
+ cases:'19.883 tilfælde i 49 stater plus Washington DC i sæsonen 1. maj til 31. august, 1.064 indlagte og 2 dødsfald, US CDC pr. 15. september',
+ extra:'Salatudbruddet alene: 12.883 tilfælde i 21 stater, 570 indlagte og 2 dødsfald, erklæret afsluttet 11. september. Sæsontallet er US CDC\'s eget for sæsonen 1. maj til 31. august, opgjort pr. 15. september. CDC\'s side opdateres ikke længere ugentligt.',
  note:'Det største kendte Cyclospora-udbrud. En stor del var koblet til icebergsalat fra Taylor Farms de Mexico, og myndighederne sporer desuden en separat klynge, hvor kilden endnu ikke er fundet.',
  naeste:'Falder, når den anden klynge har fået fundet sin kilde. Salatudbruddet er allerede lukket.',
  plabel:'Bekræftede tilfælde',
@@ -1821,7 +1823,7 @@ const EVENTS = [
      ['2026-08-04','Klyngen når 15 stater og bliver det største kendte Cyclospora-udbrud',''],
      ['2026-09-11','CDC erklærer salatudbruddet afsluttet med 12.883 tilfælde i 21 stater',''],
      ['2026-10-02','FDA finder Cyclospora i spildevand og en grøft',''],
-     ['2026-10-05','Nationalt sæsontal: 19.883 tilfælde i 49 stater plus Washington DC','']],
+     ['2026-10-05','Nationalt sæsontal: 19.883 tilfælde i 49 stater plus Washington DC i sæsonen 1. maj til 31. august, opgjort pr. 15. september','',['US CDC','https://www.cdc.gov/cyclosporiasis/cases/index.html']]],
  src:[['US CDC','https://www.cdc.gov/media/releases/2026/cyclospora-outbreak-linked-to-iceberg-lettuce-expanded-to-four-new-states.html'],['Washington State DOH','https://doh.wa.gov/you-and-your-family/illness-and-disease-z/foodborne-illness/outbreaks/2026-cyclosporiasis-outbreak'],['CIDRAP, medie','https://www.cidrap.umn.edu/cyclospora/fda-identifies-new-cyclospora-outbreak-unknown-source']]},
 
 {id:'chik-am',place:'Bahia og Mato Grosso do Sul',country:'Brasilien m.fl.',region:'Amerika',lat:-12.9714,lon:-38.5014,
@@ -1864,7 +1866,7 @@ const EVENTS = [
  gap:'Sundhedsministeriets meddelelse fra 9. oktober er ikke fundet på ministeriets egen side. Den er læst hos Graphic Online og den statslige radio- og tv-station GBC, som gengiver den enslydende. Antallet af mistænkte tilfælde i Upper West Region er uklart: MyJoyOnline gengiver ministeren med 74 i en artikel 8. oktober og med 88 i en artikel 9. oktober.',
  naeste:'Rykker til spredning, hvis der bekræftes tilfælde i flere regioner eller i en storby. Lukkes, når vaccinationskampagnen er gennemført, og der ikke kommer nye bekræftede tilfælde.',
  tl:[['2026-09-09','Sundhedsvæsenet i distrikterne Sissala West og Wa West begynder at se mistænkte tilfælde med feber, gulsot og blødning, oplyser sundhedsministeriet i sin meddelelse 9. oktober','mistanke',['Ghanas sundhedsministerium via Graphic Online, medie','https://www.graphic.com.gh/news/health/health-ministry-declares-yellow-fever-outbreak-in-upper-west-region.html']],
-     ['2026-10-08','Ghanas sundhedsministerium har meldt tre bekræftede tilfælde af gul feber i Upper West Region, alle med dødelig udgang. Udrykningshold er sendt ud, og en målrettet vaccinationskampagne er i gang','udbrud',['NaTHNaC, sekundær','https://travelhealthpro.org.uk/outbreaks']],
+     ['2026-10-08','Ghanas sundhedsministerium har meldt tre bekræftede tilfælde af gul feber i Upper West Region, alle med dødelig udgang. Udrykningshold er sendt ud, og en målrettet nødvaccination forberedes og ventes i oktober ifølge ministeriets meddelelse 9. oktober','udbrud',['Ghanas sundhedsministerium via Graphic Online, medie','https://www.graphic.com.gh/news/health/health-ministry-declares-yellow-fever-outbreak-in-upper-west-region.html']],
      ['2026-10-09','Sundhedsminister Kwabena Mintah Akandoh oplyser på et pressemøde i Accra, at prøverne er bekræftet på Institut Pasteur i Dakar, og at der er erklæret udbrud i de berørte distrikter','',['Ghana News Agency, medie','https://gna.org.gh/2026/10/health-minister-confirms-three-yellow-fever-cases-in-upper-west/']],
      ['2026-10-09','Sundhedsministeriets skriftlige meddelelse oplyser, at prøverne først blev undersøgt i Ghana og derefter bekræftet i Dakar, at de nationale og regionale beredskabscentre er aktiveret, og at en målrettet nødvaccination forberedes i de ramte og udsatte distrikter, blandt andre Wa West, Sissala West og Sissala East, i oktober','',['Ghanas sundhedsministerium via Graphic Online, medie','https://www.graphic.com.gh/news/health/health-ministry-declares-yellow-fever-outbreak-in-upper-west-region.html']]],
  src:[['NaTHNaC, sekundær','https://travelhealthpro.org.uk/outbreaks'],['Ghanas sundhedsministerium via Graphic Online, medie','https://www.graphic.com.gh/news/health/health-ministry-declares-yellow-fever-outbreak-in-upper-west-region.html'],['Ghana News Agency, medie','https://gna.org.gh/2026/10/health-minister-confirms-three-yellow-fever-cases-in-upper-west/'],['MyJoyOnline, medie','https://www.myjoyonline.com/450-suspected-yellow-fever-cases-recorded-across-ghana-since-june-health-minister/']]},
@@ -4156,7 +4158,7 @@ function flyvTil(e){
 // ---------- hvornår hver retning sidst blev opdateret ----------
 // Smitteudbrud gennemgås hver dag efter OPDATERING.md. Krig og konflikt tælles op hver time. De andre hentes hver time fra deres kilder.
 function retTid(k){
-  const RET_KILDER = {rejse:['um', 'fcdo'], jord:['usgs'], storm:['gdacs'], flod:['gdacs'], brand:['gdacs'], vulkan:['gdacs', 'gvp'], hede:['meteoalarm', 'gdacs']};
+  const RET_KILDER = {rejse:['um', 'fcdo'], jord:['usgs'], storm:['gdacs'], flod:['gdacs'], brand:['gdacs'], vulkan:['gdacs'], hede:['meteoalarm', 'gdacs']};
   if(k === 'smitte'){ const t = Date.parse(typeof DATA_TID === 'string' ? DATA_TID : ''); return t ? {ms: t, hvad: 'Gennemgået'} : DATA_DATO ? {ms: Date.parse(DATA_DATO), dag: true, hvad: 'Gennemgået'} : null; }
   if(k === 'krig') return KONFINFO && KONFINFO.genereret ? {ms: Date.parse(KONFINFO.genereret), hvad: 'Talt op'} : null;
   const ki = (FEEDINFO && FEEDINFO.kilder) || {};
@@ -4774,7 +4776,6 @@ START_KLAR = true; requestAnimationFrame(() => flyvIgen());
     usgs: ['USGS', 'Jordskælv fra styrke 5,5, eller med et PAGER-varsel.', 'https://earthquake.usgs.gov/earthquakes/map/'],
     gdacs: ['GDACS', 'Storme, oversvømmelser, naturbrande, vulkaner og tørke, med FN og EU\'s varselsniveau.', 'https://www.gdacs.org/'],
     meteoalarm: ['Meteoalarm', 'Vejrvarsler fra Europas vejrtjenester, også DMI.', 'https://meteoalarm.org/'],
-    gvp: ['Smithsonian GVP', 'Ugentlig rapport om vulkaner i udbrud.', 'https://volcano.si.edu/'],
     fts: ['OCHA Financial Tracking Service', 'Humanitær hjælp fra lande og EU i år.', 'https://fts.unocha.org/'],
     unhcr: ['UNHCR', 'Flygtninge og asylansøgere pr. oprindelsesland.', 'https://www.unhcr.org/refugee-statistics/']
   };

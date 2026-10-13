@@ -116,6 +116,10 @@ jobs:
       - name: Byg ændringsloggen
         run: node tools/byg-log.mjs LOG.md site/log.html
 
+      # /oversaet oversætter kun tekster, hvis ord står i sidens egne filer.
+      - name: Byg ordlisten til oversættelsen
+        run: node tools/byg-ord.mjs site
+
       - name: Udrul til Pages
         if: steps.aendret.outputs.udrul != 'nej'
         uses: cloudflare/wrangler-action@v4

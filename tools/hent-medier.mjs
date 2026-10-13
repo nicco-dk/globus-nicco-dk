@@ -15,7 +15,7 @@
 //   Bekræftet:  mindst 5 medier fra listen, fra mindst 3 lande uden for parternes egne,
 //               nævnt på mindst 3 forskellige dage, OG parret er godkendt i tools/par-tjek.json.
 //   Afventer:   tærsklen for bekræftet er nået, men parret er ikke tjekket endnu. Vises som mistanke.
-//   Afvist:     parret står under afvist i tools/par-tjek.json og vises ikke.
+//   Afvist:     parret står under afvist i tools/par-tjek.json og vises ikke i 30 dage fra datoen.
 //   Vindue:     7 dage for konflikt, 30 dage for militær støtte.
 
 import { readFileSync, writeFileSync, mkdirSync, rmSync, existsSync } from 'node:fs';
@@ -31,6 +31,10 @@ const FORRIGE = fi > 0 ? process.argv[fi + 1] : null;
 const LANDE = JSON.parse(readFileSync(new URL('./lande.json', import.meta.url), 'utf8')).lande;
 const MEDIER = JSON.parse(readFileSync(new URL('./medier.json', import.meta.url), 'utf8')).medier;
 const TJEK = JSON.parse(readFileSync(new URL('./par-tjek.json', import.meta.url), 'utf8'));
+// Et afvist par udløber efter 30 dage og vurderes igen, hvis tærsklen nås på ny (ejerens beslutning 13. oktober 2026).
+// Et par uden gyldig dato regnes som afvist, så intet dukker op ved en fejl.
+const AFVIST_DAGE = 30;
+const afvistNu = k => { const x = TJEK.afvist?.[k]; if (!x) return false; const t = Date.parse(x.dato || ''); return !t || Date.now() - t < AFVIST_DAGE * 86400000; };
 const I3 = new Map(Object.entries(LANDE).map(([a2, L]) => [L.i3, a2]));
 
 const VINDUE = { konflikt: 7, militaer: 30 };
@@ -233,7 +237,7 @@ for (const [k, p] of Object.entries(T.p)) {
 // ---------- streger ----------
 const streger = [];
 for (const [k, p] of Object.entries(T.p)) {
-  if (TJEK.afvist?.[k]) continue;
+  if (afvistNu(k)) continue;
   const medier = new Set(Object.values(p.d).flat());
   if (medier.size < MIN_MISTANKE) continue;
   const dage = Object.keys(p.d).length;

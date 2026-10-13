@@ -8,6 +8,10 @@
     "IL-LB": { "dato": "2026-10-12", "note": "Israelske luftangreb og artilleribeskydning i det sydlige Libanon 11. oktober trods rammeaftalen fra juni, med en dræbt i Yater ifølge Libanons statslige nyhedsbureau.", "kilder": [["Al Jazeera", "https://www.aljazeera.com/news/2026/10/11/two-killed-near-israeli-occupied-area-in-south-lebanon"], ["Anadolu", "https://aa.com.tr/en/middle-east/israeli-army-renews-airstrikes-artillery-shelling-in-southern-lebanon-despite-us-deal/4085106"]] }
   },
   "afvist": {
+    "IL-IR": { "dato": "2026-10-13", "grund": "Erklæret krig uden rapporterede angreb mellem parternes styrker i vinduet. Kun direkte kampe mellem parterne tæller (ejerens afgørelse 13. oktober)." },
+    "IR-US": { "dato": "2026-10-13", "grund": "Erklæret krig og håndhævelse af en blokade mod tredjelandes skibe, uden rapporterede angreb mellem parternes styrker i vinduet. Kun direkte kampe mellem parterne tæller (ejerens afgørelse 13. oktober)." },
+    "DJ-YE": { "dato": "2026-10-13", "grund": "Stregen kommer fra GDELT's stedfæstelse af kampe ved Bab el-Mandeb, ikke fra artiklernes indhold. Ingen artikel beskriver kampe mellem landene (ejerens afgørelse 13. oktober)." },
+    "EG-SD": { "dato": "2026-10-13", "grund": "Luftangrebet ved Jabal al-Uqaydat ramte civile guldgravere, ikke sudanesiske styrker, og ophavet er ikke uafhængigt bekræftet (ejerens afgørelse 13. oktober)." },
     "IR-SA": { "dato": "2026-10-12", "grund": "Angrebene på Saudi-Arabien er udført af Houthi-bevægelsen i Yemen, og Iran er kun nævnt som dens støtte og som mægler." },
     "SA-US": { "dato": "2026-10-12", "grund": "Landene er partnere, og artiklerne handler om, at USA overvejer at gå med i Saudi-Arabiens angreb på Houthi-bevægelsen." },
     "IR-YE": { "dato": "2026-10-12", "grund": "Kampene står mellem Houthi-bevægelsen og Saudi-Arabien samt Yemens regering, og Iran er kun nævnt som Houthi-bevægelsens støtte." },

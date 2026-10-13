@@ -121,6 +121,32 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `EG-SD` i mediesporet.
 
+### Kl. 22.15, ejerens afgørelser i gennemgangen
+
+Ejeren har afgjort alle punkter i GENNEMGANG.md i et svarark. Punkterne er fjernet derfra, undtagen de 15 hændelser, der mangler opgørelsesdato i `cases`.
+
+**Ændret i datasættet (gamle punkter, rettet efter ejerens afgørelse)**
+- `gul-feber-gh`: punktet 8. oktober siger nu, at nødvaccinationen forberedes og ventes i oktober ifølge sundhedsministeriets meddelelse 9. oktober.
+- `maesling-bd`: punktet 8. oktober og talserien har 201.625 mistænkte tilfælde efter DGHS' egen meddelelse: https://dghs.gov.bd/pages/press-releases/6ac79bd5693754e6a6881711
+- `polio`: Pakistans sjette tilfælde er dateret 5. oktober efter APP: https://www.app.com.pk/?p=1286643
+- `cyclospora-us`: tallet er US CDC's pr. 15. september for sæsonen 1. maj til 31. august. "Lavere kvalitet" er fjernet fra `extra`: https://www.cdc.gov/cyclosporiasis/cases/index.html
+- `anthrax-zm`: de 26 humane tilfælde er dateret 28. september efter Times of Zambia, i forløbet, talserien og `cases`: https://times.co.zm/8000-animals-get-anthrax-vaccine/
+- `ebola-ke`: landrejsen via Beni til Kampala er dateret 2. oktober efter WHO AFRO, flyet til Nairobi står 3. oktober. Stedknuden Kampala og linjen dertil har 2. oktober. `extra` nævner, at WHO DON 619 har dødsfaldet 5. oktober og ministeriet hos APO Group 6. oktober. `naeste` har 122 kontakter.
+- `ebola-drc`: punktet 27. august står med UKHSA's uge 35 som kilde. `note` nævner evakueringen af en britisk nødhjælpsarbejder til London 21. juli efter mulig smitte, uden symptomer, efter det spanske sundhedsministerium. Sydkivu er ny stedknude.
+- `h5n1-dk`: DK-VET 1. oktober er sat i `src` og på punktet 1. oktober: https://dkvet.dk/nyheder/2026/hoejpatogen-fugleinfluenza/
+- `dengue-bd`: nyt punkt 6. oktober med 90.356 indlagte og 281 dødsfald efter bdnews24: https://bdnews24.com/health/7d4zguh4hx Talserien bruger fortsat SEARO's tal. Punkterne 10. august og 17. september og sætningen om september tages ikke med, fordi kilden ikke kunne findes.
+- Uændret efter afgørelsen: `pest-irkutsk` (navn, `naeste`, de 5.000 prøver, datoerne og region Asien), `maesling-us` 2025-tallet, `ebola-ke` og `ebola-nl` uden alvor 4, SEARO's tal i talserien for `dengue-bd` og grafens samlede dødstal i `maesling-bd`.
+
+**Ændret i mediesporet**
+- `IL-IR`, `IR-US`, `DJ-YE` og `EG-SD` er afvist. Kun direkte kampe eller angreb mellem parternes styrker tæller som bekræftet konflikt. En erklæret krig uden angreb, en blokade mod skibe fra tredje lande og et angreb på civile med ubekræftet ophav afvises.
+- Et afvist par udløber efter 30 dage og tages op igen. Afvises det på ny, får det ny dato.
+
+**Ændret på siden**
+- Smithsonians ugentlige vulkanrapport er taget ud som kilde, fordi også dens RSS-adresse svarer 403 hver time. Vulkanlaget viser udbrud med GDACS-varsel, og guiden siger det.
+- Læs mere: DR's alle nyheder, TV 2 og Politiken er lagt til overskrifterne med danske søgeord, og GDELT søges blandt dansksprogede medier med danske ord og landets danske navn.
+- `/oversaet` oversætter kun tekster, hvis ord står i sidens egne filer. Ordlisten bygges ved hver udrulning.
+- Udkast til privatlivstekst i `udkast/privatliv.md`. Ikke live, før ejeren har læst den, og kontaktadressen er valgt.
+
 ## 12. oktober 2026, sen eftermiddag
 
 **Side og arbejdsgang ændret.** Ingen ændringer i data.

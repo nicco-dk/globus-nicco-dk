@@ -238,7 +238,6 @@ const KILDER = {
     return ud;
   },
 
-  // Smithsonians ugentlige vulkanrapport. Ny aktivitet er alvor 2, fortsat aktivitet alvor 1.
   // Lande uden dansk rejsevejledning: det britiske udenrigsministeriums (FCDO) niveau fra GOV.UK's åbne API.
   async fcdo() {
     const uden = UM_UDEN ?? forrige.kilder?.um?.uden ?? [];
@@ -259,24 +258,6 @@ const KILDER = {
         sted: L.n, ...hs(L), tid: opd ? iso(opd) : null, opd: opd ? iso(opd) : null, kilde: 'FCDO (UK)',
         url: `https://www.gov.uk/foreign-travel-advice/${slugs.get(a2)}`,
         tekst: `Udenrigsministeriet har ingen rejsevejledning for ${L.n}. Det britiske udenrigsministerium ${TXT[top]}${basis >= top ? ' til hele landet' : ' til dele af landet'}.` + (opd ? ` Opdateret ${datoDa(opd)}.` : '') });
-    }
-    return ud;
-  },
-
-  async gvp() {
-    const x = await hent('https://volcano.si.edu/news/WeeklyVolcanoRSS.xml');
-    const ud = [];
-    for (const it of x.split('<item>').slice(1)) {
-      const titel = tag(it, 'title'), link = tag(it, 'link');
-      const p = (tag(it, 'georss:point') || '').split(/\s+/).map(Number);
-      if (p.length !== 2 || !p.every(Number.isFinite)) continue;
-      const m = titel.match(/^(.+?)\s*\((.+?)\)/);
-      const beskr = ren(tag(it, 'description'));
-      const ny = /new activity|unrest/i.test(beskr.slice(0, 200)) || /new activity|unrest/i.test(tag(it, 'category'));
-      const vnr = (link.match(/vn=(\d+)/) || [])[1] || titel;
-      ud.push({ id: 'gvp-' + vnr, ret: 'vulkan', alvor: ny ? 2 : 1, titel: m ? m[1] : titel, sted: m ? m[2] : '', lat: p[0], lon: p[1],
-        tid: iso(tag(it, 'pubDate') || NU), opd: iso(tag(it, 'pubDate') || NU), kilde: 'Smithsonian GVP', url: link,
-        tekst: (ny ? 'Ny aktivitet eller uro i ugens rapport.' : 'Fortsat aktivitet i ugens rapport.') + ' Rapporten udgives på engelsk af Smithsonian og USGS.' });
     }
     return ud;
   }

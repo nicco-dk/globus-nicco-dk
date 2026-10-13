@@ -31,7 +31,6 @@ Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, st
 | Jordskælv | USGS, seneste 7 døgn | Fra M5,5 eller med PAGER-varsel | PAGER grøn 1, gul 2, orange 3, rød 4. Uden varsel 1 |
 | Storme, oversvømmelser, brande, tørke, vulkaner | GDACS | Igangværende hændelser, for storme også banen | Grøn 1, orange 3, rød 4 |
 | Hede, kulde, brandfare, oversvømmelse, vind i Europa | Meteoalarm | Gyldige varsler, ét punkt pr. land og retning | Gul 2, orange 3, rød 4 |
-| Vulkaner | Smithsonian GVP, ugentlig rapport | Alle vulkaner i rapporten | Ny aktivitet 2, fortsat 1 |
 
 **Krig og konflikt (markører og varmekort).** `tools/hent-medier.mjs` placerer GDELT-hændelser på et halvgradsnet: kampe (kode 19x, 20x og bombeangreb 183) med mindst én væbnet part (militær, oprørere, opstandsgruppe, separatister) og demonstrationer (kode 14), kun på by- eller regionsniveau, og kun omtaler fra medierne på listen. Datolinjebyer som Washington, London og Bruxelles tæller ikke. Hvert land får alvor efter omtalen af kampe de sidste 7 dage: 20 omtaler 2, 100 omtaler 3, 400 omtaler 4. Siden giver højst alvor 2, hvis landet hverken har rejsevejledning fra orange og op eller en bekræftet konflikt, og mindst 3 ved en bekræftet konflikt. Hvert felt med mindst 8 omtaler af kampe (højst 8 pr. land) eller 15 omtaler af demonstrationer (højst 3 pr. land) bliver en prik for sig. For hvert felt gemmes GDELT's stednavn, medierne, op til fire artikler (én pr. medie), parternes type og de lande, der er nævnt som part mindst to gange. Feltets alvor: 40 omtaler 2, 150 omtaler 3, under landets loft; demonstrationer altid 1. Felter uden for kortet (fx Gaza) får landet efter navnet eller den nærmeste hovedstad inden for 1,5 grad.
 
@@ -61,6 +60,7 @@ Krig og konflikt, hedebølger og klimaekstremer, jordskælv, oversvømmelser, st
    - godkendt: `{"dato": "ÅÅÅÅ-MM-DD", "note": "én sætning på dansk om, hvad der sker", "kilder": [["Medie", "url"], ["Medie", "url"]]}`
    - afvist: `{"dato": "ÅÅÅÅ-MM-DD", "grund": "én sætning"}`
 5. Et godkendt par, hvor konflikten er slut ifølge to medier (fx fredsaftale), flyttes til afvist med grunden.
+   Et afvist par udløber 30 dage efter sin dato og kommer igen som afventer, hvis tærsklen nås. Afvises det på ny, sættes en ny dato. Kun direkte kampe eller angreb mellem parternes styrker tæller: en erklæret krig uden rapporterede angreb, en blokade mod tredjelandes skibe eller et angreb på civile, hvor ophavet ikke er uafhængigt bekræftet, afvises (ejerens afgørelse 13. oktober 2026).
 6. Skriv i loggen under en overskrift **Mediesporet**, hvilke par der blev godkendt og afvist, med kilderne.
 
 Medielisten `tools/medier.json` rettes ikke af den daglige kørsel. Forslag til medier, der mangler, skrives under Til gennemgang.
