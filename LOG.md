@@ -76,6 +76,16 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 - En mistanke tæller ikke med, når landets eller retningens højeste alvor regnes ud. Bekræftes den, skifter trinnet og får alvor efter reglerne. Afkræftes den, sættes `live` til `false` med et punkt i forløbet. OPDATERING.md beskriver det.
 - Delte links til en mistanke siger "Mistanke om smitteudbrud, ikke bekræftet" i stedet for et alvorstal.
 
+### Kl. 17.00, siden ændret af ejeren
+
+Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
+
+- Overskriftslinjen står på én linje på computeren: hvornår smitteudbruddene sidst blev gennemgået, og hvornår varslerne sidst blev hentet.
+- På computeren springer søljen det over, som listen allerede viser under Akut lige nu.
+- Pauseknappen står nederst til højre over zoomknapperne, også på computeren.
+- På engelsk er guiden, dialogerne og Nyt på siden oversat på forhånd (`site/en.json`), og kortets mærkat står i ental.
+- Push-beskeden om en ny mistanke siger, at den ikke er bekræftet, i stedet for "alvor 1". `/status` har fået et fjerde felt til det.
+
 ## 12. oktober 2026, sen eftermiddag
 
 **Side og arbejdsgang ændret.** Ingen ændringer i data.
