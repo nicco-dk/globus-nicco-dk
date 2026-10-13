@@ -169,7 +169,7 @@ Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste h
 | `variant` | Ny variant eller resistens | Dokumenteret ændret smitsomhed eller svigtende behandling |
 | `reservoir` | Naturligt reservoir | Smittestof påvist hos dyr, ingen humane tilfælde |
 
-**Alvor.** Siden viser alvor på en skala fra 1 til 4, som størrelse og ringe på prikken, og man kan filtrere på den. Uden feltet `alvor` følger alvor trinnet: 1 for `reservoir` og `mistanke`, 2 for alle andre. Feltet sættes kun, når en kilde begrunder et højere trin:
+**Alvor.** Siden viser alvor på en skala fra 1 til 5, som størrelse og ringe på prikken, og man kan filtrere på den. Alvor er den skala, læseren ser først i kortet. Trinnet står under som forklaring. Uden feltet `alvor` følger alvor trinnet: 1 for `reservoir`, 2 for alle andre, også `mistanke`. Alvor 5 (akut) står aldrig i datasættet. Siden giver det selv til alvor 4 med en udvikling inden for tre dage. En mistanke bliver ikke akut af sig selv: et enkelt tilfælde uden påvist smitte er alvor 2, indtil en kilde begrunder mere. Feltet sættes kun, når en kilde begrunder et højere trin:
 
 | Alvor | Navn | Smitteudbrud |
 | --- | --- | --- |

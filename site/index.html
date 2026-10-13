@@ -92,6 +92,7 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .rchip .d{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:var(--fg-faint);border:1.5px solid currentColor}
 .rchip .d svg{width:16px;height:16px}
 .rchip .n{color:var(--fg-dim);font-variant-numeric:tabular-nums}
+.rchip .kn{display:none}
 .hentapp{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 11px 5px 8px;font:500 12px/1 var(--mono);cursor:pointer;min-height:32px}
 .hentapp svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hentapp:hover{border-color:var(--accent)}
@@ -252,7 +253,7 @@ canvas.drag{cursor:grabbing}
 .landknap{margin-top:12px;background:var(--panel-2);border:1px solid var(--rule);border-radius:7px;color:var(--fg);font:inherit;font-size:12.5px;padding:8px 12px;cursor:pointer;width:100%;text-align:left}
 .landknap:hover{border-color:var(--c)}
 .landknap::after{content:" →";color:var(--fg-dim)}
-/* Søljen i bunden med alvor 4 og mistanker. Står stille, når man peger på den, og ruller ikke ved reduceret bevægelse. */
+/* Søljen i bunden med alvor 4 og 5. Står stille, når man peger på den, og ruller ikke ved reduceret bevægelse. */
 .ticker{grid-column:1/-1;display:flex;align-items:center;gap:12px;margin-top:10px;padding-top:9px;border-top:1px solid var(--rule);min-width:0}
 .tk-lbl{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--s4);white-space:nowrap}
 .tk-lbl::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--s4);animation:tkpuls 1.6s ease-in-out infinite}
@@ -268,6 +269,15 @@ canvas.drag{cursor:grabbing}
 .tk-p .d{width:26px;height:26px;flex:none;border-radius:50%;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent)}
 .tk-p .d svg{width:16px;height:16px}
 .tk-p .m{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:color-mix(in srgb,var(--c) 82%,var(--fg))}
+/* Står stille, når alt kan ses. På mobilen én linje med det alvorligste og et tal for resten. */
+.ticker.stille .tk-baand{animation:none}
+.ticker.stille .tk-vindue{-webkit-mask-image:none;mask-image:none}
+.ticker.kompakt .tk-baand{width:100%;align-items:center;gap:8px}
+.ticker.kompakt .tk-gang{flex:1;min-width:0}
+.ticker.kompakt .tk-p{flex:1;min-width:0;padding-right:0}
+.ticker.kompakt .tk-p .t{min-width:0;overflow:hidden;text-overflow:ellipsis}
+.tk-mere{flex:none;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;font:600 11.5px/1 var(--mono);padding:6px 10px;cursor:pointer}
+.tk-mere:hover{border-color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.tk-vindue{overflow-x:auto;-webkit-mask-image:none;mask-image:none}}
 /* Detaljekortet: samme rækkefølge for alle typer. */
 .detail{gap:10px}
@@ -278,8 +288,12 @@ canvas.drag{cursor:grabbing}
 .k-pil:hover{border-color:var(--c)}
 .k-pos{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);letter-spacing:.04em}
 .k-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px}
-.k-alv{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;color:var(--a);display:inline-flex;align-items:center;gap:5px}
-.k-alv::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--a)}
+.k-alv{font-size:12.5px;font-weight:600;letter-spacing:.005em;color:var(--fg);display:inline-flex;align-items:center;gap:6px;
+  padding:3px 9px 3px 7px;border-radius:999px;border:1px solid color-mix(in srgb,var(--a) 55%,transparent);background:color-mix(in srgb,var(--a) 16%,transparent)}
+.k-alv::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--a)}
+.k-under{display:flex;align-items:center;gap:8px;margin-top:-2px}
+.k-ut{display:flex;flex-wrap:wrap;gap:2px 14px;min-width:0;flex:1}
+.k-trin{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--fg-dim)}
 .k-dato{font-family:var(--mono);font-size:10.5px;color:var(--fg-faint)}
 .k-iks{display:flex;gap:4px;margin-left:auto}
 .k-ik{width:30px;height:30px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);display:grid;place-items:center;cursor:pointer;padding:0}
@@ -292,6 +306,14 @@ canvas.drag{cursor:grabbing}
 .k-fig figcaption{font-family:var(--mono);font-size:10px;line-height:1.45;color:var(--fg-faint)}
 .k-fig figcaption a{color:var(--fg-dim)}
 .k-fortalt{margin:0;font-size:13.5px;line-height:1.55;color:var(--fg)}
+/* Det vigtigste først, på computer og mobil: titel, fortælling og nøgletal. Kortudsnit, forløb og kilder kommer bagefter. */
+.detail>*{order:4}
+.detail>.k-greb,.detail>.k-nav,.detail>.k-sti,.detail>.k-meta,.detail>.k-under,.detail>h2,.detail>.where,.detail>.mt-mrk{order:0}
+.detail>.k-fortalt{order:1}
+.detail>.k-tal,.detail>.k-smitte{order:2}
+.detail>.k-fig{order:3}
+.k-smitte{margin:0;font-size:12.5px;line-height:1.45;color:var(--fg-dim)}
+.k-smitte .k{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-faint);margin-right:6px}
 .k-tal{display:flex;flex-wrap:wrap;gap:8px 16px;margin:0;padding:9px 0 0;border-top:1px solid var(--rule)}
 .k-tal>div{min-width:0;flex:1 1 120px}
 .k-tal dt{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-faint)}
@@ -372,7 +394,7 @@ canvas.drag{cursor:grabbing}
 .nytbtn{position:relative;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);border-radius:999px;padding:5px 14px 5px 8px;font:600 13px/1 var(--display);cursor:pointer;min-height:36px;white-space:nowrap}
 .nytbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;color:var(--accent)}
 .nytbtn:hover{border-color:var(--accent)}
-.nytbtn .tal{position:absolute;top:-5px;left:20px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#c23b3b;color:#fff;font:700 10.5px/18px var(--mono);text-align:center;box-shadow:0 0 0 2px var(--bg)}
+.nytbtn .tal{position:absolute;top:-5px;left:20px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--accent);color:var(--panel);font:700 10.5px/18px var(--mono);text-align:center;box-shadow:0 0 0 2px var(--bg)}
 @media (max-width:900px){.nytbtn .t{display:none}.nytbtn{padding:5px;width:36px;justify-content:center}.nytbtn .tal{left:22px}}
 .nytliste{display:grid;gap:10px;margin:14px 0 16px}
 .nyt-p{display:grid;grid-template-columns:40px 1fr;gap:4px 12px;background:var(--panel-2);border:1px solid var(--rule);border-radius:9px;padding:13px}
@@ -696,9 +718,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .zoomer{bottom:calc(var(--ark-h,118px) + var(--bar) + 12px)}
   .ovtop .udforsk,#soegknap,#filterknap{display:none}
   .rchip.service{display:none}
-  #rotpause{right:12px;top:calc(var(--top-fri,0px) + 12px);width:42px;height:42px}
-  #rotpause svg{width:18px;height:18px}
+  /* Pause står samlet med Nulstil nederst til højre, så den ikke dækker prikkerne øverst. Begge er lidt gennemsigtige. */
+  #rotpause{position:fixed;right:10px;top:auto;bottom:calc(var(--ark-h,118px) + var(--bar) + 12px + 42px + 8px);width:42px;height:42px;
+    background:color-mix(in srgb,var(--panel) 72%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:bottom .25s ease,background .2s,color .2s}
+  #rotpause svg{width:16px;height:16px}
+  .zoomer button{width:42px;height:42px;border-radius:50%;background:color-mix(in srgb,var(--panel) 72%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
   .rchip .d{--s:clamp(26px,calc((100vw - 100px) / 8),38px)}
+  /* Navnet under ikonet, så man kan se, hvad hver retning er, uden at trykke og holde. */
+  .rchip{flex-direction:column;gap:3px;padding:0;border:0;background:none;border-radius:6px}
+  .rchip[aria-pressed="true"]{background:none}
+  .rchip[aria-pressed="true"] .d{border-color:var(--c)}
+  .rchip[data-fokus="1"]{box-shadow:none}
+  .rchip[data-fokus="1"] .d{box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 45%,transparent)}
+  .rchip .kn{display:block;font:500 9px/1 var(--mono);letter-spacing:0;color:var(--fg-faint);white-space:nowrap}
+  .rchip[aria-pressed="true"] .kn{color:var(--fg-dim)}
   #protobtn,#temabtn,#hentapp,#sprogbtn{display:none}
   .lagmere #protobtn,.lagmere #temabtn,.lagmere #sprogbtn{display:inline-flex}
   .lagmere #sprogbtn{width:auto}
@@ -783,16 +816,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
   .niv-lande button i{width:8px;height:8px;border-radius:50%;background:var(--a)}
   .seealle{min-height:42px;border-radius:10px;border:1px solid var(--accent);background:none;color:var(--fg);font:600 13.5px var(--display);cursor:pointer}
   .list.skjult{display:none}
-  .k-sti{display:flex;flex-wrap:wrap;align-items:center;gap:2px 5px;min-height:24px;font:12.5px var(--display);color:var(--fg-faint)}
+  /* Én linje. Det sidste led forkortes med … i stedet for at gå ind over linjen under. */
+  .k-sti{display:flex;flex-wrap:nowrap;align-items:center;gap:2px 5px;min-height:24px;min-width:0;overflow:hidden;font:12.5px var(--display);color:var(--fg-faint)}
   .k-sti button{flex:none;background:none;border:0;padding:4px 0;color:var(--fg-dim);font:600 12.5px var(--display);cursor:pointer;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:3px}
-  .k-sti b{flex:none;color:var(--fg);font-weight:600}
-  /* Det vigtigste først i halv højde: titel, fortælling og nøgletal. Billede, forløb og kilder kommer, når arket trækkes op. */
-  .detail>*{order:4}
-  .detail>.k-greb,.detail>.k-nav,.detail>.k-sti,.detail>.k-meta,.detail>h2,.detail>.where{order:0}
-  .detail>.k-fortalt{order:1}
-  .detail>.mt-mrk{order:0}
-  .detail>.k-tal{order:2}
-  .detail>.k-fig{order:3}
+  .k-sti b{flex:0 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--fg);font-weight:600}
+  /* Smitteudbrud: tallene først i halv højde, så omfanget kan ses uden at trække arket op. */
+  .detail.k-smitte-kort>.k-tal{order:1}
+  .detail.k-smitte-kort>.k-fortalt{order:2}
 }
 @media (pointer:coarse){
   .zoomer button{width:42px;height:42px;font-size:17px}
@@ -821,7 +851,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
       <button class="proto" id="protobtn" type="button" title="Se hvilke data vi henter, hvorfra og hvornår">Prototypedata</button>
       <button class="sprogbtn" id="sprogbtn" type="button">EN</button>
       <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
-      <button class="nytbtn" id="nytbtn" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="t">Nyt på siden</span><span class="tal" id="nyttal" hidden></span></button>
+      <button class="nytbtn" id="nytbtn" type="button" aria-haspopup="dialog" title="Nye funktioner på siden. Varsler og udbrud står i listen og søljen."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 3.5l1.9 5.1 5.1 1.9-5.1 1.9L11 17.5l-1.9-5.1L4 10.5l5.1-1.9zM18.5 14.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z"/></svg><span class="t">Nyt på siden</span><span class="tal" id="nyttal" hidden></span></button>
       <button class="guidebtn" id="ombtn" type="button" aria-haspopup="dialog" aria-label="Sådan virker siden"><span class="q" aria-hidden="true">?</span><span class="t">Sådan virker siden</span></button>
     </div>
     <span class="sub"><span id="protoplads"></span><span id="sub"></span></span>
@@ -1122,20 +1152,20 @@ const RETNINGER = [
   {k:'vulkan', n:'Vulkaner, aktive og i udbrud', hvad:'Vulkanudbrud med GDACS-varsel og vulkaner i Smithsonians ugentlige rapport.', kilder:'GDACS og Smithsonian GVP', fk:['gdacs','gvp']}
 ];
 const ALV = [null,
-  {n:'Til orientering', d:'Godt at vide. Brug sund fornuft.', smitte:'Naturligt reservoir eller mistanke'},
-  {n:'Vær opmærksom', d:'Hold øje med det, og forbered dig lidt mere end normalt.', smitte:'Bekræftet udbrud'},
+  {n:'Til orientering', d:'Godt at vide. Brug sund fornuft.', smitte:'Naturligt reservoir'},
+  {n:'Vær opmærksom', d:'Hold øje med det, og forbered dig lidt mere end normalt.', smitte:'Bekræftet udbrud eller mistanke om et nyt'},
   {n:'Alvorligt', d:'Overvej, om rejsen er nødvendig.', smitte:'WHO vurderer risikoen som høj'},
   {n:'Kritisk', d:'Myndighederne fraråder rejser eller har erklæret en international krise.', smitte:'WHO\'s internationale sundhedskrise'},
-  {n:'Akut', d:'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage, eller en mistanke om et nyt udbrud, der ikke er bekræftet endnu.', smitte:'Mistanke om nyt udbrud, eller alvor 4 med ny udvikling'}
+  {n:'Akut', d:'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage.', smitte:'Alvor 4 med en ny udvikling inden for tre dage'}
 ];
-// Alvor står i feltet alvor, når en kilde begrunder et højere trin. Ellers følger den trinnet: 1 for reservoir og mistanke, 2 for resten.
-// Alvor 5 (akut) gives af reglen og står aldrig i datasættet: et smitteudbrud på mistanke, eller alvor 4 med en
-// udvikling inden for tre dage. Maskinmeldinger får det ved indlæsning (se akutFeed). Rejsevejledninger aldrig.
-const alvorGrund = (e, st) => e.alvor || (st === 'reservoir' || st === 'mistanke' ? 1 : 2);
+// Alvor står i feltet alvor, når en kilde begrunder et højere trin. Ellers følger den trinnet: 1 for reservoir, 2 for resten.
+// En mistanke er 2 som et bekræftet udbrud: et enkelt tilfælde uden påvist smitte er ikke akut i sig selv.
+// Alvor 5 (akut) gives af reglen og står aldrig i datasættet: alvor 4 med en udvikling inden for tre dage.
+// Maskinmeldinger får det ved indlæsning (se akutFeed). Rejsevejledninger aldrig.
+const alvorGrund = (e, st) => e.alvor || (st === 'reservoir' ? 1 : 2);
 const alvorAt = (e, st) => {
   const a = alvorGrund(e, st);
   if(e._feed || cutoff < T1 - 14*DAY) return a;
-  if(st === 'mistanke') return 5;
   return a >= 4 && e.tl && e.tl.length && cutoff - sidste(e).ms <= NY_DAGE*DAY ? 5 : a;
 };
 function akutFeed(e){
@@ -1989,7 +2019,13 @@ const ICP = Object.fromEntries(Object.entries(IC).map(([k,v]) => [k, new Path2D(
 let t0p = performance.now(), pulse = 0;
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// Navne på kloden deler én liste pr. billede, så regionsnavne, stednavne i et udbrud og hovedstæder ikke skriver
+// oven i hinanden. Det, der tegnes først, får pladsen. Hvert navn gemmes som en firkant [x0, y0, x1, y1].
+let LBL = [];
+const lblFri = (x0, y0, x1, y1) => !LBL.some(b => x0 < b[2] && x1 > b[0] && y0 < b[3] && y1 > b[1]);
 function draw(){
+  // På mobilen ligger toppen oven på kloden. Navne skrives ikke ind under den.
+  LBL = TOP > 0 ? [[-1e5, -1e5, 1e5, TOP + 2]] : [];
   ctx.clearRect(0,0,W,H);
   const R = view.R, cx = view.cx, cy = view.cy;
   const g = ctx.createRadialGradient(cx-R*0.3, cy-R*0.35, R*0.1, cx, cy, R);
@@ -2075,7 +2111,11 @@ function draw(){
       ctx.beginPath(); ctx.arc(sp[0], sp[1], i === 0 ? 5.5 : 3.6, 0, 2*Math.PI);
       ctx.fillStyle = i === 0 ? col : T['--bg']; ctx.fill();
       ctx.strokeStyle = col; ctx.lineWidth = 1.6; ctx.stroke();
-      if(label){ ctx.fillStyle = T['--fg-dim']; ctx.fillText(n[0], sp[0] + 9, sp[1]); }
+      if(label){
+        const w = ctx.measureText(n[0]).width, r = [sp[0] + 8, sp[1] - 6, sp[0] + 10 + w, sp[1] + 6];
+        // Det første sted i udbruddet står altid. De andre viger for navne, der allerede står der.
+        if(i === 0 || lblFri(...r)){ LBL.push(r); ctx.fillStyle = T['--fg-dim']; ctx.fillText(n[0], sp[0] + 9, sp[1]); }
+      }
       ctx.globalAlpha = 1;
     });
   }
@@ -2350,7 +2390,9 @@ function tegnRegioner(){
       const u = unit(lon, lat); if(u.z <= .2) continue;
       const [x, y] = scr(u); if(x < 20 || y < 12 || x > W-60 || y > H-48) continue;
       if(brugt.some(([bx, by]) => Math.abs(bx-x) < 70 && Math.abs(by-y) < 14)) continue;
-      brugt.push([x, y]); ctx.fillText(n, x, y);
+      const w = ctx.measureText(n).width, r = [x - w/2 - 2, y - 6, x + w/2 + 2, y + 6];
+      if(!lblFri(...r)) continue;
+      brugt.push([x, y]); LBL.push(r); ctx.fillText(n, x, y);
     }
   }
   ctx.textAlign = 'start'; ctx.globalAlpha = 1;
@@ -2370,7 +2412,9 @@ function tegnHovedstadsnavne(partnere){
     const tekst = h[3] ? `${h[3]}, ${h[0]}` : h[0];
     const w = ctx.measureText(tekst).width;
     if(brugt.some(b => x+6 < b[2] && x+6+w > b[0] && Math.abs(y-b[1]) < 13)) continue;
-    brugt.push([x+6, y, x+6+w]);
+    const r = [x + 4, y - 7, x + 8 + w, y + 7];
+    if(!lblFri(...r)) continue;
+    brugt.push([x+6, y, x+6+w]); LBL.push(r);
     ctx.globalAlpha = partnere.has(a2) ? 1 : .9 * frem;
     ctx.fillStyle = T['--bg']; ctx.fillText(tekst, x+7, y+1);
     ctx.fillStyle = T['--hs']; ctx.fillText(tekst, x+6, y);
@@ -2565,7 +2609,9 @@ function render(){
   [...document.querySelectorAll('#segAlvor button')].forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.v === minAlvor)));
   [...document.querySelectorAll('#segMist button')].forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === mistMode)));
   cv.setAttribute('aria-label', `Klode med ${vis.length} hændelser. Drej med piletasterne, og zoom med plus og minus. Alle hændelser står også i listen.`);
-  document.getElementById('count').textContent = `${vis.length} vises`;
+  const cnt = document.getElementById('count'), ialt = ALLE().filter(e => liveAt(e, cutoff)).length;
+  cnt.textContent = vis.length < ialt ? `${vis.length} af ${ialt}` : `${vis.length} vises`;
+  cnt.title = vis.length < ialt ? 'Viser ' + vis.length + ' af ' + ialt + '. Resten er skjult af de retninger og filtre, der er slået fra. Rejsevejledninger er slået fra, til du slår dem til.' : '';
   document.getElementById('shown').textContent = off.size ? `${STAGES.length-off.size} af ${STAGES.length} til` : '';
   const aktive = (region ? 1 : 0) + (off.size ? 1 : 0);
   document.getElementById('flerefn').textContent = [region, off.size ? `${STAGES.length-off.size} af ${STAGES.length} trin` : ''].filter(Boolean).join(' · ');
@@ -2619,7 +2665,7 @@ function render(){
       g.open = aabne.has(r.k) || vRet(r.k);
       const maks = Math.max(...ii.map(e => alvorAt(e, stageAt(e, cutoff))));
       const sm = document.createElement('summary');
-      sm.innerHTML = `<span class="gi">${svgIc(r.k, 15)}</span><span class="gn"></span><span class="ga">${ii.length}</span><span class="gm">højest ${maks}</span>`;
+      sm.innerHTML = `<span class="gi">${svgIc(r.k, 15)}</span><span class="gn"></span><span class="ga">${ii.length}</span><span class="gm">højest alvor ${maks}</span>`;
       sm.querySelector('.gn').textContent = r.n;
       g.appendChild(sm);
       const indhold = el('div','gl'); g.appendChild(indhold);
@@ -2642,7 +2688,8 @@ function eventItem(e, iDag){
   if(focusId && e.id !== focusId) b.dataset.dim = '1';
   b.innerHTML = `<span class="top"><span class="t"></span><span class="d"></span></span><span class="m"></span>`;
   b.querySelector('.t').textContent = `${e.disease} · ${e.country}`;
-  b.querySelector('.m').textContent = `${SK[st].n} · alvor ${alvorAt(e, st)} · ${e.place}`;
+  const a = alvorAt(e, st);
+  b.querySelector('.m').textContent = `Alvor ${a}, ${ALV[a].n.toLowerCase()}${st === 'mistanke' ? ' · ikke bekræftet' : ''} · ${e.place}`;
   // Datoen for seneste udvikling. Markeres, når den er højst NY_DAGE gammel på det valgte tidspunkt.
   const d = b.querySelector('.d'), ny = cutoff - sl.ms <= NY_DAGE*DAY;
   d.textContent = kortDato(sl[0]);
@@ -3040,6 +3087,7 @@ function kortTop(e, o){
   if(!MOBIL.matches && detail.hidden) detail.classList.toggle('bred', bredLaes());
   const nyt = detail.dataset.id !== e.id;
   detail.hidden = false; detail.style.setProperty('--c', retVar(e)); detail.innerHTML = ''; detail.dataset.id = e.id;
+  detail.classList.toggle('k-smitte-kort', !!o.trin);
   if(nyt) detail.scrollTop = 0;
   const greb = el('div','k-greb'); greb.setAttribute('aria-hidden','true'); detail.appendChild(greb);
   const nav = el('div','k-nav');
@@ -3053,10 +3101,14 @@ function kortTop(e, o){
   nav.appendChild(x); detail.appendChild(nav);
   if(MOBIL.matches) detail.appendChild(kortSti(e, o));
   const meta = el('div','k-meta');
+  // Alvor er den skala, læseren ser først. Trinnet står bagefter som forklaring på, hvor udbruddet er nået til.
+  if(o.alvor) { const a = el('span','k-alv', `Alvor ${o.alvor} · ${ALV[o.alvor].n}`); a.style.setProperty('--a', `var(--s${Math.min(o.alvor, 5)})`); a.title = ALV[o.alvor].d; meta.appendChild(a); }
   meta.appendChild(el('span','chip', o.chip));
-  if(o.alvor) { const a = el('span','k-alv', `Alvor ${o.alvor} · ${ALV[o.alvor].n}`); a.style.setProperty('--a', `var(--s${Math.min(o.alvor, 5)})`); meta.appendChild(a); }
-  if(o.dato) meta.appendChild(el('span','k-dato', o.dato));
-  detail.append(meta, el('h2','', o.titel));
+  // Linjen under: trinnet som forklaring og datoen for det seneste til venstre, knapperne til højre.
+  const under = el('div','k-under'), ut = el('div','k-ut'); under.appendChild(ut);
+  if(o.trin){ const t = el('span','k-trin', `Trin: ${o.trin.n}`); t.title = o.trin.d; ut.appendChild(t); }
+  if(o.dato) ut.appendChild(el('span','k-dato', o.dato));
+  detail.append(meta, under, el('h2','', o.titel));
   if(o.sted) detail.appendChild(el('div','where', o.sted));
   const ik = el('div','k-iks');
   const a2 = o.a2 || a2Af(e);
@@ -3092,7 +3144,7 @@ function kortTop(e, o){
     ub.classList.add('k-udvid'); ik.appendChild(ub);
   }
   if(o.rss) ik.appendChild(Object.assign(document.createElement('a'), {className:'k-ik', href:o.rss, target:'_blank', rel:'noopener', innerHTML:ikon('rss'), ariaLabel:'Abonnér (RSS)'}));
-  meta.appendChild(ik);
+  under.appendChild(ik);
 }
 // Billede: et frit billede fra Wikimedia Commons, fundet via Wikipedia-artiklen om emnet. Billedet illustrerer
 // emnet (fx virusset eller byen), ikke selve hændelsen, og det står under billedet. Findes intet, vises et kortudsnit.
@@ -3246,9 +3298,11 @@ function bredLaes(){ try{ return localStorage.getItem(BRED_NOEGLE) === '1'; }cat
 function bredLayout(){
   if(!detail.classList.contains('bred') || MOBIL.matches || detail.hidden) return;
   const kids = [...detail.children];
-  const hoved = kids.filter(x => x.matches('.k-greb,.k-nav,.k-meta,h2,.where'));
+  const hoved = kids.filter(x => x.matches('.k-greb,.k-nav,.k-meta,.k-under,h2,.where'));
   const bund = kids.filter(x => x.matches('.k-afs.tl'));
-  const venstre = kids.filter(x => x.matches('.k-fig,.k-fortalt,.k-tal,.curve,.samlet'));
+  // Venstre kolonne i læseorden: fortælling og tal før kortudsnittet.
+  const RAEKKE = ['.k-fortalt', '.k-tal', '.k-smitte', '.k-fig', '.curve', '.samlet'], plads = x => RAEKKE.findIndex(r => x.matches(r));
+  const venstre = kids.filter(x => plads(x) >= 0).sort((p, q) => plads(p) - plads(q));
   const hoejre = kids.filter(x => !hoved.includes(x) && !bund.includes(x) && !venstre.includes(x));
   const v = el('div','k-kol'), h = el('div','k-kol');
   v.append(...venstre); h.append(...hoejre);
@@ -3290,10 +3344,11 @@ function visDetalje(e){
   if(erLand(e)) return visLand(e);
   if(e._feed) return visFeed(e);
   const st = stageAt(e, cutoff), s = SK[st], a = alvorAt(e, st), sl = sidste(e);
-  kortTop(e, {chip: s.n, titel: `${e.disease} · ${e.country}`, sted: e.place, alvor: a, dato: `Seneste ${fmtDate(sl[0])}`, cmp: true});
+  kortTop(e, {chip: 'Smitteudbrud', trin: s, titel: `${e.disease} · ${e.country}`, sted: e.place, alvor: a, dato: `Seneste ${fmtDate(sl[0])}`, cmp: true});
   billede(e, [['en', sygWiki(e.disease)], ['da', e.disease.split(',')[0]]], a2Af(e));
   kortFortalt(e.note);
-  noegletal([['Omfang', cutoff >= T1 ? e.cases : ''], ['Startet', fmtDate(e.tl[0][0])], ['Smittestof', e.pathogen]]);
+  noegletal([['Omfang', cutoff >= T1 ? e.cases : ''], ['Startet', fmtDate(e.tl[0][0])]]);
+  if(e.pathogen){ const p = el('p','k-smitte'); p.append(el('span','k','Smittestof'), el('span','v', e.pathogen)); detail.appendChild(p); }
   if(e.pts && e.pts.length > 1){
     const cv = afsnit('Udvikling', 'curve');
     const holder = document.createElement('div'); holder.innerHTML = sparkSVG(e, 300, 74, true); cv.appendChild(holder);
@@ -3518,7 +3573,10 @@ function alderTekst(h){
 }
 const ALDER = timerSidenGennemgang();
 const subEl = document.getElementById('sub');
-subEl.textContent = EVENTS.length + ' hændelser · daterede forløb fra første tilfælde til ' + fmtDate(DATA_DATO) + ' · ';
+// Linjen skal kunne stemme med listen: smitteudbruddene er gennemgået i hånden, varslerne hentes automatisk.
+// Listen viser "X af Y vises", hvor Y er begge dele tilsammen.
+subEl.textContent = '';
+subEl.append(el('span','', `${EVENTS.length} smitteudbrud med forløb til ${fmtDate(DATA_DATO)}`), ' · ');
 subEl.appendChild(ALDER > DATA_MAX_TIMER
   ? el('span','sen','opdateringen er forsinket, senest gennemgået for ' + alderTekst(ALDER) + ' siden')
   : el('span','', DATA_STATUS));
@@ -3529,6 +3587,8 @@ footEl.textContent =
 
 // ---------- retningsknapper, filtre under kloden og forklaringer ved musen ----------
 const rchips = document.getElementById('rchips');
+const KN = {rejse:'Rejse', krig:'Krig', smitte:'Smitte', hede:'Hede', jord:'Skælv', flod:'Flod', storm:'Storm', brand:'Brand', vulkan:'Vulkan'};
+const KN_EN = {rejse:'Travel', krig:'War', smitte:'Disease', hede:'Heat', jord:'Quake', flod:'Flood', storm:'Storm', brand:'Fire', vulkan:'Volcano'};
 function buildRet(){
   rchips.innerHTML = '';
   // Retningerne står i midten over kloden. Rejsevejledninger står for sig ved stregen til overblikket.
@@ -3536,7 +3596,9 @@ function buildRet(){
   for(const r of RETNINGER.filter(x => !SERVICE.has(x.k)).concat(RETNINGER.filter(x => SERVICE.has(x.k)))){
     const b = document.createElement('button'); b.type = 'button'; b.className = 'rchip' + (SERVICE.has(r.k) ? ' service' : ''); b.dataset.k = r.k;
     b.style.setProperty('--c', `var(--c-${r.k})`); b.setAttribute('aria-label', r.n);
-    b.innerHTML = `<span class="d">${svgIc(r.k, 16)}</span><span class="n"></span>`;
+    b.innerHTML = `<span class="d">${svgIc(r.k, 16)}</span><span class="n"></span><span class="kn" aria-hidden="true"></span>`;
+    // Kort navn under ikonet, kun på mobilen. Oversættes her og ikke af ordbogen, så det passer i bredden.
+    b.querySelector('.kn').textContent = (document.documentElement.lang === 'en' ? KN_EN : KN)[r.k] || '';
     if(r.aktiv){
       // Et dobbeltklik giver først et almindeligt klik. Det andet klik fortryder det og skifter fokus.
       b.addEventListener('click', ev => {
@@ -3575,7 +3637,7 @@ seg('segAlvor', [
   [2, 'Fra 2', TT('Fra alvor 2', 'Skjuler det, der kun er til orientering.')],
   [3, 'Fra 3', TT('Fra alvor 3', 'Kun det alvorlige og det kritiske.')],
   [4, 'Fra 4', TT('Fra alvor 4', 'Det kritiske og det akutte.')],
-  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu og mistanker om nye udbrud. De står først i søljen i bunden.')]
+  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage. De står først i søljen i bunden.')]
 ], v => { minAlvor = +v; });
 seg('segMist', [
   ['zoom', 'Ved zoom', TT('Mistanker ved zoom', 'Skjult på den hele klode, vises når du zoomer ind. Står altid i listen.')],
@@ -3624,7 +3686,7 @@ function svaev(ev){
   }
   const st = stageAt(best, cutoff), a = alvorAt(best, st);
   visTip(`<div class="tt" style="--c:var(--c-smitte)"><span class="d">${svgIc('smitte',12)}</span>${esc(best.disease)} · ${esc(best.country)}</div>`
-    + `<div class="tm">${SK[st].n} · alvor ${a}, ${ALV[a].n.toLowerCase()}${st === 'mistanke' ? ' · ikke bekræftet' : ''}</div>`
+    + `<div class="tm">Alvor ${a}, ${ALV[a].n.toLowerCase()} · ${SK[st].n}${st === 'mistanke' ? ' · ikke bekræftet' : ''}</div>`
     + (cutoff >= T1 ? `<div class="ts">${esc(best.cases)}</div>` : '') + `<div class="th">Klik for tal, forløb og kilder</div>`, ev.clientX, ev.clientY);
 }
 const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -3665,14 +3727,14 @@ function bygGuide(){
     ['Bekræftet', 'Fyldt prik. Vises altid.', markoerSVG(2)],
     ['Mistanke', 'Hul og stiplet. Vises på kloden, når du zoomer ind.', markoerSVG(2, {hul:true})],
     ['Naturligt reservoir', 'Ring uden fyld. Smittestoffet er fundet hos dyr.', `<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="3.4" fill="none" stroke="var(--c-smitte)" stroke-width="1.6"/></svg>`],
-    ['Kritisk og aktiv', 'Pulserende ring, kun ved alvor 4.', markoerSVG(4)]
+    ['Akut', 'Pulserende ring, kun ved alvor 5.', markoerSVG(5)]
   ].map(([b, t, m]) => `<div>${m}<span><b>${b}</b>${t}</span></div>`).join('');
   const gs = (k, t, d) => `<div class="g-s"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GI[k]}"/></svg></span><b>${t}</b><span>${d}</span></div>`;
   document.getElementById('gsteps').innerHTML = [
     gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage. Rejsevejledninger står for sig til højre og er slået fra, til du slår dem til.'),
     gs('klik','Tryk på en prik','Kortet viser billede, kort fortalt, nøgletal, forløb, kilder og læs mere. Pilene øverst blader videre. Udforsk i overblikket tager dig gennem det alvorligste lige nu.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
-    gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Den runde pauseknap øverst til højre i klodens felt stopper rotationen. Mens et kort er åbent, står kloden stille. Når du har rørt den, venter den 2 minutter og bruger så 10 sekunder på at komme op i fart, så du kan nå at stoppe den. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
+    gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Den runde pauseknap stopper rotationen. Den står øverst til højre i klodens felt og på mobilen nederst til højre over Nulstil. Mens et kort er åbent, står kloden stille. Når du har rørt den, venter den 2 minutter og bruger så 10 sekunder på at komme op i fart, så du kan nå at stoppe den. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
     gs('klik','Hent som app','På computer og Android: tryk Hent app øverst, når knappen står der, eller vælg Installér i browserens menu. På iPhone og iPad: tryk Del i Safari og vælg Føj til hjemmeskærm. Appen åbner i sit eget vindue og viser de sidst hentede data, også uden net.'),
     gs('filter','Alvor og mistanker','Under kloden vælger du, hvor alvorligt det mindst skal være, og hvornår mistanker vises. Søljen i bunden viser alvor 5 og 4. På mobilen ligger det under Lag i bundbjælken, sammen med rejsevejledningerne og tidslinjen.'),
     gs('sog','Søg og filtrér','Forstørrelsesglasset i overblikket søger på sygdom, sted eller hændelse. Filterknappen vælger område og trin. På mobilen står Søg midt i bundbjælken og foreslår steder nær dig, lande du følger, dine seneste søgninger og populære emner.'),
@@ -3807,7 +3869,7 @@ function landObj(a2){
   if(!byId[id]) byId[id] = somFeed({ id, ret:'rejse', alvor:1, a2, titel:HS[a2][0], sted:HS[a2][0], lat:HS[a2][1], lon:HS[a2][2], kilde:'', url:'' });
   return byId[id];
 }
-// Søljen i bunden viser alvor 4 og 5 (akut: alvor 4 med en udvikling inden for tre dage og alle smitteudbrud på mistanke).
+// Søljen i bunden viser alvor 4 og 5 (akut: alvor 4 med en udvikling inden for tre dage).
 // Rejsevejledninger er en service og kommer aldrig med.
 // Et tryk fører hen til hændelsen, og kloden står stille, så længe kortet er åbent, og 2 minutter efter.
 let tkNr = 0;
@@ -3825,29 +3887,50 @@ function bygTicker(){
   boks.hidden = !punkter.length; baand.innerHTML = '';
   // Søljen ændrer, hvor meget af toppen der er optaget på mobilen. Kloden og pauseknappen rykker med.
   if(varSkjult !== boks.hidden && typeof resize === 'function') requestAnimationFrame(resize);
+  const nr = ++tkNr;
   if(!punkter.length) return;
+  const knap = ({e, a, mist}, skjult) => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'tk-p'; b.style.setProperty('--c', retVar(e));
+    if(skjult) b.tabIndex = -1;
+    b.innerHTML = `<span class="d">${svgIc(retAf(e), 16)}</span><span class="m">${a >= 5 ? 'Akut' : 'Alvor 4'}</span>`;
+    const t = e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`;
+    b.append(el('span','t', mist ? `${t} · ikke bekræftet` : t));
+    b.title = t;
+    b.addEventListener('click', () => { select(e.id, true); idle = performance.now(); });
+    return b;
+  };
   const lav = (skjult) => {
     const g = document.createElement('div'); g.className = 'tk-gang';
     if(skjult) g.setAttribute('aria-hidden', 'true');
-    for(const {e, a, mist} of punkter){
-      const b = document.createElement('button'); b.type = 'button'; b.className = 'tk-p'; b.style.setProperty('--c', retVar(e));
-      if(skjult) b.tabIndex = -1;
-      b.innerHTML = `<span class="d">${svgIc(retAf(e), 16)}</span><span class="m">${mist ? 'Mistanke' : a >= 5 ? 'Akut' : 'Alvor 4'}</span>`;
-      b.append(el('span','t', e._feed ? (e.sted ? `${e.titel} · ${e.sted}` : e.titel) : `${e.disease} · ${e.country}`));
-      b.addEventListener('click', () => { select(e.id, true); idle = performance.now(); });
-      g.appendChild(b);
-    }
+    for(const p of punkter) g.appendChild(knap(p, skjult));
     return g;
   };
-  // Punkterne kører lige efter hinanden: gentages, til en gang er mindst lige så bred som vinduet, og to ens gange
-  // ligger efter hinanden, så rulningen kan starte forfra uden hul.
+  const stille = (ja) => { boks.classList.toggle('stille', ja); if(ja) baand.style.removeProperty('--tk-tid'); };
+  // På mobilen er der kun plads til én linje: det alvorligste og et tal for resten. Tallet starter Udforsk,
+  // som går dem igennem ét ad gangen. Søljen ruller ikke, så teksten ikke klippes midt i et ord.
+  boks.classList.toggle('kompakt', MOBIL.matches);
+  if(MOBIL.matches){
+    stille(true);
+    const g = document.createElement('div'); g.className = 'tk-gang'; g.appendChild(knap(punkter[0], false));
+    baand.appendChild(g);
+    if(punkter.length > 1){
+      const m = el('button','tk-mere', `+${punkter.length - 1}`); m.type = 'button';
+      m.setAttribute('aria-label', `${punkter.length - 1} mere. Gå dem igennem i Udforsk`); m.title = 'Gå dem igennem i Udforsk';
+      m.addEventListener('click', () => startTur());
+      baand.appendChild(m);
+    }
+    return;
+  }
+  // Står stille, når alt kan ses på én gang. Ellers kører punkterne lige efter hinanden: gentages, til en gang er
+  // mindst lige så bred som vinduet, og to ens gange ligger efter hinanden, så rulningen kan starte forfra uden hul.
   const vindue = boks.querySelector('.tk-vindue');
-  const g1 = lav(false); baand.appendChild(g1);
-  const nr = ++tkNr;
+  const g1 = lav(false); baand.appendChild(g1); stille(true);
   requestAnimationFrame(() => {
     // En nyere opbygning har overtaget, eller rækken er ikke målt endnu.
     if(nr !== tkNr || !g1.isConnected || g1.scrollWidth < 40) return;
     const w = vindue.clientWidth || 800, enkelt = g1.scrollWidth;
+    if(enkelt <= w) return;
+    stille(false);
     const gange = Math.max(1, Math.ceil(w / enkelt));
     baand.innerHTML = '';
     const blok = document.createElement('div'); blok.className = 'tk-blok';
@@ -3861,6 +3944,7 @@ function bygTicker(){
     baand.style.setProperty('--tk-tid', Math.max(25, blok.scrollWidth / 45) + 's');
   });
 }
+MOBIL.addEventListener('change', bygTicker);
 // Mediesporets streger for krig og konflikt.
 fetch('/konflikter.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : null).then(j => {
   if(!j || !Array.isArray(j.s)) return;
@@ -4081,8 +4165,17 @@ function bygRetTider(box){
     const levende = ALLE().filter(e => liveAt(e, T1) && retAf(e) !== 'rejse' && !e._sted);
     const a = e => alvorAt(e, stageAt(e, T1));
     const akut = levende.filter(e => a(e) >= 5).length, krit = levende.filter(e => a(e) === 4).length;
-    const lande = new Set(levende.map(a2Af).filter(Boolean)).size;
-    document.getElementById('vkled').textContent = `${akut} ${akut === 1 ? 'hændelse er' : 'hændelser er'} akut, og ${krit} kritisk, fordelt på ${lande} lande. Her er de tre alvorligste:`;
+    // Antallet er det samme, som listen viser fra start: alt levende undtagen rejsevejledninger.
+    const nu = ALLE().filter(e => liveAt(e, T1) && retAf(e) !== 'rejse');
+    const lande = new Set(nu.map(a2Af).filter(Boolean)).size;
+    // Landetallet hører til det hele, ikke til de akutte. Derfor står det i sin egen sætning.
+    const en = typeof SPROG !== 'undefined' && SPROG === 'en';
+    const alv = en
+      ? (akut && krit ? `${akut} acute and ${krit} critical` : akut ? `${akut} acute` : krit ? `None acute, ${krit} critical` : 'None acute or critical')
+      : (akut && krit ? `${akut} er akut, og ${krit} er kritisk` : akut ? `${akut} er akut` : krit ? `Ingen er akut, ${krit} er kritisk` : 'Ingen er akut eller kritisk');
+    document.getElementById('vkled').textContent = en
+      ? `The page is following ${nu.length} events in ${lande} countries. ${alv}. The three most severe:`
+      : `Siden følger ${nu.length} hændelser i ${lande} lande lige nu. ${alv}. De tre alvorligste:`;
     const liste = document.getElementById('vkliste'); liste.innerHTML = '';
     for(const e of levende.sort((p, q) => a(q) - a(p) || senestMs(q) - senestMs(p)).slice(0, 3)){
       const r = el('button','vk-r'); r.type = 'button'; r.style.setProperty('--c', `var(--c-${retAf(e)})`);
@@ -4173,41 +4266,52 @@ if(SPROG === 'en'){
     'Hvad':'What','Kilder':'Sources','Det ubekræftede er mærket':'The unconfirmed is marked','Siden siger aldrig, at et sted er sikkert':'The page never says a place is safe','Alvor kommer fra kilden':'Severity comes from the source',
     'Sådan bruger du kortet':'How to use the map','Opdatering og prototypedata':'Updates and prototype data','Det kan du på siden':'What you can do on the page','Tal og kilder':'Figures and sources',
     'Få besked':'Get notified','Beskeder er slået til':'Notifications are on','Beskeder er slået til. Du får besked, når der sker noget nyt i de lande, du følger.':'Notifications are on. You will be notified when something new happens in the countries you follow.','Beskeder er slået fra.':'Notifications are off.',
-    'Du får en besked, når der sker noget nyt i de lande, du følger. Tryk for at slå beskeder fra.':'You get a notification when something new happens in the countries you follow. Tap to turn notifications off.','Får besked':'Notifications on','Status':'Status','Retninger':'Directions','Markør':'Marker','Vigtigst':'Most important'
+    'Du får en besked, når der sker noget nyt i de lande, du følger. Tryk for at slå beskeder fra.':'You get a notification when something new happens in the countries you follow. Tap to turn notifications off.','Får besked':'Notifications on','Status':'Status','Retninger':'Directions','Markør':'Marker','Vigtigst':'Most important',
+    'ikke bekræftet':'not confirmed','Trin':'Stage','opdateres automatisk flere gange i døgnet':'updated automatically several times a day',
+    'Gå dem igennem i Udforsk':'Go through them in Explore',
+    'Nye funktioner på siden. Varsler og udbrud står i listen og søljen.':'New features on the page. Alerts and outbreaks are in the list and the ticker.'
   };
   const MD = {januar:'January',februar:'February',marts:'March',april:'April',maj:'May',juni:'June',juli:'July',august:'August',september:'September',oktober:'October',november:'November',december:'December',
     'jan.':'Jan.','feb.':'Feb.','mar.':'Mar.','apr.':'Apr.','aug.':'Aug.','sep.':'Sep.','okt.':'Oct.','nov.':'Nov.','dec.':'Dec.'};
   const maaned = t => t.replace(/\b(\d{1,2})\. (januar|februar|marts|april|maj|juni|juli|august|september|oktober|november|december|jan\.|feb\.|mar\.|apr\.|aug\.|sep\.|okt\.|nov\.|dec\.)/g, (m, d, mm) => `${d} ${MD[mm]}`);
   let LANDE_EN = {};
   const navn = k => OVS[k] || LANDE_EN[k] || k;
+  // Alvorsnavne står med lille forbogstav midt i en linje, fx "Alvor 2, vær opmærksom".
+  const lille = k => { const K = k.charAt(0).toUpperCase() + k.slice(1), v = OVS[K]; return v ? v.toLowerCase() : k; };
   const MOENSTRE = [
     [/^Alvor (\d) · (.+)$/, m => `Severity ${m[1]} · ${navn(m[2])}`], [/^Alvor (\d)$/, m => `Severity ${m[1]}`], [/^alvor (\d)$/, m => `severity ${m[1]}`],
-    [/^Se alle (\d+)$/, m => `See all ${m[1]}`], [/^(\d+) vises$/, m => `${m[1]} shown`], [/^Vigtigst i (.+)$/, m => `Most important in ${navn(m[1])}`],
+    [/^Se alle (\d+)$/, m => `See all ${m[1]}`], [/^(\d+) vises$/, m => `${m[1]} shown`], [/^(\d+) mere\. Gå dem igennem i Udforsk$/, m => `${m[1]} more. Go through them in Explore`], [/^(\d+) af (\d+) vises$/, m => `${m[1]} of ${m[2]} shown`],
+    [/^Viser (\d+) af (\d+)\. Resten er skjult af de retninger og filtre, der er slået fra\. Rejsevejledninger er slået fra, til du slår dem til\.$/, m => `Showing ${m[1]} of ${m[2]}. The rest is hidden by the directions and filters that are switched off. Travel advice is off until you switch it on.`],
+    [/^(\d+) smitteudbrud med forløb til (.+)$/, m => `${m[1]} outbreaks with timelines to ${maaned(m[2])}`],
+    [/^(\d+) automatiske varsler fra (\d+) kilder, hentet (.+)$/, m => `${m[1]} automatic alerts from ${m[2]} sources, fetched ${maaned(m[3]).replace(' kl. ', ' at ')}`], [/^Vigtigst i (.+)$/, m => `Most important in ${navn(m[1])}`],
     [/^Lande i (.+)$/, m => `Countries in ${navn(m[1])}`], [/^Se hele (.+)$/, m => `See all of ${navn(m[1])}`], [/^Følg (.+)$/, m => `Follow ${navn(m[1])}`], [/^Følger (.+)$/, m => `Following ${navn(m[1])}`],
     [/^Hovedstad: (.+)$/, m => `Capital: ${m[1]}`], [/^Seneste (.+)$/, m => `Latest ${maaned(m[1])}`], [/^Udforsk · (\d+) af (\d+)$/, m => `Explore · ${m[1]} of ${m[2]}`],
     [/^(\d+) af (\d+)$/, m => `${m[1]} of ${m[2]}`], [/^Hentet (.+)$/, m => `Fetched ${siden_en(m[1])}`], [/^Gennemgået (.+)$/, m => `Reviewed ${maaned(m[1])}`], [/^Talt op (.+)$/, m => `Counted ${siden_en(m[1])}`],
-    [/^højest (\d)$/, m => `highest ${m[1]}`], [/^Humanitær hjælp i (\d+)$/, m => `Humanitarian aid in ${m[1]}`], [/^Flygtninge fra (.+)$/, m => `Refugees from ${navn(m[1])}`],
+    [/^højest alvor (\d)$/, m => `highest severity ${m[1]}`], [/^Trin: (.+)$/, m => `Stage: ${navn(m[1])}`], [/^Alvor (\d), (.+)$/, m => `Severity ${m[1]}, ${lille(m[2])}`], [/^alvor (\d), (.+)$/, m => `severity ${m[1]}, ${lille(m[2])}`], [/^Humanitær hjælp i (\d+)$/, m => `Humanitarian aid in ${m[1]}`], [/^Flygtninge fra (.+)$/, m => `Refugees from ${navn(m[1])}`],
     [/^Hændelser \((\d+)\)$/, m => `Events (${m[1]})`], [/^Dokumenteret udbredelse \((\d+)\)$/, m => `Documented spread (${m[1]})`], [/^Optalt (.+)$/, m => `Counted ${maaned(m[1])}`],
     [/^(\d+) km$/, m => `${m[1]} km`], [/^Følg (.+)$/, m => `Follow ${navn(m[1])}`],
     [/^opdateringen er forsinket, senest gennemgået for (\d+) (timer?|dage) siden$/, m => `the update is late, last reviewed ${m[1]} ${m[2] === 'dage' ? 'days' : (m[1] === '1' ? 'hour' : 'hours')} ago`]
   ];
   function siden_en(t){ return maaned(t).replace(/^for (\d+) min\. siden$/, '$1 min. ago').replace(/^for (\d+) timer? siden$/, '$1 h ago').replace(/^for (\d+) dage? siden$/, '$1 d ago').replace(/^lige nu$/, 'just now'); }
+  function moenster(k){ for(const [re, f] of MOENSTRE){ const m = k.match(re); if(m) return f(m); } return null; }
   function oversaet(t){
     const k = t.trim(); if(!k || k.length > 400) return null;
     let v = OVS[k] || LANDE_EN[k];
     if(!v) for(const [re, f] of MOENSTRE){ const m = k.match(re); if(m){ v = f(m); break; } }
-    if(!v && k.includes(' · ')){ const dele = k.split(' · '), ny = dele.map(d => OVS[d] || LANDE_EN[d] || maaned(d)); if(ny.some((x, i) => x !== dele[i])) v = ny.join(' · '); }
+    if(!v && k.includes(' · ')){ const dele = k.split(' · '), ny = dele.map(d => OVS[d] || LANDE_EN[d] || moenster(d) || maaned(d)); if(ny.some((x, i) => x !== dele[i])) v = ny.join(' · '); }
     if(!v && /\d{1,2}\. (januar|februar|marts|april|maj|juni|juli|august|september|oktober|november|december|jan\.|feb\.|mar\.|apr\.|aug\.|sep\.|okt\.|nov\.|dec\.)/.test(k)){ const mm = maaned(k); if(mm !== k) v = mm; }
     return v ? t.replace(k, v) : null;
   }
   const ATTR = ['aria-label', 'placeholder', 'title'];
+  const egen = n => n && n.classList && n.classList.contains('kn');
   function ovsNode(n){
+    if(n.nodeType === 3 && egen(n.parentNode)) return;
     if(n.nodeType === 3){ const v = oversaet(n.nodeValue); if(v !== null && v !== n.nodeValue) n.nodeValue = v; return; }
     if(n.nodeType !== 1 || n.tagName === 'SCRIPT' || n.tagName === 'STYLE' || n.tagName === 'CANVAS') return;
     for(const a of ATTR){ const x = n.getAttribute(a); if(x){ const v = oversaet(x); if(v !== null && v !== x) n.setAttribute(a, v); } }
     const w = document.createTreeWalker(n, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     let c; while((c = w.nextNode())){
-      if(c.nodeType === 3){ const v = oversaet(c.nodeValue); if(v !== null && v !== c.nodeValue) c.nodeValue = v; }
+      if(c.nodeType === 3){ if(egen(c.parentNode)) continue; const v = oversaet(c.nodeValue); if(v !== null && v !== c.nodeValue) c.nodeValue = v; }
       else for(const a of ATTR){ const x = c.getAttribute(a); if(x){ const v = oversaet(x); if(v !== null && v !== x) c.setAttribute(a, v); } }
     }
   }
@@ -4215,7 +4319,7 @@ if(SPROG === 'en'){
   const MT_NOEGLE = 'globus-mt';
   const MT = (() => { try{ return new Map(JSON.parse(sessionStorage.getItem(MT_NOEGLE) || '[]')); }catch(err){ return new Map(); } })();
   // Også guiden (Sådan virker siden), Nyt på siden, Data og kilder og listernes linjer. Kun elementer, der alene indeholder tekst.
-  const MT_SEL = '.k-fortalt, .where, .k-tal dd, .tlrow .tx, .k-afs > p, .k-afs p.lt, .k-afs p.dim, .k-fold p, .cap, .flag, .vurd, .vk-led, .vk-r .rt span, .sa-r .rt span, .srclegend, '
+  const MT_SEL = '.k-fortalt, .where, .k-tal dd, .k-smitte .v, .tlrow .tx, .k-afs > p, .k-afs p.lt, .k-afs p.dim, .k-fold p, .cap, .flag, .vurd, .vk-led, .vk-r .rt span, .sa-r .rt span, .srclegend, '
     + '.item .c, .item .t, .item .m, .kr .m, .kr .n, .kr b, '
     + '.om .ombody p, .om .ombody li, .om .ombody span, .om .ombody b, .om .ombody dd, .om .ombody td, .om .ombody h3, .om .ombody summary, '
     + '.nyt-p p, .nyt-p b, .datadlg .ombody p, .datadlg .dk p, .datadlg .dk b, .datadlg .r .n, #nytled, .appbanner p, .appbanner b, #appvejltekst li';
@@ -4263,6 +4367,7 @@ if(SPROG === 'en'){
   const LAND_EN_EGEN = {CD:'DR Congo', CG:'Republic of the Congo', PS:'Palestine', HK:'Hong Kong', MO:'Macao'};
   const landeEn = () => { if(!HS || !DN_EN) return false; for(const a2 in HS){ try{ const en = LAND_EN_EGEN[a2] || DN_EN.of(a2); if(en && HS[a2][0] !== en) LANDE_EN[HS[a2][0]] = en; }catch(err){} } return true; };
   let lf = 0; const lv = () => { if(landeEn()) kør(document.body); else if(++lf < 40) setTimeout(lv, 250); }; lv();
+  for(const s of document.querySelectorAll('.rchip .kn')) s.textContent = KN_EN[s.parentNode.dataset.k] || s.textContent;
   kør(document.body);
 }
 // ---------- beskeder ----------
@@ -4700,7 +4805,7 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   buildRet(); bygGuide(); bygTicker();
   if(FEEDS.some(h => h.ret === 'rejse' && h.a2))
     fetch('/graenser.json').then(r => r.ok ? r.json() : null).then(g => { if(g && g.l){ GRAENSER = g.l; draw(); flyvIgen(); } }).catch(() => {});
-  subEl.append(' · ', el('span','', `${FEEDS.length} varsler fra ${Object.keys(j.kilder || {}).filter(k => j.kilder[k].antal).length} kilder, hentet ${klok(j.genereret)}`));
+  subEl.append(' · ', el('span','', `${FEEDS.length} automatiske varsler fra ${Object.keys(j.kilder || {}).filter(k => j.kilder[k].antal).length} kilder, hentet ${klok(j.genereret)}`));
   render(); laesAdresse(); visFoelg();
 }).catch(() => { /* uden maskinmeldinger vises kun smitteudbruddene */ });
 window.addEventListener('resize', resize);

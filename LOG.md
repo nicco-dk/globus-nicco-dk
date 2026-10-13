@@ -53,6 +53,21 @@
 - Nye punkter i GENNEMGANG.md: de tre punkter uden kilde, der ikke kom med til `dengue-bd`, forskellen mellem SEARO og det fjernede punkt 6. oktober, ændringen af `region` for `pest-irkutsk`, summen af dødstal i `maesling-bd`, grenen `udrulning-fra-repo` og de manglende kørsler 13. oktober.
 - Punkterne fra listen 12. oktober står i GENNEMGANG.md. Fire er løst og ikke ført med: dødstallene i `maesling-bd`, de to om OPDATERING.md og veje til kilderne, og logsidens underoverskrifter.
 
+### Kl. 13.00, regel for alvor og siden ændret af ejeren
+
+Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
+
+**Ændret i reglerne**
+- En mistanke får ikke længere alvor 5 af sig selv. Uden feltet `alvor` er en mistanke nu 2 som et bekræftet udbrud. Alvor 5 (akut) gives kun til alvor 4 med en udvikling inden for tre dage. `pest-irkutsk` står derfor som alvor 2 i stedet for 5. OPDATERING.md og `lib/data.mjs` er rettet til samme regel.
+
+**Ændret på siden**
+- Alvor står først i kortet og i listen. Trinnet står på linjen under som forklaring.
+- Overskriftslinjen skelner mellem smitteudbrud og automatiske varsler, og listen viser fx "325 af 404", når noget er skjult.
+- Knappen Nyt på siden har et nyt ikon og en blå mærkat, så den ikke ligner varsler. Velkomsten siger, hvor mange hændelser i hvor mange lande, og for sig, hvor mange der er akut og kritisk.
+- På mobilen har retningernes ikoner et kort navn, søljen viser det alvorligste og et tal for resten, og pauseknappen står over Nulstil nederst til højre. Søljen står stille på computeren, når alt kan ses.
+- Kortet viser fortælling og nøgletal før kortudsnittet, også på computeren. Smittestof står på sin egen linje.
+- Navne på kloden skriver ikke længere oven i hinanden: stednavne i et udbrud, hovedstæder og regioner deler plads.
+
 ## 12. oktober 2026, sen eftermiddag
 
 **Side og arbejdsgang ændret.** Ingen ændringer i data.
