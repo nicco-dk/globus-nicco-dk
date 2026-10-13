@@ -68,6 +68,14 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 - Kortet viser fortælling og nøgletal før kortudsnittet, også på computeren. Smittestof står på sin egen linje.
 - Navne på kloden skriver ikke længere oven i hinanden: stednavne i et udbrud, hovedstæder og regioner deler plads.
 
+### Kl. 13.30, mistanker har egen status
+
+Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
+
+- En mistanke har nu sin egen status og intet alvorstal. Siden viser "Mistanke · ikke bekræftet", og filteret Mistanker alene bestemmer, om de vises. Alvorsfilteret skjuler dem ikke længere.
+- En mistanke tæller ikke med, når landets eller retningens højeste alvor regnes ud. Bekræftes den, skifter trinnet og får alvor efter reglerne. Afkræftes den, sættes `live` til `false` med et punkt i forløbet. OPDATERING.md beskriver det.
+- Delte links til en mistanke siger "Mistanke om smitteudbrud, ikke bekræftet" i stedet for et alvorstal.
+
 ## 12. oktober 2026, sen eftermiddag
 
 **Side og arbejdsgang ændret.** Ingen ændringer i data.

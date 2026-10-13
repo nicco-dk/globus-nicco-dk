@@ -2,7 +2,7 @@
 // Delte links går hertil, så et link til en hændelse, et sted eller et land får sin egen titel, tekst og
 // (når Wikipedia har et frit billede af emnet) sit eget billede, når det deles på fx Facebook eller Messenger.
 // En person, der åbner linket, sendes straks videre til https://globus.nicco.dk/#<id>.
-import { hentData, smitteAlvor, esc } from '../../lib/data.mjs';
+import { hentData, smitteAlvor, smitteMistanke, esc } from '../../lib/data.mjs';
 
 const STANDARD = 'Verden lige nu på en klode: krig og konflikt, smitteudbrud, naturkatastrofer og rejsevejledninger. Hver oplysning med sin navngivne kilde.';
 const ALV = ['', 'Under opsyn', 'Vær opmærksom', 'Alvorligt', 'Kritisk', 'Akut'];
@@ -40,7 +40,7 @@ export async function onRequest({ request, params, env }) {
   if (ev) {
     const a = smitteAlvor(ev);
     titel = `${ev.disease} · ${ev.country}`;
-    tekst = `Smitteudbrud, alvor ${a} (${ALV[a].toLowerCase()}). ${ev.note || ''}`.trim();
+    tekst = (smitteMistanke(ev) ? `Mistanke om smitteudbrud, ikke bekræftet. ${ev.note || ''}` : `Smitteudbrud, alvor ${a} (${ALV[a].toLowerCase()}). ${ev.note || ''}`).trim();
     emne = (SYG.find(([r]) => r.test(ev.disease)) || [])[1] || null;
   } else if (fd) {
     titel = fd.sted ? `${fd.titel} · ${fd.sted}` : fd.titel;

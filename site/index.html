@@ -291,6 +291,8 @@ canvas.drag{cursor:grabbing}
 .k-alv{font-size:12.5px;font-weight:600;letter-spacing:.005em;color:var(--fg);display:inline-flex;align-items:center;gap:6px;
   padding:3px 9px 3px 7px;border-radius:999px;border:1px solid color-mix(in srgb,var(--a) 55%,transparent);background:color-mix(in srgb,var(--a) 16%,transparent)}
 .k-alv::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--a)}
+.k-alv.mist{border-style:dashed;border-color:var(--fg-faint);background:none;color:var(--fg-dim)}
+.k-alv.mist::before{background:none;border:1.5px dashed var(--fg-dim);width:7px;height:7px;box-sizing:border-box}
 .k-under{display:flex;align-items:center;gap:8px;margin-top:-2px}
 .k-ut{display:flex;flex-wrap:wrap;gap:2px 14px;min-width:0;flex:1}
 .k-trin{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--fg-dim)}
@@ -1153,21 +1155,26 @@ const RETNINGER = [
 ];
 const ALV = [null,
   {n:'Til orientering', d:'Godt at vide. Brug sund fornuft.', smitte:'Naturligt reservoir'},
-  {n:'Vær opmærksom', d:'Hold øje med det, og forbered dig lidt mere end normalt.', smitte:'Bekræftet udbrud eller mistanke om et nyt'},
+  {n:'Vær opmærksom', d:'Hold øje med det, og forbered dig lidt mere end normalt.', smitte:'Bekræftet udbrud'},
   {n:'Alvorligt', d:'Overvej, om rejsen er nødvendig.', smitte:'WHO vurderer risikoen som høj'},
   {n:'Kritisk', d:'Myndighederne fraråder rejser eller har erklæret en international krise.', smitte:'WHO\'s internationale sundhedskrise'},
   {n:'Akut', d:'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage.', smitte:'Alvor 4 med en ny udvikling inden for tre dage'}
 ];
 // Alvor står i feltet alvor, når en kilde begrunder et højere trin. Ellers følger den trinnet: 1 for reservoir, 2 for resten.
-// En mistanke er 2 som et bekræftet udbrud: et enkelt tilfælde uden påvist smitte er ikke akut i sig selv.
 // Alvor 5 (akut) gives af reglen og står aldrig i datasættet: alvor 4 med en udvikling inden for tre dage.
 // Maskinmeldinger får det ved indlæsning (se akutFeed). Rejsevejledninger aldrig.
-const alvorGrund = (e, st) => e.alvor || (st === 'reservoir' ? 1 : 2);
+// En mistanke har sin egen status og intet alvorstal, før en kilde bekræfter eller vurderer den (se udenAlvor).
+// Tallet 1 herunder bruges kun til rækkefølge og størrelse og vises aldrig.
+const alvorGrund = (e, st) => e.alvor || (st === 'reservoir' || st === 'mistanke' ? 1 : 2);
 const alvorAt = (e, st) => {
   const a = alvorGrund(e, st);
   if(e._feed || cutoff < T1 - 14*DAY) return a;
   return a >= 4 && e.tl && e.tl.length && cutoff - sidste(e).ms <= NY_DAGE*DAY ? 5 : a;
 };
+// En mistanke uden kildebegrundet alvor: vises som "Mistanke", styres kun af filteret Mistanker og tæller ikke med,
+// når landets eller retningens højeste alvor regnes ud. Læseren vurderer den selv, til opdateringerne bekræfter eller afkræfter.
+const udenAlvor = (e, st) => !e._feed && !e.alvor && st === 'mistanke';
+const alvorLinje = (e, st, a) => udenAlvor(e, st) ? 'Mistanke, ikke bekræftet' : `Alvor ${a}, ${ALV[a].n.toLowerCase()}`;
 function akutFeed(e){
   if(e.ret === 'rejse' || e.alvor !== 4) return;
   const ms = Date.parse(e.opd || e.tid || 0) || 0;
@@ -2529,7 +2536,7 @@ function fokusRetning(k){
 // Mistanker vises på kloden fra dette zoomniveau, når valget er Ved zoom.
 const MIST_ZOOM = 1.8;
 const mistPaaKloden = () => mistMode === 'altid' || (mistMode === 'zoom' && zoom >= MIST_ZOOM);
-function filterOk(e, st){ return retOn.has(retAf(e)) && alvorAt(e, st) >= minAlvor && !(mistMode === 'aldrig' && st === 'mistanke'); }
+function filterOk(e, st){ return retOn.has(retAf(e)) && (udenAlvor(e, st) || alvorAt(e, st) >= minAlvor) && !(mistMode === 'aldrig' && st === 'mistanke'); }
 // Områder til filteret. Danmark er hændelser, der foregår i Danmark.
 // lon og lat er det punkt, kloden drejer hen til, når området vælges.
 const OMRAADER = [
@@ -2634,8 +2641,8 @@ function render(){
   // Søgning og fokus giver én flad liste. Ellers: det akutte øverst som kort, derefter én gruppe pr. retning.
   if(query || focusId || !vis.length){ for(const e of sorteret) list.appendChild(punkt(e)); }
   else {
-    // Nyt siden sidst: nye ting fra alvor 2 og op, og alt, der har skiftet alvor eller fået ny udvikling.
-    const nyt = sorteret.map(e => [e, nytStatus(e)]).filter(([e, n]) => n && (n !== 'ny' || alvorAt(e, stageAt(e, cutoff)) >= 2));
+    // Nyt siden sidst: nye ting fra alvor 2 og op, nye mistanker, og alt, der har skiftet alvor eller fået ny udvikling.
+    const nyt = sorteret.map(e => [e, nytStatus(e)]).filter(([e, n]) => { const st = stageAt(e, cutoff); return n && (n !== 'ny' || udenAlvor(e, st) || alvorAt(e, st) >= 2); });
     if(nyt.length){
       const g = document.createElement('details'); g.className = 'gruppe nytgruppe'; g.style.setProperty('--c', 'var(--accent)');
       g.open = grupperLaes().has('_nyt') || !grupperLaes().has('_nyt_lukket');
@@ -2663,9 +2670,10 @@ function render(){
       const ii = sorteret.filter(e => retAf(e) === r.k); if(!ii.length) continue;
       const g = document.createElement('details'); g.className = 'gruppe'; g.style.setProperty('--c', `var(--c-${r.k})`);
       g.open = aabne.has(r.k) || vRet(r.k);
-      const maks = Math.max(...ii.map(e => alvorAt(e, stageAt(e, cutoff))));
+      const medAlvor = ii.filter(e => !udenAlvor(e, stageAt(e, cutoff)));
+      const maks = medAlvor.length ? Math.max(...medAlvor.map(e => alvorAt(e, stageAt(e, cutoff)))) : 0;
       const sm = document.createElement('summary');
-      sm.innerHTML = `<span class="gi">${svgIc(r.k, 15)}</span><span class="gn"></span><span class="ga">${ii.length}</span><span class="gm">højest alvor ${maks}</span>`;
+      sm.innerHTML = `<span class="gi">${svgIc(r.k, 15)}</span><span class="gn"></span><span class="ga">${ii.length}</span><span class="gm">${maks ? `højest alvor ${maks}` : 'kun mistanker'}</span>`;
       sm.querySelector('.gn').textContent = r.n;
       g.appendChild(sm);
       const indhold = el('div','gl'); g.appendChild(indhold);
@@ -2689,7 +2697,7 @@ function eventItem(e, iDag){
   b.innerHTML = `<span class="top"><span class="t"></span><span class="d"></span></span><span class="m"></span>`;
   b.querySelector('.t').textContent = `${e.disease} · ${e.country}`;
   const a = alvorAt(e, st);
-  b.querySelector('.m').textContent = `Alvor ${a}, ${ALV[a].n.toLowerCase()}${st === 'mistanke' ? ' · ikke bekræftet' : ''} · ${e.place}`;
+  b.querySelector('.m').textContent = `${alvorLinje(e, st, a)}${st === 'mistanke' && !udenAlvor(e, st) ? ' · ikke bekræftet' : ''} · ${e.place}`;
   // Datoen for seneste udvikling. Markeres, når den er højst NY_DAGE gammel på det valgte tidspunkt.
   const d = b.querySelector('.d'), ny = cutoff - sl.ms <= NY_DAGE*DAY;
   d.textContent = kortDato(sl[0]);
@@ -2817,7 +2825,7 @@ function parRaekke(r, kx){
 }
 function visLand(e){
   const d = landData(e.a2);
-  const maks = Math.max(0, ...d.rejse.map(r => r.alvor), d.krig ? d.krig.alvor : 0, ...d.varsler.map(v => v.alvor), ...d.smitte.map(s2 => alvorAt(s2, stageAt(s2, cutoff))));
+  const maks = Math.max(0, ...d.rejse.map(r => r.alvor), d.krig ? d.krig.alvor : 0, ...d.varsler.map(v => v.alvor), ...d.smitte.filter(s2 => !udenAlvor(s2, stageAt(s2, cutoff))).map(s2 => alvorAt(s2, stageAt(s2, cutoff))));
   kortTop(e, {chip: 'Land', titel: d.navn, sted: d.hoved ? `Hovedstad: ${d.hoved}` : '', alvor: maks || 0, a2: d.a2, rss: `/feed?land=${d.a2}`});
   billede(Object.assign(Object.create(e), {_land: true}), [['da', d.navn]], d.a2);
   kortFortalt(maks ? `Højeste alvor lige nu: ${maks}, ${ALV[maks].n.toLowerCase()}. ${ALV[maks].d}` : 'Siden har intet om landet lige nu.');
@@ -3103,6 +3111,8 @@ function kortTop(e, o){
   const meta = el('div','k-meta');
   // Alvor er den skala, læseren ser først. Trinnet står bagefter som forklaring på, hvor udbruddet er nået til.
   if(o.alvor) { const a = el('span','k-alv', `Alvor ${o.alvor} · ${ALV[o.alvor].n}`); a.style.setProperty('--a', `var(--s${Math.min(o.alvor, 5)})`); a.title = ALV[o.alvor].d; meta.appendChild(a); }
+  // En mistanke har ingen alvor endnu. Den står som det, den er, og læseren vurderer selv.
+  else if(o.mist) { const a = el('span','k-alv mist', 'Mistanke · ikke bekræftet'); a.title = 'Ubekræftet signal. Siden giver først alvor, når en kilde bekræfter eller vurderer det. Følg med i forløbet herunder.'; meta.appendChild(a); }
   meta.appendChild(el('span','chip', o.chip));
   // Linjen under: trinnet som forklaring og datoen for det seneste til venstre, knapperne til højre.
   const under = el('div','k-under'), ut = el('div','k-ut'); under.appendChild(ut);
@@ -3344,7 +3354,7 @@ function visDetalje(e){
   if(erLand(e)) return visLand(e);
   if(e._feed) return visFeed(e);
   const st = stageAt(e, cutoff), s = SK[st], a = alvorAt(e, st), sl = sidste(e);
-  kortTop(e, {chip: 'Smitteudbrud', trin: s, titel: `${e.disease} · ${e.country}`, sted: e.place, alvor: a, dato: `Seneste ${fmtDate(sl[0])}`, cmp: true});
+  kortTop(e, {chip: 'Smitteudbrud', trin: udenAlvor(e, st) ? null : s, titel: `${e.disease} · ${e.country}`, sted: e.place, alvor: udenAlvor(e, st) ? 0 : a, mist: udenAlvor(e, st), dato: `Seneste ${fmtDate(sl[0])}`, cmp: true});
   billede(e, [['en', sygWiki(e.disease)], ['da', e.disease.split(',')[0]]], a2Af(e));
   kortFortalt(e.note);
   noegletal([['Omfang', cutoff >= T1 ? e.cases : ''], ['Startet', fmtDate(e.tl[0][0])]]);
@@ -3616,7 +3626,7 @@ function renderRet(){
     const r = RETNINGER.find(x => x.k === b.dataset.k);
     if(!r.aktiv){ b.querySelector('.n').textContent = '';
       b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">Kommer snart</div><div class="ts">${r.hvad} Kilder: ${r.kilder}.</div>`; continue; }
-    const n = ALLE().filter(e => { const st = stageAt(e, cutoff); return retAf(e) === r.k && liveAt(e, cutoff) && alvorAt(e, st) >= minAlvor && !(mistMode === 'aldrig' && st === 'mistanke'); }).length;
+    const n = ALLE().filter(e => { const st = stageAt(e, cutoff); return retAf(e) === r.k && liveAt(e, cutoff) && (udenAlvor(e, st) || alvorAt(e, st) >= minAlvor) && !(mistMode === 'aldrig' && st === 'mistanke'); }).length;
     b.setAttribute('aria-pressed', String(retOn.has(r.k)));
     b.dataset.fokus = iFokus(r.k) ? '1' : '';
     b.querySelector('.n').textContent = n;
@@ -3637,7 +3647,7 @@ seg('segAlvor', [
   [2, 'Fra 2', TT('Fra alvor 2', 'Skjuler det, der kun er til orientering.')],
   [3, 'Fra 3', TT('Fra alvor 3', 'Kun det alvorlige og det kritiske.')],
   [4, 'Fra 4', TT('Fra alvor 4', 'Det kritiske og det akutte.')],
-  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage. De står først i søljen i bunden.')]
+  [5, 'Kun 5', TT('Kun alvor 5, akut', 'Nyt og kritisk lige nu: alvor 4 med en udvikling inden for tre dage. De står først i søljen i bunden. Mistanker vælges for sig under Mistanker.')]
 ], v => { minAlvor = +v; });
 seg('segMist', [
   ['zoom', 'Ved zoom', TT('Mistanker ved zoom', 'Skjult på den hele klode, vises når du zoomer ind. Står altid i listen.')],
@@ -3686,7 +3696,7 @@ function svaev(ev){
   }
   const st = stageAt(best, cutoff), a = alvorAt(best, st);
   visTip(`<div class="tt" style="--c:var(--c-smitte)"><span class="d">${svgIc('smitte',12)}</span>${esc(best.disease)} · ${esc(best.country)}</div>`
-    + `<div class="tm">Alvor ${a}, ${ALV[a].n.toLowerCase()} · ${SK[st].n}${st === 'mistanke' ? ' · ikke bekræftet' : ''}</div>`
+    + `<div class="tm">${udenAlvor(best, st) ? 'Mistanke, ikke bekræftet' : `Alvor ${a}, ${ALV[a].n.toLowerCase()} · ${SK[st].n}${st === 'mistanke' ? ' · ikke bekræftet' : ''}`}</div>`
     + (cutoff >= T1 ? `<div class="ts">${esc(best.cases)}</div>` : '') + `<div class="th">Klik for tal, forløb og kilder</div>`, ev.clientX, ev.clientY);
 }
 const esc = t => String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -3725,7 +3735,7 @@ function bygGuide(){
   document.getElementById('galvor').innerHTML = [1,2,3,4,5].map(a => `<tr><td><b>${a}</b>${ALV[a].n}</td><td>${markoerSVG(a)}</td><td>${ALV[a].d}</td><td>${ALV[a].smitte}</td></tr>`).join('');
   document.getElementById('gstatus').innerHTML = [
     ['Bekræftet', 'Fyldt prik. Vises altid.', markoerSVG(2)],
-    ['Mistanke', 'Hul og stiplet. Vises på kloden, når du zoomer ind.', markoerSVG(2, {hul:true})],
+    ['Mistanke', 'Hul og stiplet. Har intet alvorstal, før en kilde bekræfter eller vurderer den. Vises på kloden, når du zoomer ind. Under Mistanker vælger du selv, om de vises.', markoerSVG(2, {hul:true})],
     ['Naturligt reservoir', 'Ring uden fyld. Smittestoffet er fundet hos dyr.', `<svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="3.4" fill="none" stroke="var(--c-smitte)" stroke-width="1.6"/></svg>`],
     ['Akut', 'Pulserende ring, kun ved alvor 5.', markoerSVG(5)]
   ].map(([b, t, m]) => `<div>${m}<span><b>${b}</b>${t}</span></div>`).join('');
@@ -4181,7 +4191,7 @@ function bygRetTider(box){
       const r = el('button','vk-r'); r.type = 'button'; r.style.setProperty('--c', `var(--c-${retAf(e)})`);
       const ri = el('span','ri'); ri.innerHTML = svgIc(retAf(e), 17);
       const rt = el('span','rt'); rt.append(el('b','', e._feed ? e.titel : e.disease), el('span','', e._feed ? (e.sted || '') : `${e.country} · ${e.place}`));
-      r.append(ri, rt, el('span','ra', `Alvor ${a(e)}`));
+      r.append(ri, rt, el('span','ra', udenAlvor(e, stageAt(e, T1)) ? 'Mistanke' : `Alvor ${a(e)}`));
       r.addEventListener('click', () => { luk(); select(e.id, true); });
       liste.appendChild(r);
     }
@@ -4267,7 +4277,8 @@ if(SPROG === 'en'){
     'Sådan bruger du kortet':'How to use the map','Opdatering og prototypedata':'Updates and prototype data','Det kan du på siden':'What you can do on the page','Tal og kilder':'Figures and sources',
     'Få besked':'Get notified','Beskeder er slået til':'Notifications are on','Beskeder er slået til. Du får besked, når der sker noget nyt i de lande, du følger.':'Notifications are on. You will be notified when something new happens in the countries you follow.','Beskeder er slået fra.':'Notifications are off.',
     'Du får en besked, når der sker noget nyt i de lande, du følger. Tryk for at slå beskeder fra.':'You get a notification when something new happens in the countries you follow. Tap to turn notifications off.','Får besked':'Notifications on','Status':'Status','Retninger':'Directions','Markør':'Marker','Vigtigst':'Most important',
-    'ikke bekræftet':'not confirmed','Trin':'Stage','opdateres automatisk flere gange i døgnet':'updated automatically several times a day',
+    'ikke bekræftet':'not confirmed','Trin':'Stage','Mistanke, ikke bekræftet':'Suspected, not confirmed','Mistanke · ikke bekræftet':'Suspected · not confirmed','kun mistanker':'only suspicions',
+    'Ubekræftet signal. Siden giver først alvor, når en kilde bekræfter eller vurderer det. Følg med i forløbet herunder.':'Unconfirmed signal. The page only gives a severity once a source confirms or assesses it. Follow the timeline below.','opdateres automatisk flere gange i døgnet':'updated automatically several times a day',
     'Gå dem igennem i Udforsk':'Go through them in Explore',
     'Nye funktioner på siden. Varsler og udbrud står i listen og søljen.':'New features on the page. Alerts and outbreaks are in the list and the ticker.'
   };
@@ -4583,9 +4594,9 @@ function saRaekke(ik, farve, titel, under, hoejre, fn){
   b.append(ri, rt, el('span','ra', hoejre || '')); b.addEventListener('click', fn); return b;
 }
 function saHaendelse(e, term, hoejre){
-  const a = alvorAt(e, stageAt(e, cutoff)), r = retAf(e);
+  const st = stageAt(e, cutoff), a = alvorAt(e, st), r = retAf(e);
   const under = e._sted ? e.landNavn : e._feed ? (e.sted || RNAVN[r] || '') : `${e.country} · ${e.place}`;
-  return saRaekke(svgIc(r, 17), `var(--c-${r})`, kortNavn(e), under, hoejre || (a ? `Alvor ${a}` : ''), () => gaaTil(e, term));
+  return saRaekke(svgIc(r, 17), `var(--c-${r})`, kortNavn(e), under, hoejre || (udenAlvor(e, st) ? 'Mistanke' : a ? `Alvor ${a}` : ''), () => gaaTil(e, term));
 }
 function afstandKm(la1, lo1, la2, lo2){
   const d = Math.sin((la2 - la1)*DEG/2)**2 + Math.cos(la1*DEG)*Math.cos(la2*DEG)*Math.sin((lo2 - lo1)*DEG/2)**2;
