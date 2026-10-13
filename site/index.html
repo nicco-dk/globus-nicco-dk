@@ -4315,14 +4315,17 @@ if(SPROG === 'en'){
   }
   const ATTR = ['aria-label', 'placeholder', 'title'];
   const egen = n => n && n.classList && n.classList.contains('kn');
+  // Mærkaten øverst i kortet handler om én hændelse og står i ental. Samme ord i filtre og overskrifter står i flertal.
+  const CHIP_EN = {'Smitteudbrud':'Outbreak'};
+  const ovsTekst = (t, forael) => (forael && forael.classList && forael.classList.contains('chip') && CHIP_EN[t.trim()]) || oversaet(t);
   function ovsNode(n){
     if(n.nodeType === 3 && egen(n.parentNode)) return;
-    if(n.nodeType === 3){ const v = oversaet(n.nodeValue); if(v !== null && v !== n.nodeValue) n.nodeValue = v; return; }
+    if(n.nodeType === 3){ const v = ovsTekst(n.nodeValue, n.parentNode); if(v !== null && v !== n.nodeValue) n.nodeValue = v; return; }
     if(n.nodeType !== 1 || n.tagName === 'SCRIPT' || n.tagName === 'STYLE' || n.tagName === 'CANVAS') return;
     for(const a of ATTR){ const x = n.getAttribute(a); if(x){ const v = oversaet(x); if(v !== null && v !== x) n.setAttribute(a, v); } }
     const w = document.createTreeWalker(n, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     let c; while((c = w.nextNode())){
-      if(c.nodeType === 3){ if(egen(c.parentNode)) continue; const v = oversaet(c.nodeValue); if(v !== null && v !== c.nodeValue) c.nodeValue = v; }
+      if(c.nodeType === 3){ if(egen(c.parentNode)) continue; const v = ovsTekst(c.nodeValue, c.parentNode); if(v !== null && v !== c.nodeValue) c.nodeValue = v; }
       else for(const a of ATTR){ const x = c.getAttribute(a); if(x){ const v = oversaet(x); if(v !== null && v !== x) c.setAttribute(a, v); } }
     }
   }

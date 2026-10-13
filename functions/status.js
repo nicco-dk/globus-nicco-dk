@@ -2,7 +2,7 @@
 // Et kort resumé pr. land af det, siden viser: rejsevejledningens niveau, levende smitteudbrud, varsler fra alvor 3,
 // bekræftede konflikter og alvor for krig og konflikt. Bruges af Workeren globus-besked (worker-besked/besked.js)
 // til at finde de lande, hvor noget er ændret siden forrige time. Bygges af de samme filer, som siden bruger.
-import { hentData, smitteAlvor } from '../lib/data.mjs';
+import { hentData, smitteAlvor, smitteMistanke } from '../lib/data.mjs';
 
 export async function onRequest({ request, env }) {
   const url = new URL(request.url);
@@ -25,9 +25,10 @@ export async function onRequest({ request, env }) {
     for (const a2 of lande) land(a2).varsler.push([h.id, h.titel, h.alvor]);
   }
   // Levende smitteudbrud i landet, efter landets navn i feltet country, som på siden.
+  // Fjerde felt er 1 for en mistanke uden alvor. Det er lagt til bagest, så de tre første felter er som før.
   for (const e of d.events || []) {
     if (!e.live) continue;
-    for (const a2 in hs) if (iTekst(e.country, hs[a2][0])) land(a2).smitte.push([e.id, e.disease, smitteAlvor(e)]);
+    for (const a2 in hs) if (iTekst(e.country, hs[a2][0])) land(a2).smitte.push([e.id, e.disease, smitteAlvor(e), smitteMistanke(e) ? 1 : 0]);
   }
   // Bekræftede konflikter og landets alvor for krig og konflikt, med samme loft som på siden.
   const bek = new Set();

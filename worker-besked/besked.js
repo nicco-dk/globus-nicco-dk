@@ -26,7 +26,10 @@ export function aendringer(foer, nu) {
     ud.push({ titel: `${navn}: rejsevejledningen er ændret`, tekst: `${nu.rejse[1]} (${nu.rejse[2]}).`, alvor: nu.rejse[0] });
   else if (foer.rejse && !nu.rejse) ud.push({ titel: `${navn}: rejsevejledningen er lempet`, tekst: 'Hverken Udenrigsministeriet eller det britiske udenrigsministerium fraråder længere rejser eller beder om ekstra forsigtighed.', alvor: 1 });
   const gamleS = new Set((foer.smitte || []).map(x => x[0]));
-  for (const [id, sygdom, a] of nu.smitte || []) if (!gamleS.has(id)) ud.push({ titel: `${navn}: nyt smitteudbrud`, tekst: `${sygdom}, alvor ${a}.`, alvor: a, id });
+  // En mistanke har intet alvorstal på siden (fjerde felt fra /status), så beskeden siger, at den ikke er bekræftet.
+  for (const [id, sygdom, a, mist] of nu.smitte || []) if (!gamleS.has(id)) ud.push(mist
+    ? { titel: `${navn}: mistanke om smitteudbrud`, tekst: `${sygdom}. Ikke bekræftet endnu.`, alvor: 1, id }
+    : { titel: `${navn}: nyt smitteudbrud`, tekst: `${sygdom}, alvor ${a}.`, alvor: a, id });
   const gamleV = new Set((foer.varsler || []).map(x => x[0]));
   for (const [id, titel, a] of nu.varsler || []) if (!gamleV.has(id)) ud.push({ titel: `${navn}: ${titel}`, tekst: `Nyt varsel, alvor ${a}.`, alvor: a, id });
   const gamleK = new Set(foer.konf || []);
