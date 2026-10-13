@@ -60,12 +60,12 @@ Datasættet ligger i `site/index.html` i konstanten `EVENTS`, og datasættets da
 
 Fremgangsmåde, kilder, regler og felter står i `OPDATERING.md`. Hver opdatering får en post i `LOG.md`.
 
-Den automatiske kørsel tilføjer og ajourfører, men retter ikke i gamle forløbspunkter. Det, den finder, som kun ejeren må rette, står under Til gennemgang i den nyeste post i `LOG.md`.
+Den automatiske kørsel tilføjer og ajourfører, men retter ikke i gamle forløbspunkter. Det, den finder, som kun ejeren må rette, står i `GENNEMGANG.md`. `tools/hent-kilder.mjs` henter de faste kilder og skriver kildens egne tal ud, så kørslen ikke skal lede efter adresser.
 
 ## Bemærk
 
-Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører hver dag kl. 5.20 dansk tid, så siden er gennemgået og udrullet inden kl. 6, efter `OPDATERING.md` og skriver en post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
+Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører kl. 00.20, 05.20, 11.20 og 17.20 dansk tid efter vagtplanen i `OPDATERING.md`. Hver kørsel sætter `DATA_TID` og skriver sit underafsnit i dagens post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
 
-Går der mere end to dage uden en gennemgang, skifter overskriftslinjen selv til en advarsel med antal dage siden seneste gennemgang. Grænsen er `DATA_MAX_ALDER` i `site/index.html`.
+Går der mere end 9 timer siden `DATA_TID`, skifter overskriftslinjen selv til en advarsel med tiden siden seneste gennemgang. Grænsen er `DATA_MAX_TIMER` i `site/index.html`. Samtidig åbner jobbet Vagt for smittekørslen i `.github/workflows/udrul.yml` et issue i repoet, som GitHub sender til ejeren, og lukker det igen, når en kørsel har sat tiden.
 
 Siden er offentlig, men holdt ude af søgemaskiner, mens datasættet er en prototype. Det styres af linjen `<meta name="robots" content="noindex">` i `site/index.html`. Slet linjen, når siden skal kunne findes. Adresserne på pages.dev holdes altid ude med `X-Robots-Tag` i `site/_headers`, så der kun er én udgave i søgemaskinerne.

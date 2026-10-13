@@ -124,3 +124,44 @@ jobs:
           # Konto-id er ikke en hemmelighed. Det står i enhver adresse i Cloudflares kontrolpanel.
           accountId: b8e531774d257d9555c444b444dd71b5
           command: pages deploy site --project-name=globus-nicco-dk --branch=main
+
+  # Vagt for smittekørslen. Hver af de fire daglige kørsler sætter DATA_TID i site/index.html.
+  # Er DATA_TID over 9 timer gammel, mangler mindst én kørsel, og der åbnes et issue, som
+  # GitHub sender til ejeren. Issuet lukkes igen af den første kørsel, der finder DATA_TID frisk.
+  vagt:
+    name: Vagt for smittekørslen
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - name: Hent repoet
+        uses: actions/checkout@v6
+      - name: Er DATA_TID frisk?
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITEL: "Smittekørslen er forsinket"
+        run: |
+          set -euo pipefail
+          tid=$(grep -oP "^const DATA_TID = '\\K[^']+" site/index.html || true)
+          nu=$(date +%s)
+          if [ -z "$tid" ]; then echo "::warning::DATA_TID blev ikke fundet i site/index.html"; exit 0; fi
+          t=$(date -d "$tid" +%s)
+          timer=$(( (nu - t) / 3600 ))
+          echo "DATA_TID $tid er $timer timer gammel."
+          # REST, ikke gh issue, så trinnet også virker, hvor GraphQL ikke er tilgængeligt.
+          aaben=$(gh api "repos/$GITHUB_REPOSITORY/issues?state=open&per_page=100" --jq "[.[] | select(.title == \"$TITEL\" and (.pull_request | not))][0].number // empty")
+          if [ "$timer" -ge 9 ]; then
+            if [ -z "$aaben" ]; then
+              printf '%s\n\n%s\n\n%s\n' \
+                "Seneste gennemgang af smitteudbruddene (DATA_TID) er fra $tid, $timer timer siden. Kørslerne ligger kl. 00.20, 05.20, 11.20 og 17.20 dansk tid, så mindst én kørsel er ikke gennemført." \
+                "Se den planlagte opgave \"Udbrudsglobus daglig opdatering\" i Claude og den seneste post i LOG.md. Siden viser selv en advarsel i overskriftslinjen." \
+                "Issuet lukkes automatisk, når en kørsel har sat DATA_TID igen." > "$RUNNER_TEMP/tekst.md"
+              gh api "repos/$GITHUB_REPOSITORY/issues" -f title="$TITEL" -F body=@"$RUNNER_TEMP/tekst.md" --jq '"Issue #\(.number) åbnet."'
+            else
+              echo "Issue #$aaben er allerede åbent."
+            fi
+          elif [ -n "$aaben" ]; then
+            gh api "repos/$GITHUB_REPOSITORY/issues/$aaben/comments" -f body="DATA_TID er igen frisk: $tid." --silent
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/$aaben" -f state=closed --jq '"Issue #\(.number) lukket."'
+          fi

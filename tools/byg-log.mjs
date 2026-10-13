@@ -42,6 +42,10 @@ for (const l of md.slice(start).split('\n')) {
     if (post) dele.push('</section>');
     dele.push('<section>', `<h2>${linje(l.slice(3).trim())}</h2>`);
     post = true; antal++;
+  } else if (l.startsWith('### ')) {
+    // Underafsnit i dagens post, et pr. kørsel med ændringer (se OPDATERING.md, Loggen).
+    lukListe();
+    dele.push(`<h3>${linje(l.slice(4).trim())}</h3>`);
   } else if (/^\s*- /.test(l)) {
     if (!liste) { dele.push('<ul>'); liste = true; }
     dele.push(`<li>${linje(l.replace(/^\s*- /, ''))}</li>`);
@@ -86,6 +90,8 @@ h1{font-size:24px;font-weight:700;letter-spacing:-.015em;margin:12px 0 8px}
 .ind{font-size:14.5px;line-height:1.55;color:var(--fg-dim);margin:0;max-width:62ch}
 section{padding:22px 0 6px;border-bottom:1px solid var(--rule)}
 h2{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin:0 0 12px}
+h3{font-size:15px;font-weight:600;margin:18px 0 8px}
+h2+h3{margin-top:0}
 p{font-size:14px;line-height:1.55;margin:0 0 10px}
 ul{margin:0 0 14px;padding-left:18px}
 li{font-size:14px;line-height:1.55;margin:0 0 6px;color:var(--fg-dim)}

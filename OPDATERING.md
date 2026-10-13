@@ -10,12 +10,13 @@ Kørslen gør tre ting: bringer de eksisterende hændelser ajour, tilføjer nye 
 
 ## Hvad der må ændres
 
-Kun disse fire steder:
+Kun disse fem steder:
 
 1. Konstanterne `DATA_DATO` og `DATA_TID` i `site/index.html`.
 2. Listen `EVENTS` i `site/index.html`.
-3. `LOG.md`, hvor der tilføjes én post øverst.
+3. `LOG.md`, hvor kørslen skriver sit underafsnit i dagens post (se Loggen).
 4. `tools/par-tjek.json`, når par fra mediesporet skal godkendes eller afvises (se Mediesporet nedenfor).
+5. `GENNEMGANG.md`, hvor nye punkter til ejerens gennemgang tilføjes nederst under den rette overskrift. Eksisterende punkter rettes og fjernes kun af ejeren.
 
 Alt andet står urørt: resten af `site/index.html` (markup, CSS, kortgeometri, kode, `DATA_STATUS`), de øvrige filer i `site/`, `tools/`, workflowet og denne fil. Ser noget andet forkert ud, så skriv det i loggen og i den afsluttende rapport i stedet for at rette det.
 
@@ -91,7 +92,14 @@ Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længe
 - **To veje til en side.** Hentningsværktøjet og et direkte opslag fra skallen med `curl -sL` rammer ikke de samme spærringer. Helt nye WHO-sider har fejlet i hentningsværktøjet, men kunne hentes direkte. US CDC afviser direkte opslag med 403, men kan læses med hentningsværktøjet. Fejler den ene vej, skal den anden prøves, før kilden opgives eller erstattes af et medie. Det er et krav, ikke et råd. Skriv i loggen under Usikkert, hvilke sider der ikke kunne hentes ad nogen af de to veje.
 - **Læs tal to gange.** Hentningsværktøjet genfortæller siden, det citerer den ikke. Bed om den ordrette sætning med tallet, og læs den to gange uafhængigt af hinanden, eller hent sidens rå tekst direkte og find tallet dér, før det skrives.
 - **Myndigheder gennem medier.** Kan myndighedens egen side ikke hentes, som hos Kenyas sundhedsministerium, så brug mediet, der gengiver udmeldingen, med tilføjelsen `, medie`. Kenyas sundhedsministeriums pressemeddelelser udsendes af APO Group og kan læses på https://www.africa-newsroom.com. Kilden mærkes stadig `, medie`, fordi det ikke er ministeriets egen side. Gengiver to medier forskellige tal fra samme udmelding, så lad tallet stå og skriv det under Usikkert.
-- **DGHS i Bangladesh** lægger dagens mæslingetal som PDF-bilag på en anden server. Bilagets adresse står i pressemeddelelsens HTML og begynder med `https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/`. Tabellen er et billede af tekst. Læs den ved at gøre siden til et billede og læse tallene dér. Meddelelsen kommer omkring kl. 10 dansk tid.
+- **Kildescriptet.** Kør `node tools/hent-kilder.mjs` først. Det henter WHO DON, DGHS' mæslinger og dengue, Sri Lankas dagstal, WHO SEARO's bulletin, WHO WPRO's fugleinfluenzaoversigt, ECDC's ugerapport, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser og skriver adressen og kildens egne linjer med tallene. `node tools/hent-kilder.mjs dghs lk` henter kun de nævnte. Scriptet regner intet ud. Læs tallet i kilden selv, før det skrives, og sæt den adresse, scriptet viser, som kilde.
+- **DGHS i Bangladesh** lægger dagens mæslingetal som PDF-bilag på en anden server. Bilagets adresse står i pressemeddelelsens HTML og begynder med `https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/`. PDF'en har et tekstlag og kan læses med `pdftotext -layout`. Læs tallene to gange: som tekst og som billede af siden (`pdftoppm -png`). Meddelelsen var ikke ude kl. 11.20 dansk tid 13. oktober, men kort efter kl. 12. Kl. 17-kørslen tager derfor dagens mæslingetal. Serveren afbryder af og til forbindelsen, så prøv igen, før kilden opgives. Dengue står på dashboardet https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php med dato øverst.
+- **Sri Lanka, National Dengue Control Unit.** Dagstallet er en PDF, hvis filnavn skifter (fx `Daily-Update-2026.-10.-12-1.pdf`). Tag adressen fra forsiden https://www.dengue.health.gov.lk og gæt den ikke.
+- **WHO SEARO** udgiver sin epidemiologiske bulletin hver anden onsdag med fast adresseform: https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf med årstal og udgavens nummer.
+- **WHO WPRO** udgiver sin oversigt over fugleinfluenza om fredagen med datoen i adressen: https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261002.pdf En udgave kan mangle en uge.
+- **WHO EMRO** har ingen løbende bulletin. Weekly Epidemiological Monitor er ikke udkommet siden 2020. Brug nyhederne på https://www.emro.who.int/media/news/
+- **DR Congos situationsrapport** om ebola ligger på https://insp.cd med fast adresseform, fx https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_149_10_10_2026.pdf med nummer og dato, og udkommer en til to dage efter rapportdatoen.
+- **Andre faste veje.** Floridas ugerapport om dengue er en PDF på https://www.floridahealth.gov om torsdagen. Hongkongs pressemeddelelser står på https://www.info.gov.hk/gia/general/ med en side pr. dag. Kenyas sundhedsministeriums meddelelser hos APO Group står samlet på https://africa-newsroom.com/press/source/ministry-of-health-kenya
 - **Hentningsværktøjet** tager kun adresser, som en søgning i samme kørsel har givet. Søg derfor først med `allowed_domains`, fx `cdc.gov`, og hent den adresse, søgningen giver.
 - **Hurtige faste veje.** CIDRAP: `https://www.cidrap.umn.edu/all-news?page=N`. Outbreak News Today: `https://outbreaknewstoday.substack.com/api/v1/archive?sort=new&limit=25`. NaTHNaC: `https://travelhealthpro.org.uk/rss-outbreaks.php`. UKHSA: `https://www.gov.uk/api/search.json?filter_organisations=uk-health-security-agency&order=-public_timestamp`.
 - **Faste udgivelser.** UKHSA's ugeoversigt kommer torsdag, ECDC's ugerapport fredag, GPEI's poliooversigt og US CDC's mæslingetal én gang om ugen. Mellem udgivelserne er der intet nyt at hente dér, og hændelsen lades urørt.
@@ -102,21 +110,21 @@ Kørslen startes fire gange i døgnet, kl. 00.20, 05.20, 11.20 og 17.20 dansk ti
 
 | Kl. | Fokus |
 | --- | --- |
-| 00 | Smitte i Europa og Danmark: ECDC, Statens Serum Institut, DK-VET, UKHSA, RIVM og RKI. Kvalitet: koordinater, gamle punkter og Til gennemgang fra de seneste poster i loggen. |
+| 00 | Smitte i Europa og Danmark: ECDC, Statens Serum Institut, DK-VET, UKHSA, RIVM og RKI. Kvalitet: koordinater, gamle punkter og GENNEMGANG.md. Tre hændelser fra kontrollens advarsel om tal i `cases` uden opgørelsesdato får kilde og dato, når kilden kan findes. |
 | 05 | Bred gennemgang: alle samlede kilder i trin 2, rundturen (trin 3a) og tjek af par i mediesporet. |
-| 11 | Smitte i Asien og Mellemøsten med Bangladeshs dagstal (DGHS, omkring kl. 10), WHO SEARO, WHO WPRO og WHO EMRO. WHO DON siden forrige kørsel. |
-| 17 | Smitte i Afrika og Amerika: WHO AFRO, Africa CDC, PAHO og US CDC. WHO DON siden forrige kørsel. Tjek af par i mediesporet. |
+| 11 | Smitte i Asien og Mellemøsten: WHO SEARO, WHO WPRO, WHO EMRO, Bangladeshs denguedashboard, Sri Lankas dagstal og Hongkongs pressemeddelelser. WHO DON siden forrige kørsel. Bangladeshs mæslingetal for dagen er normalt ikke ude endnu. |
+| 17 | Smitte i Afrika og Amerika: WHO AFRO, Africa CDC, PAHO og US CDC. Bangladeshs mæslingetal for dagen (DGHS). WHO DON siden forrige kørsel. Tjek af par i mediesporet. |
 
 **Ingen overlap.** Hent `main` først. Er der et commit fra en anden kørsel inden for de sidste 15 minutter, og er dens udrulning ikke færdig, så vent, til den er, eller spring kørslen over og skriv det i rapporten.
 
-**Intet nyt, intet commit.** En kørsel, der hverken ændrer hændelser eller par, laver intet commit og ingen logpost. Den eneste undtagelse er kl. 05: den sætter `DATA_DATO` og `DATA_TID` og skriver dagens post, også når intet er ændret, så siden viser, at datasættet er gennemgået den dag.
+**Hver kørsel sætter tiden.** Hver kørsel sætter `DATA_DATO` og `DATA_TID`, skriver sit underafsnit i dagens post og committer, også når intet er ændret. Er intet ændret, er underafsnittet én linje, fx `### Kl. 17.20, Afrika og Amerika: intet nyt` efterfulgt af en linje med de kilder, der er gennemgået. Siden advarer, når `DATA_TID` er over 9 timer gammel, og workflowet åbner da et issue til ejeren. En kørsel, der ikke sætter tiden, ligner derfor en kørsel, der ikke er gennemført.
 
 ## Fremgangsmåde
 
 Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres ud fra tre samlede kilder, og kun de hændelser, der faktisk har rørt sig, kræver egne opslag.
 
-1. **Hent repoet** og læs `EVENTS` og de seneste poster i `LOG.md`, så du ved, hvad der står, og hvad forrige kørsel var i tvivl om.
-2. **Læs de samlede kilder:** ECDC's seneste Communicable Disease Threats Report, WHO's liste over Disease Outbreak News siden forrige kørsel og UKHSA's seneste ugeoversigt over udbrud under overvågning. Læs desuden:
+1. **Hent repoet på ny:** `git fetch origin` og `git checkout -B main origin/main`. En klon kan stå på et gammelt commit, og `main` kan være skrevet om. Kontrollér med `git log -1 origin/main`, at det seneste commit er det forventede, før noget ændres. Læs derefter `EVENTS`, de seneste poster i `LOG.md` og `GENNEMGANG.md`, så du ved, hvad der står, og hvad forrige kørsel var i tvivl om.
+2. **Kør kildescriptet** (`node tools/hent-kilder.mjs`, se Sådan hentes kilderne), og **læs de samlede kilder:** ECDC's seneste Communicable Disease Threats Report, WHO's liste over Disease Outbreak News siden forrige kørsel og UKHSA's seneste ugeoversigt over udbrud under overvågning. Læs desuden:
    - WHO AFRO's ugentlige bulletin over udbrud og nødsituationer (iris.who.int)
    - PAHO's seneste epidemiologiske opdateringer og situationsrapporter
    - WHO SEARO's epidemiologiske bulletin og WHO WPRO's ugentlige oversigt over fugleinfluenza
@@ -129,7 +137,7 @@ Arbejd i denne rækkefølge. Den er valgt, så de fleste hændelser kan afgøres
 4. **Tilføj nye hændelser**, højst fem pr. kørsel. Er der flere, så tag de alvorligste og nævn resten i loggen.
 5. **Sæt `DATA_DATO`** til dags dato i dansk tid, også når ingen hændelser er ændret, og **`DATA_TID`** til tidspunktet, gennemgangen blev afsluttet, med tidszone: `TZ=Europe/Copenhagen date +%Y-%m-%dT%H:%M%:z` (fx `2026-10-12T11:40+02:00`). Siden viser det som "Gennemgået for 2 timer siden". Kontrollen afviser et tidspunkt i fremtiden eller på en anden dag end `DATA_DATO`.
 6. **Kør kontrollen:** `node tools/tjek-data.mjs site/index.html --forrige <forrige udgave> --links`, hvor forrige udgave hentes med `git show HEAD:site/index.html`. Ret alle fejl. Kan en fejl ikke rettes, så fortryd ændringen i den hændelse. Læs også advarslerne, se afsnittet Kontrollens advarsler.
-7. **Skriv posten i `LOG.md`.**
+7. **Skriv underafsnittet i `LOG.md`** og nye punkter til ejeren i `GENNEMGANG.md`.
 8. **Commit og send til `main`** med beskeden `Data: <dato> · <kort opsummering>`.
 9. **Følg udrulningen** under Actions, til den er grøn. Fejler den, så ret årsagen eller fortryd dit commit med et nyt commit. Efterlad ikke `main` med en fejlet kørsel.
 10. **Afslut med en kort rapport:** hvad der blev ændret, hvad der blev ladt urørt og hvorfor, hvad der var usikkert, og hvad der venter på ejerens gennemgang.
@@ -139,6 +147,8 @@ Kan de samlede kilder ikke hentes, så prøv enkeltkilderne for de alvorligste h
 ## Regler for ændringer
 
 **Tal.** Et tal står altid sammen med, hvem der har opgjort det, og pr. hvilken dato: `8.665 bekræftede tilfælde og 4.178 dødsfald, US CDC pr. 5. oktober`. Skriv tallet, som kilden skriver det. Regn ikke selv et tal ud, læg ikke tal fra to kilder sammen, og rund ikke af. Er to myndigheder uenige, så brug den nyeste opgørelse i `cases` og forklar forskellen i `extra`.
+
+Én undtagelse: når en myndighed har skrevet et samlet tal og senere kun skriver de to dele, som det samlede tal bestod af, i samme tabel, må delene lægges sammen i talserien `pts`, så grafen fortsætter. `cases` og forløbet skriver delene, som kilden gør, og `extra` siger, at grafen er summen. Det gælder i dag DGHS' dødstal i `maesling-bd`: dødsfald blandt mistænkte plus dødsfald blandt bekræftede tilfælde, som DGHS selv lagde sammen til og med 9. oktober.
 
 **Kilder følger tallene.** Hvert nyt punkt i `tl` bærer sin egen kilde i fjerde felt, så en læser kan se, hvor netop den oplysning kommer fra. Kontrollen afviser et nyt punkt uden kilde. `src` er hændelsens aktuelle hovedkilder: når et tal eller en oplysning i `cases`, `extra` eller `note` ændres, skal kilden også stå dér. Kontrollér, at adressen faktisk fører til det, du henviser til.
 
@@ -189,7 +199,7 @@ Datasættet er JavaScript, ikke JSON. Strenge står i enkelte anførselstegn, s�
 | Felt | Indhold |
 | --- | --- |
 | `id` | Kort, entydigt navn med små bogstaver og bindestreger, fx `ebola-drc`. Ændres aldrig |
-| `place`, `country`, `region` | Sted, land og verdensdel. Regionerne er Afrika, Amerika, Asien, Europa og Mellemøsten |
+| `place`, `country`, `region` | Sted, land og verdensdel. Regionerne er Afrika, Amerika, Asien, Europa og Mellemøsten. Verdensdelen følger stedet, ikke landet: Irkutsk i Rusland er Asien |
 | `lat`, `lon` | Hændelsens placering på kloden, breddegrad først |
 | `disease`, `pathogen` | Sygdom og smittestof |
 | `stage` | Trinnet, se tabellen ovenfor |
@@ -224,10 +234,15 @@ En fejl standser udrulningen. En advarsel gør ikke, men den skal læses og besv
 
 Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker til fra foden, og den bygges af `LOG.md` ved hver udrulning. Skriv den, så en læser udefra kan følge, hvad der blev ændret og hvorfor. Ingen HTML i loggen, og adresser skrives fuldt ud med `https://`.
 
-`LOG.md` får én post pr. døgn med overskriften `## <dato>` øverst. Hver kørsel med ændringer tilføjer et underafsnit i dagens post med klokkeslættet, fx `### Kl. 11.20, Asien og Mellemøsten`, og det, der er under Til gennemgang, samles i bunden af dagens post. Findes dagens post ikke, oprettes den. En kørsel uden ændringer skriver ikke i loggen (se Vagtplan). Formatet for indholdet:
+`LOG.md` får én post pr. døgn med overskriften `## <dato>` øverst. Hver kørsel tilføjer et underafsnit i dagens post med klokkeslættet, fx `### Kl. 11.20, Asien og Mellemøsten`, under de tidligere kørslers underafsnit. Findes dagens post ikke, oprettes den. En kørsel uden ændringer skriver én linje (se Vagtplan). Formatet for indholdet i et underafsnit med ændringer:
 
 ```
 ## 9. oktober 2026
+
+### Kl. 05.20, bred gennemgang: intet nyt
+ECDC CDTR uge 40, WHO DON siden 8. oktober, UKHSA's ugeoversigt uge 40.
+
+### Kl. 11.20, Asien og Mellemøsten
 
 **Gennemgået:** ECDC CDTR uge 41, WHO DON siden 8. oktober, UKHSA's ugeoversigt uge 40.
 
@@ -244,12 +259,12 @@ Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker
 - `pest-irkutsk`: WHO har ikke fået svar fra Rusland. Ingen ændring.
 
 **Til gennemgang**
-- `maesling-us`: US CDC skriver nu 2.289 tilfælde for hele 2025. Punktet 31. december 2025 har 2.255. Ikke rettet.
+- Nyt i GENNEMGANG.md: `maesling-us`: US CDC skriver nu 2.289 tilfælde for hele 2025. Punktet 31. december 2025 har 2.255. Ikke rettet.
 ```
 
 Skriv konkret, hvad der blev ændret, og hvilken kilde det bygger på. Posten er det eneste sted, et menneske kan se, hvad kørslen gjorde og hvorfor.
 
-Til gennemgang er det, kun ejeren må rette: gamle punkter, hvor en kilde har rettet sig selv, og alt uden for `DATA_DATO`, `EVENTS` og loggen, der ser forkert ud. Er der intet, skrives `- Intet.` Et punkt bliver stående i hver ny post, til ejeren har rettet det eller afvist det, så det ikke forsvinder ned i loggen.
+Til gennemgang er det, kun ejeren må rette: gamle punkter, hvor en kilde har rettet sig selv, og alt uden for `DATA_DATO`, `EVENTS` og loggen, der ser forkert ud. Den samlede liste står i `GENNEMGANG.md`. Kørslen tilføjer nye punkter dér og nævner kun de nye i sit underafsnit. Er der intet nyt, skrives `- Intet nyt.` Gentag ikke listen i loggen.
 
 **Læs mere (artikler i detaljekortet).** `tools/hent-laes.mjs` kører efter mediesporet. Først matches overskrifterne fra de 17 store medier, som mediesporet lige har læst (Reuters, AP, BBC, DR m.fl.): en overskrift passer, når den nævner søgeordet og hændelsens land. Mangler der artikler, søges i GDELT DOC 2.0 efter artikler om smitteudbruddene, maskinmeldinger fra alvor 3 og steder med mindst 40 omtaler af kampe. To søgninger pr. hændelse: engelsksprogede medier (sidste 7 eller 14 dage, kun overskrifter, der nævner søgeordet) og danske medier. Kendte internationale medier (Reuters, AP, BBC, The Guardian m.fl.) foretrækkes. Højst 12 søgninger pr. kørsel med 6,5 sekunder imellem, som GDELT beder om. En hændelse søges igen efter et døgn. Resultatet ligger i `site/laes.json` og bruges kun som henvisning til videre læsning.
 
