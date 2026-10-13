@@ -22,3 +22,6 @@ https://:udgave.globus-nicco-dk.pages.dev/*
   Cache-Control: public, max-age=3600
 /laes.json
   Cache-Control: public, max-age=300
+/status.json
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex

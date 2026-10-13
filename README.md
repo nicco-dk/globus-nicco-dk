@@ -17,9 +17,11 @@ Dette repo er kilden. Det, der ligger i `site/` på `main`, er det, der er live 
 | `.github/workflows/udrul.yml` | Kontrol og udrulning ved hvert commit på `main` |
 | `tools/tjek-data.mjs` | Formkontrol af datasættet, køres af workflowet og kan køres lokalt |
 | `tools/byg-log.mjs` | Bygger den offentlige ændringslog `site/log.html` af `LOG.md`. Køres af workflowet |
+| `tools/byg-status.mjs`, `tools/tjek-status.mjs` | Bygger og kontrollerer `site/status.json`, driftsfilen som admin.nicco.dk læser. Kopieret fra `nicco-dk/projekt-nicco-dk`, hvor formen står i `STATUS.md`. Køres af workflowet |
+| `tools/status-noegletal.mjs` | Globus' nøgletal til `status.json`: hændelser, varsler og bekræftede konflikter. Kun tal |
 | `OPDATERING.md` | Arbejdsbeskrivelse for den kørsel, der holder datasættet ajour |
 | `LOG.md` | Én post pr. opdatering: hvad der blev ændret og hvorfor. Offentlig på https://globus.nicco.dk/log |
-| `.gitignore` | Holder den byggede `site/log.html` ude af repoet |
+| `.gitignore` | Holder de byggede filer, blandt andet `site/log.html` og `site/status.json`, ude af repoet |
 
 Kun `site/` udrulles. Denne README og alt andet uden for `site/` bliver i repoet, bortset fra indholdet af `LOG.md`, som bliver til `log.html`.
 

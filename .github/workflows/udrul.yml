@@ -25,6 +25,9 @@ on:
       - "tools/par-tjek.json"
       - "tools/overskrifter.json"
       - "tools/ord.json"
+      - "tools/byg-status.mjs"
+      - "tools/tjek-status.mjs"
+      - "tools/status-noegletal.mjs"
       - ".github/workflows/udrul.yml"
   # GitHub kører tidsplanen som den bruger, der sidst ændrede cron-linjen. Linjen skal derfor
   # være ændret af en rigtig GitHub-bruger (ejeren), ikke af en bot, ellers kører den ikke.
@@ -115,6 +118,19 @@ jobs:
       # Siden linker til den fra foden.
       - name: Byg ændringsloggen
         run: node tools/byg-log.mjs LOG.md site/log.html
+
+      # Driftsstatus til admin.nicco.dk i den faste form nicco-status (STATUS.md i nicco-dk/projekt-nicco-dk).
+      # Bygges ved hver udrulning og rører hverken EVENTS eller DATA_TID. Fejler kontrollen, udrulles der ikke.
+      # Den timevise kørsel udruller kun, når meldingerne er ændret, så filen kan være et par timer gammel.
+      - name: Byg driftsstatus
+        run: |
+          set -euo pipefail
+          tid=$(grep -oP "^const DATA_TID = '\\K[^']+" site/index.html || true)
+          max=$(grep -oP "^const DATA_MAX_TIMER = \\K[0-9]+" site/index.html || true)
+          node tools/byg-status.mjs --site globus --spor A --ud site/status.json \
+            ${tid:+--data-tid "$tid"} ${max:+--max-timer "$max"} \
+            --gennemgang GENNEMGANG.md --noegletal "$(node tools/status-noegletal.mjs site)"
+          node tools/tjek-status.mjs site/status.json
 
       # /oversaet oversætter kun tekster, hvis ord står i sidens egne filer.
       - name: Byg ordlisten til oversættelsen
