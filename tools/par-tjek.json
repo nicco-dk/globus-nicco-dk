@@ -14,6 +14,15 @@
     "RU-US": { "dato": "2026-10-12", "grund": "Artiklerne handler om en dieselaftale mellem landene og forhandlinger om Ukraine, ikke om kampe mellem russiske og amerikanske styrker." },
     "IL-US": { "dato": "2026-10-12", "grund": "Landene er allierede, og artiklerne handler om forholdet mellem dem og om amerikansk indenrigspolitik." },
     "DJ-YE": { "dato": "2026-10-12", "grund": "Djibouti er kun nævnt som modtager af flygtninge fra Yemen og som hjemsted for udenlandske flådebaser." },
-    "UA-US": { "dato": "2026-10-12", "grund": "Artiklerne handler om politisk strid mellem landenes præsidenter og forhandlinger om en fredsplan, ikke om væbnede sammenstød." }
+    "UA-US": { "dato": "2026-10-12", "grund": "Artiklerne handler om politisk strid mellem landenes præsidenter og forhandlinger om en fredsplan, ikke om væbnede sammenstød." },
+    "PK-SA": { "dato": "2026-10-13", "grund": "Pakistan er nævnt som Saudi-Arabiens mulige allierede i krigen mod Houthi-bevægelsen og fordi en pakistaner blev dræbt i angrebet på Riyadhs lufthavn, ikke som part i kampe mod Saudi-Arabien." },
+    "KP-KR": { "dato": "2026-10-13", "grund": "Artiklerne handler om Nordkoreas prøveopsendelser af ballistiske missiler i havet, ikke om angreb mellem landenes styrker." },
+    "SA-SD": { "dato": "2026-10-13", "grund": "Artiklerne handler om Houthi-bevægelsens angreb på Riyadhs lufthavn, og Sudan er ikke part i kampene mod Saudi-Arabien." },
+    "DJ-SA": { "dato": "2026-10-13", "grund": "Artiklerne handler om krigen mellem Saudi-Arabien og Houthi-bevægelsen og om Rødehavet, og Djibouti er ikke part i kampene." },
+    "US-VE": { "dato": "2026-10-13", "grund": "Artiklerne handler om anklagerne i USA mod Nicolás Maduro og hans hustru for tortur, en retssag og ikke væbnede sammenstød." },
+    "EG-SA": { "dato": "2026-10-13", "grund": "Egypten er nævnt, fordi en egyptisk kabineansat blev dræbt i Houthi-angrebet på Riyadhs lufthavn, ikke som part i kampene." },
+    "GB-IR": { "dato": "2026-10-13", "grund": "Artiklerne handler om britisk efterretningstjenestes advarsler om iranske planer og hybride trusler mod Storbritannien, ikke om kampe mellem landenes styrker." },
+    "CN-US": { "dato": "2026-10-13", "grund": "Artiklerne handler om handelskrig, datacentre og forhandlinger mellem landenes ledere, ikke om væbnede sammenstød." },
+    "MX-US": { "dato": "2026-10-13", "grund": "Artiklerne handler om kriminalitet, en drabssag og amerikansk indenrigspolitik, ikke om kampe mellem landenes styrker." }
   }
 }
