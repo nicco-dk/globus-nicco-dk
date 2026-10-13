@@ -22,6 +22,8 @@ const fi = process.argv.indexOf('--forrige');
 const FORRIGE = fi > 0 ? process.argv[fi + 1] : null;
 const MAKS_SOEG = +(process.env.MAKS_SOEG || 12);
 const PAUSE = 6500, DOEGN = 864e5, NU = Date.now();
+// Søgningerne stopper efter 150 sekunder, så filen altid bliver skrevet, før hent-medier.mjs giver op efter 240.
+const FRIST = NU + 150000;
 
 const LANDE = JSON.parse(readFileSync(new URL('./lande.json', import.meta.url), 'utf8')).lande;
 const MEDIER = JSON.parse(readFileSync(new URL('./medier.json', import.meta.url), 'utf8')).medier;
@@ -89,8 +91,11 @@ const maal = [];
 // ---------- forrige ----------
 let L = { genereret: null, l: {} };
 if (FORRIGE) {
-  try { const r = await fetch(FORRIGE + '?v=' + NU, { signal: AbortSignal.timeout(20000) }); if (r.ok) { const j = await r.json(); if (j && j.l) L = j; } }
-  catch (e) { console.log(`Forrige laes.json kunne ikke læses (${e.message}).`); }
+  // curl som ved søgningerne, så den forrige udgave også kan læses, hvor Nodes fetch ikke kommer igennem.
+  try {
+    const txt = await new Promise((ok, fejl) => execFile('curl', ['-sSf', '-m', '20', FORRIGE + '?v=' + NU], { maxBuffer: 16 << 20 }, (e, out) => e ? fejl(e) : ok(out)));
+    const j = JSON.parse(txt); if (j && j.l) L = j;
+  } catch (e) { console.log(`Forrige laes.json kunne ikke læses (${String(e.message).split('\n')[0]}).`); }
 }
 const ids = new Set(maal.map(m => m.id));
 for (const id of Object.keys(L.l)) if (!ids.has(id)) delete L.l[id];
@@ -145,7 +150,7 @@ if (OV.length) for (const m of maal) {
 const koe = maal.filter(m => !L.l[m.id] || (L.l[m.id].ov && !L.l[m.id].intl.length) || L.l[m.id].qd !== m.qDa).concat(maal.filter(m => L.l[m.id] && NU - Date.parse(L.l[m.id].t || 0) > DOEGN).sort((a, b) => Date.parse(L.l[a.id].t) - Date.parse(L.l[b.id].t)));
 let fundet = 0;
 for (const m of koe) {
-  if (brugt + 2 > MAKS_SOEG) break;
+  if (brugt + 2 > MAKS_SOEG || Date.now() > FRIST) break;
   const intl = await soeg(`${m.q} sourcelang:english`, m.dage, 50);
   const dk = await soeg(`${m.qDa} sourcelang:danish`, Math.max(m.dage, 14), 10);
   if (intl === null && dk === null) continue;
