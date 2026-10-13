@@ -2,7 +2,7 @@ name: Udrul udløseren
 
 # Udruller Cloudflare Workeren i worker/, som starter "Udrul til Cloudflare Pages" hver time.
 # Startes manuelt under Actions, når worker/ er ændret, eller når GitHub-tokenet er skiftet.
-# Kræver repo-hemmeligheden UDLOESER_TOKEN: et fine-grained token med adgang til dette repo
+# Kræver repo-hemmeligheden UDLOESER_TOKEN: et fine-grained token med ressourceejer nicco-dk, adgang til dette repo
 # og kun rettigheden Actions: Read and write. Det lægges i Workeren som hemmeligheden GH_TOKEN.
 
 on:

@@ -4,10 +4,10 @@
 // starter i stedet workflowet "Udrul til Cloudflare Pages" hver time (kl. xx.23) gennem GitHubs API,
 // på samme måde som knappen "Run workflow". Workeren har ingen offentlig adresse.
 //
-// Hemmeligheden GH_TOKEN er et fine-grained GitHub-token med adgang til repoet globus-nicco-dk og
+// Hemmeligheden GH_TOKEN er et fine-grained GitHub-token med ressourceejer nicco-dk, adgang til repoet globus-nicco-dk og
 // kun rettigheden Actions: Read and write. Det sættes af workflowet .github/workflows/udloeser.yml.
 
-const URL = 'https://api.github.com/repos/MikkelNicco/globus-nicco-dk/actions/workflows/udrul.yml/dispatches';
+const URL = 'https://api.github.com/repos/nicco-dk/globus-nicco-dk/actions/workflows/udrul.yml/dispatches';
 
 async function start(env) {
   const r = await fetch(URL, {
