@@ -1196,9 +1196,9 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-10-14';
+const DATA_DATO = '2026-10-15';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-14T17:31+02:00';
+const DATA_TID = '2026-10-15T00:41+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1322,8 +1322,8 @@ const EVENTS = [
 
 {id:'mpox',place:'DR Congo og international spredning',country:'Flere lande',region:'Afrika',lat:-4.0383,lon:21.7587,
  disease:'Mpox',pathogen:'Monkeypox-virus, klade Ib',stage:'variant',live:true,
- cases:'65.784 bekræftede tilfælde og 264 dødsfald globalt siden 1. januar 2025',
- extra:'Juli 2026 alene gav 1.370 tilfælde og 7 dødsfald i 32 lande, hvoraf 75 procent i Afrika. Afrika siden 2025: 52.424 tilfælde og 238 dødsfald i 35 lande. Flest kumulerede klade Ib-tilfælde: Spanien 241, Frankrig 173, Portugal 162 og Tyskland 140.',
+ cases:'65.784 bekræftede tilfælde og 264 dødsfald globalt fra 1. januar 2025, WHO pr. 31. juli 2026',
+ extra:'Juli 2026 alene gav 1.370 tilfælde og 7 dødsfald i 32 lande, hvoraf 75 procent i Afrika. Afrika siden 2025: 52.424 tilfælde og 238 dødsfald i 35 lande. Flest kumulerede klade Ib-tilfælde: Spanien 241, Frankrig 173, Portugal 162 og Tyskland 140. I EU og EØS 1.939 klade I-tilfælde i 23 lande fra oktober 2025 til september 2026, heraf 342 i 17 lande i september, flest i Spanien (94), ECDC pr. 13. oktober.',
  note:'Den internationale sundhedskrise blev ophævet 5. september 2025, men WHO behandler fortsat udbruddet som en gradueret nødsituation, og de stående anbefalinger er forlænget til august 2027. Ni lande uden for Central- og Østafrika har samfundssmitte af klade Ib.',
  gap:'Situationsrapport nummer 70 og senere findes ikke endnu, så perioden efter 26. august 2026 er ikke dækket af en primærkilde.',
  nodes:[['DR Congo',21.7587,-4.0383,'2024-08-14'],['Sverige',18.0686,59.3293,'2024-08-15'],['Tjekkiet',14.4378,50.0755,'2026-01-17'],['Israel',34.7818,32.0853,'2026-01-17'],['Madagaskar',47.5079,-18.8792,'2026-01-17'],['Nepal',85.3240,27.7172,'2026-01-17'],['Mayotte',45.1662,-12.8275,'2026-01-17'],['Østrig',16.3738,48.2082,'2026-03-16'],['Argentina',-58.3816,-34.6037,'2026-03-16'],['Centralafrikanske Republik',18.5582,4.3947,'2026-03-16'],['Singapore',103.8198,1.3521,'2026-04-22'],['Ecuador',-78.4678,-0.1807,'2026-04-22'],['Danmark',12.5683,55.6761,'2026-04-22'],['Colombia',-74.0721,4.7110,'2026-04-22'],['Mauritius',57.5522,-20.3484,'2026-05-17'],['Norge',10.7522,59.9139,'2026-06-26'],['Ghana',-0.1870,5.6037,'2026-07-11'],['Costa Rica',-84.0907,9.9281,'2026-07-31'],['Litauen',25.2797,54.6872,'2026-07-31'],['Chile',-70.6693,-33.4489,'2026-07-31'],['Ungarn',19.0402,47.4979,'2026-08-01']],
@@ -1344,8 +1344,9 @@ const EVENTS = [
      ['2026-07-31','Costa Rica, Ghana, Litauen, Chile og Ungarn melder klade Ib første gang. Globalt 65.784 tilfælde og 264 dødsfald',''],
      ['2026-08-16','DR Congo melder kun 41 tilfælde på seks uger. WHO advarer om forsinket indrapportering på grund af ebolaudbruddet',''],
      ['2026-08-26','Ni lande uden for Central- og Østafrika har samfundssmitte af klade Ib',''],
-     ['2026-09-14','WHO offentliggør situationsrapport nummer 69','']],
- src:[['WHO sitrep 69','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_69.pdf'],['WHO sitrep 68','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_68.pdf'],['WHO om ophævelsen','https://www.who.int/news/item/30-10-2025-fifth-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-upsurge-of-mpox-2024']]},
+     ['2026-09-14','WHO offentliggør situationsrapport nummer 69',''],
+     ['2026-10-13','ECDC: 342 klade I-tilfælde i 17 lande i EU og EØS i september, mod 354 i august og 317 i juli. 1.939 klade I-tilfælde i 23 lande de seneste 12 måneder. Antallet er steget siden juni, drevet af klade I','',['ECDC, mpox i EU og EØS, september 2026','https://mpox-monthly.ecdc.europa.eu/']]],
+ src:[['WHO sitrep 69','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_69.pdf'],['ECDC, mpox i EU og EØS, september 2026','https://mpox-monthly.ecdc.europa.eu/'],['WHO sitrep 68','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_68.pdf'],['WHO om ophævelsen','https://www.who.int/news/item/30-10-2025-fifth-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-upsurge-of-mpox-2024']]},
 
 {id:'anthrax-zm',place:'Munyamadzi, Mpika i Muchinga',country:'Zambia',region:'Afrika',lat:-11.8333,lon:31.4500,
  disease:'Miltbrand',pathogen:'Bacillus anthracis',stage:'spredning',live:true,
@@ -1499,7 +1500,7 @@ const EVENTS = [
 
 {id:'malaria-de',place:'Frankfurt Lufthavn og Schwanheim',country:'Tyskland',region:'Europa',lat:50.0379,lon:8.5622,
  disease:'Lufthavnsmalaria',pathogen:'Plasmodium falciparum',stage:'spredning',
- cases:'8 tilfælde og 3 dødsfald',
+ cases:'8 tilfælde og 3 dødsfald, ECDC pr. 18. september',
  extra:'6 lufthavnsansatte og 2 beboere i nærheden, ingen med rejse til endemiske områder.',
  note:'Mistanken er smittede myg transporteret med fly. At to beboere uden tilknytning til lufthavnen blev smittet, udvidede udbruddet ud over selve lufthavnsområdet. ECDC vurderer risikoen som meget lav.',
  nodes:[['Frankfurt Lufthavn',8.5622,50.0379,'2026-07-04'],['Schwanheim',8.5750,50.0900,'2026-09-15']],
@@ -1512,7 +1513,7 @@ const EVENTS = [
      ['2026-08-27','6 arbejdere med Plasmodium falciparum og 2 dødsfald',''],
      ['2026-09-15','To beboere i Schwanheim smittes uden tilknytning til lufthavnen','spredning'],
      ['2026-09-17','En af beboerne dør. 8 tilfælde og 3 dødsfald i alt','']],
- src:[['UKHSA uge 38','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-38-week-ending-20-september-2026'],['CNN, medie','https://www.cnn.com/2026/08/27/europe/germany-frankfurt-airport-malaria-intl'],['Al Jazeera, medie','https://www.aljazeera.com/news/2026/9/17/third-person-dies-from-malaria-in-cluster-near-germanys-frankfurt-airport']]},
+ src:[['ECDC uge 38','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-38-2026.pdf'],['UKHSA uge 38','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-38-week-ending-20-september-2026'],['CNN, medie','https://www.cnn.com/2026/08/27/europe/germany-frankfurt-airport-malaria-intl'],['Al Jazeera, medie','https://www.aljazeera.com/news/2026/9/17/third-person-dies-from-malaria-in-cluster-near-germanys-frankfurt-airport']]},
 
 {id:'sindbis-de',place:'Baden-Württemberg',country:'Tyskland',region:'Europa',lat:48.6616,lon:9.3501,
  disease:'Sindbis-feber, lokalt erhvervet',pathogen:'Sindbis-virus',stage:'udbrud',
@@ -1543,7 +1544,7 @@ const EVENTS = [
 
 {id:'h5n1-dk',place:'Lillebælt og Solrød',country:'Danmark',region:'Europa',lat:55.5,lon:9.7,
  disease:'Fugleinfluenza i sæler',pathogen:'H5N1, clade 2.3.4.4b',stage:'reservoir',live:true,
- cases:'Fire sæler påvist positive i 2026, ingen humane tilfælde',
+ cases:'Fire sæler påvist positive i 2026, ingen humane tilfælde, DK-VET pr. 1. oktober',
  extra:'Fund fire forskellige steder. Tidligere i 2026 blev der fundet antistoffer i en hund og i herreløse katte. Enkelte pattedyrtilpasninger er set, men ingen smitte mellem mennesker.',
  note:'Påvisningen er forenelig med, at infektionen bidrog til sælernes død. Statens Serum Institut vurderer risikoen for smitte til mennesker som lav, men fremhæver behovet for overvågning af fugleinfluenza i vilde pattedyr.',
  naeste:'Rykker til udbrud ved det første humane tilfælde i Danmark. Overvågningen af vilde pattedyr afgør, om det ses i tide.',

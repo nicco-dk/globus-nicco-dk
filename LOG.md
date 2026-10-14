@@ -2,6 +2,34 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 15. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), ECDC's ugerapport uge 41 (allerede indarbejdet, næste udkommer fredag), UKHSA's udgivelser (ugeoversigten over udbrud kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. ECDC's ugerapporter uge 38 til 40 for lufthavnsmalaria i Frankfurt. ECDC's månedsrapport om mpox i EU og EØS for september. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober) og nyheder (seneste 7. oktober). DK-VET's nyheder og siden om fugleinfluenza i sæler. RIVM's side om ebola (seneste melding om patienten 10. oktober). Robert Koch Instituts Epidemiologisches Bulletin 41/2026.
+
+**Ændret**
+- `mpox`: nyt punkt 13. oktober. ECDC's månedsrapport for september melder 342 klade I-tilfælde i 17 lande i EU og EØS i september, flest i Spanien (94), mod 354 i august og 317 i juli, og 1.939 klade I-tilfælde i 23 lande fra oktober 2025 til september 2026. Data pr. 13. oktober: https://mpox-monthly.ecdc.europa.eu/ Tallene er læst i sidens rå tekst. `extra` er udvidet med tallene, og rapporten er sat i `src`. `cases` har fået kilde og dato: WHO pr. 31. juli 2026 efter situationsrapport 69 (https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_69.pdf). Tallene er uændrede.
+- `malaria-de`: `cases` har fået kilde og dato: 8 tilfælde og 3 dødsfald, ECDC pr. 18. september: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-38-2026.pdf Rapporten er sat i `src`. Tallene er uændrede. ECDC's ugerapport uge 39 skriver, at hændelsen sidst er omtalt 18. september.
+- `h5n1-dk`: `cases` har fået kilde og dato: DK-VET pr. 1. oktober, sidens offentliggørelse: https://dkvet.dk/nyheder/2026/hoejpatogen-fugleinfluenza/ Tallene er uændrede.
+
+**Nye**
+- Ingen. ECDC's ugerapport uge 38 omtaler seks alvorlige tilfælde af botulisme i Danmark efter kosmetisk behandling med botulinumtoksin. Ikke taget med, fordi det er en forgiftning og ikke en smitsom sygdom, se GENNEMGANG.md.
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Europa op. Resten hører til de andre kørsler i vagtplanen.
+- `ebola-nl`: RIVM har intet nyt efter 10. oktober. `sindbis-de`, `wnv-eu`, `dengue-eu`, `chik-fr`, `cchf-es`, `salmonella-eu` og `cre-eu`: ECDC's næste ugerapport kommer fredag. `salmonella-dk` 14 dage siden seneste punkt og `h5n1-dk` 14 dage: SSI og DK-VET er uændrede.
+
+**Usikkert**
+- `mpox`: ECDC's side har ingen dato for offentliggørelsen, kun at data er pr. 13. oktober. Punktet er dateret 13. oktober. Adressen viser altid den seneste månedsrapport.
+- `malaria-de`: Hessenschau skrev 29. september efter Frankfurts sundhedsmyndighed, at der ikke er meldt nye tilfælde efter 16. september: https://www.hessenschau.de/panorama/airport-malaria-in-frankfurt-suche-nach-der-ursache-geht-weiter-v1,malaria-frankfurt-flughafen-100.html Ikke sat ind som punkt, fordi myndighedens egen udmelding ikke er fundet.
+- Kontrollen advarer nu om 9 hændelser, hvor `cases` har tal uden opgørelsesdato.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk.
+- Udrulningen til Cloudflare fejler fortsat ved godkendelsen i alle timekørsler fra kl. 18.23 til 23.23 dansk tid 14. oktober, se GENNEMGANG.md. Dagens data er derfor ikke live.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: botulisme efter kosmetisk behandling i Danmark.
+
 ## 14. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
