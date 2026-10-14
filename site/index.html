@@ -1198,7 +1198,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-10-14';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-14T05:27+02:00';
+const DATA_TID = '2026-10-14T11:24+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1635,13 +1635,13 @@ const EVENTS = [
 
 {id:'maesling-bd',place:'Alle 8 divisioner og 64 distrikter',country:'Bangladesh',region:'Asien',lat:23.685,lon:90.3563,
  disease:'Mæslinger',pathogen:'Measles morbillivirus',stage:'spredning',live:true,
- cases:'207.371 mistænkte og 22.712 bekræftede tilfælde, 1.066 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 13. oktober',
- extra:'DGHS opgør dødsfaldene i to rækker: 1.066 blandt mistænkte og 104 blandt bekræftede tilfælde pr. 13. oktober, mod 1.060 og 104 pr. 12. oktober. Til og med 9. oktober skrev DGHS selv et samlet tal, som var de to rækker lagt sammen (1.043 og 104 gav 1.147). Dødstallet i grafen er derfor de to rækker lagt sammen, også efter 9. oktober. 184.269 er blevet indlagt siden 15. marts, og 176.672 er udskrevet. Sundhedsmyndigheden DGHS opgjorde selv 201.625 mistænkte tilfælde pr. 8. oktober. Tallet 202.625 for samme dag i forløbet stammer fra et medie og er for højt. Udbruddet toppede 9. april med 1.829 tilfælde på én dag. Dhaka har den højeste forekomst.',
+ cases:'208.570 mistænkte og 22.840 bekræftede tilfælde, 1.073 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 14. oktober',
+ extra:'DGHS opgør dødsfaldene i to rækker: 1.073 blandt mistænkte og 104 blandt bekræftede tilfælde pr. 14. oktober, mod 1.066 og 104 pr. 13. oktober. Til og med 9. oktober skrev DGHS selv et samlet tal, som var de to rækker lagt sammen (1.043 og 104 gav 1.147). Dødstallet i grafen er derfor de to rækker lagt sammen, også efter 9. oktober. 185.390 er blevet indlagt siden 15. marts, og 177.698 er udskrevet. Sundhedsmyndigheden DGHS opgjorde selv 201.625 mistænkte tilfælde pr. 8. oktober. Tallet 202.625 for samme dag i forløbet stammer fra et medie og er for højt. Udbruddet toppede 9. april med 1.829 tilfælde på én dag. Dhaka har den højeste forekomst.',
  note:'Landets dødeligste mæslingeudbrud i årtier og det største i verden i 2026. En landsdækkende kampagne med et mål på omkring 18 millioner børn mellem 6 og 59 måneder blev lanceret 20. april og nåede sit administrative måltal 13. maj.',
  nodes:[['Rangpur',89.2752,25.7439,'2026-03-15'],['Dhaka',90.4125,23.8103,'2026-04-14']],
  naeste:'Falder, når vaccinationsdækningen holder og der går 42 dage uden nye tilfælde. Kurven flader, men dødstallet stiger fortsat.',
  plabel:'Mistænkte tilfælde',
- pts:[['2026-04-14',19161,166],['2026-05-27',75913,560],['2026-10-08',201625,1144],['2026-10-09',202893,1147],['2026-10-11',205028,1162],['2026-10-12',206297,1164],['2026-10-13',207371,1170]],
+ pts:[['2026-04-14',19161,166],['2026-05-27',75913,560],['2026-10-08',201625,1144],['2026-10-09',202893,1147],['2026-10-11',205028,1162],['2026-10-12',206297,1164],['2026-10-13',207371,1170],['2026-10-14',208570,1177]],
  tl:[['2026-03-15','Officiel startdato for overvågningsperioden. Stigningen begyndte ifølge WHO allerede i januar','udbrud'],
      ['2026-03-30','Vaccinationsudvalget godkender en målrettet kampagne',''],
      ['2026-04-04','Bangladesh notificerer formelt WHO','spredning'],
@@ -1655,8 +1655,9 @@ const EVENTS = [
      ['2026-10-09','202.893 mistænkte og 22.197 bekræftede tilfælde, 1.147 dødsfald i alt efter 1.268 nye mistænkte tilfælde og 3 dødsfald på et døgn. Ifølge DGHS selv var tallet 201.625 mistænkte tilfælde 8. oktober, ikke 202.625','',['DGHS','https://dghs.gov.bd/pages/press-releases/6ac91a1e734da992ba70ebd9']],
      ['2026-10-11','205.028 mistænkte og 22.421 bekræftede tilfælde. 1.058 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.180 nye mistænkte tilfælde, 93 nye bekræftede og 7 dødsfald blandt mistænkte','',['DGHS','https://dghs.gov.bd/pages/press-releases/6acb551cba7fabe195e07849']],
      ['2026-10-12','206.297 mistænkte og 22.573 bekræftede tilfælde. 1.060 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.269 nye mistænkte tilfælde, 152 nye bekræftede og 2 dødsfald blandt mistænkte','',['DGHS','https://dghs.gov.bd/pages/press-releases/6accaf9ce0cf9948292ece3c']],
-     ['2026-10-13','207.371 mistænkte og 22.712 bekræftede tilfælde. 1.066 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.074 nye mistænkte tilfælde, 139 nye bekræftede og 6 dødsfald blandt mistænkte, heraf 3 i Dhaka-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6acdf12fba7fabe195e182a6']]],
- src:[['WHO DON 598','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON598'],['CDC EID','https://wwwnc.cdc.gov/eid/article/32/11/26-0996_article'],['DGHS','https://dghs.gov.bd/pages/press-releases/6acdf12fba7fabe195e182a6']],
+     ['2026-10-13','207.371 mistænkte og 22.712 bekræftede tilfælde. 1.066 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.074 nye mistænkte tilfælde, 139 nye bekræftede og 6 dødsfald blandt mistænkte, heraf 3 i Dhaka-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6acdf12fba7fabe195e182a6']],
+     ['2026-10-14','208.570 mistænkte og 22.840 bekræftede tilfælde. 1.073 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.199 nye mistænkte tilfælde, 128 nye bekræftede og 7 dødsfald blandt mistænkte, heraf 5 i Dhaka-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6acf487a582bde01e1ae2529']]],
+ src:[['WHO DON 598','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON598'],['CDC EID','https://wwwnc.cdc.gov/eid/article/32/11/26-0996_article'],['DGHS','https://dghs.gov.bd/pages/press-releases/6acf487a582bde01e1ae2529']],
  rel:['dengue-bd']},
 
 {id:'dengue-asien',place:'Colombo og Bohol',country:'Sri Lanka og Filippinerne',region:'Asien',lat:6.9271,lon:79.8612,
@@ -1714,6 +1715,18 @@ const EVENTS = [
      ['2026-08-31','Skæringsdato: ingen nye tilfælde efter denne dato',''],
      ['2026-09-29','ECDC bekræfter, at der ikke er kommet nye tilfælde','']],
  src:[['WHO EMRO marts','https://applications.emro.who.int/docs/WHOEMCSR860E-eng.pdf'],['WHO EMRO april','https://applications.emro.who.int/docs/WHOEMCSR873E-eng.pdf'],['ECDC MERS-oversigt','https://www.ecdc.europa.eu/en/middle-east-respiratory-syndrome-coronavirus-mers-cov-situation-update']]},
+
+{id:'kolera-ye',place:'Aden, Lahj, Abyan, Al-Dhale\'e og Taiz',country:'Yemen',region:'Mellemøsten',lat:12.7855,lon:45.0187,
+ disease:'Kolera',pathogen:'Vibrio cholerae',stage:'spredning',live:true,
+ cases:'8.034 mistænkte tilfælde og 27 dødsfald i 2026, WHO EMRO pr. 13. oktober',
+ extra:'Mistænkte tilfælde er tredoblet på tre uger, fra 217 i uge 36 til 647 i uge 39, og en fjerdedel af årets tilfælde er kommet de seneste fire uger. Abyan, Lahj, Al-Dhale\'e, Taiz og Aden står for 92 procent af tilfældene. Kolera er også nået til lejre for fordrevne i Hadramout. Yemen har desuden over 22.800 mistænkte tilfælde af mæslinger og 128 dødsfald i 2026, og vaccinationsdækningen anslås til 45 procent for hver af de to doser. I Obock i Djibouti, hvortil over 3.800 er flygtet fra Yemen pr. 2. oktober, har sundhedsmyndighederne meldt 44 tilfælde af akut vandig diarré og 1 dødsfald pr. 8. oktober. Alle tal er fra WHO EMRO 13. oktober.',
+ note:'Kampene i Yemen siden 6. august har fordrevet over 200.000 mennesker i 10 guvernementer. WHO advarer om, at trængsel, mangel på rent vand og svækkede sundhedstilbud øger risikoen for kolera, mæslinger og andre sygdomme blandt de fordrevne.',
+ gap:'Tilfældene er mistænkte, og WHO nævner ikke laboratoriebekræftelse i udmeldingen. WHO oplyser ikke, om årets tal dækker hele landet, eller hvilken dag de er opgjort til.',
+ nodes:[['Aden',45.0187,12.7855,'2026-10-13'],['Lahj',44.8819,13.0567,'2026-10-13'],['Abyan',45.3803,13.1286,'2026-10-13'],['Al-Dhale\'e',44.7314,13.6957,'2026-10-13'],['Taiz',44.0209,13.5795,'2026-10-13']],
+ naeste:'Rykker til variant ved dokumenteret resistens. Falder, når ugetallene vender, og de fordrevne får rent vand og behandling.',
+ rel:['kolera'],
+ tl:[['2026-10-13','WHO EMRO melder, at mistænkte tilfælde af kolera er tredoblet på tre uger, fra 217 i uge 36 til 647 i uge 39, samtidig med at kampene siden 6. august har fordrevet over 200.000 mennesker. 8.034 mistænkte tilfælde og 27 dødsfald i 2026, og 92 procent af tilfældene i fem guvernementer i sydvest','spredning',['WHO EMRO','https://www.emro.who.int/media/news/cholera-cases-surge-as-conflict-in-yemen-displaces-over-200-000-people.html']]],
+ src:[['WHO EMRO','https://www.emro.who.int/media/news/cholera-cases-surge-as-conflict-in-yemen-displaces-over-200-000-people.html']]},
 
 {id:'polio',place:'Afghanistan, Pakistan, DR Congo og Nigeria',country:'Flere lande',region:'Asien',lat:33.9391,lon:67.7100,
  disease:'Polio',pathogen:'Vild poliovirus type 1 samt cVDPV2 og cVDPV3',stage:'spredning',live:true,alvor:4,

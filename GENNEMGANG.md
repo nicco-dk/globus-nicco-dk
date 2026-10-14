@@ -16,3 +16,5 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 - `ebola-nl`: RIVM meldte 10. oktober, at patienten er rask, tester negativ og har forladt hospitalet, og at isolationen er ophævet: https://www.rivm.nl/en/ebola/current-information Ingen myndighed har erklæret hændelsen afsluttet, og sekundære tilfælde er ikke nævnt. Kørslen har ladet `live` stå som `true`. Skal den sættes til `false`, og skal `naeste` rettes?
 
 ## Repoet og driften
+
+- `tools/hent-kilder.mjs` (kørslen 14. oktober kl. 11.20): delen `lk` fejlede med curl mod https://www.dengue.health.gov.lk/ efter tre forsøg, mens siden kunne læses gennem hentningsværktøjet. Var det en enkeltstående fejl, eller spærrer siden for scriptets opslag, så scriptet skal rettes?

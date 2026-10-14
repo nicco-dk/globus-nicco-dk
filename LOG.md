@@ -69,6 +69,29 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 - Repoet er offentligt fra 14. oktober kl. 07.20.
 - Kørslen hver time udruller kun, når varslerne eller konfliktstregerne er ændret. Vagten for smittekørslen er et trin i samme kørsel.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), DGHS' mæslinger (meddelelsen for 14. oktober var ude) og dengue (dashboardet er opdateret 13. oktober og allerede indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1064, ECDC's ugerapport uge 41, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 13. og 14. oktober. Sri Lankas National Dengue Control Unit (forsiden peger fortsat på opgørelsen pr. 12. oktober). WHO EMRO's nyheder. GPEI Polio This Week (stadig udgaven pr. 7. oktober). Søgninger efter nyt om fugleinfluenza i Cambodja, MERS i Saudi-Arabien og Nipah i Indien og Bangladesh.
+
+**Ændret**
+- `maesling-bd`: 208.570 mistænkte og 22.840 bekræftede tilfælde, 1.073 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 14. oktober: https://dghs.gov.bd/pages/press-releases/6acf487a582bde01e1ae2529 Det seneste døgn 1.199 nye mistænkte tilfælde, 128 nye bekræftede og 7 dødsfald blandt mistænkte, heraf 5 i Dhaka-divisionen. 185.390 er indlagt siden 15. marts, og 177.698 er udskrevet. Nyt punkt i forløbet og i talserien (dødstal 1.177, de to rækker lagt sammen efter reglen), `cases` og `extra` er opdateret, og meddelelsen er sat i `src` i stedet for den fra 13. oktober, som punktet 13. oktober selv bærer. Tallene er læst to gange i PDF'en, som tekst og som billede, og stemmer med gårsdagens tal plus døgnets.
+
+**Nye**
+- `kolera-ye`: kolera i Yemen. WHO EMRO melder 13. oktober, at mistænkte tilfælde er tredoblet på tre uger, fra 217 i uge 36 til 647 i uge 39, samtidig med at kampene siden 6. august har fordrevet over 200.000 mennesker. 8.034 mistænkte tilfælde og 27 dødsfald i 2026, og 92 procent af tilfældene i Abyan, Lahj, Al-Dhale'e, Taiz og Aden. Udmeldingen nævner også mæslinger i Yemen og akut vandig diarré blandt flygtninge i Obock i Djibouti, som står i `extra`: https://www.emro.who.int/media/news/cholera-cases-surge-as-conflict-in-yemen-displaces-over-200-000-people.html
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Asien og Mellemøsten op. Resten hører til de andre kørsler i vagtplanen.
+- `dengue-bd` og `mpox-hk` er allerede ajour pr. 13. oktober. `dengue-asien`: Sri Lankas seneste opgørelse er fortsat pr. 12. oktober. `polio`: GPEI's ugeside er ikke opdateret efter 7. oktober. `h5n1-kh` 16 dage siden seneste punkt, intet nyt tilfælde fundet. WHO WPRO's oversigt fra 9. oktober findes heller ikke i dag på den sædvanlige adresse. `cchf-ir` 24 dage, `mers-sa` og `altnv-cn`: intet nyt fundet.
+
+**Usikkert**
+- `kolera-ye`: trinnet er sat til `spredning`, fordi WHO beskriver en kraftig stigning i smitten og spredning til lejre i Hadramout. Tilfældene er mistænkte, og udmeldingen nævner ikke laboratoriebekræftelse. WHO siger ikke, om årets tal dækker hele landet, eller hvilken dag de er opgjort til. Det står i `gap`. Ingen talserie, fordi ugetallene ikke er dateret i kilden.
+- Hongkongs sundhedsmyndighed melder 14. oktober stigende lokal forekomst af hånd-, fod- og mundsygdom: https://www.info.gov.hk/gia/general/202610/14/P2026101400516.htm Ikke taget med, fordi det er en almindelig sæsonsygdom, og myndigheden ikke kalder den usædvanlig.
+- Sri Lankas side kunne ikke hentes af kildescriptet (curl fejlede), men kunne læses gennem hentningsværktøjet.
+- Kontrollen advarer fortsat om 12 hændelser, hvor `cases` har tal uden opgørelsesdato. Ingen af dem er opdateret i denne kørsel.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: kildescriptets hentning af Sri Lankas side fejler.
+
 ## 13. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
