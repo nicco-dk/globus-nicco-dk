@@ -91,6 +91,7 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: kildescriptets hentning af Sri Lankas side fejler.
+- Nyt i GENNEMGANG.md: udrulningen til Cloudflare fejler ved godkendelsen, også før denne kørsels commit. Datakontrollen i workflowet bestod, men ændringerne er ikke live.
 
 ## 13. oktober 2026
 
