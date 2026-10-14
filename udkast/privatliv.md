@@ -4,7 +4,7 @@ Bygget 13. oktober 2026 kl. 21.30. Udkast, ikke live. Ligger uden for `site/`, s
 
 Før teksten går live:
 
-- **Kontaktadressen** udfyldes, når ejeren har valgt adresse (S-02). Navnet er Mikkel Nicco Madsen. Adressen i svararket stavede "outllok", og ejeren overvejer `kontakt@nicco.dk` for at undgå spam. Det er en sag for overblikket, der ejer domænet.
+- **Kontaktadressen** udfyldes, når ejeren har valgt adresse (S-02). Ejeren overvejer `kontakt@nicco.dk` for at undgå spam. Det er en sag for overblikket, der ejer domænet.
 - **Statistik** er skrevet, så teksten passer, uanset om Cloudflare Web Analytics er slået til for Pages-projektet (S-03).
 - Siden får `/privatliv` (en side med noindex som resten) og et kort afsnit i guiden med link dertil. Foden linker også til den.
 
