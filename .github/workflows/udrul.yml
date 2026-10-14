@@ -31,11 +31,15 @@ on:
       - "tools/tjek-status.mjs"
       - "tools/status-noegletal.mjs"
       - ".github/workflows/udrul.yml"
-  # GitHub kører tidsplanen som den bruger, der sidst ændrede cron-linjen. Linjen skal derfor
-  # være ændret af en rigtig GitHub-bruger (ejeren), ikke af en bot, ellers kører den ikke.
-  schedule:
-    - cron: "23 * * * *"
+  # Den timevise kørsel startes af Workeren globus-udloeser kl. xx.23 (worker/udloeser.js). GitHubs egen
+  # tidsplan er taget ud 14. oktober, fordi den aldrig gik i gang, og fordi den ellers ville give to kørsler i timen.
+  # En kørsel startet sådan udruller kun, når meldingerne eller stregerne er ændret. Med tving udrulles altid.
   workflow_dispatch:
+    inputs:
+      tving:
+        description: "Udrul, også når intet er ændret"
+        type: boolean
+        default: false
 
 # Kun én udrulning ad gangen. En ny venter, til den igangværende er færdig.
 concurrency:
@@ -49,6 +53,9 @@ jobs:
   udrul:
     name: Kontrollér og udrul
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - name: Hent repoet
         uses: actions/checkout@v6
@@ -103,7 +110,7 @@ jobs:
       # Den timevise kørsel udruller kun, når meldingerne eller stregerne er ændret.
       - name: Er meldingerne ændret?
         id: aendret
-        if: github.event_name == 'schedule'
+        if: github.event_name == 'workflow_dispatch' && !inputs.tving
         run: |
           set -euo pipefail
           curl -fsS "https://globus.nicco.dk/feeds.json?v=$(date +%s)" -o "$RUNNER_TEMP/live.json" || echo '{}' > "$RUNNER_TEMP/live.json"
@@ -147,19 +154,12 @@ jobs:
           accountId: b8e531774d257d9555c444b444dd71b5
           command: pages deploy site --project-name=globus-nicco-dk --branch=main
 
-  # Vagt for smittekørslen. Hver af de fire daglige kørsler sætter DATA_TID i site/index.html.
-  # Er DATA_TID over 9 timer gammel, mangler mindst én kørsel, og der åbnes et issue, som
-  # GitHub sender til ejeren. Issuet lukkes igen af den første kørsel, der finder DATA_TID frisk.
-  vagt:
-    name: Vagt for smittekørslen
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      issues: write
-    steps:
-      - name: Hent repoet
-        uses: actions/checkout@v6
-      - name: Er DATA_TID frisk?
+      # Vagt for smittekørslen. Hver af de fire daglige kørsler sætter DATA_TID i site/index.html.
+      # Er DATA_TID over 9 timer gammel, mangler mindst én kørsel, og der åbnes et issue, som
+      # GitHub sender til ejeren. Issuet lukkes igen af den første kørsel, der finder DATA_TID frisk.
+      # Et trin i samme job og ikke et eget job, fordi GitHub regner hvert job op til et helt minut.
+      - name: Vagt for smittekørslen
+        if: always()
         env:
           GH_TOKEN: ${{ github.token }}
           TITEL: "Smittekørslen er forsinket"
