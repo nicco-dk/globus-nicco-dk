@@ -58,6 +58,17 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `IL-SY` i mediesporet.
 
+### Kl. 07.45, siden og driften ændret af ejeren
+
+Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
+
+**Ændret på siden**
+- Den fælles fod for nicco.dk står nu nederst på forsiden, på fejlsiden og i ændringsloggen. Den viser, hvem der driver siden, kontaktadressen og et link til den fælles privatlivstekst på https://info.nicco.dk/privatliv/ Globus får ikke sin egen privatlivstekst, og udkastet er fjernet.
+
+**Ændret i driften**
+- Repoet er offentligt fra 14. oktober kl. 07.20.
+- Kørslen hver time udruller kun, når varslerne eller konfliktstregerne er ændret. Vagten for smittekørslen er et trin i samme kørsel.
+
 ## 13. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten

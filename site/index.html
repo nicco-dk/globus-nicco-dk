@@ -9,6 +9,8 @@
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/manifest.webmanifest">
+<!-- Den fælles fod for nicco.dk. Kører, når siden er læst, og lægger sig i #nicco-fod i sidens fod. -->
+<script src="https://info.nicco.dk/fod.js" defer></script>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#070d14" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#e9eff4" media="(prefers-color-scheme: light)">
@@ -3614,6 +3616,8 @@ const footEl = document.getElementById('foot');
 footEl.textContent =
   'Datasæt pr. ' + fmtDate(DATA_DATO) + '. ' + EVENTS.length + ' hændelser med ' + EVENTS.reduce((n,e)=>n+e.tl.length,0) + ' daterede forløbspunkter og ' + EVENTS.reduce((n,e)=>n+(e.nodes?e.nodes.length:0),0) + ' stedknuder, sammenstillet fra WHO, ECDC, US CDC, UKHSA, PAHO, GPEI, RIVM, Statens Serum Institut, nationale myndigheder, fagtidsskrifter og nyhedsmedier. Linjer tegnes kun, hvor en kilde dokumenterer en retning. Kilder mærket medie eller sekundær er ikke myndighedsbekræftede. Hver opdatering står i ';
 { const a = el('a','','ændringsloggen'); a.href = '/log'; footEl.append(a, '.'); }
+// Den fælles fod for nicco.dk (afsender, kontakt og privatliv) hentes fra info.nicco.dk og lægges her.
+{ const f = document.createElement('div'); f.id = 'nicco-fod'; footEl.appendChild(f); }
 
 // ---------- retningsknapper, filtre under kloden og forklaringer ved musen ----------
 const rchips = document.getElementById('rchips');

