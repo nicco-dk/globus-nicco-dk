@@ -27,6 +27,15 @@
     "EG-SA": { "dato": "2026-10-13", "grund": "Egypten er nævnt, fordi en egyptisk kabineansat blev dræbt i Houthi-angrebet på Riyadhs lufthavn, ikke som part i kampene." },
     "GB-IR": { "dato": "2026-10-13", "grund": "Artiklerne handler om britisk efterretningstjenestes advarsler om iranske planer og hybride trusler mod Storbritannien, ikke om kampe mellem landenes styrker." },
     "CN-US": { "dato": "2026-10-13", "grund": "Artiklerne handler om handelskrig, datacentre og forhandlinger mellem landenes ledere, ikke om væbnede sammenstød." },
-    "MX-US": { "dato": "2026-10-13", "grund": "Artiklerne handler om kriminalitet, en drabssag og amerikansk indenrigspolitik, ikke om kampe mellem landenes styrker." }
+    "MX-US": { "dato": "2026-10-13", "grund": "Artiklerne handler om kriminalitet, en drabssag og amerikansk indenrigspolitik, ikke om kampe mellem landenes styrker." },
+    "US-YE": { "dato": "2026-10-14", "grund": "USA er nævnt, fordi en amerikaner blev dræbt i Houthi-angrebet på Riyadhs lufthavn, og fordi medierne drøfter, om USA vil gribe ind. Der er ikke beskrevet amerikanske angreb på Houthi-bevægelsen i perioden." },
+    "IR-RU": { "dato": "2026-10-14", "grund": "Artiklerne handler om britisk efterretningstjenestes advarsler om iranske og russiske trusler mod Storbritannien og om en aftale om diesel, ikke om kampe mellem Iran og Rusland." },
+    "EG-IL": { "dato": "2026-10-14", "grund": "Artiklerne handler om nødhjælp til Gaza gennem Egypten og israelske angreb i Gaza. Egypten er ikke part i kampene." },
+    "PS-US": { "dato": "2026-10-14", "grund": "Artiklerne handler om amerikansk indenrigspolitik, en fotopris og kort over Gaza, ikke om kampe mellem palæstinensiske og amerikanske styrker." },
+    "JP-KP": { "dato": "2026-10-14", "grund": "Artiklerne handler om nordkoreanske missilprøver i havet mellem Korea og Japan, ikke om angreb på Japan." },
+    "GB-PS": { "dato": "2026-10-14", "grund": "Artiklerne handler om britiske sanktioner mod bosættelser og en diplomatisk strid om konsulatet i Østjerusalem, ikke om kampe." },
+    "DE-RU": { "dato": "2026-10-14", "grund": "Artiklerne handler om retssagen om sprængningen af Nord Stream og NATO's forsvarsplaner, ikke om kampe mellem Tyskland og Rusland." },
+    "JP-US": { "dato": "2026-10-14", "grund": "Artiklerne handler om en drabssag på Okinawa, hvor en amerikansk marinesoldat er mistænkt, ikke om kampe mellem landenes styrker." },
+    "EG-YE": { "dato": "2026-10-14", "grund": "Egypten er nævnt, fordi en egyptisk kabineansat blev dræbt i Houthi-angrebet på Riyadhs lufthavn, ikke som part i kampene." }
   }
 }

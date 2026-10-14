@@ -29,6 +29,35 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `ebola-nl`, skal `live` sættes til `false`, nu da patienten er rask og udskrevet.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), DGHS' mæslinger og dengue (allerede indarbejdet pr. 13. oktober), Sri Lankas dagstal (12. oktober, allerede indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1064, ECDC's ugerapport uge 41, UKHSA's udgivelser (ugeoversigten over udbrud kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. ECDC's ebolaside (uændret, 8.978 bekræftede og 4.336 dødsfald pr. 10. oktober). DR Congos situationsrapporter 150 til 152 (findes ikke på den faste adresse). Statens Serum Instituts liste over aktuelle sygdomsudbrud og DK-VET's nyheder (intet nyt). Søgninger efter nyt fra WHO AFRO, Africa CDC og PAHO (intet nyt fundet).
+
+**Ændret**
+- `ebola-drc`: 9.066 bekræftede tilfælde og 4.381 dødsfald efter sundhedsministeriets rapport offentliggjort 13. oktober. Rapporten har 88 nye tilfælde, og 65 sundhedszoner i syv provinser er ramt. Gengivet af AP (https://abcnews.com/Health/wireStory/congos-confirmed-ebola-cases-exceed-9000-containment-efforts-137233349) og Al Jazeera (https://www.aljazeera.com/news/2026/10/13/dr-congo-ebola-cases-pass-9000-as-efforts-to-curb-transmission-falter), som har de samme tal. Nyt punkt i forløbet, `cases` og `extra` er opdateret, og de to artikler er sat i `src` med tilføjelsen `, medie`. Talserien er ikke opdateret, se Usikkert.
+- `h5n1-us`: nyt punkt 8. oktober. Washingtons landbrugsministerium WSDA melder delstatens første fund af H5N1 i malkekvæg på to bedrifter i Yakima County, bekræftet af USDA's laboratorium NVSL. Bedrifterne er i karantæne, og malkekvæg i 19 stater er smittet siden marts 2024: https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47359 Fundet er set hos CIDRAP 13. oktober. Yakima County er ny stedknude, og WSDA er sat i `src`.
+
+**Nye**
+- Ingen. NaTHNaC melder 2.065 bekræftede tilfælde af chikungunya i Fransk Guyana i 2026 pr. 8. oktober. Det er ikke taget med, fordi den oprindelige myndighed ikke er fundet, og ingen myndighed kalder det usædvanligt. Dengue på Marshalløerne er fortsat ikke taget med af samme grund.
+
+**Urørt**
+- 37 hændelser uden nyt i kilderne.
+- Rundtur: `mpox` 30 dage siden seneste punkt, WHO's situationsrapport nummer 70 findes ikke på den faste adresse. `chik-am` 22 dage, intet nyt fra PAHO. `cchf-ir` 24 dage, `difteri-ng` 20 dage, `h5n1-kh` 16 dage og `anthrax-zm` 16 dage: søgt, intet nyt fra myndighederne. `h5n1-dk` 13 dage og `salmonella-dk` 13 dage: DK-VET og SSI uændret. `difteri-afro` 17 dage, `mpox-mo` 14 dage og `cre-eu` 12 dage er ikke slået op igen, fordi kørslerne kl. 17.20 og 00.20 slog dem op uden nyt. `altnv-cn` 16 dage har ingen løbende kilde.
+
+**Usikkert**
+- `ebola-drc`: sundhedsministeriets rapport er ikke fundet selv. Situationsrapporterne efter nummer 149 ligger ikke på den faste adresse, og Reuters' artikel kunne ikke hentes. Tallene er derfor gengivet af to medier, og opgørelsesdatoen kendes ikke, kun at rapporten blev offentliggjort 13. oktober. 9.066 er 88 flere end tallet pr. 10. oktober, så rapporten dækker formentlig 11. oktober, men det er ikke bekræftet. Tallet er derfor ikke sat i talserien.
+- `mpox`: kontrollen advarer om en aktiv hændelse uden nyt punkt fra i morgen. WHO kalder det fortsat en graderet nødsituation i rapport 69, så `live` står.
+- Kontrollen advarer fortsat om 12 hændelser, hvor `cases` har tal uden opgørelsesdato.
+
+**Mediesporet**
+- De ti mest omtalte par med status afventer er gennemgået.
+- Godkendt: ingen.
+- Afvist: `US-YE` (amerikaner dræbt i Houthi-angrebet på Riyadh, og medierne drøfter et muligt amerikansk svar, men beskriver ingen angreb: https://www.cbsnews.com/news/iran-war-houthis-saudi-arabia-trump-faces-difficult-dilemma/ og https://www.wsj.com/opinion/saudi-arabia-houthi-attacks-iran-donald-trump-mohammed-bin-salman-856a0c23), `IR-RU` (britiske advarsler om trusler og en dieselaftale: https://www.nytimes.com/2026/10/13/world/europe/mi5-uk-threat-iran-russia.html og https://www.theguardian.com/us-news/2026/oct/11/trump-russia-diesel-deal-putin-little-impact-prices), `EG-IL` (nødhjælp til Gaza og israelske angreb i Gaza: https://www.thenationalnews.com/news/uae/2026/10/13/uae-food-aid-reaches-gaza-through-ahmed-bin-rashid-humanitarian-bridge/ og https://www.thehindu.com/news/international/israel-strikes-gaza-on-october-7-anniversary-three-dead-officials/article71556404.ece), `PS-US` (amerikansk indenrigspolitik og kort over Gaza: https://www.aljazeera.com/news/2026/10/12/maps-show-how-israels-yellow-line-keeps-squeezing-palestinians-in-gaza og https://www.hindustantimes.com/world-news/us-news/mamdani-under-fire-for-dining-at-palestinian-restaurant-in-nyc-on-october-7-anniversary-making-quite-a-statement-101791451686487.html), `JP-KP` (missilprøver i havet: https://www.euronews.com/2026/10/12/north-korea-fires-several-ballistic-missiles-into-sea-of-japan-seouls-military-says og https://www.france24.com/en/asia-pacific/20261012-north-korea-ballistic-missiles-sea-japan-seoul), `GB-PS` (sanktioner og strid om konsulatet: https://aa.com.tr/en/europe/interview-uk-sanctions-on-israeli-settlements-welcome-but-not-far-enough-says-labour-lawmaker-john-mcdonnell/4085836 og https://www.aljazeera.com/news/2026/10/8/has-israel-shut-the-uk-consulate-in-east-jerusalem-or-downgraded), `DE-RU` (retssagen om Nord Stream: https://www.bbc.co.uk/news/articles/cw99zpmnxzmjo og https://www.dw.com/en/nord-stream-pipeline-sabotage-suspect-on-trial-germany-hamburg/a-79647617), `JP-US` (drabssag på Okinawa: https://www.cbsnews.com/news/okinawa-us-troops-off-duty-behavior-rules-japan-review-womans-killing/ og https://www.channelnewsasia.com/east-asia/japan-okinawa-alleged-murder-woman-us-marine-6449876) og `EG-YE` (egyptisk kabineansat dræbt i Houthi-angrebet på Riyadh: https://www.aljazeera.com/video/newsfeed/2026/10/13/funeral-for-egyptian-flight-attendant-killed-in-houthi-attack-on-riyadh og https://www.nbcnews.com/world/middle-east/iran-backed-houthis-claim-new-attacks-saudi-arabia-yemens-aden-airport-rcna602020).
+- Ikke afgjort: `IL-SY`. FN's menneskerettighedskontor har registreret 280 væbnede israelske indtrængninger i det sydlige Syrien i september med razziaer, tilbageholdelser og ødelæggelse af afgrøder, og Tyrkiet beder Israel standse angrebene i Syrien: https://www.thenationalnews.com/news/mena/2026/10/10/israel-holding-49-syrians-after-280-armed-incursions-in-september-says-un/ og https://aa.com.tr/en/turkiye/turkiye-urges-israel-to-stop-reckless-attacks-in-syria/4086708 Artiklerne beskriver ikke kampe med syriske regeringsstyrker. Parret står som afventer, se GENNEMGANG.md.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `IL-SY` i mediesporet.
+
 ## 13. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten

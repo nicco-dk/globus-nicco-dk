@@ -8,6 +8,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 ## Mediesporet
 
+- `IL-SY` (kørslen 14. oktober kl. 05.20): FN's menneskerettighedskontor melder 280 væbnede israelske indtrængninger i det sydlige Syrien i september med razziaer, tilbageholdelser og ødelæggelse af afgrøder, og Israel bygger en befæstet linje i Quneitra. Artiklerne beskriver ikke kampe med syriske regeringsstyrker. Kilder: https://www.thenationalnews.com/news/mena/2026/10/10/israel-holding-49-syrians-after-280-armed-incursions-in-september-says-un/ og https://aa.com.tr/en/turkiye/turkiye-urges-israel-to-stop-reckless-attacks-in-syria/4086708 Tæller væbnede indtrængninger og besættelse af syrisk område som angreb mellem parterne, eller skal parret afvises efter reglen om direkte kampe?
+
 ## Datasættet: gamle punkter og tekster
 
 - 15 hændelser har tal i `cases` uden opgørelsesdato: difteri-ng, mpox, ebola-nl, cchf-es, malaria-de, h5n1-dk, salmonella-dk, h5n1-kh, h5n1-bd, h9n2-cn, cchf-ir, sfts-th, altnv-cn, mers-sa, chik-am. Kl. 00-kørslen tager tre ad gangen, se Vagtplan i OPDATERING.md.
