@@ -60,6 +60,9 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `kolera`, to forskellige datoer for udbruddet i Zambia.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), DGHS' mæslinger og dengue (meddelelsen og dashboardet pr. 14. oktober er allerede indarbejdet), WHO SEARO's bulletin nummer 20 (næste ventes 21. oktober), WHO WPRO's oversigt nummer 1064 (udgaven fra 9. oktober findes fortsat ikke på den faste adresse eller WPRO's oversigtsside), ECDC's ugerapport uge 41, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 14. og 15. oktober. WHO EMRO's nyheder (seneste om sundhedsbehovet i regionen 14. oktober, intet hændelsesspecifikt). GPEI Polio This Week (stadig udgaven pr. 7. oktober). Søgninger efter nyt om fugleinfluenza i Cambodja, Bangladesh og Kina, MERS i Saudi-Arabien, Krim-Congo hæmoragisk feber i Iran og mpox i Hongkong. Sri Lankas National Dengue Control Unit kunne ikke hentes ad nogen af de to veje (curl: forbindelsen nulstillet, hentningsværktøjet: afvist af robots.txt), så `dengue-asien` står urørt pr. 12. oktober. Udrulningen fejler fortsat ved Cloudflares godkendelse (kode 6111), se GENNEMGANG.md.
+
 ## 14. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
