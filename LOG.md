@@ -2,6 +2,32 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 16. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), DGHS' mæslinger og dengue (allerede indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1065, ECDC's ugerapport uge 41 (næste udkommer fredag), UKHSA's udgivelser (ugeoversigten uge 41 er indarbejdet af kørslen kl. 17.20), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. ECDC's ugerapport uge 40 for tal og datoer til `cases`. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober, intet nyt). DK-VET's nyheder (intet nyt efter fundet i sæler). RIVM's side om ebola (seneste melding om patienten 10. oktober, ny oversigt 12. oktober om DR Congo og Kenya). Robert Koch Instituts Epidemiologisches Bulletin 42/2026 af 15. oktober (STIKO's anbefaling om vaccination mod zoonotisk influenza A(H5), ingen udbrud). Koordinaterne i alle hændelser og stedknuder er kontrolleret for ombyttet længde- og breddegrad. Ingen fejl fundet.
+
+**Ændret**
+- `mers-sa`: `cases` har fået kilde og dato: 2 tilfælde og 1 dødsfald i 2026, ECDC pr. 29. september: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf Tallene er uændrede.
+- `h9n2-cn`: `cases` har fået kilde og dato: WHO Vestlige Stillehav pr. 25. september. ECDC's ugerapport uge 40 skriver, at de to tilfælde blev meldt i WHO Vestlige Stillehavs ugeoversigt nummer 1063 offentliggjort 25. september: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf Tallene er uændrede.
+- `chik-am`: `cases` har fået kilde og dato: 250.051 tilfælde og 87 dødsfald i 26 lande uden EU og EØS, ECDC pr. 30. august, efter samme ugerapport. Tallene er uændrede.
+
+**Nye**
+- Ingen. CIDRAP omtaler 14. oktober en undersøgelse i CDC's tidsskrift Emerging Infectious Diseases, hvor fire isbjørne i Østgrønland i 2025 havde antistoffer mod H5N1: https://www.cidrap.umn.edu/avian-influenza-bird-flu/greenland-4-polar-bears-test-positive-h5n1-avian-flu-antibodies Ikke taget med, fordi det er antistoffer fra prøver taget i 2024 og 2025 i en forskningsundersøgelse og ikke et aktuelt udbrud meldt af en myndighed.
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Europa op. Resten hører til de andre kørsler i vagtplanen.
+- `ebola-nl`: RIVM har intet nyt om patienten efter 10. oktober. `wnv-eu`, `dengue-eu`, `chik-fr`, `cchf-es`, `salmonella-eu`, `cre-eu` og `sindbis-de`: ECDC's næste ugerapport kommer fredag. `salmonella-dk` 15 dage siden seneste punkt og `h5n1-dk` 15 dage: SSI og DK-VET er uændrede.
+
+**Usikkert**
+- `wnv-eu` og `chik-fr`: NaTHNaC melder 15. oktober 178 lokalt erhvervede tilfælde af vestnilfeber og 162 af chikungunya i Frankrig pr. 12. oktober, og Outbreak News Today skriver 443 tilfælde af vestnilfeber i Grækenland. Den oprindelige myndighed er ikke slået op i denne kørsel, og ECDC's ugerapport fredag ventes. Ikke sat ind.
+- Kontrollen advarer nu om 6 hændelser, hvor `cases` har tal uden opgørelsesdato.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk. `main` var skrevet om siden klonen blev lavet (tvungen opdatering). Kørslen arbejder på det seneste commit 206ae9f.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 15. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
