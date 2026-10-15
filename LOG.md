@@ -30,6 +30,36 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: botulisme efter kosmetisk behandling i Danmark.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), DGHS' mæslinger og dengue (allerede indarbejdet pr. 14. oktober), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1064, ECDC's ugerapport uge 41 (næste udkommer fredag), UKHSA's udgivelser (ugeoversigten over udbrud for uge 41 var endnu ikke udkommet), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter (151 er fortsat den nyeste på insp.cd). ECDC's ebolaside (9.144 og 4.410 pr. 12. oktober, som allerede står på siden). US CDC om mæslinger (uændret, 4.080 pr. 8. oktober, opdateret 9. oktober) og cyclospora (udbruddet erklæret slut 11. september). PAHO's epidemiologiske alarmer og opdateringer (seneste 26. august) og situationsrapporter om mæslinger (nummer 14 findes ikke endnu). Statens Serum Instituts liste over aktuelle sygdomsudbrud og DK-VET's nyheder (intet nyt). Søgninger efter nyt fra WHO AFRO, Africa CDC, om kolera i Zambia, ebola i Kenya, difteri i Nigeria, miltbrand i Zambia, Krim-Congo hæmoragisk feber i Iran, fugleinfluenza i Cambodja og klade I-mpox i USA.
+
+**Ændret**
+- Ingen hændelser. Kun `DATA_DATO` og `DATA_TID` er sat.
+
+**Nye**
+- Ingen. NaTHNaC melder vestnilfeber i USA (1.328 tilfælde pr. 13. oktober). Ikke taget med, fordi det er den almindelige sæson, og ingen myndighed kalder den usædvanlig.
+
+**Urørt**
+- Alle 41 hændelser. Ingen af de samlede kilder har nyt, der ikke allerede står på siden.
+- Rundtur: `cchf-ir` 25 dage siden seneste punkt, `chik-am` 23, `difteri-ng` 21, `difteri-afro` 18, `anthrax-zm` 17, `h5n1-kh` 17, `altnv-cn` 17, `mpox-mo` 15, `h5n1-dk` 14, `salmonella-dk` 14, `cre-eu` 13, `maesling-am` 12 og `cyclospora-us` 10: søgt eller slået op, intet nyt fra myndighederne. Nigerias NCDC har ikke lagt ugerapporter ud efter uge 25 de steder, søgningen finder.
+
+**Usikkert**
+- `kolera`: NaTHNaC melder 14. oktober 909 tilfælde i Zambia, heraf 149 bekræftede, og 25 dødsfald siden udbruddet blev erklæret 28. juli: https://travelhealthpro.org.uk/outbreaks Punktet 8. oktober siger efter WHO, at Zambia erklærede et nyt udbrud 29. september. Datoerne passer ikke sammen, og Zambias egen myndighed er ikke fundet. Ikke sat ind.
+- `cchf-ir`: 25 dage uden nyt punkt. Kontrollen advarer efter 30 dage. Ingen iransk udmelding fundet.
+- Mediesporet: https://globus.nicco.dk/konflikter.json er fra 14. oktober kl. 08.24 dansk tid, fordi udrulningen fejler. Parrene er derfor tjekket ud fra den udgave.
+- `TR>SA`: godkendt på tyrkiske embedsmænds oplysninger til Middle East Eye om luftforsvar og udstyr i Saudi-Arabien siden 2025 og Pakistans forsvarsministers udtalelse til Geo News gengivet af Al Jazeera. Tyrkiets udenrigsminister siger, at yderligere udstationering kræver parlamentets godkendelse.
+- Udrulningen til Cloudflare fejler fortsat ved godkendelsen i alle timekørsler fra kl. 00.23 til 04.23 dansk tid 15. oktober, se GENNEMGANG.md. Data fra 14. oktober middag og frem er derfor ikke live.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk, og udrulningen følges gennem GitHubs MCP-værktøjer, fordi `gh api` afviser viderestillingen.
+
+**Mediesporet**
+- Otte par med status afventer er gennemgået, ud over `IL-SY`, som venter på ejeren. De øvrige par med status afventer i filen blev afgjort i kørslen 14. oktober kl. 17.20.
+- Godkendt: `PK>SA` (militær støtte: Pakistan har styrker i Saudi-Arabien under Mekka-pagten, og militærets talsmand bekræfter, at de er i landet: https://www.aljazeera.com/news/2026/10/6/pakistan-turkiye-join-saudi-deterrence-against-houthis-what-that-means og https://www.uniindia.com/world/defence-pak-saudi-deployment/207608) og `TR>SA` (militær støtte: tyrkiske tekniske hold, luftforsvarssystemer og udstyr til elektronisk krigsførelse i Saudi-Arabien: https://www.middleeasteye.net/news/turkey-rules-out-launching-attacks-yemen-saudi-arabia og https://www.aljazeera.com/news/2026/10/6/pakistan-turkiye-join-saudi-deterrence-against-houthis-what-that-means).
+- Afvist: `GB-US` (MI5's advarsler og en dødsulykke i en zoo: http://www.jpost.com/international/article-911583 og https://www.newsweek.com/man-killed-after-entering-uk-tiger-enclosure-similar-us-zoo-incidents-12551656), `JO-PS` (israelske angreb og razziaer i Gaza og på Vestbredden: https://www.middleeasteye.net/live-blog/live-blog-update/israel-kills-eight-gaza-families-forced-flee-homes og https://www.arabnews.com/middle-east/israeli-forces-detain-interrogate-95-palestinians-amid-west-bank-olive-harvest-rights-group-says-3005333), `SY-TR` (Houthi-angreb på Riyadh og israelske indtrængninger i Syrien: https://www.jpost.com/middle-east/article-911068 og https://www.thenationalnews.com/news/mena/2026/10/10/israel-holding-49-syrians-after-280-armed-incursions-in-september-says-un/), `QA-SA` (Qatars støtte til Saudi-Arabien og Houthi-angreb: https://www.middleeasteye.net/live-blog/live-blog-update/qatars-former-pm-urges-decisive-support-saudi-arabia-after-airport og https://www.al-monitor.com/originals/2026/10/booms-and-flight-disruptions-riyadh-saudi-houthi-war-escalates), `CN-IR` (Trump siger, at Kina og Rusland ikke hjælper Iran: https://www.arabnews.com/world/trump-says-he-does-not-believe-china-and-russia-are-helping-iran-at-all-3006030 og https://www.dailysabah.com/world/americas/china-russia-have-too-much-to-lose-by-enabling-tehran-trump) og `PL-RU` (Polens forsvarsproduktion og russiske angreb i Ukraine: https://www.euronews.com/2026/10/13/europe-must-switch-to-war-mode-defence-production-polish-defence-minister-says og https://www.theguardian.com/world/2026/oct/12/zelenskyy-vows-retaliate-russia-strikes-ukraine-power-grid).
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `kolera`, to forskellige datoer for udbruddet i Zambia.
+
 ## 14. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
