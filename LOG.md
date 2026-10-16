@@ -28,6 +28,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON 620 fra 10. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober, som står på siden) og dengue (dashboardet pr. 15. oktober er indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1065, ECDC's ugerapport uge 41 (uge 42 udkommer i dag, fredag, senere end denne kørsel), UKHSA (ugeoversigten uge 41 er indarbejdet), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapport 152 (153 findes endnu ikke på den faste adresse). Floridas ugerapport uge 40. GPEI Polio This Week pr. 14. oktober. US CDC om mæslinger (uændret, 4.080 pr. 8. oktober, opdateret 9. oktober). FN's nyhedstjeneste om WHO's udtalelse om ebola i Kenya 15. oktober (intet nyt tal). Søgninger efter nyt fra WHO AFRO, Africa CDC og PAHO (ingen nye rapporter fundet) og om fugleinfluenza i Cambodja, Krim-Congo hæmoragisk feber i Iran og miltbrand i Zambia. Statens Serum Institut, DK-VET, RIVM og Robert Koch Institut blev gennemgået af kørslen kl. 00.20 og er ikke slået op igen.
+
+**Ændret**
+- `ebola-drc`: 9.212 bekræftede tilfælde og 4.441 dødsfald, DR Congos sundhedsministerium pr. 13. oktober, situationsrapport 152 offentliggjort 14. oktober: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_152_13_10_2026.pdf 68 nye tilfælde på et døgn (Ituri 41, Nordkivu 25, Haut-Uélé 2) og 31 nye dødsfald. Tallene er læst i PDF'ens tekstlag og som billede af forsiden, og de stemmer med rapport 151 plus døgnets tal. Nyt punkt 14. oktober i forløbet og i talserien (13. oktober), `cases` og `extra` er opdateret. Rapport 152 har erstattet 151 i `src`, fordi punktet 13. oktober selv bærer rapport 151.
+- `dengue-fl`: 368 lokalt erhvervede tilfælde i 8 counties, Floridas sundhedsmyndighed pr. 10. oktober, ugerapport uge 40: https://www.floridahealth.gov/wp-content/uploads/2026/10/fl-arbovirus-report-w40-2026.pdf 72 nye på en uge, Hillsborough 310 og Pinellas 37. Nyt punkt i forløbet og i talserien, `cases` og `extra` er opdateret. Uge 40 har erstattet uge 39 i `src`, fordi punktet 3. oktober selv bærer uge 39.
+- `polio`: Afghanistan 36 og Pakistan 6 tilfælde af vild poliovirus type 1 i 2026, GPEI pr. 14. oktober: https://polioeradication.org/about-polio/polio-this-week/ GPEI har nu samme tal for Pakistan som landets polioprogram, så den del af `gap` er fjernet. Vaccineafledt type 2: DR Congo 71, Mali 5. Vaccineafledt type 1: Sydsudan 16, Madagaskar 4. Vaccineafledt type 3: Nigeria 13. Nyt punkt i forløbet, `cases`, `extra` og `note` er opdateret.
+
+**Nye**
+- Ingen. CIDRAP skriver 15. oktober, at USDA har bekræftet H5N1 i to malkekvægsbesætninger i Yakima County i Washington, statens første: https://www.cidrap.umn.edu/avian-influenza-bird-flu/washington-state-confirms-first-h5n1-avian-flu-detection-dairy-cattle Ikke taget med, fordi `h5n1-us` handler om fjerkræ, og delstatens egen udmelding ikke er slået op.
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne.
+- Rundtur: `cchf-ir` 26 dage siden seneste punkt, `chik-am` 24, `difteri-ng` 22, `difteri-afro` 19, `anthrax-zm` 18, `h5n1-kh` 18, `altnv-cn` 18, `mpox-mo` 16, `h5n1-dk` 15, `salmonella-dk` 15, `cre-eu` 14, `maesling-am` 13 og `cyclospora-us` 11: søgt eller slået op, intet nyt fra myndighederne. Den nyeste ugerapport fra Nigerias NCDC, søgningen finder, er uge 31 (offentliggjort 24. august), som er ældre end tallene på siden.
+
+**Usikkert**
+- `kolera`: CIDRAP skriver 15. oktober efter WHO, at DR Congo har over 51.400 tilfælde og 1.487 dødsfald i 21 provinser i 2026: https://www.cidrap.umn.edu/west-nile/quick-takes-west-nile-deaths-us-cholera-dr-congo-yemen-avian-flu-uptick-us WHO's egen udmelding er ikke fundet, så tallet er ikke sat ind.
+- `cchf-ir`: 26 dage uden nyt punkt. Kontrollen advarer efter 30 dage. Ingen iransk udmelding fundet.
+- `ebola-drc`: rapport 152 skriver "Nord -Kivi" i overskriftsteksten. Tabellen og resten af rapporten har Nord-Kivu. Tallene er læst i tabellen.
+- Kontrollen advarer fortsat om 6 hændelser, hvor `cases` har tal uden opgørelsesdato.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk. `main` var skrevet om siden klonen blev lavet (tvungen opdatering). Kørslen arbejder på det seneste commit 95ff7dd.
+
+**Mediesporet**
+- Ét par har status afventer: `IL-SY`, som venter på ejerens afgørelse i GENNEMGANG.md. Ikke afgjort. Stregens nye artikler (blandt andre Anadolu 15. oktober om israelske styrker, der satte ild til et hus og et foderlager i det sydlige Syrien: https://aa.com.tr/en/middle-east/israeli-forces-set-fire-to-house-animal-feed-warehouse-in-southern-syria/4089508) beskriver fortsat ikke kampe med syriske regeringsstyrker.
+- Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 15. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
