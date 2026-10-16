@@ -1196,9 +1196,9 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-10-16';
+const DATA_DATO = '2026-10-17';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-16T17:37+02:00';
+const DATA_TID = '2026-10-17T00:26+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1414,16 +1414,15 @@ const EVENTS = [
      ['2026-10-10','RIVM melder, at patienten er rask og tester negativ for ebolavirus. Isolationen er ophævet, og patienten forlod hospitalet dagen før','',['RIVM','https://www.rivm.nl/en/ebola/current-information']]],
  src:[['WHO DON 619','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON619'],['ECDC','https://www.ecdc.europa.eu/en/news-events/risk-general-population-remains-very-low-following-fourth-imported-ebola-case-europe'],['RIVM','https://www.rivm.nl/en/ebola/current-information']]},
 
-{id:'wnv-eu',place:'208 områder i 18 lande',country:'EU, EØS og nabolande',region:'Europa',lat:42.5,lon:12.5,
+{id:'wnv-eu',place:'222 områder i 19 lande',country:'EU, EØS og nabolande',region:'Europa',lat:42.5,lon:12.5,
  disease:'West Nile-feber',pathogen:'West Nile-virus',stage:'spredning',live:true,
- cases:'1.855 lokalt erhvervede tilfælde i 18 lande, ECDC pr. 7. oktober',
- extra:'Italien 748 tilfælde i 67 områder, Grækenland 445, Frankrig 144, Spanien 139, Rumænien 117 og Nordmakedonien 70. Bulgarien med 2 tilfælde og Moldova med 1 er kommet til som nye lande. Seneste samlede dødstal er 61 pr. 3. september, hvor der var 1.086 tilfælde. ECDC opgør Europa, altså EU og EØS plus udvalgte nabolande.',
- note:'Sæsonen voksede fra et enkelt tilfælde i Nordmakedonien i maj til 202 berørte områder ved udgangen af september. Dødeligheden lå omkring 6 procent, under tiårsgennemsnittet på 10 procent. Blodbanker anvender midlertidige donorudskydelseskriterier.',
- gap:'Et samlet dødstal efter 3. september mangler, fordi dødsfald kun opgøres i de månedlige rapporter.',
- nodes:[['Nordmakedonien',21.7453,41.6086,'2026-05-12'],['Italien',12.5674,41.8719,'2026-06-17'],['Rumænien',24.9668,45.9432,'2026-07-01'],['Grækenland',21.8243,39.0742,'2026-07-08'],['Spanien',-3.7492,40.4637,'2026-07-08'],['Frankrig',2.2137,46.2276,'2026-07-22'],['Tyskland',10.4515,51.1657,'2026-07-29'],['Serbien',21.0059,44.0165,'2026-08-21'],['Albanien',20.1683,41.1533,'2026-08-21'],['Østrig',14.5501,47.5162,'2026-08-21'],['Kosovo',20.9020,42.6026,'2026-08-21'],['Nederlandene',5.2913,52.1326,'2026-08-21'],['Kroatien',15.2000,45.1000,'2026-08-26'],['Ungarn',19.5033,47.1625,'2026-08-26'],['Cypern',33.4299,35.1264,'2026-08-26'],['Belgien',4.4699,50.5039,'2026-09-17'],['Bulgarien',25.4858,42.7339,'2026-10-07']],
+ cases:'1.926 lokalt erhvervede tilfælde i 19 lande, ECDC pr. 14. oktober',
+ extra:'Italien 764 tilfælde i 70 områder, Grækenland 455, Frankrig 159, Spanien 141, Rumænien 121 og Nordmakedonien 70, ECDC pr. 14. oktober. Slovenien er kommet til med 3 tilfælde. ECDC\'s månedsrapport pr. 7. oktober opgør 130 dødsfald i EU og EØS (Italien 56, Grækenland 46, Nederlandene 10, Rumænien 7, Spanien 6, Frankrig 3, Kroatien 1 og Ungarn 1) og 11 i EU\'s kandidatlande (Nordmakedonien 10 og Kosovo 1). De 1.715 tilfælde i EU og EØS er det højeste antal nogensinde, og Grækenland og Frankrig har haft deres hidtil flest tilfælde. Belgien har haft sine første tilfælde nogensinde. ECDC opgør Europa, altså EU og EØS plus udvalgte nabolande.',
+ note:'Sæsonen voksede fra et enkelt tilfælde i Nordmakedonien i maj til 202 berørte områder ved udgangen af september. Dødeligheden lå omkring 8 procent i EU og EØS pr. 7. oktober, under tiårsgennemsnittet på 10 procent. Blodbanker anvender midlertidige donorudskydelseskriterier.',
+ nodes:[['Nordmakedonien',21.7453,41.6086,'2026-05-12'],['Italien',12.5674,41.8719,'2026-06-17'],['Rumænien',24.9668,45.9432,'2026-07-01'],['Grækenland',21.8243,39.0742,'2026-07-08'],['Spanien',-3.7492,40.4637,'2026-07-08'],['Frankrig',2.2137,46.2276,'2026-07-22'],['Tyskland',10.4515,51.1657,'2026-07-29'],['Serbien',21.0059,44.0165,'2026-08-21'],['Albanien',20.1683,41.1533,'2026-08-21'],['Østrig',14.5501,47.5162,'2026-08-21'],['Kosovo',20.9020,42.6026,'2026-08-21'],['Nederlandene',5.2913,52.1326,'2026-08-21'],['Kroatien',15.2000,45.1000,'2026-08-26'],['Ungarn',19.5033,47.1625,'2026-08-26'],['Cypern',33.4299,35.1264,'2026-08-26'],['Belgien',4.4699,50.5039,'2026-09-17'],['Bulgarien',25.4858,42.7339,'2026-10-07'],['Slovenien',14.9955,46.1512,'2026-10-14']],
  naeste:'Falder af sig selv, når myggesæsonen slutter med frosten. Det ville kun stige ved blodbåren smitte i større omfang.',
  plabel:'Lokalt erhvervede tilfælde',
- pts:[['2026-08-05',245,12],['2026-09-03',1086,61],['2026-09-17',1482,null],['2026-09-23',1569,null],['2026-09-30',1765,null],['2026-10-07',1855,null]],
+ pts:[['2026-08-05',245,12],['2026-09-03',1086,61],['2026-09-17',1482,null],['2026-09-23',1569,null],['2026-09-30',1765,null],['2026-10-07',1855,null],['2026-10-14',1926,null]],
  tl:[['2026-05-12','Sæsonens tidligste symptomdebut, registreret i Nordmakedonien','udbrud'],
      ['2026-05-27','Første ugerapport: 1 tilfælde i 1 område, Vardarski i Nordmakedonien',''],
      ['2026-06-17','Italien kommer til som det første EU-land. 3 tilfælde i 2 lande','spredning'],
@@ -1436,18 +1435,19 @@ const EVENTS = [
      ['2026-09-17','1.482 tilfælde og 180 områder i 16 lande. Belgien kommer til',''],
      ['2026-09-23','1.569 tilfælde og 186 områder',''],
      ['2026-09-30','1.765 tilfælde og 202 områder, 16 nye områder på en uge','',['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf']],
-     ['2026-10-07','1.855 tilfælde og 208 områder i 18 lande, seks nye områder på en uge. Bulgarien og Moldova kommer til','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]],
- src:[['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf'],['ECDC månedsrapport uge 37','https://www.ecdc.europa.eu/sites/default/files/documents/Communicable-disease-threats-report-week-37-2026.pdf'],['ECDC West Nile ugeside','https://wnv-weekly.ecdc.europa.eu/']]},
+     ['2026-10-07','1.855 tilfælde og 208 områder i 18 lande, seks nye områder på en uge. Bulgarien og Moldova kommer til','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']],
+     ['2026-10-14','1.926 tilfælde og 222 områder i 19 lande, 14 nye områder på en uge. Slovenien kommer til. Månedsrapporten pr. 7. oktober giver 130 dødsfald i EU og EØS og 11 i kandidatlandene, og ECDC kalder sæsonen den mest udbredte nogensinde','',['ECDC uge 42','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf']]],
+ src:[['ECDC uge 42','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf'],['ECDC månedsrapport uge 37','https://www.ecdc.europa.eu/sites/default/files/documents/Communicable-disease-threats-report-week-37-2026.pdf'],['ECDC West Nile ugeside','https://wnv-weekly.ecdc.europa.eu/']]},
 
 {id:'dengue-eu',place:'Lecce, Livorno, Firenze og fire franske klynger',country:'Italien og Frankrig',region:'Europa',lat:43.7696,lon:11.2558,
  disease:'Dengue, lokalt erhvervet',pathogen:'Dengue-virus',stage:'spredning',live:true,
- cases:'Italien 68 og Frankrig 6 lokalt erhvervede tilfælde, ECDC pr. 7. oktober',
- extra:'Italien har 6 klynger, alle aktive: Piombino i Livorno og Firenze med 36 tilfælde, Alliste i Lecce med 20, Cartigliano i Vicenza med 7, Garbagnate Milanese ved Milano med 2, Ischia ved Napoli med 2 og Rom med 1. ECDC har slået de tidligere klynger i Livorno og Firenze sammen til én. Frankrigs fire klynger i Dordogne, Tarn, Hérault og Bouches-du-Rhône er alle lukkede.',
+ cases:'Italien 70 og Frankrig 6 lokalt erhvervede tilfælde, ECDC pr. 14. oktober',
+ extra:'Italien har 7 klynger pr. 14. oktober, alle aktive, efter en ny anden klynge i Rom. Fordelingen pr. 7. oktober var 6 klynger: Piombino i Livorno og Firenze med 36 tilfælde, Alliste i Lecce med 20, Cartigliano i Vicenza med 7, Garbagnate Milanese ved Milano med 2, Ischia ved Napoli med 2 og Rom med 1. ECDC har slået de tidligere klynger i Livorno og Firenze sammen til én. Frankrigs fire klynger i Dordogne, Tarn, Hérault og Bouches-du-Rhône er alle lukkede.',
  note:'Frankrig havde sæsonens første tilfælde i juni, men Italien overhalede landet markant i september med 56 tilfælde på fire uger.',
  nodes:[['Mouleydier, Dordogne',0.5800,44.8500,'2026-06-10'],['Carmaux, Tarn',2.1500,44.0500,'2026-06-12'],['Sète, Hérault',3.7000,43.4000,'2026-07-05'],['Marseille',5.3700,43.3000,'2026-08-05'],['Lecce',18.1700,40.3500,'2026-08-20'],['Livorno',10.3100,43.5500,'2026-08-20'],['Milano',9.1900,45.4600,'2026-09-16'],['Firenze',11.2600,43.7700,'2026-09-23'],['Ischia, Napoli',13.9000,40.7300,'2026-09-23'],['Cartigliano, Vicenza',11.6900,45.7100,'2026-09-30'],['Rom',12.4964,41.9028,'2026-10-07']],
  naeste:'Falder med myggesæsonen. Det ville stige, hvis en klynge fortsatte ind i næste sæson, altså overvintrende smitte.',
  plabel:'Lokalt erhvervede tilfælde i Italien',
- pts:[['2026-09-02',3,null],['2026-09-09',24,null],['2026-09-16',37,null],['2026-09-23',47,null],['2026-09-30',59,null],['2026-10-07',68,null]],
+ pts:[['2026-09-02',3,null],['2026-09-09',24,null],['2026-09-16',37,null],['2026-09-23',47,null],['2026-09-30',59,null],['2026-10-07',68,null],['2026-10-14',70,null]],
  tl:[['2026-06-10','Frankrigs første lokalt erhvervede tilfælde får symptomdebut i Mouleydier i Dordogne','udbrud'],
      ['2026-07-22','Første ugerapport med lokal dengue: Frankrig 1 tilfælde og Italien 0',''],
      ['2026-08-19','Frankrig 4 tilfælde i tre klynger, hvoraf to er lukkede',''],
@@ -1457,21 +1457,23 @@ const EVENTS = [
      ['2026-09-16','Italien 37 tilfælde. Ny klynge i Milano-området',''],
      ['2026-09-23','Italien 47 tilfælde og 7 klynger. Fire nye: tre i Firenze og en på Ischia',''],
      ['2026-09-30','Italien 59 og Frankrig 6 tilfælde. To nye italienske klynger','',['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf']],
-     ['2026-10-07','Italien 68 og Frankrig 6 tilfælde, ni nye i Italien på en uge. Ny klynge i Rom. ECDC samler klyngerne i Livorno og Firenze til én, så Italien nu har seks klynger, alle aktive','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]],
- src:[['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf'],['ECDC dengue case-CSV','https://dengue-weekly.ecdc.europa.eu/case_summary.csv']]},
+     ['2026-10-07','Italien 68 og Frankrig 6 tilfælde, ni nye i Italien på en uge. Ny klynge i Rom. ECDC samler klyngerne i Livorno og Firenze til én, så Italien nu har seks klynger, alle aktive','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']],
+     ['2026-10-14','Italien 70 og Frankrig 6 tilfælde, to nye i Italien på en uge. Ny klynge, den anden i Rom, så Italien har syv klynger, alle aktive. Ingen af Frankrigs klynger er aktive','',['ECDC uge 42','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf']]],
+ src:[['ECDC uge 42','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf'],['ECDC dengue case-CSV','https://dengue-weekly.ecdc.europa.eu/case_summary.csv']]},
 
-{id:'chik-fr',place:'Gironde og Lot, 20 klynger',country:'Frankrig',region:'Europa',lat:45.0,lon:0.6,
+{id:'chik-fr',place:'Gironde og Lot, 21 klynger',country:'Frankrig',region:'Europa',lat:45.0,lon:0.6,
  disease:'Chikungunya, lokalt erhvervet',pathogen:'Chikungunya-virus',stage:'spredning',live:true,
- cases:'146 lokalt erhvervede tilfælde i Frankrig og 1 i Italien, ECDC pr. 7. oktober',
- extra:'18 af 20 klynger er aktive, og en ny er kommet til i Bellefont-La Rauze i Lot. De to største klynger ligger i Prayssac i Lot med 34 tilfælde og i Prignac-et-Marcamps i Gironde med 30. Italiens ene tilfælde er i Rom, og klyngen dér er fortsat aktiv.',
+ cases:'163 lokalt erhvervede tilfælde i Frankrig og 1 i Italien, ECDC pr. 14. oktober',
+ extra:'17 af 21 klynger er aktive, og en ny er kommet til i Sainte-Eulalie i Gironde. De to største klynger ligger i Prayssac i Lot med 35 tilfælde og i Prignac-et-Marcamps i Gironde med 30. Italiens ene tilfælde er i Rom, og klyngen dér er lukket.',
  note:'Usædvanligt mange lokalt erhvervede klynger på det franske fastland i 2026.',
  gap:'Årets første lokale tilfælde er ikke dateret.',
  naeste:'Samme som dengue: sæsonen lukker den. Vedvarende smitte hen over vinteren ville være et nyt signal.',
  tl:[['2026-08-07','Frankrig melder seks nye lokale tilfælde på en uge','udbrud'],
      ['2026-09-23','Frankrig 90 lokale tilfælde og Italien 1','spredning'],
      ['2026-09-30','124 lokale tilfælde i Frankrig fordelt på 19 klynger','',['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf']],
-     ['2026-10-07','146 lokale tilfælde i Frankrig efter 22 nye på en uge, fordelt på 20 klynger. Ny klynge i Bellefont-La Rauze i Lot','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]],
- src:[['ECDC uge 32','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-32-2026.pdf'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]},
+     ['2026-10-07','146 lokale tilfælde i Frankrig efter 22 nye på en uge, fordelt på 20 klynger. Ny klynge i Bellefont-La Rauze i Lot','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']],
+     ['2026-10-14','163 lokale tilfælde i Frankrig efter 17 nye på en uge, fordelt på 21 klynger, hvoraf 17 er aktive. Ny klynge i Sainte-Eulalie i Gironde. Klyngen i Rom er lukket','',['ECDC uge 42','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf']]],
+ src:[['ECDC uge 32','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-32-2026.pdf'],['ECDC uge 42','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf']]},
 
 {id:'cchf-es',place:'Salamanca og Ciudad Real',country:'Spanien',region:'Europa',lat:40.9701,lon:-5.6635,
  disease:'Krim-Congo hæmoragisk feber',pathogen:'CCHF-virus',stage:'udbrud',
@@ -1573,7 +1575,7 @@ const EVENTS = [
 
 {id:'h5n1-kh',place:'Trapeang Prasat, Oddar Meanchey',country:'Cambodja',region:'Asien',lat:14.16,lon:103.62,
  disease:'Fugleinfluenza hos menneske',pathogen:'H5N1',stage:'udbrud',live:true,
- cases:'Sjette humane tilfælde i Cambodja i 2026',
+ cases:'Sjette humane tilfælde i Cambodja i 2026. WHO Vestlige Stillehav har 5 tilfælde og 1 dødsfald i 2026 pr. 6. september, før dette tilfælde',
  extra:'40 tilfælde siden 2023 og 15 dødsfald, en dødelighed på 37,5 procent. Kontakterne fik oseltamivir forebyggende.',
  note:'En 49-årig fjerkræopdrætter med kontakt til syge og døde kyllinger blev bekræftet smittet, fire dage efter at H5N1 var bekræftet i høns på en gård i samme distrikt. Ingen tegn på smitte mellem mennesker.',
  naeste:'Rykker til smitte, hvis en kontakt uden fjerkræeksponering bliver syg. Det er det enkeltsignal, der betyder mest globalt.',
@@ -1587,8 +1589,8 @@ const EVENTS = [
 
 {id:'h5n1-bd',place:'Rangpur',country:'Bangladesh',region:'Asien',lat:25.7439,lon:89.2752,
  disease:'Fugleinfluenza hos menneske',pathogen:'H5N1',stage:'udbrud',
- cases:'Fjerde humane tilfælde i Bangladesh i 2026, alle hos børn',
- extra:'To sundhedsarbejdere testede negative, og kontakterne forblev symptomfri. WHO angiver 16 tilfælde siden 2008.',
+ cases:'Fjerde laboratoriebekræftede humane tilfælde af A(H5) i Bangladesh i 2026, WHO pr. 6. september',
+ extra:'Alle årets tilfælde har været hos børn. To sundhedsarbejdere testede negative, og kontakterne forblev symptomfri. WHO angiver 16 tilfælde siden 2008.',
  note:'Et barn med eksponering for ænder og kyllinger i husholdningen blev bekræftet smittet og kom sig. Årets første tilfælde i februar endte med dødsfald.',
  naeste:'Som i Cambodja er smitte mellem mennesker grænsen. Barnet kom sig, og kontakterne var negative.',
  tl:[['2026-02-01','Et barn i Chattogram dør og bekræftes posthumt den 7. februar som årets første tilfælde','udbrud'],
@@ -1622,7 +1624,7 @@ const EVENTS = [
 
 {id:'sfts-th',place:'Landsdækkende',country:'Thailand',region:'Asien',lat:15.87,lon:100.9925,
  disease:'SFTS',pathogen:'Dabie bandavirus',stage:'udbrud',
- cases:'3 tilfælde og 2 dødsfald i 2026',
+ cases:'3 tilfælde og 2 dødsfald i 2026, Thailands Department of Disease Control gengivet af Thai PBS World, medie, pr. 16. september',
  extra:'10 tilfælde og 5 dødsfald i alt siden 2019. Patienterne er hovedsageligt over 50 år med kontakt til kæledyr eller flåter.',
  note:'Thailand gjorde sygdommen anmeldelsespligtig efter to dødsfald i september 2026.',
  naeste:'Anmeldelsespligten fra september får tallene til at stige, uden at sygdommen nødvendigvis gør. Det skal der tages højde for.',

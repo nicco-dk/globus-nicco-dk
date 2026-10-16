@@ -2,6 +2,38 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 17. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober) og dengue (dashboardet pr. 16. oktober er indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1065, ECDC's ugerapport uge 42, UKHSA (ugeoversigten uge 41 er indarbejdet, uge 42 er ikke udkommet), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. ECDC's ugerapport uge 42 i sin helhed og uge 41 til sammenligning. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober, intet nyt). DK-VET's nyheder. RIVM's side om ebola (intet nyt efter 12. oktober). Robert Koch Instituts Epidemiologisches Bulletin 42/2026 blev gennemgået af kørslen 16. oktober kl. 00.20, og næste udgave kommer 22. oktober. WHO WPRO's oversigt nummer 1065 og WHO's risikovurdering om influenza mellem dyr og mennesker 8. august til 6. september for tal og datoer til `cases`. Den nye stedknude for Slovenien er kontrolleret mod Kroatien og Ungarn i samme hændelse.
+
+**Ændret**
+- `wnv-eu`: 1.926 lokalt erhvervede tilfælde i 19 lande og 222 områder, ECDC pr. 14. oktober, ugerapport uge 42: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf Italien 764, Grækenland 455, Frankrig 159, Spanien 141, Rumænien 121 og Nordmakedonien 70. Slovenien er kommet til med 3 tilfælde og har fået en stedknude. Månedsrapporten i samme ugerapport giver 130 dødsfald i EU og EØS og 11 i kandidatlandene pr. 7. oktober, så `gap` om det manglende dødstal er fjernet. Nyt punkt i forløbet og i talserien, `place`, `cases`, `extra` og `note` er opdateret. Uge 42 har erstattet uge 41 i `src`, fordi punktet 7. oktober selv bærer uge 41.
+- `dengue-eu`: Italien 70 og Frankrig 6 lokalt erhvervede tilfælde, ECDC pr. 14. oktober, samme ugerapport. Ny klynge, den anden i Rom, så Italien har syv klynger, alle aktive. Nyt punkt i forløbet og i talserien, `cases` og `extra` er opdateret. Uge 42 har erstattet uge 41 i `src`.
+- `chik-fr`: 163 lokalt erhvervede tilfælde i Frankrig og 1 i Italien, ECDC pr. 14. oktober, samme ugerapport. 17 nye på en uge, 21 klynger, hvoraf 17 er aktive, ny klynge i Sainte-Eulalie i Gironde, og klyngen i Rom er lukket. Nyt punkt i forløbet, `place`, `cases` og `extra` er opdateret. Uge 42 har erstattet uge 41 i `src`.
+- `h5n1-kh`: `cases` har fået kilde og dato: WHO Vestlige Stillehav har 5 tilfælde og 1 dødsfald i Cambodja i 2026 pr. 6. september, før tilfældet fra Oddar Meanchey med symptomdebut 24. september: https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261009.pdf
+- `h5n1-bd`: `cases` har fået kilde og dato: det fjerde laboratoriebekræftede humane tilfælde af A(H5) i Bangladesh i 2026, WHO pr. 6. september: https://cdn.who.int/media/docs/default-source/influenza/human-animal-interface-risk-assessments/influenza-at-the-human-animal-interface-summary-and-assessment--from-8-august-to-6-september-2026.pdf Sætningen om, at alle årets tilfælde har været hos børn, er flyttet uændret fra `cases` til `extra`, se Usikkert.
+- `sfts-th`: `cases` har fået kilde og dato: 3 tilfælde og 2 dødsfald i 2026, Thailands Department of Disease Control gengivet af Thai PBS World pr. 16. september: https://www.thaipbsworld.com/around-thailand/558076 Tallene er uændrede.
+
+**Nye**
+- Ingen. DK-VET meldte 7. oktober nye fund af rævens dværgbændelorm hos ræve på Rømø og i Midtjylland, 18 positive af 820 undersøgte ræve siden 2022: https://dkvet.dk/nyheder/2026/dvaergbaendelorm-paa-roemoe-og-i-midtjylland/ Ikke taget med, fordi det er overvågning af en parasit hos dyr uden meldte tilfælde hos mennesker og ikke et udbrud.
+
+**Urørt**
+- 35 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Europa op. Resten hører til de andre kørsler i vagtplanen.
+- `cchf-es`: ECDC melder ingen nye tilfælde, fortsat 4 pr. 14. oktober. `ebola-nl`: RIVM har intet nyt om patienten efter 10. oktober. `salmonella-dk` 16 dage siden seneste punkt og `h5n1-dk` 16 dage: SSI og DK-VET er uændrede. `salmonella-eu`, `cre-eu`, `sindbis-de` og `malaria-de`: ikke nævnt i ECDC's ugerapport uge 42.
+
+**Usikkert**
+- `wnv-eu`: ECDC skriver 222 områder i 19 lande, men listen over områder har 18 lande. Moldovas ene tilfælde har ukendt smittested. Siden skriver 19 lande, som ECDC gør.
+- `wnv-eu`: NaTHNaC skriver 748 tilfælde i Italien pr. 15. oktober og 455 i Grækenland. ECDC har 764 for Italien pr. 14. oktober. Siden følger ECDC.
+- `h5n1-bd`: WHO's risikovurdering skriver ikke, at alle årets tilfælde har været hos børn. Sætningen stod på siden før og er ikke slået op i denne kørsel.
+- `difteri-afro`: NaTHNaC skriver 161 bekræftede tilfælde og 11 dødsfald i Senegal pr. 5. oktober, mens ECDC skriver 248 bekræftede pr. 4. oktober efter Senegals sundhedsministerium. Ingen ændring, siden følger ECDC.
+- Kontrollen advarer nu om 3 hændelser, hvor `cases` har tal uden opgørelsesdato: `difteri-ng`, `cchf-ir` og `altnv-cn`.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 39edddb.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `sfts-th`, punktet 22. september er mærket omtrentligt, men Thai PBS World bragte tallene 17. september.
+
 ## 16. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
