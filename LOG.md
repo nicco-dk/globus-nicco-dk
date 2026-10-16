@@ -84,6 +84,38 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `mers-sa`, punktet 31. august og `naeste` passer ikke med WHO's nye tal.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober, også ved et nyt opslag kl. 17.26) og dengue (dashboardet pr. 16. oktober), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1065, ECDC's ugerapport uge 42 (udkom i dag), UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapport 153 (154 findes endnu ikke på den faste adresse). US CDC's side om ebola (opdateret 13. oktober) og om mæslinger (uændret, 4.080 pr. 8. oktober). PAHO's regionale situationsrapport 13 om mæslinger (allerede indarbejdet, næste 22. oktober). Kenyas sundhedsministerium hos APO Group (intet nyt efter 7. oktober). Søgninger efter nyt fra WHO AFRO, Africa CDC og WHO's samlede koleraopdatering (ingen nye rapporter fundet) og om gul feber i Ghana, miltbrand i Zambia og difteri i Nigeria (intet nyt fra myndighederne).
+
+**Ændret**
+- `ebola-drc`: 9.277 bekræftede tilfælde og 4.478 dødsfald, DR Congos sundhedsministerium pr. 14. oktober, situationsrapport 153 offentliggjort 15. oktober: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_153_14_10_2026.pdf 65 nye tilfælde på et døgn (Ituri 31, Nordkivu 28, Haut-Uélé 5, Tshopo 1) og 37 nye dødsfald. Tallene er læst i PDF'ens tekstlag og som billede af forsiden, de stemmer med rapport 152 plus døgnets tal, og ECDC's ugerapport uge 42 har de samme tal. Nyt punkt 15. oktober i forløbet og i talserien (14. oktober), `cases` og `extra` er opdateret. Rapport 153 har erstattet 152 i `src`, fordi punktet 14. oktober selv bærer rapport 152.
+- `ebola-drc`: nyt punkt 16. oktober og nyt `gap`. ECDC skriver i ugerapporten uge 42 efter medier, der citerer myndighederne, at to tilfælde er bekræftet i Nord-Ubangi, som i så fald er den ottende ramte provins: https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-42-2026.pdf Reuters skriver 15. oktober efter to unavngivne sundhedsfolk, at tilfældene ikke er meldt officielt: https://wtaq.com/2026/10/15/congo-ebola-outbreak-spreads-to-new-province-bordering-central-african-republic/ Provinsen er ikke sat på kortet, og trinnet er uændret. Ugerapporten uge 42 er sat i `src` ved siden af uge 41.
+- `ebola-ke`: `gap` er opdateret. ECDC skriver 16. oktober, at det andet tilfælde er på et behandlingscenter. Ugerapporten uge 42 er sat i `src`.
+- `dengue-bd`: 108.440 indlagte og 335 dødsfald i 2026, DGHS pr. 16. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.181 nye indlagte og 4 nye dødsfald på et døgn, uge 41 indtil videre 11.358 tilfælde og 36 dødsfald. Tallene er læst i sidens rå tekst og stemmer med gårsdagens tal plus døgnets. Nyt punkt i forløbet og i talserien, `cases` er opdateret.
+- `difteri-afro`: nyt punkt 16. oktober efter ECDC's samlede oversigt over difteri i Afrika i ugerapporten uge 42: Senegals sundhedsministerium opgør 248 bekræftede tilfælde og 11 dødsfald i 51 sundhedsdistrikter i 13 regioner pr. 4. oktober. Ugerapporten er sat i `src`.
+
+**Nye**
+- Ingen. Difteri i Marokko: ECDC skriver efter medier, der citerer Marokkos sundhedsministerium, om to familieklynger i Souss-Massa 28. september med 1 bekræftet og 8 mistænkte tilfælde, heraf 2 døde, og USA's ambassade har udsendt et sundhedsvarsel (Outbreak News Today 16. oktober: https://outbreaknewstoday.substack.com/p/morocco-health-alert-issued-due-to). Ikke taget med som egen hændelse, fordi ministeriets egen udmelding ikke er fundet. Nævnt i punktet i `difteri-afro`.
+
+**Urørt**
+- 37 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Afrika og Amerika op. Resten hører til de andre kørsler i vagtplanen.
+- `maesling-bd`: dagens meddelelse fra DGHS var ikke ude. `maesling-us`: US CDC uændret. `maesling-am`: næste PAHO-rapport 22. oktober. `gul-feber-gh` 7 dage siden seneste punkt: intet nyt efter sundhedsministerens udmelding 9. oktober. `kolera` 8 dage, `difteri-ng` 22 dage, `anthrax-zm` 18 dage, `chik-am` 24 dage, `mpox-mo` 16 dage og `cyclospora-us` 11 dage: intet nyt fra myndighederne. ECDC's ugerapport uge 42 har nye tal for `wnv-eu` (1.926 tilfælde i 19 lande), `dengue-eu` (Italien 70) og `chik-fr` (163), som hører til kørslen kl. 00.20 og ikke er sat ind.
+
+**Usikkert**
+- `ebola-drc`: Nord-Ubangi er ikke bekræftet af DR Congos myndigheder. Situationsrapport 153 skriver fortsat syv provinser.
+- `kolera`: WHO's egen udmelding om over 51.400 tilfælde i DR Congo, som CIDRAP gengav 15. oktober, er fortsat ikke fundet. Tallet er ikke sat ind.
+- `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Ikke forsøgt ad anden vej i denne kørsel, fordi Asien hører til kørslen kl. 11.20.
+- Hentningsværktøjet fik ikke lov at åbne Outbreak News Today's artikel om Marokko. Den er læst gennem Substacks API med curl.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 21888c2. GitHubs API svarer heller ikke for nicco-dk/globus-nicco-dk.
+
+**Mediesporet**
+- Ét par har status afventer: `IL-SY`, som venter på ejerens afgørelse i GENNEMGANG.md. Ikke afgjort. Stregens nye artikler (blandt andre Naharnet 16. oktober: https://www.naharnet.com/stories/en/323132-netanyahu-says-spoke-with-sharaa-during-sweida-massacres og Anadolu 16. oktober: https://aa.com.tr/en/middle-east/syria-says-it-rejects-politicizing-druze-community-for-israeli-elections/4090455) handler efter adresserne om diplomati og politik. Artiklerne er ikke læst i denne kørsel, fordi parret venter på ejeren.
+- Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 15. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
