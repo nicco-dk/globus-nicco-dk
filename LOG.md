@@ -58,6 +58,32 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (ny DON om MERS i Saudi-Arabien 15. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober, som står på siden) og dengue (dashboardet pr. 15. oktober er indarbejdet), WHO SEARO's bulletin nummer 20 (næste ventes 21. oktober), WHO WPRO's oversigt nummer 1065 (udgaven 16. oktober findes endnu ikke på den faste adresse), ECDC's ugerapport uge 41, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser til og med 16. oktober. WHO EMRO's nyheder (seneste om Yemen 6. og 13. oktober, allerede indarbejdet i `kolera-ye`). Søgninger efter nyt om Krim-Congo hæmoragisk feber i Iran og fugleinfluenza i Cambodja (intet nyt fra myndighederne).
+
+**Ændret**
+- `mers-sa`: 8 laboratoriebekræftede tilfælde og 1 dødsfald i 2026, WHO pr. 5. oktober, efter WHO's Disease Outbreak News 15. oktober: https://www.who.int/emergencies/disease-outbreak-news/item/middle-east-respiratory-syndrome-coronavirus---kingdom-of-saudi-arabia Tilfældene er fordelt på Al Jouf (1), Arar (1), Hafr Al-Batin (1), Riyadh (2), Tabuk (1) og Taif (2), uden indbyrdes smitteforbindelse og uden sekundære tilfælde, og WHO's risikovurdering er uændret moderat. Tallene er læst i WHO's dataudtræk og på læserens side. Nyt punkt i forløbet, `place`, `cases`, `extra`, `note` og `gap` er opdateret, og DON'en er sat i `src`. ECDC's tal (2 tilfælde pr. 29. september) er forklaret i `extra`. Trinnet er uændret.
+- `mpox-hk`: nyt punkt 16. oktober. Hongkongs sundhedsmyndighed CHP melder et importeret tilfælde hos en 36-årig mand, et fald på over 60 procent i bekræftede tilfælde i oktobers første 15 dage i forhold til samme periode i september, og at stedet Hutong i Mong Kok har lukket midlertidigt: https://www.info.gov.hk/gia/general/202610/16/P2026101600344.htm `extra` er opdateret med 116 tilfælde siden 2022 (91 lokale og 25 importerede), 23 tilfælde siden august og omkring 650 vaccinerede den seneste måned. `cases` er uændret, fordi CHP ikke skriver et nyt tal for 2026.
+- `h5n1-kh`: nyt punkt 9. oktober. WHO WPRO's fugleinfluenzaoversigt nummer 1065 melder tilfældet fra Oddar Meanchey med symptomdebut 24. september og skriver, at patienten er rask igen, og at alle kendte kontakter overvåges: https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261009.pdf Oversigten er sat i `src`.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Asien og Mellemøsten op. Resten hører til de andre kørsler i vagtplanen.
+- `maesling-bd`: dagens meddelelse fra DGHS var ikke ude. `dengue-bd`: dashboardet er ikke opdateret efter 15. oktober. `dengue-asien`: Sri Lankas side kunne ikke hentes, se Usikkert. `kolera-ye`: intet nyt efter 13. oktober. `cchf-ir` 26 dage siden seneste punkt og `altnv-cn` 18 dage: intet nyt fra myndighederne. `pest-irkutsk` og `polio`: intet nyt siden seneste punkt.
+
+**Usikkert**
+- `mers-sa`: WHO's dataudtræk giver DON'en nummeret 2026-DON618, som også er nummeret på DON'en om ebola i DR Congo 25. september, og adressen med nummeret fører til ebola-DON'en. Kilden er derfor sat med DON'ens egen adresse. WHO skriver i oversigten, at fem af tilfældene var 70 år eller ældre, men gennemgangen af de otte tilfælde har fire på 70 år eller derover og en på 60 til 69 år. Aldersfordelingen er ikke skrevet på siden.
+- `mers-sa`: hændelsen har ikke `live`. Ingen ændring, fordi WHO beskriver tilfældene som sporadiske, og det seneste blev bekræftet 21. september.
+- `dengue-asien`: Sri Lankas National Dengue Control Unit kunne ikke hentes ad nogen af de to veje (curl: ingen forbindelse, hentningsværktøjet: afvist af robots.txt). Tallet står pr. 12. oktober.
+- Kontrollen advarer fortsat om 6 hændelser, hvor `cases` har tal uden opgørelsesdato.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit abf767f.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `mers-sa`, punktet 31. august og `naeste` passer ikke med WHO's nye tal.
+
 ## 15. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

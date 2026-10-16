@@ -1198,7 +1198,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-10-16';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-16T05:30+02:00';
+const DATA_TID = '2026-10-16T11:25+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1577,8 +1577,9 @@ const EVENTS = [
      ['2026-03-29','En 3-årig dreng fra Banteay Ampil i samme provins bekræftes efter kontakt med syge høns',''],
      ['2026-09-23','H5N1 bekræftes i høns på en gård i Trapeang Prasat',''],
      ['2026-09-27','Den 49-årige fjerkræopdrætter bekræftes positiv',''],
-     ['2026-09-28','Sundhedsministeriet melder tilfældet. Ingen smitte mellem mennesker','']],
- src:[['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['Khmer Times, medie','https://www.khmertimeskh.com/502032805/ministry-of-health-reports-new-h5n1-case-calls-for-public-vigilance']]},
+     ['2026-09-28','Sundhedsministeriet melder tilfældet. Ingen smitte mellem mennesker',''],
+     ['2026-10-09','WHO\'s regionskontor for det vestlige Stillehav melder tilfældet fra Oddar Meanchey: en voksen mand med symptomdebut 24. september og kontakt med en fjerkræfarm. Han er rask igen, og alle kendte kontakter overvåges','',['WHO WPRO, fugleinfluenza nr. 1065','https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261009.pdf']]],
+ src:[['WHO WPRO, fugleinfluenza nr. 1065','https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261009.pdf'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['Khmer Times, medie','https://www.khmertimeskh.com/502032805/ministry-of-health-reports-new-h5n1-case-calls-for-public-vigilance']]},
 
 {id:'h5n1-bd',place:'Rangpur',country:'Bangladesh',region:'Asien',lat:25.7439,lon:89.2752,
  disease:'Fugleinfluenza hos menneske',pathogen:'H5N1',stage:'udbrud',
@@ -1708,19 +1709,20 @@ const EVENTS = [
      ['2026-10-15','107.259 indlagte og 331 dødsfald efter 10 nye dødsfald og 1.943 nye indlagte på et døgn. Uge 41 har indtil videre 10.177 tilfælde og 32 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']]],
  src:[['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php'],['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']]},
 
-{id:'mers-sa',place:'Region ikke oplyst',country:'Saudi-Arabien',region:'Mellemøsten',lat:24.7136,lon:46.6753,
+{id:'mers-sa',place:'Seks steder, blandt andre Riyadh og Taif',country:'Saudi-Arabien',region:'Mellemøsten',lat:24.7136,lon:46.6753,
  disease:'MERS',pathogen:'MERS-coronavirus',stage:'udbrud',
- cases:'2 tilfælde og 1 dødsfald i 2026, ECDC pr. 29. september',
- extra:'Begge er mænd med ukendt kontakthistorie og en medianalder på 63 år. Siden april 2012 i alt 2.649 tilfælde og 960 dødsfald. Det laveste niveau af nye tilfælde siden 2014.',
- note:'Ingen nye tilfælde i perioden og lav risiko for EU og EØS. Medtaget som sporadisk særligt farlig infektion under overvågning.',
- gap:'Regionen i Saudi-Arabien og den præcise dag for de to tilfælde er ikke offentliggjort. ECDC skriver udtrykkeligt, at der ikke findes oplysninger om de berørte regioner.',
+ cases:'8 laboratoriebekræftede tilfælde og 1 dødsfald i 2026, WHO pr. 5. oktober',
+ extra:'WHO melder 15. oktober otte tilfælde mellem 1. januar og 5. oktober: Al Jouf (1), Arar (1), Hafr Al-Batin (1), Riyadh (2), Tabuk (1) og Taif (2). Syv havde andre sygdomme, to havde direkte kontakt med kameler, og ingen var sundhedspersonale. Det ene dødsfald var en mand på 70 år eller derover fra Taif. De to seneste fik symptomer 11. og 20. september. ECDC skrev pr. 29. september 2 tilfælde og 1 dødsfald i 2026. WHO har siden 2012 fået meldt 2.643 tilfælde og 965 dødsfald globalt, heraf 2.232 tilfælde og 870 dødsfald i Saudi-Arabien, WHO pr. 5. oktober.',
+ note:'Sporadiske tilfælde af MERS i Saudi-Arabien uden indbyrdes smitteforbindelse. WHO vurderer, at de skyldes smitte fra dyr og ikke en samlet klynge, og at risikoen fortsat er moderat regionalt og globalt. Alle kontakter er fulgt op, og der er ikke fundet sekundære tilfælde. Medtaget som sporadisk særligt farlig infektion under overvågning.',
+ gap:'Seks af de otte tilfælde havde ingen kendt kontakt med kameler, og smittekilden er ikke oplyst for dem.',
  naeste:'Rykker til smitte ved en hospitalsklynge, som det er set tidligere. To tilfælde på et år er det laveste siden 2014.',
  tl:[['2012-04','De første MERS-tilfælde påvises','udbrud'],
      ['2026-03','Årets første tilfælde: en 50-årig mand med ukendt smittekilde. Han overlevede',''],
      ['2026-04','Årets andet tilfælde, som endte med dødsfald',''],
      ['2026-08-31','Skæringsdato: ingen nye tilfælde efter denne dato',''],
-     ['2026-09-29','ECDC bekræfter, at der ikke er kommet nye tilfælde','']],
- src:[['WHO EMRO marts','https://applications.emro.who.int/docs/WHOEMCSR860E-eng.pdf'],['WHO EMRO april','https://applications.emro.who.int/docs/WHOEMCSR873E-eng.pdf'],['ECDC MERS-oversigt','https://www.ecdc.europa.eu/en/middle-east-respiratory-syndrome-coronavirus-mers-cov-situation-update']]},
+     ['2026-09-29','ECDC bekræfter, at der ikke er kommet nye tilfælde',''],
+     ['2026-10-15','WHO melder otte laboratoriebekræftede tilfælde og ét dødsfald i Saudi-Arabien fra 1. januar til 5. oktober, fordelt på seks steder og uden indbyrdes smitteforbindelse. De to seneste fik symptomer i september. Ingen sekundære tilfælde, og risikoen er uændret moderat','',['WHO DON','https://www.who.int/emergencies/disease-outbreak-news/item/middle-east-respiratory-syndrome-coronavirus---kingdom-of-saudi-arabia']]],
+ src:[['WHO DON 15. oktober','https://www.who.int/emergencies/disease-outbreak-news/item/middle-east-respiratory-syndrome-coronavirus---kingdom-of-saudi-arabia'],['WHO EMRO marts','https://applications.emro.who.int/docs/WHOEMCSR860E-eng.pdf'],['WHO EMRO april','https://applications.emro.who.int/docs/WHOEMCSR873E-eng.pdf'],['ECDC MERS-oversigt','https://www.ecdc.europa.eu/en/middle-east-respiratory-syndrome-coronavirus-mers-cov-situation-update']]},
 
 {id:'kolera-ye',place:'Aden, Lahj, Abyan, Al-Dhale\'e og Taiz',country:'Yemen',region:'Mellemøsten',lat:12.7855,lon:45.0187,
  disease:'Kolera',pathogen:'Vibrio cholerae',stage:'spredning',live:true,
@@ -1914,14 +1916,15 @@ const EVENTS = [
 {id:'mpox-hk',place:'Hongkong',country:'Hongkong, Kina',region:'Asien',lat:22.3193,lon:114.1694,
  disease:'Mpox',pathogen:'Monkeypox-virus, klade ikke oplyst',stage:'smitte',live:true,
  cases:'31 tilfælde i 2026, heraf 24 lokale og 7 importerede, Hongkongs sundhedsmyndighed CHP pr. 13. oktober',
- extra:'22 af årets tilfælde er kommet siden august, altså 70 procent, ifølge CHP pr. 13. oktober. Alle 22 har oplyst seksuel kontakt med høj risiko i inkubationstiden, og de fleste var ikke vaccineret. Siden 2022 har Hongkong haft 115 tilfælde, 91 lokale og 24 importerede, alle hos mænd. Antallet af givne vaccinedoser i begyndelsen af oktober er steget med over 70 procent i forhold til samme periode i september. Omkring 360 personer med høj risiko er vaccineret på to uger.',
+ extra:'22 af årets tilfælde er kommet siden august, altså 70 procent, ifølge CHP pr. 13. oktober. CHP meldte 16. oktober et importeret tilfælde og skriver, at alle 23 tilfælde siden august har oplyst seksuel kontakt med høj risiko i inkubationstiden, og at de fleste ikke var vaccineret. Siden 2022 har Hongkong haft 116 tilfælde, 91 lokale og 25 importerede, alle hos mænd, CHP pr. 16. oktober. Antallet af bekræftede tilfælde i oktobers første 15 dage er faldet med over 60 procent i forhold til samme periode i september, og antallet af givne vaccinedoser i oktobers første to uger er steget med over 60 procent. Omkring 650 personer med høj risiko er vaccineret den seneste måned.',
  note:'Sundhedsmyndigheden CHP melder om en markant stigning i mpox i Hongkong og har udvidet vaccinationstilbuddet for at bryde smittekæderne. Genetisk analyse viser identiske sekvenser i nogle af tilfældene, hvilket ifølge CHP tyder på en fælles smittekilde og flere smittekæder blandt mænd, der har sex med mænd.',
  gap:'CHP oplyser ikke, hvilken klade der er tale om.',
  naeste:'Rykker til spredning, hvis smitten breder sig uden for den kendte risikogruppe. Falder, når der går flere uger uden nye lokale tilfælde.',
  tl:[['2026-08','Antallet af mpox-tilfælde i Hongkong begynder at stige. 21 af årets 30 tilfælde er registreret siden august','smitte',['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/10/P2026101000238.htm']],
      ['2026-10-10','CHP melder et nyt bekræftet tilfælde hos en 29-årig mand, der har oplyst en risikokontakt i Hongkong i inkubationstiden, og taler om en markant stigning. 30 tilfælde i år, heraf 23 lokale','',['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/10/P2026101000238.htm']],
-     ['2026-10-13','CHP melder et nyt bekræftet tilfælde hos en 39-årig mand, der har haft flere seksuelle kontakter med høj risiko på stedet Hutong i Mong Kok. CHP anbefaler, at stedet lukkes midlertidigt, og beder besøgende siden 14. september om at ringe til myndighedens mpoxlinje. 31 tilfælde i år, heraf 24 lokale','',['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/13/P2026101300621.htm']]],
- src:[['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/13/P2026101300621.htm'],['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/10/P2026101000238.htm']]}
+     ['2026-10-13','CHP melder et nyt bekræftet tilfælde hos en 39-årig mand, der har haft flere seksuelle kontakter med høj risiko på stedet Hutong i Mong Kok. CHP anbefaler, at stedet lukkes midlertidigt, og beder besøgende siden 14. september om at ringe til myndighedens mpoxlinje. 31 tilfælde i år, heraf 24 lokale','',['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/13/P2026101300621.htm']],
+     ['2026-10-16','CHP melder et importeret tilfælde hos en 36-årig mand, der har haft seksuel kontakt med høj risiko uden for Hongkong. CHP skriver, at antallet af bekræftede tilfælde i oktobers første 15 dage er faldet med over 60 procent i forhold til samme periode i september, og at stedet Hutong i Mong Kok har lukket midlertidigt efter CHP\'s råd','',['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/16/P2026101600344.htm']]],
+ src:[['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/16/P2026101600344.htm'],['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/13/P2026101300621.htm'],['Hongkongs sundhedsmyndighed CHP','https://www.info.gov.hk/gia/general/202610/10/P2026101000238.htm']]}
 ];
 
 // ---------- tid ----------
