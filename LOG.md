@@ -79,6 +79,18 @@ Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
 **Ændret i driften**
 - Udrulningen henter datacentrene ved hver kørsel med `tools/hent-datacentre.mjs`. Reglerne står i OPDATERING.md under Datacentre.
 
+### Kl. 15.50, datacentre: danske og udenlandske anlæg
+
+Ingen gennemgang af kilder til smitteudbruddene og ingen ændrede tal i datasættet.
+
+**Ændret på siden**
+- Laget Datacentre har fået 55 anlæg mere med kilder, i alt 149. 15 er danske: Apple i Viborg, Meta i Odense, Google i Fredericia, Microsofts anlæg i Høje-Taastrup, Køge og Roskilde, Microsofts planlagte anlæg i Tinghøj, Lunde og Bramming, Gefion i København, atNorth i Ølgod og Haslev, Prime Data Centers og Thylander i Esbjerg og GARBE på Falster. 40 er store campusser uden for USA og Epochs liste.
+- De danske og 10 af de udenlandske er efterprøvet mod kilderne felt for felt. Rettet blandt andet: Gefions indvielse er 23. oktober 2024 og investeringen 600 mio. kr. fra Novo Nordisk Fonden, Faxe Byråds afstemning om atNorth i Haslev er 28. maj 2026, og Wonder Valley i Canada har ingen IT-effekt, fordi de 7,5 GW er kraftproduktion.
+- Siger kilden ikke, om tallet er IT-effekt eller nettilslutning, står der effekt. Et felt uden kilde står som "ikke oplyst".
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md under Datacentre: de 30 udenlandske anlæg, der ikke er efterprøvet, Gefion under 50 MW og Microsofts anlæg i Roskilde.
+
 ## 16. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

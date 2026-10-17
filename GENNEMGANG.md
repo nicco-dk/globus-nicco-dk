@@ -26,3 +26,10 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 - `tools/hent-kilder.mjs` (kørslen 14. oktober kl. 11.20): delen `lk` fejlede med curl mod https://www.dengue.health.gov.lk/ efter tre forsøg, mens siden kunne læses gennem hentningsværktøjet. Var det en enkeltstående fejl, eller spærrer siden for scriptets opslag, så scriptet skal rettes?
 - Kørslens session (kørslen 14. oktober kl. 17.20): repoet kunne ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i den planlagte kørsel, og sessionen kun har adgang til mikkelnicco/globus-nicco-dk. Hentning, afsendelse og GitHubs API virkede gennem det gamle navn. Skal den planlagte opgave have repoet under det nye navn?
 - `OPDATERING.md`, afsnittet Sådan hentes kilderne (kørslen 17. oktober kl. 05.20): DR Congos situationsrapporter kan findes uden at gætte adressen gennem insp.cd's medieliste: https://insp.cd/wp-json/wp/v2/media?search=SitRep_MVEBDB&per_page=5 som viser de nyeste PDF'er med dato. Skal den vej skrives ind?
+
+## Datacentre
+
+- `tools/datacentre.json` (17. oktober): de 55 kuraterede anlæg er samlet med kilder. Alle 15 danske og 10 tilfældige udenlandske er efterprøvet felt for felt mod kilderne, og 13 fejl er rettet. De øvrige 30 udenlandske er ikke efterprøvet. Ejeren er koblet til den første kilde, og en operatør uden kilde er fjernet. Skal de 30 efterprøves, før fase 3, eller tages de af den ugentlige kørsel?
+- `dk-gefion-dcai`: Gefion er langt under 50 MW og står i et lejet datacenter i København, så den falder uden for grænsen for de andre danske anlæg. Skal den blive på kortet?
+- `dk-microsoft-roskilde`: står som under opførelse pr. 4. august 2025. Microsofts danske region åbnede 26. marts 2026, men ingen kilde siger, om netop Roskilde er i drift. Står den rigtigt?
+

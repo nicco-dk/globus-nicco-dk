@@ -567,5 +567,3830 @@
    "opslag": "1025 Jefferson Street NW, Atlanta, GA 30318"
   }
  },
- "anlaeg": []
+ "anlaeg": [
+  {
+   "id": "dk-apple-viborg",
+   "navn": "Apple Viborg",
+   "status": "drift",
+   "status_dato": "2022-03-24",
+   "lat": 56.4974,
+   "lon": 9.5842,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Foulum, Viborg, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Foulum, Viborg",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Apple",
+   "operatoer": "Apple",
+   "brugere": [
+    {
+     "navn": "Apple",
+     "sikkerhed": "sikker"
+    }
+   ],
+   "formaal": "virksomhed",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": 45000,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "100 % vedvarende energi; Apple investerer sammen med European Energy i et solcelleanlæg i Thisted og to vindmøller ved Esbjerg (forventet 62 GWh om året)",
+   "pue": null,
+   "vand": null,
+   "koeling": "køling baseret på naturlige luftstrømme",
+   "tidslinje": [
+    {
+     "dato": "2015-02-23",
+     "tekst": "Apple annoncerer datacentret i Viborg sammen med Athenry i Irland, drift forventet i 2017"
+    },
+    {
+     "dato": "2020-09-03",
+     "tekst": "Apple oplyser, at datacentret er i drift og driver App Store, Apple Music, iMessage og Siri i Europa"
+    },
+    {
+     "dato": "2022-03-24",
+     "tekst": "Apple annoncerer udvidelse af driften og anlæg til at opsamle overskudsvarme til byen"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Apple Newsroom",
+     "titel": "Apple to invest €1.7 billion in new European data centres",
+     "url": "https://www.apple.com/newsroom/2015/02/23Apple-to-Invest-1-7-Billion-in-New-European-Data-Centres/",
+     "dato": "2015-02-23",
+     "felter": [
+      "tidslinje",
+      "energikilde",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Apple Newsroom",
+     "titel": "Apple expands renewable energy footprint in Europe",
+     "url": "https://www.apple.com/newsroom/2020/09/apple-expands-renewable-energy-footprint-in-europe/",
+     "dato": "2020-09-03",
+     "felter": [
+      "status",
+      "areal_m2",
+      "energikilde",
+      "koeling",
+      "brugere",
+      "formaal",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Apple World Today (fagpresse)",
+     "titel": "Apple expanding its Danish data center in Viborg",
+     "url": "https://www.appleworld.today/2022/03/24/apple-expanding-its-danish-data-center-in-viborg/",
+     "dato": "2022-03-24",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Ingeniøren (fagpresse)",
+     "titel": "Apples datacenter sluger strøm som mindst 175.000 familier",
+     "url": "https://ing.dk/artikel/apples-datacenter-sluger-stroem-som-mindst-175000-familier-174349",
+     "dato": "2015-02-25",
+     "felter": []
+    }
+   ],
+   "noter": "Apple har ikke offentliggjort effekt eller elforbrug. Ingeniøren (25-02-2015) gengiver et skøn fra Interxions direktør på mindst 100 MW og brancheskøn på ca. 700 GWh om året; det er skøn fra tredjepart og er ikke lagt i felterne. Apple oplyste i 2015 et areal på 166.000 m², i 2020 et anlæg på 45.000 m²; feltet bruger 2020-tallet. Investeringen på 1,7 mia. euro (2015) dækker både Viborg og Athenry og er derfor ikke lagt i feltet. Datoen for Apple-siden fra 2020 er sidens opdateringsdato (3. september 2020)."
+  },
+  {
+   "id": "dk-meta-odense",
+   "navn": "Meta Odense",
+   "status": "drift",
+   "status_dato": "2020-07-07",
+   "lat": 55.3648,
+   "lon": 10.4947,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Tietgenbyen, Odense, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Tietgenbyen, Odense",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Meta",
+   "operatoer": "Meta",
+   "brugere": [
+    {
+     "navn": "Meta",
+     "sikkerhed": "sikker"
+    }
+   ],
+   "formaal": "virksomhed",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": 50000,
+   "bygninger": 2,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "100 % vedvarende vindenergi fra Facebooks egen vindmøllepark",
+   "pue": null,
+   "vand": null,
+   "koeling": "176 køleenheder med kobberspiraler, hvor serverens varme opvarmer vandet; varmen løftes med varmepumper til fjernvarmen",
+   "tidslinje": [
+    {
+     "dato": "2019-01-01",
+     "tekst": "Datacentret står færdigt og er klar til drift i slutningen af 2019 (Rambøll)"
+    },
+    {
+     "dato": "2020-07-07",
+     "tekst": "Facebook oplyser, at anlægget er i drift og leverer op til 25 MW brugbar varme med et mål om 100.000 MWh om året"
+    },
+    {
+     "dato": "2023-01-01",
+     "tekst": "Varmen fra datacentret når over 12.000 hjem (Rambøll)"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Tech at Meta (Facebook)",
+     "titel": "Odense Data Center 2",
+     "url": "https://tech.facebook.com/engineering/2020/7/odense-data-center-2",
+     "dato": "2020-07-07",
+     "felter": [
+      "status",
+      "areal_m2",
+      "bygninger",
+      "energikilde",
+      "koeling",
+      "brugere",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Rambøll",
+     "titel": "Meta: surplus heat to district heating",
+     "url": "https://www.ramboll.com/projects/energy/meta-surplus-heat-to-district-heating",
+     "dato": null,
+     "felter": [
+      "koeling",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Meta har ikke offentliggjort effekt eller investering for Odense. Rambøll angiver ca. 45 MW samlet varmeproduktion og 215.000 MWh genvundet energi; siden er udateret. Datoerne 2019-01-01 og 2023-01-01 i tidslinjen dækker kun et år. Metas egen side for Odense kunne ikke hentes."
+  },
+  {
+   "id": "dk-google-fredericia",
+   "navn": "Google Fredericia",
+   "status": "drift",
+   "status_dato": "2026-06-30",
+   "lat": 55.5388,
+   "lon": 9.6092,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Taulov, Fredericia, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Taulov, Fredericia",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Google",
+   "operatoer": "Google",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": 1,
+   "investering": {
+    "beloeb": 4.5,
+    "valuta": "DKK",
+    "enhed": "mia",
+    "aar": 2018
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "Google investerede i fem solcelleparker i Danmark med 160 MW i alt, som udligner datacentrets fulde elforbrug",
+   "pue": null,
+   "vand": null,
+   "koeling": "den eksisterende bygning er vandkølet; bygning nummer to bliver luftkølet og bruger lidt eller intet vand i drift",
+   "tidslinje": [
+    {
+     "dato": "2018-11-19",
+     "tekst": "Google annoncerer datacentret ved Taulov, investering 4,5 mia. kr."
+    },
+    {
+     "dato": "2020-11-30",
+     "tekst": "Datacentret åbner efter to års byggeri"
+    },
+    {
+     "dato": "2026-06-30",
+     "tekst": "Google bekræfter bygning nummer to i Prinsessens Kvarter; byggeriet ventes at tage ca. to år og fordobler kapaciteten"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Sjællandske Nyheder (Ritzau)",
+     "titel": "Google investerer milliarder i datacenter ved Fredericia",
+     "url": "https://www.sn.dk/art2578977/danmark/erhverv/google-investerer-milliarder-i-datacenter-ved-fredericia/",
+     "dato": "2018-11-19",
+     "felter": [
+      "investering",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Datacenter Forum (fagpresse)",
+     "titel": "After two years of construction, Google opens data center in Fredericia, Denmark",
+     "url": "https://www.datacenter-forum.com/datacenter-forum/after-two-years-of-construction-google-opens-data-center-in-fredericia-denmark",
+     "dato": "2020-11-30",
+     "felter": [
+      "status",
+      "energikilde",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Fredericia Avisen",
+     "titel": "Google bekræfter: Anden datacenterbygning kommer til Fredericia",
+     "url": "https://fredericiaavisen.dk/google-bekraefter-anden-datacenterbygning-kommer-til-fredericia/",
+     "dato": "2026-06-30",
+     "felter": [
+      "status",
+      "bygninger",
+      "koeling",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Google har ikke offentliggjort effekt i MW. Bygninger er sat til 1 i drift; bygning nummer to er bekræftet 30-06-2026 og bygges over ca. to år. Grunden var 73 ha ved købet i 2015 (Ritzau). Googles øvrige jord i Aabenraa (Kassø) er ikke medtaget: der er ingen offentliggjort plan eller kapacitet."
+  },
+  {
+   "id": "dk-microsoft-hoeje-taastrup",
+   "navn": "Microsoft Høje-Taastrup",
+   "status": "drift",
+   "status_dato": "2026-03-26",
+   "lat": 55.6566,
+   "lon": 12.2417,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Høje-Taastrup, Denmark",
+   "koordinat_praecision": "kommune",
+   "by": "Høje-Taastrup",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "PPA'er for 130 MW vedvarende energi, bl.a. Svinningegården Solpark (27 MW) i Holbæk Kommune; HVO som vedvarende diesel til nødstrøm hvor muligt",
+   "pue": 1.16,
+   "vand": "designet til drift uden adgang til vand",
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-03-26",
+     "tekst": "Region Denmark East åbner; Høje-Taastrup er Microsofts første fuldt operationelle anlæg i Danmark med overskudsvarme i stor skala, nok til ca. 6.000 husstande"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Microsoft Source",
+     "titel": "Microsoft åbner ny datacenterregion i Danmark og styrker Danmarks digitale robusthed",
+     "url": "https://news.microsoft.com/source/emea/features/microsoft-aabner-denmark-east/?lang=da",
+     "dato": "2026-03-26",
+     "felter": [
+      "status",
+      "pue",
+      "vand",
+      "energikilde",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Microsoft launches Denmark cloud region",
+     "url": "https://www.datacenterdynamics.com/en/news/microsoft-launches-denmark-cloud-region/",
+     "dato": "2026-03-27",
+     "felter": [
+      "status",
+      "pue",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Effekt er ikke offentliggjort. PUE 1,16 er Microsofts angivelse for regionen. Investering pr. site er ikke offentliggjort. Microsoft oplyser knap 29 mia. kr. investeret af Microsoft og partnere i Danmark over fire år (26-03-2026). Koordinaten er kommunens midtpunkt, da ingen kilde giver adressen."
+  },
+  {
+   "id": "dk-microsoft-koege",
+   "navn": "Microsoft Køge",
+   "status": "drift",
+   "status_dato": "2026-03-27",
+   "lat": 55.4996,
+   "lon": 12.1726,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Køge Nord, Køge, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Køge Nord, Køge",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "PPA'er for 130 MW vedvarende energi, bl.a. Svinningegården Solpark (27 MW) i Holbæk Kommune; HVO som vedvarende diesel til nødstrøm hvor muligt",
+   "pue": 1.16,
+   "vand": "designet til drift uden adgang til vand",
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2022-09-22",
+     "tekst": "Microsoft begynder byggeriet i Køge med Exyte som entreprenør"
+    },
+    {
+     "dato": "2026-03-09",
+     "tekst": "Forberedelse af fase 2 begynder; byggeriet ventes færdigt i april 2028"
+    },
+    {
+     "dato": "2026-03-27",
+     "tekst": "Køge er bekræftet åbent som del af region Denmark East"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Microsoft Local",
+     "titel": "Microsoft will start building its datacenter in Køge",
+     "url": "https://local.microsoft.com/blog/microsoft-will-start-building-its-datacenter-in-koge/",
+     "dato": "2022-09-22",
+     "felter": [
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Microsoft Local",
+     "titel": "Køge datacenter construction updates",
+     "url": "https://local.microsoft.com/blog/koge-datacenter-construction-update/",
+     "dato": "2026-03-16",
+     "felter": [
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Microsoft launches Denmark cloud region",
+     "url": "https://www.datacenterdynamics.com/en/news/microsoft-launches-denmark-cloud-region/",
+     "dato": "2026-03-27",
+     "felter": [
+      "status",
+      "pue",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Microsoft Source",
+     "titel": "Microsoft åbner ny datacenterregion i Danmark og styrker Danmarks digitale robusthed",
+     "url": "https://news.microsoft.com/source/emea/features/microsoft-aabner-denmark-east/?lang=da",
+     "dato": "2026-03-26",
+     "felter": [
+      "status",
+      "pue",
+      "vand",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Sjællandske Nyheder",
+     "titel": "Datacentre er nu så langt, at Microsoft ved, hvornår de åbner",
+     "url": "https://www.sn.dk/art6363738/roskilde-kommune/erhverv/microsoft-loefter-sloeret-for-hvornaar-tre-datacentre-forventes-at-aabne/",
+     "dato": "2025-08-04",
+     "felter": []
+    }
+   ],
+   "noter": "Effekt er ikke offentliggjort. Fase 2 er under opførelse til april 2028. Overskudsvarme skal på sigt til fjernvarmen i Køge. Placeringen Køge Nord er fra Sjællandske Nyheder (04-08-2025); koordinaten er stationen Køge Nord og kun omtrentlig. Investering pr. site er ikke offentliggjort. Microsoft oplyser knap 29 mia. kr. investeret af Microsoft og partnere i Danmark over fire år (26-03-2026)."
+  },
+  {
+   "id": "dk-microsoft-roskilde",
+   "navn": "Microsoft Roskilde (Gadstrup)",
+   "status": "opfoerelse",
+   "status_dato": "2025-08-04",
+   "lat": 55.5784,
+   "lon": 12.104,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Finervej, Gadstrup, Denmark",
+   "koordinat_praecision": "adresse",
+   "by": "Gadstrup, Roskilde",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "PPA'er for 130 MW vedvarende energi, bl.a. Svinningegården Solpark (27 MW) i Holbæk Kommune; HVO som vedvarende diesel til nødstrøm hvor muligt",
+   "pue": 1.16,
+   "vand": "designet til drift uden adgang til vand",
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2022-04-05",
+     "tekst": "Byggeriet på Finervej i Gadstrup begynder med John Sisk & Son som hovedentreprenør"
+    },
+    {
+     "dato": "2025-08-04",
+     "tekst": "Byggeriet er i sidste fase, men centret er ikke åbnet"
+    },
+    {
+     "dato": "2026-03-26",
+     "tekst": "Region Denmark East åbner med campusser i Høje-Taastrup, Køge og Roskilde"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Microsoft Local",
+     "titel": "Byggeriet er startet i Roskilde",
+     "url": "https://local.microsoft.com/blog/byggeriet-er-startet-i-roskilde/",
+     "dato": "2022-04-05",
+     "felter": [
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Sjællandske Nyheder",
+     "titel": "Datacentre er nu så langt, at Microsoft ved, hvornår de åbner",
+     "url": "https://www.sn.dk/art6363738/roskilde-kommune/erhverv/microsoft-loefter-sloeret-for-hvornaar-tre-datacentre-forventes-at-aabne/",
+     "dato": "2025-08-04",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Microsoft Source",
+     "titel": "Microsoft åbner ny datacenterregion i Danmark og styrker Danmarks digitale robusthed",
+     "url": "https://news.microsoft.com/source/emea/features/microsoft-aabner-denmark-east/?lang=da",
+     "dato": "2026-03-26",
+     "felter": [
+      "status",
+      "pue",
+      "vand",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Microsoft launches Denmark cloud region",
+     "url": "https://www.datacenterdynamics.com/en/news/microsoft-launches-denmark-cloud-region/",
+     "dato": "2026-03-27",
+     "felter": [
+      "status",
+      "pue",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Status er sat til opførelse, fordi ingen kilde bekræfter, at netop Roskilde er i drift. DCD (27-03-2026) skriver, at kun Køge er bekræftet åben. Microsoft nævner Roskilde som campus i regionen ved åbningen 26-03-2026. Effekt er ikke offentliggjort. Investering pr. site er ikke offentliggjort. Microsoft oplyser knap 29 mia. kr. investeret af Microsoft og partnere i Danmark over fire år (26-03-2026)."
+  },
+  {
+   "id": "dk-microsoft-tinghoej",
+   "navn": "Microsoft Tinghøj",
+   "status": "planlagt",
+   "status_dato": "2025-12",
+   "lat": 55.6612,
+   "lon": 8.4699,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Tinghøj, Varde, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Tinghøj, Varde",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "100 % CO2-fri energi via langsigtede PPA'er",
+   "pue": null,
+   "vand": "lukket kredsløb uden vandforbrug til køling",
+   "koeling": "lukket kredsløb uden vandforbrug til køling",
+   "tidslinje": [
+    {
+     "dato": "2025-12-11",
+     "tekst": "Microsoft offentliggør planer om en datacenterregion i Varde og Esbjerg kommuner"
+    },
+    {
+     "dato": "2025-12",
+     "tekst": "Borgermøde i Tinghøj om Microsofts ansøgning om lokalplan og kommuneplantillæg"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Microsoft Source",
+     "titel": "Microsoft offentliggør planer om at opføre ny datacenterregion i Vestjylland",
+     "url": "https://news.microsoft.com/source/emea/features/microsoft-offentliggoer-planer-om-at-opfoere-ny-datacenterregion-i-vestjylland/?lang=da",
+     "dato": "2025-12-11",
+     "felter": [
+      "status",
+      "energikilde",
+      "vand",
+      "koeling",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Esbjerg Kommune via Ritzau",
+     "titel": "Vestdanmark i spil som ny datacenterregion: Microsoft ser mod Varde og Esbjerg",
+     "url": "https://via.ritzau.dk/pressemeddelelse/14714220/vestdanmark-i-spil-som-ny-datacenterregion-microsoft-ser-mod-varde-og-esbjerg",
+     "dato": "2025-12-11",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Varde Kommune",
+     "titel": "Borgermøder i Lunde og Tinghøj, december 2025",
+     "url": "https://vardekommune.dk/wp-content/uploads/2026/02/Lunde-og-Tinghoej-borgermoede-dec-2025.pdf",
+     "dato": "2025-12-17",
+     "felter": [
+      "status",
+      "bygninger",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Grunden ligger ved Ringkøbingvej nord for Tinghøj og er ca. 150 ha (Esbjerg Kommune). Ansøgningen omfatter seks datahaller, to mod syd (højst 10 m) og fire mod nord (højst 20 m); feltet bygninger tæller datahallerne. Effekt og areal er ikke offentliggjort. Microsoft kalder Vestjylland-regionen en tocifret milliardinvestering, uden beløb. Esbjerg Kommune oplyser, at Microsoft har truffet den endelige investeringsbeslutning, mens planlægningen pågår. Varde Kommunes materiale nævner to sydlige og fire nordlige datahaller. Borgermødet var 16. eller 17. december 2025."
+  },
+  {
+   "id": "dk-microsoft-lunde",
+   "navn": "Microsoft Lunde",
+   "status": "planlagt",
+   "status_dato": "2026-03-19",
+   "lat": 55.7675,
+   "lon": 8.3399,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Kastkærvej, Varde, Denmark",
+   "koordinat_praecision": "adresse",
+   "by": "Lunde, Varde",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "100 % CO2-fri energi via langsigtede PPA'er",
+   "pue": null,
+   "vand": "lukket kredsløb uden vandforbrug til køling",
+   "koeling": "lukket kredsløb uden vandforbrug til køling",
+   "tidslinje": [
+    {
+     "dato": "2025-12-11",
+     "tekst": "Microsoft offentliggør planer om en datacenterregion i Varde og Esbjerg kommuner"
+    },
+    {
+     "dato": "2026-03-19",
+     "tekst": "Borgermøde i Lunde; Varde Kommunes tidsplan sigter mod offentliggjort endelig vedtagelse i 3. kvartal 2027 og miljøtilladelse i 1. kvartal 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Microsoft Source",
+     "titel": "Microsoft offentliggør planer om at opføre ny datacenterregion i Vestjylland",
+     "url": "https://news.microsoft.com/source/emea/features/microsoft-offentliggoer-planer-om-at-opfoere-ny-datacenterregion-i-vestjylland/?lang=da",
+     "dato": "2025-12-11",
+     "felter": [
+      "status",
+      "energikilde",
+      "vand",
+      "koeling",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Esbjerg Kommune via Ritzau",
+     "titel": "Vestdanmark i spil som ny datacenterregion: Microsoft ser mod Varde og Esbjerg",
+     "url": "https://via.ritzau.dk/pressemeddelelse/14714220/vestdanmark-i-spil-som-ny-datacenterregion-microsoft-ser-mod-varde-og-esbjerg",
+     "dato": "2025-12-11",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Varde Kommune",
+     "titel": "Microsoft datacentre ved Tinghøj og Lunde, borgermøde 19. marts 2026",
+     "url": "https://vardekommune.dk/wp-content/uploads/2026/03/ENDELIGLunde-borgermoede-190326-EBJ14.pdf",
+     "dato": "2026-03-19",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Grunden ligger ved Kastkærvej mellem Lunde og Nørre Nebel og er ca. 79 ha (Esbjerg Kommune). Bygningshøjde højst 20 eller 23 m efter kommunens oplæg. Kommunens oplæg nævner også maj/juni 2026 for lokalplanen, hvilket ikke stemmer med kvartalsplanen. Effekt og areal er ikke offentliggjort. Microsoft kalder Vestjylland-regionen en tocifret milliardinvestering, uden beløb. Esbjerg Kommune oplyser, at Microsoft har truffet den endelige investeringsbeslutning, mens planlægningen pågår."
+  },
+  {
+   "id": "dk-microsoft-bramming",
+   "navn": "Microsoft Bramming",
+   "status": "planlagt",
+   "status_dato": "2025-12-11",
+   "lat": 55.4656,
+   "lon": 8.7028,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Bramming, Esbjerg, Denmark",
+   "koordinat_praecision": "by",
+   "by": "vest for Bramming, Esbjerg",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "100 % CO2-fri energi via langsigtede PPA'er",
+   "pue": null,
+   "vand": "lukket kredsløb uden vandforbrug til køling",
+   "koeling": "lukket kredsløb uden vandforbrug til køling",
+   "tidslinje": [
+    {
+     "dato": "2025-12-11",
+     "tekst": "Microsoft offentliggør planer om en datacenterregion i Varde og Esbjerg kommuner; Esbjerg-grunden ligger vest for Bramming"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Microsoft Source",
+     "titel": "Microsoft offentliggør planer om at opføre ny datacenterregion i Vestjylland",
+     "url": "https://news.microsoft.com/source/emea/features/microsoft-offentliggoer-planer-om-at-opfoere-ny-datacenterregion-i-vestjylland/?lang=da",
+     "dato": "2025-12-11",
+     "felter": [
+      "status",
+      "energikilde",
+      "vand",
+      "koeling",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Esbjerg Kommune via Ritzau",
+     "titel": "Vestdanmark i spil som ny datacenterregion: Microsoft ser mod Varde og Esbjerg",
+     "url": "https://via.ritzau.dk/pressemeddelelse/14714220/vestdanmark-i-spil-som-ny-datacenterregion-microsoft-ser-mod-varde-og-esbjerg",
+     "dato": "2025-12-11",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Grunden er ca. 115 ha. Esbjerg Kommune venter at starte lokalplanen politisk i begyndelsen af 2026 med en mulig endelig lokalplan i efteråret 2026. Koordinaten er byen Bramming; grunden ligger vest for byen. Effekt og areal er ikke offentliggjort. Microsoft kalder Vestjylland-regionen en tocifret milliardinvestering, uden beløb. Esbjerg Kommune oplyser, at Microsoft har truffet den endelige investeringsbeslutning, mens planlægningen pågår."
+  },
+  {
+   "id": "dk-gefion-dcai",
+   "navn": "Gefion (Danish Centre for AI Innovation)",
+   "status": "drift",
+   "status_dato": "2024-10-23",
+   "lat": 55.6867,
+   "lon": 12.5701,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: København, Denmark",
+   "koordinat_praecision": "by",
+   "by": "København",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Danish Centre for AI Innovation (Novo Nordisk Fonden og EIFO)",
+   "operatoer": "Digital Realty (hosting)",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 600,
+    "valuta": "DKK",
+    "enhed": "mio",
+    "aar": 2024
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "datacentret kører 100 % på vedvarende energi",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2024-10-23",
+     "tekst": "Gefion med 1.528 Nvidia H100 i 191 DGX H100-servere er hostet i et Digital Realty-datacenter i København"
+    },
+    {
+     "dato": "2024-10-23",
+     "tekst": "Danmarks første AI-supercomputer er lanceret"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "The Next Platform (fagpresse)",
+     "titel": "The Great Danes Get A Supercomputer For AI And Maybe HPC",
+     "url": "https://www.nextplatform.com/2024/10/23/the-great-danes-get-a-supercomputer-for-ai-and-maybe-hpc",
+     "dato": "2024-10-23",
+     "felter": [
+      "status",
+      "operatoer",
+      "investering",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "The Copenhagen Post",
+     "titel": "Denmark launches first AI supercomputer",
+     "url": "https://cphpost.dk/2024-10-25/news/technology/denmark-launches-first-ai-supercomputer/",
+     "dato": "2024-10-25",
+     "felter": [
+      "status",
+      "ejer",
+      "investering",
+      "energikilde",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Gefion er en supercomputer i et eksisterende colocation-datacenter, ikke et selvstændigt datacenter, og effekten er ikke offentliggjort. Medtaget efter opgaven. Investeringen er Novo Nordisk Fondens ca. 600 mio. kr. plus EIFO's 100 mio. kr.; EIFO ejer 15 %. Hvilket af Digital Realtys københavnske datacentre er ikke oplyst, så koordinaten er Københavns centrum. Novo Nordisk Fonden 600 mio. kr. og EIFO 100 mio. kr. opgives hver for sig."
+  },
+  {
+   "id": "dk-atnorth-oelgod",
+   "navn": "atNorth DEN02 Ølgod",
+   "status": "godkendt",
+   "status_dato": "2026-10-07",
+   "lat": 55.8058,
+   "lon": 8.6181,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Ølgod, Varde, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Krageris, Ølgod, Varde",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "atNorth",
+   "operatoer": "atNorth",
+   "brugere": [],
+   "formaal": "colocation",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 500,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": 225000,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 25,
+    "valuta": "DKK",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "atNorth oplyser, at selskabets datacentre kører på vedvarende energi, og arbejder på vind- og solparker nær grunden",
+   "pue": null,
+   "vand": null,
+   "koeling": "kølet vand med modulær frikøling, klar til direkte væskekøling",
+   "tidslinje": [
+    {
+     "dato": "2024-02-09",
+     "tekst": "atNorth annoncerer DEN02 på en grund på 174 ha ved Ølgod med en indledende kapacitet på 250 MW"
+    },
+    {
+     "dato": "2026-05-08",
+     "tekst": "Elaftale med N1 om 60 MW i november-december 2027 og 60 MW i begyndelsen af 2028; første datacenter med drift i 2028-29"
+    },
+    {
+     "dato": "2026-10-06",
+     "tekst": "Varde Byråd godkender plangrundlaget; projektet ventes færdigt i 2030"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "atNorth",
+     "titel": "atNorth announces mega campus in Denmark",
+     "url": "https://www.atnorth.com/news/atnorth-announces-mega-campus-in-denmark/",
+     "dato": "2024-02-09",
+     "felter": [
+      "tidslinje",
+      "energikilde",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "atNorth",
+     "titel": "DEN02",
+     "url": "https://www.atnorth.com/colocation/den02",
+     "dato": null,
+     "felter": [
+      "it_effekt_mw",
+      "koeling",
+      "energikilde",
+      "formaal"
+     ]
+    },
+    {
+     "navn": "Byens Ejendom",
+     "titel": "4 datacentre på vej i Varde for 55 milliarder kr.",
+     "url": "https://byensejendom.dk/article/4-datacentre-paa-vej-i-varde-for-55-milliarder-kr---21-maj-43910",
+     "dato": "2026-05-08",
+     "felter": [
+      "investering",
+      "areal_m2",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Dansk Byudvikling",
+     "titel": "AtNorth får godkendt stort datacenter ved Ølgod",
+     "url": "https://dansk-byudvikling.dk/atnorth-faar-godkendt-stort-datacenter-ved-oelgod/",
+     "dato": "2026-10-07",
+     "felter": [
+      "status",
+      "investering",
+      "areal_m2",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Mig og Esbjerg",
+     "titel": "Milliardprojekt godkendt: Nyt vestjysk datacenter på vej",
+     "url": "https://migogesbjerg.dk/milliardprojekt-godkendt-nyt-vestjysk-datacenter-paa-vej/",
+     "dato": "2026-10-07",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "atNorth angiver en indledende kapacitet på 250 MW og en samlet campus-effekt på 500 MW; typen er sat til net, fordi atNorth taler om power capacity. Byens Ejendom nævner forhandlinger med Energinet om 500 MW i 2029, som ikke er aftalt. Byens Ejendom (08-05-2026) skriver, at lokalplanen blev vedtaget i april 2026, mens Varde Byråd ifølge Dansk Byudvikling godkendte plangrundlaget 6. oktober 2026 med klagefrist bagefter. Overskudsvarmen skal opvarme 475.000 m² væksthuse (Selected Group). Arealet er datacentrets 225.000 m². Krageris kunne ikke geokodes, så koordinaten er Ølgod by; grunden ligger ca. 4 km nord for byen."
+  },
+  {
+   "id": "dk-atnorth-haslev",
+   "navn": "atNorth Haslev (Høsten Torp)",
+   "status": "planlagt",
+   "status_dato": "2026-06-10",
+   "lat": 55.3427,
+   "lon": 12.0415,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Høsten Torp, Faxe, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Høsten Torp, Haslev, Faxe",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "atNorth",
+   "operatoer": "atNorth",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 800,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 40,
+    "valuta": "DKK",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-05-28",
+     "tekst": "Faxe Byråd beslutter med 13 mod 12 stemmer at søge ministeren om dispensation til projektet"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Dagens Byggeri",
+     "titel": "Datacenter til 40 milliarder godkendes i Faxe Byråd",
+     "url": "https://dagensbyggeri.dk/byggeri-og-anlaeg/datacenter-til-40-milliarder-godkendes-i-faxe-byraad/",
+     "dato": "2026-05-29",
+     "felter": [
+      "investering",
+      "it_effekt_mw",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Dansk Byudvikling",
+     "titel": "Snævert flertal for stort datacenter på Sydsjælland",
+     "url": "https://dansk-byudvikling.dk/snaevert-flertal-for-stort-datacenter-paa-sydsjaelland/",
+     "dato": "2026-06-10",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "250 MW i første fase med mulighed for 800 MW; kilden angiver ikke, om det er IT- eller nettilslutningseffekt. Investeringen er TV 2 Østs tal gengivet af Dagens Byggeri. Dagens Byggeri skriver 28. maj og Dansk Byudvikling 26. maj for byrådets afstemning; tidslinjen følger Dansk Byudvikling. Det er ikke en endelig godkendelse: kommuneplantillæg, lokalplan og miljøvurdering mangler, og ministerens afgørelse om dispensation er ikke fundet. Grunden er ca. 203 ha, mest ejet af Bregentved Gods."
+  },
+  {
+   "id": "dk-prime-esbjerg",
+   "navn": "Prime Data Centers ESB01 Esbjerg",
+   "status": "planlagt",
+   "status_dato": "2026-03-27",
+   "lat": 55.495,
+   "lon": 8.5067,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Nordre Tovrupvej, Esbjerg, Denmark",
+   "koordinat_praecision": "adresse",
+   "by": "Nordre Tovrupvej, Esbjerg",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Prime Data Centers",
+   "operatoer": "Prime Data Centers",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 550,
+    "planlagt_aar": null,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 6,
+    "valuta": "EUR",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "det danske elnet med en høj andel vedvarende energi",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-03-27",
+     "tekst": "Prime Data Centers annoncerer ESB01 på 640.000 m² ved Nordre Tovrupvej og går i gang med miljøvurderingen"
+    },
+    {
+     "dato": "2027-01-01",
+     "tekst": "Byggeriet af det første datacenter ventes at begynde i 2027, med forbehold for VVM, tilladelser og netaftaler"
+    },
+    {
+     "dato": "2029-01-01",
+     "tekst": "Første kapacitet ventes i drift i slutningen af 2029"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Prime Data Centers",
+     "titel": "Prime Data Centers Announces Plans for Major Data Center Development in Esbjerg, Denmark",
+     "url": "https://primedatacenters.com/news/prime-data-centers-announces-plans-for-major-data-center-development-in-esbjerg-denmark/",
+     "dato": "2026-03-27",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "energikilde",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Dagens Byggeri",
+     "titel": "Nyt datacenter til milliarder på vej i Vestjylland",
+     "url": "https://dagensbyggeri.dk/byggeri-og-anlaeg/nyt-datacenter-til-milliarder-paa-vej-i-vestjylland/",
+     "dato": "2026-03-26",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Første fase er 160 MW IT til ca. 2 mia. euro (Dagens Byggeri: ca. 15 mia. kr.); fuld udbygning op til 550 MW IT til ca. 6 mia. euro. Grunden er 640.000 m² og købes af Esbjerg Kommune. Udnyttelse af overskudsvarme undersøges, men er ikke lovet. Datoerne 2027-01-01 og 2029-01-01 dækker kun årstal."
+  },
+  {
+   "id": "dk-thylander-esbjerg",
+   "navn": "Thylander Dansk Data Center 1 (Esbjerg Havn)",
+   "status": "opfoerelse",
+   "status_dato": "2026-08-17",
+   "lat": 55.4681,
+   "lon": 8.4303,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Esbjerg Havn, Esbjerg, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Esbjerg Havn, Esbjerg",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "Thylander Group, PensionDanmark og Copenhagen Infrastructure Partners",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 200,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": "genbruger havvandskølingen fra Esbjergværket; overskudsvarme til fjernvarmen",
+   "tidslinje": [
+    {
+     "dato": "2025-05-31",
+     "tekst": "Thylander præsenterer et datacenter på 100 MW i Esbjerg, der kan udvides til 200 MW"
+    },
+    {
+     "dato": "2026-08-13",
+     "tekst": "Første spadestik for Dansk Data Center 1 på havnen i Esbjerg"
+    },
+    {
+     "dato": "2027-10-01",
+     "tekst": "Anlægget ventes i drift i oktober 2027"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Danish real estate firm Thylander plans 100MW data center in Esbjerg",
+     "url": "https://www.datacenterdynamics.com/en/news/danish-real-estate-firm-thylander-plans-100mw-data-center-in-esbjerg/",
+     "dato": "2025-05-31",
+     "felter": [
+      "tidslinje",
+      "koeling"
+     ]
+    },
+    {
+     "navn": "Thylander",
+     "titel": "Thylander unveils plans for the first purely Danish hyperscale data center",
+     "url": "https://thylander.dk/articles/thylander-unveils-plans-for-the-first-purely-danish-hyperscale-data-center/",
+     "dato": "2025-09-15",
+     "felter": [
+      "it_effekt_mw",
+      "koeling"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Thylander breaks ground on Danish data center in Esbjerg",
+     "url": "https://www.datacenterdynamics.com/en/news/thylander-breaks-ground-on-danish-data-center-in-esbjerg/",
+     "dato": "2026-08-17",
+     "felter": [
+      "status",
+      "ejer",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "CIP and Thylander break ground for new data center",
+     "url": "https://w.media/?p=42592",
+     "dato": "2026-08-18",
+     "felter": [
+      "status",
+      "ejer",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Thylander har angivet en første fase på over 100 MW og op til 200 MW i alt, uden at sige om det er IT- eller nettilslutningseffekt. Ved spadestikket i august 2026 oplyses en nettilslutning via N1 på 11,5 MW, så den første udbygning er langt mindre end de 100 MW. Overskudsvarmen skal udnyttes sammen med DIN Forsyning. Datoen 2027-10-01 dækker kun måneden."
+  },
+  {
+   "id": "dk-garbe-falster",
+   "navn": "GARBE Data Centers Business Park Falster",
+   "status": "planlagt",
+   "status_dato": "2025-11-07",
+   "lat": 54.897,
+   "lon": 11.8762,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Nørre Alslev, Guldborgsund, Denmark",
+   "koordinat_praecision": "by",
+   "by": "Business Park Falster, Nordfalster, Guldborgsund",
+   "land": "Danmark",
+   "a2": "DK",
+   "ejer": "GARBE Data Centers",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 350,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 20,
+    "valuta": "DKK",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-11-06",
+     "tekst": "Guldborgsund Kommunes udvalg vælger GARBE til et campus på 350 MW på 35 ha i Business Park Falster ved afkørsel 43"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Ingeniøren (fagpresse)",
+     "titel": "Kæmpe datacenter til Falster: 350 megawatt til 20 milliarder",
+     "url": "https://ing.dk/artikel/kaempe-datacenter-til-falster-350-megawatt-til-20-milliarder",
+     "dato": "2025-11-06",
+     "felter": [
+      "it_effekt_mw",
+      "investering",
+      "tidslinje",
+      "ejer"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Garbe plans 350MW data center campus in Denmark",
+     "url": "https://www.datacenterdynamics.com/en/news/garbe-plans-350mw-data-center-campus-in-denmark/",
+     "dato": "2025-11-07",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Salget af grunden er betinget; den endelige købsaftale var ikke underskrevet ved kildens dato. Campus kan rumme seks til ni datacentre. Investeringen er et oplyst beløb på op til 20 mia. kr. Koordinaten er Nørre Alslev; kilden giver kun Business Park Falster ved afkørsel 43 på Nordfalster."
+  },
+  {
+   "id": "se-brookfield-straengnaes",
+   "navn": "Brookfield AI-datacenter Strängnäs",
+   "status": "planlagt",
+   "status_dato": "2025-06-04",
+   "lat": 59.3763,
+   "lon": 17.0268,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Strängnäs, Sweden",
+   "koordinat_praecision": "by",
+   "by": "Strängnäs",
+   "land": "Sverige",
+   "a2": "SE",
+   "ejer": "Brookfield",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 750,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 95,
+    "valuta": "SEK",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-06-04",
+     "tekst": "Brookfield annoncerer op til 95 mia. kr. til et AI-datacenter på 750 MW i Strängnäs, fuld kapacitet om 10-15 år"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Brookfield",
+     "titel": "Brookfield To Advance AI Infrastructure in Sweden Through SEK 95 Billion Investment",
+     "url": "https://bam.brookfield.com/press-releases/brookfield-advance-ai-infrastructure-sweden-through-sek-95-billion-investment",
+     "dato": "2025-06-04",
+     "felter": [
+      "investering",
+      "ejer"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Brookfield plans to spend $10bn on a Swedish AI data center",
+     "url": "https://www.datacenterdynamics.com/en/news/brookfield-plans-to-spend-10bn-on-a-swedish-ai-data-center/",
+     "dato": "2025-06-04",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "De 750 MW mere end fordobler et tidligere planlagt anlæg på 300 MW. Pressemeddelelsens brødtekst kunne ikke læses; MW og placering er fra DCD. Ingen nyere status fundet."
+  },
+  {
+   "id": "de-schwarz-luebbenau",
+   "navn": "Schwarz Digits Lübbenau",
+   "status": "opfoerelse",
+   "status_dato": "2025-11-19",
+   "lat": 51.868,
+   "lon": 13.9689,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Lübbenau/Spreewald, Germany",
+   "koordinat_praecision": "by",
+   "by": "Lübbenau/Spreewald",
+   "land": "Tyskland",
+   "a2": "DE",
+   "ejer": "Schwarz Digits (Schwarz Gruppe)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 200,
+    "planlagt_aar": 2027,
+    "type": "net"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 11,
+    "valuta": "EUR",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": "direkte væskekøling; overskudsvarme løftes med varmepumper til fjernvarmenettet",
+   "tidslinje": [
+    {
+     "dato": "2025-11-17",
+     "tekst": "Første spadestik på et tidligere kraftværksområde på 13 ha; Max Bögl er generalentreprenør"
+    },
+    {
+     "dato": "2027-12-31",
+     "tekst": "Færdiggørelse annonceret til udgangen af 2027"
+    },
+    {
+     "dato": "2028-01-01",
+     "tekst": "Overskudsvarme planlagt leveret til fjernvarmen fra 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Max Bögl",
+     "titel": "Pressemitteilung: Spatenstich Lübbenau",
+     "url": "https://www.max-boegl.de/content/dam/maxboeglsitesassets/hochbau/datacenter/pm_spatenstich_luebbenau.pdf.coredownload.pdf",
+     "dato": "2025-11-19",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "tidslinje",
+      "ejer"
+     ]
+    },
+    {
+     "navn": "Dr. Web (fagpresse)",
+     "titel": "Rechenzentrum Abwärme Lübbenau Schwarz Digits",
+     "url": "https://www.drweb.de/rechenzentrum-abwaerme-luebbenau-schwarz-digits/",
+     "dato": "2026-08-19",
+     "felter": [
+      "investering",
+      "koeling",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Effekten er ca. 200 MW tilslutningseffekt (Anschlussleistung). Varmen er beregnet til op til 75.000 husstande, men der er ingen tilslutningsaftale. Datoerne 2027-12-31 og 2028-01-01 dækker kun år."
+  },
+  {
+   "id": "de-schwarz-dummerstorf",
+   "navn": "Schwarz Digits Dummerstorf (Rostock)",
+   "status": "planlagt",
+   "status_dato": "2026-08-27",
+   "lat": 54.0131,
+   "lon": 12.2282,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Dummerstorf, Germany",
+   "koordinat_praecision": "by",
+   "by": "Dummerstorf ved Rostock",
+   "land": "Tyskland",
+   "a2": "DE",
+   "ejer": "Schwarz Gruppe",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 240,
+    "planlagt_aar": 2033,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 5.6,
+    "valuta": "EUR",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-08-27",
+     "tekst": "Schwarz Gruppe annoncerer et datacenter på 240 MW til 5,6 mia. euro, med mulig udbygning til 1 GW tilslutningseffekt i 2045"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Börsen-Zeitung",
+     "titel": "Schwarz baut Rechenzentrum an der Küste",
+     "url": "https://www.boersen-zeitung.de/unternehmen-branchen/schwarz-gruppe-baut-riesiges-rechenzentrum-fuer-56-mrd-euro",
+     "dato": "2026-08-27",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "tidslinje",
+      "ejer"
+     ]
+    }
+   ],
+   "noter": "240 MW i 2033, langsigtet 1 GW tilslutningseffekt i 2045. Typen for de 240 MW er ikke angivet. Der er underskrevet en hensigtserklæring med Stadtwerke Rostock om overskudsvarme."
+  },
+  {
+   "id": "de-ntt-nierstein",
+   "navn": "NTT Rhein-Selz-Park Nierstein",
+   "status": "godkendt",
+   "status_dato": "2025-12-15",
+   "lat": 49.8488,
+   "lon": 8.2927,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Rhein-Selz-Park, Nierstein, Germany",
+   "koordinat_praecision": "adresse",
+   "by": "Nierstein",
+   "land": "Tyskland",
+   "a2": "DE",
+   "ejer": "NTT Global Data Centers",
+   "operatoer": "NTT Global Data Centers",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 482,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-12-15",
+     "tekst": "Niersteins byråd vedtager enstemmigt bebyggelsesplanen for et campus på 482 MW på den tidligere Anderson Barracks"
+    },
+    {
+     "dato": "2027-01-01",
+     "tekst": "Byggestart muligt i begyndelsen af 2027, drift sigtet mod 2029"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "NTT gains council approval for 482MW data center campus in Nierstein, Germany",
+     "url": "https://datacenterdynamics.com/en/news/ntt-gains-council-approval-for-482mw-data-center-campus-in-nierstein-germany/",
+     "dato": "2025-12-15",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Grunden er ca. 750.000 m². Ifølge omtale omkring ni bygninger. Effekttype ikke angivet. Datoen 2027-01-01 dækker kun år."
+  },
+  {
+   "id": "de-virtus-wustermark",
+   "navn": "VIRTUS Wustermark Campus",
+   "status": "opfoerelse",
+   "status_dato": "2026-04-16",
+   "lat": 52.54,
+   "lon": 12.9539,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Wustermark, Germany",
+   "koordinat_praecision": "by",
+   "by": "Wustermark ved Berlin",
+   "land": "Tyskland",
+   "a2": "DE",
+   "ejer": "VIRTUS Data Centres (ST Telemedia Global Data Centres)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 204,
+    "planlagt_aar": 2028,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": 9,
+   "investering": {
+    "beloeb": 3,
+    "valuta": "EUR",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "nabo til store landvindmølleparker, der bidrager til forsyningen",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2023-09-01",
+     "tekst": "VIRTUS præsenterer Wustermark som et campus på 300 MW"
+    },
+    {
+     "dato": "2026-04-16",
+     "tekst": "Byggeriet begynder; transformerstationen ventes færdig i 2027 og første enhed i drift i begyndelsen af 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "VIRTUS Data Centres",
+     "titel": "Berlin data centres: Wustermark campus",
+     "url": "https://virtusdatacentres.com/locations/berlin-data-centres-wustermark-campus",
+     "dato": null,
+     "felter": [
+      "it_effekt_mw",
+      "bygninger",
+      "energikilde",
+      "ejer"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Construction begins on 204MW data center campus outside Berlin, Germany",
+     "url": "https://www.datacenterdynamics.com/en/news/construction-begins-on-204mw-data-center-campus-outside-berlin-germany/",
+     "dato": "2026-04-16",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "bygninger",
+      "investering",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Data Centre Review (fagpresse)",
+     "titel": "VIRTUS announces 300 MW Wustermark campus in Brandenburg, Germany",
+     "url": "https://datacentrereview.com/2023/09/virtus-announces-300-mw-wustermark-campus-in-brandenburg-germany/",
+     "dato": "2023-09-01",
+     "felter": [
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Oprindelig annonceret som 300 MW (2023); VIRTUS angiver nu 204 MW IT. Åbningen er udskudt fra 2026. Grunden er over 350.000 m². Overskudsvarme stilles til rådighed for kommunen. Datoen 2023-09-01 dækker kun måneden."
+  },
+  {
+   "id": "gb-qts-cambois",
+   "navn": "QTS Cambois (Blyth)",
+   "status": "godkendt",
+   "status_dato": "2025-12-08",
+   "lat": 55.1453,
+   "lon": -1.5309,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Cambois, Northumberland, United Kingdom",
+   "koordinat_praecision": "by",
+   "by": "Cambois, Northumberland",
+   "land": "Storbritannien",
+   "a2": "GB",
+   "ejer": "QTS (Blackstone)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 720,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 10,
+    "valuta": "GBP",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-09-01",
+     "tekst": "Området får status som AI Growth Zone"
+    },
+    {
+     "dato": "2025-10-01",
+     "tekst": "Forberedende arbejder begynder på den tidligere Blyth Power Station"
+    },
+    {
+     "dato": "2025-12-02",
+     "tekst": "Northumberland County Council godkender første fase, to af op til ti bygninger"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Approval given to first phase of £10bn data center in Northumberland, England",
+     "url": "https://www.datacenterdynamics.com/en/news/approval-given-to-first-phase-of-10bn-data-center-in-northumberland-england/",
+     "dato": "2025-12-08",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "tidslinje",
+      "ejer"
+     ]
+    }
+   ],
+   "noter": "Campus på 720 MW med op til ti bygninger; to er godkendt. Arealet er opgivet til 540.000 m². Effekttype ikke angivet. Datoerne 2025-09-01 og 2025-10-01 dækker kun måneden."
+  },
+  {
+   "id": "gb-elsham-tech-park",
+   "navn": "Elsham Tech Park",
+   "status": "godkendt",
+   "status_dato": "2026-03-12",
+   "lat": 53.6108,
+   "lon": -0.4078,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Elsham Wolds, North Lincolnshire, United Kingdom",
+   "koordinat_praecision": "by",
+   "by": "Elsham Wolds, North Lincolnshire",
+   "land": "Storbritannien",
+   "a2": "GB",
+   "ejer": "Elsham Tech Park Ltd (Greystoke)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": 1500000,
+   "bygninger": 15,
+   "investering": {
+    "beloeb": 10,
+    "valuta": "GBP",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "energicenter på stedet på op til 49,9 MW, batterilager og fjernvarmeanlæg; overskudsvarme til et væksthus",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-03-12",
+     "tekst": "North Lincolnshire Council godkender campus på det tidligere RAF Elsham Wolds"
+    },
+    {
+     "dato": "2027-01-01",
+     "tekst": "Byggeriet ventes at begynde i 2027, første fase åbner i 2029"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Centre Review (fagpresse)",
+     "titel": "North Lincolnshire approves plans for major AI data centre campus",
+     "url": "https://datacentrereview.com/2026/03/north-lincolnshire-approves-plans-for-major-ai-data-centre-campus/",
+     "dato": "2026-03-12",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "areal_m2",
+      "bygninger",
+      "investering",
+      "energikilde",
+      "tidslinje",
+      "ejer"
+     ]
+    }
+   ],
+   "noter": "Op til 1 GW computerkapacitet på 176 ha med op til 15 bygninger og over 1,5 mio. m² etageareal. Udbygningen ventes at tage ca. ti år. Effekttype ikke angivet. Datoen 2027-01-01 dækker kun år."
+  },
+  {
+   "id": "fr-campus-ia-fouju",
+   "navn": "Campus IA Fouju",
+   "status": "godkendt",
+   "status_dato": "2026-07-29",
+   "lat": 48.5864,
+   "lon": 2.7785,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Fouju, France",
+   "koordinat_praecision": "by",
+   "by": "Fouju, Seine-et-Marne",
+   "land": "Frankrig",
+   "a2": "FR",
+   "ejer": "Campus IA (joint venture: MGX, Bpifrance, Mistral AI og Nvidia)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1400,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-05-21",
+     "tekst": "MGX, Bpifrance, Mistral AI og Nvidia annoncerer et joint venture om et AI-campus på 1,4 GW uden for Paris; byggestart ventet i andet halvår 2026 og drift i 2028"
+    },
+    {
+     "dato": "2026-07-29",
+     "tekst": "Campus IA får præfekturets tilladelse til at etablere sig i Fouju"
+    },
+    {
+     "dato": "2028-01-01",
+     "tekst": "Første fase skal leveres i 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse, spansk)",
+     "titel": "MGX, Bpifrance, Nvidia y Mistral AI planean un campus de centro de datos de 1,4 GW en París",
+     "url": "https://www.datacenterdynamics.com/es/noticias/mgx-bpifrance-nvidia-y-mistral-ai-planean-un-campus-de-centro-de-datos-de-14-gw-en-par%C3%ADs/",
+     "dato": "2025-05-21",
+     "felter": [
+      "ejer",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Next (fagpresse)",
+     "titel": "Le brief du 13 août 2026",
+     "url": "https://next.ink/briefs/le-brief-du-13-aout-2026/",
+     "dato": "2026-08-13",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "1,4 GW er fuld kapacitet på sigt; effekttype ikke angivet. Øvrige JV-partnere ifølge DCD: EDG, Sipartech, RTE, Bouygues og École Polytechnique. Datoen 2028-01-01 dækker kun år."
+  },
+  {
+   "id": "fr-data4-escaudain",
+   "navn": "Data4 Escaudain",
+   "status": "planlagt",
+   "status_dato": "2026-06-15",
+   "lat": 50.3333,
+   "lon": 3.3438,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Escaudain, France",
+   "koordinat_praecision": "by",
+   "by": "Escaudain, Hauts-de-France",
+   "land": "Frankrig",
+   "a2": "FR",
+   "ejer": "Data4 (Brookfield)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 700,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 5,
+    "valuta": "EUR",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-12-01",
+     "tekst": "Grunden på det tidligere Usinor-stålværk udvælges til en forundersøgelse"
+    },
+    {
+     "dato": "2026-06-15",
+     "tekst": "Data4 bekræfter planen for et AI-datacenter på 700 MW til 5 mia. euro"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Data4 confirms €5bn plan for 700MW AI data center in northern France",
+     "url": "https://www.datacenterdynamics.com/en/news/data4-confirms-5bn-plan-for-700mw-ai-data-center-in-northern-france/",
+     "dato": "2026-06-15",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "investering",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Erhvervsparken Soufflantes. Byggedatoer er ikke fastlagt. Effekttype ikke angivet. Datoen 2025-12-01 dækker kun måneden."
+  },
+  {
+   "id": "es-microsoft-la-muela",
+   "navn": "Microsoft La Muela",
+   "status": "planlagt",
+   "status_dato": "2026-10-02",
+   "lat": 41.5805,
+   "lon": -1.1162,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: La Muela, Zaragoza, Spain",
+   "koordinat_praecision": "by",
+   "by": "La Muela, Zaragoza",
+   "land": "Spanien",
+   "a2": "ES",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-11-14",
+     "tekst": "Aragóns regering godkender foreløbigt PIGA-planen for Microsofts tre campusser"
+    },
+    {
+     "dato": "2026-07-24",
+     "tekst": "Miljøkonsekvensvurderingen indgår i PIGA og godkendes foreløbigt"
+    },
+    {
+     "dato": "2030-01-01",
+     "tekst": "Første fase med 50 MW pr. campus ventes i drift fra 2030"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Forbes España",
+     "titel": "Microsoft obtiene luz verde para su ambicioso proyecto de centros de datos en Aragón",
+     "url": "https://forbes.es/empresas/828243/microsoft-obtiene-luz-verde-para-su-ambicioso-proyecto-de-centros-de-datos-en-aragon/",
+     "dato": "2025-11-14",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Gobierno de Aragón",
+     "titel": "Estudio de Impacto Ambiental del PIGA 'Implantación de la Región Microsoft en Aragón'",
+     "url": "https://www.aragon.es/-/microsoft-eia",
+     "dato": "2026-10-02",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Endelig godkendelse mangler pr. 2. oktober 2026. Første fase er 50 MW pr. campus, efter ti år 250-300 MW pr. campus; feltet bruger 300. Hele planen er 10 mia. euro og 284 ha for tre campusser, derfor intet beløb pr. campus. Datoen 2030-01-01 dækker kun år."
+  },
+  {
+   "id": "es-microsoft-villamayor",
+   "navn": "Microsoft Villamayor de Gállego",
+   "status": "planlagt",
+   "status_dato": "2026-10-02",
+   "lat": 41.6857,
+   "lon": -0.774,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Villamayor de Gállego, Spain",
+   "koordinat_praecision": "by",
+   "by": "Villamayor de Gállego",
+   "land": "Spanien",
+   "a2": "ES",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-11-14",
+     "tekst": "Aragóns regering godkender foreløbigt PIGA-planen for Microsofts tre campusser"
+    },
+    {
+     "dato": "2026-07-24",
+     "tekst": "Miljøkonsekvensvurderingen indgår i PIGA og godkendes foreløbigt"
+    },
+    {
+     "dato": "2030-01-01",
+     "tekst": "Første fase med 50 MW pr. campus ventes i drift fra 2030"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Forbes España",
+     "titel": "Microsoft obtiene luz verde para su ambicioso proyecto de centros de datos en Aragón",
+     "url": "https://forbes.es/empresas/828243/microsoft-obtiene-luz-verde-para-su-ambicioso-proyecto-de-centros-de-datos-en-aragon/",
+     "dato": "2025-11-14",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Gobierno de Aragón",
+     "titel": "Estudio de Impacto Ambiental del PIGA 'Implantación de la Región Microsoft en Aragón'",
+     "url": "https://www.aragon.es/-/microsoft-eia",
+     "dato": "2026-10-02",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Endelig godkendelse mangler pr. 2. oktober 2026. Første fase er 50 MW pr. campus, efter ti år 250-300 MW pr. campus; feltet bruger 300. Hele planen er 10 mia. euro og 284 ha for tre campusser, derfor intet beløb pr. campus. Datoen 2030-01-01 dækker kun år."
+  },
+  {
+   "id": "es-microsoft-zaragoza",
+   "navn": "Microsoft Zaragoza",
+   "status": "planlagt",
+   "status_dato": "2026-10-02",
+   "lat": 41.6916,
+   "lon": -0.9101,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Zaragoza, Spain",
+   "koordinat_praecision": "kommune",
+   "by": "Zaragoza",
+   "land": "Spanien",
+   "a2": "ES",
+   "ejer": "Microsoft",
+   "operatoer": "Microsoft",
+   "brugere": [],
+   "formaal": "sky",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-11-14",
+     "tekst": "Aragóns regering godkender foreløbigt PIGA-planen for Microsofts tre campusser"
+    },
+    {
+     "dato": "2026-07-24",
+     "tekst": "Miljøkonsekvensvurderingen indgår i PIGA og godkendes foreløbigt"
+    },
+    {
+     "dato": "2030-01-01",
+     "tekst": "Første fase med 50 MW pr. campus ventes i drift fra 2030"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Forbes España",
+     "titel": "Microsoft obtiene luz verde para su ambicioso proyecto de centros de datos en Aragón",
+     "url": "https://forbes.es/empresas/828243/microsoft-obtiene-luz-verde-para-su-ambicioso-proyecto-de-centros-de-datos-en-aragon/",
+     "dato": "2025-11-14",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Gobierno de Aragón",
+     "titel": "Estudio de Impacto Ambiental del PIGA 'Implantación de la Región Microsoft en Aragón'",
+     "url": "https://www.aragon.es/-/microsoft-eia",
+     "dato": "2026-10-02",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Endelig godkendelse mangler pr. 2. oktober 2026. Første fase er 50 MW pr. campus, efter ti år 250-300 MW pr. campus; feltet bruger 300. Hele planen er 10 mia. euro og 284 ha for tre campusser, derfor intet beløb pr. campus. Datoen 2030-01-01 dækker kun år. Koordinaten er byens centrum; campussens placering i kommunen er ikke oplyst."
+  },
+  {
+   "id": "es-blackstone-calatorao",
+   "navn": "Blackstone/QTS Calatorao",
+   "status": "planlagt",
+   "status_dato": "2024-10-15",
+   "lat": 41.5222,
+   "lon": -1.3464,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Calatorao, Spain",
+   "koordinat_praecision": "by",
+   "by": "Calatorao, Zaragoza",
+   "land": "Spanien",
+   "a2": "ES",
+   "ejer": "Blackstone",
+   "operatoer": "QTS",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": null,
+    "type": "net"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 7.5,
+    "valuta": "EUR",
+    "enhed": "mia",
+    "aar": 2024
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2024-10-15",
+     "tekst": "Blackstone annoncerer et campus på 300 MW på 224 ha i Calatorao (Project Rodes)"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Blackstone to develop 300MW data center campus in Aragon, Spain",
+     "url": "https://datacenterdynamics.com/en/news/blackstone-to-develop-300mw-data-center-campus-in-aragon-spain",
+     "dato": "2024-10-15",
+     "felter": [
+      "status",
+      "ejer",
+      "operatoer",
+      "it_effekt_mw",
+      "investering",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "300 MW elektrisk kapacitet ved fuld drift. 7,5 mia. euro gælder første halvdel, yderligere 7,5 mia. euro er planlagt senere. Ingen nyere status fundet."
+  },
+  {
+   "id": "es-merlin-navalmoral",
+   "navn": "Merlin/Edged Navalmoral de la Mata",
+   "status": "planlagt",
+   "status_dato": "2025-01-14",
+   "lat": 39.8915,
+   "lon": -5.5407,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Navalmoral de la Mata, Spain",
+   "koordinat_praecision": "by",
+   "by": "Expacio Navalmoral, Navalmoral de la Mata",
+   "land": "Spanien",
+   "a2": "ES",
+   "ejer": "Merlin Properties og Edged",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": "vandfri køling",
+   "tidslinje": [
+    {
+     "dato": "2025-01-14",
+     "tekst": "Merlin og Edged annoncerer to campusser på op til 1 GW hver i Extremadura"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Edged and Merlin to develop two gigawatt-scale data center campuses in Spain",
+     "url": "https://www.datacenterdynamics.com/en/news/edged-and-merlin-to-develop-two-gigawatt-scale-data-center-campuses-in-spain",
+     "dato": "2025-01-14",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "koeling",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Tidsplan ikke offentliggjort. Effekttype ikke angivet. Koordinaten er byen; grunden ligger i erhvervsparken Expacio Navalmoral."
+  },
+  {
+   "id": "es-merlin-valdecaballeros",
+   "navn": "Merlin/Edged Valdecaballeros",
+   "status": "planlagt",
+   "status_dato": "2025-01-14",
+   "lat": 39.2427,
+   "lon": -5.1898,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Valdecaballeros, Spain",
+   "koordinat_praecision": "by",
+   "by": "Valdecaballeros, Badajoz",
+   "land": "Spanien",
+   "a2": "ES",
+   "ejer": "Merlin Properties og Edged",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": "vandfri køling",
+   "tidslinje": [
+    {
+     "dato": "2025-01-14",
+     "tekst": "Merlin og Edged annoncerer to campusser på op til 1 GW hver i Extremadura"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Edged and Merlin to develop two gigawatt-scale data center campuses in Spain",
+     "url": "https://www.datacenterdynamics.com/en/news/edged-and-merlin-to-develop-two-gigawatt-scale-data-center-campuses-in-spain",
+     "dato": "2025-01-14",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "koeling",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Tidsplan ikke offentliggjort. Effekttype ikke angivet."
+  },
+  {
+   "id": "it-khazna-eni-ferrera",
+   "navn": "Khazna/Eni Ferrera Erbognone",
+   "status": "planlagt",
+   "status_dato": "2025-07-11",
+   "lat": 45.1151,
+   "lon": 8.8643,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Ferrera Erbognone, Italy",
+   "koordinat_praecision": "by",
+   "by": "Ferrera Erbognone, Lombardiet",
+   "land": "Italien",
+   "a2": "IT",
+   "ejer": "Khazna Data Centers og Eni (planlagt joint venture)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 500,
+    "planlagt_aar": null,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "Eni skal levere 'Blue Power' fra et nyt gaskraftværk med kombineret cyklus, designet til CO2-fangst",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-07-11",
+     "tekst": "Khazna og Eni underskriver Head of Terms for et AI-campus på 500 MW IT ved Milano"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Intelligent CIO Middle East (fagpresse)",
+     "titel": "Khazna Data Centers and Eni partner to develop 500 MW AI data centre campus near Milan",
+     "url": "https://www.intelligentcio.com/me/?p=122293",
+     "dato": "2025-07-11",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Joint venturet er endnu ikke dannet. Første skridt i et italiensk program på op til 1 GW. Ingen tidsplan."
+  },
+  {
+   "id": "fi-dayone-klaukkala",
+   "navn": "DayOne Klaukkala (Nurmijärvi)",
+   "status": "planlagt",
+   "status_dato": "2026-01-23",
+   "lat": 60.3793,
+   "lon": 24.7545,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Klaukkala, Nurmijärvi, Finland",
+   "koordinat_praecision": "by",
+   "by": "Sudentulli, Klaukkala, Nurmijärvi",
+   "land": "Finland",
+   "a2": "FI",
+   "ejer": "DayOne",
+   "operatoer": "DayOne",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 560,
+    "planlagt_aar": null,
+    "type": "net"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-01-23",
+     "tekst": "Nurmijärvi behandler et foreløbigt grundsalg til DayOne; lokalplan for Sudentulli i gang"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "DayOne eyes Finland for 560 MW data center facility",
+     "url": "https://w.media/?p=36918",
+     "dato": "2026-01-23",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Tidligt planstadie; ingen endelige arealbeslutninger, og projektet kræver bl.a. tilladelse fra forsvarsministeriet. 560 MW samlet nettilslutning."
+  },
+  {
+   "id": "sa-humain-datavolt-oxagon",
+   "navn": "HUMAIN/DataVolt Oxagon (NEOM)",
+   "status": "opfoerelse",
+   "status_dato": "2026-08-31",
+   "lat": 27.5679,
+   "lon": 35.546,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Oxagon, Saudi Arabia",
+   "koordinat_praecision": "by",
+   "by": "Oxagon, NEOM",
+   "land": "Saudi-Arabien",
+   "a2": "SA",
+   "ejer": "DataVolt og HUMAIN",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1500,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "forventes at indarbejde vedvarende energi",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-08-31",
+     "tekst": "Byggeriet er i gang; HUMAIN og DataVolt udvikler 100 MW af første fase på 360 MW i et planlagt campus på 1,5 GW"
+    },
+    {
+     "dato": "2028-01-01",
+     "tekst": "De første 100 MW ventes klar i 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "NEOM Newsroom",
+     "titel": "HUMAIN partners with DataVolt to jointly develop 100MW of a 360MW AI data center project in NEOM",
+     "url": "https://www.neom.com/en-us/newsroom/HUMAIN-and-DataVolt-to-develop-AI-data-center-in-NEOM",
+     "dato": "2026-08-31",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "1,5 GW er det samlede planlagte campus; første fase er 360 MW. Effekttype ikke angivet. Datoen 2028-01-01 dækker kun år."
+  },
+  {
+   "id": "sa-humain-riyadh",
+   "navn": "HUMAIN Riyadh",
+   "status": "opfoerelse",
+   "status_dato": "2025-08-26",
+   "lat": 24.6389,
+   "lon": 46.716,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Riyadh, Saudi Arabia",
+   "koordinat_praecision": "by",
+   "by": "Riyadh",
+   "land": "Saudi-Arabien",
+   "a2": "SA",
+   "ejer": "HUMAIN",
+   "operatoer": "HUMAIN",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 100,
+    "planlagt_aar": 2026,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-08-26",
+     "tekst": "HUMAIN tager første spadestik til datacentre i Riyadh og Dammam, 100 MW pr. site i første omgang, i drift ventet i 2. kvartal 2026"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Humain breaks ground on two data centers, with first facilities expected to go live in Q2 2026",
+     "url": "https://www.datacenterdynamics.com/en/news/humain-breaks-ground-two-data-centers-with-first-facilities-expected-to-go-live-in-q2-2026/",
+     "dato": "2025-08-26",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Ingen nyere kilde bekræfter, at anlægget er gået i drift. Kvarter i byen er ikke oplyst, så koordinaten er byens centrum. Effekttype ikke angivet."
+  },
+  {
+   "id": "sa-humain-dammam",
+   "navn": "HUMAIN Dammam",
+   "status": "opfoerelse",
+   "status_dato": "2025-08-26",
+   "lat": 26.4368,
+   "lon": 50.104,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Dammam, Saudi Arabia",
+   "koordinat_praecision": "by",
+   "by": "Dammam",
+   "land": "Saudi-Arabien",
+   "a2": "SA",
+   "ejer": "HUMAIN",
+   "operatoer": "HUMAIN",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 100,
+    "planlagt_aar": 2026,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-08-26",
+     "tekst": "HUMAIN tager første spadestik til datacentre i Riyadh og Dammam, 100 MW pr. site i første omgang, i drift ventet i 2. kvartal 2026"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Humain breaks ground on two data centers, with first facilities expected to go live in Q2 2026",
+     "url": "https://www.datacenterdynamics.com/en/news/humain-breaks-ground-two-data-centers-with-first-facilities-expected-to-go-live-in-q2-2026/",
+     "dato": "2025-08-26",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Ingen nyere kilde bekræfter, at anlægget er gået i drift. Kvarter i byen er ikke oplyst, så koordinaten er byens centrum. Effekttype ikke angivet."
+  },
+  {
+   "id": "ae-khazna-ajman",
+   "navn": "Khazna Ajman",
+   "status": "opfoerelse",
+   "status_dato": "2024-10-15",
+   "lat": 25.4065,
+   "lon": 55.5555,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Ajman, United Arab Emirates",
+   "koordinat_praecision": "kommune",
+   "by": "Ajman",
+   "land": "Forenede Arabiske Emirater",
+   "a2": "AE",
+   "ejer": "Khazna Data Centers",
+   "operatoer": "Khazna Data Centers",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 100,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "primært el fra Etihad Water and Electricity Company",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2024-10-15",
+     "tekst": "Khazna annoncerer byggeriet af et AI-optimeret datacenter på 100 MW med 20 datahaller á 5 MW"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "Khazna announces construction of 100 MW AI optimised Data Center in Ajman",
+     "url": "https://w.media/khazna-announces-construction-of-100-mw-ai-optimised-data-center-in-ajman/",
+     "dato": "2024-10-15",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Status bygger på Khaznas oplysning om, at datacentret bygges; ingen nyere status eller tidsplan fundet. Koordinaten er emiratet Ajman."
+  },
+  {
+   "id": "in-google-visakhapatnam",
+   "navn": "Google AI-hub Visakhapatnam",
+   "status": "opfoerelse",
+   "status_dato": "2026-04-28",
+   "lat": 17.9056,
+   "lon": 83.329,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Tarluvada, Visakhapatnam, India",
+   "koordinat_praecision": "by",
+   "by": "Tarluvada, Visakhapatnam",
+   "land": "Indien",
+   "a2": "IN",
+   "ejer": "Google (Raiden Infotech India)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 15,
+    "valuta": "USD",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-10-01",
+     "tekst": "Google annoncerer en investering på 15 mia. dollar i et AI-hub i Visakhapatnam"
+    },
+    {
+     "dato": "2026-04-28",
+     "tekst": "Byggeriet begynder i Tarluvada"
+    },
+    {
+     "dato": "2028-07-01",
+     "tekst": "Idriftsættelse sigtet mod juli 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Google to kick off $15bn India data center project on April 28",
+     "url": "https://www.datacenterdynamics.com/en/news/google-to-kick-off-15bn-india-data-center-project-on-april-28/",
+     "dato": "2026-04-07",
+     "felter": [
+      "ejer",
+      "it_effekt_mw",
+      "investering",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "t2online",
+     "titel": "Google begins construction of $15 billion AI hub in Visakhapatnam",
+     "url": "https://t2online.in/tech/tech-news/google-begins-construction-of--15-billion-ai-hub-in-visakhapatnam/2004855",
+     "dato": "2026-04-28",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Tre campusser: Adivivaram, Tarluvada og Rambilli-Achyutapuram; koordinaten er Tarluvada, hvor byggeriet begyndte. Partnere er AdaniConneX og Airtel. De 15 mia. dollar dækker Googles indiske plan 2026-2030. Effekttype ikke angivet. Datoerne 2025-10-01 og 2028-07-01 dækker kun måneden."
+  },
+  {
+   "id": "in-reliance-meta-jamnagar",
+   "navn": "Reliance/Meta Jamnagar",
+   "status": "planlagt",
+   "status_dato": "2026-06-10",
+   "lat": 22.4732,
+   "lon": 70.0552,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Jamnagar, Gujarat, India",
+   "koordinat_praecision": "by",
+   "by": "Jamnagar, Gujarat",
+   "land": "Indien",
+   "a2": "IN",
+   "ejer": "Reliance Industries",
+   "operatoer": "Reliance Industries",
+   "brugere": [
+    {
+     "navn": "Meta",
+     "sikkerhed": "sikker"
+    }
+   ],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 168,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "vedvarende energi",
+   "pue": null,
+   "vand": null,
+   "koeling": "køling med afsaltet havvand",
+   "tidslinje": [
+    {
+     "dato": "2026-06-10",
+     "tekst": "Reliance og Meta annoncerer et AI-datacenter på 168 MW i Jamnagar med levering inden for to år"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Reliance Industries",
+     "titel": "Reliance and Meta to Develop AI-Enabled Data Centre in Jamnagar, Gujarat",
+     "url": "https://www.ril.com/sites/default/files/2026-06/10062026_MR_Reliance_and_Meta_to_Develop_AI-Enabled_Data_Centre_in_Jamnagar_Gujarat.pdf",
+     "dato": "2026-06-10",
+     "felter": [
+      "status",
+      "ejer",
+      "brugere",
+      "it_effekt_mw",
+      "energikilde",
+      "koeling",
+      "formaal",
+      "tidslinje",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Meta lejer kapacitet. Levering er lovet inden for to år fra 10-06-2026; intet årstal er angivet. Investering ikke oplyst. Effekttype ikke angivet."
+  },
+  {
+   "id": "in-digital-connexion-vizag",
+   "navn": "Digital Connexion Visakhapatnam",
+   "status": "planlagt",
+   "status_dato": "2025-11-26",
+   "lat": 17.6936,
+   "lon": 83.2921,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Visakhapatnam, India",
+   "koordinat_praecision": "by",
+   "by": "Visakhapatnam",
+   "land": "Indien",
+   "a2": "IN",
+   "ejer": "Digital Connexion (Brookfield, Reliance Industries og Digital Realty)",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 11,
+    "valuta": "USD",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-11-26",
+     "tekst": "Digital Connexion underskriver aftalememorandum med Andhra Pradesh om et AI-datacenter på 1 GW på 400 acres"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "Digital Connexion to invest US$ 11 billion to build 1 GW AI data center in Andhra Pradesh",
+     "url": "https://w.media/digital-connexion-to-invest-us-11-billion-to-build-1-gw-ai-data-center-in-andhra-pradesh/",
+     "dato": "2025-11-26",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "investering",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Kun et aftalememorandum; ingen endelig investeringsbeslutning eller byggestart rapporteret. Investeringen er planlagt frem til 2030. Placering i byen er ikke oplyst."
+  },
+  {
+   "id": "jp-softbank-tomakomai",
+   "navn": "SoftBank Tomakomai",
+   "status": "opfoerelse",
+   "status_dato": "2025-05-01",
+   "lat": 42.6341,
+   "lon": 141.6055,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Tomakomai, Hokkaido, Japan",
+   "koordinat_praecision": "by",
+   "by": "Tomakomai, Hokkaido",
+   "land": "Japan",
+   "a2": "JP",
+   "ejer": "SoftBank Corp.",
+   "operatoer": "SoftBank Corp.",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": 2026,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "skal køre udelukkende på vedvarende energi indkøbt lokalt i Hokkaido",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-04-15",
+     "tekst": "Første spadestik til AI-datacentret på en grund på 700.000 m²"
+    },
+    {
+     "dato": "2026-04-01",
+     "tekst": "Drift planlagt i regnskabsåret 2026"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "SoftBank News",
+     "titel": "SoftBank breaks ground for AI data center in Tomakomai",
+     "url": "https://www.softbank.jp/en/sbnews/entry/20250501_01",
+     "dato": "2025-05-01",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Planlagt effekt over 300 MW. Datoen 2026-04-01 markerer starten af SoftBanks regnskabsår 2026, ikke en oplyst driftsdato."
+  },
+  {
+   "id": "jp-softbank-sakai",
+   "navn": "SoftBank Sakai (tidl. Sharp-fabrik)",
+   "status": "planlagt",
+   "status_dato": "2025-03-17",
+   "lat": 34.5737,
+   "lon": 135.4829,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Sakai, Osaka, Japan",
+   "koordinat_praecision": "by",
+   "by": "Sakai, Osaka",
+   "land": "Japan",
+   "a2": "JP",
+   "ejer": "SoftBank Corp.",
+   "operatoer": "SoftBank Corp.",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 250,
+    "planlagt_aar": 2028,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 100,
+    "valuta": "JPY",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-03-17",
+     "tekst": "SoftBank køber den tidligere Sharp LCD-fabrik for ca. 100 mia. yen til et AI-datacenter knyttet til samarbejdet med OpenAI"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "SoftBank, OpenAI to build AI-data center in defunct Sharp LCD factory",
+     "url": "https://w.media/softbank-openai-to-build-ai-data-center-in-defunct-sharp-lcd-factory/",
+     "dato": "2025-03-17",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Effekttallene stammer fra Nikkei gengivet af W.Media: 150 MW i første omgang, op til 250 MW i 2028. Nikkei nævner mulig drift i 2026; ingen nyere kilde fundet. Samarbejdet går gennem SB OpenAI Japan."
+  },
+  {
+   "id": "kr-sk-aws-ulsan",
+   "navn": "SK/AWS AI-datacenter Ulsan",
+   "status": "opfoerelse",
+   "status_dato": "2025-08-29",
+   "lat": 35.5392,
+   "lon": 129.3119,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Ulsan, South Korea",
+   "koordinat_praecision": "by",
+   "by": "Ulsan",
+   "land": "Sydkorea",
+   "a2": "KR",
+   "ejer": "SK Group",
+   "operatoer": null,
+   "brugere": [
+    {
+     "navn": "Amazon Web Services",
+     "sikkerhed": "sikker"
+    }
+   ],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 100,
+    "planlagt_aar": 2027,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 7000,
+    "valuta": "KRW",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "SK Multi-Utility's LNG-fyrede kraftværk forventes at levere strømmen",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-08-29",
+     "tekst": "Byggeriet er netop begyndt"
+    },
+    {
+     "dato": "2027-01-01",
+     "tekst": "Drift ventet i 2027"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "TelecomTV (fagpresse)",
+     "titel": "Under the hood of SKT's Ulsan AI datacentre",
+     "url": "https://www.telecomtv.com/content/telcos-and-ai-channel/under-the-hood-of-skt-s-ulsan-ai-datacentre-53720/",
+     "dato": "2025-08-29",
+     "felter": [
+      "status",
+      "ejer",
+      "operatoer",
+      "brugere",
+      "it_effekt_mw",
+      "investering",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "100 MW planlagt, på sigt en klynge på GW-niveau ifølge aftale med Ulsan. Investeringen er 7 billioner won (ca. 5,1 mia. dollar), heraf ca. 4 mia. dollar fra AWS. Datoerne 2025-08-01 og 2027-01-01 dækker kun måned eller år."
+  },
+  {
+   "id": "my-ytl-kulai",
+   "navn": "YTL Green Data Center Park Kulai",
+   "status": "drift",
+   "status_dato": "2025-11-03",
+   "lat": 1.6667,
+   "lon": 103.6,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Kulai, Johor, Malaysia",
+   "koordinat_praecision": "kommune",
+   "by": "Kulai, Johor",
+   "land": "Malaysia",
+   "a2": "MY",
+   "ejer": "YTL Power International",
+   "operatoer": "YTL Power International",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "500 MW solcelleanlæg og 600 MW backupforsyning fra det nationale elnet",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-10-01",
+     "tekst": "Det Nvidia-baserede AI-datacenter idriftsættes"
+    },
+    {
+     "dato": "2025-11-03",
+     "tekst": "YTL oplyser, at 300 MW bygges og idriftsættes på stedet, fuld kapacitet inden for to år"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "YTL Power completes Nvidia-powered AI data centre in Johor",
+     "url": "https://w.media/ytl-power-completes-nvidia-powered-ai-data-centre-in-johor/",
+     "dato": "2025-11-03",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Parken er 1.640 acres. Hvor meget af de 300 MW der er i drift, er ikke oplyst. Investeringen på 10 mia. ringgit dækker hele YTL's AI-program og er ikke lagt i feltet. Koordinaten er distriktet Kulai. Datoen 2025-10-01 dækker kun måneden."
+  },
+  {
+   "id": "au-nextdc-s7",
+   "navn": "NEXTDC S7 Eastern Creek",
+   "status": "planlagt",
+   "status_dato": "2026-07-02",
+   "lat": -33.8026,
+   "lon": 150.8352,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Honeycomb Drive, Eastern Creek, Australia",
+   "koordinat_praecision": "adresse",
+   "by": "Eastern Creek, Sydney",
+   "land": "Australien",
+   "a2": "AU",
+   "ejer": "NEXTDC",
+   "operatoer": "NEXTDC",
+   "brugere": [
+    {
+     "navn": "OpenAI",
+     "sikkerhed": "sandsynlig"
+    }
+   ],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 612,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": 9,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2024-10-01",
+     "tekst": "NEXTDC køber grunden for 353 mio. australske dollar og planlægger op til 550 MW"
+    },
+    {
+     "dato": "2025-12-01",
+     "tekst": "Aftalememorandum med OpenAI om at bruge en del af kapaciteten"
+    },
+    {
+     "dato": "2026-07-02",
+     "tekst": "Planlægningsdokumenter viser 612 MW fordelt på ni bygninger; vurderes som State Significant Development"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Australian Stargate data center in Sydney will offer 612MW of capacity",
+     "url": "https://www.datacenterdynamics.com/en/news/australian-stargate-data-center-in-sydney-will-offer-612mw-of-capacity/",
+     "dato": "2026-07-02",
+     "felter": [
+      "status",
+      "brugere",
+      "it_effekt_mw",
+      "bygninger",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "OpenAI er sat som sandsynlig bruger, fordi der kun foreligger et aftalememorandum. Grunden er 255.135 m² syd for Honeycomb Drive. Effekttype ikke angivet. Datoerne 2024-10-01 og 2025-12-01 dækker kun måneden."
+  },
+  {
+   "id": "au-cdc-marsden-park",
+   "navn": "CDC Marsden Park",
+   "status": "godkendt",
+   "status_dato": "2025-11-28",
+   "lat": -33.6957,
+   "lon": 150.8148,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Marsden Park, New South Wales, Australia",
+   "koordinat_praecision": "by",
+   "by": "Marsden Park, Sydney",
+   "land": "Australien",
+   "a2": "AU",
+   "ejer": "CDC Data Centres",
+   "operatoer": "CDC Data Centres",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 504,
+    "planlagt_aar": null,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": 6,
+   "investering": {
+    "beloeb": 3.1,
+    "valuta": "AUD",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-11-28",
+     "tekst": "NSW-regeringen godkender campus på 504 MW ICT-kapacitet som State Significant Development"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "NSW govt approves CDC's 504 MW campus in Sydney",
+     "url": "https://w.media/nsw-govt-approves-cdcs-504-mw-campus-in-sydney/",
+     "dato": "2025-11-28",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "bygninger",
+      "investering",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Seks bygninger i fire etager med op til 24 datahaller på ca. 20 ha, skalerbart mod 1 GW. Blacktown City Council gjorde indsigelse."
+  },
+  {
+   "id": "au-airtrunk-mel2",
+   "navn": "AirTrunk MEL2",
+   "status": "planlagt",
+   "status_dato": "2025-12-24",
+   "lat": -37.7047,
+   "lon": 144.8718,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Tullamarine, Victoria, Australia",
+   "koordinat_praecision": "by",
+   "by": "Melbournes nordvestlige del",
+   "land": "Australien",
+   "a2": "AU",
+   "ejer": "AirTrunk",
+   "operatoer": "AirTrunk",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 354,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 5,
+    "valuta": "AUD",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-12-24",
+     "tekst": "AirTrunk annoncerer MEL2 med over 354 MW og mere end 5 mia. australske dollar i ny investering"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "AirTrunk to add 345 MW facility in AUD 5bn Melbourne investment",
+     "url": "https://w.media/airtrunk-to-add-345-mw-facility-in-aud-5bn-melbourne-investment/",
+     "dato": "2025-12-24",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Overskriften siger 345 MW, brødteksten over 354 MW; feltet bruger brødteksten. Placeringen Tullamarine er fra billedteksten, brødteksten siger kun Melbournes nordvest. Effekttype ikke angivet."
+  },
+  {
+   "id": "br-scala-ai-city",
+   "navn": "Scala AI City",
+   "status": "planlagt",
+   "status_dato": "2026-03-25",
+   "lat": -29.9976,
+   "lon": -51.3064,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Eldorado do Sul, Brazil",
+   "koordinat_praecision": "by",
+   "by": "Eldorado do Sul, Rio Grande do Sul",
+   "land": "Brasilien",
+   "a2": "BR",
+   "ejer": "Scala Data Centers",
+   "operatoer": "Scala Data Centers",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 4750,
+    "planlagt_aar": null,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 500,
+    "valuta": "USD",
+    "enhed": "mio",
+    "aar": 2024
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2024-12-18",
+     "tekst": "Kommunal lov sanktioneres, der muliggør byggeriet; første fase 54 MW IT"
+    },
+    {
+     "dato": "2025-05-15",
+     "tekst": "Brasiliens minerals- og energiministerium giver tilladelse til 5 GW nettilslutning"
+    },
+    {
+     "dato": "2026-03-25",
+     "tekst": "Projektet er på masterplanstadiet; tilladelser er under behandling"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "IT Forum",
+     "titel": "Com sanção de lei em Eldorado do Sul (RS), Scala começa construção de 'AI City'",
+     "url": "https://itforum.com.br/?p=9594078",
+     "dato": "2024-12-20",
+     "felter": [
+      "it_effekt_mw",
+      "investering",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Telco Magazine (fagpresse)",
+     "titel": "Scala Data Centers' AI City Secures 5 GW Approval in Brazil",
+     "url": "https://telcomagazine.com/news/scala-data-centers-ai-city-secures-5-gw-approval-in-brazil",
+     "dato": "2025-05-15",
+     "felter": [
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Olhar Digital",
+     "titel": "RS se prepara para ter verdadeira 'cidade de data centers'",
+     "url": "https://olhardigital.com.br/2026/03/25/pro/rs-se-prepara-para-ter-verdadeira-cidade-de-data-centers-conheca/",
+     "dato": "2026-03-25",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Første fase 54 MW IT til 500 mio. dollar; potentiale 4,75 GW over 10-20 år. Kilden bruger IT-kapacitet om første fase; at de 4,75 GW også er IT, er ikke udtrykkeligt sagt. Ingen kilde bekræfter byggestart."
+  },
+  {
+   "id": "br-omnia-pecem",
+   "navn": "Omnia/Casa dos Ventos Pecém (TikTok)",
+   "status": "opfoerelse",
+   "status_dato": "2026-01-15",
+   "lat": -3.6059,
+   "lon": -38.8902,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Pecém, São Gonçalo do Amarante, Brazil",
+   "koordinat_praecision": "by",
+   "by": "Complexo do Pecém, Ceará",
+   "land": "Brasilien",
+   "a2": "BR",
+   "ejer": "Omnia Data Centers",
+   "operatoer": "Omnia Data Centers",
+   "brugere": [
+    {
+     "navn": "ByteDance (TikTok)",
+     "sikkerhed": "sikker"
+    }
+   ],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 300,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "Casa dos Ventos skal levere vedvarende energi",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-06-02",
+     "tekst": "Netoperatøren ONS godkender nettilslutningen for 300 MW, med mulighed for 900 MW"
+    },
+    {
+     "dato": "2026-01-15",
+     "tekst": "Byggeriet begynder. Første etape ventes færdig ved udgangen af 2027 og hele projektet ved udgangen af 2028"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Casa dos Ventos granted approval to construct TikTok-backed 300MW data center in Brazil",
+     "url": "https://www.datacenterdynamics.com/en/news/casa-dos-ventos-granted-approval-to-construct-tiktok-backed-300mw-data-center-in-brazil-report/",
+     "dato": "2025-06-02",
+     "felter": [
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "O Povo",
+     "titel": "Data center do TikTok inicia obras no Pecém",
+     "url": "https://www.opovo.com.br/noticias/economia/2026/01/15/data-center-do-tiktok-inicia-obras-no-pecem.html",
+     "dato": "2026-01-15",
+     "felter": [
+      "status",
+      "ejer",
+      "operatoer",
+      "brugere",
+      "energikilde",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "300 MW i første omgang, op til 900 MW (Reuters gengivet af DCD). O Povo anslår projektet til 200 mia. reais; DCD skriver op til 50 mia. reais (2025). Investering er derfor ikke lagt i feltet. Effekttype ikke angivet."
+  },
+  {
+   "id": "ca-wonder-valley-alberta",
+   "navn": "Wonder Valley Alberta",
+   "status": "planlagt",
+   "status_dato": "2026-02-17",
+   "lat": 54.8081,
+   "lon": -118.6592,
+   "koordinat_kilde": "CN, Greenview Industrial Gateway (54°48'29\" N, 118°39'33\" W)",
+   "koordinat_praecision": "adresse",
+   "by": "Greenview Industrial Gateway ved Grande Prairie",
+   "land": "Canada",
+   "a2": "CA",
+   "ejer": "O'Leary Digital",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": null,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-02-17",
+     "tekst": "O'Leary Digital oplyser, at tilladelserne til Wonder Valley Alberta er under behandling; campus planlagt til 7,5 GW kraftproduktion"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "O'Leary Digital via Newswire",
+     "titel": "O'Leary Digital Forms Joint Venture to Advance 7.5 GW Wonder Valley Utah Campus; Alberta Permitting Underway",
+     "url": "https://www.newswire.ca/news-releases/o-leary-digital-forms-joint-venture-to-advance-7-5-gw-wonder-valley-utah-campus-alberta-permitting-underway-854077638.html",
+     "dato": "2026-02-17",
+     "felter": [
+      "status",
+      "ejer",
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "CN",
+     "titel": "Greenview Industrial Gateway",
+     "url": "https://www.cn.ca/-/media/files/our-services/business-development/crrs-greenview-en.pdf",
+     "dato": null,
+     "felter": []
+    }
+   ],
+   "noter": "De 7,5 GW er planlagt kraftproduktionskapacitet for campus, ikke oplyst IT-effekt; typen er sat til net som nærmeste. Ingen tidsplan; udbygning afhænger af lejere. Koordinaten er Grande Prairie; Greenview Industrial Gateway kunne ikke geokodes præcist. Kilden nævner 7,5 GW produktionskapacitet for kraft, ikke IT-effekt eller nettilslutning."
+  },
+  {
+   "id": "us-meta-el-paso",
+   "navn": "Meta El Paso",
+   "status": "opfoerelse",
+   "status_dato": "2026-03-27",
+   "lat": 31.987,
+   "lon": -106.3606,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Stan Roberts Sr Avenue, El Paso, Texas",
+   "koordinat_praecision": "adresse",
+   "by": "El Paso, Texas",
+   "land": "USA",
+   "a2": "US",
+   "ejer": "Meta",
+   "operatoer": "Meta",
+   "brugere": [
+    {
+     "navn": "Meta",
+     "sikkerhed": "sikker"
+    }
+   ],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 10,
+    "valuta": "USD",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": "813 modulære gasgeneratorer på i alt 366 MW, ventet i drift i 2027",
+   "pue": null,
+   "vand": null,
+   "koeling": "lukket væskekølet kredsløb, der ikke bruger vand det meste af året",
+   "tidslinje": [
+    {
+     "dato": "2025-10-16",
+     "tekst": "Meta begynder byggeriet; første fase ca. 1,5 mia. dollar"
+    },
+    {
+     "dato": "2026-03-27",
+     "tekst": "Meta hæver investeringen til 10 mia. dollar for campus på op til 1 GW"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Meta breaks ground on 1GW data center campus in El Paso, Texas",
+     "url": "https://www.datacenterdynamics.com/en/news/meta-breaks-ground-on-1gw-data-center-campus-in-el-paso-texas/",
+     "dato": "2025-10-16",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "koeling",
+      "brugere",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Meta pledges $10bn investment for El Paso, Texas data center",
+     "url": "https://www.datacenterdynamics.com/en/news/meta-pledges-10bn-investment-for-el-paso-texas-data-center/",
+     "dato": "2026-03-27",
+     "felter": [
+      "status",
+      "investering",
+      "energikilde",
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Grunden ligger nord for Stan Roberts Sr. Ave. og vest for US Highway 54; koordinaten er vejen. Over 1.000 acres, op til fem faser. Effekttype ikke angivet."
+  },
+  {
+   "id": "us-fermi-america-amarillo",
+   "navn": "Fermi America HyperGrid (Project Matador)",
+   "status": "planlagt",
+   "status_dato": "2026-04-19",
+   "lat": 35.2073,
+   "lon": -101.8371,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Amarillo, Texas",
+   "koordinat_praecision": "by",
+   "by": "Amarillo, Texas",
+   "land": "USA",
+   "a2": "US",
+   "ejer": "Fermi America",
+   "operatoer": "Fermi America",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 11000,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "gas med kombineret cyklus, foreslået kernekraftkompleks med fire AP1000-reaktorer, elnet, sol og batterier, mest leveret bag måleren",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-07-03",
+     "tekst": "Fermi America køber over 600 MW gasturbiner til campus på op til 11 GW og 5.769 acres"
+    },
+    {
+     "dato": "2026-04-19",
+     "tekst": "Projektet står stille: yderligere byggeri afventer lejeaftale og finansiering, og direktøren er fratrådt"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Fermi America acquires 600MW of gas turbines for 11GW AI mega campus in Amarillo, Texas",
+     "url": "https://www.datacenterdynamics.com/en/news/fermi-america-acquires-600mw-of-gas-turbines-for-11gw-ai-mega-campus-in-amarillo-texas/",
+     "dato": "2025-07-03",
+     "felter": [
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    },
+    {
+     "navn": "Axios",
+     "titel": "Trump-branded AI data center megaproject stalls, CEO departs",
+     "url": "https://axios.com/2026/04/19/ai-data-center-project-troubles-texas",
+     "dato": "2026-04-19",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Status er sat til planlagt, fordi byggeriet er sat i bero uden lejer; satellitbilleder viser begrænset fremdrift. Selskabet venter ikke længere 1,1 GW i drift ved udgangen af 2026. Udvikles med Texas Tech University System. Koordinaten er Amarillo by. Effekttype ikke angivet."
+  },
+  {
+   "id": "us-project-jade-cheyenne",
+   "navn": "Project Jade Cheyenne",
+   "status": "godkendt",
+   "status_dato": "2026-06-09",
+   "lat": 41.14,
+   "lon": -104.8202,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Cheyenne, Wyoming",
+   "koordinat_praecision": "by",
+   "by": "syd for Cheyenne, Laramie County, Wyoming",
+   "land": "USA",
+   "a2": "US",
+   "ejer": "Tallgrass",
+   "operatoer": null,
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 1800,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": "dedikeret gasbaseret kraftværk (BFC Power og Cheyenne Power Hub, 2,7 GW) samt vedvarende kilder",
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-07-28",
+     "tekst": "Tallgrass og Crusoe præsenterer et AI-datacenter på 1,8 GW, skalerbart til 10 GW"
+    },
+    {
+     "dato": "2026-01-14",
+     "tekst": "Laramie County-kommissionen godkender enstemmigt datacentret på 600 acres og kraftværket på 659 acres"
+    },
+    {
+     "dato": "2026-06-09",
+     "tekst": "Crusoe har trukket sig efter kundens ønske; Tallgrass fortsætter og søger en ny partner"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Associated Press via KSAT",
+     "titel": "Cheyenne to host massive AI data center using more electricity than all Wyoming homes combined",
+     "url": "https://www.ksat.com/business/2025/07/28/cheyenne-to-host-massive-ai-data-center-using-more-electricity-than-all-wyoming-homes-combined/",
+     "dato": "2025-07-28",
+     "felter": [
+      "it_effekt_mw",
+      "energikilde",
+      "formaal",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Wyoming Public Media",
+     "titel": "Laramie County commission unanimously approves massive AI data center",
+     "url": "https://www.wyomingpublicmedia.org/wyoming-economy/2026-01-14/laramie-county-commission-unanimously-approves-massive-ai-data-center",
+     "dato": "2026-01-14",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Wyoming Tribune Eagle",
+     "titel": "Crusoe pulls out of Project Jade data center",
+     "url": "https://www.wyomingnews.com/news/local_news/crusoe-pulls-out-of-project-jade-data-center/article_b9a8bde9-21c0-4e8a-9051-9154b91bf0eb.html",
+     "dato": "2026-06-09",
+     "felter": [
+      "status",
+      "ejer",
+      "energikilde",
+      "tidslinje"
+     ]
+    }
+   ],
+   "noter": "Godkendt af amtet, men datacentrets udvikler Crusoe har trukket sig, og der er ikke offentliggjort en ny lejer. Effekttype ikke angivet. Koordinaten er Cheyenne by; grunden ligger flere miles syd for byen ved US 85."
+  },
+  {
+   "id": "mx-cloudhq-queretaro",
+   "navn": "CloudHQ Querétaro",
+   "status": "planlagt",
+   "status_dato": "2025-09-25",
+   "lat": 20.6217,
+   "lon": -100.1965,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Aeropuerto Intercontinental de Querétaro, Mexico",
+   "koordinat_praecision": "by",
+   "by": "ved Querétaros lufthavn",
+   "land": "Mexico",
+   "a2": "MX",
+   "ejer": "CloudHQ",
+   "operatoer": "CloudHQ",
+   "brugere": [],
+   "formaal": null,
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 900,
+    "planlagt_aar": 2027,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": 6,
+   "investering": {
+    "beloeb": 4.8,
+    "valuta": "USD",
+    "enhed": "mia",
+    "aar": 2025
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2025-09-25",
+     "tekst": "CloudHQ annoncerer seks datacentre med op til 900 MW kritisk IT-last på 52 ha, færdige i 2027"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Mexico News Daily",
+     "titel": "CloudHQ announces US $4.8B plan to build 6 data centers in Querétaro",
+     "url": "https://mexiconewsdaily.com/business/cloudhq-4b-queretaro-data-centers/",
+     "dato": "2025-09-25",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "bygninger",
+      "investering",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "CloudHQ's egen hjemmeside nævner seks bygninger á 48 MW IT (ca. 288 MW), hvilket ikke stemmer med 900 MW. Der mangler en fast lejer, og byggestart er ikke oplyst. Koordinaten er lufthavnen; grunden ligger lige vest for den."
+  },
+  {
+   "id": "id-bdx-jatiluhur",
+   "navn": "BDx AI Campus 2 (CGK4) Jatiluhur",
+   "status": "opfoerelse",
+   "status_dato": "2026-09-22",
+   "lat": -6.5274,
+   "lon": 107.4158,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Jatiluhur, Purwakarta, Indonesia",
+   "koordinat_praecision": "by",
+   "by": "Jatiluhur, Vestjava",
+   "land": "Indonesien",
+   "a2": "ID",
+   "ejer": "BDx Data Centers",
+   "operatoer": "BDx Data Centers",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 640,
+    "planlagt_aar": null,
+    "type": null
+   },
+   "areal_m2": null,
+   "bygninger": 6,
+   "investering": null,
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-09-22",
+     "tekst": "Byggeriet af bygning 1 (120 MW IT) begynder; første fase i drift i begyndelsen af 2027, hele campus over ca. tre år"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "Bisnis.com",
+     "titel": "BDx Mulai Bangun Data Center AI 640 MW di Jatiluhur",
+     "url": "https://teknologi.bisnis.com/read/20260922/84/2006055/bdx-mulai-bangun-data-center-ai-640-mw-di-jatiluhur",
+     "dato": "2026-09-22",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "bygninger",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "640 MW samlet, nettilførsel 845 MVA fra PLN. Effekttype for de 640 MW ikke angivet."
+  },
+  {
+   "id": "id-digital-edge-bekasi",
+   "navn": "Digital Edge CGK Campus Bekasi",
+   "status": "planlagt",
+   "status_dato": "2026-01-29",
+   "lat": -6.3836,
+   "lon": 107.1911,
+   "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Greenland International Industrial Center, Bekasi, Indonesia",
+   "koordinat_praecision": "adresse",
+   "by": "GIIC, Bekasi",
+   "land": "Indonesien",
+   "a2": "ID",
+   "ejer": "Digital Edge",
+   "operatoer": "Digital Edge",
+   "brugere": [],
+   "formaal": "ai",
+   "it_effekt_mw": {
+    "nu": null,
+    "planlagt": 500,
+    "planlagt_aar": null,
+    "type": "it"
+   },
+   "areal_m2": null,
+   "bygninger": null,
+   "investering": {
+    "beloeb": 4.5,
+    "valuta": "USD",
+    "enhed": "mia",
+    "aar": 2026
+   },
+   "elforbrug_gwh": null,
+   "energikilde": null,
+   "pue": null,
+   "vand": null,
+   "koeling": null,
+   "tidslinje": [
+    {
+     "dato": "2026-01-28",
+     "tekst": "Digital Edge annoncerer campus på 500 MW IT, skalerbart til 1 GW; første tre bygninger planlagt fra 4. kvartal 2026 til 2. kvartal 2027"
+    }
+   ],
+   "kilder": [
+    {
+     "navn": "W.Media (fagpresse)",
+     "titel": "Digital Edge to invest US$4.5 billion to build 500MW data center in Jakarta",
+     "url": "https://w.media/digital-edge-to-invest-us4-5-billion-to-build-500mw-data-center-in-jakarta/",
+     "dato": "2026-01-29",
+     "felter": [
+      "status",
+      "it_effekt_mw",
+      "investering",
+      "formaal",
+      "tidslinje",
+      "ejer",
+      "operatoer"
+     ]
+    }
+   ],
+   "noter": "Mål-PUE 1,25 er et designmål og ikke lagt i feltet. Byggestart ikke oplyst."
+  }
+ ]
 }
