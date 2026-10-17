@@ -34,6 +34,36 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `sfts-th`, punktet 22. september er mærket omtrentligt, men Thai PBS World bragte tallene 17. september.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober, som står på siden) og dengue (dashboardet pr. 16. oktober er indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066 af 16. oktober (ingen nye humane tilfælde af fugleinfluenza 9. til 15. oktober), ECDC's ugerapport uge 42 (indarbejdet af kørslen kl. 00.20), UKHSA (ugeoversigten uge 41 er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter (153 er fortsat den nyeste, også i insp.cd's medieliste). Kenyas sundhedsministerium hos APO Group (intet nyt efter 7. oktober). Yakima Health Districts pressemeddelelser. US CDC om mæslinger. Nigerias NCDC (nyeste ugerapport er fortsat uge 31). Søgninger efter nyt fra PAHO, Africa CDC og WHO AFRO (ingen nye rapporter fundet), om pest på Madagaskar, Krim-Congo hæmoragisk feber i Iran og miltbrand i Zambia. Statens Serum Institut, DK-VET, RIVM og Robert Koch Institut blev gennemgået af kørslen kl. 00.20 og er ikke slået op igen.
+
+**Ændret**
+- `ebola-ke`: 3 bekræftede tilfælde og 1 dødsfald, Kenyas sundhedsministerium pr. 16. oktober. Pressemeddelelsen fra generaldirektøren for sundhed, Nairobi 16. oktober, er læst som billede gengivet af Outbreak News Today: https://outbreaknewstoday.substack.com/p/kenya-reports-3rd-ebola-case Det tredje tilfælde er en 65-årig kvinde, primær kontakt og nær slægtning til de to første tilfælde, i karantæne siden 6. oktober, positiv på National Virology Reference Laboratory og KEMRI. 127 af 130 kontakter er opsporet og i karantæne, og 685.027 rejsende er screenet pr. 15. oktober. Nyt punkt i forløbet, `cases`, `extra` og `gap` er opdateret, og kilden er sat i `src` med tilføjelsen `, medie`. Trinnet er uændret `smitte`.
+- `h5n1-us`: trinnet er flyttet fra `reservoir` til `udbrud`. Yakima Health District melder 15. oktober i samarbejde med Washingtons sundhedsministerium et bekræftet tilfælde af fugleinfluenza hos en beboer i Yakima County, som var udsat for smittet malkekvæg: https://www.yakimacounty.us/DocumentCenter/View/46716 Patienten har ikke været alvorligt syg eller indlagt og er isoleret i hjemmet. Nyt punkt i forløbet med trinnet, `stage`, `disease`, `cases`, `extra` og `naeste` er opdateret, `gap` er tilføjet, og pressemeddelelsen er sat i `src`.
+
+**Nye**
+- Ingen. Pest på Madagaskar: Madagaskars sundhedsministerium melder efter Xinhua og Midi Madagasikara 4 bekræftede tilfælde i Ankazobe, Anjozorobe og Ambohimahasoa siden slutningen af juli og 5 mistænkte i Midongy Atsimo 10. oktober: https://www.thestar.com.my/news/world/2026/10/14/madagascar-reports-4-confirmed-plague-cases og https://midi-madagasikara.mg/peste-quatre-cas-confirmes-et-plusieurs-cas-suspects-sous-surveillance/ Ikke taget med, fordi pest er endemisk på Madagaskar med en årlig sæson fra september til april, og ingen myndighed kalder årets sæson usædvanlig. Se Usikkert om lungepest.
+
+**Urørt**
+- 39 hændelser uden nyt i kilderne.
+- Rundtur: `cchf-ir` 27 dage siden seneste punkt, `chik-am` 25, `difteri-ng` 23, `anthrax-zm` 19, `altnv-cn` 19, `mpox-mo` 17, `h5n1-dk` 16, `salmonella-dk` 16, `cre-eu` 15, `maesling-am` 14 og `cyclospora-us` 12: søgt eller slået op, intet nyt fra myndighederne. `ebola-drc`: situationsrapport 154 findes endnu ikke. `h5n1-kh`: WHO WPRO's oversigt nummer 1066 har intet nyt tilfælde. `maesling-us`: se Usikkert.
+
+**Usikkert**
+- `maesling-us`: CIDRAP skriver, at US CDC melder 4.410 tilfælde: https://www.cidrap.umn.edu/measles/us-measles-cases-grow-8-1-week-total-4410-cases Hentningsværktøjet viser fortsat 4.080 pr. 8. oktober, opdateret 9. oktober, på https://www.cdc.gov/measles/data-research/index.html og et direkte opslag giver 403. Tallet er ikke sat ind.
+- `ebola-ke`: Kenyas sundhedsministeriums pressemeddelelse om det tredje tilfælde er kun fundet som billede hos Outbreak News Today. Africanews' artikel kunne ikke hentes ad nogen af de to veje (direkte opslag uden tekst, hentningsværktøjet fik ikke tilladelse).
+- `h5n1-us`: Yakima Health District nævner ikke undertypen hos patienten. Hændelsens sted står fortsat som Minnesota, Dakotaerne og Wisconsin, se Til gennemgang.
+- Pest på Madagaskar: Outbreak News Today skriver 16. oktober efter sundhedsministeriet, at tre af tilfældene i Midongy Atsimo er lungepest, mens Xinhua og Midi Madagasikara skriver, at de fem tilfælde dér er mistænkte og venter på laboratoriesvar. Ministeriets egen udmelding er ikke fundet.
+- Kontrollen advarer fortsat om 3 hændelser, hvor `cases` har tal uden opgørelsesdato: `difteri-ng`, `cchf-ir` og `altnv-cn`.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 68c338d.
+
+**Mediesporet**
+- Ét par har status afventer: `IL-SY`, som venter på ejerens afgørelse i GENNEMGANG.md. Ikke afgjort. Stregens nye artikler handler om diplomati og landbrug ved Golanhøjderne, ikke om kampe med syriske regeringsstyrker: The Jerusalem Post 17. oktober om Netanyahus telefonsamtale med al-Sharaa (https://www.jpost.com/middle-east/article-911941) og The National 16. oktober om syriske landmænd ved grænsen (https://www.thenationalnews.com/news/mena/2026/10/16/syria-israel-golan-sufa-53/).
+- Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `h5n1-us`, skal det humane tilfælde i Washington være en egen hændelse? Og `OPDATERING.md`, en hurtigere vej til DR Congos situationsrapporter.
+
 ## 16. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
