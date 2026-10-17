@@ -26,6 +26,7 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 - `tools/hent-kilder.mjs` (kørslen 14. oktober kl. 11.20): delen `lk` fejlede med curl mod https://www.dengue.health.gov.lk/ efter tre forsøg, mens siden kunne læses gennem hentningsværktøjet. Var det en enkeltstående fejl, eller spærrer siden for scriptets opslag, så scriptet skal rettes?
 - Kørslens session (kørslen 14. oktober kl. 17.20): repoet kunne ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i den planlagte kørsel, og sessionen kun har adgang til mikkelnicco/globus-nicco-dk. Hentning, afsendelse og GitHubs API virkede gennem det gamle navn. Skal den planlagte opgave have repoet under det nye navn?
 - `OPDATERING.md`, afsnittet Sådan hentes kilderne (kørslen 17. oktober kl. 05.20): DR Congos situationsrapporter kan findes uden at gætte adressen gennem insp.cd's medieliste: https://insp.cd/wp-json/wp/v2/media?search=SitRep_MVEBDB&per_page=5 som viser de nyeste PDF'er med dato. Skal den vej skrives ind?
+- `tools/hent-kilder.mjs`, delen `dghs` (kørslen 17. oktober kl. 17.20): DGHS lagde meddelelserne om mæslinger for 15. og 16. oktober ud sammen med en ekstra meddelelse for 14. oktober, efter at kørslerne havde set på listen, og scriptet viser kun den nyeste. Kørslen fandt dem ved at læse listen https://dghs.gov.bd/pages/press-releases selv. Skal scriptet vise alle meddelelser nyere end den, der står i `maesling-bd`?
 
 ## Datacentre
 

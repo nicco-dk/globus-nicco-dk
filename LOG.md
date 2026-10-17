@@ -91,6 +91,37 @@ Ingen gennemgang af kilder til smitteudbruddene og ingen ændrede tal i datasæt
 **Til gennemgang**
 - Nyt i GENNEMGANG.md under Datacentre: de 30 udenlandske anlæg, der ikke er efterprøvet, Gefion under 50 MW og Microsofts anlæg i Roskilde.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 17. oktober, og meddelelserne 15. og 16. oktober, som er lagt ud senere end de tidligere kørsler) og dengue (dashboardet pr. 17. oktober), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC's ugerapport uge 42, UKHSA (ugeoversigten uge 41 er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapport 154, fundet gennem insp.cd's medieliste. US CDC om mæslinger (opdateret 16. oktober). WHO AFRO's side med udbrud og nødsituationer (intet nyt efter 9. oktober). Søgninger efter nyt fra Africa CDC og PAHO (ingen nye rapporter fundet) og om ebola i Kenya (intet nyt efter det tredje tilfælde 16. oktober).
+
+**Ændret**
+- `ebola-drc`: 9.348 bekræftede tilfælde og 4.510 dødsfald, DR Congos sundhedsministerium pr. 15. oktober, situationsrapport 154 offentliggjort 16. oktober: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_154_15_10_2026.pdf 71 nye tilfælde på et døgn (Ituri 41, Nordkivu 22, Tshopo 7, Haut-Uélé 1) og 32 nye dødsfald (18 i lokalsamfundet, 14 på behandlingscentre). Tallene er læst i PDF'ens tekstlag og som billede af forsiden, og de stemmer med rapport 153 plus døgnets tal. Nyt punkt 16. oktober i forløbet og i talserien (15. oktober), `cases`, `extra` og `gap` er opdateret. Rapport 154 har erstattet 153 i `src`, fordi punktet 15. oktober selv bærer rapport 153.
+- `maesling-bd`: 211.990 mistænkte og 23.057 bekræftede tilfælde, 1.085 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 17. oktober: https://dghs.gov.bd/pages/press-releases/6ad34109e0cf99482931056a Tre nye punkter i forløbet og i talserien for 15., 16. og 17. oktober efter meddelelserne https://dghs.gov.bd/pages/press-releases/6ad23de62e520f8fc88b7054 (209.876 mistænkte, 22.926 bekræftede, 1.077 dødsfald blandt mistænkte) og https://dghs.gov.bd/pages/press-releases/6ad23d92ffd11fcb4bdba153 (211.040 mistænkte, 22.972 bekræftede, 1.082 dødsfald blandt mistænkte). Tallene er læst i PDF'ernes tekstlag og som billede af siden, og hver dag stemmer med dagen før plus døgnets tal. Grafens dødstal er de to rækker lagt sammen, som `extra` forklarer. `cases`, `extra` og `src` er opdateret.
+- `dengue-bd`: 110.312 indlagte og 342 dødsfald i 2026, DGHS pr. 17. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.872 nye indlagte og 7 nye dødsfald på et døgn, uge 41 indtil videre 13.230 tilfælde og 43 dødsfald. Tallene er læst i sidens rå tekst og stemmer med gårsdagens tal plus døgnets. Nyt punkt i forløbet og i talserien, `cases` er opdateret.
+- `maesling-us`: 4.410 bekræftede tilfælde i 2026, heraf 4.392 meldt af 47 jurisdiktioner, US CDC pr. 15. oktober, opdateret 16. oktober: https://www.cdc.gov/measles/data-research/index.html 96 procent (4.228 af 4.410) hører til et udbrud, 42 udbrud. Læst to gange uafhængigt gennem hentningsværktøjet. Nyt punkt i forløbet og i talserien, `cases` og `extra` er opdateret.
+
+**Nye**
+- Ingen. NaTHNaC melder 16. oktober 59 bekræftede tilfælde af hantavirus i Argentina i 2026 pr. 3. oktober. Ikke taget med, fordi hantavirus er endemisk i Argentina, og ingen myndighed kalder året usædvanligt.
+
+**Urørt**
+- 37 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Afrika og Amerika op. Resten hører til de andre kørsler i vagtplanen.
+- `ebola-ke`: intet nyt efter det tredje tilfælde 16. oktober. `maesling-am`: næste PAHO-rapport 22. oktober. `kolera`, `difteri-afro`, `difteri-ng`, `anthrax-zm`, `gul-feber-gh`, `chik-am`, `mpox-mo`, `cyclospora-us`, `dengue-fl` og `h5n1-us`: intet nyt fra myndighederne siden forrige gennemgang.
+
+**Usikkert**
+- `ebola-drc`: Nord-Ubangi er fortsat ikke bekræftet af DR Congos myndigheder. Situationsrapport 154 skriver syv provinser. CIDRAP skriver 16. oktober efter Reuters, at landet endnu ikke har meldt tilfældene officielt.
+- `maesling-bd`: DGHS' liste har to meddelelser dateret 14. oktober. Den anden (https://dghs.gov.bd/pages/press-releases/6ad23e48fde009fa70fc5b09) har de samme tal som den, der står på siden. Meddelelserne for 15. og 16. oktober er lagt ud efter kørslen 16. oktober kl. 17.20.
+- `kolera`: WHO's egen udmelding om over 51.400 tilfælde i DR Congo er fortsat ikke fundet.
+- Kontrollen advarer fortsat om 3 hændelser, hvor `cases` har tal uden opgørelsesdato: `difteri-ng`, `cchf-ir` og `altnv-cn`.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 8d36def.
+
+**Mediesporet**
+- Ét par har status afventer: `IL-SY`, som venter på ejerens afgørelse i GENNEMGANG.md. Ikke afgjort. En ny artikel fra Al Jazeera 17. oktober handler efter overskriften om israelske razziaer og anholdelser i det sydlige Syrien: https://www.aljazeera.com/features/2026/10/17/israeli-raids-and-arrests-in-southern-syria-push-population-to-the-brink
+- Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `tools/hent-kilder.mjs`, delen `dghs` viser kun den nyeste meddelelse om mæslinger.
+
 ## 16. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
