@@ -51,7 +51,7 @@
   --rule:#1d2d3d; --accent:#4fb3c9; --warn:#e2b443;
   --s1:#6f93ad; --s2:#e2b443; --s3:#e8803a; --s4:#dc4a4a; --s5:#b253d8; --s0:#49796b;
   --krig-tone:#13304a; --hjaelp:#8fdc6c; --stoette:#f2c94c; --hs:#c3ccd5;
-  --c-rejse:#e98bc4; --flugt:#c7d2fe; --c-krig:#ef5d5b; --c-smitte:#3fcf9e; --c-hede:#f2c94c; --c-jord:#cda57c; --c-flod:#5b95f6; --c-storm:#55cbe0; --c-brand:#f5893c; --c-vulkan:#b691f7;
+  --c-rejse:#e98bc4; --flugt:#c7d2fe; --c-krig:#ef5d5b; --c-smitte:#3fcf9e; --c-hede:#f2c94c; --c-jord:#cda57c; --c-flod:#5b95f6; --c-storm:#55cbe0; --c-brand:#f5893c; --c-vulkan:#b691f7; --c-data:#b9dd4f;
   --shadow:0 10px 30px rgba(0,0,0,.45);
   color-scheme:dark;
   --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -63,7 +63,7 @@
     --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
     --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
     --s1:#49708c; --s2:#b5861c; --s3:#c4601c; --s4:#c22f2f; --s5:#8c2fb0; --s0:#2f6354;
-    --krig-tone:#d9e4ec; --hjaelp:#3f8a1c; --stoette:#a67c00; --hs:#7f8c98; --c-rejse:#ad3c80; --flugt:#4f5fb8; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
+    --krig-tone:#d9e4ec; --hjaelp:#3f8a1c; --stoette:#a67c00; --hs:#7f8c98; --c-rejse:#ad3c80; --flugt:#4f5fb8; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4; --c-data:#5b7f10;
     --shadow:0 8px 24px rgba(20,40,60,.14);
     color-scheme:light;
   }
@@ -73,7 +73,7 @@
   --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
   --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
   --s1:#49708c; --s2:#b5861c; --s3:#c4601c; --s4:#c22f2f; --s5:#8c2fb0; --s0:#2f6354;
-  --krig-tone:#d9e4ec; --hjaelp:#3f8a1c; --stoette:#a67c00; --hs:#7f8c98; --c-rejse:#ad3c80; --flugt:#4f5fb8; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4;
+  --krig-tone:#d9e4ec; --hjaelp:#3f8a1c; --stoette:#a67c00; --hs:#7f8c98; --c-rejse:#ad3c80; --flugt:#4f5fb8; --c-krig:#c4302e; --c-smitte:#11845d; --c-hede:#9a7208; --c-jord:#88603a; --c-flod:#2457c2; --c-storm:#14798e; --c-brand:#c0531a; --c-vulkan:#7244c4; --c-data:#5b7f10;
   --shadow:0 8px 24px rgba(20,40,60,.14);
   color-scheme:light;
 }
@@ -99,6 +99,21 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 .hentapp svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .hentapp:hover{border-color:var(--accent)}
 .rchip.service{grid-column:2;justify-self:end}
+.rservice{grid-column:2;justify-self:end;display:flex;gap:6px;align-items:center}
+.rservice>.rchip.service+.rchip.service{margin-left:0}
+@media (max-width:900px){.rservice{display:contents}}
+/* Datacentre: gruppen i listen, filtrene i den og punkterne */
+.dc-filtre{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:4px 2px 8px;font-size:12px}
+.dc-filtre .seg button{font-size:11px}
+.dc-st{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);border-radius:999px;padding:3px 9px 3px 5px;font:500 11px/1.2 var(--mono);cursor:pointer;min-height:28px}
+.dc-st[aria-pressed="true"]{border-color:var(--c-data);color:var(--fg)}
+.dc-st svg{flex:none}
+.dc-kilde{font-size:11px;color:var(--fg-faint);margin:0 2px 8px;line-height:1.45}
+.dc-kilde a{color:inherit}
+.item.dc .m{display:flex;gap:6px;align-items:center}
+.k-dc-skoen{font-family:var(--mono);font-size:10px;letter-spacing:.04em;color:var(--fg-faint);white-space:nowrap}
+.k-dc-tl{display:grid;gap:2px}
+.k-dc-tl .tlrow.future{opacity:.75}
 @media (max-width:900px){.rchip.service{margin-left:14px}}
 .rchip[aria-pressed="true"]{border-color:var(--c);color:var(--fg);background:color-mix(in srgb,var(--c) 12%,var(--panel))}
 .rchip[data-fokus="1"]{box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 45%,transparent)}
@@ -945,6 +960,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <div class="lag-top"><b>Lag</b><button class="x" id="lagluk" type="button" aria-label="Luk lag">×</button></div>
     <div class="lag-ind" id="lagind">
       <label class="lag-sw"><input type="checkbox" id="lagrejse"><span class="sw-t"><b>Rejsevejledninger</b><span>Udenrigsministeriets og det britiske udenrigsministeriums råd for hvert land</span></span><span class="sw" aria-hidden="true"></span></label>
+      <label class="lag-sw"><input type="checkbox" id="lagdata"><span class="sw-t"><b>Datacentre</b><span>De største datacentre i verden: i drift, under opførelse og planlagt</span></span><span class="sw" aria-hidden="true"></span></label>
       <div id="lagfiltre"></div>
       <div><p class="lbl">Senest opdateret</p><dl class="rettider" id="lagtider"></dl></div>
       <div><p class="lbl">Visning og data</p><div class="lagmere" id="lagmere"></div></div>
@@ -1027,7 +1043,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     </div>
 
     <h3>Retningerne</h3>
-    <p>Hver retning har sit eget ikon og sin egen farve. Knapperne øverst slår dem til og fra, og tallet viser, hvor mange hændelser der er. Et klik slår en retning til eller fra, og et dobbeltklik viser kun den. Rejsevejledninger er en service: knappen står for sig til højre og er slået fra, til du slår den til.</p>
+    <p>Hver retning har sit eget ikon og sin egen farve. Knapperne øverst slår dem til og fra, og tallet viser, hvor mange hændelser der er. Et klik slår en retning til eller fra, og et dobbeltklik viser kun den. Rejsevejledninger og datacentre er en service: knapperne står for sig til højre og er slået fra, til du slår dem til.</p>
     <div class="g-dirs" id="gdirs"></div>
 
     <h3>Alvor</h3>
@@ -1143,7 +1159,8 @@ const IC = {
   flod:'M3 8.5c2 0 2-1.5 4.5-1.5s2.5 1.5 4.5 1.5 2.5-1.5 4.5-1.5 2.5 1.5 4.5 1.5M3 13.5c2 0 2-1.5 4.5-1.5s2.5 1.5 4.5 1.5 2.5-1.5 4.5-1.5 2.5 1.5 4.5 1.5M3 18.5c2 0 2-1.5 4.5-1.5s2.5 1.5 4.5 1.5 2.5-1.5 4.5-1.5 2.5 1.5 4.5 1.5',
   storm:'M12 9.5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 1 0 0-5zM19.5 7.5C17 3.5 9.5 3 7.5 8M4.5 16.5C7 20.5 14.5 21 16.5 16M7.5 8c-1.5 2.5-1.5 5.5 0 8M16.5 16c1.5-2.5 1.5-5.5 0-8',
   brand:'M12 3c1.2 3.6 5 5.4 5 10.2a5 5 0 0 1 -10 0c0-2.6 1.4-4.2 2.6-5.2 0 2 .9 3.3 2 3.3 0-3.2-1-5.4.4-8.3z',
-  vulkan:'M3 20.5l6-10.5h6l6 10.5zM10.2 10l1.8 3 1.8-3M8.5 6.5c1.2-1.6 2.6-1.6 3.5 0 .9-1.6 2.3-1.6 3.5 0M12 3v1.5'
+  vulkan:'M3 20.5l6-10.5h6l6 10.5zM10.2 10l1.8 3 1.8-3M8.5 6.5c1.2-1.6 2.6-1.6 3.5 0 .9-1.6 2.3-1.6 3.5 0M12 3v1.5',
+  data:'M4.5 4h15v6h-15zM4.5 14h15v6h-15zM7.5 7h1M7.5 17h1M12 7h4.5M12 17h4.5M12 10v4'
 };
 const svgIc = (k, s=24) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${IC[k]}"/></svg>`;
 const RETNINGER = [
@@ -1155,7 +1172,8 @@ const RETNINGER = [
   {k:'flod', n:'Oversvømmelser', hvad:'Igangværende oversvømmelser og varsler om oversvømmelse og højvande i Europa.', kilder:'GDACS og Meteoalarm', fk:['gdacs','meteoalarm']},
   {k:'storm', n:'Orkaner, tyfoner og storme', hvad:'Tropiske cykloner i hele verden og vindvarsler i Europa.', kilder:'GDACS og Meteoalarm', fk:['gdacs','meteoalarm']},
   {k:'brand', n:'Naturbrande', hvad:'Igangværende skov- og naturbrande og varsler om brandfare i Europa.', kilder:'GDACS og Meteoalarm', fk:['gdacs','meteoalarm']},
-  {k:'vulkan', n:'Vulkaner, aktive og i udbrud', hvad:'Vulkanudbrud med GDACS-varsel. Smithsonians ugentlige rapport er taget ud, fordi den ikke kan hentes automatisk.', kilder:'GDACS', fk:['gdacs']}
+  {k:'vulkan', n:'Vulkaner, aktive og i udbrud', hvad:'Vulkanudbrud med GDACS-varsel. Smithsonians ugentlige rapport er taget ud, fordi den ikke kan hentes automatisk.', kilder:'GDACS', fk:['gdacs']},
+  {k:'data', n:'Datacentre', aktiv:true, hvad:'De største datacentre i verden: i drift (fyldt prik), under opførelse (halvfyldt) og planlagt eller godkendt (stiplet). Prikkens areal følger IT-effekten. Effekt, omkostning og vand er ofte skøn og mærket sådan. Laget er ikke en risiko og tæller ikke med i alvor eller beskeder.', kilder:'Epoch AI (Frontier Data Centers), selskabernes egne oplysninger, myndigheder og OpenStreetMap'}
 ];
 const ALV = [null,
   {n:'Til orientering', d:'Godt at vide. Brug sund fornuft.', smitte:'Naturligt reservoir'},
@@ -2057,7 +2075,7 @@ const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).
 function readTokens(){
   T = {};
   ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--accent','--bg',
-   '--panel','--krig-tone','--hjaelp','--stoette','--hs','--flugt','--c-rejse','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan'].forEach(k => T[k] = css(k));
+   '--panel','--krig-tone','--hjaelp','--stoette','--hs','--flugt','--c-rejse','--c-krig','--c-smitte','--c-hede','--c-jord','--c-flod','--c-storm','--c-brand','--c-vulkan','--c-data'].forEach(k => T[k] = css(k));
 }
 let TOP = 0, VH = 0, CY_MAAL = 0, CX_MAAL = 0;
 // På mobilen glider klodens midte op over detaljearket, så det valgte står i det synlige stykke kort.
@@ -2263,6 +2281,8 @@ function draw(){
     }
   }
 
+  // Datacentrene ligger under hændelserne, så en hændelse altid kan ses og trykkes på.
+  tegnDC();
   // Markører, der ligger tæt på skærmen, samles i én prik med antallet. Jo længere man zoomer ind,
   // jo længere fra hinanden kommer de, og prikken deler sig. Det alvorligste bestemmer, hvor prikken står.
   // Det valgte står altid for sig selv.
@@ -2588,7 +2608,7 @@ let nivRet = null, seAlle = false;
 let retOn = new Set(['smitte']), minAlvor = 1, mistMode = 'zoom', foerFokus = null;
 // Rejsevejledninger er en service, ikke noget man går i dybden med. Den står for sig til højre og er slået fra ved start
 // og ved Vis alle. Man slår den til med et klik, eller med et dobbeltklik, så kun rejsevejledningerne står.
-const SERVICE = new Set(['rejse']);
+const SERVICE = new Set(['rejse', 'data']);
 const alleRet = () => RETNINGER.filter(r => r.aktiv && !SERVICE.has(r.k)).map(r => r.k);
 const iFokus = k => !!foerFokus && retOn.size === 1 && retOn.has(k);
 function skiftRetning(k){ retOn.has(k) ? retOn.delete(k) : retOn.add(k); foerFokus = null; }
@@ -2628,6 +2648,229 @@ const listItems = () => ALLE().filter(matches);
 const visible = () => focusId
   ? (byId[focusId] && liveAt(byId[focusId], cutoff) ? [byId[focusId]] : [])
   : ALLE().filter(matches);
+
+// ---------- datacentre ----------
+// Laget Datacentre (claude/globus-datacentre.md i projektet). Data fra /datacentre.json, som tools/hent-datacentre.mjs bygger
+// ved hver udrulning af Epoch AI's Frontier Data Centers og den kuraterede liste tools/datacentre.json.
+// Filen hentes først, når laget slås til. Et datacenter er ikke en hændelse: det står ikke i ALLE(), tæller ikke med i
+// alvor, retningernes lister, søljen eller beskeder, og det vises kun, når tidsskyderen står på i dag.
+let DC = null, DCINFO = null, DC_HENTER = false, DC_FEJL = false, DC_LISTE = [];
+const DC_ST = {
+  drift: {n:'I drift', d:'Fyldt prik. Mindst én bygning er i drift ifølge kilden.'},
+  opfoerelse: {n:'Under opførelse', d:'Halvfyldt prik. Byggeriet er i gang, men intet er i drift endnu ifølge kilden.'},
+  godkendt: {n:'Godkendt', d:'Stiplet ring. Myndighederne har givet tilladelse, men byggeriet er ikke begyndt.'},
+  planlagt: {n:'Planlagt', d:'Stiplet ring. Annonceret eller ansøgt, ikke begyndt.'}
+};
+const DC_FORMAAL = {ai:'AI-træning og -beregning', sky:'Sky (cloud)', colocation:'Colocation (lejes ud)', virksomhed:'Virksomhedens egen drift', offentlig:'Offentlig forskning eller myndighed'};
+// Filtrene. Planlagt dækker også godkendt.
+const dcFilter = {st:new Set(['drift', 'opfoerelse', 'planlagt']), min:0};
+const dcGr = st => st === 'godkendt' ? 'planlagt' : st;
+// Størrelsen: IT-effekten nu for et anlæg i drift, ellers den planlagte.
+const dcMw = d => { const it = d.it_effekt_mw || {}; return d.status === 'drift' ? (it.nu || it.planlagt || 0) : (it.planlagt || it.nu || 0); };
+// Prikkens areal følger effekten: radius efter kvadratroden. 100 MW giver 2,6 px, 1.000 MW 8,2 px.
+const dcR = mw => mw > 0 ? Math.max(2.4, 2.6*Math.sqrt(mw/100)) : 2.4;
+const dcPaa = () => retOn.has('data') || !!(selected && byId[selected] && byId[selected]._dc);
+const dcHay = d => [d.navn, d.land, d.adresse, d.by, d.projekt, d.operatoer, ...(d.ejer || []).map(x => x.navn), ...(d.brugere || []).map(x => x.navn), 'datacenter datacentre'].filter(Boolean).join(' ').toLowerCase();
+const dcTekst = d => !query || query.split(/\s+/).every(w => dcHay(d).includes(w));
+function dcVis(){ return (DC || []).filter(d => dcFilter.st.has(dcGr(d.status)) && (!dcFilter.min || dcMw(d) >= dcFilter.min) && dcTekst(d) && regionMatch(d)); }
+const dcSort = (a, b) => dcMw(b) - dcMw(a) || a.navn.localeCompare(b.navn, 'da');
+function hentDC(){
+  if(DC || DC_HENTER) return; DC_HENTER = true;
+  fetch('/datacentre.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {
+    DCINFO = j;
+    DC = (j.anlaeg || []).filter(a => a && a.id && DC_ST[a.status] && Number.isFinite(a.lat) && Number.isFinite(a.lon)).map(a => Object.assign(a, {
+      _dc:true, _feed:true, ret:'data', titel:a.navn, disease:a.navn, country:a.land || '', place:a.adresse || a.by || '', sted:a.land || '',
+      region: regionAf(a.lat, a.lon, a.a2 === 'DK' ? 'Danmark' : ''), it_effekt_mw: a.it_effekt_mw || {}
+    }));
+    for(const d of DC) if(!byId[d.id]) byId[d.id] = d;
+    DC_HENTER = false; render(); laesAdresse();
+  }).catch(() => { DC_HENTER = false; DC_FEJL = true; DC = []; render(); });
+}
+const dcNum = v => Number(v).toLocaleString('da-DK', {maximumFractionDigits: v < 10 ? 1 : 0});
+const dcAar = s => s ? (String(s).length > 4 ? fmtDate(String(s).slice(0, 7)) : String(s)) : '';
+const dcSkoen = (d, f) => f && f.skoen ? `skøn, ${d.kilde === 'epoch' ? 'Epoch AI' : 'kilden'}` : '';
+function dcEffekt(d){
+  const it = d.it_effekt_mw || {}, s = it.skoen ? ' (skøn)' : '', type = it.type === 'net' ? 'nettilslutning' : 'IT-effekt';
+  if(d.status === 'drift' && it.nu) return `${dcNum(it.nu)} MW ${type}${it.planlagt > it.nu ? `, ${dcNum(it.planlagt)} MW ${dcAar(it.planlagt_dato)}` : ''}${s}`;
+  if(it.planlagt) return `${dcNum(it.planlagt)} MW ${type} planlagt${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}${s}`;
+  if(it.nu) return `${dcNum(it.nu)} MW ${type}${s}`;
+  return 'Effekt ikke oplyst';
+}
+const dcParter = l => (l || []).map(x => x.sikkerhed === 'sandsynlig' ? `${x.navn} (sandsynlig)` : x.navn).join(', ');
+// Markøren som SVG til listen, filtrene og guiden.
+function dcMarkoer(st, r = 6){
+  const c = r + 2, w = c*2, col = 'var(--c-data)', g = dcGr(st);
+  const ind = g === 'drift' ? `<circle cx="${c}" cy="${c}" r="${r}" fill="${col}"/>`
+    : g === 'opfoerelse' ? `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${col}" stroke-width="1.4"/><path d="M${c-r} ${c}A${r} ${r} 0 0 0 ${c+r} ${c}Z" fill="${col}"/>`
+    : `<circle cx="${c}" cy="${c}" r="${r}" fill="none" stroke="${col}" stroke-width="1.4" stroke-dasharray="2.2 1.8"/>`;
+  return `<svg width="${w}" height="${w}" viewBox="0 0 ${w} ${w}" aria-hidden="true">${ind}</svg>`;
+}
+function tegnDC(){
+  if(DC) for(const d of DC) d._sz = -1;
+  if(!DC || !dcPaa() || cutoff < T1) return;
+  const vis = retOn.has('data') ? dcVis() : DC.filter(d => d.id === selected);
+  // De store tegnes først, så de små ikke forsvinder under dem.
+  const sk = Math.min(1.8, Math.max(.8, Math.sqrt(zoom/1.5))), col = T['--c-data'];
+  ctx.save(); ctx.font = '10px ' + MONO; ctx.textBaseline = 'middle';
+  for(const d of vis.slice().sort(dcSort)){
+    const u = unit(d.lon, d.lat); if(u.z <= 0.015) continue;
+    const [x, y] = scr(u), mw = dcMw(d), r = dcR(mw)*sk, it = d.it_effekt_mw, gr = dcGr(d.status);
+    const depth = (0.35 + 0.65*u.z) * (d.ikke_bekraeftet_siden ? .55 : 1);
+    ctx.globalAlpha = depth; ctx.setLineDash([]);
+    // Et anlæg i drift, der udvides: en tynd prikket ring ved den planlagte størrelse.
+    if(gr === 'drift' && it.planlagt > (it.nu || 0)*1.15){ ctx.beginPath(); ctx.arc(x, y, dcR(it.planlagt)*sk, 0, 2*Math.PI); ctx.strokeStyle = col; ctx.globalAlpha = depth*.4; ctx.lineWidth = 1; ctx.setLineDash([1.5, 2.5]); ctx.stroke(); ctx.setLineDash([]); ctx.globalAlpha = depth; }
+    ctx.beginPath(); ctx.arc(x, y, r, 0, 2*Math.PI);
+    if(gr === 'drift'){ ctx.fillStyle = col; ctx.globalAlpha = depth*.88; ctx.fill(); ctx.globalAlpha = depth; ctx.strokeStyle = T['--bg']; ctx.lineWidth = 1; ctx.stroke(); }
+    else {
+      ctx.fillStyle = T['--panel']; ctx.globalAlpha = depth*.75; ctx.fill(); ctx.globalAlpha = depth;
+      if(gr === 'opfoerelse'){ ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI); ctx.closePath(); ctx.fillStyle = col; ctx.fill(); ctx.beginPath(); ctx.arc(x, y, r, 0, 2*Math.PI); }
+      else ctx.setLineDash([2.4, 2]);
+      ctx.strokeStyle = col; ctx.lineWidth = 1.4; ctx.stroke(); ctx.setLineDash([]);
+    }
+    if(d.id === selected){ ctx.beginPath(); ctx.arc(x, y, r + 5, 0, 2*Math.PI); ctx.strokeStyle = T['--fg']; ctx.lineWidth = 1.2; ctx.stroke(); }
+    // Navnet ved de store, når man har zoomet lidt ind, og ved alle længere inde. Viger for navne, der allerede står.
+    if(d.id === selected || zoom >= 4 || (mw >= 1000 && zoom >= 2.2)){
+      const w = ctx.measureText(d.navn).width, b = [x + r + 4, y - 6, x + r + 6 + w, y + 6];
+      if(d.id === selected || lblFri(...b)){ LBL.push(b); ctx.fillStyle = T['--fg-dim']; ctx.globalAlpha = depth; ctx.fillText(d.navn, x + r + 5, y); }
+    }
+    d._sx = x; d._sy = y; d._sz = u.z; d._r = r;
+  }
+  ctx.restore();
+}
+function dcVed(mx, my){
+  if(!DC || !dcPaa()) return null;
+  let best = null, bd = Infinity;
+  for(const d of DC){ if(!(d._sz > 0)) continue; const dd = (d._sx - mx)**2 + (d._sy - my)**2; if(dd < Math.max(13, d._r + 5)**2 && dd < bd){ bd = dd; best = d; } }
+  return best ? {d:best, dist:bd} : null;
+}
+function dcTip(d){
+  const ej = dcParter(d.ejer);
+  return `<div class="tt" style="--c:var(--c-data)"><span class="d">${svgIc('data',12)}</span>${esc(d.navn)}</div><div class="tm">${DC_ST[d.status].n} · ${esc(dcEffekt(d))}</div>`
+    + `<div class="ts">${esc([ej, d.land].filter(Boolean).join(' · '))}</div><div class="th">Klik for fakta og kilder</div>`;
+}
+function dcItem(d){
+  const b = document.createElement('button'); b.className = 'item dc'; b.type = 'button'; b.style.setProperty('--c', 'var(--c-data)');
+  b.setAttribute('aria-current', String(d.id === selected));
+  b.innerHTML = `<span class="top"><span class="t"></span><span class="d"></span></span><span class="m"></span>`;
+  b.querySelector('.t').textContent = d.navn;
+  b.querySelector('.d').textContent = d.a2 || d.land || '';
+  const m = b.querySelector('.m'); m.innerHTML = dcMarkoer(d.status, 4.5); m.append(`${DC_ST[d.status].n} · ${dcEffekt(d)}`);
+  b.addEventListener('click', () => select(d.id, true));
+  return b;
+}
+// Gruppen i overblikket: filtre, kilde og listen sorteret efter effekt. Står nederst, under retningerne.
+function dcListe(){
+  if(!retOn.has('data') || focusId) return;
+  if(!DC){ list.appendChild(el('p','dc-kilde', DC_FEJL ? 'Datacentrene kunne ikke hentes. Prøv igen senere.' : 'Henter datacentre …')); return; }
+  const v = dcVis().sort(dcSort); DC_LISTE = v.map(d => d.id);
+  if(query){ for(const d of v.slice(0, 60)) list.appendChild(dcItem(d)); return; }
+  const g = document.createElement('details'); g.className = 'gruppe'; g.style.setProperty('--c', 'var(--c-data)');
+  g.open = grupperLaes().has('data') || !!(selected && byId[selected] && byId[selected]._dc);
+  const sm = document.createElement('summary'), tael = s => v.filter(d => dcGr(d.status) === s).length;
+  sm.innerHTML = `<span class="gi">${svgIc('data', 15)}</span><span class="gn"></span><span class="ga">${v.length}</span><span class="gm"></span>`;
+  sm.querySelector('.gn').textContent = 'Datacentre';
+  sm.querySelector('.gm').textContent = `${tael('drift')} i drift`;
+  sm.title = `${tael('drift')} i drift, ${tael('opfoerelse')} under opførelse og ${tael('planlagt')} planlagt eller godkendt`;
+  g.appendChild(sm);
+  const ind = el('div','gl'); g.appendChild(ind);
+  const fyld = () => {
+    if(ind.childElementCount) return;
+    const f = el('div','dc-filtre');
+    for(const s of ['drift', 'opfoerelse', 'planlagt']){
+      const b = el('button','dc-st'); b.type = 'button'; b.setAttribute('aria-pressed', String(dcFilter.st.has(s)));
+      b.innerHTML = dcMarkoer(s, 5); b.append(s === 'planlagt' ? 'Planlagt eller godkendt' : DC_ST[s].n); b.dataset.tip = TT(DC_ST[s].n, DC_ST[s].d);
+      b.addEventListener('click', () => { dcFilter.st.has(s) ? dcFilter.st.delete(s) : dcFilter.st.add(s); render(); });
+      f.appendChild(b);
+    }
+    const sg = el('span','seg'); sg.setAttribute('role', 'group'); sg.setAttribute('aria-label', 'Mindste effekt');
+    for(const [mw, t] of [[0, 'Alle'], [100, '100+ MW'], [500, '500+ MW'], [1000, '1.000+ MW']]){
+      const b = el('button','', t); b.type = 'button'; b.setAttribute('aria-pressed', String(dcFilter.min === mw));
+      b.dataset.tip = TT(mw ? `Fra ${dcNum(mw)} MW` : 'Alle størrelser', 'Efter IT-effekten nu for anlæg i drift, ellers den planlagte. Anlæg uden oplyst effekt vises kun under Alle.');
+      b.addEventListener('click', () => { dcFilter.min = mw; render(); }); sg.appendChild(b);
+    }
+    f.appendChild(sg); ind.appendChild(f);
+    const k = el('p','dc-kilde'); k.append('De største anlæg først. Kilde: ');
+    const a = kildeLink('Epoch AI, Frontier Data Centers', 'https://epoch.ai/data/ai-data-centers'); k.appendChild(a);
+    k.append(' (CC BY 4.0), selskaber og myndigheder. Placering: © OpenStreetMap-bidragydere (ODbL). Effekt er ofte et skøn.');
+    ind.appendChild(k);
+    for(const d of v) ind.appendChild(dcItem(d));
+    if(!v.length) ind.appendChild(el('p','dim', 'Ingen datacentre med de valgte filtre.'));
+  };
+  if(g.open) fyld();
+  g.addEventListener('toggle', () => { const a = grupperLaes(); g.open ? (a.add('data'), fyld()) : a.delete('data'); grupperGem(a); });
+  list.appendChild(g);
+}
+// Detaljekortet efter den faste skabelon: status og effekt, ejer og brugere, forbrug og energi, tidslinje og kilder.
+// Et felt uden kilde står som "ikke oplyst" og udelades ikke.
+function dcTal(boks, rows){
+  const dl = el('dl','k-tal');
+  for(const [k, v, skoen] of rows){
+    const w = el('div'), dd = el('dd','', v || 'ikke oplyst'); if(!v) dd.classList.add('dim');
+    if(v && skoen){ dd.append(' '); dd.appendChild(el('span','k-dc-skoen', skoen)); }
+    w.append(el('dt','', k), dd); dl.appendChild(w);
+  }
+  boks.appendChild(dl);
+}
+function visDC(d){
+  const it = d.it_effekt_mw || {}, st = DC_ST[d.status];
+  kortTop(d, {chip:'Datacenter', titel:d.navn, sted:[d.adresse || d.by, d.land].filter(Boolean).join(' · '),
+    dato: d.status_dato ? `Status pr. ${fmtDate(d.status_dato)}` : ''});
+  const meta = detail.querySelector('.k-meta');
+  if(meta){ const s = el('span','k-alv'); s.style.setProperty('--a', 'var(--c-data)'); s.textContent = st.n; s.title = st.d; meta.prepend(s); }
+  const fort = [`${d.navn} er ${st.n.toLowerCase()}${d.land ? ' i ' + d.land : ''}.`];
+  if(d.status === 'drift' && it.nu) fort.push(`IT-effekten er omkring ${dcNum(it.nu)} MW${it.planlagt > it.nu ? `, og ${d.kilde === 'epoch' ? 'Epoch AI venter' : 'kilden nævner'} ${dcNum(it.planlagt)} MW ${dcAar(it.planlagt_dato)}` : ''}.`);
+  else if(it.planlagt) fort.push(`${d.kilde === 'epoch' ? 'Epoch AI venter' : 'Kilden nævner'} ${dcNum(it.planlagt)} MW IT-effekt${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}.`);
+  kortFortalt(fort.join(' '));
+  if(d.ikke_bekraeftet_siden) detail.appendChild(el('span','flag', `Ikke bekræftet siden ${fmtDate(d.ikke_bekraeftet_siden)}. Ingen ny kilde i 12 måneder.`));
+  const ep = d.kilde === 'epoch' ? 'skøn, Epoch AI' : 'skøn';
+  dcTal(detail, [
+    ['IT-effekt nu', it.nu ? `${dcNum(it.nu)} MW` : (d.status === 'drift' ? '' : '0 MW'), it.skoen && it.nu ? ep : ''],
+    ['Planlagt', it.planlagt ? `${dcNum(it.planlagt)} MW${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}` : '', it.skoen && it.planlagt ? ep : ''],
+    ['Samlet effekt nu', d.effekt_mw && d.effekt_mw.nu ? `${dcNum(d.effekt_mw.nu)} MW` : '', d.effekt_mw && d.effekt_mw.skoen ? ep : ''],
+    ['Formål', DC_FORMAAL[d.formaal] || '']
+  ]);
+  const ej = afsnit('Ejer og brugere', 'k-dc');
+  dcTal(ej, [
+    ['Ejer', dcParter(d.ejer)], ['Drives af', d.operatoer || ''], ['Brugere', dcParter(d.brugere)],
+    ...(d.projekt ? [['Projekt', d.projekt]] : []),
+    ...(d.investorer && d.investorer.length ? [['Investorer', d.investorer.join(', ')]] : []),
+    ...(d.entreprenoerer && d.entreprenoerer.length ? [['Bygges af', d.entreprenoerer.join(', ')]] : [])
+  ]);
+  ej.appendChild(el('p','dim', 'Brugere står kun, når en kilde nævner dem. "Sandsynlig" er kildens egen vurdering.'));
+  const inv = d.investering, vand = d.vand, ch = d.chips;
+  const fe = afsnit('Forbrug og energi', 'k-dc');
+  dcTal(fe, [
+    ['Investering', inv && inv.beloeb ? `${dcNum(inv.beloeb)} ${inv.enhed === 'mia' ? 'mia.' : inv.enhed === 'mio' ? 'mio.' : ''} ${inv.valuta}${inv.aar ? ` (${inv.aar})` : ''}`.replace(/\s+/g, ' ') : '', inv && inv.skoen ? (d.kilde === 'epoch' ? 'skøn, Epoch AI, i 2025-dollar' : 'skøn') : ''],
+    ['Elforbrug', d.elforbrug_gwh ? `${dcNum(d.elforbrug_gwh)} GWh om året` : ''],
+    ['Energi', d.energikilde || (d.energiselskaber && d.energiselskaber.length ? 'Elselskaber: ' + d.energiselskaber.join(', ') : '')],
+    ['PUE', d.pue ? String(d.pue).replace('.', ',') : ''],
+    ['Vand', vand && vand.mio_liter_doegn ? `${dcNum(vand.mio_liter_doegn)} mio. liter i døgnet` : (typeof vand === 'string' ? vand : ''), vand && vand.skoen ? ep : ''],
+    ['Køling', d.koeling || ''],
+    ['Areal', d.areal_m2 ? `${dcNum(d.areal_m2)} m²` : ''],
+    ...(ch && (ch.typer && ch.typer.length || ch.h100) ? [['Chips', [ch.typer && ch.typer.join(', '), ch.h100 ? `${dcNum(ch.h100)} H100-ækvivalenter` : ''].filter(Boolean).join(' · '), ch.skoen ? ep : '']] : [])
+  ]);
+  const tl = (d.tidslinje || []).filter(t => t.dato);
+  if(tl.length){
+    const b = afsnit('Tidslinje', 'k-dc'), box = el('div','k-dc-tl');
+    for(const t of tl){
+      let tekst = t.tekst;
+      if(!tekst){
+        tekst = t.it_mw > 0 ? `${t.bygninger ? `${dcNum(t.bygninger)} ${t.bygninger === 1 ? 'bygning' : 'bygninger'} i drift, ` : ''}${dcNum(t.it_mw)} MW IT-effekt` : 'Byggeri i gang, intet i drift endnu';
+        if(t.fremtid) tekst = 'Ventet: ' + tekst.charAt(0).toLowerCase() + tekst.slice(1);
+      }
+      const r = [t.dato, tekst, null, t.kilde ? [t.kilde.navn, t.kilde.url] : null]; r.ms = pdate(t.dato);
+      const row = forloebRaekke(r, null); if(t.fremtid) row.classList.add('future'); box.appendChild(row);
+    }
+    b.appendChild(box);
+    if(d.kilde === 'epoch') b.appendChild(el('p','dim', 'Epoch AI følger byggeriet på satellitbilleder og dokumenter. Datoer i fremtiden er Epochs forventning ud fra selskabernes planer. Ifølge Epoch ligger 80 procent af datoerne inden for 6 måneder og 80 procent af skønnene for effekt inden for en faktor 1,4.'));
+  }
+  const kv = afsnit('Kilder', 'srcs-afs'), sr = el('div','srcs');
+  for(const k of d.kilder || []) if(k.url){ const a = kildeLink(k.navn || k.titel || k.url, k.url); if(k.dato) a.title = `${a.title} · ${fmtDate(k.dato)}`; sr.appendChild(a); }
+  kv.appendChild(sr);
+  const lic = [d.kilde === 'epoch' ? 'Data fra Epoch AI under CC BY 4.0.' : '', d.koordinat_kilde ? `Placering: ${d.koordinat_kilde.replace(/, opslag: .*$/, '')}${d.praecision === 'by' ? ', byen' : d.praecision === 'kommune' ? ', området' : ''}. © OpenStreetMap-bidragydere, ODbL.` : ''].filter(Boolean).join(' ');
+  if(lic) kv.appendChild(el('p','dim', lic));
+  if(d.opdateret) kv.appendChild(el('p','dim', `Hentet ${fmtDate(d.opdateret)}.`));
+}
 
 // ---------- panel ----------
 const ladder = document.getElementById('ladder'), list = document.getElementById('list'), detail = document.getElementById('detail');
@@ -2752,6 +2995,7 @@ function render(){
       list.appendChild(g);
     }
   }
+  dcListe();
   bygNiveau(sorteret);
   if(selected && byId[selected] && liveAt(byId[selected], cutoff)) showDetail(byId[selected]);
   draw();
@@ -2822,7 +3066,7 @@ function feedItem(e){
   b.addEventListener('click', () => select(e.id, true));
   return b;
 }
-const RNAVN = {rejse:'Rejsevejledning', krig:'Krig og konflikt', smitte:'Smitte', hede:'Hede og klima', jord:'Jordskælv', flod:'Oversvømmelse', storm:'Storm', brand:'Naturbrand', vulkan:'Vulkan'};
+const RNAVN = {data:'Datacenter', rejse:'Rejsevejledning', krig:'Krig og konflikt', smitte:'Smitte', hede:'Hede og klima', jord:'Jordskælv', flod:'Oversvømmelse', storm:'Storm', brand:'Naturbrand', vulkan:'Vulkan'};
 const klok = iso => new Date(iso).toLocaleString('da-DK', {day:'numeric', month:'long', hour:'2-digit', minute:'2-digit', timeZone:'Europe/Copenhagen'});
 function visFeed(e){
   const krigLand = e.ret === 'krig';
@@ -3033,7 +3277,8 @@ function renderCmp(){
 function select(id, fly){
   // Listen bygges om ved hvert valg. Stod fokus i listen, sættes det tilbage på den valgte hændelse.
   const iListen = list.contains(document.activeElement);
-  setFocus(id);
+  // Et datacenter er ikke en hændelse og sætter ikke fokus. Resten af kloden bliver stående.
+  setFocus(byId[id] && byId[id]._dc ? null : id);
   if(TUR && !TUR.ids.includes(id)) TUR = null;
   selected = id; const e = byId[id]; visParFast = null; visPar = null; idle = performance.now();
   if(MOBIL.matches){ if(detail.hidden) detHoejde('halv'); arkHoejde('lille'); }
@@ -3070,6 +3315,9 @@ function laesAdresse(){
   try{ id = decodeURIComponent(location.hash.slice(1)); }catch(err){ id = ''; }
   // Landesider findes først, når hovedstæderne er hentet (land-DK og lignende).
   if(id && !byId[id] && HS){ const m = id.match(/^land-([A-Z]{2})$/); if(m) landObj(m[1]); }
+  // Et link til et datacenter: laget hentes, og adressen læses igen, når det er hentet (se hentDC).
+  if(id && !byId[id] && !DC && /^(epoch-|[a-z]{2}-)/.test(id)) hentDC();
+  if(id && byId[id] && byId[id]._dc && !retOn.has('data')){ retOn.add('data'); foerFokus = null; }
   if(id && byId[id]){ if(id !== selected) select(id, true); }
   else if(!id && selected){ setFocus(null); selected = null; detail.hidden = true; render(); skrivAdresse(); }
 }
@@ -3145,6 +3393,7 @@ function raekke(){
   // På en landeside er søskende de andre lande i samme område.
   const e = selected && byId[selected];
   if(e && erLand(e)) return landeI(e.region).map(x => x.lo.id);
+  if(e && e._dc) return DC_LISTE;
   return LISTE;
 }
 function bladr(d){
@@ -3190,7 +3439,7 @@ function kortTop(e, o){
   if(o.sted) detail.appendChild(el('div','where', o.sted));
   const ik = el('div','k-iks');
   const a2 = o.a2 || a2Af(e);
-  if(a2){
+  if(a2 && !e._dc){
     const fo = foelgLaes(), f = !!fo[a2];
     ik.appendChild(ikonKnap('foelg', f ? `Følger ${landNavnAf(a2)}` : `Følg ${landNavnAf(a2)}`, 'Landet står øverst i overblikket og markeres, når noget er ændret siden sidst. Gemmes kun i denne browser.', () => {
       const o2 = foelgLaes(); if(o2[a2]) delete o2[a2]; else o2[a2] = landSignatur(landData(a2)); foelgGem(o2); visFoelg(); showDetail(e);
@@ -3418,6 +3667,7 @@ function showDetail(e){
   visDetalje(e); bredLayout();
 }
 function visDetalje(e){
+  if(e._dc) return visDC(e);
   if(e._sted) return visSted(e);
   if(erLand(e)) return visLand(e);
   if(e._feed) return visFeed(e);
@@ -3499,6 +3749,8 @@ function hit(ev){
     const d = (e._sx-mx)**2 + (e._sy-my)**2;
     if(d < bd){ bd = d; best = e; }
   }
+  const dcv = dcVed(mx, my);
+  if(dcv && (!best || dcv.dist < bd)){ skjulTip(); select(dcv.d.id, true); return; }
   if(best) select(best.id, true);
   else {
     // Ingen prik: et tryk på et land åbner landesiden, et tryk på havet lukker detaljerne.
@@ -3669,12 +3921,12 @@ footEl.textContent =
 
 // ---------- retningsknapper, filtre under kloden og forklaringer ved musen ----------
 const rchips = document.getElementById('rchips');
-const KN = {rejse:'Rejse', krig:'Krig', smitte:'Smitte', hede:'Hede', jord:'Skælv', flod:'Flod', storm:'Storm', brand:'Brand', vulkan:'Vulkan'};
-const KN_EN = {rejse:'Travel', krig:'War', smitte:'Disease', hede:'Heat', jord:'Quake', flod:'Flood', storm:'Storm', brand:'Fire', vulkan:'Volcano'};
+const KN = {data:'Data', rejse:'Rejse', krig:'Krig', smitte:'Smitte', hede:'Hede', jord:'Skælv', flod:'Flod', storm:'Storm', brand:'Brand', vulkan:'Vulkan'};
+const KN_EN = {data:'Data', rejse:'Travel', krig:'War', smitte:'Disease', hede:'Heat', jord:'Quake', flod:'Flood', storm:'Storm', brand:'Fire', vulkan:'Volcano'};
 function buildRet(){
   rchips.innerHTML = '';
   // Retningerne står i midten over kloden. Rejsevejledninger står for sig ved stregen til overblikket.
-  const midt = el('div','rmidt'); rchips.appendChild(midt);
+  const midt = el('div','rmidt'), svc = el('div','rservice'); rchips.append(midt, svc);
   for(const r of RETNINGER.filter(x => !SERVICE.has(x.k)).concat(RETNINGER.filter(x => SERVICE.has(x.k)))){
     const b = document.createElement('button'); b.type = 'button'; b.className = 'rchip' + (SERVICE.has(r.k) ? ' service' : ''); b.dataset.k = r.k;
     b.style.setProperty('--c', `var(--c-${r.k})`); b.setAttribute('aria-label', r.n);
@@ -3689,15 +3941,24 @@ function buildRet(){
         skjulTip(); render();
       });
     } else b.setAttribute('aria-disabled', 'true');
-    (SERVICE.has(r.k) ? rchips : midt).appendChild(b);
+    (SERVICE.has(r.k) ? svc : midt).appendChild(b);
   }
 }
 function renderRet(){
   const lr = document.getElementById('lagrejse'); if(lr) lr.checked = retOn.has('rejse');
+  const ld = document.getElementById('lagdata'); if(ld) ld.checked = retOn.has('data');
+  if(retOn.has('data')) hentDC();
   for(const b of rchips.querySelectorAll('.rchip')){
     const r = RETNINGER.find(x => x.k === b.dataset.k);
     if(!r.aktiv){ b.querySelector('.n').textContent = '';
       b.dataset.tip = `<div class="tt" style="--c:var(--c-${r.k})"><span class="d">${svgIc(r.k,12)}</span>${r.n}</div><div class="tm">Kommer snart</div><div class="ts">${r.hvad} Kilder: ${r.kilder}.</div>`; continue; }
+    if(r.k === 'data'){
+      const n = DC ? dcVis().length : '';
+      b.setAttribute('aria-pressed', String(retOn.has('data'))); b.dataset.fokus = '';
+      b.querySelector('.n').textContent = n;
+      b.dataset.tip = `<div class="tt" style="--c:var(--c-data)"><span class="d">${svgIc('data',12)}</span>${r.n}</div><div class="tm">${DC ? n + ' vises' : 'Hentes, når du slår laget til'}</div><div class="ts">${r.hvad}</div><div class="th">Klik: til eller fra</div>`;
+      continue;
+    }
     const n = ALLE().filter(e => { const st = stageAt(e, cutoff); return retAf(e) === r.k && liveAt(e, cutoff) && (udenAlvor(e, st) || alvorAt(e, st) >= minAlvor) && !(mistMode === 'aldrig' && st === 'mistanke'); }).length;
     b.setAttribute('aria-pressed', String(retOn.has(r.k)));
     b.dataset.fokus = iFokus(r.k) ? '1' : '';
@@ -3757,6 +4018,8 @@ function svaev(ev){
   }
   let best = null, bd = 260;
   for(const e of visible()){ if(!(e._sz > 0)) continue; const d = (e._sx-mx)**2 + (e._sy-my)**2; if(d < bd){ bd = d; best = e; } }
+  const dcv = dcVed(mx, my);
+  if(dcv && (!best || dcv.dist < bd)){ cv.style.cursor = 'pointer'; visTip(dcTip(dcv.d), ev.clientX, ev.clientY); return; }
   cv.style.cursor = best ? 'pointer' : '';
   if(!best){ skjulTip(); return; }
   if(best._feed){
@@ -3813,7 +4076,7 @@ function bygGuide(){
   ].map(([b, t, m]) => `<div>${m}<span><b>${b}</b>${t}</span></div>`).join('');
   const gs = (k, t, d) => `<div class="g-s"><span class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GI[k]}"/></svg></span><b>${t}</b><span>${d}</span></div>`;
   document.getElementById('gsteps').innerHTML = [
-    gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage. Rejsevejledninger står for sig til højre og er slået fra, til du slår dem til.'),
+    gs('filter','Vælg retninger','Tryk på et ikon øverst for at slå retningen til eller fra. Dobbeltklik for kun at se den retning, og dobbeltklik igen for at komme tilbage. Rejsevejledninger og datacentre står for sig til højre og er slået fra, til du slår dem til. På mobilen ligger de under Lag.'),
     gs('klik','Tryk på en prik','Kortet viser billede, kort fortalt, nøgletal, forløb, kilder og læs mere. Pilene øverst blader videre. Udforsk i overblikket tager dig gennem det alvorligste lige nu.'),
     gs('mus','Hold musen over','Alt, du kan trykke på, har en lille forklaring.'),
     gs('zoom','Zoom ind og ud','Kloden starter over det område, din internetforbindelse ser ud til at komme fra, og knappen Nulstil fører tilbage dertil. Placeringen slås op af Cloudflare og gemmes ikke. Den runde pauseknap stopper rotationen. Den står nederst til højre i klodens felt, over zoomknapperne, og på mobilen over Nulstil. Mens et kort er åbent, står kloden stille. Når du har rørt den, venter den 2 minutter og bruger så 10 sekunder på at komme op i fart, så du kan nå at stoppe den. Med musehjulet, knapperne eller to fingre, op til 40 gange. Hovedstæderne får navn fra 2 gange. Landenes regioner toner frem fra 15 gange og står fuldt fra 25 gange, med navn fra cirka 17 gange.'),
@@ -3912,7 +4175,7 @@ function byggKrig(){
   }
   FEEDS = FEEDS.concat(STEDER);
   const r = RETNINGER.find(x => x.k === 'krig'); if(r && (STEDER.length || KONF.length)) r.aktiv = true;
-  if(!foerFokus) retOn = new Set(alleRet());
+  if(!foerFokus) retOn = new Set([...alleRet(), ...[...retOn].filter(k => SERVICE.has(k))]);
   buildRet(); bygGuide(); render(); laesAdresse(); bygTicker();
 }
 // Panelet for ét sted: kun det, der er omtalt netop dér.
@@ -4194,6 +4457,7 @@ function passer(pkt){
 var FLYV_VENT, START_KLAR;
 function flyvIgen(){ if(START_KLAR && FLYV_VENT && FLYV_VENT === selected && byId[selected] && GRAENSER && HS){ FLYV_VENT = null; flyvTil(byId[selected]); } }
 function flyvTil(e){
+  if(e._dc){ target = {lam:-e.lon, phi:Math.max(-80, Math.min(80, e.lat))}; zoomMaal = Math.max(zoom, 3); return; }
   if(!GRAENSER || !HS || !START_KLAR) FLYV_VENT = e.id;
   let pkt = null;
   if(e._sted){ const d = 0.23, dl = d/Math.max(.2, Math.cos(e.lat*DEG)); pkt = boksPunkter(e.lon - dl, e.lat - d, e.lon + dl, e.lat + d); }
@@ -4216,6 +4480,7 @@ function retTid(k){
   const RET_KILDER = {rejse:['um', 'fcdo'], jord:['usgs'], storm:['gdacs'], flod:['gdacs'], brand:['gdacs'], vulkan:['gdacs'], hede:['meteoalarm', 'gdacs']};
   if(k === 'smitte'){ const t = Date.parse(typeof DATA_TID === 'string' ? DATA_TID : ''); return t ? {ms: t, hvad: 'Gennemgået'} : DATA_DATO ? {ms: Date.parse(DATA_DATO), dag: true, hvad: 'Gennemgået'} : null; }
   if(k === 'krig') return KONFINFO && KONFINFO.genereret ? {ms: Date.parse(KONFINFO.genereret), hvad: 'Talt op'} : null;
+  if(k === 'data') return DCINFO && DCINFO.kilder && DCINFO.kilder.epoch && DCINFO.kilder.epoch.hentet ? {ms: Date.parse(DCINFO.kilder.epoch.hentet), hvad: 'Hentet'} : null;
   const ki = (FEEDINFO && FEEDINFO.kilder) || {};
   const ms = Math.max(0, ...(RET_KILDER[k] || []).map(n => ki[n] && ki[n].ok && ki[n].hentet ? Date.parse(ki[n].hentet) : 0));
   return ms ? {ms, hvad: 'Hentet'} : null;
@@ -4663,6 +4928,7 @@ bundbar.addEventListener('click', ev => {
 });
 document.getElementById('lagluk').addEventListener('click', () => lukLag(true));
 document.getElementById('lagrejse').addEventListener('change', ev => { if(ev.target.checked !== retOn.has('rejse')){ skiftRetning('rejse'); render(); } });
+document.getElementById('lagdata').addEventListener('change', ev => { if(ev.target.checked !== retOn.has('data')){ skiftRetning('data'); render(); } });
 // Søgningen: forslag, når feltet er tomt, og lande og hændelser, mens man skriver.
 const SOEGT = 'globus-soegt';
 function soegt(){ try{ return JSON.parse(localStorage.getItem(SOEGT) || '[]') || []; }catch(err){ return []; } }
@@ -4734,7 +5000,12 @@ function bygSoeg(){
     for(const e of fund.slice(0, 25)) saind.appendChild(saHaendelse(e, q2.value));
     const b = el('button','sa-alle', 'Vis søgningen i overblikket'); b.type = 'button'; b.addEventListener('click', visIListen); saind.appendChild(b);
   }
-  if(!lande.length && !fund.length) saind.appendChild(el('p','sa-tom', `Intet fundet for "${q2.value.trim()}". Prøv et land, en by eller en sygdom.`));
+  const dcFund = (DC || []).filter(d => ord.every(w => dcHay(d).includes(w))).sort(dcSort);
+  if(dcFund.length){
+    sek(`Datacentre (${dcFund.length})`);
+    for(const d of dcFund.slice(0, 15)) saind.appendChild(saRaekke(svgIc('data', 17), 'var(--c-data)', d.navn, `${DC_ST[d.status].n} · ${d.land || ''}`, dcMw(d) ? `${dcNum(dcMw(d))} MW` : '', () => gaaTil(d, q2.value)));
+  }
+  if(!lande.length && !fund.length && !dcFund.length) saind.appendChild(el('p','sa-tom', `Intet fundet for "${q2.value.trim()}". Prøv et land, en by eller en sygdom.`));
 }
 function visIListen(){
   const v = q2.value.trim(); husk(v); lukSoeg();
@@ -4758,7 +5029,7 @@ START_KLAR = true; requestAnimationFrame(() => flyvIgen());
   const NYT_SET = 'globus-nyt-set', knap = document.getElementById('nytbtn'), tal = document.getElementById('nyttal'), dlg = document.getElementById('nytdlg');
   const IK = { nyt:'M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.94 1.94 0 0 0 3.4 0', udvid:'M4 9V4h5M20 15v5h-5M4 4l6 6M20 20l-6-6',
     afspil:'M7 4l13 8-13 8z', kort:'M4 4h16v16H4zM4 14l5-5 5 5 3-3 3 3', udforsk:'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM15.5 8.5l-2 5-5 2 2-5z',
-    app:'M7 2h10v20H7zM11 18h2', sog:'M10.5 4.5a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM15 15l5 5', trin:'M4 6h16M8 12h12M12 18h8', foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z', land:'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z' };
+    app:'M7 2h10v20H7zM11 18h2', sog:'M10.5 4.5a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM15 15l5 5', trin:'M4 6h16M8 12h12M12 18h8', foelg:'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z', land:'M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14', rss:'M5 19a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16', akut:'M12 3l9 16H3zM12 10v4M12 17h.01', krig:'M12 3v4M12 17v4M3 12h4M17 12h4M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z', dc:'M4.5 4h15v6h-15zM4.5 14h15v6h-15zM7.5 7h1M7.5 17h1M12 7h4.5M12 17h4.5M12 10v4' };
   let NYT = [];
   const laesSet = () => { try{ return JSON.parse(localStorage.getItem(NYT_SET) || 'null'); }catch(err){ return null; } };
   const usete = () => { const set = laesSet(); const graense = Date.now() - 14*DAY;
@@ -4781,6 +5052,7 @@ START_KLAR = true; requestAnimationFrame(() => flyvIgen());
     trin: () => { dlg.close(); lukDetaljer(); gaaOmraade('Afrika'); },
     bundbar: () => { dlg.close(); lukDetaljer(); arkHoejde('halv'); },
     data: () => { dlg.close(); document.getElementById('protobtn').click(); },
+    dc: () => { dlg.close(); if(!retOn.has('data')){ retOn.add('data'); foerFokus = null; } if(MOBIL.matches) arkHoejde('halv'); render(); },
     rss: () => { dlg.close(); const lo = landObj('DK'); if(lo){ select(lo.id, true); setTimeout(() => { const r = detail.querySelector('a.k-ik[href^="/feed"]'); if(r){ r.focus(); r.classList.add('ok'); } }, 600); } }
   };
   // Kort for en nyhed. Bruges både i vinduet og under Det kan du på siden i Sådan virker siden.
@@ -4874,6 +5146,7 @@ START_KLAR = true; requestAnimationFrame(() => flyvIgen());
       box.appendChild(kildeKort(navn, tekst, url, ki.ok ? 'ok' : 'fejl', ki.ok ? `${ki.antal} poster · hentet ${ki.hentet ? klok(ki.hentet) : 'ukendt'}` : `Fejl: ${String(ki.fejl || 'ukendt').replace(/^https?:\/\/\S+: /, '')}. Vi viser de seneste meldinger, til kilden svarer igen.`));
     }
     if(KONFINFO) box.appendChild(kildeKort('GDELT og medielisten', 'Krig og konflikt: omtaler fra ca. 240 medier og overskrifter fra 17 store medier. Medier er ikke myndigheder.', 'https://www.gdeltproject.org/', 'ok', `${(KONFINFO.s || []).length} konfliktpar · ${STEDER.length} steder · talt op ${klok(KONFINFO.genereret)}`));
+    if(DCINFO && DCINFO.kilder && DCINFO.kilder.epoch) { const ke = DCINFO.kilder.epoch; box.appendChild(kildeKort('Epoch AI, Frontier Data Centers', 'Datacentre: effekt, ejer, brugere og byggeriets forløb for de største AI-anlæg. Skøn er mærket. CC BY 4.0.', ke.url, ke.fejl ? 'fejl' : 'ok', `${(DCINFO.anlaeg || []).length} datacentre · hentet ${ke.hentet ? klok(ke.hentet) : 'ukendt'}`)); }
     if(LAES && LAES.genereret) box.appendChild(kildeKort('Læs mere', 'Artikler til videre læsning fra store medier og GDELT. Bruges ikke som kilde til tal eller alvor.', '', 'ok', `${Object.keys(LAES.l || {}).length} hændelser · hentet ${klok(LAES.genereret)}`));
     vist = 10; bygOpd();
   }
@@ -4898,7 +5171,7 @@ fetch('/feeds.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.rej
   for(const k in FLUGT) FLUGT[k].sort((a, b) => b.personer - a.personer);
   byggKrig();
   for(const r of RETNINGER) if(r.fk && (r.fk.some(k => j.kilder && j.kilder[k] && (j.kilder[k].ok || j.kilder[k].antal)) || FEEDS.some(h => h.ret === r.k))) r.aktiv = true;
-  if(!foerFokus) retOn = new Set(alleRet());
+  if(!foerFokus) retOn = new Set([...alleRet(), ...[...retOn].filter(k => SERVICE.has(k))]);
   buildRet(); bygGuide(); bygTicker();
   if(FEEDS.some(h => h.ret === 'rejse' && h.a2))
     fetch('/graenser.json').then(r => r.ok ? r.json() : null).then(g => { if(g && g.l){ GRAENSER = g.l; draw(); flyvIgen(); } }).catch(() => {});

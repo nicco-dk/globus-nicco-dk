@@ -67,6 +67,18 @@
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 16. oktober er indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066 (ingen nye humane tilfælde af fugleinfluenza 9. til 15. oktober), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 16. og 17. oktober (et importeret denguetilfælde, to importerede chikungunyatilfælde og et sporadisk tilfælde af melioidose, intet til siden). WHO EMRO's nyheder (beredskab mod Bundibugyo-virus i regionen, ingen tilfælde). Søgninger efter nyt om Krim-Congo hæmoragisk feber i Iran (`cchf-ir`, 27 dage siden seneste punkt) og dengue i Sri Lanka: intet nyt fra myndighederne. Usikkert: Sri Lankas side https://www.dengue.health.gov.lk/ kunne ikke hentes ad nogen af de to veje (direkte opslag afbrudt af serveren, hentningsværktøjet afvist af robots.txt), så `dengue-asien` er urørt. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5949e4b.
 
+### Kl. 15.20, nyt lag: datacentre, ændret af ejeren
+
+Ingen gennemgang af kilder og ingen ændrede tal i datasættet.
+
+**Ændret på siden**
+- Nyt lag, Datacentre, med en knap ved siden af rejsevejledningerne og en kontakt under Lag på mobilen. Laget er slået fra, når siden åbner. Det viser de største datacentre i verden i tre tilstande: i drift (fyldt prik), under opførelse (halvfyldt) og planlagt eller godkendt (stiplet). Prikkens areal følger IT-effekten.
+- Et tryk på et datacenter viser status, effekt nu og planlagt, ejer og brugere, forbrug og energi, tidslinje og kilder efter en fast skabelon. Felter uden kilde står som "ikke oplyst". Skøn er mærket med kildens navn.
+- Første udgave har Epoch AI's 94 anlæg fra Frontier Data Centers: https://epoch.ai/data/ai-data-centers (CC BY 4.0). Placeringen er slået op i OpenStreetMap (ODbL). Laget tæller ikke med i alvor, søljen eller beskeder.
+
+**Ændret i driften**
+- Udrulningen henter datacentrene ved hver kørsel med `tools/hent-datacentre.mjs`. Reglerne står i OPDATERING.md under Datacentre.
+
 ## 16. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

@@ -6,8 +6,8 @@ name: Udrul til Cloudflare Pages
 #
 # Kører også hver time og henter maskinmeldingerne (jordskælv, storme,
 # oversvømmelser, brande, hede, vulkaner og rejsevejledninger) til
-# site/feeds.json, og tæller mediesporet for krig og konflikt op i
-# site/konflikter.json. Den timevise kørsel udruller kun, hvis noget er ændret.
+# site/feeds.json, tæller mediesporet for krig og konflikt op i
+# site/konflikter.json og henter datacentrene til site/datacentre.json. Den timevise kørsel udruller kun, hvis noget er ændret.
 
 on:
   push:
@@ -24,6 +24,8 @@ on:
       - "tools/hent-laes.mjs"
       - "tools/byg-ord.mjs"
       - "tools/medier.json"
+      - "tools/hent-datacentre.mjs"
+      - "tools/datacentre.json"
       - "tools/par-tjek.json"
       - "tools/overskrifter.json"
       - "tools/ord.json"
@@ -106,6 +108,11 @@ jobs:
       # Optællingen fortsætter fra den udgave, der er live nu.
       - name: Hent mediesporet
         run: node tools/hent-medier.mjs site --forrige https://globus.nicco.dk/medier-tal.json
+
+      # Laget Datacentre: Epoch AI's Frontier Data Centers flettet med den kuraterede liste tools/datacentre.json.
+      # Fejler Epoch, genbruges Epochs anlæg fra den udgave, der er live nu. Filen hentes kun, når laget slås til.
+      - name: Hent datacentre
+        run: node tools/hent-datacentre.mjs site/datacentre.json --forrige https://globus.nicco.dk/datacentre.json
 
       # Den timevise kørsel udruller kun, når meldingerne eller stregerne er ændret.
       - name: Er meldingerne ændret?

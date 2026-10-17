@@ -67,6 +67,18 @@ Medielisten `tools/medier.json` rettes ikke af den daglige kørsel. Forslag til 
 
 Smittekørslen rører hverken `feeds.json`, `tools/hent-feeds.mjs` eller `tools/lande.json`. Ser en maskinmelding forkert ud, skrives det under Til gennemgang.
 
+### Datacentre (laget med servere)
+
+Laget Datacentre kommer ikke fra denne kørsel og rører ikke `EVENTS`. Det er en service ved siden af rejsevejledningerne, slået fra, når siden åbner, og det tæller ikke med i alvor, søljen eller beskeder. Planen og skabelonen står i `claude/globus-datacentre.md` i projektet.
+
+- **Kørslen:** `tools/hent-datacentre.mjs` kører i `udrul.yml` ved hver udrulning og skriver `site/datacentre.json`, som ikke ligger i repoet. Det henter `data_centers.csv` og `data_center_timelines.csv` fra Epoch AI's Frontier Data Centers (CC BY 4.0) og fletter dem med den kuraterede liste `tools/datacentre.json`. Fejler Epoch, genbruges Epochs anlæg fra den udgave, der er live. Scriptet bruger ingen AI.
+- **Status fra Epoch:** det seneste punkt i tidslinjen på eller før i dag afgør. IT-effekt over 0 giver `drift`. Punkter i fortiden uden effekt giver `opfoerelse`. Kun punkter i fremtiden giver `planlagt`. Den planlagte effekt er den største IT-effekt efter i dag med Epochs dato. Epochs effekt, kapitalomkostning, vand og chips vises som skøn med Epochs navn.
+- **Koordinater til Epochs anlæg** står i `epoch_steder` i `tools/datacentre.json`, slået op én gang i OpenStreetMap Nominatim med Epochs adresse eller byen fra Epochs kilder. Et nyt anlæg hos Epoch uden koordinater springes over med en advarsel i kørslen, til det har fået sine koordinater.
+- **Den kuraterede liste** (`anlaeg` i `tools/datacentre.json`) ændres kun med en kilde, ligesom `EVENTS`. Hver post har `id`, `navn`, `status` (`drift`, `opfoerelse`, `godkendt` eller `planlagt`), `status_dato`, `lat` og `lon` med `koordinat_kilde`, og `kilder` med `navn`, `url`, `dato` og `felter`. Hvert tal skal stå i `felter` hos mindst én kilde. Et felt uden kilde er `null` og vises som "ikke oplyst". Brugere står kun med en kilde og med `sikkerhed` `sikker` eller `sandsynlig`. Et skøn får `skoen: true`.
+- **Dobbeltanlæg:** findes et kurateret anlæg også hos Epoch, sætter den kuraterede post `erstatter` til Epochs navn. Kørslen advarer, når to anlæg med samme ejer ligger under 2 km fra hinanden uden `erstatter`.
+- **Udløb:** et anlæg med `planlagt` eller `godkendt` uden ny kilde i 12 måneder vises som "ikke bekræftet siden" med datoen.
+- **Ikke med:** kommercielle registre (Data Center Map, Baxtel, Cloudscene, DC Byte), hemmelige eller militære anlæg og aflyste projekter.
+
 ## Kilder
 
 Brug dem i denne rækkefølge.

@@ -2,6 +2,14 @@
  "om": "Nyt på globus.nicco.dk: nye funktioner og ændringer i, hvordan siden virker. Nyeste først. Ændringer i data står i ændringsloggen (/log).",
  "n": [
   {
+   "id": "datacentre",
+   "dato": "2026-10-17",
+   "titel": "Datacentre på kloden",
+   "tekst": "Knappen ved siden af rejsevejledningerne (på mobilen under Lag) viser de største datacentre i verden: i drift, under opførelse og planlagt. Prikkens størrelse følger effekten. Tryk på et datacenter for ejer, brugere, forbrug, tidslinje og kilder.",
+   "ikon": "dc",
+   "proev": "dc"
+  },
+  {
    "id": "besked",
    "dato": "2026-10-12",
    "titel": "Få besked om de lande, du følger",

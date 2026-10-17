@@ -1,0 +1,571 @@
+{
+ "_om": "Kurateret liste over datacentre til laget Datacentre på globus.nicco.dk. Læses af tools/hent-datacentre.mjs, som fletter den med Epoch AI's Frontier Data Centers og skriver site/datacentre.json. Hvert tal skal have en kilde i kilder med feltets navn i felter. Se claude/globus-datacentre.md og OPDATERING.md.",
+ "_steder": "Koordinater til Epochs anlæg. Epoch giver adresser og ikke koordinater. Slået op én gang 17. oktober 2026 i OpenStreetMap Nominatim med adressen eller, hvor Epoch ingen adresse har, byen fra Epochs kilder (praecision by). OpenStreetMap-data er under ODbL.",
+ "epoch_steder": {
+  "AWS Berwick": {
+   "lat": 41.0838,
+   "lon": -76.1435,
+   "praecision": "adresse",
+   "opslag": "1125 Electron Ave, Berwick, PA 18603"
+  },
+  "AWS New Albany": {
+   "lat": 40.1158,
+   "lon": -82.739,
+   "praecision": "adresse",
+   "opslag": "13360 Miller Rd NW"
+  },
+  "Alibaba Zhangbei": {
+   "lat": 41.2878,
+   "lon": 114.7693,
+   "praecision": "by",
+   "opslag": "张北县, 河北省"
+  },
+  "Amazon Madison Mega Site": {
+   "lat": 32.5817,
+   "lon": -90.051,
+   "praecision": "by",
+   "opslag": "Nissan Parkway, Canton, Mississippi"
+  },
+  "Amazon Ridgeland": {
+   "lat": 32.4,
+   "lon": -90.1972,
+   "praecision": "adresse",
+   "opslag": "1626 County Line Road Ridgeland, Mississippi"
+  },
+  "Anthropic Barber Lake": {
+   "lat": 32.393,
+   "lon": -100.8635,
+   "praecision": "by",
+   "opslag": "Colorado City, Texas, USA"
+  },
+  "Anthropic Lake Mariner": {
+   "lat": 43.3587,
+   "lon": -78.6041,
+   "praecision": "adresse",
+   "opslag": "7725 Lake Rd, Barker, NY 14012"
+  },
+  "Anthropic-Amazon New Carlisle": {
+   "lat": 41.7057,
+   "lon": -86.5098,
+   "praecision": "by",
+   "opslag": "New Carlisle, IN 46552, United States"
+  },
+  "Bridge Data Centres MY06": {
+   "lat": 1.7127,
+   "lon": 103.5257,
+   "praecision": "by",
+   "opslag": "Sedenak, Kulai, Johor"
+  },
+  "Colossus 1": {
+   "lat": 35.0862,
+   "lon": -90.0733,
+   "praecision": "adresse",
+   "opslag": "3231 Riverport Rd, Memphis, TN 38109"
+  },
+  "Colossus 2": {
+   "lat": 34.998,
+   "lon": -90.0349,
+   "praecision": "adresse",
+   "opslag": "5420 Tulane Rd, Memphis, TN 38109"
+  },
+  "Core42 Lake Mariner": {
+   "lat": 43.3587,
+   "lon": -78.6041,
+   "praecision": "adresse",
+   "opslag": "7725 Lake Rd, Barker, NY 14012"
+  },
+  "CoreWeave Chester VA": {
+   "lat": 37.3489,
+   "lon": -77.4384,
+   "praecision": "by",
+   "opslag": "Chester, VA, United States"
+  },
+  "CoreWeave Dalton 1 & 2": {
+   "lat": 34.7134,
+   "lon": -84.9522,
+   "praecision": "adresse",
+   "opslag": "2205 Industrial South Rd, Dalton, GA, 30721"
+  },
+  "CoreWeave Denton TX": {
+   "lat": 33.2193,
+   "lon": -97.1747,
+   "praecision": "adresse",
+   "opslag": "8171 Jim Christal Rd, Denton, TX 76207"
+  },
+  "CoreWeave Ellendale ND": {
+   "lat": 46.0103,
+   "lon": -98.5687,
+   "praecision": "adresse",
+   "opslag": "9685 87th Ave SE, Ellendale, ND 58436"
+  },
+  "CoreWeave Lancaster Greenfield site": {
+   "lat": 40.0472,
+   "lon": -76.2555,
+   "praecision": "adresse",
+   "opslag": "216 Greenfield Rd, Lancaster, PA"
+  },
+  "CoreWeave Marble NC": {
+   "lat": 35.185,
+   "lon": -83.9141,
+   "praecision": "adresse",
+   "opslag": "155 Palmer Ln, Marble, NC 28905"
+  },
+  "CoreWeave Muskogee OK": {
+   "lat": 35.6968,
+   "lon": -95.4952,
+   "praecision": "adresse",
+   "opslag": "1525 W 43rd St S, Muskogee, OK 74401, USA"
+  },
+  "CoreWeave Norway": {
+   "lat": 58.2576,
+   "lon": 7.8921,
+   "praecision": "adresse",
+   "opslag": "Stølevegen 39, 4715 Øvrebø, Norway"
+  },
+  "Coreweave Helios": {
+   "lat": 33.7629,
+   "lon": -100.8168,
+   "praecision": "by",
+   "opslag": "Afton, TX 79220, United States"
+  },
+  "Crusoe Abilene Expansion": {
+   "lat": 32.4942,
+   "lon": -99.8009,
+   "praecision": "adresse",
+   "opslag": "5502 Spinks Rd, Abilene, TX 79601"
+  },
+  "DayOne Kempas": {
+   "lat": 1.5288,
+   "lon": 103.7051,
+   "praecision": "by",
+   "opslag": "Kempas, Johor Bahru, Johor"
+  },
+  "DayOne Nusajaya": {
+   "lat": 1.4562,
+   "lon": 103.6126,
+   "praecision": "by",
+   "opslag": "Nusajaya, Johor, Malaysia"
+  },
+  "EcoDataCenter 2": {
+   "lat": 60.5209,
+   "lon": 15.4162,
+   "praecision": "adresse",
+   "opslag": "Kvarnsvedsvägen 420, 784 66 Borlänge, Sweden"
+  },
+  "Goodnight": {
+   "lat": 35.1081,
+   "lon": -101.3627,
+   "praecision": "by",
+   "opslag": "Claude, TX 79019, United States"
+  },
+  "Google Arcola": {
+   "lat": 39.0017,
+   "lon": -77.4033,
+   "praecision": "by",
+   "opslag": "Sterling, VA 20166, United States"
+  },
+  "Google Bristow": {
+   "lat": 38.7312,
+   "lon": -77.548,
+   "praecision": "by",
+   "opslag": "Bristow, VA 20136, United States"
+  },
+  "Google Cedar Rapids": {
+   "lat": 41.9222,
+   "lon": -91.7157,
+   "praecision": "adresse",
+   "opslag": "5800 EDGEWOOD RD SW CEDAR RAPIDS, IA 52404"
+  },
+  "Google Columbus": {
+   "lat": 39.8615,
+   "lon": -83.004,
+   "praecision": "adresse",
+   "opslag": "5076 S High St, Columbus, OH 43207"
+  },
+  "Google Council Bluffs (East)": {
+   "lat": 41.1666,
+   "lon": -95.7977,
+   "praecision": "adresse",
+   "opslag": "10410 Bunge Ave, Council Bluffs, IA 51503"
+  },
+  "Google Fort Wayne": {
+   "lat": 41.0309,
+   "lon": -85.0536,
+   "praecision": "adresse",
+   "opslag": "6015 Adams Center Road, Fort Wayne, IN 46806"
+  },
+  "Google Kansas City East": {
+   "lat": 39.168,
+   "lon": -94.4788,
+   "praecision": "by",
+   "opslag": "Hunt Midwest Business Center, Kansas City, Missouri"
+  },
+  "Google Lancaster": {
+   "lat": 39.727,
+   "lon": -82.6831,
+   "praecision": "adresse",
+   "opslag": "105 Whiley Rd, Lancaster, OH 43130"
+  },
+  "Google Lincoln": {
+   "lat": 40.9075,
+   "lon": -96.6458,
+   "praecision": "adresse",
+   "opslag": "5475 Cloud Ct, Lincoln, NE 68514"
+  },
+  "Google Mesa": {
+   "lat": 33.4151,
+   "lon": -111.8315,
+   "praecision": "by",
+   "opslag": "Mesa, Arizona, USA"
+  },
+  "Google Midlothian": {
+   "lat": 32.4389,
+   "lon": -97.0508,
+   "praecision": "adresse",
+   "opslag": "3250 Railport Parkway, Midlothian, TX 76065"
+  },
+  "Google New Albany": {
+   "lat": 40.0701,
+   "lon": -82.754,
+   "praecision": "adresse",
+   "opslag": "1101 Beech Rd SW, New Albany, OH 43054"
+  },
+  "Google Omaha": {
+   "lat": 41.3357,
+   "lon": -96.0524,
+   "praecision": "adresse",
+   "opslag": "11110 State St, Omaha, NE 68142"
+  },
+  "Google Papillion": {
+   "lat": 41.1544,
+   "lon": -96.0422,
+   "praecision": "by",
+   "opslag": "Papillion, United States"
+  },
+  "Google Pryor (North)": {
+   "lat": 36.2412,
+   "lon": -95.33,
+   "praecision": "adresse",
+   "opslag": "4581 Webb St, Pryor, OK 74361"
+  },
+  "Google Red Oak": {
+   "lat": 32.5376,
+   "lon": -96.7967,
+   "praecision": "adresse",
+   "opslag": "330 Austin Blvd, Red Oak, TX 75154"
+  },
+  "Google Storey County": {
+   "lat": 39.556,
+   "lon": -119.4903,
+   "praecision": "by",
+   "opslag": "Tahoe-Reno Industrial Center, Storey County, Nevada"
+  },
+  "Google The Dalles": {
+   "lat": 45.6254,
+   "lon": -121.2024,
+   "praecision": "adresse",
+   "opslag": "3500 River Rd, The Dalles, OR"
+  },
+  "Google Waltham Cross": {
+   "lat": 51.7021,
+   "lon": -0.0336,
+   "praecision": "by",
+   "opslag": "Cheshunt, EN8 8XH, United Kingdom"
+  },
+  "Huawei Horinger": {
+   "lat": 40.2952,
+   "lon": 111.9045,
+   "praecision": "by",
+   "opslag": "Horinger, China"
+  },
+  "Huawei Wuhu": {
+   "lat": 31.1801,
+   "lon": 118.2142,
+   "praecision": "adresse",
+   "opslag": "Wuhu, China"
+  },
+  "Meta Aiken": {
+   "lat": 33.5723,
+   "lon": -81.6182,
+   "praecision": "by",
+   "opslag": "Aiken, United States"
+  },
+  "Meta Bowling Green": {
+   "lat": 41.3748,
+   "lon": -83.6513,
+   "praecision": "by",
+   "opslag": "Bowling Green, OH 43402, United States"
+  },
+  "Meta Cheyenne": {
+   "lat": 41.14,
+   "lon": -104.8202,
+   "praecision": "adresse",
+   "opslag": "Cheyenne, WY 82007, USA"
+  },
+  "Meta Eagle Mountain": {
+   "lat": 40.3093,
+   "lon": -112.012,
+   "praecision": "by",
+   "opslag": "Eagle Mountain, UT 84005, United States"
+  },
+  "Meta Gallatin": {
+   "lat": 36.3883,
+   "lon": -86.4476,
+   "praecision": "by",
+   "opslag": "Gallatin, TN 37066, United States"
+  },
+  "Meta Huntsville": {
+   "lat": 34.8981,
+   "lon": -86.7336,
+   "praecision": "by",
+   "opslag": "Toney, AL, United States"
+  },
+  "Meta Hyperion": {
+   "lat": 32.4676,
+   "lon": -91.6268,
+   "praecision": "adresse",
+   "opslag": "Holly Ridge, LA 71269"
+  },
+  "Meta Jeffersonville": {
+   "lat": 38.2791,
+   "lon": -85.739,
+   "praecision": "adresse",
+   "opslag": "500 8th St, Jeffersonville, IN 47130, USA"
+  },
+  "Meta Kuna": {
+   "lat": 43.4592,
+   "lon": -116.4211,
+   "praecision": "adresse",
+   "opslag": "601 Kuna Mora Rd,  Kuna ID 83634"
+  },
+  "Meta Los Lunas": {
+   "lat": 34.8302,
+   "lon": -106.7838,
+   "praecision": "adresse",
+   "opslag": "4250 Messenger Lp, Los Lunas, NM 87031"
+  },
+  "Meta Montgomery": {
+   "lat": 32.3777,
+   "lon": -86.3091,
+   "praecision": "by",
+   "opslag": "Montgomery, Alabama"
+  },
+  "Meta Prometheus": {
+   "lat": 40.0812,
+   "lon": -82.8088,
+   "praecision": "by",
+   "opslag": "New Albany, OH 43054, United States"
+  },
+  "Meta Rosemount": {
+   "lat": 44.7392,
+   "lon": -93.1261,
+   "praecision": "by",
+   "opslag": "Rosemount, Dakota County, Minnesota"
+  },
+  "Meta Sarpy": {
+   "lat": 41.0923,
+   "lon": -96.1008,
+   "praecision": "by",
+   "opslag": "Sarpy, United States"
+  },
+  "Meta Temple": {
+   "lat": 31.126,
+   "lon": -97.3598,
+   "praecision": "adresse",
+   "opslag": "2310 Eberhardt Rd, Temple, TX 76504"
+  },
+  "Meta-QTS Hillsboro 2": {
+   "lat": 45.5589,
+   "lon": -122.9296,
+   "praecision": "adresse",
+   "opslag": "4755 NE Huffman St, Hillsboro, OR 97124"
+  },
+  "Microsoft Fairwater Atlanta": {
+   "lat": 33.4454,
+   "lon": -84.5255,
+   "praecision": "adresse",
+   "opslag": "1435 Hwy 54 W, Fayetteville, GA 30214"
+  },
+  "Microsoft Fairwater Wisconsin": {
+   "lat": 42.6749,
+   "lon": -87.8949,
+   "praecision": "adresse",
+   "opslag": "4800 90th St, Mount Pleasant, WI 53403"
+  },
+  "Microsoft Goodyear": {
+   "lat": 33.409,
+   "lon": -112.3648,
+   "praecision": "adresse",
+   "opslag": "14250 W Broadway Rd, Goodyear, AZ 85338"
+  },
+  "Microsoft Narvik Norway": {
+   "lat": 68.4384,
+   "lon": 17.4272,
+   "praecision": "by",
+   "opslag": "Narvik, Norway"
+  },
+  "Microsoft Project Osmium": {
+   "lat": 41.4833,
+   "lon": -93.7624,
+   "praecision": "by",
+   "opslag": "Cumming, IA 50061, United States"
+  },
+  "Microsoft SAT14": {
+   "lat": 29.4772,
+   "lon": -98.6926,
+   "praecision": "adresse",
+   "opslag": "3545 Wiseman Boulevard, San Antonio, TX 78251"
+  },
+  "Microsoft SAT40": {
+   "lat": 29.4246,
+   "lon": -98.4951,
+   "praecision": "by",
+   "opslag": "San Antonio, TX 78245, United States"
+  },
+  "Microsoft-Nebius New Jersey": {
+   "lat": 39.4282,
+   "lon": -75.0184,
+   "praecision": "adresse",
+   "opslag": "3963 S Lincoln Ave, Vineland, New Jersey"
+  },
+  "Nebius Mantsala": {
+   "lat": 60.6353,
+   "lon": 25.3159,
+   "praecision": "by",
+   "opslag": "Mäntsälä, Finland"
+  },
+  "Nscale Keflavik": {
+   "lat": 63.977,
+   "lon": -22.5755,
+   "praecision": "adresse",
+   "opslag": "Valhallarbraut 868, 262 Reykjanesbær, Iceland"
+  },
+  "OpenAI Stargate Abilene": {
+   "lat": 32.4942,
+   "lon": -99.8009,
+   "praecision": "adresse",
+   "opslag": "5502 Spinks Rd, Abilene, TX 79601"
+  },
+  "OpenAI Stargate Lordstown": {
+   "lat": 41.2368,
+   "lon": -80.819,
+   "praecision": "by",
+   "opslag": "Warren, OH 44481, United States"
+  },
+  "OpenAI Stargate Michigan": {
+   "lat": 42.1245,
+   "lon": -83.8386,
+   "praecision": "by",
+   "opslag": "Saline Township, Washtenaw County, Michigan"
+  },
+  "OpenAI Stargate Milam": {
+   "lat": 30.7627,
+   "lon": -96.9982,
+   "praecision": "kommune",
+   "opslag": "Milam County, Texas"
+  },
+  "OpenAI Stargate New Mexico": {
+   "lat": 31.87,
+   "lon": -106.6866,
+   "praecision": "by",
+   "opslag": "Santa Teresa, New Mexico"
+  },
+  "OpenAI Stargate Shackelford": {
+   "lat": 32.5966,
+   "lon": -99.5021,
+   "praecision": "by",
+   "opslag": "TX 79601, Shackelford County, United States"
+  },
+  "OpenAI Stargate UAE": {
+   "lat": 24.1424,
+   "lon": 54.4622,
+   "praecision": "by",
+   "opslag": "Stargate UAE, United Arab Emirates"
+  },
+  "OpenAI Stargate Wisconsin": {
+   "lat": 43.3886,
+   "lon": -87.8693,
+   "praecision": "by",
+   "opslag": "Port Washington, Wisconsin"
+  },
+  "Oracle Batam": {
+   "lat": 1.1148,
+   "lon": 104.1259,
+   "praecision": "by",
+   "opslag": "Nongsa, Batam, Indonesia"
+  },
+  "QTS Cedar Rapids": {
+   "lat": 41.9056,
+   "lon": -91.751,
+   "praecision": "adresse",
+   "opslag": "6200 76th Ave SW, Fairfax, IA 52228"
+  },
+  "QTS Eagle Mountain": {
+   "lat": 40.2689,
+   "lon": -112.0343,
+   "praecision": "adresse",
+   "opslag": "652 E Hyperscale Way, Eagle Mountain, UT 84013"
+  },
+  "QTS Richmond 1": {
+   "lat": 37.4888,
+   "lon": -77.2475,
+   "praecision": "adresse",
+   "opslag": "6000 Technology Blvd, Sandston, VA 23150"
+  },
+  "QTS Richmond 2": {
+   "lat": 37.5235,
+   "lon": -77.3158,
+   "praecision": "by",
+   "opslag": "Sandston, VA 23150, United States"
+  },
+  "QTS Richmond 3": {
+   "lat": 37.5235,
+   "lon": -77.3158,
+   "praecision": "by",
+   "opslag": "Sandston, VA 23150, United States"
+  },
+  "STACK Infrastructure NVA02": {
+   "lat": 38.7458,
+   "lon": -77.5377,
+   "praecision": "adresse",
+   "opslag": "9590 Hornbaker Rd, Manassas, VA 20109"
+  },
+  "Southgate Melbourne": {
+   "lat": -37.8161,
+   "lon": 144.8415,
+   "praecision": "by",
+   "opslag": "Brooklyn, Victoria, Australia"
+  },
+  "Start Campus Sines Data Campus": {
+   "lat": 37.9565,
+   "lon": -8.869,
+   "praecision": "by",
+   "opslag": "Sines, Setúbal, Portugal"
+  },
+  "Stream Phoenix": {
+   "lat": 33.4195,
+   "lon": -112.36,
+   "praecision": "adresse",
+   "opslag": "2950 S. Litchfield Road"
+  },
+  "VNET Bayin Ulanqab": {
+   "lat": 41.6242,
+   "lon": 112.6325,
+   "praecision": "adresse",
+   "opslag": "Bayin, Ulanqab, China"
+  },
+  "Vantage TX1": {
+   "lat": 29.4169,
+   "lon": -98.7902,
+   "praecision": "adresse",
+   "opslag": "14720 Omicron Dr, San Antonio, TX 78245"
+  },
+  "xAI QTS Atlanta": {
+   "lat": 33.7772,
+   "lon": -84.4195,
+   "praecision": "adresse",
+   "opslag": "1025 Jefferson Street NW, Atlanta, GA 30318"
+  }
+ },
+ "anlaeg": []
+}
