@@ -82,6 +82,8 @@ function land(navn) {
   return a2 ? { a2, land: LANDE[a2].n } : { a2: null, land: navn || null };
 }
 const liste = s => (s || '').split(',').map(x => x.replace(/#\w+/g, '').trim()).filter(Boolean);
+// Fagpresse og nyhedsmedier mærkes ", medie", som siden viser dæmpet. Myndigheder og selskaber står fremhævet.
+const medie = n => { const m = /\s*\((fagpresse|medie)[^)]*\)/.exec(n || ''); return m ? n.replace(m[0], '') + ', medie' : n; };
 const dage = (a, b) => (Date.parse(b) - Date.parse(a)) / 864e5;
 
 // ---------- Epoch ----------
@@ -168,14 +170,14 @@ function kurateret() {
       operatoer: a.operatoer || null,
       brugere: (a.brugere || []).filter(b => b.navn && (b.sikkerhed === 'sikker' || b.sikkerhed === 'sandsynlig')),
       formaal: a.formaal || null,
-      it_effekt_mw: { nu: it.nu ?? null, planlagt: it.planlagt ?? null, planlagt_dato: it.planlagt_aar ? `${it.planlagt_aar}` : null, type: it.type || 'it', skoen: !!it.skoen },
+      it_effekt_mw: { nu: it.nu ?? null, planlagt: it.planlagt ?? null, planlagt_dato: it.planlagt_aar ? `${it.planlagt_aar}` : null, type: it.type === 'it' || it.type === 'net' ? it.type : null, skoen: !!it.skoen },
       areal_m2: a.areal_m2 ?? null, bygninger: a.bygninger ?? null,
       investering: a.investering || null,
       elforbrug_gwh: a.elforbrug_gwh ?? null,
       energikilde: a.energikilde || null,
       pue: a.pue ?? null, vand: a.vand ?? null, koeling: a.koeling || null,
       tidslinje: (a.tidslinje || []).map(t => ({ dato: t.dato, tekst: t.tekst, fremtid: String(t.dato) > IDAG })),
-      kilder: a.kilder.map(k => ({ navn: k.navn, titel: k.titel || null, url: k.url, dato: k.dato || null, felter: k.felter || [] })),
+      kilder: a.kilder.map(k => ({ navn: medie(k.navn), titel: k.titel || null, url: k.url, dato: k.dato || null, felter: k.felter || [] })),
       erstatter: a.erstatter || null,
       opdateret: a.opdateret || null
     });

@@ -2690,12 +2690,14 @@ const dcNum = v => Number(v).toLocaleString('da-DK', {maximumFractionDigits: v <
 const dcAar = s => s ? (String(s).length > 4 ? fmtDate(String(s).slice(0, 7)) : String(s)) : '';
 const dcSkoen = (d, f) => f && f.skoen ? `skøn, ${d.kilde === 'epoch' ? 'Epoch AI' : 'kilden'}` : '';
 function dcEffekt(d){
-  const it = d.it_effekt_mw || {}, s = it.skoen ? ' (skøn)' : '', type = it.type === 'net' ? 'nettilslutning' : 'IT-effekt';
+  const it = d.it_effekt_mw || {}, s = it.skoen ? ' (skøn)' : '', type = dcType(d);
   if(d.status === 'drift' && it.nu) return `${dcNum(it.nu)} MW ${type}${it.planlagt > it.nu ? `, ${dcNum(it.planlagt)} MW ${dcAar(it.planlagt_dato)}` : ''}${s}`;
   if(it.planlagt) return `${dcNum(it.planlagt)} MW ${type} planlagt${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}${s}`;
   if(it.nu) return `${dcNum(it.nu)} MW ${type}${s}`;
   return 'Effekt ikke oplyst';
 }
+// Effekttypen, som kilden angiver den: IT-effekt eller tilslutning til elnettet. Siger kilden det ikke, står der bare effekt.
+const dcType = d => { const t = (d.it_effekt_mw || {}).type; return t === 'net' ? 'nettilslutning' : t === 'it' || d.kilde === 'epoch' ? 'IT-effekt' : 'effekt'; };
 const dcParter = l => (l || []).map(x => x.sikkerhed === 'sandsynlig' ? `${x.navn} (sandsynlig)` : x.navn).join(', ');
 // Markøren som SVG til listen, filtrene og guiden.
 function dcMarkoer(st, r = 6){
@@ -2818,13 +2820,14 @@ function visDC(d){
   const meta = detail.querySelector('.k-meta');
   if(meta){ const s = el('span','k-alv'); s.style.setProperty('--a', 'var(--c-data)'); s.textContent = st.n; s.title = st.d; meta.prepend(s); }
   const fort = [`${d.navn} er ${st.n.toLowerCase()}${d.land ? ' i ' + d.land : ''}.`];
-  if(d.status === 'drift' && it.nu) fort.push(`IT-effekten er omkring ${dcNum(it.nu)} MW${it.planlagt > it.nu ? `, og ${d.kilde === 'epoch' ? 'Epoch AI venter' : 'kilden nævner'} ${dcNum(it.planlagt)} MW ${dcAar(it.planlagt_dato)}` : ''}.`);
-  else if(it.planlagt) fort.push(`${d.kilde === 'epoch' ? 'Epoch AI venter' : 'Kilden nævner'} ${dcNum(it.planlagt)} MW IT-effekt${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}.`);
+  const ty = dcType(d), Ty = ty === 'effekt' ? 'Effekten' : ty === 'nettilslutning' ? 'Nettilslutningen' : 'IT-effekten';
+  if(d.status === 'drift' && it.nu) fort.push(`${Ty} er omkring ${dcNum(it.nu)} MW${it.planlagt > it.nu ? `, og ${d.kilde === 'epoch' ? 'Epoch AI venter' : 'kilden nævner'} ${dcNum(it.planlagt)} MW ${dcAar(it.planlagt_dato)}` : ''}.`);
+  else if(it.planlagt) fort.push(`${d.kilde === 'epoch' ? 'Epoch AI venter' : 'Kilden nævner'} ${dcNum(it.planlagt)} MW ${ty}${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}.`);
   kortFortalt(fort.join(' '));
   if(d.ikke_bekraeftet_siden) detail.appendChild(el('span','flag', `Ikke bekræftet siden ${fmtDate(d.ikke_bekraeftet_siden)}. Ingen ny kilde i 12 måneder.`));
   const ep = d.kilde === 'epoch' ? 'skøn, Epoch AI' : 'skøn';
   dcTal(detail, [
-    ['IT-effekt nu', it.nu ? `${dcNum(it.nu)} MW` : (d.status === 'drift' ? '' : '0 MW'), it.skoen && it.nu ? ep : ''],
+    [ty === 'effekt' ? 'Effekt nu' : ty === 'nettilslutning' ? 'Nettilslutning nu' : 'IT-effekt nu', it.nu ? `${dcNum(it.nu)} MW` : (d.status !== 'drift' && d.kilde === 'epoch' ? '0 MW' : ''), it.skoen && it.nu ? ep : ''],
     ['Planlagt', it.planlagt ? `${dcNum(it.planlagt)} MW${it.planlagt_dato ? ' ' + dcAar(it.planlagt_dato) : ''}` : '', it.skoen && it.planlagt ? ep : ''],
     ['Samlet effekt nu', d.effekt_mw && d.effekt_mw.nu ? `${dcNum(d.effekt_mw.nu)} MW` : '', d.effekt_mw && d.effekt_mw.skoen ? ep : ''],
     ['Formål', DC_FORMAAL[d.formaal] || '']
@@ -2847,6 +2850,7 @@ function visDC(d){
     ['Vand', vand && vand.mio_liter_doegn ? `${dcNum(vand.mio_liter_doegn)} mio. liter i døgnet` : (typeof vand === 'string' ? vand : ''), vand && vand.skoen ? ep : ''],
     ['Køling', d.koeling || ''],
     ['Areal', d.areal_m2 ? `${dcNum(d.areal_m2)} m²` : ''],
+    ['Bygninger', d.bygninger ? dcNum(d.bygninger) : ''],
     ...(ch && (ch.typer && ch.typer.length || ch.h100) ? [['Chips', [ch.typer && ch.typer.join(', '), ch.h100 ? `${dcNum(ch.h100)} H100-ækvivalenter` : ''].filter(Boolean).join(' · '), ch.skoen ? ep : '']] : [])
   ]);
   const tl = (d.tidslinje || []).filter(t => t.dato);
