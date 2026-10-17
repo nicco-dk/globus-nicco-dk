@@ -2,6 +2,31 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 18. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger og dengue (pr. 17. oktober, indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC's ugerapport uge 42 (indarbejdet 17. oktober), UKHSA (ugeoversigten uge 41 fra 15. oktober er fortsat den nyeste og er indarbejdet), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober) og siderne om Salmonella Enteritidis (1. oktober) og Salmonella Typhimurium ST19 (15. september): intet nyt. DK-VET's nyheder: intet nyt efter 7. oktober. RIVM's side om ebola: intet nyt efter 12. oktober. Robert Koch Instituts Epidemiologisches Bulletin: næste udgave 22. oktober.
+
+**Ændret**
+- `cchf-ir`: `cases` har fået kilde og dato: 31 bekræftede tilfælde i hele Iran i 2026, oplyst af lederen af sundhedsministeriets center for smitsomme sygdomme til ILNA, gengivet 16. september: https://www.aromastore.ir/news34737/ Tallet er læst i den persiske tekst og er uændret.
+- `altnv-cn`: `cases` har fået kilde og dato: 10,4 procent af 3.163 undersøgte febersyge patienter med flåtbid var positive, undersøgelsen i New England Journal of Medicine gengivet af AABB 14. september: https://www.aabb.org/news-resources/news/article/2026/09/14/chinese-researchers-identify-new-tickborne-virus-in-febrile-patients Tallene er uændrede. New England Journal of Medicine afviste opslaget med 403.
+
+**Nye**
+- Ingen. Set, men ikke taget med: Outbreak News Today skriver 17. oktober efter russiske medier, at fire personer i Sankt Petersborg er indlagt med laboratoriebekræftet mpox: https://outbreaknewstoday.substack.com/p/russia-4-confirmed-mpox-cases-reported Ingen myndighed, og typen er ikke oplyst. Outbreak News Today skriver 16. oktober, at Sveriges mæslingeudbrud efter Urkult-festivalen (40 tilfælde) er erklæret afsluttet 14. oktober: https://outbreaknewstoday.substack.com/p/sweden-measles-outbreak-declared Udbruddet har ikke stået på siden.
+
+**Urørt**
+- 39 hændelser uden nyt i kilderne. Kørslen har slået hændelserne i Europa op. Resten hører til de andre kørsler i vagtplanen.
+- `h5n1-dk` og `salmonella-dk` 17 dage siden seneste punkt: DK-VET og SSI uændrede. `ebola-nl`: intet nyt fra RIVM efter 10. oktober. `wnv-eu`, `dengue-eu` og `chik-fr`: ajour efter ECDC uge 42. `cre-eu`, `salmonella-eu`, `sindbis-de`, `malaria-de` og `cchf-es`: intet nyt.
+
+**Usikkert**
+- `difteri-ng`: tallet 10.476 bekræftede og 406 dødsfald er ikke fundet i kilderne i `src` eller ved søgning. ICIR og The Guardian Nigeria gengiver NCDC 28. august som "over 10.000 bekræftede tilfælde". Ingen ændring, og kontrollen advarer fortsat om hændelsen.
+- `cchf-ir`: kilden er en nyhedsside, der gengiver Khabar Online og ILNA. Ministeriets egen udmelding er ikke fundet.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9e41339.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `difteri-ng`, tallet i `cases` har ingen fundet kilde. `altnv-cn`, AABB står uden tilføjelsen `, sekundær`.
+
 ## 17. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
