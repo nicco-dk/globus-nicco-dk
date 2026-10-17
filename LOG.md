@@ -64,6 +64,9 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `h5n1-us`, skal det humane tilfælde i Washington være en egen hændelse? Og `OPDATERING.md`, en hurtigere vej til DR Congos situationsrapporter.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (seneste meddelelse er fortsat 14. oktober, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 16. oktober er indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066 (ingen nye humane tilfælde af fugleinfluenza 9. til 15. oktober), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 16. og 17. oktober (et importeret denguetilfælde, to importerede chikungunyatilfælde og et sporadisk tilfælde af melioidose, intet til siden). WHO EMRO's nyheder (beredskab mod Bundibugyo-virus i regionen, ingen tilfælde). Søgninger efter nyt om Krim-Congo hæmoragisk feber i Iran (`cchf-ir`, 27 dage siden seneste punkt) og dengue i Sri Lanka: intet nyt fra myndighederne. Usikkert: Sri Lankas side https://www.dengue.health.gov.lk/ kunne ikke hentes ad nogen af de to veje (direkte opslag afbrudt af serveren, hentningsværktøjet afvist af robots.txt), så `dengue-asien` er urørt. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5949e4b.
+
 ## 16. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
