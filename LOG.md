@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 19. oktober 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger og dengue (pr. 18. oktober, indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC's ugerapport uge 42 (indarbejdet, næste udgave fredag), UKHSA (ugeoversigten fra 15. oktober er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (et dødsfald af invasiv pneumokoksygdom, intet til siden). Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober), DK-VET's nyheder (intet efter 7. oktober, fundet af fugleinfluenza i sæler 1. oktober står i `h5n1-dk`), RIVM's side om ebola (intet nyt efter 12. oktober), Robert Koch Instituts Epidemiologisches Bulletin (næste udgave 22. oktober). Søgning efter Rospotrebnadzors udmelding om mpox i Sankt Petersborg: ikke fundet, så hændelsen er fortsat ikke taget med. Kontrollen advarer kun om `difteri-ng`, som allerede står i GENNEMGANG.md. Set, men overladt til kl. 05-kørslen: Outbreak News Today melder 18. oktober et ottende tilfælde af ebola i Kenya (https://outbreaknewstoday.substack.com/p/kenya-8th-ebola-case-reported), ikke læst i myndighedens egen udmelding i denne kørsel. Sri Lankas side kunne ikke hentes af scriptet. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 8e5cd67.
+
 ## 18. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
