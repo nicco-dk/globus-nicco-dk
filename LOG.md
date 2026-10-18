@@ -27,6 +27,32 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `difteri-ng`, tallet i `cases` har ingen fundet kilde. `altnv-cn`, AABB står uden tilføjelsen `, sekundær`.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 17. oktober er indarbejdet) og dengue (dashboardet pr. 17. oktober er indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC's ugerapport uge 42 (indarbejdet), UKHSA (ugeoversigten uge 41 er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter gennem insp.cd's medieliste (154 er fortsat den nyeste). Kenyas sundhedsministerium hos APO Group (intet nyt efter 7. oktober). Søgninger efter nyt fra WHO om kolera, om miltbrand i Zambia, mpox i Mexico og cyclospora i USA: intet nyt fra myndighederne. Statens Serum Institut, DK-VET, RIVM og Robert Koch Institut blev gennemgået af kørslen kl. 00.20 og er ikke slået op igen.
+
+**Ændret**
+- `ebola-ke`: 7 bekræftede tilfælde og 1 dødsfald, Kenyas sundhedsministerium pr. 17. oktober. Pressemeddelelsen fra generaldirektøren for sundhed, Nairobi 17. oktober, og ministeriets oversigt samme dag er læst som billeder gengivet af Outbreak News Today: https://outbreaknewstoday.substack.com/p/kenya-reports-4-additional-ebola De fire nye tilfælde er en nær mandlig slægtning til det første tilfælde, i karantæne siden 6. oktober, og tre sundhedsarbejdere på 29, 35 og 32 år, som behandlede det første tilfælde 3. og 4. oktober og har været i karantæne siden 9. oktober. 128 af 130 kontakter er opsporet og i karantæne. Reuters gengiver de samme tal: https://www.sabcnews.com/sabcnews/kenya-confirms-four-new-ebola-cases-bringing-total-number-to-seven/ Nyt punkt i forløbet, `cases`, `extra` og `gap` er opdateret, og begge kilder er sat i `src` med tilføjelsen `, medie`. Trinnet er uændret `smitte`, fordi alle nye tilfælde var kontakter i karantæne.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 40 hændelser uden nyt i kilderne.
+- Rundtur: `cchf-ir` 28 dage siden seneste punkt, `chik-am` 26, `difteri-ng` 24, `anthrax-zm` 20, `altnv-cn` 20, `mpox-mo` 18, `h5n1-dk` 17, `salmonella-dk` 17, `cre-eu` 16, `maesling-am` 15, `cyclospora-us` 13 og `kolera` 10: søgt eller slået op, intet nyt fra myndighederne. `ebola-drc`: situationsrapport 155 findes endnu ikke i insp.cd's medieliste. `maesling-am`: næste PAHO-rapport 22. oktober.
+
+**Usikkert**
+- `ebola-ke`: Kenyas sundhedsministeriums udmelding 17. oktober er kun fundet som billeder hos Outbreak News Today og gengivet af Reuters, ikke på ministeriets egen side eller hos APO Group.
+- Kontrollen advarer fortsat om `difteri-ng`, hvor tallet i `cases` ikke har kilde og dato, se GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi værktøjet add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit f8d796c.
+
+**Mediesporet**
+- Ét par har status afventer: `IL-SY`, som venter på ejerens afgørelse i GENNEMGANG.md. Ikke afgjort. Stregens nyeste artikel, Arab News 18. oktober, handler efter overskriften om flere israelske indtrængninger i det sydlige Syrien og fire tilbageholdte i Quneitra: https://www.arabnews.com/middle-east/israel-steps-up-incursions-into-southern-syria-detains-four-in-quneitra-3006937
+- Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 17. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
