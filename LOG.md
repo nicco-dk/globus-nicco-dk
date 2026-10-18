@@ -56,6 +56,34 @@
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 17. oktober er indarbejdet, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 17. oktober er indarbejdet), WHO SEARO's bulletin nummer 20 (næste udgave ventes 21. oktober), WHO WPRO's oversigt nummer 1066 (ingen nye humane tilfælde af fugleinfluenza 9. til 15. oktober), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 17. og 18. oktober (et dødsfald af invasiv pneumokoksygdom, intet til siden). WHO EMRO's nyheder (intet nyt efter 15. oktober). Søgninger efter nye udbrud i Asien og Mellemøsten og nyt om mpox i Hongkong og dengue i Sri Lanka: intet nyt fra myndighederne. Usikkert: Sri Lankas side https://www.dengue.health.gov.lk/ kunne ikke hentes ad nogen af de to veje (direkte opslag afbrudt af serveren, hentningsværktøjet fik ikke tilladelse), så `dengue-asien` er urørt. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 0a6c376.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 18. oktober, indarbejdet) og dengue (dashboardet pr. 18. oktober, indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC uge 42, UKHSA (ugeoversigten uge 41 er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter gennem insp.cd's medieliste (155 er ny). PAHO's epidemiologiske alarmer og opdateringer (ny alarm 16. oktober om myiasis, se Til gennemgang). Søgninger efter nyt fra Kenyas sundhedsministerium om ebola, Africa CDC, pest på Madagaskar og Floridas ugerapport om dengue uge 41: intet nyt at indarbejde.
+
+**Ændret**
+- `ebola-drc`: 9.415 bekræftede tilfælde og 4.536 dødsfald, DR Congos sundhedsministerium pr. 16. oktober, situationsrapport 155: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_155_16_10_2026.pdf Rapporten bekræfter officielt Nord-Ubangi som den ottende ramte provins med 2 bekræftede tilfælde og 1 dødsfald i sundhedszonen Wapinda. 67 nye tilfælde og 26 nye dødsfald på et døgn, 66 af 178 sundhedszoner. Nyt punkt i forløbet og i talserien, `cases` og `extra` er opdateret, situationsrapport 155 erstatter 154 i `src`, og `gap` om den ubekræftede provins er fjernet. Wapinda er sat på kortet med koordinaterne fra OpenStreetMap (3,6777 N, 22,8030 Ø), uden forbindelse, fordi rapporten ikke dokumenterer retningen. Tallene er læst i rapportens tekst og som billede af første side.
+- `maesling-bd`: 213.244 mistænkte og 23.122 bekræftede tilfælde, 1.092 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 18. oktober: https://dghs.gov.bd/pages/press-releases/6ad49db294e4dab6748d9c8e Det seneste døgn 1.254 nye mistænkte, 65 nye bekræftede og 7 dødsfald blandt mistænkte, heraf 3 i Dhaka-divisionen. 189.484 indlagte og 181.756 udskrevne. Tallene er læst i PDF'en som tekst og som billede. Nyt punkt i forløbet og i talserien (dødstallet i grafen er de to rækker lagt sammen, 1.196, som reglen siger).
+- `dengue-bd`: 112.400 indlagte og 348 dødsfald i 2026, efter 2.088 nye indlagte og 6 nye dødsfald på et døgn, DGHS' denguedashboard pr. 18. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php Nyt punkt i forløbet og i talserien. Hændelsen hører til kl. 11-kørslen, men dashboardet var opdateret efter den.
+
+**Nye**
+- Ingen. Set, men ikke taget med: pest på Madagaskar (Outbreak News Today 16. oktober, The Star 14. oktober: 4 bekræftede tilfælde), fordi det er den kendte sæson, og ingen myndighed kalder den usædvanlig. Hantavirus i Argentina (NaTHNaC: 59 bekræftede tilfælde i 2026 pr. 3. oktober) af samme grund. PAHO's alarm om myiasis med Cochliomyia hominivorax 16. oktober, se Til gennemgang.
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne. `ebola-ke`: ingen nye tal efter 17. oktober. `maesling-us`: US CDC's næste ugetal ventes onsdag. `maesling-am`: næste PAHO-rapport 22. oktober. `dengue-fl`: ugerapporten for uge 41 findes ikke endnu. `kolera`, `gul-feber-gh`, `anthrax-zm` og `h5n1-us`: intet nyt fra myndighederne.
+
+**Usikkert**
+- `difteri-afro`: NaTHNaC skriver 16. oktober 161 bekræftede tilfælde og 11 dødsfald i Senegal pr. 5. oktober, mens punktet 16. oktober efter ECDC har Senegals sundhedsministerium med 248 bekræftede tilfælde og 11 dødsfald pr. 4. oktober. Ingen ændring.
+- `ebola-drc`: situationsrapport 155 har 916 isolerede patienter, samme tal som 154. Rapportens første linje dateres "16 septembre", men skal efter sammenhængen være 16. oktober. Tallet for isolerede er sat ind, som rapporten skriver det.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 87a7b31.
+
+**Mediesporet**
+- To par har status afventer. `IL-SY` venter fortsat på ejerens afgørelse i GENNEMGANG.md og er ikke afgjort.
+- Afvist: `FR-TF`. Artiklerne handler om demonstrationer, plyndringer og over 1.800 anholdelser i Frankrig og om et fransk krigsskib, der skød en drone ned ved Bab el-Mandeb, ikke om kampe mellem Frankrig og De Franske Sydterritorier: https://www.npr.org/2026/10/17/nx-s1-6006773/student-protests-france og https://www.aljazeera.com/gallery/2026/10/18/photos-protests-across-france-spiral-into-looting-blazes-and-clashes
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: PAHO's alarm om myiasis med Cochliomyia hominivorax 16. oktober. Skal den slags hændelser med på siden?
+
 ## 17. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

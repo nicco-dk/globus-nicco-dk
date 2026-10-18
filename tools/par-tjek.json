@@ -58,6 +58,7 @@
     "UA>RU": {"dato": "2026-10-15", "grund": "Artiklerne handler om krigen mellem landene, ukrainske angreb på russiske raffinaderier og russiske missilangreb, som allerede står som konflikt under RU-UA, og om nordkoreanske soldater i Rusland, ikke om militær støtte fra Ukraine til Rusland."},
     "IR>US": {"dato": "2026-10-15", "grund": "Artiklerne handler om henrettelsen af Fort Hood-skytten Nidal Hasan i USA, ikke om militær støtte fra Iran til USA."},
     "IL-SA": {"dato": "2026-10-15", "grund": "Artiklerne handler om ofrene for Houthi-angrebene på lufthavnen i Riyadh, blandt dem en palæstinensisk far, og en flysikkerhedsundersøgelse, ikke om kampe mellem Israel og Saudi-Arabien."},
-    "PL-UA": {"dato": "2026-10-15", "grund": "Artiklerne handler om russiske angreb på Ukraines elnet, Starlink og ukrainske flygtninge i Polen, ikke om kampe mellem Polen og Ukraine."}
+    "PL-UA": {"dato": "2026-10-15", "grund": "Artiklerne handler om russiske angreb på Ukraines elnet, Starlink og ukrainske flygtninge i Polen, ikke om kampe mellem Polen og Ukraine."},
+    "FR-TF": {"dato": "2026-10-18", "grund": "Artiklerne handler om voldsomme demonstrationer, plyndringer og anholdelser i Frankrig og om et fransk krigsskib, der skød en drone ned ved Bab el-Mandeb, ikke om kampe mellem Frankrig og De Franske Sydterritorier."}
   }
 }
