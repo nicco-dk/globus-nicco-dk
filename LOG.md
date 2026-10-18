@@ -53,6 +53,9 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 17. oktober er indarbejdet, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 17. oktober er indarbejdet), WHO SEARO's bulletin nummer 20 (næste udgave ventes 21. oktober), WHO WPRO's oversigt nummer 1066 (ingen nye humane tilfælde af fugleinfluenza 9. til 15. oktober), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 17. og 18. oktober (et dødsfald af invasiv pneumokoksygdom, intet til siden). WHO EMRO's nyheder (intet nyt efter 15. oktober). Søgninger efter nye udbrud i Asien og Mellemøsten og nyt om mpox i Hongkong og dengue i Sri Lanka: intet nyt fra myndighederne. Usikkert: Sri Lankas side https://www.dengue.health.gov.lk/ kunne ikke hentes ad nogen af de to veje (direkte opslag afbrudt af serveren, hentningsværktøjet fik ikke tilladelse), så `dengue-asien` er urørt. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 0a6c376.
+
 ## 17. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
