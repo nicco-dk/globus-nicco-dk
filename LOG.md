@@ -7,6 +7,33 @@
 ### Kl. 00.20, Europa og Danmark: intet nyt
 Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger og dengue (pr. 18. oktober, indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC's ugerapport uge 42 (indarbejdet, næste udgave fredag), UKHSA (ugeoversigten fra 15. oktober er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (et dødsfald af invasiv pneumokoksygdom, intet til siden). Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober), DK-VET's nyheder (intet efter 7. oktober, fundet af fugleinfluenza i sæler 1. oktober står i `h5n1-dk`), RIVM's side om ebola (intet nyt efter 12. oktober), Robert Koch Instituts Epidemiologisches Bulletin (næste udgave 22. oktober). Søgning efter Rospotrebnadzors udmelding om mpox i Sankt Petersborg: ikke fundet, så hændelsen er fortsat ikke taget med. Kontrollen advarer kun om `difteri-ng`, som allerede står i GENNEMGANG.md. Set, men overladt til kl. 05-kørslen: Outbreak News Today melder 18. oktober et ottende tilfælde af ebola i Kenya (https://outbreaknewstoday.substack.com/p/kenya-8th-ebola-case-reported), ikke læst i myndighedens egen udmelding i denne kørsel. Sri Lankas side kunne ikke hentes af scriptet. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 8e5cd67.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger og dengue (pr. 18. oktober, indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC's ugerapport uge 42 (indarbejdet, næste udgave fredag), UKHSA (ugeoversigten fra 15. oktober er fortsat den nyeste), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter gennem insp.cd's medieliste (155 er fortsat den nyeste). Søgninger efter Kenyas ottende ebolatilfælde, nyt om gul feber i Ghana og nye udbrud meldt af sundhedsministerier. Statens Serum Institut, DK-VET, RIVM og Robert Koch Institut blev gennemgået af kørslen kl. 00.20 og er ikke slået op igen. WHO AFRO's bulletin, PAHO og Africa CDC er ikke slået op særskilt i denne kørsel, de blev gennemgået af kørslen 18. oktober kl. 17.20.
+
+**Ændret**
+- `ebola-ke`: 8 bekræftede tilfælde og 1 dødsfald, Kenyas sundhedsministerium pr. 18. oktober. Generaldirektøren for sundhed, Patrick Amoth, meldte i et interview på Citizen TV et ottende tilfælde, en 49-årig mand, der som pårørende ledsager passede det første tilfælde. Af 38 testede var én positiv. Gengivet af Associated Press: https://www.bozemandailychronicle.com/wire/international/kenya-s-ebola-cases-hit-8-with-no-community-transmission-yet/article_dab273f0-f846-594f-90ca-3c6aa86467f2.html og Eastleigh Voice: https://eastleighvoice.co.ke/headlines/413599/kenya-confirms-eighth-ebola-case-as-49-year-old-patient-attendant-tests-positive samt Outbreak News Today. Nyt punkt i forløbet, `cases`, `extra` og `gap` er opdateret, og AP og Eastleigh Voice er sat i `src` med tilføjelsen `, medie`. Trinnet er uændret `smitte`.
+
+**Nye**
+- Ingen. Set, men ikke taget med: Outbreak News Today 18. oktober om, at Manitoba har erklæret sit mæslingeudbrud afsluttet, og om 288 mæslingetilfælde i Wisconsin. Ingen af dem står som egen hændelse, og US CDC's næste ugetal ventes onsdag.
+
+**Urørt**
+- 40 hændelser uden nyt i kilderne.
+- Rundtur: `cchf-ir` 29 dage siden seneste punkt, `chik-am` 27, `difteri-ng` 25, `anthrax-zm` 21, `altnv-cn` 21, `mpox-mo` 19, `h5n1-dk` 18, `salmonella-dk` 18, `cre-eu` 17, `maesling-am` 16, `cyclospora-us` 14, `kolera` 11, `h5n1-kh` 10, `salmonella-eu` 10 og `gul-feber-gh` 10: de samlede kilder nævner dem ikke med nyt. Kun `gul-feber-gh` og `h5n1-kh` er slået op enkeltvis i denne kørsel. De øvrige blev søgt af kørslen 18. oktober kl. 05.20 uden nyt og er ikke søgt igen. `gul-feber-gh`: seneste fundne udmelding er sundhedsministerens 9. oktober (450 mistænkte tilfælde i 16 regioner), som står på siden. `h5n1-kh`: WHO WPRO nummer 1066 har intet nyt tilfælde. `cchf-ir` når 30 dage i morgen, og `chik-am` om tre dage, så næste kørsler skal tage stilling til `live`.
+
+**Usikkert**
+- `ebola-ke`: det ottende tilfælde kendes kun gennem generaldirektørens interview, gengivet af medier. AP skriver, at patienten var i karantæne, da han blev testet. Eastleigh Voice skriver kun, at han er isoleret. Sundhedsministeriets egen pressemeddelelse er ikke fundet. Kontrollen fik 403 fra Eastleigh Voice, men siden er læst gennem hentningsværktøjet.
+- Kontrollen advarer fortsat om `difteri-ng`, se GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5467814.
+
+**Mediesporet**
+- To par har status afventer. `IL-SY` venter fortsat på ejerens afgørelse i GENNEMGANG.md og er ikke afgjort.
+- Afvist: `IL-JO`. Artiklerne handler om narkotikasmugling over grænsen (Al Jazeera 18. oktober: https://www.aljazeera.com/news/2026/10/18/jordans-israel-border-becomes-a-new-hotspot-for-a-sophisticated-drug-trade), bosætteres angreb på olivenhøsten på Vestbredden (Los Angeles Times 16. oktober: https://www.latimes.com/world-nation/story/2026-10-16/israeli-settlers-torch-cars-trees-in-west-bank-villages-disrupting-palestinians-olive-harvest), en klage over olivental (The Jerusalem Post 18. oktober: https://www.jpost.com/israel-news/article-912092) og israelske trusler mod Libanon, ikke om kampe mellem Israels og Jordans styrker.
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 18. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
