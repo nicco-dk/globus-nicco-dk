@@ -1,0 +1,98 @@
+name: API-forsøg (én kørsel, intet udgives)
+
+# Ét afgrænset forsøg 20. oktober 2026 (Mikkels beslutning U7 B): én almindelig smittekørsel gennem
+# Claude API'et i stedet for i en chat, for at måle tokens, pris og varighed. Startes kun med hånden.
+#
+# Intet udgives: agenten kører uden adgang til at skrive til GitHub (checkout uden credentials), og
+# dens arbejde committes kun lokalt. Bagefter lægger det sidste trin arbejdet og målingen på grenen
+# api-proeve, som ingen workflow udruller fra. main røres ikke.
+# Hemmeligheden ANTHROPIC_API_KEY lægges af Mikkel. Workflowet, grenen og hemmeligheden slettes efter forsøget.
+
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: "Commit, kørslen starter fra (det, den planlagte kørsel startede fra)"
+        required: true
+        type: string
+      raekke:
+        description: "Rækken i vagtplanen (00, 05, 11 eller 17)"
+        required: true
+        type: choice
+        options: ["00", "05", "11", "17"]
+        default: "17"
+      model:
+        description: "Model"
+        required: true
+        type: string
+        default: "claude-opus-5-5"
+
+concurrency:
+  group: api-proeve
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  proeve:
+    name: Én kørsel gennem API'et
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    permissions:
+      contents: write
+    steps:
+      - name: Hent repoet på startcommittet
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ inputs.base }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Værktøjer
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils >/dev/null
+          npm install -g @anthropic-ai/claude-code >/dev/null 2>&1
+          claude --version | tee "$RUNNER_TEMP/claude-version.txt"
+          git config user.name "API-forsøg"
+          git config user.email "api-proeve@globus.nicco.dk"
+
+      - name: Kørslen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RAEKKE: ${{ inputs.raekke }}
+          MODEL: ${{ inputs.model }}
+        run: |
+          set -uo pipefail
+          if [ -z "${ANTHROPIC_API_KEY}" ]; then echo "::error::Hemmeligheden ANTHROPIC_API_KEY mangler."; exit 1; fi
+          sed "s/RAEKKE/${RAEKKE}/g" .github/api-proeve/prompt.md > "$RUNNER_TEMP/prompt.md"
+          start=$(date +%s)
+          claude -p "$(cat "$RUNNER_TEMP/prompt.md")" --model "$MODEL" --output-format json \
+            --dangerously-skip-permissions --max-turns 300 > "$RUNNER_TEMP/resultat.json" 2> "$RUNNER_TEMP/stderr.txt"
+          kode=$?
+          slut=$(date +%s)
+          echo "{\"exit\": $kode, \"start\": $start, \"slut\": $slut, \"sekunder\": $((slut-start))}" > "$RUNNER_TEMP/tid.json"
+          echo "Claude afsluttede med kode $kode efter $((slut-start)) sekunder."
+          tail -c 2000 "$RUNNER_TEMP/stderr.txt" || true
+
+      - name: Gem resultatet på grenen api-proeve
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE: ${{ inputs.base }}
+          RAEKKE: ${{ inputs.raekke }}
+          MODEL: ${{ inputs.model }}
+        run: |
+          set -euo pipefail
+          mkdir -p api-proeve
+          git diff "$BASE" HEAD > api-proeve/aendringer.patch || true
+          git status --short > api-proeve/ikke-committet.txt || true
+          git diff > api-proeve/ikke-committet.patch || true
+          git log --oneline "$BASE"..HEAD > api-proeve/commits.txt || true
+          for f in resultat.json tid.json stderr.txt claude-version.txt; do cp "$RUNNER_TEMP/$f" api-proeve/ 2>/dev/null || true; done
+          printf '{"base": "%s", "raekke": "%s", "model": "%s", "koersel": "%s/%s/actions/runs/%s"}\n' "$BASE" "$RAEKKE" "$MODEL" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID" > api-proeve/forsoeg.json
+          git add -A api-proeve
+          git commit -q -m "API-forsøg: resultat og måling" || true
+          git push -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:refs/heads/api-proeve
+          echo "Resultatet ligger på grenen api-proeve."
