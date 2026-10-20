@@ -2,6 +2,34 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 20. oktober 2026
+
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 18. oktober er fortsat den nyeste på listen https://dghs.gov.bd/pages/press-releases) og dengue (dashboardet pr. 19. oktober), WHO SEARO's bulletin nummer 20 (næste udgave ventes 21. oktober), WHO WPRO's oversigt nummer 1066 (ingen nye humane tilfælde af fugleinfluenza 9. til 15. oktober), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 19. oktober (svær influenza hos et barn og legionærsyge, intet til siden). WHO EMRO's nyhed om kolera i Yemen 13. oktober (indarbejdet). Søgninger efter Pakistans syvende poliotilfælde, nyt om Krim-Congo-blødningsfeber i Iran og nye tilfælde af ebola i Kenya. Fordi kørslerne 19. oktober kl. 17.20 og 20. oktober kl. 00.20 og 05.20 ikke blev gennemført, er DR Congos situationsrapporter gennem insp.cd's medieliste og ECDC's ebolaside også læst.
+
+**Ændret**
+- `ebola-drc`: 9.552 bekræftede tilfælde og 4.602 dødsfald, DR Congos sundhedsministerium pr. 18. oktober, situationsrapport 157: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_157_18_10_2026.pdf 97 nye tilfælde på et døgn, 48 i Nordkivu, 42 i Ituri og 7 i Haut-Uélé, og 41 nye dødsfald. Situationsrapport 156 pr. 17. oktober havde 9.455 og 4.561: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_156_17_10_2026.pdf ECDC's ebolaside har de samme tal pr. 17. oktober. To nye punkter i forløbet og i talserien, `cases` og `extra` opdateret, og situationsrapport 155 er erstattet af 157 i `src`. Punktet 17. oktober bærer selv adressen til 155. Tallene er læst som tekst og som billede af første side.
+- `dengue-bd`: 114.251 indlagte og 352 dødsfald i 2026, DGHS pr. 19. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.851 nye indlagte og 4 nye dødsfald på et døgn, uge 42 har indtil videre 3.939 tilfælde og 10 dødsfald. Nyt punkt i forløbet og i talserien.
+- `polio`: nyt punkt i forløbet 19. oktober. Pakistans nationale nødcenter for polioudryddelse, NEOC, har bekræftet landets syvende tilfælde i 2026, en seks måneder gammel dreng fra Jamali Colony i Karachi East, gengivet af The Express Tribune: https://tribune.com.pk/story/2635744/karachi-polio-case-takes-pakistans-tally-to-seven-this-year og Xinhua: https://english.news.cn/asiapacific/20261019/9eae95e8cdf14c83bad3e08767b6a852/c.html Ny stedknude for Karachi East, og The Express Tribune er sat i `src` med tilføjelsen `, medie`. `cases` er uændret med GPEI's 6 tilfælde pr. 14. oktober.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 38 hændelser uden nyt i kilderne.
+- `maesling-bd`: DGHS' meddelelse for 19. oktober var ikke på listen kl. 11.20. `dengue-asien`: Sri Lankas side kunne ikke hentes. `mers-sa`: Outbreak News Today 18. oktober gengiver WHO's 8 tilfælde, som står på siden. `kolera-ye`: intet nyt efter WHO EMRO 13. oktober. `h5n1-kh`: intet nyt tilfælde i WHO WPRO nummer 1066. `pest-irkutsk`: intet nyt efter DON 620. `ebola-ke`: fortsat 8 tilfælde og 1 dødsfald, ECDC pr. 18. oktober.
+- `cchf-ir`: 30 dage siden seneste punkt (20. september). Søgninger på engelsk og persisk gav intet nyt fra de iranske myndigheder. `live` er ikke ændret, fordi kontrollen først advarer efter over 30 dage. Næste kørsel skal tage stilling.
+
+**Usikkert**
+- `polio`: typen af poliovirus i Pakistans syvende tilfælde er ikke oplyst i kilderne. Tallet er derfor kun skrevet i forløbet og ikke i `cases`, som er GPEI's tal for vild poliovirus type 1.
+- `dengue-asien`: https://www.dengue.health.gov.lk/ kunne ikke hentes direkte (forbindelsen afbrudt). Hentningsværktøjet er tidligere afvist af sidens robots.txt og er ikke prøvet igen.
+- Kørslerne 19. oktober kl. 17.20 og 20. oktober kl. 00.20 og 05.20 efterlod intet commit, så `DATA_TID` stod på 19. oktober kl. 11.23 i omkring 24 timer. Tjekket af par i mediesporet, som hører til kl. 05 og kl. 17, er derfor ikke gennemført siden 19. oktober kl. 05.20. Fem par står som afventer: `IL-SY`, `FR-IL`, `RU>UA`, `MP-US` og `CN-PH`. Denne kørsel har ikke afgjort dem, fordi rækken kl. 11 ikke omfatter tjekket.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit e72c6e5.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: tre kørsler i træk er ikke gennemført.
+
 ## 19. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
