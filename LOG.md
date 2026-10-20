@@ -30,6 +30,31 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: tre kørsler i træk er ikke gennemført.
 
+### Kl. 11.35, ejerens afgørelser i gennemgangen
+
+Ejeren har afgjort 15 punkter fra GENNEMGANG.md på en beslutningsside 20. oktober. 14 fulgte forslaget, og botulismen blev taget med. Punkterne er fjernet fra GENNEMGANG.md, undtagen de 30 udenlandske datacentre, som efterprøves nu.
+
+**Ændret i datasættet (gamle punkter, rettet efter ejerens afgørelse)**
+- `ebola-nl`: står som aktiv og lukkes 21. november, 42 dage efter RIVM's melding 10. oktober om negativ test, hvis der ikke kommer sekundære tilfælde. Det er WHO's regel for, hvornår et ebolaudbrud er slut. `naeste` er rettet.
+- `ebola-drc`: punktet 13. oktober efter AP er erstattet af punktet 11. oktober efter situationsrapport 150 med 9.065 bekræftede tilfælde og 4.381 dødsfald, som i rapportens oversigt og tabel: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_150_11_10_2026.pdf Talserien har fået punktet 11. oktober.
+- `kolera`: WHO's dato for Zambia bliver stående. NaTHNaC's dato 28. juli og tallene 909 tilfælde og 25 dødsfald står under Usikkert, til Zambias egen myndighed er fundet.
+- `mers-sa`: punktet 31. august om ingen nye tilfælde er erstattet af to punkter med symptomdebut 11. og 20. september efter WHO 15. oktober. `naeste` siger nu otte sporadiske tilfælde fra 1. januar til 5. oktober.
+- `sfts-th`: punktet er dateret 17. september efter Thai PBS World og er ikke længere mærket omtrentligt.
+- `h5n1-us`: handler igen om fjerkræ i Midtvesten med trinnet reservoir. Det humane tilfælde og malkekvæget i Washington står i den nye hændelse `h5n1-wa`.
+
+**Nye**
+- `h5n1-wa`: fugleinfluenza hos et menneske i Yakima County i Washington efter udsættelse for smittet malkekvæg, Yakima Health District 15. oktober: https://www.yakimacounty.us/DocumentCenter/View/46716
+- `botulisme-dk`: seks indlagte med alvorlig forgiftning efter behandling med botulinumtoksin i Region Sjælland, Styrelsen for Patientsikkerhed 9. september: https://stps.dk/nyheder/2026/sep/seks-tilfaelde-af-alvorlig-forgiftning-efter-behandling-med-botulinumtoksin Det er en forgiftning og ikke smitte.
+
+**Ændret i mediesporet**
+- `IL-SY` er afvist efter reglen om direkte kampe mellem parternes styrker.
+
+**Ændret i reglerne (OPDATERING.md)**
+- Forgiftninger og lignende hændelser uden smitte tages med, når de har forbindelse til Danmark. Uden for Danmark afgøres de enkeltvis.
+- Et importeret ebolatilfælde uden sekundære tilfælde lukkes 42 dage efter den negative test.
+- Fejler kildescriptet mod Sri Lankas dengueside, læses den med hentningsværktøjet.
+- DR Congos situationsrapporter findes gennem insp.cd's medieliste.
+
 ## 19. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
