@@ -68,6 +68,37 @@ Ingen gennemgang af kilder til smitteudbruddene og ingen ændrede tal i datasæt
 - Ny status: BDx i Jatiluhur står som planlagt, fordi Vestjavas guvernør 30. september bad byggeriet standset. Digital Edge i Bekasi og CDC i Marsden Park er under opførelse efter rejsegilde i maj 2026 og første spadestik i oktober 2024. Fermi America i Amarillo er under opførelse efter lejeaftalen med TensorWave 10. august 2026. AirTrunk MEL2 ventes åbnet i 2027.
 - Laget har 149 anlæg: 81 i drift, 36 under opførelse, 6 godkendt og 26 planlagt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelserne 19. og 20. oktober, indarbejdet) og dengue (dashboardet pr. 20. oktober, indarbejdet), WHO SEARO's bulletin nummer 20, WHO WPRO's oversigt nummer 1066, ECDC uge 42, UKHSA (ingen ny ugeoversigt), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Sri Lankas side kunne ikke hentes af scriptet. WHO AFRO's side med udbrud og nødsituationer (intet nyt efter 9. oktober), Africa CDC's nyheder (seneste 17. oktober om Kenya, indarbejdet), PAHO's epidemiologiske alarmer (seneste 16. oktober om myiasis, står i GENNEMGANG.md), DR Congos situationsrapporter gennem insp.cd's medieliste (157 er fortsat den nyeste) og CIDRAP om Kenya (fortsat 8 tilfælde). US CDC's mæslingetal udkommer onsdag, og `maesling-us` står med tallet pr. 15. oktober.
+
+**Ændret**
+- `maesling-bd`: 215.768 mistænkte og 23.199 bekræftede tilfælde, 1.100 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 20. oktober: https://dghs.gov.bd/pages/press-releases/6ad751312e520f8fc88d1dfe Det seneste døgn 1.217 nye mistænkte tilfælde, 42 nye bekræftede og 3 dødsfald blandt mistænkte. Meddelelsen pr. 19. oktober havde 214.551 mistænkte og 23.157 bekræftede tilfælde og 1.097 dødsfald blandt mistænkte: https://dghs.gov.bd/pages/press-releases/6ad750a0734da992ba75b6d1 To nye punkter i forløbet og i talserien, hvor dødstallet er de to rækker lagt sammen efter reglen i OPDATERING.md. `cases`, `extra` (dødsfald, indlagte 191.761 og udskrevne 184.168) og kilden i `src` er opdateret. Tallene er læst som tekst og som billede af første side i begge PDF'er.
+- `dengue-bd`: 115.617 indlagte og 357 dødsfald i 2026, DGHS pr. 20. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.366 nye indlagte og 5 nye dødsfald på et døgn, uge 42 har indtil videre 5.305 tilfælde og 15 dødsfald. Nyt punkt i forløbet og i talserien.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 41 hændelser uden nyt i kilderne.
+- `ebola-drc`: situationsrapport 158 findes endnu ikke i insp.cd's medieliste. `ebola-ke`: fortsat 8 bekræftede tilfælde og 1 dødsfald (CIDRAP 20. oktober, NaTHNaC 19. oktober). `dengue-fl`: Outbreak News Today melder 19. oktober to lokalt erhvervede tilfælde i Citrus County efter amtets sundhedsmyndighed. Floridas ugerapport kommer torsdag, så tallet er ikke ændret. `kolera`: NaTHNaC's tal for Zambia er de samme, som står under Usikkert. `chik-am`: 28 dage siden seneste punkt (22. september). ECDC's månedlige globale opgørelse pr. 30. august er den nyeste, så næste kørsler skal tage stilling til `live`, når der er gået over 30 dage. `cchf-ir`: 30 dage siden seneste punkt, hører til kl. 11-kørslen.
+
+**Usikkert**
+- `dengue-asien`: https://www.dengue.health.gov.lk/ kunne ikke hentes af scriptet (forbindelsen afbrudt). Hører til kl. 11-kørslen og er ikke prøvet med hentningsværktøjet.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 14a6bb2.
+
+**Mediesporet**
+- Fem par havde status afventer. Alle fem er afvist.
+- `FR-IL`: bosætteres angreb på en fransk borgmester og en europæisk delegation på Vestbredden (Middle East Eye 17. oktober: https://www.middleeasteye.net/live-blog/live-blog-update/france-demands-israel-arrest-settlers-who-attacked-french-mayor-west og Al Jazeera 18. oktober: https://www.aljazeera.com/news/2026/10/18/a-timeline-of-west-bank-attacks-on-palestinians-and-foreign-officials), ikke kampe mellem landenes styrker.
+- `CN-PH`: diplomatisk strid om den kinesiske ambassadørs udtalelse om brug af magt (Taipei Times 17. oktober: https://www.taipeitimes.com/News/world/archives/2026/10/17/2003866142 og Bloomberg via The Star 19. oktober: https://www.thestar.com.my/aseanplus/aseanplus-news/2026/10/19/philippine-secretary-lazaro-says-china-ambassador039s-statement-was-provocative-and-unacceptable), ingen sammenstød i perioden.
+- `MP-US`: Nordmarianerne er ikke nævnt. Artiklerne handler om amerikansk indenrigspolitik og uroen i Frankrig (The Guardian 19. oktober: https://www.theguardian.com/us-news/2026/oct/19/trump-france-protests).
+- `RU>UA`: artiklerne handler om krigen og et topmøde (Euronews 19. oktober: https://www.euronews.com/2026/10/19/putin-seeks-ukraine-summit-with-trump-and-xi-but-refuses-talks-with-zelenskyy), ikke om militær støtte fra Rusland til Ukraine.
+- `GB>IL`: striden om konsulatet i Østjerusalem og regeringens afvisning af en undersøgelse af tidligere våbenleverancer (Middle East Eye 20. oktober: https://www.middleeasteye.net/news/burnham-rejects-jeremy-corbyns-call-public-inquiry-british-complicity-gaza-genocide), ikke leverancer i perioden beskrevet af to medier.
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 19. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
