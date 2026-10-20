@@ -99,6 +99,23 @@ Ingen gennemgang af kilder til smitteudbruddene og ingen ændrede tal i datasæt
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 20.05, ejerens afgørelser om de fire nye punkter
+
+Ejeren har afgjort de fire punkter, kørslerne skrev 17. til 18. oktober, på en beslutningsside 20. oktober. Alle fulgte forslaget. Punkterne er fjernet fra GENNEMGANG.md, som nu ingen åbne punkter har.
+
+**Ændret i datasættet (gamle punkter, rettet efter ejerens afgørelse)**
+- `difteri-ng`: 10.476 bekræftede tilfælde, 12.977 mistænkte og 406 dødsfald stod uden kilde. `cases` og punktet 28. august siger nu det, kilden siger: over 10.000 bekræftede tilfælde i 2026, NCDC's generaldirektør 28. august, gengivet af The Guardian Nigeria: https://guardian.ng/?p=2907334
+- `altnv-cn`: AABB er mærket som sekundær kilde, fordi den genfortæller undersøgelsen i New England Journal of Medicine.
+
+**Nye**
+- `myiasis-am`: myiasis med skruelarve i Mexico og Mellemamerika, 1.355 bekræftede tilfælde og 5 dødsfald i seks lande fra januar til september 2026 efter PAHO's epidemiologiske alarm 16. oktober: https://www.paho.org/en/documents/epidemiological-alert-myiasis-caused-cochliomyia-hominivorax-americas-region-16-october Det er en parasit og ikke smitte mellem mennesker.
+
+**Ændret i reglerne (OPDATERING.md)**
+- Uden for Danmark tages hændelser uden smitte med, når WHO eller en af WHO's regionale afdelinger udsender en alarm om tilfælde hos mennesker.
+
+**Ændret i kildescriptet**
+- `tools/hent-kilder.mjs`, delen `dghs`, viser nu alle DGHS' meddelelser nyere end den nyeste i `maesling-bd`, ældste først. Prøvet 20. oktober kl. 20.00 med en ældre meddelelse som udgangspunkt: scriptet viste meddelelserne for 19. og 20. oktober.
+
 ## 19. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt

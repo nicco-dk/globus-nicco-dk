@@ -11,10 +11,10 @@
 // efter reglerne i OPDATERING.md. Står et tal ikke i udtrækket, så åbn adressen og læs
 // det i kilden selv. Fejler en kilde, står det i udtrækket, og de andre hentes alligevel.
 //
-// Kræver curl og pdftotext (poppler-utils). Ændrer ingen filer i repoet.
+// Kræver curl og pdftotext (poppler-utils). Læser site/index.html, men ændrer ingen filer i repoet.
 
 import { execFile } from 'node:child_process';
-import { mkdtempSync, writeFileSync, rmSync } from 'node:fs';
+import { mkdtempSync, writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
@@ -73,35 +73,54 @@ const KILDER = {
   },
 
   // DGHS, Bangladesh: mæslinger. Pressemeddelelsen viser en PDF, hvis adresse står i sidens kildekode.
+  // DGHS lægger af og til flere meddelelser ud på én gang (17. oktober: 14., 15. og 16. oktober). Scriptet viser
+  // derfor alle meddelelser, der er nyere end den nyeste, `maesling-bd` i site/index.html allerede bruger,
+  // ældste først, og ellers den nyeste (ejerens afgørelse 20. oktober).
   async dghs() {
     const liste = 'https://dghs.gov.bd/pages/press-releases';
     const r = await hent(liste);
     if (r.fejl) return [`FEJL ${r.fejl}: ${liste}`];
-    const ids = [...new Set([...r.tekst.matchAll(/press-releases\/[^"'\s<>]*?-([0-9a-f]{24})/g)].map((m) => m[1]))];
+    const ids = [...new Set([...r.tekst.matchAll(/press-releases\/(?:[^"'\s<>]*?-)?([0-9a-f]{24})/g)].map((m) => m[1]))].sort(); // Id'erne stiger med tiden.
     if (!ids.length) return [`Ingen pressemeddelelser fundet på ${liste}`];
-    const id = ids.sort().at(-1); // Id'erne stiger med tiden.
-    const side = `https://dghs.gov.bd/pages/press-releases/${id}`;
-    const s = await hent(side);
-    if (s.fejl) return [`FEJL ${s.fejl}: ${side}`];
+    let kendt = null;
+    try {
+      const html = readFileSync(new URL('../site/index.html', import.meta.url), 'utf8');
+      const i = html.indexOf("{id:'maesling-bd'"), j = html.indexOf('\n{id:', i + 5);
+      const brugt = i >= 0 ? [...html.slice(i, j > i ? j : undefined).matchAll(/dghs\.gov\.bd\/pages\/press-releases\/(?:[^"'\s<>]*?-)?([0-9a-f]{24})/g)].map((m) => m[1]).sort() : [];
+      kendt = brugt.at(-1) || null;
+    } catch {}
+    const nye = kendt ? ids.filter((x) => x > kendt) : [];
+    const valgte = nye.length ? nye.slice(-6) : [ids.at(-1)];
     const iListe = new Set(r.tekst.match(/https:\/\/objectstorage[^"'\s<>]+\.pdf/g) || []);
-    const pdf = (s.tekst.match(/https:\/\/objectstorage[^"'\s<>]+\.pdf/g) || []).filter((u) => !iListe.has(u)).at(-1);
-    if (!pdf) return [`Seneste meddelelse: ${side}`, 'Ingen PDF fundet i meddelelsen. Åbn siden og find bilaget.'];
-    const p = await pdfTekst(pdf, [1, 1]);
-    const ud = [`Seneste meddelelse (kilde i datasættet): ${side}`, `PDF: ${pdf}`];
-    if (p.fejl) return [...ud, `FEJL ${p.fejl}`];
-    const l = linjer(p.tekst, 80);
-    const dato = l.find((x) => /অক্টোবর|সেপ্টেম্বর|নভেম্বর|ডিসেম্বর|\d{4}/.test(x) && x.length < 140);
-    ud.push(`Dato i overskriften: ${dato ? dato.trim() : 'ikke fundet'}`);
-    ud.push('Tabel 1, i rækkefølge: nye mistænkte på 24 timer, mistænkte i alt siden 15. marts, nye bekræftede på 24 timer, bekræftede i alt, indlagte i alt, udskrevne i alt:');
-    // Linjer med kun tal. Den første er tabel 1. I tabel 2 står antal pr. division og distrikt foran,
-    // når de er tal, så de fire sidste tal er dødsfaldene.
-    const talLinjer = l.filter((x) => /^\s*[\d,]+(\s+[\d,]+){3,}\s*$/.test(x)).map((x) => x.trim().split(/\s+/));
-    const t1 = talLinjer.find((x) => x.length === 6);
-    const t2 = talLinjer.find((x) => x !== t1);
-    ud.push('  ' + (t1 ? t1.join('   ') : 'ikke fundet'));
-    ud.push('Tabel 2, i rækkefølge: mistænkte dødsfald på 24 timer, mistænkte dødsfald i alt, bekræftede dødsfald på 24 timer, bekræftede dødsfald i alt:');
-    ud.push('  ' + (t2 ? t2.slice(-4).join('   ') : 'ikke fundet'));
-    ud.push('Rækkefølgen er læst af tabellens kolonneoverskrifter. Læs tallene i PDF\'en, hvis linjerne mangler eller ser forkerte ud.');
+    const ud = [kendt
+      ? (nye.length ? `${nye.length} meddelelse(r) nyere end den nyeste i maesling-bd (${kendt}), ældste først${nye.length > 6 ? '. Kun de seneste 6 vises' : ''}:` : `Ingen meddelelser nyere end den nyeste i maesling-bd (${kendt}). Den nyeste på listen vises:`)
+      : 'maesling-bd blev ikke fundet i site/index.html. Den nyeste meddelelse vises:'];
+    for (const id of valgte) {
+      const side = `https://dghs.gov.bd/pages/press-releases/${id}`;
+      ud.push('', `Meddelelse (kilde i datasættet): ${side}`);
+      const s = await hent(side);
+      if (s.fejl) { ud.push(`FEJL ${s.fejl}`); continue; }
+      const titel = (s.tekst.match(/<title[^>]*>([^<]*)<\/title>/i) || [])[1];
+      if (titel) ud.push(`Titel: ${ren(titel)}`);
+      const pdf = (s.tekst.match(/https:\/\/objectstorage[^"'\s<>]+\.pdf/g) || []).filter((u) => !iListe.has(u)).at(-1);
+      if (!pdf) { ud.push('Ingen PDF fundet i meddelelsen. Åbn siden og find bilaget.'); continue; }
+      ud.push(`PDF: ${pdf}`);
+      const p = await pdfTekst(pdf, [1, 1]);
+      if (p.fejl) { ud.push(`FEJL ${p.fejl}`); continue; }
+      const l = linjer(p.tekst, 80);
+      const dato = l.find((x) => /অক্টোবর|সেপ্টেম্বর|নভেম্বর|ডিসেম্বর|\d{4}/.test(x) && x.length < 140);
+      ud.push(`Dato i overskriften: ${dato ? dato.trim() : 'ikke fundet'}`);
+      ud.push('Tabel 1, i rækkefølge: nye mistænkte på 24 timer, mistænkte i alt siden 15. marts, nye bekræftede på 24 timer, bekræftede i alt, indlagte i alt, udskrevne i alt:');
+      // Linjer med kun tal. Den første er tabel 1. I tabel 2 står antal pr. division og distrikt foran,
+      // når de er tal, så de fire sidste tal er dødsfaldene.
+      const talLinjer = l.filter((x) => /^\s*[\d,]+(\s+[\d,]+){3,}\s*$/.test(x)).map((x) => x.trim().split(/\s+/));
+      const t1 = talLinjer.find((x) => x.length === 6);
+      const t2 = talLinjer.find((x) => x !== t1);
+      ud.push('  ' + (t1 ? t1.join('   ') : 'ikke fundet'));
+      ud.push('Tabel 2, i rækkefølge: mistænkte dødsfald på 24 timer, mistænkte dødsfald i alt, bekræftede dødsfald på 24 timer, bekræftede dødsfald i alt:');
+      ud.push('  ' + (t2 ? t2.slice(-4).join('   ') : 'ikke fundet'));
+    }
+    ud.push('', 'Rækkefølgen er læst af tabellens kolonneoverskrifter. Læs tallene i PDF\'en, hvis linjerne mangler eller ser forkerte ud.');
     return ud;
   },
 
