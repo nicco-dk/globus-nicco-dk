@@ -22,5 +22,4 @@ Ingen åbne punkter.
 
 ## Datacentre
 
-- `tools/datacentre.json` (17. oktober): de 55 kuraterede anlæg er samlet med kilder. Alle 15 danske og 10 tilfældige udenlandske er efterprøvet felt for felt mod kilderne, og 13 fejl er rettet. De øvrige 30 udenlandske er ikke efterprøvet. Ejeren er koblet til den første kilde, og en operatør uden kilde er fjernet. Skal de 30 efterprøves, før fase 3, eller tages de af den ugentlige kørsel?
-
+Ingen åbne punkter.

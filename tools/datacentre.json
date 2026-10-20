@@ -1127,12 +1127,12 @@
    "koeling": "lukket kredsløb uden vandforbrug til køling",
    "tidslinje": [
     {
-     "dato": "2025-12-11",
-     "tekst": "Microsoft offentliggør planer om en datacenterregion i Varde og Esbjerg kommuner"
-    },
-    {
      "dato": "2025-12",
      "tekst": "Borgermøde i Tinghøj om Microsofts ansøgning om lokalplan og kommuneplantillæg"
+    },
+    {
+     "dato": "2025-12-11",
+     "tekst": "Microsoft offentliggør planer om en datacenterregion i Varde og Esbjerg kommuner"
     }
    ],
    "kilder": [
@@ -2085,7 +2085,7 @@
    "by": "Wustermark ved Berlin",
    "land": "Tyskland",
    "a2": "DE",
-   "ejer": "VIRTUS Data Centres (ST Telemedia Global Data Centres)",
+   "ejer": "VIRTUS Data Centres",
    "operatoer": null,
    "brugere": [],
    "formaal": null,
@@ -2110,7 +2110,7 @@
    "koeling": null,
    "tidslinje": [
     {
-     "dato": "2023-09-01",
+     "dato": "2023-09-06",
      "tekst": "VIRTUS præsenterer Wustermark som et campus på 300 MW"
     },
     {
@@ -2148,7 +2148,7 @@
      "navn": "Data Centre Review (fagpresse)",
      "titel": "VIRTUS announces 300 MW Wustermark campus in Brandenburg, Germany",
      "url": "https://datacentrereview.com/2023/09/virtus-announces-300-mw-wustermark-campus-in-brandenburg-germany/",
-     "dato": "2023-09-01",
+     "dato": "2023-09-06",
      "felter": [
       "tidslinje"
      ]
@@ -2234,7 +2234,7 @@
    "by": "Elsham Wolds, North Lincolnshire",
    "land": "Storbritannien",
    "a2": "GB",
-   "ejer": "Elsham Tech Park Ltd (Greystoke)",
+   "ejer": "Elsham Tech Park Ltd",
    "operatoer": null,
    "brugere": [],
    "formaal": null,
@@ -3088,7 +3088,7 @@
    "land": "Forenede Arabiske Emirater",
    "a2": "AE",
    "ejer": "Khazna Data Centers",
-   "operatoer": "Khazna Data Centers",
+   "operatoer": null,
    "brugere": [],
    "formaal": "ai",
    "it_effekt_mw": {
@@ -3219,7 +3219,7 @@
    "by": "Jamnagar, Gujarat",
    "land": "Indien",
    "a2": "IN",
-   "ejer": "Reliance Industries",
+   "ejer": null,
    "operatoer": "Reliance Industries",
    "brugere": [
     {
@@ -3341,7 +3341,7 @@
    "land": "Japan",
    "a2": "JP",
    "ejer": "SoftBank Corp.",
-   "operatoer": "SoftBank Corp.",
+   "operatoer": null,
    "brugere": [],
    "formaal": "ai",
    "it_effekt_mw": {
@@ -3649,8 +3649,8 @@
   {
    "id": "au-cdc-marsden-park",
    "navn": "CDC Marsden Park",
-   "status": "godkendt",
-   "status_dato": "2025-11-28",
+   "status": "opfoerelse",
+   "status_dato": "2024-10-25",
    "lat": -33.6957,
    "lon": 150.8148,
    "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Marsden Park, New South Wales, Australia",
@@ -3683,6 +3683,10 @@
    "koeling": null,
    "tidslinje": [
     {
+     "dato": "2024-10-25",
+     "tekst": "CDC Data Centres tager første spadestik, og hovedbyggeriet begynder straks"
+    },
+    {
      "dato": "2025-11-28",
      "tekst": "NSW-regeringen godkender campus på 504 MW ICT-kapacitet som State Significant Development"
     }
@@ -3701,6 +3705,16 @@
       "tidslinje",
       "ejer",
       "operatoer"
+     ]
+    },
+    {
+     "navn": "CDC Data Centres",
+     "titel": "CDC Data Centres breaks ground on new state-of-the-art data centre development in Marsden Park Industrial Precinct",
+     "url": "https://cdc.com/resources/news/cdc-data-centres-breaks-ground-on-new-state-of-the-art-data-centre-development-in-marsden-park-industrial-precinct/",
+     "dato": "2024-10-25",
+     "felter": [
+      "status",
+      "tidslinje"
      ]
     }
    ],
@@ -3725,7 +3739,7 @@
    "it_effekt_mw": {
     "nu": null,
     "planlagt": 354,
-    "planlagt_aar": null,
+    "planlagt_aar": 2027,
     "type": null
    },
    "areal_m2": null,
@@ -3745,6 +3759,10 @@
     {
      "dato": "2025-12-24",
      "tekst": "AirTrunk annoncerer MEL2 med over 354 MW og mere end 5 mia. australske dollar i ny investering"
+    },
+    {
+     "dato": "2026-01-06",
+     "tekst": "Åbning ventes i 2. halvår 2027"
     }
    ],
    "kilder": [
@@ -3760,6 +3778,16 @@
       "tidslinje",
       "ejer",
       "operatoer"
+     ]
+    },
+    {
+     "navn": "CRN Australia (medie)",
+     "titel": "AirTrunk new Melbourne location MEL2",
+     "url": "https://www.crn.com.au/news/2026/data-centre/airtrunk-new-melbourne-location-mel2",
+     "dato": "2026-01-06",
+     "felter": [
+      "it_effekt_mw",
+      "tidslinje"
      ]
     }
    ],
@@ -3785,7 +3813,7 @@
     "nu": null,
     "planlagt": 4750,
     "planlagt_aar": null,
-    "type": "it"
+    "type": null
    },
    "areal_m2": null,
    "bygninger": null,
@@ -4069,8 +4097,8 @@
   {
    "id": "us-fermi-america-amarillo",
    "navn": "Fermi America HyperGrid (Project Matador)",
-   "status": "planlagt",
-   "status_dato": "2026-04-19",
+   "status": "opfoerelse",
+   "status_dato": "2026-08-10",
    "lat": 35.2073,
    "lon": -101.8371,
    "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Amarillo, Texas",
@@ -4104,6 +4132,10 @@
     {
      "dato": "2026-04-19",
      "tekst": "Projektet står stille: yderligere byggeri afventer lejeaftale og finansiering, og direktøren er fratrådt"
+    },
+    {
+     "dato": "2026-08-10",
+     "tekst": "Fermi underskriver en 15-årig lejeaftale til 6,5 mia. dollar med TensorWave for et anlæg på 222 MW, betinget af finansiering og med levering i etaper fra 2. halvår 2027"
     }
    ],
    "kilder": [
@@ -4130,6 +4162,16 @@
       "status",
       "tidslinje"
      ]
+    },
+    {
+     "navn": "ABC 7 Amarillo (medie)",
+     "titel": "Fermi America signs $6.5 billion lease for world's largest data center after months of turmoil",
+     "url": "https://abc7amarillo.com/news/local/fermi-america-signs-six-point-five-billion-dollar-lease-for-worlds-largest-data-center-after-months-of-turmoil-tensorwave-amarillo-texas-carson-county-water-city-council-greg-abbott-audir",
+     "dato": "2026-08-10",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
     }
    ],
    "noter": "Status er sat til planlagt, fordi byggeriet er sat i bero uden lejer; satellitbilleder viser begrænset fremdrift. Selskabet venter ikke længere 1,1 GW i drift ved udgangen af 2026. Udvikles med Texas Tech University System. Koordinaten er Amarillo by. Effekttype ikke angivet."
@@ -4146,7 +4188,7 @@
    "by": "syd for Cheyenne, Laramie County, Wyoming",
    "land": "USA",
    "a2": "US",
-   "ejer": "Tallgrass",
+   "ejer": null,
    "operatoer": null,
    "brugere": [],
    "formaal": "ai",
@@ -4280,8 +4322,8 @@
   {
    "id": "id-bdx-jatiluhur",
    "navn": "BDx AI Campus 2 (CGK4) Jatiluhur",
-   "status": "opfoerelse",
-   "status_dato": "2026-09-22",
+   "status": "planlagt",
+   "status_dato": "2026-10-05",
    "lat": -6.5274,
    "lon": 107.4158,
    "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Jatiluhur, Purwakarta, Indonesia",
@@ -4311,6 +4353,14 @@
     {
      "dato": "2026-09-22",
      "tekst": "Byggeriet af bygning 1 (120 MW IT) begynder; første fase i drift i begyndelsen af 2027, hele campus over ca. tre år"
+    },
+    {
+     "dato": "2026-09-30",
+     "tekst": "Vestjavas guvernør beder BDx standse byggeriet, til miljøvurdering og byggetilladelse er på plads"
+    },
+    {
+     "dato": "2026-10-05",
+     "tekst": "Byggeriet er fortsat standset"
     }
    ],
    "kilder": [
@@ -4328,6 +4378,26 @@
       "ejer",
       "operatoer"
      ]
+    },
+    {
+     "navn": "Investor Trust (medie)",
+     "titel": "Amdal dan PBG belum rampung, proyek data center AI BDx di Purwakarta dihentikan sementara",
+     "url": "https://investortrust.id/business/118147/amdal-dan-pbg-belum-rampung-proyek-data-center-ai-bdx-di-purwakarta-dihentikan-sementara",
+     "dato": null,
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
+    },
+    {
+     "navn": "Bisnis.com (medie)",
+     "titel": "Brief Insight: Data Center Jatiluhur Disetop, Apa yang Sebenarnya Terjadi?",
+     "url": "https://teknologi.bisnis.com/read/20261005/84/2009930/brief-insight-data-center-jatiluhur-disetop-apa-yang-sebenarnya-terjadi",
+     "dato": "2026-10-05",
+     "felter": [
+      "status",
+      "tidslinje"
+     ]
     }
    ],
    "noter": "640 MW samlet, nettilførsel 845 MVA fra PLN. Effekttype for de 640 MW ikke angivet."
@@ -4335,8 +4405,8 @@
   {
    "id": "id-digital-edge-bekasi",
    "navn": "Digital Edge CGK Campus Bekasi",
-   "status": "planlagt",
-   "status_dato": "2026-01-29",
+   "status": "opfoerelse",
+   "status_dato": "2026-05-29",
    "lat": -6.3836,
    "lon": 107.1911,
    "koordinat_kilde": "OpenStreetMap Nominatim, adresse: Greenland International Industrial Center, Bekasi, Indonesia",
@@ -4371,6 +4441,10 @@
     {
      "dato": "2026-01-28",
      "tekst": "Digital Edge annoncerer campus på 500 MW IT, skalerbart til 1 GW; første tre bygninger planlagt fra 4. kvartal 2026 til 2. kvartal 2027"
+    },
+    {
+     "dato": "2026-05-29",
+     "tekst": "Rejsegilde på den første bygning, CGK1, som ventes klar i 4. kvartal 2026"
     }
    ],
    "kilder": [
@@ -4387,6 +4461,16 @@
       "tidslinje",
       "ejer",
       "operatoer"
+     ]
+    },
+    {
+     "navn": "Data Center Dynamics (fagpresse)",
+     "titel": "Digital Edge tops out first data center at new campus outside Jakarta, Indonesia",
+     "url": "https://datacenterdynamics.com/en/news/digital-edge-tops-out-first-data-center-at-new-campus-outside-jakarta-indonesia/",
+     "dato": "2026-05-29",
+     "felter": [
+      "status",
+      "tidslinje"
      ]
     }
    ],

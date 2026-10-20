@@ -58,6 +58,16 @@ Ejeren har afgjort 15 punkter fra GENNEMGANG.md på en beslutningsside 20. oktob
 **Svar fra ejeren**
 - De planlagte kørsler 19. oktober kl. 17.20 og 20. oktober kl. 00.20 og 05.20 kørte ikke, fordi kontoen var løbet tør for forbrug. Opgaverne er ikke fejlbehæftede, og punktet er fjernet fra GENNEMGANG.md. Mediesporets par tjekkes igen af den næste kørsel, der har det i vagtplanen.
 
+### Kl. 11.45, datacentre: de sidste 30 udenlandske efterprøvet
+
+Ingen gennemgang af kilder til smitteudbruddene og ingen ændrede tal i datasættet.
+
+**Ændret i laget Datacentre (efter ejerens afgørelse om at efterprøve dem nu)**
+- De 30 udenlandske anlæg, der ikke var efterprøvet 17. oktober, er tjekket felt for felt mod kilderne. 21 havde ingen fejl.
+- Rettet: ejeren af VIRTUS i Wustermark og Elsham Tech Park er den, kilderne nævner, og VIRTUS' annoncering er dateret 6. september 2023. Ejer eller operatør uden kilde er fjernet for Project Jade i Cheyenne, Reliance og Meta i Jamnagar, SoftBank i Tomakomai og Khazna i Ajman. Effekten for Scala AI City står uden type, fordi kilden ikke siger, om det er IT-effekt.
+- Ny status: BDx i Jatiluhur står som planlagt, fordi Vestjavas guvernør 30. september bad byggeriet standset. Digital Edge i Bekasi og CDC i Marsden Park er under opførelse efter rejsegilde i maj 2026 og første spadestik i oktober 2024. Fermi America i Amarillo er under opførelse efter lejeaftalen med TensorWave 10. august 2026. AirTrunk MEL2 ventes åbnet i 2027.
+- Laget har 149 anlæg: 81 i drift, 36 under opførelse, 6 godkendt og 26 planlagt.
+
 ## 19. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
