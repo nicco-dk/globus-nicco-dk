@@ -66,7 +66,9 @@ jobs:
         run: |
           set -uo pipefail
           if [ -z "${ANTHROPIC_API_KEY}" ]; then echo "::error::Hemmeligheden ANTHROPIC_API_KEY mangler."; exit 1; fi
-          sed "s/RAEKKE/${RAEKKE}/g" .github/api-proeve/prompt.md > "$RUNNER_TEMP/prompt.md"
+          # Prompten ligger på main og findes ikke nødvendigvis i startcommittet.
+          git show "${GITHUB_SHA}:.github/api-proeve/prompt.md" | sed "s/RAEKKE/${RAEKKE}/g" > "$RUNNER_TEMP/prompt.md"
+          test -s "$RUNNER_TEMP/prompt.md" || { echo "::error::Prompten blev ikke fundet."; exit 1; }
           start=$(date +%s)
           claude -p "$(cat "$RUNNER_TEMP/prompt.md")" --model "$MODEL" --output-format json \
             --dangerously-skip-permissions --max-turns 300 > "$RUNNER_TEMP/resultat.json" 2> "$RUNNER_TEMP/stderr.txt"
