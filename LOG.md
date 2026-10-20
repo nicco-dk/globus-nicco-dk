@@ -2,6 +2,33 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 21. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS (ingen ny meddelelse efter 20. oktober), DGHS' dengue (dashboardet pr. 20. oktober, står på siden), WHO SEARO nummer 20, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer fredag), UKHSA (ingen ny ugeoversigt, den kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober, intet nyt), DK-VET's nyheder (intet nyt), RIVM's ebolaside (seneste opdatering 19. oktober, intet nyt om `ebola-nl`) og DR Congos situationsrapporter gennem insp.cd's medieliste (157 er fortsat den nyeste). Outbreak News Today meldte 20. oktober et ebolatilfælde i Abuja og Kenyas niende tilfælde. Begge er alvorlige og er taget med uanset vagtplanens række.
+
+**Ændret**
+- `ebola-ke`: 9 bekræftede tilfælde, Kenyas sundhedsministerium gengivet af Blueprint, medie, pr. 20. oktober: https://blueprint.ng/kenya-confirms-9th-ebola-case-as-authorities-trace-135-contacts/ Det niende tilfælde er en 24-årig mand, nært familiemedlem til det første tilfælde, som testede positiv 19. oktober efter at have fået symptomer i karantæne. Alle ni tilfælde hører til én klynge, og 134 af 135 kontakter er opsporet og i karantæne. WHO AFRO skriver samme dag, at Kenya har meldt ni tilfælde: https://afro.who.int/countries/nigeria/news/nigeria-confirms-imported-case-ebola-bundibugyo-virus-disease Nyt punkt i forløbet, `cases`, `extra`, `gap`, `rel` og `src` opdateret. Dødstallet 1 står fortsat med Associated Press pr. 18. oktober, fordi ingen kilde gentager et samlet dødstal 20. oktober. Tallene er læst i Blueprints rå tekst og bekræftet af Eastleigh Voice gennem hentningsværktøjet.
+- `cchf-ir`: `live` er sat til `false`. Kontrollen ville advare om over 30 dage uden nyt punkt (seneste 20. september). Kl. 11.20-kørslen 20. oktober søgte på engelsk og persisk, og denne kørsel søgte på engelsk, uden nyt fra de iranske myndigheder. Udbruddet er ikke erklæret afsluttet. Ingen andre felter er ændret.
+- `ebola-drc`: `ebola-ng` er tilføjet i `rel`. Ingen tal er ændret.
+
+**Nye**
+- `ebola-ng`: et importeret tilfælde af ebola (Bundibugyo-virus) i Abuja, Nigeria. Nigerias føderale sundhedsministerium bekræftede tilfældet 20. oktober: https://health.gov.ng/fg-confirms-ebola-disease-case-in-fct-activates-public-health-response/ Patienten er en kvinde, der kom med fly fra Uganda, og 44 nære kontakter er identificeret. WHO AFRO oplyser samme dag, at hun fik symptomer 7. oktober, fire dage efter ankomsten, søgte behandling på et privathospital i Abuja 11. oktober, og at Nigeria er det femte land, der har påvist virus under udbruddet: https://afro.who.int/countries/nigeria/news/nigeria-confirms-imported-case-ebola-bundibugyo-virus-disease Trinnet er `udbrud`, fordi der endnu ikke er påvist smitte i Nigeria. Begge sider er læst som rå tekst.
+
+**Urørt**
+- 41 hændelser uden nyt i kilderne.
+- `ebola-nl`: RIVM har intet nyt efter 10. oktober og lukkes efter planen 21. november. `wnv-eu`, `chik-fr`: NaTHNaC har tal pr. land fra 12. til 16. oktober, men ECDC's ugerapport, som hændelserne bygger på, kommer først fredag. `chik-am`: 29 dage siden seneste punkt (22. september). Næste kørsel skal tage stilling til `live`.
+- Kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, så vagtplanens opgave med tre sådanne hændelser havde intet at rette.
+
+**Usikkert**
+- `ebola-ng`: smittekilden er ikke fastslået, og det er ikke oplyst, hvor i Uganda patienten rejste fra. Uganda erklærede sit udbrud slut i september ifølge RIVM. Det står i `gap`. Rutens knude for Uganda er sat ved Kampala som landets hovedstad, ikke som et kendt opholdssted.
+- `ebola-ke`: Kenyas sundhedsministeriums egen udmelding om det niende tilfælde er ikke fundet. Eastleigh Voice afviser direkte opslag (403) og er læst med hentningsværktøjet.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 577d2e6.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 20. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
