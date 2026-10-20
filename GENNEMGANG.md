@@ -19,7 +19,6 @@ Ingen åbne punkter.
 ## Repoet og driften
 
 - `tools/hent-kilder.mjs`, delen `dghs` (kørslen 17. oktober kl. 17.20): DGHS lagde meddelelserne om mæslinger for 15. og 16. oktober ud sammen med en ekstra meddelelse for 14. oktober, efter at kørslerne havde set på listen, og scriptet viser kun den nyeste. Kørslen fandt dem ved at læse listen https://dghs.gov.bd/pages/press-releases selv. Skal scriptet vise alle meddelelser nyere end den, der står i `maesling-bd`?
-- Planlagte kørsler (kørslen 20. oktober kl. 11.20): kørslerne 19. oktober kl. 17.20 og 20. oktober kl. 00.20 og 05.20 efterlod intet commit og ingen post i LOG.md, så `DATA_TID` var omkring 24 timer gammel, da denne kørsel startede. Workflowet kørte imens hver time på det gamle commit. Årsagen kan ikke ses herfra. `gh api` mod repoet svarer nu med en fejl om repositorier med numerisk id, mens GitHub-værktøjerne i sessionen virker. Tjekket af par i mediesporet er ikke kørt siden 19. oktober kl. 05.20. Skal de planlagte opgaver efterses?
 
 ## Datacentre
 

@@ -55,6 +55,9 @@ Ejeren har afgjort 15 punkter fra GENNEMGANG.md på en beslutningsside 20. oktob
 - Fejler kildescriptet mod Sri Lankas dengueside, læses den med hentningsværktøjet.
 - DR Congos situationsrapporter findes gennem insp.cd's medieliste.
 
+**Svar fra ejeren**
+- De planlagte kørsler 19. oktober kl. 17.20 og 20. oktober kl. 00.20 og 05.20 kørte ikke, fordi kontoen var løbet tør for forbrug. Opgaverne er ikke fejlbehæftede, og punktet er fjernet fra GENNEMGANG.md. Mediesporets par tjekkes igen af den næste kørsel, der har det i vagtplanen.
+
 ## 19. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
