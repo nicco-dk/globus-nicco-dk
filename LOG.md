@@ -59,6 +59,9 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: difteri i Marokko, egen hændelse eller fortsat kun omtale i `difteri-afro`.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 20. oktober er fortsat den nyeste, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 20. oktober, står på siden), WHO SEARO nummer 20 (nummer 21 findes endnu ikke på den faste adresse), WHO WPRO nummer 1066, ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 20. og 21. oktober (intet om smitte). WHO EMRO's nyheder (kolera i Yemen 13. oktober står på siden, og WHO EMRO skriver, at der ikke er bekræftet tilfælde af ebola i regionen), GPEI's ugeoversigt (fortsat Afghanistan 36 og Pakistan 6 tilfælde af vild poliovirus type 1, som på siden) og søgninger efter nyt om fugleinfluenza hos mennesker i Kina, Nipah og polio i Pakistan. Usikkert: Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet, direkte (forbindelsen afbrudt) eller med hentningsværktøjet (afvist af sidens robots.txt), så `dengue-asien` står urørt med tal pr. 12. oktober. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9feadd7.
+
 ## 20. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
