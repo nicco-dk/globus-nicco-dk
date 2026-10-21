@@ -2,6 +2,29 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 22. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (ny meddelelse 21. oktober, indarbejdet) og dengue (dashboardet pr. 21. oktober, står på siden), WHO SEARO nummer 20, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer fredag), UKHSA (ingen ny ugeoversigt, den kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Sri Lankas side kunne ikke hentes af scriptet. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober, intet nyt), DK-VET's nyheder (nyeste er dværgbændelorm hos ræve 7. oktober, som ikke er smitteudbrud hos mennesker, og fugleinfluenza i sæler 1. oktober, som står på siden), RKI's Epidemiologisches Bulletin 42/2026 15. oktober (STIKO's anbefaling af vaccination mod influenza A(H5) til udsatte faggrupper, intet udbrud) og ECDC's nyheder (intet nyt efter 1. oktober). Kvalitet: koordinaterne i alle 45 hændelser er sammenholdt med deres knuder uden fund, og kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato.
+
+**Ændret**
+- `maesling-bd`: 216.765 mistænkte og 23.212 bekræftede tilfælde, 1.101 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 21. oktober: https://dghs.gov.bd/pages/press-releases/6ad8f82c5703c40cec8212f5 997 nye mistænkte og 13 nye bekræftede tilfælde på et døgn og 1 dødsfald blandt mistænkte, i Habiganj i Sylhet-divisionen. 192.695 indlagt og 185.110 udskrevet siden 15. marts. Nyt punkt i forløbet og i talserien (dødstallet 1.205 er de to rækker lagt sammen efter reglen), `cases`, `extra` og `src` opdateret. Punktet 20. oktober bærer selv den gamle adresse. Tallene er læst i PDF-bilaget som tekst og som billede af første side. Meddelelsen hører normalt til kl. 17-kørslen, men var ude nu.
+
+**Nye**
+- Ingen. Set, men ikke taget med: NaTHNaC meldte 21. oktober ét tilfælde af cirkulerende vaccineafledt poliovirus type 2 i Kenya i 2026. Det hører under `polio`, når GPEI's ugeoversigt nævner det, og overlades til kl. 05-kørslen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- `ebola-nl`: RIVM's ebolaside kunne ikke hentes i denne kørsel, se Usikkert. Lukkes efter planen 21. november. `h5n1-dk` og `salmonella-dk`: intet nyt fra DK-VET og Statens Serum Institut. `wnv-eu`, `chik-fr`, `dengue-eu`, `cre-eu` og `salmonella-eu` venter på ECDC's ugerapport fredag.
+
+**Usikkert**
+- RIVM's side https://www.rivm.nl/ebola/actuele-informatie kunne hverken hentes direkte (forbindelsen afbrudt) eller med hentningsværktøjet (afvist af sidens robots.txt). Den engelske side er senest opdateret 11. juni og nævner ikke patienten.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 85f4a0a.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 21. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
