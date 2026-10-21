@@ -66,6 +66,7 @@
     "CN-PH": {"dato": "2026-10-20", "grund": "Artiklerne handler om en diplomatisk strid om den kinesiske ambassadørs udtalelse om, at Kina let kunne vinde en konflikt, og om Filippinernes protest, ikke om sammenstød mellem landenes styrker i perioden."},
     "MP-US": {"dato": "2026-10-20", "grund": "Nordmarianerne er ikke nævnt i artiklerne, som handler om amerikansk indenrigspolitik, uroen i Frankrig og bosætteres angreb på en amerikansk journalist på Vestbredden."},
     "RU>UA": {"dato": "2026-10-20", "grund": "Artiklerne handler om krigen mellem landene, et ukrainsk droneangreb på Moskva-regionen og Putins forslag om et topmøde, ikke om militær støtte fra Rusland til Ukraine."},
-    "GB>IL": {"dato": "2026-10-20", "grund": "Artiklerne handler om striden om det britiske konsulat i Østjerusalem og regeringens afvisning af en undersøgelse af tidligere britiske våbenleverancer, ikke om leverancer af våben eller udstyr i perioden beskrevet af to medier."}
+    "GB>IL": {"dato": "2026-10-20", "grund": "Artiklerne handler om striden om det britiske konsulat i Østjerusalem og regeringens afvisning af en undersøgelse af tidligere britiske våbenleverancer, ikke om leverancer af våben eller udstyr i perioden beskrevet af to medier."},
+    "GB-SA": {"dato": "2026-10-21", "grund": "Landene er allierede. Artiklerne handler om, at Storbritannien sender Typhoon-kampfly til Saudi-Arabien for at forsvare landet mod Houthi-bevægelsens angreb, ikke om kampe mellem britiske og saudiske styrker."}
   }
 }

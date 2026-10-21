@@ -29,6 +29,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (ingen meddelelse nyere end 20. oktober) og dengue (dashboardet pr. 20. oktober, står på siden), WHO SEARO nummer 20, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer fredag), UKHSA (ingen ny ugeoversigt, den kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter gennem insp.cd's medieliste (157 er fortsat den nyeste), ECDC's ebolaside (opdateret 20. oktober, samme tal som på siden), WHO AFRO's ugentlige situationsrapport for Kenya 5. til 16. oktober (ældre end tallene på siden), PAHO's epidemiologiske alarmer og opdateringer (ny opdatering om dengue og chikungunya 20. oktober, indarbejdet) og ECDC's månedlige globale oversigt over chikungunya (fortsat pr. 30. august). Søgninger efter nyt om ebola i Kenya og Nigeria, gul feber i Ghana, difteri i Nigeria og Marokko, miltbrand i Zambia, mpox i USA og fugleinfluenza i fjerkræ i USA. Statens Serum Institut, DK-VET og RIVM blev gennemgået af kørslen kl. 00.20 og er ikke slået op igen.
+
+**Ændret**
+- `chik-am`: 213.919 mistænkte tilfælde, heraf 78.481 bekræftede, og 88 dødsfald i 20 lande og territorier i Amerika fra uge 1 til uge 38 2026, PAHO pr. 20. oktober: https://www.paho.org/sites/default/files/2026/10/2026-20-october-phe-dengue-chkvfinalen.pdf Nyt punkt i forløbet, `cases`, `extra` og `src` opdateret med landetal for Brasilien, Bolivia, Fransk Guyana og Costa Rica fra samme rapport. ECDC's globale tal 250.051 tilfælde og 87 dødsfald pr. 30. august omfatter også lande uden for Amerika. Det står i `extra`, og talserien er ikke forlænget med PAHO's tal, fordi de to opgørelser ikke kan sammenlignes. Tallene er læst i PDF'ens tekst.
+- `ebola-ng`: nyt punkt i forløbet 20. oktober. Ugandas sundhedsministerium oplyser, at der ikke er aktive tilfælde af ebola i Uganda, og at patienten havde været i det østlige DR Congo i forretningsøjemed og rejste gennem Uganda i begyndelsen af oktober uden symptomer. Gengivet af Daily Monitor: https://www.monitor.co.ug/uganda/news/national/uganda-urges-calm-confirms-no-active-ebola-cases-in-country-5639738 og af Punch via Parrot Nigeria: https://parrotnigeria.com/2026/10/21/ebola-uganda-seeks-nigerian-womans-travel-history-from-fg/ `gap` og `src` opdateret. Knuder og rute er ikke ændret.
+
+**Nye**
+- Ingen. Set, men ikke taget med: difteri i Marokko (se Til gennemgang), Outbreak News Today 20. oktober om et udbrud af dengue på Marshalløerne og CIDRAP om medfødte mæslinger i Pennsylvania (hører under `maesling-us`, hvis US CDC nævner det).
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne.
+- Rundtur: `difteri-ng` 27 dage siden seneste punkt, `anthrax-zm` 23, `altnv-cn` 23, `mpox-mo` 21, `h5n1-dk` 20, `salmonella-dk` 20, `cre-eu` 19, `maesling-am` 18, `cyclospora-us` 16, `kolera` 13, `h5n1-us` 13, `h5n1-kh` 12, `salmonella-eu` 12, `gul-feber-gh` 12, `dengue-fl` 11 og `ebola-nl` 11. Slået op i denne kørsel uden nyt: `difteri-ng` (seneste fundne udmelding fra NCDC er fra begyndelsen af september), `anthrax-zm`, `gul-feber-gh` (sundhedsministerens tal 9. oktober står på siden), `maesling-am` (PAHO's situationsrapport 14 findes endnu ikke), `mpox-mo`, `h5n1-us` og `h5n1-kh` (WHO WPRO nummer 1066). `dengue-fl` venter på Floridas ugerapport torsdag, `salmonella-eu`, `cre-eu` og `kolera` på ECDC's ugerapport fredag. De øvrige er gennemgået af kørslen kl. 00.20 eller tidligere uden nyt.
+- `ebola-drc`: situationsrapport 158 findes endnu ikke i insp.cd's medieliste. `ebola-ke`: fortsat 9 tilfælde. ECDC skriver 8 tilfælde pr. 20. oktober, og Reuters gengiver sundhedsministeriet med 9 samme dag.
+
+**Usikkert**
+- `ebola-ng`: Nigerias sundhedsministerium skriver, at patienten kom med fly fra Uganda. Ugandas sundhedsministerium skriver ifølge medierne, at hun var i det østlige DR Congo og kun rejste gennem Uganda. Ministeriets egen udmelding er ikke fundet på https://health.go.ug/press-statements/ Rutens knude står fortsat ved Kampala, og forskellen står i `gap`.
+- `chik-am`: grafen har ECDC's globale tal og er ikke forlænget. Ejeren kan overveje, om talserien skal skifte til PAHO's tal for Amerika.
+- Sri Lankas side er ikke prøvet med hentningsværktøjet i denne kørsel, fordi `dengue-asien` hører til kl. 11-kørslen.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 624856b.
+
+**Mediesporet**
+- Ét par havde status afventer.
+- Afvist: `GB-SA`. Storbritannien sender Typhoon-kampfly til Saudi-Arabien for at forsvare landet mod Houthi-bevægelsens angreb, og flyene skal ikke angribe mål i Yemen. Landene er allierede og kæmper ikke mod hinanden (Deutsche Welle 21. oktober: https://www.dw.com/en/united-kingdom-uk-saudi-arabia-houthis-yemen/a-79718467 og AFP via The New Zealand Herald 20. oktober: https://www.nzherald.co.nz/world/uk-to-deploy-fighter-jets-to-help-protect-saudi-arabia-from-houthi-attacks/PJ556AD6GRGSZCNE2SESMLYBDE/). Udsendelsen kan senere dukke op som militær støtte `GB>SA`, som afgøres efter reglen for militær støtte.
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: difteri i Marokko, egen hændelse eller fortsat kun omtale i `difteri-afro`.
+
 ## 20. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten

@@ -1216,7 +1216,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-10-21';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-21T00:25+02:00';
+const DATA_TID = '2026-10-21T05:29+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1302,15 +1302,16 @@ const EVENTS = [
  cases:'1 bekræftet tilfælde, Nigerias føderale sundhedsministerium pr. 20. oktober',
  extra:'Patienten er en kvinde, der for nylig kom til Nigeria med et internationalt fly fra Uganda. Ifølge WHO AFRO fik hun symptomer 7. oktober, fire dage efter ankomsten, og søgte 11. oktober behandling på et privathospital i Abuja, hvor hun blev behandlet i flere dage, før diagnosen blev stillet. Laboratoriet bekræftede Bundibugyo-virus 20. oktober. Hun er isoleret og i behandling. 44 nære kontakter er identificeret, blandt dem sundhedsarbejdere, patienter, pårørende og medrejsende. NCDC har aktiveret sit hændelsesberedskab.',
  note:'Importeret tilfælde af ebola forårsaget af Bundibugyo-virus. Ifølge WHO AFRO er Nigeria det femte land, der har påvist virus, siden udbruddet blev erklæret i DR Congo 15. maj 2026.',
- gap:'Smittekilden er ikke fastslået. WHO AFRO skriver, at undersøgelser skal klarlægge den sandsynlige smittekilde og hendes rejse og udsættelse. Hvor i Uganda hun rejste fra, er ikke oplyst.',
+ gap:'Smittekilden er ikke fastslået. WHO AFRO skriver, at undersøgelser skal klarlægge den sandsynlige smittekilde og hendes rejse og udsættelse. Nigerias sundhedsministerium oplyser, at hun kom med fly fra Uganda. Ugandas sundhedsministerium oplyser ifølge Daily Monitor, at hun havde været i det østlige DR Congo og kun rejste gennem Uganda, og at Nigeria endnu ikke har givet de fulde oplysninger om hendes rejse. Ruten på kortet går fra Kampala som Ugandas hovedstad, ikke fra et kendt opholdssted.',
  nodes:[['Uganda',32.5825,0.3476,'2026-10'],['Abuja',7.3986,9.0765,'2026-10-11']],
  links:[[0,1,'2026-10','rute']],
  rel:['ebola-drc','ebola-ke'],
  naeste:'Rykker til smitte ved et bekræftet tilfælde blandt kontakterne. Lukkes 42 dage efter, at patienten tester negativ, hvis der ikke kommer sekundære tilfælde.',
  tl:[['2026-10-07','Patienten, en kvinde med nylig rejse til Uganda, får symptomer fire dage efter ankomsten til Nigeria','mistanke',['WHO AFRO','https://afro.who.int/countries/nigeria/news/nigeria-confirms-imported-case-ebola-bundibugyo-virus-disease']],
      ['2026-10-11','Søger behandling på et privathospital i Abuja, hvor hun behandles i flere dage, før diagnosen stilles','',['WHO AFRO','https://afro.who.int/countries/nigeria/news/nigeria-confirms-imported-case-ebola-bundibugyo-virus-disease']],
-     ['2026-10-20','Laboratoriet bekræfter Bundibugyo-virus, og det føderale sundhedsministerium melder tilfældet. Patienten er isoleret, 44 nære kontakter er identificeret, og hospitalet får støtte til infektionsforebyggelse','udbrud',['Nigerias føderale sundhedsministerium','https://health.gov.ng/fg-confirms-ebola-disease-case-in-fct-activates-public-health-response/']]],
- src:[['Nigerias føderale sundhedsministerium','https://health.gov.ng/fg-confirms-ebola-disease-case-in-fct-activates-public-health-response/'],['WHO AFRO','https://afro.who.int/countries/nigeria/news/nigeria-confirms-imported-case-ebola-bundibugyo-virus-disease']]},
+     ['2026-10-20','Laboratoriet bekræfter Bundibugyo-virus, og det føderale sundhedsministerium melder tilfældet. Patienten er isoleret, 44 nære kontakter er identificeret, og hospitalet får støtte til infektionsforebyggelse','udbrud',['Nigerias føderale sundhedsministerium','https://health.gov.ng/fg-confirms-ebola-disease-case-in-fct-activates-public-health-response/']],
+     ['2026-10-20','Ugandas sundhedsministerium oplyser, at der ikke er aktive tilfælde af ebola i Uganda. Patienten, en nigeriansk statsborger, havde ifølge ministeriet været i det østlige DR Congo i forretningsøjemed og rejste gennem Uganda i begyndelsen af oktober uden symptomer. Hvor hun blev smittet, undersøges stadig','',['Ugandas sundhedsministerium via Daily Monitor, medie','https://www.monitor.co.ug/uganda/news/national/uganda-urges-calm-confirms-no-active-ebola-cases-in-country-5639738']]],
+ src:[['Nigerias føderale sundhedsministerium','https://health.gov.ng/fg-confirms-ebola-disease-case-in-fct-activates-public-health-response/'],['WHO AFRO','https://afro.who.int/countries/nigeria/news/nigeria-confirms-imported-case-ebola-bundibugyo-virus-disease'],['Ugandas sundhedsministerium via Daily Monitor, medie','https://www.monitor.co.ug/uganda/news/national/uganda-urges-calm-confirms-no-active-ebola-cases-in-country-5639738']]},
 
 {id:'myiasis-am',place:'Mexico og Mellemamerika',country:'Mexico m.fl.',region:'Amerika',lat:16.2,lon:-91.0,
  disease:'Myiasis, skruelarve',pathogen:'Cochliomyia hominivorax, parasit og ikke smitte mellem mennesker',stage:'udbrud',live:true,
@@ -1966,8 +1967,8 @@ const EVENTS = [
 
 {id:'chik-am',place:'Bahia og Mato Grosso do Sul',country:'Brasilien m.fl.',region:'Amerika',lat:-12.9714,lon:-38.5014,
  disease:'Chikungunya',pathogen:'Chikungunya-virus',stage:'spredning',live:true,
- cases:'250.051 tilfælde og 87 dødsfald i 26 lande, global opgørelse uden EU og EØS, ECDC pr. 30. august',
- extra:'Brasilien havde 129.123 sandsynlige tilfælde og 121 dødsfald i 2025. August 2026 gav 29.268 tilfælde mod 6.748 i juli. Oprindelige folk udgjorde 5 procent af tilfældene og 38 procent af de døde i maj.',
+ cases:'213.919 mistænkte tilfælde, heraf 78.481 bekræftede, og 88 dødsfald i 20 lande og territorier i Amerika fra uge 1 til uge 38 2026, PAHO pr. 20. oktober',
+ extra:'PAHO\'s tal gælder kun Amerika. ECDC\'s globale opgørelse uden EU og EØS havde 250.051 tilfælde og 87 dødsfald i 26 lande pr. 30. august og omfatter også lande uden for Amerika, så de to tal kan ikke sammenlignes, og grafen fortsætter ikke med PAHO\'s tal. Ifølge PAHO har Brasilien 135.962 mistænkte tilfælde, heraf 56.759 bekræftede, og 58 dødsfald i 2026 til uge 40, 41,6 procent færre end samme uge i 2025. Bolivia har 48.079 tilfælde, heraf 11.749 bekræftede, og 45 dødsfald til uge 38, flest i Santa Cruz. Fransk Guyana har 2.017 bekræftede tilfælde til uge 39 efter elleve år uden smitte, og Costa Rica 690 mistænkte tilfælde til uge 38 mod 8 i hele 2025. Brasilien havde 129.123 sandsynlige tilfælde og 121 dødsfald i 2025. August 2026 gav 29.268 tilfælde mod 6.748 i juli. Oprindelige folk udgjorde 5 procent af tilfældene og 38 procent af de døde i maj.',
  note:'Chikungunya cirkulerede bredt i Amerika gennem 2026 med Brasilien som det mest berørte land og Mato Grosso do Sul som tyngdepunkt for dødsfaldene.',
  nodes:[['Mato Grosso',-56.0967,-15.6014,'2026-02-20'],['Mato Grosso do Sul',-54.6201,-20.4697,'2026-04-12'],['Bahia',-38.5014,-12.9714,'2026-09-22']],
  naeste:'Følger regntiden i Brasilien. Bahia steg 369 procent i september, så toppen er næppe nået.',
@@ -1980,8 +1981,9 @@ const EVENTS = [
      ['2026-05-15','67.418 sandsynlige tilfælde og 24 dødsfald. Omtrentlig',''],
      ['2026-05-26','28 dødsfald, heraf 20 i Mato Grosso do Sul',''],
      ['2026-08-30','Global opgørelse: 250.051 tilfælde og 87 dødsfald i 26 lande',''],
-     ['2026-09-22','Bahia melder kraftig stigning med 10.264 sandsynlige tilfælde, en stigning på 369 procent','']],
- src:[['PAHO','https://www.paho.org/sites/default/files/2026/02/2026-fevereiro-10-phe-alerta-chkvfinalpt.pdf'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['Midiamax, medie','https://midiamax.com.br/cotidiano/2026/ses-ms-confirma-mais-duas-mortes-chikungunya-total-chega-10-2026/']]},
+     ['2026-09-22','Bahia melder kraftig stigning med 10.264 sandsynlige tilfælde, en stigning på 369 procent',''],
+     ['2026-10-20','PAHO opgør 213.919 mistænkte tilfælde, heraf 78.481 bekræftede, og 88 dødsfald i 20 lande og territorier i Amerika fra uge 1 til uge 38. Tallet er lavere end i samme periode i 2025, men PAHO peger på smitte i nye områder, udbrud uden for den sædvanlige sæson og flere alvorlige forløb og opfordrer landene til at styrke overvågningen før højsæsonen i Sydamerika','',['PAHO, epidemiologisk opdatering 20. oktober','https://www.paho.org/sites/default/files/2026/10/2026-20-october-phe-dengue-chkvfinalen.pdf']]],
+ src:[['PAHO, epidemiologisk opdatering 20. oktober','https://www.paho.org/sites/default/files/2026/10/2026-20-october-phe-dengue-chkvfinalen.pdf'],['PAHO','https://www.paho.org/sites/default/files/2026/02/2026-fevereiro-10-phe-alerta-chkvfinalpt.pdf'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['Midiamax, medie','https://midiamax.com.br/cotidiano/2026/ses-ms-confirma-mais-duas-mortes-chikungunya-total-chega-10-2026/']]},
 
 {id:'salmonella-eu',place:'Ti lande i EU og EØS, heriblandt Danmark',country:'EU og EØS',region:'Europa',lat:41.8719,lon:12.5674,
  disease:'Salmonellose',pathogen:'Salmonella Strathcona, sekvenstype 2559',stage:'udbrud',live:true,
