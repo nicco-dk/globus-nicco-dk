@@ -62,6 +62,37 @@
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 20. oktober er fortsat den nyeste, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 20. oktober, står på siden), WHO SEARO nummer 20 (nummer 21 findes endnu ikke på den faste adresse), WHO WPRO nummer 1066, ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 20. og 21. oktober (intet om smitte). WHO EMRO's nyheder (kolera i Yemen 13. oktober står på siden, og WHO EMRO skriver, at der ikke er bekræftet tilfælde af ebola i regionen), GPEI's ugeoversigt (fortsat Afghanistan 36 og Pakistan 6 tilfælde af vild poliovirus type 1, som på siden) og søgninger efter nyt om fugleinfluenza hos mennesker i Kina, Nipah og polio i Pakistan. Usikkert: Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet, direkte (forbindelsen afbrudt) eller med hentningsværktøjet (afvist af sidens robots.txt), så `dengue-asien` står urørt med tal pr. 12. oktober. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9feadd7.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 20. oktober er fortsat den nyeste på listen https://dghs.gov.bd/pages/press-releases kl. 17.22, også ved direkte opslag) og dengue (dashboardet pr. 21. oktober, indarbejdet), WHO SEARO nummer 20, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ingen ny ugeoversigt), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter gennem insp.cd's medieliste (158 er ny), WHO AFRO's ugebulletin for uge 41 (lagt ud 21. oktober, indarbejdet), Africa CDC's nyheder (intet nyt efter meldingerne om Kenya), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober er indarbejdet af kørslen kl. 05.20), US CDC's mæslingeside (fortsat pr. 15. oktober, opdateret 16. oktober) og søgninger efter nyt om ebola i Kenya og Nigeria.
+
+**Ændret**
+- `ebola-drc`: 9.637 bekræftede tilfælde og 4.646 dødsfald, DR Congos sundhedsministerium pr. 19. oktober, situationsrapport 158: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_158_19_10_2026.pdf 85 nye tilfælde på et døgn, 43 i Ituri, 33 i Nordkivu, 6 i Haut-Uélé, 2 i Tshopo og 1 i Nord-Ubangi, og 44 nye dødsfald, heraf 29 i lokalsamfundet og 15 på behandlingscentre. Ingen nye sundhedszoner. Nyt punkt i forløbet og i talserien, `cases` og `extra` opdateret, og situationsrapport 157 er erstattet af 158 i `src`. Punktet 19. oktober bærer selv adressen til 157. Tallene er læst som tekst og som billede af første side.
+- `dengue-bd`: 116.990 indlagte og 364 dødsfald i 2026, DGHS pr. 21. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.373 nye indlagte og 7 nye dødsfald på et døgn, uge 42 har indtil videre 6.678 tilfælde og 22 dødsfald. Nyt punkt i forløbet og i talserien. Læst i scriptets udtræk og i sidens rå tekst.
+- `kolera`: nyt punkt 5. oktober for Zambia: 573 tilfælde, heraf 115 laboratoriebekræftede, og 15 dødsfald i 12 distrikter i fem provinser, WHO AFRO's ugebulletin uge 41: https://iris.who.int/bitstreams/41f85b00-a89e-4d52-9c69-9e3b8f96a164/download `gap` og `src` opdateret. `cases` er uændret med de globale tal.
+- `gul-feber-gh`: nyt punkt 22. september: 42 mistænkte tilfælde og 13 dødsfald i syv distrikter i Upper West Region fra 30. august til 22. september, 13 IgM-positive og 3 PCR-bekræftede, alle døde, WHO AFRO's ugebulletin uge 41 (samme adresse). `extra` og `src` opdateret. Punktet er sat ind i datoorden før punktet 8. oktober.
+- `difteri-ng`: `cases` er nu 16.997 tilfælde og 596 dødsfald i 2026 til og med uge 34 (23. august), WHO AFRO's ugebulletin uge 41, i stedet for mediets "over 10.000 bekræftede". Nyt punkt 23. august sat ind i datoorden, `extra` med fordelingen på stater og `src` opdateret.
+- `maesling-us`: `extra` siger nu, at US CDC har 3 dødsfald i 2026 i sin tabel (siden opdateret 16. oktober), ikke 2. Læst to gange med hentningsværktøjet. Tallene for tilfælde er uændrede, fordi US CDC endnu ikke har opdateret onsdagens tal.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 39 hændelser uden nyt i kilderne.
+- `maesling-bd`: DGHS' meddelelse for 21. oktober var ikke på listen kl. 17.22. `ebola-ke`: fortsat 9 tilfælde. WHO AFRO's ugebulletin har kun tal pr. 11. oktober. `ebola-ng`: intet nyt efter 20. oktober. `maesling-us`: US CDC opdaterer om onsdagen ved middagstid amerikansk østkysttid, efter denne kørsel.
+
+**Usikkert**
+- `kolera`: WHO AFRO (573 tilfælde og 15 dødsfald pr. 5. oktober) og NaTHNaC (909 tilfælde og 25 dødsfald, 14. oktober) er uenige om Zambia. Ingen af tallene er sat i `cases`, og forskellen står i `gap`.
+- `difteri-ng`: WHO AFRO's tabel har en kolonne med 12.491 "bekræftede" tilfælde, mens teksten siger, at kun 0,4 procent er laboratoriebekræftet. Kolonnen er derfor ikke brugt.
+- `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Hører til kl. 11-kørslen og er ikke prøvet med hentningsværktøjet.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit d0cecda.
+
+**Mediesporet**
+- Ingen par havde status afventer i https://globus.nicco.dk/konflikter.json (genereret 21. oktober kl. 14.23 UTC). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 20. oktober 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
