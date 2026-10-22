@@ -69,6 +69,7 @@
     "GB>IL": {"dato": "2026-10-20", "grund": "Artiklerne handler om striden om det britiske konsulat i Østjerusalem og regeringens afvisning af en undersøgelse af tidligere britiske våbenleverancer, ikke om leverancer af våben eller udstyr i perioden beskrevet af to medier."},
     "GB-SA": {"dato": "2026-10-21", "grund": "Landene er allierede. Artiklerne handler om, at Storbritannien sender Typhoon-kampfly til Saudi-Arabien for at forsvare landet mod Houthi-bevægelsens angreb, ikke om kampe mellem britiske og saudiske styrker."},
     "FR-PS": {"dato": "2026-10-22", "grund": "Artiklerne handler om israelske bosætteres angreb på europæiske diplomater og en fransk borgmester under olivenhøsten på Vestbredden og om en amerikansk kandidat, der blev tilbageholdt, ikke om kampe mellem franske og palæstinensiske styrker."},
-    "SY>SA": {"dato": "2026-10-22", "grund": "Artiklerne beskriver, at Syrien overvejer militær hjælp og har drøftet at sende op til 10.000 soldater til krigen mod Houthi-bevægelsen, men ikke at våben, tropper eller udstyr er leveret."}
+    "SY>SA": {"dato": "2026-10-22", "grund": "Artiklerne beskriver, at Syrien overvejer militær hjælp og har drøftet at sende op til 10.000 soldater til krigen mod Houthi-bevægelsen, men ikke at våben, tropper eller udstyr er leveret."},
+    "HT-SV": {"dato": "2026-10-22", "grund": "Salvadoranske soldater i den FN-støttede Gang Suppression Force, som støtter Haitis sikkerhedsstyrker, er angrebet og bortført af kriminelle bander nær Croix-des-Bouquets. Det er ikke kampe mellem de to landes styrker eller med en myndighed, der kontrollerer Haiti."}
   }
 }

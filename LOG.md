@@ -57,6 +57,35 @@
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 21. oktober er fortsat den nyeste og står på siden, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 21. oktober, står på siden), WHO SEARO nummer 21 (21. oktober, tallene for Bangladesh er ældre end DGHS' egne på siden), WHO WPRO nummer 1066 (ingen nye humane tilfælde 9. til 15. oktober, nummer 1067 ventes fredag), ECDC uge 42, UKHSA (ugeoversigten for uge 42 var ikke lagt ud kl. 11.25, seneste er uge 41), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 21. og 22. oktober (et dødsfald efter influenza hos et barn 21. oktober, almindelig sæson, intet om smitte til siden). Søgninger efter nyt om fugleinfluenza hos mennesker i Kambodja og Kina, polio i Pakistan, pest i Irkutsk, mpox i Hongkong og dengue i Sri Lanka, uden nyere udmeldinger end dem på siden. Urørt: 45 hændelser, heraf rundturen `pest-irkutsk` 10 dage, `h5n1-kh` 13, `dengue-asien` 10 og `altnv-cn` 24 dage siden seneste punkt. Usikkert: Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet, direkte (forbindelsen afbrudt) eller med hentningsværktøjet (afvist af sidens robots.txt), så `dengue-asien` står fortsat med tal pr. 12. oktober. WHO EMRO's nyhedsside gav kun en gammel udgave gennem hentningsværktøjet. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 121005b. Til gennemgang: intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (ny meddelelse 22. oktober, indarbejdet) og dengue (dashboardet pr. 22. oktober, indarbejdet), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer fredag), UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Sri Lankas side kunne ikke hentes af scriptet. UKHSA's ugeoversigt for uge 42, lagt ud 22. oktober: https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-42-week-ending-16-october-2026 (ebola, fugleinfluenza i Washington, MERS og argentinsk hæmoragisk feber, som er endemisk, intet nyt til siden). DR Congos situationsrapporter gennem insp.cd's medieliste (159 er fortsat den nyeste), Africa CDC's ugerapport (udgaven 11. oktober, ældre end tallene på siden), WHO AFRO (ugebulletinen for uge 41 er indarbejdet 21. oktober, ingen nyere fundet), PAHO (opdateringen om dengue og chikungunya 20. oktober er indarbejdet), US CDC's mæslingeside (fortsat pr. 15. oktober, opdateret 16. oktober) og søgninger efter nyt om ebola i Kenya og Nigeria.
+
+**Ændret**
+- `maesling-bd`: 217.760 mistænkte og 23.248 bekræftede tilfælde, 1.103 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 22. oktober: https://dghs.gov.bd/pages/press-releases/6ad9f6519422db94cd42950c 995 nye mistænkte og 36 nye bekræftede tilfælde på et døgn og 2 dødsfald blandt mistænkte, begge i Dhaka-distriktet. 193.608 indlagt og 185.927 udskrevet siden 15. marts. Nyt punkt i forløbet og i talserien (dødstallet 1.207 er de to rækker lagt sammen efter reglen), `cases`, `extra` og `src` opdateret. Punktet 21. oktober bærer selv den gamle adresse. Tallene er læst i PDF-bilaget som tekst og som billede af første side.
+- `dengue-bd`: 118.502 indlagte og 368 dødsfald i 2026, DGHS pr. 22. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.512 nye indlagte og 4 nye dødsfald på et døgn, uge 42 har indtil videre 8.190 tilfælde og 26 dødsfald. Nyt punkt i forløbet og i talserien, `cases` opdateret. Læst i scriptets udtræk og i sidens rå tekst.
+- `ebola-ng`: nyt punkt 21. oktober. NCDC oplyser på et beredskabsmøde, at patientens tilstand er forværret til svigt af flere organer, og at 44 nære kontakter følges, gengivet af Blueprint, medie: https://blueprint.ng/ncdc-reveals-real-identify-of-ebola-patient-in-dire-situation-us-issues-health-advisory/ Daily Trust skrev det samme 21. oktober. Kilden er tilføjet i `src`. `cases` er uændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 42 hændelser uden nyt i kilderne.
+- `ebola-drc`: situationsrapport 160 findes endnu ikke i insp.cd's medieliste. `ebola-ke`: fortsat 9 bekræftede tilfælde og 1 dødsfald. Sundhedsministeriet skriver ifølge Citizen Digital 22. oktober, at der ingen nye tilfælde er, og at de otte patienter i behandling er stabile: https://citizen.digital/article/kenya-reports-zero-new-ebola-cases-as-govt-says-end-of-outbreak-within-reach-n392534 `maesling-us`: US CDC havde kl. 17.30 endnu ikke opdateret onsdagens tal, siden står fortsat pr. 15. oktober.
+
+**Usikkert**
+- `ebola-ng`: patientens tilstand er kun oplyst gennem medier, der gengiver NCDC. NCDC's egen udmelding er ikke fundet.
+- `maesling-us`: US CDC's ugentlige opdatering mangler en dag efter det sædvanlige. Næste kørsel bør se efter den.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit f135158.
+
+**Mediesporet**
+- Ét par havde status afventer i https://globus.nicco.dk/konflikter.json (genereret 22. oktober kl. 15.23 UTC).
+- Afvist: `HT-SV`. Fire salvadoranske soldater fra den FN-støttede Gang Suppression Force, som støtter Haitis sikkerhedsstyrker, blev angrebet og bortført af kriminelle bander nær Croix-des-Bouquets, og El Salvador har indledt en redningsaktion. Det er ikke kampe mellem de to landes styrker eller med en myndighed, der kontrollerer Haiti (AP via Al Jazeera 22. oktober: https://www.aljazeera.com/news/2026/10/22/el-salvadors-bukele-threatens-haitian-gangs-over-abducted-soldiers og Anadolu 22. oktober: https://aa.com.tr/en/americas/bukele-threatens-haitian-gangs-over-4-salvadorans-held-hostage/4096542).
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 21. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
