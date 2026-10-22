@@ -54,6 +54,9 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 21. oktober er fortsat den nyeste og står på siden, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 21. oktober, står på siden), WHO SEARO nummer 21 (21. oktober, tallene for Bangladesh er ældre end DGHS' egne på siden), WHO WPRO nummer 1066 (ingen nye humane tilfælde 9. til 15. oktober, nummer 1067 ventes fredag), ECDC uge 42, UKHSA (ugeoversigten for uge 42 var ikke lagt ud kl. 11.25, seneste er uge 41), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 21. og 22. oktober (et dødsfald efter influenza hos et barn 21. oktober, almindelig sæson, intet om smitte til siden). Søgninger efter nyt om fugleinfluenza hos mennesker i Kambodja og Kina, polio i Pakistan, pest i Irkutsk, mpox i Hongkong og dengue i Sri Lanka, uden nyere udmeldinger end dem på siden. Urørt: 45 hændelser, heraf rundturen `pest-irkutsk` 10 dage, `h5n1-kh` 13, `dengue-asien` 10 og `altnv-cn` 24 dage siden seneste punkt. Usikkert: Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet, direkte (forbindelsen afbrudt) eller med hentningsværktøjet (afvist af sidens robots.txt), så `dengue-asien` står fortsat med tal pr. 12. oktober. WHO EMRO's nyhedsside gav kun en gammel udgave gennem hentningsværktøjet. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 121005b. Til gennemgang: intet nyt.
+
 ## 21. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
