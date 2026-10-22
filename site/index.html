@@ -1214,9 +1214,9 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-10-22';
+const DATA_DATO = '2026-10-23';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-22T17:34+02:00';
+const DATA_TID = '2026-10-23T00:24+02:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1595,6 +1595,18 @@ const EVENTS = [
      ['2026-10-08','UKHSA tager tilfældet med som nyt signal i ugeoversigten over udbrud under overvågning','',['UKHSA uge 40','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-40-week-ending-4-october-2026']],
      ['2026-10-09','ECDC omtaler tilfældet i sin ugerapport. Symptomatiske tilfælde er ifølge ECDC ikke uventede, fordi virusset tidligere er påvist i myg og fugle i Tyskland, og ECDC foretager sig ikke yderligere','',['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]],
  src:[['Robert Koch Institut, Epidemiologisches Bulletin 40/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/40_26.pdf?__blob=publicationFile&v=2'],['UKHSA uge 40','https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-40-week-ending-4-october-2026'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]},
+
+{id:'shamonda-fr',place:'Lyon',country:'Frankrig',region:'Europa',lat:45.7640,lon:4.8357,
+ disease:'Shamonda-virus hos menneske',pathogen:'Shamonda-virus (orthobunyavirus)',stage:'udbrud',live:true,
+ cases:'1 bekræftet humant tilfælde, patienten døde i begyndelsen af oktober, Frankrigs landbrugsministerium pr. 22. oktober',
+ extra:'Patienten var stærkt immunsvækket og blev behandlet for en alvorlig sygdom på Hospices civils de Lyon. Ifølge de franske myndigheder skyldtes komplikationer i hjernen før dødsfaldet meget sandsynligt infektionen. Hos dyr er virusset siden sommeren 2026 påvist på bedrifter i Østrig, Belgien, Frankrig, Tyskland, Irland, Italien, Liechtenstein, Luxembourg, Holland, Portugal, Spanien og Schweiz samt Jersey, ECDC pr. 22. oktober.',
+ note:'Den første dokumenterede infektion med Shamonda-virus hos et menneske. Virusset overføres mellem dyr af mitter (Culicoides) og har kvæg som hovedvært. Det blev fundet første gang i Nigeria i 1960\'erne og i Europa i sommeren 2026. De franske myndigheder ser ingen sundhedsrisiko for befolkningen som helhed og har underrettet WHO og ECDC.',
+ gap:'Det er ikke fastslået, om virusset forårsagede eller bidrog til dødsfaldet. Smittevejen er en hypotese: stik af en mitte i det østlige Frankrig, hvor virusset har cirkuleret blandt dyr. Hvilken mitteart, der var tale om, er ukendt. Patientens alder og bopæl er ikke oplyst.',
+ naeste:'Rykker til spredning, hvis der findes flere humane tilfælde i nye områder. Smitte mellem mennesker er ikke beskrevet.',
+ tl:[['2026-07','Shamonda-virus identificeres i slutningen af juli for første gang i Europa hos landbrugsdyr, efter kliniske tegn fra juni','reservoir',['ECDC, 22. oktober','https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus']],
+     ['2026-10-22','De franske sundhedsmyndigheder melder den første dokumenterede infektion med Shamonda-virus hos et menneske, en stærkt immunsvækket patient i Lyon, der døde i begyndelsen af oktober','udbrud',['Frankrigs landbrugsministerium, 22. oktober','https://agriculture.gouv.fr/virus-shamonda-une-premiere-detection-chez-letre-humain']],
+     ['2026-10-22','ECDC følger situationen sammen med de franske myndigheder og EFSA. Smittevejen og virussets rolle i dødsfaldet undersøges fortsat','',['ECDC, 22. oktober','https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus']]],
+ src:[['Frankrigs landbrugsministerium, 22. oktober','https://agriculture.gouv.fr/virus-shamonda-une-premiere-detection-chez-letre-humain'],['ECDC, 22. oktober','https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus']]},
 
 {id:'cre-eu',place:'Grænseoverskridende, hospitalsrelateret',country:'EU og EØS',region:'Europa',lat:50.8503,lon:4.3517,
  disease:'Carbapenem-resistente Enterobacterales',pathogen:'Klebsiella pneumoniae og Escherichia coli med carbapenemase-gener',stage:'variant',live:true,

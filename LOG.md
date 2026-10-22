@@ -2,6 +2,30 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 23. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 22. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 22. oktober, står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer fredag), UKHSA (ugeoversigten for uge 42 er læst af kl. 17-kørslen), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 7. oktober, intet nyt), DK-VET's nyheder (intet nyt), RIVM's ebolaside (nyeste opdatering 21. oktober om Nigeria, intet nyt om `ebola-nl`), RKI's Epidemiologisches Bulletin 43/2026 22. oktober (Verdenspoliodagen og elektroniske anmeldelser, intet udbrud) og ECDC's nyheder (Shamonda-virus 22. oktober, indarbejdet). Kvalitet: kontrollen gav ingen advarsler, heller ingen om tal i `cases` uden opgørelsesdato, så vagtplanens opgave med tre sådanne hændelser havde intet at rette.
+
+**Ændret**
+- Ingen eksisterende hændelser.
+
+**Nye**
+- `shamonda-fr`: første dokumenterede infektion med Shamonda-virus hos et menneske, en stærkt immunsvækket patient behandlet på Hospices civils de Lyon, der døde i begyndelsen af oktober. Meldt af de franske sundhedsmyndigheder i en pressemeddelelse fra Frankrigs landbrugsministerium 22. oktober: https://agriculture.gouv.fr/virus-shamonda-une-premiere-detection-chez-letre-humain og fulgt op af ECDC samme dag: https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus Trinnet er `udbrud` (ét laboratoriebekræftet tilfælde, ingen smitte mellem mennesker). Første punkt i forløbet har trinnet `reservoir` for fundet hos landbrugsdyr i Europa fra juli, efter ECDC. Begge sider er læst som rå tekst. Placeret i Lyon, hvor patienten blev behandlet. Smittestedet er efter myndighedernes hypotese det østlige Frankrig, og det står i `gap`.
+- Set, men ikke taget med: Usutu-virus i Italien, 18 tilfælde i 2026 pr. 14. oktober (NaTHNaC 22. oktober), som ingen myndighed kalder usædvanligt.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- `ebola-nl`: intet nyt hos RIVM, lukkes efter planen 21. november. `h5n1-dk` og `salmonella-dk`: intet nyt fra DK-VET og Statens Serum Institut. `wnv-eu`, `chik-fr`, `dengue-eu`, `cre-eu` og `salmonella-eu` venter på ECDC's ugerapport fredag.
+
+**Usikkert**
+- `shamonda-fr`: det er ikke fastslået, om virusset forårsagede dødsfaldet, og patientens alder og bopæl er ikke oplyst. Pressemeddelelsen ligger på landbrugsministeriets side, men er udsendt af sundhedsmyndighederne sammen med sundhedsministeriets krisecenter.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 7260bb2.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 22. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
