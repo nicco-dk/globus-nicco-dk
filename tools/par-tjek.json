@@ -67,6 +67,8 @@
     "MP-US": {"dato": "2026-10-20", "grund": "Nordmarianerne er ikke nævnt i artiklerne, som handler om amerikansk indenrigspolitik, uroen i Frankrig og bosætteres angreb på en amerikansk journalist på Vestbredden."},
     "RU>UA": {"dato": "2026-10-20", "grund": "Artiklerne handler om krigen mellem landene, et ukrainsk droneangreb på Moskva-regionen og Putins forslag om et topmøde, ikke om militær støtte fra Rusland til Ukraine."},
     "GB>IL": {"dato": "2026-10-20", "grund": "Artiklerne handler om striden om det britiske konsulat i Østjerusalem og regeringens afvisning af en undersøgelse af tidligere britiske våbenleverancer, ikke om leverancer af våben eller udstyr i perioden beskrevet af to medier."},
-    "GB-SA": {"dato": "2026-10-21", "grund": "Landene er allierede. Artiklerne handler om, at Storbritannien sender Typhoon-kampfly til Saudi-Arabien for at forsvare landet mod Houthi-bevægelsens angreb, ikke om kampe mellem britiske og saudiske styrker."}
+    "GB-SA": {"dato": "2026-10-21", "grund": "Landene er allierede. Artiklerne handler om, at Storbritannien sender Typhoon-kampfly til Saudi-Arabien for at forsvare landet mod Houthi-bevægelsens angreb, ikke om kampe mellem britiske og saudiske styrker."},
+    "FR-PS": {"dato": "2026-10-22", "grund": "Artiklerne handler om israelske bosætteres angreb på europæiske diplomater og en fransk borgmester under olivenhøsten på Vestbredden og om en amerikansk kandidat, der blev tilbageholdt, ikke om kampe mellem franske og palæstinensiske styrker."},
+    "SY>SA": {"dato": "2026-10-22", "grund": "Artiklerne beskriver, at Syrien overvejer militær hjælp og har drøftet at sende op til 10.000 soldater til krigen mod Houthi-bevægelsen, men ikke at våben, tropper eller udstyr er leveret."}
   }
 }

@@ -25,6 +25,35 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 21. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 21. oktober, står på siden), WHO SEARO nummer 21 (ny, 21. oktober, men tallene for Bangladesh er ældre end DGHS' egne på siden, og Sri Lanka har ingen data efter uge 37), WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer fredag), UKHSA (ingen ny ugeoversigt endnu, den kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Sri Lankas side kunne ikke hentes af scriptet. DR Congos situationsrapporter gennem insp.cd's medieliste (159 er ny), GPEI's Polio This Week (fortsat pr. 14. oktober), US CDC's mæslingeside (fortsat pr. 15. oktober, opdateret 16. oktober), Africa CDC's nyheder, PAHO's mæslingeside (ingen ny situationsrapport fundet) og søgninger efter nyt om ebola i Kenya og Nigeria og polio i Pakistan.
+
+**Ændret**
+- `ebola-drc`: 9.704 bekræftede tilfælde og 4.687 dødsfald, DR Congos sundhedsministerium pr. 20. oktober, situationsrapport 159: https://insp.cd/wp-content/uploads/2026/10/SITREP_MVEBDB_159_20_10_2026.pdf 67 nye tilfælde på et døgn, 37 i Ituri, 29 i Nordkivu og 1 i Tshopo, og 41 nye dødsfald, heraf 23 i lokalsamfundet og 18 på behandlingscentre. Ingen nye sundhedszoner. Nyt punkt i forløbet og i talserien, `cases` og `extra` opdateret, og situationsrapport 158 er erstattet af 159 i `src`. Punktet 20. oktober bærer selv adressen til 158. Tallene er læst som tekst og som billede af første side.
+
+**Nye**
+- Ingen. Set, men ikke taget med: Mauretanien melder et tilfælde af Rift Valley-feber og endnu et af krim-kongo-blødningsfeber (Outbreak News Today 21. oktober), som ikke er usædvanligt for sæsonen ifølge nogen myndighed, og NaTHNaC's melding om vaccineafledt poliovirus type 2 i Kenya, som GPEI endnu ikke har med.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- `polio`: Pakistans syvende tilfælde i Karachi står allerede som punkt 19. oktober. GPEI's oversigt er fortsat pr. 14. oktober, så `cases` er uændret. `ebola-ke`: fortsat 9 tilfælde, Premium Times via AllAfrica 21. oktober. `ebola-ng`: fortsat ét tilfælde. Daily Trust skriver 21. oktober, at NCDC oplyser, at patientens tilstand er forværret. Ikke indarbejdet, fordi NCDC's egen udmelding ikke er fundet. `maesling-us` og `maesling-am`: ingen nye opgørelser fra US CDC og PAHO.
+- Rundtur: hændelserne uden nyt punkt i 10 dage blev slået op af kørslen kl. 05.20 21. oktober uden nyt. I denne kørsel er `h5n1-us` søgt hos CIDRAP uden en dateret ny melding, `maesling-am` hos PAHO uden ny situationsrapport, og `polio` hos GPEI. `dengue-fl` venter på Floridas ugerapport torsdag, `kolera`, `cre-eu` og `salmonella-eu` på ECDC's ugerapport fredag.
+
+**Usikkert**
+- `ebola-ng`: patientens tilstand er kun oplyst gennem Daily Trust, medie. Ingen ændring.
+- `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Hører til kl. 11-kørslen.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 903e8ab, som er det samme commit som nicco-dk/globus-nicco-dk viser.
+
+**Mediesporet**
+- To par havde status afventer i https://globus.nicco.dk/konflikter.json (genereret 22. oktober kl. 02.23 UTC).
+- Afvist: `FR-PS`. Artiklerne handler om bosætteres angreb på europæiske diplomater og en fransk borgmester på Vestbredden og om en amerikansk kandidat, der blev tilbageholdt, ikke om kampe mellem franske og palæstinensiske styrker (RTÉ 21. oktober: https://www.rte.ie/news/us/2026/1021/1596309-brad-lander/ og Reuters via Al-Monitor 18. oktober: https://www.al-monitor.com/originals/2026/10/us-wants-israel-crack-down-settler-violence-west-bank-rubio-says).
+- Afvist: `SY>SA`. Syrien overvejer militær hjælp til Saudi-Arabien, og landene har drøftet at sende op til 10.000 syriske soldater til krigen mod Houthi-bevægelsen, men ingen levering af våben, tropper eller udstyr er beskrevet (Reuters via Middle East Eye 7. oktober: https://www.middleeasteye.net/live-blog/live-blog-update/syria-weighs-military-aid-saudi-arabia-amid-yemen-war-sources-say og CBS News 21. oktober: https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/).
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 21. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
