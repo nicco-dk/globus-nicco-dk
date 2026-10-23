@@ -57,6 +57,28 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 22. oktober er fortsat den nyeste og står på siden, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 22. oktober, står på siden), WHO SEARO nummer 21 (tallene for Bangladesh er ældre end DGHS' egne på siden), WHO WPRO nummer 1066 (nummer 1067 med dagens dato gav HTTP 404 kl. 11.22), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte i dag og i går). GPEI's Polio This Week pr. 21. oktober: https://polioeradication.org/about-polio/polio-this-week/ og WHO EMRO's nyheder: https://www.emro.who.int/media/news/ Søgning efter nye humane tilfælde af fugleinfluenza i Asien uden fund.
+
+**Ændret**
+- `polio`: Afghanistan 42 tilfælde af vild poliovirus type 1 i 2026, GPEI pr. 21. oktober: https://polioeradication.org/about-polio/polio-this-week/ Seks nye i Kabul, Kandahar og Nangarhar med lammelsesdebut i august og september. Vaccineafledte tilfælde opdateret efter samme side: type 2 DR Congo 77, Nigeria 36, Tchad 9, Mali 5, Sydsudan 4 og Togo 3, type 1 Sydsudan 18 og Madagaskar 4, type 3 Nigeria 14 og Tchad 1. Somalia (pr. 14. oktober) og Den Centralafrikanske Republik (pr. 7. oktober) står med deres gamle datoer, fordi siden ikke nævner dem i denne uge. GPEI har fortsat ikke Pakistans syvende tilfælde med, så Pakistan står med 6 efter GPEI pr. 14. oktober og 7 efter landets polioprogram pr. 19. oktober. Nyt punkt i forløbet, `cases` og `extra` opdateret. Tallene er læst i sidens rå tekst.
+- `kolera-ye`: nyt punkt 22. oktober. WHO EMRO skriver, at mistænkte tilfælde af kolera er faldet de seneste uger, men at den begrænsede adgang til sundhedsvæsenet kan påvirke indberetningen i Taiz, og at over 256.000 mennesker er fordrevet fra 1. august til 19. oktober: https://www.emro.who.int/media/news/fuel-and-medical-supply-shortages-threaten-lifesaving-health-services-in-yemens-taiz-as-access-remains-severely-restricted.html Kilden er tilføjet i `src`, og `gap` nævner, at der ingen nye tal er. `cases` er uændret. Læst i sidens rå tekst.
+
+**Nye**
+- Ingen. Set, men ikke taget med: krim-kongo-blødningsfeber i Afghanistan, 1.669 mistænkte tilfælde og 71 dødsfald fra januar til september efter WHO, gengivet af NaTHNaC 22. oktober. Sygdommen er endemisk i Afghanistan, og ingen myndighed kalder årets tal usædvanlige.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne, heraf i Asien og Mellemøsten `h5n1-kh`, `h5n1-bd`, `h9n2-cn`, `sfts-th`, `altnv-cn`, `pest-irkutsk`, `maesling-bd`, `dengue-bd`, `dengue-asien`, `mers-sa` og `mpox-hk`.
+
+**Usikkert**
+- `dengue-asien`: Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet, direkte (forbindelsen afbrudt) eller med hentningsværktøjet (afvist af sidens robots.txt). Tallene står fortsat pr. 12. oktober.
+- `polio`: GPEI's side nævner ikke Pakistans tal i denne uge, så Pakistan står med GPEI's tal pr. 14. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 867b45b.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 22. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
