@@ -79,6 +79,34 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (ny meddelelse 23. oktober, indarbejdet) og dengue (dashboardet pr. 23. oktober, indarbejdet), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 var endnu ikke ude kl. 17.25), UKHSA, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Scriptet kunne ikke hente Sri Lankas side og NaTHNaC's RSS (HTTP 307). DR Congos situationsrapporter gennem insp.cd's medieliste (159 er fortsat den nyeste), ECDC's ebolaside (pr. 21. oktober med tal til 20. oktober, de samme som på siden), WHO AFRO (ingen ugebulletin nyere end uge 41 fundet), Africa CDC (ingen ny ugerapport fundet, kun pressebriefinger gengivet af medier), PAHO (opdateringen om dengue og chikungunya 20. oktober er indarbejdet, intet nyere), US CDC's mæslingeside (fortsat pr. 15. oktober, opdateret 16. oktober) og søgninger efter nyt om ebola i Kenya og Nigeria.
+
+**Ændret**
+- `maesling-bd`: 218.870 mistænkte og 23.273 bekræftede tilfælde, 1.110 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 23. oktober: https://dghs.gov.bd/pages/press-releases/6adb514d582bde01e1b1b8ab 1.110 nye mistænkte og 25 nye bekræftede tilfælde på et døgn og 7 dødsfald blandt mistænkte: 3 i Sylhet-divisionen, 2 i Dhaka-divisionen og 1 hver i Chattogram- og Mymensingh-divisionen. 194.633 indlagt og 186.798 udskrevet siden 15. marts. Nyt punkt i forløbet og i talserien (dødstallet 1.214 er de to rækker lagt sammen efter reglen), `cases`, `extra` og `src` opdateret. Punktet 22. oktober bærer selv den gamle adresse. Tallene er læst i PDF-bilaget som tekst og som billede af begge sider.
+- `dengue-bd`: 119.801 indlagte og 371 dødsfald i 2026, DGHS pr. 23. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.299 nye indlagte og 3 nye dødsfald på et døgn, uge 42 har indtil videre 9.489 tilfælde og 29 dødsfald. Nyt punkt i forløbet og i talserien, `cases` opdateret. Læst i scriptets udtræk og i sidens rå tekst.
+- `ebola-ke`: nyt punkt 23. oktober. Generaldirektøren for sundhed Patrick Amoth oplyser på responsens dag 17, at der fortsat er 9 bekræftede tilfælde, heriblandt det første tilfælde, der døde 5. oktober, at alle 135 kontakter er opsporet, at de otte patienter i behandling er stabile, og at de første kontakter løslades fra karantæne 25. oktober, gengivet af The Star, medie: https://www.the-star.co.ke/news/2026-10-23-ebola-all-135-contacts-traced-as-kenya-reports-no-new-cases `cases` samler nu tilfælde og dødsfald efter samme udmelding, `extra`, `gap` og `src` opdateret. Læst i sidens rå tekst.
+- `ebola-ng`: nyt punkt 23. oktober. Schweiz' udenrigsministerium oplyser, at patienten er hustru til en ansat ved Schweiz' ambassade i Abuja, at parret rejste i Uganda, men ingen af dem i DR Congo, at hendes mand er isoleret uden symptomer, og at Schweiz overvejer at hente hende hjem, gengivet af AFP via Vanguard, medie: https://www.vanguardngr.com/2026/10/ebola-patient-in-nigeria-is-swiss-had-not-visited-drc-foreign-ministry/ og Reuters via Arab News, medie: https://www.arabnews.pk/world/nigeria-ebola-patient-did-not-travel-to-congo-swiss-government-says-3005034 Reuters skriver desuden, at WHO og Africa CDC 22. oktober ikke havde bekræftede oplysninger om, at hun var i DR Congo, og at Ugandas regeringstalsmand siger, at Uganda ingen tilfælde har. `gap` beskriver nu modstriden med Ugandas sundhedsministerium og de forskellige oplysninger om nationalitet. Begge kilder tilføjet i `src`. `cases` er uændret. Læst i sidernes rå tekst.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 42 hændelser uden nyt i kilderne.
+- `ebola-drc`: situationsrapport 160 findes endnu ikke i insp.cd's medieliste. `maesling-us`: US CDC's side står fortsat pr. 15. oktober. `maesling-am`, `chik-am`, `myiasis-am`: intet nyt fra PAHO efter 20. oktober.
+
+**Usikkert**
+- `ebola-ng`: patientens tilstand gengives forskelligt i nigerianske medier (svigt af flere organer efter NCDC 21. oktober, tegn på bedring i en henvisning til en anden artikel hos Vanguard). Ingen ændring i tilstanden på siden, før NCDC's egen udmelding findes. Nationaliteten og rejseruten er uafklaret og står i `gap`.
+- `maesling-us`: US CDC's ugentlige opdatering mangler nu to dage efter det sædvanlige onsdagstal. Næste kørsel bør se efter den.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 15b371b.
+
+**Mediesporet**
+- Ingen par havde status afventer i https://globus.nicco.dk/konflikter.json (genereret 23. oktober kl. 14.23 UTC). Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 22. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
