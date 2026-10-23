@@ -2,6 +2,32 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 24. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ny DON 622 om ebola i DR Congo, Kenya og Nigeria 23. oktober, indarbejdet), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 23. oktober, står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ugeoversigten for uge 42 er læst), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. ECDC's nyheder (trusselsvurdering om ebola i Kenya og Nigeria 23. oktober, indarbejdet) og ECDC's ebolaside (tal til 20. oktober, de samme som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, fortsat kun salmonellaudbruddet og ebola, salmonellasiden uændret siden 1. oktober), DK-VET's nyheder (intet nyt efter dværgbændelorm hos ræve 7. oktober), RIVM's ebolaside (nyeste opdatering 21. oktober om Nigeria, intet nyt om `ebola-nl`) og insp.cd's medieliste (situationsrapport 159 er fortsat den nyeste). RKI's næste Epidemiologisches Bulletin kommer 29. oktober. Kvalitet: kontrollen gav ingen advarsler, heller ingen om tal i `cases` uden opgørelsesdato, så vagtplanens opgave med tre sådanne hændelser havde intet at rette.
+
+**Ændret**
+- `ebola-drc`: nyt punkt 23. oktober efter WHO DON 622: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON622 WHO bekræfter sundhedsministeriets tal pr. 20. oktober (9.704 bekræftede tilfælde og 4.687 dødsfald i 66 sundhedszoner i otte provinser), 307 af de 482 dødsfald siden 8. oktober skete i lokalsamfundet, 30.130 kontakter følges med en opfølgningsgrad på 79,7 procent mod målet på 95, og vaccineforsøget TUMAINI (fase 2/3) begyndte 23. oktober med de første deltagere i Bunia. DON 622 tilføjet i `src`. `cases` er uændret. Læst i WHO's dataudtræk som rå tekst.
+- `ebola-ke`: `cases` er nu 9 bekræftede tilfælde, heraf 1 dødsfald, ECDC pr. 23. oktober: https://www.ecdc.europa.eu/en/news-events/importation-ebola-cases-kenya-and-nigeria-ecdc-assesses-threat i stedet for mediegengivelsen. To nye punkter 23. oktober: WHO DON 622 (de otte sekundære tilfælde er fire familiemedlemmer og fire sundheds- og plejearbejdere, alle i karantæne ved symptomdebut, og 709.093 rejsende er screenet pr. 22. oktober) og ECDC's trusselsvurdering (risikoen lav for rejsende fra Europa til de berørte områder og meget lav for befolkningen i EU og EØS). Første sætning i `gap` er tilpasset, og begge kilder er tilføjet i `src`. Læst i sidernes rå tekst.
+- `ebola-ng`: to nye punkter 23. oktober: WHO DON 622 (44 kontakter følges pr. 20. oktober, smittekilden og rejsen undersøges) og ECDC's trusselsvurdering (risikoen lav for rejsende fra Europa, ingen rejserestriktioner). Begge kilder tilføjet i `src`. `cases` og `gap` er uændrede.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne.
+- `wnv-eu`, `dengue-eu`, `chik-fr`, `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de`, `sindbis-de` og `shamonda-fr`: ingen ny ugerapport fra ECDC. `ebola-nl`: intet nyt hos RIVM, lukkes efter planen 21. november. `h5n1-dk`, `salmonella-dk` og `botulisme-dk`: intet nyt fra DK-VET og Statens Serum Institut.
+
+**Usikkert**
+- ECDC's ugerapport for uge 43 var ikke udkommet kl. 00.20 lørdag, selv om den normalt kommer fredag. Både PDF'en og rapportens side gav HTTP 404, og oversigten viser uge 42 som den nyeste. Næste kørsel bør se efter den.
+- `ebola-ke`: WHO's DON 622 opgør Kenyas tal pr. 20. oktober og ECDC pr. 23. oktober. De er ens, så `cases` følger den nyeste.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 37f4f1a.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 23. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
