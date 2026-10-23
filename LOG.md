@@ -26,6 +26,37 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen nye efter DON'en om MERS 15. oktober), DGHS' mæslinger (meddelelsen 22. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 22. oktober, står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42 (uge 43 kommer i dag), UKHSA (ugeoversigten for uge 42 er læst af kl. 17-kørslen 22. oktober), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte i dag og i går). Scriptet kunne ikke hente Sri Lankas side og NaTHNaC's RSS (HTTP 307, og direkte gav det et tomt svar). DR Congos situationsrapporter gennem insp.cd's medieliste (159 er fortsat den nyeste), ECDC's ebolaside (tal pr. 19. oktober, ældre end dem på siden) og ECDC's nyheder (intet efter Shamonda-virus 22. oktober), Africa CDC's ugerapport (den nyeste på siden er udgaven 11. oktober, som er læst), PAHO (myiasis 16. oktober og dengue og chikungunya 20. oktober er indarbejdet, ingen ny situationsrapport om mæslinger), US CDC's mæslingeside (fortsat pr. 15. oktober, opdateret 16. oktober), Pennsylvanias sundhedsmyndighed, Floridas ugerapport uge 41, WHO's mpox-situationsrapporter (nummer 70 findes fortsat ikke), GPEI og søgninger efter nyt om ebola i Kenya og Nigeria.
+
+**Ændret**
+- `dengue-fl`: 425 lokalt erhvervede tilfælde i 11 counties, Floridas sundhedsmyndighed pr. 17. oktober, ugerapport uge 41: https://www.floridahealth.gov/wp-content/uploads/2026/10/fl-arbovirus-report-w41-2026.pdf 57 nye på en uge. Hillsborough 346, Pinellas 51, Miami-Dade 9, Orange 8, Pasco 4 og Citrus 2, mens Brevard, Broward, Manatee, Palm Beach og Polk har ét hver. Brevard, Citrus og Manatee er nye. Nyt punkt i forløbet og i talserien, `cases` og `extra` opdateret, og ugerapport uge 40 er erstattet af uge 41 i `src`. Punktet 10. oktober bærer selv adressen til uge 40. Tallene er læst i PDF'ens tekst og som billede af første side. Outbreak News Today nævner 22. oktober et humant tilfælde af østlig hesteencephalitis (EEE) i Florida. Ugerapporten har ét humant fund i 2026, men ingen i uge 41, og det er ikke en del af denguehændelsen.
+- `maesling-us`: Pennsylvania 1.317 tilfælde i 43 counties, 251 indlagte og 5 bekræftede mæslingeassocierede dødsfald, delstatens sundhedsmyndighed 21. oktober: https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-nurses-surpass-10-000-mmr-vaccines-admin 31 nye tilfælde siden 19. oktober, og Washington County er kommet til. Nyt punkt i forløbet, `extra` og `src` opdateret. Dødsfaldet i Franklin County undersøges fortsat af delstaten (CIDRAP 20. oktober). `cases` er uændret, fordi US CDC's landstal fortsat er pr. 15. oktober.
+
+**Nye**
+- Ingen. Set, men ikke taget med: syfilis i Costa Rica (Outbreak News Today 22. oktober), som ikke er et udbrud af den slags, siden viser, og mæslinger i Kentucky med 174 tilfælde (Outbreak News Today 19. oktober), som hører under landstallet i `maesling-us`.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- Rundtur, slået op uden nyt: `kolera` 15 dage, `difteri-ng` 29, `mpox` 10, `anthrax-zm` 25, `pest-irkutsk` 11, `ebola-nl` 13, `cre-eu` 21, `h5n1-dk` 22, `salmonella-dk` 22, `h5n1-kh` 14, `altnv-cn` 25, `dengue-asien` 11, `kolera-ye` 10, `maesling-am` 20, `h5n1-us` 15, `mpox-mo` 23, `cyclospora-us` 18, `salmonella-eu` 14 og `gul-feber-gh` 14 dage siden seneste punkt. `kolera`, `cre-eu` og `salmonella-eu` venter desuden på ECDC's ugerapport i dag. De nyeste fund om `gul-feber-gh` (sundhedsministerens pressemøde 9. oktober), `pest-irkutsk` (Bernama 9. oktober) og `h5n1-us` (CIDRAP 8. oktober) står allerede på siden.
+- `ebola-drc`, `ebola-ke` og `ebola-ng`: intet nyere end tallene på siden. Situationsrapport 160 er ikke i insp.cd's medieliste.
+
+**Usikkert**
+- `difteri-ng`: 29 dage uden nyt punkt. NCDC's seneste situationsrapporter, som søgningen gav, er fra januar, og intet nyere end WHO AFRO's tal pr. uge 34 er fundet. Næste kørsel får kontrollens advarsel om 30 dage og skal tage stilling til `live`.
+- `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Hører til kl. 11-kørslen.
+- NaTHNaC's RSS https://travelhealthpro.org.uk/rss-outbreaks.php gav HTTP 307 i scriptet og et tomt svar direkte, og hentningsværktøjets opslag af https://travelhealthpro.org.uk/outbreaks blev ikke godkendt i tide. NaTHNaC er derfor ikke læst i denne kørsel.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit ba2e6d7.
+
+**Mediesporet**
+- To par havde status afventer i https://globus.nicco.dk/konflikter.json (genereret 23. oktober kl. 02.25 UTC).
+- Afvist: `FR-US`. Artiklerne handler om Donald Trumps udtalelser om urolighederne i Frankrig og om en retssag i Massachusetts, ikke om kampe mellem landenes styrker (The Guardian 19. oktober: https://www.theguardian.com/us-news/2026/oct/19/trump-france-protests og RNZ 22. oktober: https://www.rnz.co.nz/news/world/2093680/looksmaxxing-influencer-clavicular-brings-dog-to-court-pleads-not-guilty-to-2025-rape-in-massachusetts).
+- Afvist: `IL>PS` (militær støtte). Artiklerne handler om bosættervold på Vestbredden og en diplomatisk strid mellem Storbritannien og Israel, ikke om levering af våben, tropper eller udstyr fra Israel til Palæstina (The Daily Star 22. oktober: https://www.thedailystar.net/opinion/views/news/israeli-settler-terror-thrives-impunity-and-silence-4305016 og Anadolu 7. oktober: https://aa.com.tr/en/middle-east/explainer-how-a-dispute-over-illegal-israeli-settlements-led-to-a-britain-israel-diplomatic-crisis/4081445).
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 22. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
