@@ -61,6 +61,33 @@
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste og står på siden, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 23. oktober, står på siden), WHO SEARO nummer 21 (læst i PDF'en: Bangladeshs tal er ældre end DGHS' egne på siden, og bulletinen har ingen tal for Sri Lanka efter uge 37), WHO WPRO nummer 1066 (nummer 1067 med datoerne 22., 23. og 24. oktober gav HTTP 404), ECDC uge 42 (uge 43 er fortsat ikke i scriptets udtræk), UKHSA, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (CHP 23. oktober: to importerede denguetilfælde, ingen lokale, intet til siden). WHO EMRO's nyheder (intet nyere end meddelelsen om Taiz, som står på siden) og søgninger efter nye humane tilfælde af fugleinfluenza i Asien og efter Sri Lankas denguetal uden fund. Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet eller direkte (forbindelsen afbrudt), så `dengue-asien` står fortsat pr. 12. oktober. NaTHNaC's RSS gav HTTP 307 i scriptet. Repoet arbejdes fortsat gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, også i WHO's dataudtræk kl. 17.23), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste, også på DGHS' liste over pressemeddelelser) og dengue (dashboardet pr. 24. oktober, indarbejdet), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne ikke hente Sri Lankas side og NaTHNaC's RSS (HTTP 307). DR Congos situationsrapporter gennem insp.cd's medieliste (160 og 161 er nye, indarbejdet), US CDC's mæslingeside (opdateret 23. oktober, indarbejdet), WHO AFRO's oversigt over udbrud og nødsituationer (ingen ugebulletin nyere end uge 41 fundet, seneste poster 23. og 24. oktober handler om polio, malaria og vaccination), Africa CDC (ingen ny ugerapport fundet), PAHO (nyheden om dengue og chikungunya 21. oktober er den nyeste og står på siden), https://globus.nicco.dk/konflikter.json og søgninger efter nyt om ebola i Kenya og Nigeria uden fund efter 23. oktober.
+
+**Ændret**
+- `ebola-drc`: 9.816 bekræftede tilfælde og 4.757 dødsfald, DR Congos sundhedsministerium pr. 22. oktober, situationsrapport 161: https://insp.cd/wp-content/uploads/2026/10/SITREP_MVEBDB_161_22_10_2026.pdf 51 nye tilfælde på et døgn (27 i Ituri, 20 i Nordkivu og 4 i Haut-Uélé) og 30 nye dødsfald. To nye punkter i forløbet og i talserien: situationsrapport 160 pr. 21. oktober (9.765 og 4.727): https://insp.cd/wp-content/uploads/2026/10/SITREP_MVEBDB_160_21_10_2026.pdf og situationsrapport 161. `cases` og `extra` opdateret, og situationsrapport 159 er erstattet af 161 i `src`. Punktet 21. oktober bærer selv adressen til 159. Tallene er læst i PDF'ernes tekst og som billede af første side.
+- `maesling-us`: 4.588 bekræftede tilfælde i 2026, heraf 4.570 meldt af 47 jurisdiktioner, og 43 udbrud, US CDC pr. 22. oktober (siden opdateret 23. oktober): https://www.cdc.gov/measles/data-research/index.html 96 procent af tilfældene (4.404 af 4.588) hører til et udbrud, og 18 er hos internationale besøgende. Nyt punkt i forløbet og i talserien, `cases` og `extra` opdateret. Siden er læst to gange gennem hentningsværktøjet, fordi den afviser direkte opslag med HTTP 403. Tallet stemmer med CIDRAP's gengivelse, som allerede står på siden.
+- `dengue-bd`: 121.699 indlagte og 377 dødsfald i 2026, DGHS pr. 24. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 1.898 nye indlagte og 6 nye dødsfald på et døgn, uge 42 har indtil videre 11.387 tilfælde og 35 dødsfald. Nyt punkt i forløbet og i talserien, `cases` opdateret. Læst i scriptets udtræk og i sidens rå tekst.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne, heraf i Afrika og Amerika `ebola-ke`, `ebola-ng`, `kolera`, `difteri-ng`, `difteri-afro`, `anthrax-zm`, `gul-feber-gh`, `mpox`, `polio`, `dengue-fl`, `maesling-am`, `h5n1-us`, `cyclospora-us` og `myiasis-am`.
+- `maesling-bd`: DGHS' meddelelse for 24. oktober var ikke ude kl. 17.25. Tallene står pr. 23. oktober.
+
+**Usikkert**
+- `ebola-drc`: situationsrapport 160 melder 71 nye tilfælde og 41 nye dødsfald, men det samlede tal (9.765 og 4.727) er kun 61 tilfælde og 40 dødsfald højere end i situationsrapport 159. Forskellen ligger i Nordkivu, som står med 2.163 tilfælde mod 2.146 plus 27 nye. Rapporten forklarer det ikke. Tallene står, som rapporten skriver dem, og forskellen er nævnt i `extra`.
+- `difteri-ng`: 30 dage siden seneste punkt 24. september. Kontrollen advarer fra i morgen, og kl. 00- eller 05-kørslen skal tage stilling til `live`.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 40e9e1f.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (genereret 24. oktober kl. 14.23 UTC). Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 23. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
