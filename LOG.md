@@ -28,6 +28,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er den nyeste og indarbejdet af kl. 00-kørslen), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 23. oktober, står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066 (nummer 1067 med datoen 23. oktober gav HTTP 404), ECDC uge 42, UKHSA (ugeoversigten for uge 42 er læst), NaTHNaC (læst direkte i RSS'en), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte til siden). Sri Lankas side kunne ikke hentes af scriptet. ECDC's oversigt over ugerapporter og ebolasiden (tal til 20. oktober og Kenya pr. 22. oktober, de samme som på siden), insp.cd's medieliste (situationsrapport 159 er fortsat den nyeste), WHO AFRO's ugebulletiner (uge 41 er fortsat den nyeste), PAHO (opdateringen om dengue og chikungunya 20. oktober er indarbejdet, intet nyere), US CDC's mæslingeside (viste fortsat tallet pr. 15. oktober), WHO's mpox-situationsrapporter (nummer 70 findes ikke), https://globus.nicco.dk/konflikter.json og søgninger efter nyt om ebola i Kenya og Nigeria, kolera i Zambia, difteri i Nigeria og gul feber i Ghana. Statens Serum Institut og DK-VET er læst af kl. 00-kørslen og ikke igen.
+
+**Ændret**
+- `maesling-us`: nyt punkt 23. oktober. CIDRAP gengiver US CDC's seneste opdatering med 4.588 bekræftede tilfælde i 2026, 178 nye på en uge og 43 udbrud: https://www.cidrap.umn.edu/measles/us-measles-cases-hit-4588-more-twice-last-year-s-total Kilden er tilføjet i `src`. `cases` og talserien er uændrede, fordi US CDC's egen side https://www.cdc.gov/measles/data-research/index.html fortsat viste 4.410 pr. 15. oktober (opdateret 16. oktober), da den blev læst gennem hentningsværktøjet. Direkte gav siden HTTP 403. Tallene er læst i CIDRAP's rå tekst.
+- `kolera`: nyt punkt 21. oktober. NaTHNaC melder 1.207 tilfælde, heraf 207 bekræftede, og 25 dødsfald i Zambia i 16 distrikter i seks provinser siden 28. juli, flest i Lusaka (658) og Chibombo (258): https://travelhealthpro.org.uk/outbreaks Læst to gange, i scriptets udtræk og direkte i RSS'en. `cases`, `gap` og `src` er uændrede.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- Rundtur, slået op uden nyt: `difteri-ng` 30 dage, `anthrax-zm` 26, `altnv-cn` 26, `mpox-mo` 24, `h5n1-dk` 23, `salmonella-dk` 23, `cre-eu` 22, `maesling-am` 21, `cyclospora-us` 19, `h5n1-us` 16, `h5n1-kh` 15, `salmonella-eu` 15, `gul-feber-gh` 15, `ebola-nl` 14, `pest-irkutsk` 12, `dengue-asien` 12 og `mpox` 11 dage siden seneste punkt. De fleste er slået op i kilderne i går kl. 05.20 og i dag i de samlede kilder ovenfor. `cre-eu` og `salmonella-eu` venter på ECDC's ugerapport for uge 43.
+- Mediesporet: ingen par med status afventer i https://globus.nicco.dk/konflikter.json (genereret 24. oktober kl. 02.24 UTC). Intet godkendt eller afvist.
+
+**Usikkert**
+- `maesling-us`: US CDC's eget tal på 4.588 kunne ikke læses på myndighedens side. Næste kørsel bør læse siden igen og opdatere `cases` og talserien, når tallet står dér.
+- `gul-feber-gh`: NaTHNaC skriver 22. oktober 43 mistænkte tilfælde, heraf tre bekræftede dødsfald, i Upper West Region pr. 11. oktober og en top i midten af september. Sundhedsministeren oplyste 88 mistænkte i regionen 9. oktober (Graphic Online: https://www.graphic.com.gh/news/health/yellow-fever-situation-under-control-health-minister.html). Tallene er ikke forenelige, og NaTHNaC's oprindelige kilde er ikke nævnt, så hændelsen er ikke ændret.
+- `kolera`: Zambias egen myndighed (ZNPHI) er fortsat ikke fundet med et tal fra oktober. Forskellen mellem WHO's og NaTHNaC's datoer for udbruddets start i `gap` står uafklaret.
+- `difteri-ng`: 30 dage uden nyt punkt. Søgningen gav intet nyere end WHO AFRO's tal pr. uge 34 og NCDC's udtalelse 28. august. `live` er ikke ændret, fordi grænsen i reglen er over 30 dage, og fordi udbruddet efter alle kilder er i gang. Kontrollen advarer fra i morgen, og kørslen skal da tage stilling.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 lørdag. PDF'en gav HTTP 404, og oversigten viser uge 42 som den nyeste.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 92008f3.
+
+**Mediesporet**
+- Ingen par afventede tjek. Godkendt: ingen. Afvist: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 23. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
