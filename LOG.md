@@ -58,6 +58,9 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste og står på siden, dagens er normalt ikke ude kl. 11) og dengue (dashboardet pr. 23. oktober, står på siden), WHO SEARO nummer 21 (læst i PDF'en: Bangladeshs tal er ældre end DGHS' egne på siden, og bulletinen har ingen tal for Sri Lanka efter uge 37), WHO WPRO nummer 1066 (nummer 1067 med datoerne 22., 23. og 24. oktober gav HTTP 404), ECDC uge 42 (uge 43 er fortsat ikke i scriptets udtræk), UKHSA, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (CHP 23. oktober: to importerede denguetilfælde, ingen lokale, intet til siden). WHO EMRO's nyheder (intet nyere end meddelelsen om Taiz, som står på siden) og søgninger efter nye humane tilfælde af fugleinfluenza i Asien og efter Sri Lankas denguetal uden fund. Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet eller direkte (forbindelsen afbrudt), så `dengue-asien` står fortsat pr. 12. oktober. NaTHNaC's RSS gav HTTP 307 i scriptet. Repoet arbejdes fortsat gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
+
 ## 23. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
