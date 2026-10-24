@@ -2,6 +2,30 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 25. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 24. oktober, står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ugeoversigten 22. oktober for uge 42 er læst af tidligere kørsler), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Sri Lankas side kunne ikke hentes af scriptet. ECDC's oversigt over ugerapporter og nyheder (intet efter trusselsvurderingen om ebola i Kenya og Nigeria 23. oktober), ECDC's ebolaside (tal pr. 20. oktober og Kenya pr. 22. oktober, de samme som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, fortsat salmonellaudbruddet og ebola; nyheden om Campylobacter i dansk kylling på siden er fra 26. september 2025 og ikke et aktuelt udbrud), DK-VET's nyheder (intet nyt efter dværgbændelorm hos ræve), RIVM's ebolaside (senest 21. oktober om Nigeria, intet nyt om `ebola-nl`). RKI's næste Epidemiologisches Bulletin kommer 29. oktober. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, så vagtplanens opgave med tre sådanne hændelser havde intet at rette. Én advarsel om `difteri-ng`, se Usikkert.
+
+**Ændret**
+- Ingen hændelser. Kun `DATA_DATO` og `DATA_TID`.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- `wnv-eu`, `dengue-eu`, `chik-fr`, `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de`, `sindbis-de` og `shamonda-fr`: ingen ny ugerapport fra ECDC. `ebola-nl`: intet nyt hos RIVM, lukkes efter planen 21. november. `h5n1-dk`, `salmonella-dk` og `botulisme-dk`: intet nyt fra DK-VET og Statens Serum Institut.
+
+**Usikkert**
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 00.20 søndag. PDF'en og de forventede adresser for rapportens side gav HTTP 404, og oversigten viser uge 42 som den nyeste.
+- `difteri-ng`: kontrollen advarer om 31 dage uden nyt punkt (seneste 24. september). Søgninger efter nyt fra NCDC og Plateau State gav intet nyere end 24. september; de øvrige fund var ældre artikler fra 2024 og 2025. `live` er ikke sat til `false`, fordi WHO AFRO's ugebulletin for uge 41, udgivet i oktober, beskriver udbruddet som igangværende og det største i regionen i år, så kilderne ikke er tavse om, at det er i gang, kun om nye tal. Lagt til ejerens afgørelse i GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 855e67d.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `difteri-ng`: skal `live` sættes til `false` efter over 30 dage uden nye tal, når WHO AFRO's seneste bulletin beskriver udbruddet som igangværende?
+
 ## 24. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
