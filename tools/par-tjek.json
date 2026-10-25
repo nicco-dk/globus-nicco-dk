@@ -74,6 +74,10 @@
     "FR-US": {"dato": "2026-10-23", "grund": "Artiklerne handler om Donald Trumps udtalelser om urolighederne i Frankrig og om en retssag i Massachusetts, ikke om kampe eller angreb mellem franske og amerikanske styrker."},
     "IL>PS": {"dato": "2026-10-23", "grund": "Artiklerne handler om bosættervold på Vestbredden og en diplomatisk strid mellem Storbritannien og Israel, ikke om levering af våben, tropper eller militært udstyr fra Israel til Palæstina."},
     "FR-IT": {"dato": "2026-10-25", "grund": "Artiklerne handler om voldelige demonstrationer og sammenstød mellem politi og demonstranter i Frankrig og Italien, ikke om kampe mellem landenes styrker."},
-    "EG>SA": {"dato": "2026-10-25", "grund": "Artiklerne beskriver, at Egypten har lovet Saudi-Arabien al nødvendig støtte og overvejer at sende styrker, og at parlamentets afstemning er udskudt. Kun ét medie skriver, at egyptiske fly er landet i Saudi-Arabien, så to medier beskriver ikke levering af tropper eller udstyr."}
+    "EG>SA": {"dato": "2026-10-25", "grund": "Artiklerne beskriver, at Egypten har lovet Saudi-Arabien al nødvendig støtte og overvejer at sende styrker, og at parlamentets afstemning er udskudt. Kun ét medie skriver, at egyptiske fly er landet i Saudi-Arabien, så to medier beskriver ikke levering af tropper eller udstyr."},
+    "CN-KP": {"dato": "2026-10-25", "grund": "Artiklerne handler om Kim Jong-uns besøg i Kina, et besøg ved et krigsmindesmærke og indvielsen af en ny grænsebro, ikke om kampe mellem landenes styrker."},
+    "GR-JO": {"dato": "2026-10-25", "grund": "Artiklerne handler om skyderiet ved en kirkebegravelse i Jordan, som myndighederne tilskriver ekstremistiske gerningsmænd. Grækenland er ikke part i et angreb."},
+    "IQ-IR": {"dato": "2026-10-25", "grund": "Artiklerne handler om droneangreb på iransk-kurdiske oppositionslejre i det irakiske Kurdistan, hvor angriberen ikke er identificeret, og om politisk strid mellem landene, ikke om kampe mellem Iraks og Irans styrker."},
+    "ET-KE": {"dato": "2026-10-25", "grund": "Artiklerne handler om etniske sammenstød i Moyale i Etiopien, hvor tusinder er flygtet til Kenya, og Kenyas hær er sendt til grænsen. De beskriver ikke kampe mellem landenes styrker."}
   }
 }

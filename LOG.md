@@ -80,6 +80,35 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 25. oktober er fortsat den nyeste og indarbejdet af kl. 11-kørslen), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. DR Congos situationsrapporter gennem insp.cd's medieliste (en ny rapport pr. 23. oktober, indarbejdet), WHO AFRO (ingen ugebulletin nyere end uge 41 fundet), Africa CDC (ingen ny ugerapport fundet), PAHO (nyheden om dengue og chikungunya 21. oktober er fortsat den nyeste og står på siden), US CDC's mæslingeside (svarer, opdateres om onsdagen, tallet pr. 22. oktober står på siden), Floridas ugerapport for uge 42 (HTTP 404, ikke udkommet), https://globus.nicco.dk/konflikter.json (genereret 25. oktober kl. 15.24 UTC) og søgninger efter nyt om ebola i Kenya og Nigeria uden fund efter 23. oktober.
+
+**Ændret**
+- `ebola-drc`: 9.876 bekræftede tilfælde og 4.803 dødsfald, DR Congos sundhedsministerium pr. 23. oktober, situationsrapport 162: https://insp.cd/wp-content/uploads/2026/10/SITREP_MVEBDB_163_23_10_2026.pdf 60 nye tilfælde på et døgn (29 i Nordkivu, 28 i Ituri, 2 i Haut-Uélé og 1 i Tshopo) og 46 nye dødsfald, heraf 31 i lokalsamfundet og 15 på behandlingscentre. 1.018 isolerede og 2.646 raske. Nyt punkt i forløbet (24. oktober, rapportens udgivelsesdato) og i talserien (23. oktober). `cases` og `extra` opdateret, og situationsrapport 161 er erstattet af den nye i `src`. Punktet 23. oktober bærer selv adressen til 161. Tallene er læst i PDF'ens tekst og som billede af første side, og provinsernes tal summer til de samlede.
+
+**Nye**
+- Ingen. Outbreak News Today melder et salmonellaudbrud på et hospital i Escazú i Costa Rica efter en alarm fra USA's ambassade. Det er ikke taget med, fordi ingen myndighedskilde er læst, og udbruddet er afgrænset til ét hospital.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne, heraf i Afrika og Amerika `ebola-ke`, `ebola-ng`, `kolera`, `difteri-afro`, `anthrax-zm`, `gul-feber-gh`, `myiasis-am`, `maesling-us`, `maesling-am`, `dengue-fl`, `chik-am`, `h5n1-us`, `h5n1-wa`, `mpox-mo` og `cyclospora-us`.
+
+**Usikkert**
+- `ebola-drc`: rapporten pr. 23. oktober har filnavnet 163, men kalder sig selv SitRep nummer 162 (161 var pr. 22. oktober). Kørslen kalder den 162 efter rapporten selv. Resuméet skriver desuden "Au 22 octobre" om de samlede tal, mens tabellen og overskriften siger 23. oktober, og tabellens bundlinje siger 63 af 167 sundhedszoner mod 66 af 178 i resuméet. Tallene stemmer med 161 plus døgnets nye, så datoen 23. oktober er brugt.
+- `difteri-ng`: kontrollen advarer fortsat om 31 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- ECDC's ugerapport for uge 43 er fortsat ikke i scriptets udtræk.
+
+**Mediesporet**
+- Afvist `CN-KP`: Kim Jong-uns besøg i Kina og indvielse af en grænsebro, fx Reuters: https://www.reuters.com/business/aerospace-defense/north-koreas-kim-jong-un-returns-china-after-war-memorial-visit-state-media-says-2026-10-24/ og NBC News: https://www.nbcnews.com/world/north-korea/north-korean-leader-kim-jong-un-visits-china-inaugurate-new-cross-bord-rcna605386
+- Afvist `GR-JO`: skyderiet ved en kirkebegravelse i Jordan, ikke kampe mellem landene, fx The Guardian: https://www.theguardian.com/world/2026/oct/24/seven-killed-and-40-injured-after-gunmen-open-fire-at-church-funeral-in-jordan og Al Jazeera: https://www.aljazeera.com/news/2026/10/24/jordans-king-abdullah-orders-firm-response-after-deadly-church-attack
+- Afvist `IQ-IR`: droneangreb på iransk-kurdiske oppositionslejre i det irakiske Kurdistan uden identificeret angriber, fx Shafaq News: https://shafaq.com/en/Kurdistan/Drones-strike-Iranian-Kurdish-opposition-camp-near-Erbil og Reuters gengivet af Newsquawk: https://www.newsquawk.com/headlines/drone-attack-on-iranian-kurdish-opposition-camp-west-of-iraqs-erbil-according-to-reports samt politisk strid (The National: https://www.thenationalnews.com/news/mena/2026/10/23/iran-deliberately-undermining-iraqs-security-says-al-zaidi-adviser/). Middle East Eye's artikel kunne ikke hentes.
+- Afvist `ET-KE`: etniske sammenstød i Moyale og flygtninge til Kenya, fx Al Jazeera: https://www.aljazeera.com/news/2026/10/22/hundreds-of-ethiopians-cross-into-kenya-to-flee-regional-fighting og The Standard: https://www.standardmedia.co.ke/rift-valley/article/2001560704/army-deployed-in-moyale-as-ethiopians-flee-tribal-violence-seek-refuge
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 24. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
