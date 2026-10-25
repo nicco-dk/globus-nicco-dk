@@ -57,6 +57,29 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (to nye meddelelser 24. og 25. oktober, indarbejdet) og dengue (dashboardet pr. 25. oktober, indarbejdet), WHO SEARO nummer 21 (læst af tidligere kørsler, Bangladeshs tal er ældre end DGHS' egne), WHO WPRO nummer 1066 (nummer 1067 med datoerne 22., 23. og 24. oktober gav HTTP 404), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte i dag og i går). WHO EMRO's nyheder (meddelelserne om kolera i Yemen og Taiz står på siden, intet nyere fundet) og søgninger efter nye humane tilfælde af fugleinfluenza og Nipah i Asien og efter Sri Lankas denguetal uden nyt fund.
+
+**Ændret**
+- `maesling-bd`: 221.164 mistænkte og 23.400 bekræftede tilfælde, 1.123 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 25. oktober: https://dghs.gov.bd/pages/press-releases/6addcfd3582bde01e1b26036 To nye punkter i forløbet og i talserien: 24. oktober (219.884 mistænkte, 23.324 bekræftede, 1.118 dødsfald blandt mistænkte, 8 nye dødsfald blandt mistænkte, heraf 3 i Dhaka-divisionen, alle i Dhaka-distriktet): https://dghs.gov.bd/pages/press-releases/6add8808ffd11fcb4bddc6db og 25. oktober (1.280 nye mistænkte, 76 nye bekræftede og 5 dødsfald blandt mistænkte). `cases` og `extra` opdateret (indlagte 196.703 og udskrevne 188.674 pr. 25. oktober), og meddelelsen 25. oktober har erstattet 23. oktober i `src`. Punktet 23. oktober bærer selv sin adresse. Dødstallet i grafen er de to rækker lagt sammen (1.222 og 1.227), som `extra` forklarer. Tallene er læst i PDF-bilagenes tekst og som billede af første side.
+- `dengue-bd`: 123.948 indlagte og 384 dødsfald i 2026, DGHS pr. 25. oktober: https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php 2.249 nye indlagte og 7 nye dødsfald på et døgn, og uge 43 har indtil videre 2.249 tilfælde og 7 dødsfald. Nyt punkt i forløbet og i talserien, `cases` opdateret. Læst i scriptets udtræk og i sidens rå tekst.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne, heraf i Asien og Mellemøsten `dengue-asien`, `h5n1-kh`, `pest-irkutsk`, `altnv-cn`, `mers-sa` og `kolera-ye`.
+
+**Usikkert**
+- `dengue-asien`: Sri Lankas dengueside https://www.dengue.health.gov.lk/ kunne hverken hentes af scriptet eller direkte (ingen forbindelse), og hentningsværktøjet afviste den (robots_disallowed). Tallene står fortsat pr. 12. oktober.
+- `difteri-ng`: kontrollen advarer fortsat om 31 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 6ca32e4.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 24. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

@@ -1216,7 +1216,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-10-25';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-25T05:25+01:00';
+const DATA_TID = '2026-10-25T11:25+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1738,13 +1738,13 @@ const EVENTS = [
 
 {id:'maesling-bd',place:'Alle 8 divisioner og 64 distrikter',country:'Bangladesh',region:'Asien',lat:23.685,lon:90.3563,
  disease:'Mæslinger',pathogen:'Measles morbillivirus',stage:'spredning',live:true,
- cases:'218.870 mistænkte og 23.273 bekræftede tilfælde, 1.110 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 23. oktober',
- extra:'DGHS opgør dødsfaldene i to rækker: 1.110 blandt mistænkte og 104 blandt bekræftede tilfælde pr. 23. oktober, mod 1.073 og 104 pr. 14. oktober. Til og med 9. oktober skrev DGHS selv et samlet tal, som var de to rækker lagt sammen (1.043 og 104 gav 1.147). Dødstallet i grafen er derfor de to rækker lagt sammen, også efter 9. oktober. 194.633 er blevet indlagt siden 15. marts, og 186.798 er udskrevet, DGHS pr. 23. oktober. Sundhedsmyndigheden DGHS opgjorde selv 201.625 mistænkte tilfælde pr. 8. oktober. Tallet 202.625 for samme dag i forløbet stammer fra et medie og er for højt. Udbruddet toppede 9. april med 1.829 tilfælde på én dag. Dhaka har den højeste forekomst.',
+ cases:'221.164 mistænkte og 23.400 bekræftede tilfælde, 1.123 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde, DGHS pr. 25. oktober',
+ extra:'DGHS opgør dødsfaldene i to rækker: 1.123 blandt mistænkte og 104 blandt bekræftede tilfælde pr. 25. oktober, mod 1.073 og 104 pr. 14. oktober. Til og med 9. oktober skrev DGHS selv et samlet tal, som var de to rækker lagt sammen (1.043 og 104 gav 1.147). Dødstallet i grafen er derfor de to rækker lagt sammen, også efter 9. oktober. 196.703 er blevet indlagt siden 15. marts, og 188.674 er udskrevet, DGHS pr. 25. oktober. Sundhedsmyndigheden DGHS opgjorde selv 201.625 mistænkte tilfælde pr. 8. oktober. Tallet 202.625 for samme dag i forløbet stammer fra et medie og er for højt. Udbruddet toppede 9. april med 1.829 tilfælde på én dag. Dhaka har den højeste forekomst.',
  note:'Landets dødeligste mæslingeudbrud i årtier og det største i verden i 2026. En landsdækkende kampagne med et mål på omkring 18 millioner børn mellem 6 og 59 måneder blev lanceret 20. april og nåede sit administrative måltal 13. maj.',
  nodes:[['Rangpur',89.2752,25.7439,'2026-03-15'],['Dhaka',90.4125,23.8103,'2026-04-14']],
  naeste:'Falder, når vaccinationsdækningen holder og der går 42 dage uden nye tilfælde. Kurven flader, men dødstallet stiger fortsat.',
  plabel:'Mistænkte tilfælde',
- pts:[['2026-04-14',19161,166],['2026-05-27',75913,560],['2026-10-08',201625,1144],['2026-10-09',202893,1147],['2026-10-11',205028,1162],['2026-10-12',206297,1164],['2026-10-13',207371,1170],['2026-10-14',208570,1177],['2026-10-15',209876,1181],['2026-10-16',211040,1186],['2026-10-17',211990,1189],['2026-10-18',213244,1196],['2026-10-19',214551,1201],['2026-10-20',215768,1204],['2026-10-21',216765,1205],['2026-10-22',217760,1207],['2026-10-23',218870,1214]],
+ pts:[['2026-04-14',19161,166],['2026-05-27',75913,560],['2026-10-08',201625,1144],['2026-10-09',202893,1147],['2026-10-11',205028,1162],['2026-10-12',206297,1164],['2026-10-13',207371,1170],['2026-10-14',208570,1177],['2026-10-15',209876,1181],['2026-10-16',211040,1186],['2026-10-17',211990,1189],['2026-10-18',213244,1196],['2026-10-19',214551,1201],['2026-10-20',215768,1204],['2026-10-21',216765,1205],['2026-10-22',217760,1207],['2026-10-23',218870,1214],['2026-10-24',219884,1222],['2026-10-25',221164,1227]],
  tl:[['2026-03-15','Officiel startdato for overvågningsperioden. Stigningen begyndte ifølge WHO allerede i januar','udbrud'],
      ['2026-03-30','Vaccinationsudvalget godkender en målrettet kampagne',''],
      ['2026-04-04','Bangladesh notificerer formelt WHO','spredning'],
@@ -1768,8 +1768,10 @@ const EVENTS = [
      ['2026-10-20','215.768 mistænkte og 23.199 bekræftede tilfælde. 1.100 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.217 nye mistænkte tilfælde, 42 nye bekræftede og 3 dødsfald blandt mistænkte, ét hver i Dhaka-, Chattogram- og Mymensingh-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6ad751312e520f8fc88d1dfe']],
      ['2026-10-21','216.765 mistænkte og 23.212 bekræftede tilfælde. 1.101 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 997 nye mistænkte tilfælde, 13 nye bekræftede og 1 dødsfald blandt mistænkte, i Habiganj i Sylhet-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6ad8f82c5703c40cec8212f5']],
      ['2026-10-22','217.760 mistænkte og 23.248 bekræftede tilfælde. 1.103 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 995 nye mistænkte tilfælde, 36 nye bekræftede og 2 dødsfald blandt mistænkte, begge i Dhaka-distriktet','',['DGHS','https://dghs.gov.bd/pages/press-releases/6ad9f6519422db94cd42950c']],
-     ['2026-10-23','218.870 mistænkte og 23.273 bekræftede tilfælde. 1.110 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.110 nye mistænkte tilfælde, 25 nye bekræftede og 7 dødsfald blandt mistænkte, heraf 3 i Sylhet-divisionen, 2 i Dhaka-divisionen og 1 hver i Chattogram- og Mymensingh-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6adb514d582bde01e1b1b8ab']]],
- src:[['WHO DON 598','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON598'],['CDC EID','https://wwwnc.cdc.gov/eid/article/32/11/26-0996_article'],['DGHS','https://dghs.gov.bd/pages/press-releases/6adb514d582bde01e1b1b8ab']],
+     ['2026-10-23','218.870 mistænkte og 23.273 bekræftede tilfælde. 1.110 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.110 nye mistænkte tilfælde, 25 nye bekræftede og 7 dødsfald blandt mistænkte, heraf 3 i Sylhet-divisionen, 2 i Dhaka-divisionen og 1 hver i Chattogram- og Mymensingh-divisionen','',['DGHS','https://dghs.gov.bd/pages/press-releases/6adb514d582bde01e1b1b8ab']],
+     ['2026-10-24','219.884 mistænkte og 23.324 bekræftede tilfælde. 1.118 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.014 nye mistænkte tilfælde, 51 nye bekræftede og 8 dødsfald blandt mistænkte, heraf 3 i Dhaka-divisionen, alle i Dhaka-distriktet','',['DGHS','https://dghs.gov.bd/pages/press-releases/6add8808ffd11fcb4bddc6db']],
+     ['2026-10-25','221.164 mistænkte og 23.400 bekræftede tilfælde. 1.123 dødsfald blandt mistænkte og 104 blandt bekræftede tilfælde. Det seneste døgn 1.280 nye mistænkte tilfælde, 76 nye bekræftede og 5 dødsfald blandt mistænkte, heraf 2 i Chattogram-divisionen og 1 hver i distrikterne Chattogram, Noakhali, Dhaka, Sunamganj og Mymensingh','',['DGHS','https://dghs.gov.bd/pages/press-releases/6addcfd3582bde01e1b26036']]],
+ src:[['WHO DON 598','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON598'],['CDC EID','https://wwwnc.cdc.gov/eid/article/32/11/26-0996_article'],['DGHS','https://dghs.gov.bd/pages/press-releases/6addcfd3582bde01e1b26036']],
  rel:['dengue-bd']},
 
 {id:'dengue-asien',place:'Colombo og Bohol',country:'Sri Lanka og Filippinerne',region:'Asien',lat:6.9271,lon:79.8612,
@@ -1795,14 +1797,14 @@ const EVENTS = [
 
 {id:'dengue-bd',place:'Dhaka og øvrige divisioner',country:'Bangladesh',region:'Asien',lat:23.8103,lon:90.4125,
  disease:'Dengue',pathogen:'Dengue-virus, serotype ikke oplyst',stage:'spredning',live:true,
- cases:'121.699 indlagte og 377 dødsfald i 2026, DGHS pr. 24. oktober',
+ cases:'123.948 indlagte og 384 dødsfald i 2026, DGHS pr. 25. oktober',
  extra:'Uge 40 gav 12.764 tilfælde, 3,3 gange så mange som samme uge i 2025, og 37 dødsfald ifølge WHO SEARO. Ugetallene ligger over 2022, 2024 og 2025 og over gennemsnittet for de seneste fem år, men under niveauet i 2023. September stod for omkring 51 procent af årets tilfælde og 57 procent af dødsfaldene pr. 5. oktober.',
  note:'Bangladesh har et usædvanligt stort dengueudbrud i 2026 med over 100.000 indlagte. Det falder sammen med landets store mæslingeudbrud, og begge belaster personale, diagnostik og hospitalssenge. Myndighederne opretter ekstra denguestuer og senge uden for Dhaka, blandt andet i Chattogram og Mymensingh.',
  nodes:[['Dhaka',90.4125,23.8103,'2026-07'],['Chattogram',91.7832,22.3569,'2026-10-05'],['Mymensingh',90.4203,24.7471,'2026-10-05']],
  naeste:'Følger monsunen. Falder, når ugetallene vender. Alvor stiger, hvis WHO vurderer risikoen som høj.',
  rel:['dengue-asien','maesling-bd'],
  plabel:'Indlagte i 2026',
- pts:[['2026-10-05',86458,262],['2026-10-08',94151,294],['2026-10-09',95451,295],['2026-10-10',97082,299],['2026-10-11',99275,303],['2026-10-12',101442,307],['2026-10-13',103396,316],['2026-10-14',105316,321],['2026-10-15',107259,331],['2026-10-16',108440,335],['2026-10-17',110312,342],['2026-10-18',112400,348],['2026-10-19',114251,352],['2026-10-20',115617,357],['2026-10-21',116990,364],['2026-10-22',118502,368],['2026-10-23',119801,371],['2026-10-24',121699,377]],
+ pts:[['2026-10-05',86458,262],['2026-10-08',94151,294],['2026-10-09',95451,295],['2026-10-10',97082,299],['2026-10-11',99275,303],['2026-10-12',101442,307],['2026-10-13',103396,316],['2026-10-14',105316,321],['2026-10-15',107259,331],['2026-10-16',108440,335],['2026-10-17',110312,342],['2026-10-18',112400,348],['2026-10-19',114251,352],['2026-10-20',115617,357],['2026-10-21',116990,364],['2026-10-22',118502,368],['2026-10-23',119801,371],['2026-10-24',121699,377],['2026-10-25',123948,384]],
  tl:[['2026-07','Antallet af denguetilfælde begynder at stige hurtigt i begyndelsen af juli','udbrud',['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']],
      ['2026-10-05','86.458 tilfælde og 262 dødsfald i 2026. Smitten tager til uden for Dhaka, og der oprettes denguestuer på store hospitaler i Chattogram og Mymensingh og senge på upazila-hospitaler i Khulna','spredning',['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']],
      ['2026-10-06','90.356 indlagte og 281 dødsfald i 2026 ifølge den officielle opgørelse','',['DGHS via bdnews24, medie','https://bdnews24.com/health/7d4zguh4hx']],
@@ -1822,7 +1824,8 @@ const EVENTS = [
      ['2026-10-21','116.990 indlagte og 364 dødsfald efter 7 nye dødsfald og 1.373 nye indlagte på et døgn. Uge 42 har indtil videre 6.678 tilfælde og 22 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
      ['2026-10-22','118.502 indlagte og 368 dødsfald efter 4 nye dødsfald og 1.512 nye indlagte på et døgn. Uge 42 har indtil videre 8.190 tilfælde og 26 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
      ['2026-10-23','119.801 indlagte og 371 dødsfald efter 3 nye dødsfald og 1.299 nye indlagte på et døgn. Uge 42 har indtil videre 9.489 tilfælde og 29 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
-     ['2026-10-24','121.699 indlagte og 377 dødsfald efter 6 nye dødsfald og 1.898 nye indlagte på et døgn. Uge 42 har indtil videre 11.387 tilfælde og 35 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']]],
+     ['2026-10-24','121.699 indlagte og 377 dødsfald efter 6 nye dødsfald og 1.898 nye indlagte på et døgn. Uge 42 har indtil videre 11.387 tilfælde og 35 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
+     ['2026-10-25','123.948 indlagte og 384 dødsfald efter 7 nye dødsfald og 2.249 nye indlagte på et døgn. Uge 43 har indtil videre 2.249 tilfælde og 7 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']]],
  src:[['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php'],['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']]},
 
 {id:'mers-sa',place:'Seks steder, blandt andre Riyadh og Taif',country:'Saudi-Arabien',region:'Mellemøsten',lat:24.7136,lon:46.6753,
