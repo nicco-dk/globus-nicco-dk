@@ -2,6 +2,31 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 26. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 25. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ugeoversigten 22. oktober for uge 42 er læst af tidligere kørsler), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste) og ebolaside (Kenya pr. 22. oktober og DR Congo pr. 21. oktober, de samme som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, fortsat salmonellaudbruddet og ebola) og salmonellasiden (senest redigeret 1. oktober, 33 tilfælde, som på siden), DK-VET's nyheder (intet nyt efter dværgbændelorm hos ræve), RIVM's ebolaside (nyeste opdatering 21. oktober, intet nyt om `ebola-nl`) og søgninger efter nyt fra ECDC og Statens Serum Institut uden fund. RKI's næste Epidemiologisches Bulletin kommer 29. oktober. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, så vagtplanens opgave med tre sådanne hændelser havde intet at rette. Koordinaterne for de europæiske hændelser er set igennem uden fejl.
+
+**Ændret**
+- Ingen hændelser. Kun `DATA_DATO` og `DATA_TID`.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- `wnv-eu`, `dengue-eu`, `chik-fr`, `cre-eu`, `salmonella-eu`, `malaria-de`, `sindbis-de` og `shamonda-fr`: ingen ny ugerapport fra ECDC. `ebola-nl`: intet nyt hos RIVM, lukkes efter planen 21. november. `h5n1-dk`, `salmonella-dk` og `botulisme-dk`: intet nyt fra DK-VET og Statens Serum Institut.
+
+**Usikkert**
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 00.20 mandag. PDF'en gav HTTP 404, og oversigten viser uge 42 som den nyeste.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit f6030f7.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 25. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
