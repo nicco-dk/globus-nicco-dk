@@ -26,6 +26,37 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `difteri-ng`: skal `live` sættes til `false` efter over 30 dage uden nye tal, når WHO AFRO's seneste bulletin beskriver udbruddet som igangværende?
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 23. oktober er fortsat den nyeste og står på siden) og dengue (dashboardet pr. 24. oktober, står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ugeoversigten 22. oktober for uge 42 er læst af tidligere kørsler), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Sri Lankas side kunne ikke hentes af scriptet. ECDC's oversigt over ugerapporter og nyheder (uge 42 er fortsat den nyeste, intet efter trusselsvurderingen om ebola 23. oktober), insp.cd's medieliste (situationsrapport 161 er fortsat den nyeste), Floridas ugerapporter (uge 42 er ikke udkommet, adressen gav HTTP 404), WHO AFRO's ugebulletiner (intet nyere end uge 41 fundet), Africa CDC (ingen ny ugerapport fundet), PAHO (opdateringen om dengue og chikungunya 20. oktober er den nyeste og står på siden), https://globus.nicco.dk/konflikter.json (genereret 25. oktober kl. 03.23 UTC) og søgninger efter nyt om ebola, miltbrand i Zambia, Alongshan-virus i Kina, mpox i Missouri og Cyclospora i USA. Statens Serum Institut og DK-VET er læst af kl. 00-kørslen og ikke igen.
+
+**Ændret**
+- Ingen hændelser. Kun `DATA_DATO`, `DATA_TID` og `tools/par-tjek.json`.
+
+**Nye**
+- Ingen. NaTHNaC og Outbreak News Today melder Usutu-virus i Italien (18 tilfælde pr. 14. oktober), krim-kongo-feber i Afghanistan (1.669 mistænkte januar til september), hantavirus i Argentina og Naegleria fowleri i Argentina. Det er kendt sæson eller enkelttilfælde, som ingen myndighed kalder usædvanlig, og de er ikke taget med.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- Rundtur, slået op uden nyt: `difteri-ng` 31 dage, `anthrax-zm` 27, `altnv-cn` 27, `mpox-mo` 25, `h5n1-dk` 24, `salmonella-dk` 24, `cre-eu` 23, `maesling-am` 22, `cyclospora-us` 20, `h5n1-us` 17, `h5n1-kh` 16, `salmonella-eu` 16, `gul-feber-gh` 16, `ebola-nl` 15, `pest-irkutsk` 13, `dengue-asien` 13, `mpox` 12, `wnv-eu`, `dengue-eu` og `chik-fr` 11 dage siden seneste punkt. `cyclospora-us`: Healio 6. oktober handler om salatudbruddet, der blev erklæret afsluttet 11. september, og står allerede på siden. `anthrax-zm`: intet nyere end Lusaka Times 30. september, som står i `src`.
+- `wnv-eu`: Outbreak News Today skriver 25. oktober 195 tilfælde i Frankrig. ECDC's tal for Frankrig er 159 pr. 14. oktober. Hændelsen bygger på ECDC's samlede opgørelse og ændres, når ugerapporten for uge 43 kommer.
+- `dengue-fl`: Floridas ugerapport for uge 42 er ikke udkommet.
+- `maesling-bd`: ingen ny meddelelse fra DGHS efter 23. oktober.
+
+**Usikkert**
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 søndag. PDF'en gav HTTP 404, og oversigten viser uge 42 som den nyeste.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober. Næste kørsler bør søge efter nyt og ellers sætte `live` til `false` efter reglen.
+- `difteri-ng`: venter fortsat på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 067aa47.
+
+**Mediesporet**
+- Afvist `FR-IT`: artiklerne handler om voldelige demonstrationer og sammenstød med politiet i Frankrig og Italien, fx Le Monde: https://www.lemonde.fr/en/international/article/2026/10/18/second-day-of-street-clashes-in-milan_6758735_4.html og The Guardian: https://www.theguardian.com/world/2026/oct/20/milan-luxury-shops-close-italy-to-deploy-troops-youth-protests-europe
+- Afvist `EG>SA`: Arab News skriver 18. oktober, at Egypten lover al nødvendig støtte, og at præsidenten har bedt parlamentet om tilladelse til forsvarstiltag, hvis Saudi-Arabien beder om det: https://www.arabnews.com/middle-east/egypt-says-to-provide-all-necessary-support-to-saudi-arabia-to-defend-its-security-3006984 The Hindu skriver 24. oktober, at Egypten har foreslået at sende tropper: https://www.thehindu.com/news/international/houthis-attack-yemens-aden-say-saudi-strikes-kill-16/article71620895.ece og The Jerusalem Post, at Egypten overvejer det: https://www.jpost.com/middle-east/article-912298 Al Jazeera melder 19. oktober, at parlamentet har udskudt afstemningen: https://www.aljazeera.com/news/2026/10/19/egyptian-parliament-delays-vote-on-military-support-for-saudi-arabia Kun Kurdistan24 skriver, at to egyptiske C-130H er landet på King Fahd Air Base: https://www.kurdistan24.net/en/story/946890 Det er ét medie, så levering er ikke beskrevet af to.
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 24. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
