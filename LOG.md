@@ -56,6 +56,14 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 25. oktober er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), WHO SEARO nummer 21, WHO WPRO nummer 1066 (nummer 1067 med datoerne 22., 23. og 24. oktober gav HTTP 404), ECDC uge 42, UKHSA, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 23. til 26. oktober (intet nyt om mpox; legionærsyge og et tilfælde af melioidose er enkelttilfælde). WHO EMRO's nyheder (meddelelserne om kolera i Yemen står på siden, intet nyere fundet), GPEI (ugeoversigten 21. oktober står på siden; Outbreak News Todays seks nye tilfælde i Afghanistan 24. oktober er de samme) og søgninger efter nyt om fugleinfluenza hos mennesker i Asien, Nipah, pest i Irkutsk og kolera i Yemen uden nyt fund.
+
+**Usikkert**
+- `dengue-bd`: DGHS' denguedashboard https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php gav HTTP 502 ved fem direkte opslag mellem kl. 11.20 og 11.32, og hentningsværktøjet gav en gammel udgave pr. 12. april. Tallet pr. 25. oktober står urørt. Ingen medier med tal efter 25. oktober fundet.
+- `dengue-asien`: Sri Lankas side https://www.dengue.health.gov.lk kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (siden afviser maskinel læsning). Seneste tal på siden er pr. 12. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 3c2e1ac.
+
 ## 25. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
