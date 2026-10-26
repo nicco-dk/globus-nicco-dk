@@ -27,6 +27,35 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 25. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ugeoversigten 22. oktober for uge 42 er læst af tidligere kørsler), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502), Sri Lankas side og NaTHNaC (HTTP 307). ECDC's ugerapport for uge 43 (PDF'en gav HTTP 404), insp.cd's medieliste (rapporten pr. 23. oktober er fortsat den nyeste og står på siden), WHO's mpox-situationsrapport (nummer 69 er fortsat den nyeste og står på siden), PAHO (opdateringen om dengue og chikungunya 20. oktober og mæslingerapport 13 er de nyeste og står på siden; rapport 14 gav HTTP 404), WHO AFRO og Africa CDC (ingen nyere ugebulletin eller ugerapport fundet), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober) og DK-VET's nyheder (intet nyt), https://globus.nicco.dk/konflikter.json (genereret 26. oktober kl. 03.23 UTC) og søgninger efter nyt om ebola i Kenya, Nigeria og DR Congo, miltbrand i Zambia, gul feber i Ghana, pest i Irkutsk, fugleinfluenza i Washington og klade I-mpox i USA.
+
+**Ændret**
+- `ebola-ke`: `cases` er nu 9 bekræftede tilfælde, heraf 2 dødsfald, Kenyas sundhedsministerium pr. 23. oktober gengivet af Anadolu, medie: https://www.anews.com.tr/world/2026/10/24/kenya-records-second-ebola-death-a-65-year-old-woman Den 65-årige kvinde, der var Kenyas tredje bekræftede tilfælde, døde sent fredag 23. oktober, og syv patienter er i behandling på to isolationsenheder. Voice of Nigeria gengiver de samme tal 25. oktober: https://von.gov.ng/kenya-records-second-ebola-death-confirms-nine-cases/ Nyt punkt i forløbet 24. oktober, `extra` og `gap` opdateret, begge kilder tilføjet i `src`. Læst i sidernes rå tekst. Dødsfaldet var ikke med i de forrige kørsler.
+- `ebola-ng`: nyt punkt 25. oktober: NCDC's generaldirektør Jide Idris oplyser, at 53 primære kontakter følges (9 flere end de 44), at ingen kontakter er testet positive eller har symptomer, og at et mistænkt tilfælde i Rivers State er testet negativt, gengivet af Premium Times: https://www.premiumtimesng.com/health/health-news/920133-updated-ebola-nigeria-identifies-53-contacts-linked-to-confirmed-case.html og AFP via Citizen Digital: https://citizen.digital/article/nigeria-widens-hunt-for-possible-ebola-cases-n392729 `extra` opdateret, begge kilder tilføjet i `src`. `cases` er uændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- Rundtur, slået op uden nyt: `difteri-ng` 32 dage, `anthrax-zm` 28, `altnv-cn` 28, `mpox-mo` 26, `h5n1-dk` 25, `salmonella-dk` 25, `cre-eu` 24, `maesling-am` 23, `cyclospora-us` 21, `h5n1-us` 18, `h5n1-kh` 17, `salmonella-eu` 17, `gul-feber-gh` 17, `ebola-nl` 16, `pest-irkutsk` 14, `dengue-asien` 14, `mpox` 13, `wnv-eu`, `dengue-eu` og `chik-fr` 12, `h5n1-wa` 11, `myiasis-am`, `difteri-afro` og `mpox-hk` 10 dage siden seneste punkt.
+
+**Usikkert**
+- `ebola-ke`: Kenyas sundhedsministeriums egen udmelding om det andet dødsfald er ikke fundet. Tallet bygger på to medier, der gengiver den. US News' gengivelse af Reuters kunne ikke hentes.
+- `ebola-ng`: Daily Nigerian skriver, at patientens tilstand er i bedring. Det er kun ét medie og er ikke taget med.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 mandag.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 1532ba1.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 25. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
