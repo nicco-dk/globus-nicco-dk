@@ -64,6 +64,38 @@ Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæsli
 - `dengue-asien`: Sri Lankas side https://www.dengue.health.gov.lk kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (siden afviser maskinel læsning). Seneste tal på siden er pr. 12. oktober.
 - Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 3c2e1ac.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (en ny meddelelse 26. oktober, se Usikkert), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (legionærsyge, enkelttilfælde). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. DR Congos situationsrapporter gennem insp.cd's medieliste (en ny rapport pr. 24. oktober, indarbejdet), WHO AFRO (ugebulletinen for uge 41 er fortsat den nyeste), Africa CDC (ingen ny ugerapport fundet), PAHO (opdateringen om dengue og chikungunya 20. oktober er fortsat den nyeste og står på siden), US CDC (mæslingetallet opdateres om onsdagen, tallet pr. 22. oktober står på siden), https://globus.nicco.dk/konflikter.json (genereret 26. oktober kl. 15.23 UTC) og søgninger efter nyt om ebola i Kenya og Nigeria.
+
+**Ændret**
+- `ebola-drc`: 9.964 bekræftede tilfælde og 4.841 dødsfald, DR Congos sundhedsministerium pr. 24. oktober, situationsrapport 163: https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_163_24_10_2026.pdf 88 nye tilfælde på et døgn (44 i Ituri, 39 i Nordkivu og 5 i Haut-Uélé) og 38 nye dødsfald, heraf 26 i lokalsamfundet og 12 på behandlingscentre. 1.008 isolerede og 2.670 raske. Nyt punkt i forløbet (25. oktober, rapportens udgivelsesdato) og i talserien (24. oktober). `cases` og `extra` opdateret, og situationsrapport 162 er erstattet af 163 i `src`. Punktet 24. oktober bærer selv adressen til 162. Tallene er læst i PDF'ens tekst og som billede af første side, og provinsernes tal summer til de samlede.
+- `ebola-ng`: nyt punkt 26. oktober: patienten og hendes mand er fløjet fra Abuja til Schweiz, efter at hendes tilstand er bedret. Schweiz overtager behandlingen, og Nigeria følger fortsat 52 kontakter (manden er den 53.). WHO's regionaldirektør for Afrika, Mohamed Janabi, siger, at Nigeria nu ikke har tilfælde af ebola, og sundhedsminister Muhammad Pate, at udbruddet tidligst kan erklæres slut 7. december, hvis der ikke kommer flere tilfælde. Kilder: AP via WSLS: https://www.wsls.com/health/2026/10/26/nigeria-evacuates-ebola-patient-to-switzerland-as-authorities-monitor-52-contacts/ og Nairametrics: https://nairametrics.com/2026/10/26/fg-says-nigeria-could-declare-ebola-outbreak-over-by-december-7 The Guardian Nigeria bekræfter evakueringen og de 52 kontakter: https://guardian.ng/features/health/prof-janabi-congratulates-nigeria-on-the-evacuation-of-ebola-patients `extra` opdateret, AP og Nairametrics tilføjet i `src`. `cases`, trin og `live` er uændret.
+- `ebola-ke`: `cases` er fortsat 9 bekræftede tilfælde og 2 dødsfald, nu Kenyas sundhedsministerium pr. 26. oktober gengivet af Reuters og The Standard. Nyt punkt 26. oktober: de første 20 kontakter er løsladt fra karantæne efter 21 dages opfølgning uden symptomer, og 98 er stadig i karantæne og løslades i fire hold fra 3. november, ifølge generaldirektøren for sundhed, Patrick Amoth. Kilder: Reuters via KSL: https://www.ksl.com/article/51641130/kenya-releases-first-ebola-contacts-from-quarantine-milestone-in-containment-efforts og The Standard: https://www.standardmedia.co.ke/health/health-science/article/2001560902/first-20-ebola-contacts-return-home-as-98-remain-in-quarantine `extra` opdateret, begge kilder tilføjet i `src`. Læst i sidernes rå tekst.
+
+**Nye**
+- Ingen. NaTHNaC melder kolera i Zambia (1.207 tilfælde pr. 21. oktober siden 28. juli). Det falder ind under den globale hændelse `kolera`, og Zambias sundhedsministeriums egen opgørelse er ikke hentet, så den er ikke taget med som egen hændelse.
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne, heraf i Afrika og Amerika `difteri-ng`, `difteri-afro`, `anthrax-zm`, `gul-feber-gh`, `myiasis-am`, `maesling-us`, `maesling-am`, `chik-am`, `dengue-fl`, `h5n1-us`, `h5n1-wa`, `mpox-mo` og `cyclospora-us`.
+
+**Usikkert**
+- `maesling-bd`: DGHS har lagt en meddelelse om mæslinger ud 26. oktober (https://dghs.gov.bd/pages/press-releases/6adf3b37df49aeae52c3ed9d), men den havde ved to opslag kl. 17.21 og 17.25 hverken tekst eller PDF-bilag. Tallene står urørt pr. 25. oktober. Næste kørsel bør hente bilaget.
+- `ebola-ng`: evakueringen og WHO's udtalelse kendes kun gennem medier. Sundhedsministerens udmelding er lagt på X, som ikke bruges som kilde, og WHO AFRO's egen udmelding er ikke fundet.
+- `ebola-ke`: 20 løsladte og 98 i karantæne er 118, mens ministeriet 23. oktober opgjorde 135 kontakter. Ministeriet forklarer ikke forskellen. Ingen ændring af de ældre tal.
+- `difteri-ng`: kontrollen advarer fortsat om 32 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 0015f61.
+
+**Mediesporet**
+- Afvist `JO-SA`: artiklerne handler om skudangrebet på en kirke i Karak i Jordan og Saudi-Arabiens fordømmelse, fx Reuters via Hindustan Times: https://www.hindustantimes.com/world-news/jordanian-forces-arrest-3-suspects-in-karak-church-attack-that-killed-9-101792990491040.html og Arab News: https://www.arabnews.com/saudi-arabia/saudi-arabia-condemns-cowardly-jordan-church-attack-amid-international-outcry-3007957
+- Afvist `IR-PK`: artiklerne handler om Pakistans mægling mellem Iran og USA og den åbne grænse, fx Arab News: https://www.arabnews.com/world/iran-to-pakistans-army-chief-no-talks-with-washington-before-our-demands-are-met-3007469 og Geo News: https://www.geo.tv/latest/688233-iran-says-border-with-pakistan-open-lpg-exports-face-no-restrictions
+- Afvist `KR>UA`: artiklerne handler om en diplomatisk strid om nordkoreanske krigsfanger, hvor Sydkorea kalder sin ambassadør hjem, ikke om militær støtte, fx The Straits Times: https://www.straitstimes.com/asia/east-asia/south-korea-recalls-ambassador-from-ukraine-amid-n-korea-prisoners-wrangle og Deutsche Welle: https://www.dw.com/en/germanys-merz-heads-to-asia-as-security-issues-loom-large/a-79764065
+- Godkendt: ingen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 25. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

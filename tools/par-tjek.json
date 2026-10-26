@@ -78,6 +78,9 @@
     "CN-KP": {"dato": "2026-10-25", "grund": "Artiklerne handler om Kim Jong-uns besøg i Kina, et besøg ved et krigsmindesmærke og indvielsen af en ny grænsebro, ikke om kampe mellem landenes styrker."},
     "GR-JO": {"dato": "2026-10-25", "grund": "Artiklerne handler om skyderiet ved en kirkebegravelse i Jordan, som myndighederne tilskriver ekstremistiske gerningsmænd. Grækenland er ikke part i et angreb."},
     "IQ-IR": {"dato": "2026-10-25", "grund": "Artiklerne handler om droneangreb på iransk-kurdiske oppositionslejre i det irakiske Kurdistan, hvor angriberen ikke er identificeret, og om politisk strid mellem landene, ikke om kampe mellem Iraks og Irans styrker."},
-    "ET-KE": {"dato": "2026-10-25", "grund": "Artiklerne handler om etniske sammenstød i Moyale i Etiopien, hvor tusinder er flygtet til Kenya, og Kenyas hær er sendt til grænsen. De beskriver ikke kampe mellem landenes styrker."}
+    "ET-KE": {"dato": "2026-10-25", "grund": "Artiklerne handler om etniske sammenstød i Moyale i Etiopien, hvor tusinder er flygtet til Kenya, og Kenyas hær er sendt til grænsen. De beskriver ikke kampe mellem landenes styrker."},
+    "JO-SA": {"dato": "2026-10-26", "grund": "Artiklerne handler om skudangrebet på en kirke i Karak-provinsen i Jordan, som Jordans myndigheder tilskriver terrorister, og om Saudi-Arabiens fordømmelse af angrebet, ikke om kampe mellem landenes styrker."},
+    "IR-PK": {"dato": "2026-10-26", "grund": "Artiklerne handler om Pakistans mægling mellem Iran og USA og om, at grænsen mellem Iran og Pakistan er åben for handel, ikke om kampe mellem landenes styrker."},
+    "KR>UA": {"dato": "2026-10-26", "grund": "Artiklerne handler om en diplomatisk strid, hvor Sydkorea kalder sin ambassadør hjem fra Ukraine efter overførslen af nordkoreanske krigsfanger, og om Tysklands kanslers rejse til Asien, ikke om levering af våben, tropper eller militært udstyr fra Sydkorea til Ukraine."}
   }
 }
