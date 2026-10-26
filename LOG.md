@@ -2,6 +2,34 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 27. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud; ugeoversigten kommer torsdag), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (legionærsyge, enkelttilfælde). Scriptet kunne ikke hente DGHS' mæslingemeddelelse 26. oktober (HTTP 500), DGHS' denguedashboard (HTTP 502), Sri Lankas side og NaTHNaC (HTTP 307). ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste), ECDC's ebolaside (senest opdateret 26. oktober kl. 16.30), Statens Serum Instituts liste over aktuelle sygdomsudbrud (fortsat salmonellaudbruddet og ebola, intet nyt), RIVM's side med aktuel information om ebola (nyeste opdatering 21. oktober, intet nyt om `ebola-nl`) og en søgning efter nyt fra DK-VET (intet nyere end sælerne, som står på siden). RKI's næste Epidemiologisches Bulletin kommer 29. oktober. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, så vagtplanens opgave med tre sådanne hændelser havde intet at rette. Koordinaterne for de 13 europæiske hændelser er set igennem uden fejl.
+
+**Ændret**
+- `ebola-ke`: nyt punkt 26. oktober: ECDC opgør 9 bekræftede tilfælde, heraf 2 dødsfald, pr. 25. oktober, alle knyttet til det første tilfælde. Det seneste tilfælde blev meldt 20. oktober og det andet dødsfald 23. oktober. Kilde: ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda Det andet dødsfald er dermed bekræftet af en myndighed og ikke kun af medier. `extra` og `gap` opdateret, og ECDC's ebolaside tilføjet i `src`. `cases` er uændret, fordi ministeriets opgørelse pr. 26. oktober er nyere. Læst i sidens rå tekst.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- `wnv-eu`, `dengue-eu`, `chik-fr`, `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de`, `sindbis-de` og `shamonda-fr`: ingen ny ugerapport fra ECDC. `ebola-nl`: intet nyt hos RIVM, lukkes efter planen 21. november. `h5n1-dk`, `salmonella-dk` og `botulisme-dk`: intet nyt fra Statens Serum Institut, og DK-VET kunne ikke læses, se Usikkert.
+
+**Usikkert**
+- `ebola-drc`: ECDC's ebolaside skriver 9 964 bekræftede tilfælde og 4 851 dødsfald pr. 24. oktober. DR Congos situationsrapport 163, som ECDC bygger på, skriver 4 841 dødsfald i både teksten og tabellerne (læst igen i PDF'en i denne kørsel). Tallet på siden står urørt, fordi ministeriets egen rapport er den oprindelige kilde. Tallet hos ECDC kan være en tastefejl.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 00.20 tirsdag. PDF'en gav HTTP 404, og oversigten viser uge 42 som den nyeste.
+- DK-VET's nyheder https://dkvet.dk/nyheder/ kunne hverken hentes direkte (forbindelsen blev afbrudt tre gange) eller med hentningsværktøjet (siden afviser maskinel læsning). En søgning på dkvet.dk gav intet nyere end det, der står på siden.
+- `maesling-bd`: DGHS' meddelelse 26. oktober (https://dghs.gov.bd/pages/press-releases/6adf3b37df49aeae52c3ed9d) gav HTTP 500 ved to opslag. Tallene står urørt pr. 25. oktober.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (33 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 4097643.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 26. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
