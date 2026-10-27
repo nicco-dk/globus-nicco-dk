@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 28. oktober 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet (WHO DON 622 23. oktober er fortsat den nyeste, ECDC uge 42, UKHSA uden ny ugeoversigt, NaTHNaC, Outbreak News Today, CIDRAP og Hongkong; DGHS' denguedashboard HTTP 502 og Sri Lankas side kunne ikke hentes), ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste, uge 43 gav HTTP 404), ECDC's ebolaside (opdateret 27. oktober kl. 16.30, de samme tal for DR Congo, Kenya og Nigeria som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, intet nyt), RIVM's ebolaside (intet nyt om `ebola-nl`) og en søgning efter nyt fra DK-VET (intet nyere end sælerne; nyhedssiden kunne hverken hentes direkte eller med hentningsværktøjet). RKI's næste Epidemiologisches Bulletin kommer 29. oktober og UKHSA's ugeoversigt torsdag. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, kun den kendte om `difteri-ng` (34 dage), som venter på ejeren i GENNEMGANG.md.
+
 ## 27. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
