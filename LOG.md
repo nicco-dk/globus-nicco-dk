@@ -85,6 +85,37 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 27. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (legionærsyge, enkelttilfælde). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502), Sri Lankas side og NaTHNaC (HTTP 307). insp.cd's medieliste (situationsrapport 164 pr. 25. oktober er ny), PAHO's side om mæslinger (situationsrapport 14 22. oktober er ny), WHO AFRO's oversigt over ugebulletiner (uge 41 er fortsat den nyeste), ECDC's nyheder, FN's nyhedstjeneste om ebola i Kenya og DR Congo, https://globus.nicco.dk/konflikter.json (genereret 27. oktober kl. 16.23 UTC) og søgninger efter nyt om ebola i Kenya og Nigeria, fra Africa CDC og fra PAHO. US CDC's mæslingetal opdateres om onsdagen, og tallet pr. 22. oktober står på siden.
+
+**Ændret**
+- `ebola-drc`: situationsrapport 164 pr. 25. oktober, offentliggjort 26. oktober: 10.060 bekræftede tilfælde og 4.887 dødsfald, 96 nye tilfælde (58 i Nordkivu, 32 i Ituri og 6 i Tshopo) og 46 nye dødsfald, heraf 40 i lokalsamfundet. Ingen nye sundhedszoner. Kilde: DR Congos sundhedsministerium https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_164_25_10_2026.pdf Nyt punkt i forløbet 26. oktober, `cases`, `extra`, `pts` og `src` opdateret. Tallene er læst to gange: som tekst og som billede af første side, og tallene pr. provins stemmer med de nye tilfælde lagt til situationsrapport 163.
+- `maesling-am`: PAHO's regionale situationsrapport 14, udgivet 22. oktober: 56.753 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier fra 4. januar til 17. oktober. Guatemala 34.535 tilfælde og 53 dødsfald, Mexico 13.691 og 23. Kilde: https://www.paho.org/sites/default/files/2026/10/paho-measles-sitrep14.pdf Nyt punkt i forløbet 22. oktober, `cases`, `extra`, `pts` og `src` opdateret. Læst to gange: som tekst og som billede af første side.
+- `ebola-ng`: nyt punkt 27. oktober: ECDC sender i denne uge et hold eksperter til Nigeria, som rådgiver EU-delegationen i Abuja, og de nigerianske myndigheder er tilbudt støtte. Kilde: ECDC https://www.ecdc.europa.eu/en/news-events/ecdc-deploy-experts-ebola-cases-emerge-kenya-and-nigeria Tilføjet i `src`. `cases` er uændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne.
+- `ebola-ke`: FN's nyhedstjeneste gengiver 27. oktober WHO med 9 bekræftede tilfælde og 2 dødsfald, de samme tal som på siden: https://news.un.org/en/story/2026/10/1168676 Intet nyt ud over det.
+
+**Usikkert**
+- `ebola-drc`: første side i situationsrapport 164 har intet tal for patienter i isolation, så det er ikke skrevet.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. Tallene står urørt.
+- `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Seneste tal på siden er pr. 12. oktober.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (33 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9934b9c.
+
+**Mediesporet**
+- Afvist: `SD-SS` (Sudan og Sydsudan). Artiklerne handler om droneangrebet 19. oktober på Amiet-markedet i Abyei, som Sydsudan tilskriver Sudans hær uden at fremlægge beviser, mens en sudanesisk officer siger, at målet var brændstof til RSF, og FN ikke nævner ophavet. Angreb på civile med ophav, der ikke er uafhængigt bekræftet, afvises efter ejerens afgørelse 13. oktober. Kilder: Al Jazeera https://www.aljazeera.com/news/2026/10/21/drone-attack-in-disputed-sudan-south-sudan-border-region-kills-at-least-153 Deutsche Welle https://www.dw.com/en/sudan-drone-strike-kills-around-150-in-abyei-market/a-79716587 og Reuters via The Globe and Mail https://www.theglobeandmail.com/world/article-abyei-south-sudan-drone-market/
+- Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 26. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
