@@ -1216,7 +1216,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-10-27';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-10-27T00:30+01:00';
+const DATA_TID = '2026-10-27T05:31+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1973,15 +1973,16 @@ const EVENTS = [
 
 {id:'h5n1-wa',place:'Yakima County, Washington',country:'USA',region:'Amerika',lat:46.46,lon:-120.74,
  disease:'Fugleinfluenza hos menneske og malkekvæg',pathogen:'H5N1',stage:'udbrud',live:true,
- cases:'1 bekræftet humant tilfælde, Yakima Health District pr. 15. oktober. 2 malkekvægsbedrifter i karantæne, WSDA pr. 8. oktober',
+ cases:'1 bekræftet humant tilfælde, Yakima Health District pr. 15. oktober. 2 malkekvægsbedrifter i karantæne, WSDA pr. 8. oktober. 1 smittet malkekvægsbesætning i Benton County, WSDA pr. 26. oktober',
  extra:'Personen var udsat for smittet malkekvæg på en bedrift i amtet, har ikke været alvorligt syg eller indlagt og er isoleret i hjemmet. Nære kontakter følges for symptomer. Washingtons første fund af H5N1 i malkekvæg blev bekræftet af USDA\'s laboratorium NVSL. Malkekvæg i i alt 19 stater er smittet siden marts 2024.',
  note:'Et humant tilfælde af fugleinfluenza i Washington efter udsættelse for smittet malkekvæg, en uge efter delstatens første fund i kvæg. Risikoen for befolkningen er fortsat lav ifølge Yakima Health District.',
- gap:'Udmeldingen om det humane tilfælde nævner ikke virussets undertype hos patienten. H5N1 er påvist i malkekvæget i Yakima County.',
+ gap:'Udmeldingen om det humane tilfælde nævner ikke virussets undertype hos patienten. H5N1 er påvist i malkekvæget i Yakima County. Antallet af smittede besætninger i Yakima County er ikke opgjort ens: Yakima Health Districts tabel og mediet Capital Press stemmer ikke overens, så tallet er ikke taget med.',
  rel:['h5n1-us'],
  naeste:'Rykker til smitte, hvis en kontakt uden udsættelse for dyr bliver syg.',
  tl:[['2026-10-08','Washington melder delstatens første fund af H5N1 i malkekvæg: to bedrifter i Yakima County, bekræftet af USDA\'s laboratorium NVSL. Bedrifterne er sat i karantæne','reservoir',['Washingtons landbrugsministerium WSDA','https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47359']],
-     ['2026-10-15','Yakima Health District melder i samarbejde med Washingtons sundhedsministerium et bekræftet tilfælde af fugleinfluenza hos en beboer i Yakima County, som var udsat for smittet malkekvæg. Patienten har ikke været alvorligt syg og er isoleret i hjemmet. Risikoen for befolkningen er fortsat lav','udbrud',['Yakima Health District','https://www.yakimacounty.us/DocumentCenter/View/46716']]],
- src:[['Yakima Health District','https://www.yakimacounty.us/DocumentCenter/View/46716'],['Washingtons landbrugsministerium WSDA','https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47359']]},
+     ['2026-10-15','Yakima Health District melder i samarbejde med Washingtons sundhedsministerium et bekræftet tilfælde af fugleinfluenza hos en beboer i Yakima County, som var udsat for smittet malkekvæg. Patienten har ikke været alvorligt syg og er isoleret i hjemmet. Risikoen for befolkningen er fortsat lav','udbrud',['Yakima Health District','https://www.yakimacounty.us/DocumentCenter/View/46716']],
+     ['2026-10-26','WSDA melder H5N1 i en malkekvægsbesætning i Benton County, første fund uden for Yakima County. Fundet er gjort ved rutineovervågning og bekræftet af USDA\'s laboratorium NVSL. Besætningen er sat i karantæne','',['Washingtons landbrugsministerium WSDA','https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47441']]],
+ src:[['Yakima Health District','https://www.yakimacounty.us/DocumentCenter/View/46716'],['Washingtons landbrugsministerium WSDA','https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47441'],['Washingtons landbrugsministerium WSDA','https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47359']]},
 
 {id:'mpox-mo',place:'Missouri og mindst 22 delstater',country:'USA',region:'Amerika',lat:38.5767,lon:-92.1735,
  disease:'Mpox, klade I',pathogen:'Monkeypox-virus, klade I',stage:'spredning',live:true,

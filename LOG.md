@@ -30,6 +30,37 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 26. oktober, se Usikkert), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud; ugeoversigten kommer torsdag), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (legionærsyge, enkelttilfælde). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502), Sri Lankas side og NaTHNaC (HTTP 307). ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste; uge 43 gav HTTP 404), ECDC's ebolaside (senest opdateret 26. oktober kl. 16.30, intet nyt ud over det, der står på siden), insp.cd's medieliste (situationsrapport 163 pr. 24. oktober er fortsat den nyeste og står på siden), WHO's mpox-situationsrapport (nummer 69 er fortsat den nyeste), PAHO (opdateringen om dengue og chikungunya 20. oktober, mæslingerapport 13 og alarmen om myiasis 16. oktober er de nyeste og står på siden; mæslingerapport 14 gav HTTP 404), WHO AFRO og Africa CDC (ingen nyere ugebulletin eller ugerapport fundet), Floridas ugerapport (uge 42 er ikke udkommet), Statens Serum Instituts liste over aktuelle sygdomsudbrud (fortsat salmonellaudbruddet og ebola), https://globus.nicco.dk/konflikter.json (genereret 27. oktober kl. 03.23 UTC), Yakima Health Districts side om fugleinfluenza, WSDA's nyheder og søgninger efter nyt om ebola i Kenya, Nigeria og DR Congo, gul feber i Ghana, miltbrand i Zambia, pest i Irkutsk, fugleinfluenza i Cambodja og Washington, mpox i Hongkong og klade I-mpox i USA og Mexico.
+
+**Ændret**
+- `h5n1-wa`: nyt punkt 26. oktober: Washingtons landbrugsministerium WSDA melder H5N1 i en malkekvægsbesætning i Benton County, første fund uden for Yakima County, fundet ved rutineovervågning og bekræftet af NVSL. Besætningen er i karantæne. Kilde: https://agr.wa.gov/about-wsda/news-and-media-relations/news-releases?article=47441 `cases` og `gap` opdateret, kilden tilføjet i `src`. Trin og alvor er uændret. Læst i sidens rå tekst.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- Rundtur, slået op uden nyt: `difteri-ng` 33 dage, `anthrax-zm` 29, `altnv-cn` 29, `mpox-mo` 27, `h5n1-dk` 26, `salmonella-dk` 26, `cre-eu` 25, `maesling-am` 24, `cyclospora-us` 22, `h5n1-us` 19, `h5n1-kh` 18, `salmonella-eu` 18, `gul-feber-gh` 18, `ebola-nl` 17, `pest-irkutsk` 15, `dengue-asien` 15, `mpox` 14, `wnv-eu`, `dengue-eu` og `chik-fr` 13, `myiasis-am`, `difteri-afro` og `mpox-hk` 11, `dengue-fl` 10 dage siden seneste punkt.
+
+**Usikkert**
+- `h5n1-wa`: Yakima Health Districts side https://www.yakimacounty.us/3226/Avian-Influenza-Bird-Flu (opdateret 26. oktober) har en tabel med smittede malkekvægsbesætninger i Yakima County: 2 bekræftet 8. oktober, 1 15. oktober, 5 16. oktober, 1 21. oktober og 17 23. oktober. Capital Press skriver 26. oktober, at USDA siden 8. oktober har bekræftet otte besætninger i Yakima County: https://capitalpress.com/2026/10/26/bird-flu-in-diary-cattle-spreads-to-second-washington-county/ Det er uklart, om tabellens 17 er nye besætninger, så antallet er ikke skrevet på siden. Næste kørsel bør se efter en opgørelse fra WSDA eller USDA.
+- `maesling-bd`: DGHS' meddelelse 26. oktober (https://dghs.gov.bd/pages/press-releases/6adf3b37df49aeae52c3ed9d) havde kl. 05.22 fortsat hverken tekst eller PDF-bilag. Tallene står urørt pr. 25. oktober.
+- `dengue-asien`: Sri Lankas side kunne hverken hentes af scriptet eller med hentningsværktøjet. Seneste tal på siden er pr. 12. oktober.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 tirsdag.
+- `ebola-drc`: ECDC's ebolaside skriver fortsat 4 851 dødsfald, mens situationsrapport 163 skriver 4 841. Tallet på siden står urørt, se kørslen kl. 00.20.
+- DK-VET's nyheder https://dkvet.dk/nyheder/ kunne ikke hentes direkte (forbindelsen blev afbrudt). En søgning gav intet nyt.
+- `difteri-ng`: kontrollen advarer fortsat om 33 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 80d2b46.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 26. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
