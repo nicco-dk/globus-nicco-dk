@@ -61,6 +61,30 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelserne 26. og 27. oktober, se Ændret), WHO SEARO nummer 21 (næste udgave ventes 4. november), WHO WPRO nummer 1066 (nummer 1067 med datoerne 21. til 24. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 26. og 27. oktober (kun legionærsyge, enkelttilfælde). WHO EMRO's nyheder (intet nyt udbrud; meddelelserne om kolera i Yemen står på siden) og en søgning efter nye tilfælde af fugleinfluenza hos mennesker i Asien uden nyt fund.
+
+**Ændret**
+- `maesling-bd`: to nye punkter. 26. oktober: 222.552 mistænkte og 23.478 bekræftede tilfælde, 1.129 dødsfald blandt mistænkte og 104 blandt bekræftede, DGHS: https://dghs.gov.bd/pages/press-releases/6adf3b37df49aeae52c3ed9d 27. oktober: 223.784 mistænkte og 23.541 bekræftede tilfælde, 1.135 dødsfald blandt mistænkte og 105 blandt bekræftede, tallet for dødsfald blandt bekræftede tilfælde har stået på 104 i alle punkter fra 11. til 26. oktober, DGHS: https://dghs.gov.bd/pages/press-releases/6ae063d5011ef1fa8e274eeb `cases`, `extra` (dødsfald, indlagte og udskrevne), `pts` og `src` opdateret. Grafens dødstal er de to rækker lagt sammen (1.233 og 1.240), som reglen siger. Tallene er læst to gange i PDF-bilagene: som tekst og som billede af siden.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `dengue-bd`: DGHS' denguedashboard gav HTTP 502 både i scriptet og ved direkte opslag. Hentningsværktøjet kunne ikke bruges, fordi adressen ikke var givet af en søgning og tilladelsen ikke kunne gives i en planlagt kørsel. Tallene står urørt.
+- `dengue-asien`: Sri Lankas side kunne hverken hentes af scriptet eller direkte (forbindelsen blev afbrudt), og hentningsværktøjet afviste adressen af samme grund. Seneste tal på siden er pr. 12. oktober.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet ved kørslen.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- `anthrax-zm` og `altnv-cn` når 30 dage uden nyt punkt 28. oktober.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit bb31755.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 26. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
