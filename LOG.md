@@ -64,6 +64,38 @@ Kildescriptet (WHO DON 622 23. oktober er fortsat den nyeste, ECDC uge 42, UKHSA
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 28. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 28. oktober (et nyt mpox-tilfælde, se Ændret). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. insp.cd's medieliste (situationsrapport 165 pr. 26. oktober er ny), ECDC's ebolaside (opdateret 28. oktober kl. 16.00), WHO AFRO's oversigt over ugebulletiner (uge 41 er fortsat den nyeste), PAHO (opdateringen om dengue og chikungunya 20. oktober og mæslingerapport 14 er fortsat de nyeste og står på siden), en søgning efter Africa CDC's ugentlige rapport (intet nyt fundet), US CDC's mæslingeside (fortsat opdateret 23. oktober med tal pr. 22. oktober, som står på siden), https://globus.nicco.dk/konflikter.json (genereret 28. oktober kl. 15.23 UTC) og søgninger efter nyt om miltbrand og kolera i Zambia.
+
+**Ændret**
+- `ebola-drc`: situationsrapport 165 pr. 26. oktober, offentliggjort 27. oktober: 10.141 bekræftede tilfælde og 4.928 dødsfald, 81 nye tilfælde (36 i Ituri, 36 i Nordkivu, 6 i Haut-Uélé og 3 i Tshopo) og 41 nye dødsfald, heraf 28 i lokalsamfundet. 999 patienter i isolation, 2.708 raske. Ingen nye sundhedszoner. Kilde: DR Congos sundhedsministerium https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_165_26_10_2026.pdf ECDC's ebolaside har de samme tal. Nyt punkt i forløbet 27. oktober, `cases`, `extra`, `pts` og `src` opdateret. Tallene er læst to gange: som tekst og som billede af første side, og tallene pr. provins stemmer med de nye tilfælde lagt til situationsrapport 164.
+- `ebola-ng`: nyt punkt 28. oktober: ECDC bekræfter evakueringen af patienten og en nær kontakt til Schweiz 26. oktober og skriver, at 54 kontakter var opsporet og under opfølgning pr. 26. oktober. Kilde: ECDC https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda Tilføjet i `src`. `cases` er uændret.
+- `kolera`: nyt punkt 27. oktober: Zambia har 1.548 tilfælde, heraf 227 bekræftede, og 30 dødsfald i 18 distrikter i seks provinser pr. 27. oktober, flest i Lusaka og Chibombo. Kilde: NaTHNaC, sekundær https://travelhealthpro.org.uk/outbreaks Læst i NaTHNaC's egen tekst.
+- `anthrax-zm`: `live` er sat til `false`. Seneste punkt er 28. september, 30 dage siden, og søgninger i denne og tidligere kørsler fandt intet nyt fra Zambias myndigheder. Samme fremgangsmåde som for `altnv-cn` i kørslen kl. 11.20. Ingen andre felter er ændret.
+- `mpox-hk`: nyt punkt 28. oktober: CHP melder et bekræftet tilfælde hos en 41-årig mand med seksuel kontakt med høj risiko i og uden for Hongkong; smittekilden undersøges. Siden 2022 117 tilfælde, 91 lokale, 25 importerede og 1 under undersøgelse. Kilde: https://www.info.gov.hk/gia/general/202610/28/P2026102800707.htm `extra` og `src` opdateret. `cases` er uændret, fordi meddelelsen ikke oplyser årets samlede tal. Læst i sidens rå tekst.
+
+**Nye**
+- Ingen. NaTHNaC melder 27. oktober 4.004 mistænkte tilfælde af dengue i Tchad, heraf 311 bekræftede, og 11 dødsfald pr. 21. oktober. Ikke oprettet, fordi ingen myndighed kalder sæsonen usædvanlig, og Tchads egen opgørelse ikke er fundet.
+
+**Urørt**
+- 42 hændelser uden nyt i kilderne.
+- `maesling-us`: US CDC's side var kl. 17.30 dansk tid fortsat opdateret 23. oktober. NaTHNaC's 4.588 pr. 23. oktober er det tal, der står på siden.
+- `ebola-ke`: ECDC skriver pr. 26. oktober fortsat 9 bekræftede tilfælde og 2 dødsfald, som på siden.
+
+**Usikkert**
+- `kolera`: Zambias tal bygger fortsat på NaTHNaC. Zambias sundhedsministerium eller ZNPHI er ikke fundet, og Lusaka Times kunne ikke hentes.
+- `ebola-ng`: ECDC skriver 54 kontakter pr. 26. oktober, mens AP gengav sundhedsministerens 52 samme dag. Begge står i forløbet med hver sin kilde.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (34 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 85764e1.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 27. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
