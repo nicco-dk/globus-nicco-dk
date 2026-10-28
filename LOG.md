@@ -7,6 +7,38 @@
 ### Kl. 00.20, Europa og Danmark: intet nyt
 Kildescriptet (WHO DON 622 23. oktober er fortsat den nyeste, ECDC uge 42, UKHSA uden ny ugeoversigt, NaTHNaC, Outbreak News Today, CIDRAP og Hongkong; DGHS' denguedashboard HTTP 502 og Sri Lankas side kunne ikke hentes), ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste, uge 43 gav HTTP 404), ECDC's ebolaside (opdateret 27. oktober kl. 16.30, de samme tal for DR Congo, Kenya og Nigeria som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, intet nyt), RIVM's ebolaside (intet nyt om `ebola-nl`) og en søgning efter nyt fra DK-VET (intet nyere end sælerne; nyhedssiden kunne hverken hentes direkte eller med hentningsværktøjet). RKI's næste Epidemiologisches Bulletin kommer 29. oktober og UKHSA's ugeoversigt torsdag. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, kun den kendte om `difteri-ng` (34 dage), som venter på ejeren i GENNEMGANG.md.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 27. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud; ugeoversigten kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste; uge 43 gav HTTP 404), ECDC's ebolaside (senest opdateret 27. oktober kl. 16.30, de samme tal som på siden), insp.cd's medieliste (situationsrapport 164 pr. 25. oktober er fortsat den nyeste og står på siden), WHO's mpox-situationsrapport (nummer 70 gav HTTP 404, 69 er den nyeste), Floridas ugerapport (uge 42 gav HTTP 404), WHO AFRO's ugebulletin uge 41, Kenyas sundhedsministerium hos APO Group (intet nyere), WSDA's side om H5N1 i malkekvæg, https://globus.nicco.dk/konflikter.json (genereret 28. oktober kl. 03.23 UTC) og søgninger efter nyt om gul feber i Ghana og Elfenbenskysten, miltbrand i Zambia, Alongshan-virus i Kina, fugleinfluenza i Cambodja og hos fjerkræ i USA, pest i Irkutsk, cyclospora i USA og skrueflue i USA.
+
+**Ændret**
+- `h5n1-wa`: WSDA's tabel over bekræftede malkekvægsbesætninger i Washington viser i Yakima County 2 bekræftet 8. oktober, 1 15. oktober, 5 16. oktober, 1 21. oktober og 17 23. oktober, og i Benton County 1 23. oktober. Kilde: https://agr.wa.gov/departments/animals-livestock-and-pets/avian-health/avian-influenza/hpai-(h5n1)-in-cattle-producer-resources CIDRAP opgør 27. oktober 27 besætninger mod 9 en uge tidligere, alle undtagen én i Yakima County: https://www.cidrap.umn.edu/ebola/quick-takes-ebola-cases-top-10000-new-world-screwworm-texas-new-mexico-more-avian-flu Nye punkter 23. og 27. oktober, `cases`, `extra`, `gap` og `src` opdateret. Tallet 27 står med CIDRAP som kilde, fordi WSDA ikke selv skriver et samlet tal. Forrige kørsels tvivl om Yakima Health Districts tabel er dermed afklaret: tabellen stemmer med WSDA's. Trin og alvor er uændret. Læst i sidernes rå tekst.
+
+**Nye**
+- `gul-feber-ci`: gul feber i Elfenbenskysten, trin udbrud. WHO AFRO's ugebulletin uge 41 opgør 14 bekræftede tilfælde (7 PCR-positive og 7 PRNT-positive) og 2 dødsfald i otte sundhedsdistrikter i uge 1 til 34, pr. 6. september: https://iris.who.int/bitstreams/41f85b00-a89e-4d52-9c69-9e3b8f96a164/download Regeringen oplyste på ministerrådsmødet 14. oktober 23 tilfælde og 11 dødsfald i regionen Bounkani, gengivet af Koaci: https://www.koaci.com/article/2026/10/14/cote-divoire/sante/cote-divoire-epidemie-de-fievre-jaune-11-morts-dans-le-bounkani-le-gouvernement-appelle-a-la-vaccination-plus-de-400-000-doses-de-vaccins-disponibles_201605.html og MesVaccins.net: https://www.mesvaccins.net/web/news/24501 NaTHNaC skriver det samme pr. 14. oktober og en igangværende nødvaccination. Tallene er læst i WHO AFRO's PDF som tekst og i artiklernes rå tekst.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- Rundtur, slået op uden nyt: `difteri-ng` 34 dage, `anthrax-zm` 30, `altnv-cn` 30, `mpox-mo` 28, `h5n1-dk` 27, `salmonella-dk` 27, `cre-eu` 26, `cyclospora-us` 23, `h5n1-us` 20, `h5n1-kh` 19, `salmonella-eu` 19, `gul-feber-gh` 19, `ebola-nl` 18, `pest-irkutsk` 16, `dengue-asien` 16, `mpox` 15, `wnv-eu`, `dengue-eu` og `chik-fr` 14, `myiasis-am`, `difteri-afro` og `mpox-hk` 12, `dengue-fl` 11 dage siden seneste punkt.
+- `gul-feber-gh`: NaTHNaC skriver 43 mistænkte tilfælde, heraf 3 bekræftede dødsfald, pr. 11. oktober, uden at nævne kilden. Ikke skrevet, fordi Ghanas egen opgørelse ikke er fundet.
+- `myiasis-am`: CIDRAP skriver 27. oktober, at fundene af skrueflue i dyr i New Mexico og Texas stiger, 15 i oktober. Hændelsen handler om tilfælde hos mennesker efter PAHO's alarm, og USDA's side kunne ikke hentes (forbindelsen blev afvist), så intet er skrevet.
+
+**Usikkert**
+- `gul-feber-ci`: regeringens 23 tilfælde og 11 dødsfald er gengivet af medier, og det oplyses ikke, hvor mange der er laboratoriebekræftet. Sundhedsministeriets egen meddelelse er ikke fundet. Står i `gap`.
+- `h5n1-wa`: WSDA's side med tabellen har ingen dato for seneste opdatering.
+- `anthrax-zm` og `altnv-cn` har i dag 30 dage uden nyt punkt, og søgninger gav intet nyt. `live` er ladt stå i denne kørsel. Næste kørsel bør sætte `live` til `false` efter reglen, hvis kilderne fortsat er tavse.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 onsdag.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (34 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 686a6bb.
+
+**Mediesporet**
+- Afvist: `JO-SY` (Jordan og Syrien). Artiklerne handler om Jordans luftangreb 26. oktober mod væbnede grupper i Daraa-provinsen som gengæld for angrebet på en kirke i Karak, om Syriens protest og om lukningen af grænseovergangen ved Nassib. Ingen artikel beskriver kampe mellem Jordans og Syriens styrker. Kilder: The Guardian via AP https://www.theguardian.com/world/2026/oct/26/jordan-attacks-militants-syria-retaliation-for-last-week-church-attack Naharnet via AFP https://naharnet.com/stories/en/323374-syria-condemns-deadly-jordan-airstrikes-as-unacceptable-violation og Al-Monitor https://www.al-monitor.com/originals/2026/10/syria-condemns-deadly-jordan-strikes-unacceptable-violation
+- Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 27. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
