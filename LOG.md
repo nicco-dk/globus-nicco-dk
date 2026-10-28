@@ -2,6 +2,36 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 29. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 28. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet nyt efter mpox-tilfældet 28. oktober). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste; uge 43 og 44 gav HTTP 404), ECDC's ugesider for West Nile, dengue og chikungunya (uge 43 med data til og med 21. oktober, se Ændret), ECDC's ebolaside (opdateret 28. oktober kl. 16.00, de samme tal som på siden), UKHSA's ugeoversigt over udbrud under overvågning (uge 42 er fortsat den nyeste), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, intet nyt) og salmonellasiden (senest redigeret 1. oktober, 33 tilfælde som på siden), RIVM's ebolaside (senest ændret 12. oktober, intet nyt om `ebola-nl`). DK-VET's nyheder kunne ikke hentes direkte. RKI's Epidemiologisches Bulletin for 29. oktober var ikke ude kl. 00.20. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, kun den kendte om `difteri-ng` (35 dage). Koordinaterne for de to nye steder er tjekket mod lande og byer i samme hændelser.
+
+**Ændret**
+- `wnv-eu`: ECDC's ugeside for West Nile, uge 43, offentliggjort 23. oktober med data til og med 21. oktober: 1.965 lokalt erhvervede tilfælde i 20 lande og 229 berørte områder, syv nye områder på en uge. Italien 770, Grækenland 457, Frankrig 173, Spanien 145, Rumænien 125 og Nordmakedonien 71. Slovakiet er kommet til med 1 tilfælde. Kilde: https://wnv-weekly.ecdc.europa.eu/ Nyt punkt 21. oktober, nyt punkt i talserien, nyt sted Slovakiet, `place`, `cases`, `extra` og `src` opdateret. Siden er ikke opdateret siden 14. oktober, fordi ECDC's ugerapport for uge 43 ikke er udkommet, men ECDC's egne ugesider er. Læst to gange i sidens rå tekst.
+- `dengue-eu`: ECDC's ugeside for dengue, uge 43, data til og med 21. oktober: Italien 73 lokalt erhvervede tilfælde i syv klynger, heraf seks aktive, og Frankrig 7 i fem klynger efter en ny, aktiv klynge i La Farlède i Var. Kilde: https://dengue-weekly.ecdc.europa.eu/ Nyt punkt 21. oktober, nyt punkt i talserien, nyt sted La Farlède, `cases`, `extra` og `src` opdateret. Læst to gange i sidens rå tekst.
+- `chik-fr`: ECDC's ugeside for chikungunya, uge 43, data til og med 21. oktober: Frankrig 182 lokalt erhvervede tilfælde efter 20 nye på en uge, fordelt på 22 klynger, hvoraf 15 er aktive, og en ny klynge i Saint-Jean-Pied-de-Port i Pyrénées-Atlantiques. Prayssac 36 og Prignac-et-Marcamps 30 tilfælde. Italien fortsat 1. Kilde: https://chik-weekly.ecdc.europa.eu/ Nyt punkt 21. oktober, `place`, `cases`, `extra` og `src` opdateret. Læst to gange i sidens rå tekst.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- `ebola-nl`: intet nyt hos RIVM, lukkes efter planen 21. november. `salmonella-dk`: intet nyt hos Statens Serum Institut. `h5n1-dk` og `botulisme-dk`: intet nyt fundet. `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de`, `sindbis-de` og `shamonda-fr`: ingen ny ugerapport fra ECDC.
+
+**Usikkert**
+- `chik-fr`: ECDC skriver 182 tilfælde efter 20 nye siden sidste uge, hvilket giver 162 pr. 14. oktober, mens ugerapporten for uge 42 og punktet 14. oktober har 163. Det gamle punkt er ikke rettet, se Til gennemgang.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 00.20 torsdag (HTTP 404, oversigten viser uge 42).
+- DK-VET's nyheder https://dkvet.dk/nyheder/ kunne ikke hentes direkte (ingen forbindelse).
+- `gul-feber-gh`: NaTHNaC skriver 28. oktober 121 tilfælde, heraf 19 bekræftede, og 3 dødsfald i Upper West Region pr. 19. oktober. Ikke skrevet i denne kørsel, fordi Ghanas egen opgørelse ikke er fundet, og hændelsen hører til kl. 05.20- eller 17.20-kørslen.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (35 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit f95ab8c.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `chik-fr`: ECDC's tal pr. 14. oktober ser ud til at være rettet fra 163 til 162.
+
 ## 28. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
