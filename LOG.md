@@ -39,6 +39,31 @@ Kildescriptet (WHO DON 622 23. oktober er fortsat den nyeste, ECDC uge 42, UKHSA
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 28. oktober er ny, se Ændret), WHO SEARO nummer 21 (næste udgave ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 22., 23. og 24. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 28. oktober (kun et svar i lovgivende råd om influenza). WHO EMRO's nyheder (de nyeste fundne er 14. og 6. oktober og har intet nyere om kolera i Yemen end det, der står på siden) og en søgning efter nyt om ALTNV i Kina (intet nyere end slutningen af september).
+
+**Ændret**
+- `maesling-bd`: nyt punkt 28. oktober: 225.106 mistænkte og 23.631 bekræftede tilfælde, 1.137 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.322 nye mistænkte tilfælde, 90 nye bekræftede og 2 dødsfald blandt mistænkte, 1 hver i Dhaka- og Sylhet-divisionen, i distrikterne Dhaka og Sunamganj. 200.319 indlagt og 192.178 udskrevet siden 15. marts. Kilde: DGHS https://dghs.gov.bd/pages/press-releases/6ae1c71c5f8380a72a5cda10 `cases`, `extra`, `pts` og `src` opdateret. Grafens dødstal er de to rækker lagt sammen (1.242), som reglen siger. Tallene er læst to gange i PDF-bilaget: som tekst og som billede af siden. Kildescriptet fandt ikke tabellen med dødsfald, fordi PDF'ens tekstlag skriver 105 med et bengalsk ciffer til sidst, men billedet viser 105.
+- `altnv-cn`: `live` er sat til `false`. Seneste punkt er 28. september, 30 dage siden, og søgninger i denne og de to forrige kørsler fandt intet nyt fra forskerne eller de kinesiske myndigheder. Samme fremgangsmåde som for `cchf-ir` 20. oktober. Ingen andre felter er ændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502 i scriptet og ved direkte opslag. Dhaka Tribunes artikler med DGHS' dagstal kunne hverken hentes direkte eller med hentningsværktøjet. Tallene står urørt pr. 25. oktober.
+- `dengue-asien`: Sri Lankas side kunne hverken hentes af scriptet, direkte (forbindelsen blev nulstillet) eller med hentningsværktøjet (siden afviser maskinel læsning). Seneste tal på siden er pr. 12. oktober.
+- `anthrax-zm` har i dag 30 dage uden nyt punkt. Hændelsen hører til kl. 17.20-kørslen (Afrika), som bør søge efter nyt og ellers sætte `live` til `false`.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (34 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- WHO WPRO's oversigt over fugleinfluenza for 23. oktober er ikke fundet på den faste adresseform. Nummer 1066 er fortsat den nyeste.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 3a9f1e2.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 27. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
