@@ -61,6 +61,28 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 29. oktober er ny, se Ændret), WHO SEARO nummer 21 (næste udgave ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 22., 23. og 24. oktober gav fortsat HTTP 404), ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 29. oktober (et tilfælde af alvorlig influenza hos et barn, almindelig sæson, ikke taget med; mpox-tilfældet 28. oktober står allerede på siden). WHO EMRO's nyheder (intet nyt om udbrud; de nyeste handler om overvågning, polio, mangel på brændstof og medicin i Taiz i Yemen og beredskab mod ebola). Søgninger efter Bangladeshs og Sri Lankas denguetal.
+
+**Ændret**
+- `maesling-bd`: nyt punkt 29. oktober: 226.357 mistænkte og 23.695 bekræftede tilfælde, 1.144 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.251 nye mistænkte tilfælde, 64 nye bekræftede og 7 dødsfald blandt mistænkte, heraf 4 i Dhaka-divisionen og 1 hver i Chattogram-, Barishal- og Khulna-divisionen, flest i Dhaka-distriktet med 3. 201.468 indlagt og 193.301 udskrevet siden 15. marts. Kilde: DGHS https://dghs.gov.bd/pages/press-releases/6ae312715703c40cec848299 `cases`, `extra`, `pts` og `src` opdateret. Grafens dødstal er de to rækker lagt sammen (1.249), som reglen siger. Tallene er læst to gange i PDF-bilaget: som tekst og som billede af siden. Meddelelsen var usædvanligt allerede ude kl. 11.20.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502 i scriptet og ved direkte opslag. Søgningen fandt ingen mediegengivelse af DGHS' dagstal efter 25. oktober, der kunne læses. Tallene står urørt pr. 25. oktober.
+- `dengue-asien`: Sri Lankas side kunne hverken hentes af scriptet, direkte (forbindelsen blev nulstillet) eller med hentningsværktøjet (tilladelsen til adressen blev ikke givet i kørslen). Seneste tal på siden er pr. 12. oktober.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit cc77cd5.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 28. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
