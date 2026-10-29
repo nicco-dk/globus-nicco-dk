@@ -83,6 +83,32 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 29. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet nyt om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. UKHSA's ugeoversigt over udbrud under overvågning, uge 43, offentliggjort 29. oktober: https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-43-week-ending-25-october-2026 (ebola, CCHF i Afghanistan og Mauretanien og Shamonda-virus i Frankrig; intet nyere end det, der står på siden). insp.cd's medieliste (situationsrapport 166 pr. 27. oktober er fortsat den nyeste og står på siden), ECDC's ebolaside (fortsat pr. 28. oktober, de samme tal som på siden), US CDC's mæslingeside (fortsat opdateret 23. oktober med tal pr. 22. oktober, som står på siden), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober og alarmen om myiasis 16. oktober er fortsat de nyeste og står på siden), Africa CDC's ugentlige rapport (udgaven 19. oktober er fortsat den nyeste), WHO AFRO's ugebulletiner (intet nyere end uge 41 fundet), en søgning efter nyt om ebola i Kenya (intet nyere end 26. oktober) og https://globus.nicco.dk/konflikter.json (genereret 29. oktober kl. 15.23 UTC).
+
+**Ændret**
+- Ingen hændelser. Kun `DATA_DATO` og `DATA_TID`.
+
+**Nye**
+- Ingen. UKHSA nævner et bekræftet dødeligt tilfælde af CCHF i Trarza i Mauretanien i ugen til 11. oktober efter Africa CDC, det andet i landet i 2026. Ikke oprettet, fordi enkelte tilfælde af CCHF i Mauretanien er kendt sæson, og ingen myndighed kalder det usædvanligt.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `gul-feber-gh`: NaTHNaC skriver fortsat 121 tilfælde, heraf 19 bekræftede, og 3 dødsfald pr. 19. oktober. Ikke skrevet, fordi Ghanas egen opgørelse ikke er fundet.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5c167df.
+
+**Mediesporet**
+- Godkendt: `SV>HT` (militær støtte fra El Salvador til Haiti). El Salvador har sendt soldater til Haiti, ifølge BBC over 2.000, for at finde fire salvadoranske medlemmer af den FN-støttede Gang Suppression Force, som bander holder som gidsler. Kilder: BBC https://www.bbc.com/news/articles/ck0e075n79j5o og El País https://english.elpais.com/international/2026-10-26/bukele-sends-elite-troops-to-haiti-after-four-salvadoran-soldiers-disappear.html Konfliktparret `HT-SV` er fortsat afvist fra 22. oktober, fordi kampene står mellem soldaterne og bander, ikke mellem landenes styrker.
+- Afvist: `JO-LB` (Jordan og Libanon). Artiklerne handler om det uafklarede valg i Israel, og landene er kun nævnt. Kilder: The Express Tribune https://tribune.com.pk/story/2637546/netanyahu-set-to-remain-caretaker-after-inconclusive-israeli-election Arab News https://www.arabnews.com/middle-east/netanyahu-set-to-remain-caretaker-after-inconclusive-israeli-election-3008786 og The Irish Times https://www.irishtimes.com/world/middle-east/2026/10/28/israel-election-netanyahu-set-to-remain-caretaker-prime-minister-after-inconclusive-vote/
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 28. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
