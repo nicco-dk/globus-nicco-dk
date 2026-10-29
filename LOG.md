@@ -32,6 +32,35 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `chik-fr`: ECDC's tal pr. 14. oktober ser ud til at være rettet fra 163 til 162.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 28. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud; ugeoversigten kommer torsdag), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte 29. oktober). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's ugerapport for uge 43 og 44 (HTTP 404), ECDC's ebolaside (opdateret 28. oktober kl. 16.00, de samme tal som på siden), insp.cd's medieliste (situationsrapport 166 pr. 27. oktober er ny, se Ændret), US CDC's mæslingeside (fortsat opdateret 23. oktober med tal pr. 22. oktober), GPEI's Polio This Week (pr. 21. oktober, som på siden), WHO's mpox-situationsrapport (nummer 70 og 71 gav HTTP 404), CIDRAP om fugleinfluenza i fjerkræ i USA (se Ændret), https://globus.nicco.dk/konflikter.json (genereret 29. oktober kl. 03.23 UTC) og søgninger efter nyt om gul feber i Ghana, mpox i Sindh og dengue i Sri Lanka.
+
+**Ændret**
+- `ebola-drc`: situationsrapport 166 pr. 27. oktober, offentliggjort 28. oktober: 10.193 bekræftede tilfælde og 4.960 dødsfald, 52 nye tilfælde (31 i Ituri, 16 i Nordkivu, 3 i Tshopo og 2 i Haut-Uélé) og 32 nye dødsfald, heraf 20 i lokalsamfundet og 12 på behandlingscentre. 2.749 raske, 85,4 procent af kontakterne fulgt op. Ingen nye sundhedszoner. Kilde: DR Congos sundhedsministerium https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_166_27_10_2026_VF.pdf Nyt punkt i forløbet 28. oktober, `cases`, `extra`, `pts` og `src` opdateret. Tallene er læst to gange: som tekst og som billede af første side, og tallene pr. provins stemmer med de nye tilfælde lagt til situationsrapport 165.
+- `h5n1-us`: nyt punkt 28. oktober: 29 fund af H5N1 i fjerkræ på 30 dage, 11 kommercielle og 18 baggårdsflokke, og 1,32 millioner berørte fugle efter USDA APHIS' seneste opdatering. Største udbrud i oktober er en æglæggerfarm med 934.600 høns i Clinton County i Illinois, og store kalkunbesætninger er ramt i Roseau County i Minnesota, Barron County i Wisconsin og Dickey County i North Dakota. Kilde: CIDRAP, medie https://www.cidrap.umn.edu/avian-influenza-bird-flu/avian-flu-activity-increases-midwestern-west-coast-poultry (offentliggjort 28. oktober ifølge sidens tidsstempel). `cases`, `extra`, `nodes` (Clinton County og Roseau County) og `src` opdateret. Talserien er ikke udvidet, fordi den gælder Midtvesten, og CIDRAP's tal gælder hele USA. Læst i sidens rå tekst.
+
+**Nye**
+- Ingen. Outbreak News Today skriver 28. oktober om næsten 100 mpox-tilfælde i Sindh i Pakistan. Ikke oprettet, fordi Sindhs eller Pakistans egen opgørelse ikke er fundet, og mpox i Pakistan hører under den globale hændelse `mpox`.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- Rundtur: `gul-feber-gh` (20 dage), `mpox` (16) og `dengue-asien` (17) er slået op uden nyt, der kan skrives. `difteri-ng` (35), `mpox-mo` (29), `h5n1-dk` og `salmonella-dk` (28), `cre-eu` (27), `cyclospora-us` (24), `h5n1-kh` og `salmonella-eu` (20), `ebola-nl` (19), `pest-irkutsk` (17), `myiasis-am` og `difteri-afro` (13 dage siden seneste punkt) er ikke slået op på ny i denne kørsel. De europæiske og danske blev gennemgået kl. 00.20 i dag og de øvrige kl. 05.20 i går uden nyt. WHO WPRO's oversigt nummer 1066 melder intet nyt humant H5N1-tilfælde i Cambodja.
+- `gul-feber-gh`: NaTHNaC skriver fortsat 121 tilfælde, heraf 19 bekræftede, og 3 dødsfald pr. 19. oktober. Ikke skrevet, fordi Ghanas egen opgørelse ikke er fundet. De nyeste fundne udmeldinger fra Ghanas sundhedsminister er fra 9. oktober.
+
+**Usikkert**
+- `ebola-drc`: tallet for patienter i isolation i situationsrapport 166 er delvis dækket af et ikon i PDF'en (tekstlaget viser "9 36"). Det er ikke skrevet.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes (forbindelsen blev afbrudt). Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (35 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 torsdag.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9ffeb60.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 28. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
