@@ -2,6 +2,34 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 30. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 29. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet nyt om udbrud efter ugeoversigten for uge 43, som kl. 17.20-kørslen gennemgik), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet nyt om smitte i Europa). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste; uge 43 og 44 gav HTTP 404), ECDC's ebolaside (opdateret 29. oktober kl. 16.00, se Ændret), RKI's Epidemiologisches Bulletin 44/2026 af 29. oktober (se Ændret), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, intet nyt), RIVM's ebolaside (intet nyt om `ebola-nl`) og en søgning efter nyt fra DK-VET (intet nyt fundet). Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, kun den kendte om `difteri-ng` (36 dage). Ingen nye koordinater.
+
+**Ændret**
+- `shamonda-fr`: nyt punkt 29. oktober efter RKI's Epidemiologisches Bulletin 44/2026, som gengiver Eurosurveillance: patienten var en stærkt immunsvækket person på 60 til 70 år, fik neurologiske symptomer 23. september og døde to uger senere af svær hjernebetændelse. SHAV-EU1 blev påvist i rygmarvsvæske og isoleret fra væv fra hjernen og rygmarven, og tidlige blodprøver viser smitte allerede 83 dage før de neurologiske symptomer. Mest sandsynlig smittevej er mitter i personens landlige bopælsområde i Rhône-Alpes. Ingen andre humane tilfælde kendt. Kilde: https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/44_26.pdf?__blob=publicationFile `gap` og `src` opdateret: alder og område er nu oplyst. Læst i PDF'ens tekstlag.
+- `ebola-ng`: nyt punkt 29. oktober: ECDC skriver, at 62 kontakter var identificeret og under opfølgning pr. 27. oktober, og at tre af centrets eksperter har været udsendt til Nigeria siden 26. oktober. Kilde: https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda Læst i sidens rå tekst. `cases` er uændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- `ebola-drc`: ECDC's ebolaside har fortsat 10.193 bekræftede og 4.960 døde pr. 28. oktober, som på siden. `ebola-ke`: fortsat 9 bekræftede og 2 døde pr. 26. oktober. `ebola-nl` og `salmonella-dk`: intet nyt hos RIVM og Statens Serum Institut. `wnv-eu`, `dengue-eu`, `chik-fr`, `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de` og `sindbis-de`: ingen ny ugerapport fra ECDC.
+
+**Usikkert**
+- `ebola-ng`: ECDC's 62 kontakter pr. 27. oktober er flere end de 54 pr. 26. oktober, som ECDC selv skrev dagen før. ECDC forklarer ikke stigningen. Tallet står i forløbet med kilden, `cases` og `extra` er ikke ændret.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 00.20 fredag.
+- DK-VET's nyheder https://dkvet.dk/nyheder/ kunne fortsat ikke hentes direkte (ingen forbindelse).
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (36 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5f95f23.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 29. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
