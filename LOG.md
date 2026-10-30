@@ -2,6 +2,36 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 31. oktober 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 30. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud efter ugeoversigten 29. oktober), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet nyt om smitte i Europa). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste; uge 43 og 44 gav HTTP 404), ECDC's ugesider for West Nile, dengue og chikungunya (uge 44 med data til og med 28. oktober, se Ændret), ECDC's ebolaside (opdateret 30. oktober kl. 16.00, de samme tal som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober, intet nyt) og nyheder, RIVM's ebolaside (intet nyt om `ebola-nl`), Fødevarestyrelsens pressemeddelelser om fugleinfluenza (se Usikkert) og US CDC's side om klade I-mpox (efter kontrollens advarsel, se Ændret). RKI's Epidemiologisches Bulletin 44/2026 blev gennemgået i forrige døgn, og det næste ventes 5. november. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato. Ingen nye koordinater.
+
+**Ændret**
+- `wnv-eu`: ECDC's ugeside for West Nile, uge 44, offentliggjort 29. oktober med data til og med 28. oktober: 2.009 lokalt erhvervede tilfælde i 20 lande og 234 berørte områder, fem nye områder på en uge. Italien 780, Grækenland 463, Frankrig 180, Spanien 149, Rumænien 125, Nederlandene 76 og Nordmakedonien 71. Kilde: https://wnv-weekly.ecdc.europa.eu/ Nyt punkt 28. oktober, nyt punkt i talserien, `place`, `cases`, `extra` og `src` opdateret. Læst to gange i sidens rå tekst.
+- `dengue-eu`: ECDC's ugeside for dengue, uge 44, data til og med 28. oktober: Italien 76 lokalt erhvervede tilfælde efter 3 nye og Frankrig 8 efter 1 nyt. Ingen nye klynger. Seks af Italiens syv klynger er aktive, og klyngen i Garbagnate Milanese ved Milano er lukket. I Frankrig er kun klyngen i La Farlède i Var aktiv. Kilde: https://dengue-weekly.ecdc.europa.eu/ Nyt punkt 28. oktober, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Læst to gange i sidens rå tekst.
+- `chik-fr`: ECDC's ugeside for chikungunya, uge 44, data til og med 28. oktober: Frankrig 204 lokalt erhvervede tilfælde efter 22 nye på en uge, fordelt på 29 klynger, hvoraf 19 er aktive. Syv nye klynger: fire i Gironde, én i Var, én i Val-de-Marne og én i Seine-Saint-Denis. Største aktive klynger er Prayssac 36 og Cavalaire-sur-Mer 31 tilfælde, og klyngen i Prignac-et-Marcamps med 30 er lukket. Italien fortsat 1. Kilde: https://chik-weekly.ecdc.europa.eu/ Nyt punkt 28. oktober, `place`, `cases`, `extra` og `src` opdateret. Læst to gange i sidens rå tekst. 182 plus 22 giver 204, så tallene hænger sammen med forrige uge.
+- `mpox-mo`: kontrollen advarede om 31 dage uden nyt punkt. US CDC's side om klade I-mpox, opdateret 27. oktober: næsten 130 klade I-tilfælde i mindst 26 delstater og Puerto Rico pr. oktober 2026, og formodet indenlandsk smitte i 15 jurisdiktioner. Kilde: https://www.cdc.gov/monkeypox/outbreaks/2023/index.html Nyt punkt 27. oktober, `place`, `cases`, `note` og `gap` opdateret. Læst to gange uafhængigt med hentningsværktøjet (direkte opslag afvises af US CDC). `live` står.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne.
+- `ebola-drc`: ECDC's ebolaside har fortsat 10.274 bekræftede og 4.992 døde med data til 28. oktober, som på siden. `ebola-ng`: fortsat 62 kontakter pr. 29. oktober. `ebola-ke`: fortsat 9 bekræftede og 2 døde pr. 26. oktober. `ebola-nl`, `salmonella-dk`, `h5n1-dk` og `botulisme-dk`: intet nyt hos RIVM, Statens Serum Institut og DK-VET. `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de`, `sindbis-de` og `shamonda-fr`: ingen ny ugerapport fra ECDC.
+
+**Usikkert**
+- Fødevarestyrelsen meldte 23. oktober sæsonens første udbrud af højpatogen fugleinfluenza i fjerkræ, 40.000 kalkuner i Bøgelunde i Slagelse Kommune (https://foedevarestyrelsen.dk/nyheder/pressemeddelelser/2026/okt/40000-kalkuner), og 25. oktober 27.000 kalkuner i Stokkemarke på Lolland (https://foedevarestyrelsen.dk/nyheder/pressemeddelelser/2026/okt/27000-kalkuner-lolland). Fødevarestyrelsen kalder det ikke overraskende under efterårstrækket, og truslen fra vilde fugle er fortsat medium. Ikke skrevet: `h5n1-dk` handler om sæler, og forårets fjerkræudbrud står heller ikke på siden. Det er almindelig sæson uden en myndighed, der kalder den usædvanlig.
+- ECDC's ugerapport for uge 43 er ikke udkommet, og oversigten viser fortsat uge 42 som den nyeste. ECDC's egne ugesider er udkommet for både uge 43 og 44.
+- DK-VET's nyheder https://dkvet.dk/nyheder/ kunne fortsat ikke hentes direkte (forbindelsen blev afbrudt). En søgning gav intet nyere end 1. oktober.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (37 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 2b4b246.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 30. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
