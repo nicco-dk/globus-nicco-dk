@@ -63,6 +63,36 @@
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 29. oktober er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), WHO SEARO nummer 21 (næste udgave ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 22., 23., 24., 29. og 30. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 29. og 30. oktober. Desuden WHO EMRO's nyheder (en samlet oversigt over nødsituationer i regionen uden nye tal for hændelserne på siden), ECDC's månedlige MERS-opdatering 19. oktober (8 tilfælde og 1 dødsfald i Saudi-Arabien i 2026, som på siden) og søgninger efter mpox i Hongkong og dengue i Bangladesh og Sri Lanka. Ikke taget med: CHP gengiver 30. oktober Guangdongs sundhedsmyndighed med 1.753 tilfælde af chikungunya i Guangdong i 2026 pr. september, heraf 1.014 i september, og 586 tilfælde af dengue (https://www.info.gov.hk/gia/general/202610/30/P2026103000488.htm). Det er sæsonen for en kendt sygdom, og ingen myndighed kalder den usædvanlig. Usikkert: DGHS' denguedashboard gav fortsat HTTP 502, og søgningen gav kun mediegengivelser fra 2025, så `dengue-bd` står urørt pr. 25. oktober. Sri Lankas side kunne fortsat ikke hentes (ingen forbindelse), så `dengue-asien` står urørt pr. 12. oktober. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen; kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit cfbe431. 47 hændelser urørt. Til gennemgang: intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 30. oktober er ny, se Ændret), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud i Afrika eller Amerika), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. insp.cd's medieliste (situationsrapport 167 pr. 28. oktober er ny, se Ændret), ECDC's ebolaside (opdateret 30. oktober kl. 16.00), WHO AFRO's ugebulletiner (uge 41 er fortsat den nyeste), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober og alarmen om myiasis 16. oktober er fortsat de nyeste), US CDC's mæslingeside (fortsat opdateret 23. oktober med 4.588 tilfælde pr. 22. oktober, som på siden), en søgning efter Africa CDC's ugerapport (ingen ny fundet) og https://globus.nicco.dk/konflikter.json (genereret 30. oktober kl. 16.23 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 30. oktober: 227.673 mistænkte og 23.770 bekræftede tilfælde siden 15. marts, 1.146 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.316 nye mistænkte tilfælde, 75 nye bekræftede og 2 dødsfald blandt mistænkte, 1 hver i Sylhet- og Khulna-divisionen, i distrikterne Habiganj og Kushtia. 202.639 indlagt og 194.399 udskrevet. Kilde: https://dghs.gov.bd/pages/press-releases/6ae312925f8380a72a5d52a4 Nyt punkt i forløbet og i talserien (dødstallet i grafen er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Tallene er læst to gange: i PDF'ens tekstlag og som billede af første side.
+- `ebola-drc`: situationsrapport 167 pr. 28. oktober, offentliggjort 29. oktober: 10.274 bekræftede tilfælde og 4.992 dødsfald, 78 nye tilfælde (40 i Ituri, 30 i Nordkivu, 6 i Haut-Uélé og 2 i Tshopo) og 32 nye dødsfald, heraf 18 i lokalsamfundet og 14 på behandlingscentre. 1.052 i isolation, 2.766 raske, 87,2 procent af kontakterne fulgt op. 67 af 178 sundhedszoner. Kilde: DR Congos sundhedsministerium https://insp.cd/wp-content/uploads/2026/10/SitRep_MVEBDB_167_28_10_2026_VF.pdf ECDC's ebolaside har de samme tal med data til 28. oktober. Nyt punkt i forløbet 29. oktober, `cases`, `extra`, `pts` og `src` opdateret. Tallene er læst to gange: som tekst og som billede af første side.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- `ebola-ng`: ECDC skriver fortsat 62 kontakter, nu pr. 29. oktober, og at patienten er evakueret til Schweiz, som allerede står på siden. `ebola-ke`: fortsat 9 bekræftede og 2 døde pr. 26. oktober. `maesling-us`, `maesling-am`, `chik-am` og `myiasis-am`: ingen nye udgivelser fra US CDC og PAHO. `gul-feber-gh`, `gul-feber-ci`, `difteri-afro` og `kolera`: ingen ny ugebulletin fra WHO AFRO.
+
+**Usikkert**
+- `ebola-drc`: situationsrapport 167 skriver, at ingen nye sundhedszoner er ramt på døgnet, men har 67 zoner mod 66 i situationsrapport 166, og Nord-Ubangi står med 6 tilfælde mod 3 uden nye tilfælde på døgnet. Det samlede tal er derfor 3 højere end situationsrapport 166 plus de 78 nye. Rapporten forklarer det ikke. Tallene står, som rapporten skriver dem, og forskellen er nævnt i `extra`.
+- NaTHNaC melder dengue i Peru, Colombia og Tchad og kolera i Zambia. Ikke oprettet: dengue er sæson for en kendt sygdom uden en myndighed, der kalder den usædvanlig, og koleraen i Zambia hører under `kolera`, hvor Zambias egen opgørelse ikke er hentet i denne kørsel.
+- `maesling-us`: Outbreak News Today skriver om stigende tal i Minnesota og Ohio. US CDC's samlede tal er ikke opdateret, så hændelsen står urørt.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (36 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Al Jazeeras artikel om parret IR-QA kunne ikke hentes med hentningsværktøjet (tilladelsen blev ikke givet i kørslen). Afgørelsen bygger på artiklernes overskrifter og søgeresultater.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 218ca42.
+
+**Mediesporet**
+- Afvist: IR-QA (Iran og Qatar). Stregens artikler handler om Qatars mægling mellem Iran og USA og om skibsfarten i Hormuzstrædet, fx Al Jazeera "Qatari officials in Iran in bid to revive ceasefire deal with US" https://www.aljazeera.com/news/2026/10/30/qatari-officials-in-iran-in-bid-to-revive-ceasefire-deal-with-us Financial Times "Qatari mediators return to Tehran in last-ditch effort to broker interim deal" https://www.ft.com/content/293a8f46-dd7d-4d63-a974-150ecafe7e4c og CBS News "Trump predicts Iran war will end soon as Qatar pushes for a deal" https://www.cbsnews.com/live-updates/iran-war-us-trump-diplomacy-threat-resume-attacks/ Ingen beskriver angreb mellem Iran og Qatar i vinduet. Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 29. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
