@@ -30,6 +30,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 29. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet nyt om udbrud efter ugeoversigten for uge 43), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet nyt om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. insp.cd's medieliste (situationsrapport 166 pr. 27. oktober er fortsat den nyeste og står på siden), ECDC's ebolaside (opdateret 29. oktober kl. 16.00, de samme tal som på siden), WHO AFRO's ugebulletiner (uge 41 er fortsat den nyeste), US CDC's mæslingeside (fortsat opdateret 23. oktober med tal pr. 22. oktober, som på siden), US CDC's side om cyclosporiasis (se Ændret), WHO's mpox-situationsrapport (nummer 70 og 71 gav HTTP 404), PAHO's dokumenter om gul feber (alarmen 13. marts er den nyeste), Statens Serum Instituts liste over aktuelle sygdomsudbrud og nyheder (se Ændret), Floridas ugerapport (uge 42 gav HTTP 404), https://globus.nicco.dk/konflikter.json (genereret 30. oktober kl. 03.23 UTC) og søgninger efter nyt om gul feber i Ghana, Elfenbenskysten og Venezuela, fugleinfluenza i Cambodja, pest i Irkutsk, mæslinger i Pennsylvania, klade I-mpox i USA og skrueflue i USA.
+
+**Ændret**
+- `cyclospora-us`: US CDC's side, opdateret 23. oktober: 20.996 laboratoriebekræftede tilfælde smittet i USA i 49 stater plus Washington DC, 1.161 indlagte og 2 dødsfald med sygdomsdebut i sæsonen 1. maj til 31. august. Siden opdateres ikke længere ugentligt, fordi antallet af smittede er faldet markant. Kilde: https://www.cdc.gov/cyclosporiasis/cases/index.html Nyt punkt 23. oktober, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Tallene er læst to gange uafhængigt med hentningsværktøjet (direkte opslag afvises af US CDC).
+- `wnv-eu`: nyt punkt 29. oktober: Statens Serum Institut skriver, at der fortsat ikke er påvist lokal smitte med vestnilvirus hos mennesker i Danmark, og nævner antistofferne hos fire heste i prøver fra efteråret 2025. Kilde: https://www.ssi.dk/aktuelt/nyheder/2026/vestnilfeber-spreder-sig-laengere-nordpaa-i-europa-ssi-foelger-udviklingen `extra` og `src` opdateret. Læst i sidens rå tekst.
+
+**Nye**
+- Ingen. NaTHNaC melder 29. oktober 12 bekræftede tilfælde af gul feber og 4 dødsfald i Venezuela i 2026 pr. 10. oktober i delstaterne Aragua, Barinas, Delta Amacuro, La Guaira, Lara og Monagas. Ikke oprettet, fordi hverken Venezuelas sundhedsministerium eller PAHO har en opgørelse, der kunne findes. PAHO's seneste alarm om gul feber i Amerika er fra 13. marts.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (14), `difteri-afro` (14), `mpox` (17), `pest-irkutsk` (18), `dengue-asien` (18), `h5n1-kh` (21), `gul-feber-gh` (21), `salmonella-eu` (21), `gul-feber-ci` (16), `dengue-fl` (13), `chik-am` (10), `cre-eu` (28) og `mpox-mo` (30) er slået op i hovedkilden eller de samlede kilder uden nyt, der kan skrives. `ebola-nl` (20), `h5n1-dk` (29) og `salmonella-dk` (29) blev gennemgået kl. 00.20 i dag hos RIVM, DK-VET og Statens Serum Institut uden nyt og er ikke slået op igen. `difteri-ng` (36) venter på ejeren. WHO WPRO nummer 1066 melder intet nyt humant H5N1-tilfælde i Cambodja. Skrueflue er fundet hos dyr i Arizona og hos en kat i New Mexico ifølge CIDRAP, men ingen nye tilfælde hos mennesker, så `myiasis-am` er urørt.
+
+**Usikkert**
+- `maesling-us`: Outbreak News Today gengiver 28. oktober Pennsylvanias sundhedsmyndighed med 1.398 tilfælde i 44 counties, 265 indlagte og 5 dødsfald. Myndighedens egen meddelelse er ikke fundet, så Pennsylvania står fortsat med 1.317 pr. 21. oktober.
+- `mpox-mo`: US CDC's side om klade I-mpox kunne ikke hentes med hentningsværktøjet (adressen blev afvist og tilladelsen ikke givet i kørslen), og direkte opslag afvises af US CDC. Hændelsen har 30 dage uden nyt punkt og får kontrollens advarsel fra i morgen.
+- `gul-feber-gh`: NaTHNaC skriver fortsat 121 tilfælde, heraf 19 bekræftede, og 3 dødsfald pr. 19. oktober. Ikke skrevet, fordi Ghanas egen opgørelse ikke er fundet.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes direkte (ingen forbindelse). Tallene står urørt.
+- ECDC's ugerapport for uge 43 var fortsat ikke udkommet kl. 05.20 fredag.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (36 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 12c94cd.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (89 mistanker og 8 bekræftede). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 29. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
