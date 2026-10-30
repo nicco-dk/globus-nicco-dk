@@ -60,6 +60,9 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 29. oktober er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), WHO SEARO nummer 21 (næste udgave ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 22., 23., 24., 29. og 30. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 29. og 30. oktober. Desuden WHO EMRO's nyheder (en samlet oversigt over nødsituationer i regionen uden nye tal for hændelserne på siden), ECDC's månedlige MERS-opdatering 19. oktober (8 tilfælde og 1 dødsfald i Saudi-Arabien i 2026, som på siden) og søgninger efter mpox i Hongkong og dengue i Bangladesh og Sri Lanka. Ikke taget med: CHP gengiver 30. oktober Guangdongs sundhedsmyndighed med 1.753 tilfælde af chikungunya i Guangdong i 2026 pr. september, heraf 1.014 i september, og 586 tilfælde af dengue (https://www.info.gov.hk/gia/general/202610/30/P2026103000488.htm). Det er sæsonen for en kendt sygdom, og ingen myndighed kalder den usædvanlig. Usikkert: DGHS' denguedashboard gav fortsat HTTP 502, og søgningen gav kun mediegengivelser fra 2025, så `dengue-bd` står urørt pr. 25. oktober. Sri Lankas side kunne fortsat ikke hentes (ingen forbindelse), så `dengue-asien` står urørt pr. 12. oktober. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen; kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit cfbe431. 47 hændelser urørt. Til gennemgang: intet nyt.
+
 ## 29. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
