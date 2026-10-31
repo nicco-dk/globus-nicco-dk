@@ -2,6 +2,32 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 1. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 31. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud efter ugeoversigten 29. oktober), NaTHNaC, Outbreak News Today (se Ændret), CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste), ECDC's ebolaside (opdateret 30. oktober kl. 16.00, de samme tal som på siden), Statens Serum Instituts liste over aktuelle sygdomsudbrud (senest redigeret 23. oktober), siden om salmonellaudbruddet (senest redigeret 1. oktober) og nyheder (vestnilfeber 29. oktober står allerede i `wnv-eu`), RIVM's ebolaside (intet nyt om `ebola-nl` efter 21. oktober) og en søgning efter nyt fra DK-VET og Fødevarestyrelsen om fugleinfluenza i sæler. RKI's næste Epidemiologisches Bulletin ventes 5. november. Kvalitet: kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato. Ingen nye koordinater.
+
+**Ændret**
+- `salmonella-dk`: `live` sat til `false` efter reglen om en måned uden nyt. Statens Serum Instituts side om udbruddet er senest redigeret 1. oktober med 33 tilfælde, og der er ikke meldt nye tilfælde siden. Udbruddet står fortsat på SSI's liste over aktuelle sygdomsudbrud. Kilde: https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/2026_salmonella-enteritidis-i-danmark Nyt punkt 1. november.
+- `ebola-ng`: NCDC meldte i en ebolaopdatering lørdag 31. oktober to mistænkte tilfælde af ebola i Nordøstnigeria. Begge er isoleret, kontakterne opspores, og prøvesvarene er ikke offentliggjort. Delstaten og en eventuel forbindelse til det bekræftede tilfælde er ikke oplyst. Kilder: NCDC via Tribune Online https://tribuneonlineng.com/ncdc-detects-two-additional-suspected-ebola-cases-in-north-east-nigeria/ og NCDC via Legit.ng https://www.legit.ng/nigeria/1738906-breaking-ncdc-announces-ebola-cases-nigeria/ begge mærket medie. Outbreak News Today har det samme: https://outbreaknewstoday.substack.com/p/nigeria-reports-two-suspected-ebola Nyt punkt 31. oktober, `gap` og `src` opdateret. Trin, `cases` og koordinater står urørt. Taget med uden for rækkens fokus, fordi det kan ændre hændelsen.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- `ebola-drc`: ECDC's ebolaside har fortsat 10.274 bekræftede og 4.992 døde med data til 28. oktober. Situationsrapport 168 pr. 29. oktober med 10.351 og 5.026 står allerede på siden. `ebola-nl` (22 dage), `botulisme-dk`, `wnv-eu`, `dengue-eu`, `chik-fr`, `cre-eu`, `salmonella-eu`, `cchf-es`, `malaria-de`, `sindbis-de` og `shamonda-fr`: intet nyt hos RIVM, Statens Serum Institut og ECDC, og ECDC's ugerapport for uge 43 er ikke udkommet.
+
+**Usikkert**
+- `h5n1-dk`: 31 dage uden nyt punkt, og kontrollen advarer fra i dag. DK-VET's nyheder kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (siden afviser automatiske opslag), og søgninger gav intet nyere end 1. oktober. Fordi hovedkilden ikke kunne læses, er `live` ladt stå. Se GENNEMGANG.md.
+- `ebola-ng`: de to mistænkte tilfælde er kun gengivet af medier. NCDC's egen udmelding står ikke blandt pressemeddelelserne på https://ncdc.gov.ng/news/press, og Legit.ng skriver, at den kom i et opslag på sociale medier. US News' artikel om sagen kunne ikke hentes.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9b7d406.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `h5n1-dk`, skal `live` sættes til `false`, når DK-VET ikke kan læses.
+
 ## 31. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
