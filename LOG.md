@@ -32,6 +32,40 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 30. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21 (nummer 22 gav HTTP 404), WHO WPRO nummer 1066 (udgaver dateret 23., 29., 30. og 31. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet nyt om udbrud efter ugeoversigten 29. oktober), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er ny, se Ændret), ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste), WHO AFRO's ugebulletiner (uge 41 er fortsat den nyeste), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober og alarmen om myiasis 16. oktober er fortsat de nyeste), US CDC's mæslingeside (opdateret 30. oktober, se Ændret), GPEI's Polio This Week (opdateret 28. oktober, se Ændret), Floridas ugerapport for uge 42 (se Ændret; uge 43 gav HTTP 404), WHO's mpox-situationsrapport (nummer 70 og 71 gav fortsat HTTP 404), Kenyas sundhedsministerium hos APO Group (intet nyere end 7. oktober), en søgning efter Africa CDC's ugerapport (ingen ny fundet), søgninger efter nyt om gul feber i Ghana og mpox i Sindh i Pakistan, og https://globus.nicco.dk/konflikter.json (genereret 31. oktober kl. 03.23 UTC).
+
+**Ændret**
+- `ebola-drc`: situationsrapport 168 pr. 29. oktober, offentliggjort 30. oktober: 10.351 bekræftede tilfælde og 5.026 dødsfald, 77 nye tilfælde (45 i Nordkivu, 28 i Ituri, 3 i Haut-Uélé og 1 i Tshopo) og 34 nye dødsfald, heraf 20 i lokalsamfundet og 14 på behandlingscentre. 1.101 i isolation, 2.788 raske, 84,5 procent af kontakterne fulgt op. Fortsat 67 af 178 sundhedszoner. Kilde: DR Congos sundhedsministerium https://insp.cd/wp-content/uploads/2026/10/final_draft_SitRep_MVEBDB_168_29_10_2026.pdf Nyt punkt i forløbet 30. oktober, `cases`, `extra`, `pts` og `src` opdateret. Tallene er læst to gange: som tekst og som billede af første side. 10.274 plus 77 giver 10.351 og 4.992 plus 34 giver 5.026, så tallene hænger sammen med situationsrapport 167.
+- `maesling-us`: US CDC's side, opdateret 30. oktober: 4.852 bekræftede tilfælde i 2026 pr. 29. oktober, heraf 4.834 meldt af 47 jurisdiktioner og 18 hos internationale besøgende, fortsat 43 udbrud, og 96 procent (4.666 af 4.852) hører til et udbrud. Fortsat 3 dødsfald i tabellen. Kilde: https://www.cdc.gov/measles/data-research Nyt punkt 30. oktober, nyt punkt i talserien, `cases` og `extra` opdateret. Læst tre gange uafhængigt med hentningsværktøjet (direkte opslag afvises af US CDC med 403). CIDRAP har samme tal: https://www.cidrap.umn.edu/measles/us-measles-cases-top-4800-disease-surges-multiple-states
+- `dengue-fl`: Floridas ugerapport uge 42 (18. til 24. oktober): 485 lokalt erhvervede tilfælde i 12 counties, 60 nye på en uge. Hillsborough 385, Pinellas 67, Miami-Dade 9, Orange 9, Pasco 4, Citrus 3, Manatee 2 og Seminole 2 (ny), og ét hver i Brevard, Broward, Palm Beach og Polk. Kilde: https://www.floridahealth.gov/wp-content/uploads/2026/10/fl-arbovirus-report-w42-2026.pdf Nyt punkt 24. oktober, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Læst to gange: i PDF'ens tekstlag og som billede af første side. Countytallene giver tilsammen 485.
+- `polio`: GPEI's Polio This Week pr. 28. oktober: et nyt tilfælde af vild poliovirus type 1 i Sindh i Pakistan, i alt 7 i 2026. DR Congo 84 tilfælde af vaccineafledt type 2 efter syv nye. Vaccineafledt type 3: Nigeria 15 efter et nyt i Zamfara og Niger 2 efter et nyt i Diffa. Somalia fortsat 6 tilfælde af type 2 og en ny positiv miljøprøve i Banadir. Kilde: https://polioeradication.org/about-polio/polio-this-week/ Nyt punkt 28. oktober, nyt sted Diffa i Niger, `cases` og `extra` opdateret. Læst i sidens rå tekst. Afghanistan er ikke nævnt i ugens opdatering og står fortsat med 42 pr. 21. oktober.
+
+**Nye**
+- Ingen. Se Usikkert om mpox i Sindh i Pakistan.
+
+**Urørt**
+- 43 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (15), `difteri-afro` (15), `gul-feber-ci` (17), `mpox` (18), `pest-irkutsk` (19), `dengue-asien` (19), `h5n1-kh` (22), `gul-feber-gh` (22), `salmonella-eu` (22), `cre-eu` (29) og `chik-am` (11) er slået op i hovedkilden eller de samlede kilder uden nyt, der kan skrives. `ebola-nl` (21), `h5n1-dk` (30) og `salmonella-dk` (30) blev gennemgået kl. 00.20 i dag hos RIVM, DK-VET og Statens Serum Institut uden nyt og er ikke slået op igen. `difteri-ng` (37) venter på ejeren.
+- `ebola-ke`: fortsat 9 bekræftede og 2 døde pr. 26. oktober. `ebola-ng`: fortsat 62 kontakter pr. 29. oktober ifølge ECDC.
+
+**Usikkert**
+- Mpox i Sindh i Pakistan: Outbreak News Today skriver 28. oktober, at Sindhs sundhedsmyndighed har 98 tilfælde i provinsen, og at tidligere i måneden var der meldt 95 bekræftede tilfælde og 11 dødsfald, med tilfælde i Karachi uden rejsehistorie (https://outbreaknewstoday.substack.com/p/pakistan-nearly-100-mpox-cases-in). Arab News skriver 24. oktober 98 tilfælde og 12 dødsfald "according to official data" uden at nævne myndigheden (https://arabnews.pk/pakistan/infant-dies-of-mpox-in-pakistans-sindh-taking-2027-tally-to-12-3005137). Ingen hændelse oprettet: sundhedsmyndighedens egen opgørelse er ikke fundet, dødstallene er uenige, og kladen er ikke oplyst. Se GENNEMGANG.md.
+- `maesling-us`: CIDRAP skriver 30. oktober, at Pennsylvania har 1.426 tilfælde efter 88 nye på en uge, og henviser til delstatens side, som ikke kunne læses (siden indlæses dynamisk). Pennsylvania står fortsat med 1.317 pr. 21. oktober i `extra`.
+- `dengue-fl`: Outbreak News Today skriver 30. oktober om 60 nye lokale tilfælde, hvilket svarer til ugerapport uge 42. Ugerapport uge 43 var ikke udkommet.
+- `gul-feber-gh`: NaTHNaC skriver fortsat 121 tilfælde, heraf 19 bekræftede, og 3 dødsfald pr. 19. oktober. Ikke skrevet, fordi Ghanas egen opgørelse ikke er fundet.
+- `h5n1-dk` og `salmonella-dk`: 30 dage uden nyt punkt. Kontrollen advarer fra i morgen. Er Statens Serum Institut og DK-VET fortsat tavse ved kl. 00.20-kørslen, sættes `live` til `false` efter reglen.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne hverken hentes af scriptet eller med hentningsværktøjet (siden afviser automatiske opslag). Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (37 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 258263c.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (83 mistanker og 8 bekræftede). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: mpox i Sindh i Pakistan, bør det have sin egen hændelse.
+
 ## 30. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
