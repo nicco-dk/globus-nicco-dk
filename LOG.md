@@ -66,6 +66,28 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: mpox i Sindh i Pakistan, bør det have sin egen hændelse.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 30. oktober er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), WHO SEARO nummer 21 (næste udgave ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 23., 24., 30. og 31. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 30. og 31. oktober (et tilfælde af svær influenza hos et barn, almindelig sæson). Desuden WHO EMRO's nyheder (siden viste kun ældre poster ved hentning, og en søgning gav intet nyt om hændelserne på siden), en søgning efter kolera i Yemen (intet nyere end WHO EMRO pr. 13. oktober, som på siden) og søgninger efter dengue i Bangladesh og Sri Lanka.
+
+**Ændret**
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502, så tallet er taget fra DGHS' daglige melding gengivet af medier: 133.367 indlagte og 418 dødsfald i 2026 efter 3 nye dødsfald, alle i Dhaka-divisionen, og 1.262 nye indlagte i døgnet til kl. 8 30. oktober. Kilder: The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-1262-hospitalised-24-hours-4311326 og bdnews24 https://bdnews24.com/bangladesh/hob4giud0u, begge mærket medie. The Business Standard har de samme tal: https://www.tbsnews.net/bangladesh/health/dengue-claims-3-more-lives-24hrs-toll-hits-418-1587816 Nyt punkt 30. oktober, nyt punkt i talserien, `cases` og `src` opdateret. Tallene er læst i alle tre artikler og stemmer overens.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `dengue-bd`: tallene for 26. til 29. oktober mangler, fordi dashboardet har været nede. bdnews24 skriver, at bulletinen dækker "Wednesday morning and Thursday morning", mens The Daily Star og The Business Standard skriver døgnet til kl. 8 30. oktober, som er en fredag. Tallene er ens i alle tre, og punktet er dateret 30. oktober efter de to sidste.
+- `dengue-asien`: Sri Lankas side kunne hverken hentes af scriptet eller med hentningsværktøjet (siden afviser automatiske opslag), og søgningen gav ingen nyere opgørelse. Tallet står urørt pr. 12. oktober.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit cefc9c3.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 30. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
