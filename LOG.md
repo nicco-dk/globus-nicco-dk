@@ -88,6 +88,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 31. oktober er ny, se Ændret), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud i Afrika eller Amerika), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste og står på siden), WHO AFRO's oversigt over ugebulletiner (uge 41 er fortsat den nyeste), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober er fortsat den nyeste), en søgning efter Africa CDC's ugerapport (ingen ny fundet), Venezuelas sundhedsministeriums epidemiologiske bulletiner for uge 40 og 41 (se Nye) og https://globus.nicco.dk/konflikter.json (genereret 31. oktober kl. 15.23 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 31. oktober: 228.660 mistænkte og 23.867 bekræftede tilfælde siden 15. marts, 1.147 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 987 nye mistænkte tilfælde, 97 nye bekræftede og 1 dødsfald blandt mistænkte, i Dhaka-divisionen og Dhaka distrikt. 203.528 indlagt og 195.088 udskrevet. Kilde: https://dghs.gov.bd/pages/press-releases/6ae312d1693754e6a6907ba3 Nyt punkt i forløbet og i talserien (dødstallet i grafen er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Tallene er læst to gange: i PDF'ens tekstlag og som billede af første side, og de stemmer med 30. oktober plus døgnets nye.
+
+**Nye**
+- `gul-feber-ve`: gul feber i Venezuela, trin udbrud. Venezuelas sundhedsministeriums epidemiologiske bulletin for uge 41, offentliggjort 30. oktober: 2 nye bekræftede tilfælde i ugen, 14 bekræftede tilfælde og 6 dødsfald i 2026 i Barinas (4), Aragua (3), La Guaira (3), Monagas (2), Delta Amacuro (1) og Lara (1), og 52 udbrud blandt aber. Kilde: https://mpps.gob.ve/wp-content/uploads/2026/10/Boletin-Epidemiologico-SEM-41.pdf Bulletinen for uge 40, offentliggjort 23. oktober, havde 12 tilfælde og 4 dødsfald: https://mpps.gob.ve/wp-content/uploads/2026/10/Boletin-Epidemiologico-SEM-40.pdf PAHO's alarm 13. marts har 6 tilfælde og 1 dødsfald i Venezuela i uge 1 til 7 og 32 tilfælde og 19 dødsfald i 2025: https://www.paho.org/sites/default/files/2026/03/2026-march-13-phe-epidemiological-alert-yellow-fever-final.pdf Tallene i uge 41 er læst i PDF'ens tekstlag og som billede af siden, og ugegrafens søjler giver også 14. Kl. 05.20-kørslen 30. oktober lod hændelsen være, fordi en myndighedsopgørelse ikke kunne findes. Den er nu fundet.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- `ebola-drc`: ingen ny situationsrapport efter nummer 168. `ebola-ng` og `ebola-ke`: intet nyt. `maesling-us`: US CDC's ugetal pr. 29. oktober står allerede på siden. `myiasis-am`, `maesling-am` og `chik-am`: ingen nye udgivelser fra PAHO. `gul-feber-gh`, `gul-feber-ci`, `difteri-afro` og `kolera`: ingen ny ugebulletin fra WHO AFRO.
+
+**Usikkert**
+- `gul-feber-ve`: bulletinerne angiver kun ugenummeret, ikke datoerne for ugen. Punkterne i forløbet og talserien er derfor dateret efter offentliggørelsen (23. og 30. oktober). Koordinaterne er delstaternes hovedstæder (Barinas, Maracay, La Guaira, Maturín, Tucupita og Barquisimeto), fordi bulletinen ikke oplyser kommunerne.
+- `gul-feber-gh`: NaTHNaC skriver fortsat 121 tilfælde, heraf 19 bekræftede, og 3 dødsfald pr. 19. oktober. Ikke skrevet, fordi Ghanas egen opgørelse ikke er fundet.
+- `kolera`: NaTHNaC skriver 1.548 tilfælde, heraf 227 bekræftede, og 30 dødsfald i Zambia pr. 27. oktober. Ikke skrevet, fordi Zambias egen opgørelse ikke er hentet.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt (37 dage). Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- En søgning efter angreb mellem Israel og Qatar gav en side fra Iraqi News dateret 8. oktober 2026 om israelske angreb på Hamas-ledere i Qatar. Den ligger uden for vinduet på 7 dage, og ingen af stregens artikler nævner angreb, så parret er afvist. Siden er ikke læst.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 8c55900.
+
+**Mediesporet**
+- Afvist: `IL-QA` (Israel og Qatar). Stregens artikler handler om valget i Israel og andet, fx France 24 "Israeli election: 'Netanyahu did not win, he lost dramatically,' former PM Barak says" https://www.france24.com/en/tv-shows/t%C3%AAte-%C3%A0-t%C3%AAte/20261030-israeli-election-netanyahu-did-not-win-he-lost-dramatically-former-pm-barak-says Al Jazeera https://www.aljazeera.com/news/2026/10/28/balad-leader-blasts-racist-exclusion-of-arab-parties-in-israel og Al-Monitor https://www.al-monitor.com/originals/2026/10/saudi-arabias-kbs-top-turkish-and-pakistani-officials-hold-rare-meeting-iran-what Ingen beskriver angreb mellem Israel og Qatar i vinduet.
+- Afvist: `CU-US` (Cuba og USA). Diplomatisk strid og sanktioner: The Wall Street Journal "U.S. Expels Cuban Diplomat After Extraordinary U.N. Verbal Clash" https://www.wsj.com/world/u-s-expels-cuban-diplomat-after-extraordinary-u-n-verbal-clash-e32b0516 Al Jazeera https://www.aljazeera.com/news/2026/10/28/un-votes-to-condemn-embargo-of-cuba-despite-us-lobbying-push og The Guardian https://www.theguardian.com/us-news/2026/oct/23/marco-rubio-cuba-trump Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 30. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
