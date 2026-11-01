@@ -7,6 +7,13 @@
 ### Kl. 00.20, Europa og Danmark: intet nyt
 Kildescriptet (WHO DON 622 23. oktober fortsat nyeste, DGHS' mæslinger 1. november står på siden, WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkong; DGHS' denguedashboard gav HTTP 502 og Sri Lankas side kunne ikke hentes), ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste), ECDC's ebolaside (opdateret 30. oktober kl. 16.00, de samme tal som før), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober står på siden), Statens Serum Instituts liste over sygdomsudbrud (senest redigeret 23. oktober) og nyheder (seneste 29. oktober om vestnilfeber), RIVM's ebolaside (ændret 12. oktober) og en søgning efter nyt om fugleinfluenza i sæler (intet nyere end 1. oktober; DK-VET's nyheder kunne fortsat ikke hentes direkte). Kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato. Repoet arbejdes fortsat gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
 
+**Usikkert**
+- `cre-eu`: kontrollen advarer fra i dag om 31 dage uden nyt punkt (seneste 2. oktober, ECDC uge 40). ECDC's varslede opdaterede risikovurdering er ikke fundet ved søgning på ecdc.europa.eu, og ECDC's ugerapport for uge 43 er ikke udkommet. Fordi ECDC selv har varslet en ny vurdering, er `live` ladt stå. Se GENNEMGANG.md.
+- `difteri-ng` (39 dage) og `h5n1-dk` (32 dage): venter fortsat på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `cre-eu`, skal `live` sættes til `false`, mens ECDC's varslede risikovurdering ikke er udkommet.
+
 ## 1. november 2026
 
 ### Kl. 00.20, Europa og Danmark
