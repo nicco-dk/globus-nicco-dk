@@ -28,6 +28,39 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `h5n1-dk`, skal `live` sættes til `false`, når DK-VET ikke kan læses.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 31. oktober er fortsat den nyeste og står på siden), WHO SEARO nummer 21 (nummer 22 gav HTTP 404), WHO WPRO nummer 1066 (udgaver dateret 23. og 30. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud efter ugeoversigten 29. oktober), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (31. oktober, et tilfælde af svær influenza hos et barn, almindelig sæson). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste og står på siden), ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste; uge 43 og 44 gav HTTP 404), ECDC's ebolaside (opdateret 30. oktober kl. 16.00, de samme tal som på siden), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober og alarmen om myiasis 16. oktober er fortsat de nyeste), WHO's mpox-situationsrapport (nummer 70 og 71 gav fortsat HTTP 404), en søgning efter WHO AFRO's ugebulletin (ingen nyere fundet), søgninger efter nyt om ebola i Nigeria og Kenya, gul feber i Ghana, klade I-mpox i Californien og skruelarve i Arizona, og https://globus.nicco.dk/konflikter.json (genereret 1. november kl. 03.23 UTC).
+
+**Ændret**
+- Ingen hændelser. `DATA_DATO` og `DATA_TID` er sat.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 48 hændelser uden nyt, der kan skrives.
+- Rundtur (dage siden seneste punkt): `maesling-am` (10) og `myiasis-am` (16) hos PAHO, `difteri-afro` (16) og `gul-feber-ci` (18) i NaTHNaC og søgningen efter WHO AFRO's bulletin, `mpox` (19) hos WHO og ECDC, `pest-irkutsk` (20) i WHO DON, `dengue-asien` (20) hos WHO SEARO (Sri Lankas side kunne ikke hentes), `h5n1-kh` (23) hos WHO WPRO, `gul-feber-gh` (23) hos Ghanas sundhedsministerium via medier (intet nyere end ministerens briefing 9. oktober) og `salmonella-eu` (23) og `cre-eu` (30) hos ECDC, alle uden nyt. `kolera-ye` (10): intet nyt hos WHO EMRO. `ebola-nl` (22), `h5n1-dk` (31) og `salmonella-dk` blev gennemgået kl. 00.20 i dag og er ikke slået op igen. `difteri-ng` (38) venter på ejeren.
+
+**Usikkert**
+- `mpox-mo`: Outbreak News Today skriver 31. oktober, at Stanislaus Countys sundhedsmyndighed har meldt fire tilfælde af klade I-mpox i den seneste uge, to bekræftet som klade I af Californiens sundhedsmyndighed og to under bekræftelse, og at tre af dem ikke har rejst (https://outbreaknewstoday.substack.com/p/california-clade-1-mpox-cases-reported). Myndighedens egen meddelelse er ikke fundet, så intet er skrevet.
+- `myiasis-am`: CIDRAP skriver, at skruelarven er nået til Arizona og fundet i en kat i New Mexico. Det er fund i dyr, og hændelsen bygger på PAHO's tal for mennesker. Intet skrevet.
+- `ebola-ng`: ingen prøvesvar på de to mistænkte tilfælde i Nordøstnigeria er fundet. ThisDays artikel om to negative mistænkte er fra 26. oktober og handler om tidligere tilfælde. Ingen ændring.
+- `ebola-ke`: APO Groups meddelelse om, at 20 kontakter til Kenyas første tilfælde er løsladt fra karantæne, kunne hverken hentes direkte eller med hentningsværktøjet. Ingen ændring.
+- `kolera`: NaTHNaC skriver fortsat 1.548 tilfælde og 30 dødsfald i Zambia pr. 27. oktober. Ikke skrevet, fordi Zambias egen opgørelse ikke er hentet.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. `dengue-asien`: Sri Lankas side kunne ikke hentes af scriptet. Tallene står urørt.
+- `difteri-ng`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 1c3b2de.
+
+**Mediesporet**
+- Afvist: `BY-UA` (Belarus og Ukraine). Evakuering af beboere fra Olesjky via Belarus: Al Jazeera "Hundreds from Russian-occupied Oleshky land in Belarus en route to Ukraine" https://www.aljazeera.com/news/2026/10/31/hundreds-from-russian-occupied-oleshky-land-in-belarus-en-route-to-ukraine og DR "Tre fly med evakuerede beboere fra Olesjky i Ukraine er ankommet til Belarus" https://www.dr.dk/nyheder/udland/tre-fly-med-evakuerede-beboere-fra-olesjky-i-ukraine-er-ankommet-til-belarus
+- Afvist: `DZ-ML` (Algeriet og Mali). Algeriske tropper til Niger og rivaliseringen med Marokko. Mali nævnes kun for droneepisoden i april 2025: Al Jazeera https://www.aljazeera.com/news/2026/10/26/algerias-president-orders-troop-deployment-to-neighbouring-niger BBC https://www.bbc.co.uk/news/articles/cm4g14n1e5wko og Middle East Eye https://www.middleeasteye.net/news/sahel-new-front-rivalry-between-algeria-and-morocco
+- Afvist: `GH-US` (Ghana og USA). Drabet på en ghanesisk teenager i New York: Africanews https://www.africanews.com/2026/10/30/ghanaian-teenager-15-shot-dead-near-new-york-school/ og Punch https://punchng.com/trump-promises-visa-police-hunt-ghanaian-teens-killers/
+- Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 31. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
