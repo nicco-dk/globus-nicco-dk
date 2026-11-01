@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 2. november 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet (WHO DON 622 23. oktober fortsat nyeste, DGHS' mæslinger 1. november står på siden, WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today, CIDRAP og Hongkong; DGHS' denguedashboard gav HTTP 502 og Sri Lankas side kunne ikke hentes), ECDC's oversigt over ugerapporter (uge 42 er fortsat den nyeste), ECDC's ebolaside (opdateret 30. oktober kl. 16.00, de samme tal som før), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober står på siden), Statens Serum Instituts liste over sygdomsudbrud (senest redigeret 23. oktober) og nyheder (seneste 29. oktober om vestnilfeber), RIVM's ebolaside (ændret 12. oktober) og en søgning efter nyt om fugleinfluenza i sæler (intet nyere end 1. oktober; DK-VET's nyheder kunne fortsat ikke hentes direkte). Kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato. Repoet arbejdes fortsat gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
+
 ## 1. november 2026
 
 ### Kl. 00.20, Europa og Danmark
