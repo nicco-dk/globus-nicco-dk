@@ -85,6 +85,35 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 1. november er ny, se Ændret), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud i Afrika eller Amerika efter ugeoversigten 29. oktober), NaTHNaC, Outbreak News Today (se Ændret), CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden WHO AFRO's oversigt over ugebulletiner (uge 41 er fortsat den nyeste), PAHO's epidemiologiske alarmer og opdateringer (opdateringen om dengue og chikungunya 20. oktober er fortsat den nyeste), ECDC's opdateringer om ebola (30. oktober er fortsat den nyeste, med 10.274 bekræftede og 4.992 døde efter data til 28. oktober, ældre end situationsrapport 168 på siden), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), Washingtons sundhedsministeriums side om fugleinfluenza, søgninger efter Africa CDC's ugerapport og nyt om ebola i Nigeria og Kenya, og https://globus.nicco.dk/konflikter.json (genereret 1. november kl. 15.23 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 1. november (døgnet til kl. 8): 230.013 mistænkte og 23.935 bekræftede tilfælde siden 15. marts, 1.149 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.353 nye mistænkte, 64 nye bekræftede ifølge oversigtstabellen og 2 dødsfald blandt mistænkte, i Sylhet- og Chattogram-divisionen (Moulvibazar og Khagrachhari). 204.783 indlagte og 196.183 udskrevne. Kilde: https://dghs.gov.bd/pages/press-releases/6ae7606efd9ba07169133c71 med PDF-bilaget https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2026/10/5d0218e2-d7d9-48ed-a10f-6fd0f5e519b3.pdf Nyt punkt 1. november, nyt punkt i talserien (dødstallet er de to rækker lagt sammen, 1.254), `cases`, `extra` og `src` opdateret. Tallene er læst to gange: i PDF'ens tekstlag og som billede af siden.
+- `h5n1-wa`: Outbreak News Today skriver 1. november, at Yakima Health District i samarbejde med Washingtons sundhedsministerium melder et andet humant tilfælde af fugleinfluenza i Yakima County hos en person udsat for smittet malkekvæg. Patienten er indlagt med alvorlig sygdom og har underliggende sygdomme. Kilde: https://outbreaknewstoday.substack.com/p/h5n1-avian-influenza-2nd-human-case mærket medie. Nyt punkt 1. november, `cases`, `gap` og `src` opdateret. Trin og talserie urørt. Læst to gange uafhængigt med hentningsværktøjet.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `maesling-bd`: DGHS' oversigtstabel har 64 nye bekræftede tilfælde i døgnet, mens tabellen over divisioner har 68, og totalen steg fra 23.867 til 23.935, altså 68. Punktet skriver begge tal, som kilden skriver dem.
+- `h5n1-wa`: Yakima Health Districts egen meddelelse om det andet tilfælde er ikke fundet ved søgning på yakimacounty.us og doh.wa.gov, og Washingtons sundhedsministeriums side om fugleinfluenza viser fortsat 1 humant tilfælde i 2026. Datoen for udmeldingen og undertypen hos patienten er ikke oplyst. Det står i `gap`. Outbreak News Today nævner 33 smittede malkekvægsbesætninger i Yakima County pr. 29. oktober; tallet er ikke skrevet, fordi WSDA's tabel ikke er læst i denne kørsel.
+- ECDC's ebolaside kunne ikke hentes med hentningsværktøjet (tilladelsen udløb); ECDC's side med opdateringer om hændelsen blev læst i stedet.
+- `difteri-ng` (38 dage) og `h5n1-dk` (31 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 41b09de.
+
+**Mediesporet**
+- Afvist: `CA-US` (Canada og USA). Hjemmerøveri i Toronto, told og midtvejsvalg: National Post "Bridle Path home invasion suspect, 23, identified" https://nationalpost.com/news/canada/bridle-path-home-invasion-suspect-23-identified/ og NPR "A Michigan couple hopes Trump's tariffs will pay off" https://www.npr.org/2026/10/27/nx-s1-6015161/michigan-midterm-elections-trump-tariffs-canadian-steel
+- Afvist: `AR-BR` (Argentina og Brasilien). Flávio Bolsonaros flugt over Argentina efter valget: Anadolu https://aa.com.tr/en/americas/flavio-bolsonaro-fled-brazil-accompanied-by-former-mossad-agent-report/4107699 og NPR https://www.npr.org/2026/10/27/nx-s1-6019678/bolsonaro-brazil-lula-election-trump
+- Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 31. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark

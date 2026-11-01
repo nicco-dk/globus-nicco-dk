@@ -91,6 +91,8 @@
     "CU-US": {"dato": "2026-10-31", "grund": "Artiklerne handler om FN's afstemning om USA's embargo mod Cuba, udvisningen af en cubansk diplomat efter et skænderi i FN og udtalelser fra USA's udenrigsminister. Diplomatisk strid og sanktioner, ingen angreb eller kampe mellem landenes styrker (The Wall Street Journal, Al Jazeera, Hindustan Times, The Guardian)."},
     "BY-UA": {"dato": "2026-11-01", "grund": "Artiklerne handler om evakuerede beboere fra det russisk besatte Olesjky, som er fløjet til Belarus på vej til Ukraine under en sjælden lokal våbenhvile, ikke om kampe mellem Belarus' og Ukraines styrker."},
     "DZ-ML": {"dato": "2026-11-01", "grund": "Artiklerne handler om, at Algeriet sender tropper til Niger, og om rivaliseringen med Marokko i Sahel. Mali er kun nævnt for den diplomatiske strid og den nedskudte drone i april 2025, uden kampe mellem landene i perioden."},
-    "GH-US": {"dato": "2026-11-01", "grund": "Artiklerne handler om drabet på en 15-årig ghanesisk dreng ved en skole i New York og et nødvisum til hans mor, ikke om kampe mellem landene."}
+    "GH-US": {"dato": "2026-11-01", "grund": "Artiklerne handler om drabet på en 15-årig ghanesisk dreng ved en skole i New York og et nødvisum til hans mor, ikke om kampe mellem landene."},
+    "CA-US": {"dato": "2026-11-01", "grund": "Artiklerne handler om et hjemmerøveri i Toronto, Trumps toldsatser og midtvejsvalget i USA, ikke om kampe mellem landene."},
+    "AR-BR": {"dato": "2026-11-01", "grund": "Artiklerne handler om Flávio Bolsonaros flugt fra Brasilien over Argentina efter valgnederlaget, ikke om kampe mellem landene."}
   }
 }
