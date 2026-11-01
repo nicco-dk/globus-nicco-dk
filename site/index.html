@@ -1216,7 +1216,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-11-01';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-11-01T05:24+01:00';
+const DATA_TID = '2026-11-01T11:28+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1808,14 +1808,14 @@ const EVENTS = [
 
 {id:'dengue-asien',place:'Colombo og Bohol',country:'Sri Lanka og Filippinerne',region:'Asien',lat:6.9271,lon:79.8612,
  disease:'Dengue',pathogen:'Dengue-virus, flere serotyper',stage:'spredning',live:true,
- cases:'Sri Lanka 102.769 tilfælde og 79 dødsfald, National Dengue Control Unit pr. 12. oktober',
- extra:'Filippinerne 180.770 tilfælde, 27 procent under 2025 og under alarmtærsklen. Gampaha i Sri Lanka alene 21.700 tilfælde pr. 12. oktober. Bangladesh står som sin egen hændelse fra 13. oktober.',
+ cases:'Sri Lanka 106.059 tilfælde og 81 dødsfald, National Dengue Control Unit pr. 30. oktober',
+ extra:'Filippinerne 180.770 tilfælde, 27 procent under 2025 og under alarmtærsklen. Gampaha i Sri Lanka alene 22.215 tilfælde og Colombo 20.555 pr. 30. oktober, National Dengue Control Unit. Bangladesh står som sin egen hændelse fra 13. oktober.',
  note:'Flere lande i Syd- og Sydøstasien oplevede usædvanligt store udbrud, der belastede sundhedssystemerne. Sri Lanka betegnede det som det værste udbrud i et årti.',
  nodes:[['Colombo, Sri Lanka',79.8612,6.9271,'2026-05-02'],['Bohol, Filippinerne',124.1400,9.8500,'2026-09-05'],['Gampaha',79.9900,7.0900,'2026-10-04']],
  naeste:'Følger monsunen. Sri Lanka toppede i september.',
  rel:['dengue-bd'],
  plabel:'Tilfælde i Sri Lanka',
- pts:[['2026-05-02',25082,12],['2026-07-28',82838,61],['2026-09-27',100127,77],['2026-10-04',100871,78],['2026-10-06',101744,78],['2026-10-12',102769,79]],
+ pts:[['2026-05-02',25082,12],['2026-07-28',82838,61],['2026-09-27',100127,77],['2026-10-04',100871,78],['2026-10-06',101744,78],['2026-10-12',102769,79],['2026-10-30',106059,81]],
  tl:[['2026-05-02','Sri Lanka 25.082 tilfælde og 12 dødsfald','udbrud'],
      ['2026-05-31','Filippinerne melder et fald på 56 procent med 50.727 tilfælde. Omtrentlig',''],
      ['2026-07-28','Sri Lanka 82.838 tilfælde og 61 dødsfald','spredning'],
@@ -1824,19 +1824,20 @@ const EVENTS = [
      ['2026-10-04','Sri Lanka 100.871 tilfælde og 78 dødsfald',''],
      ['2026-10-06','Sri Lanka 101.744 tilfælde og 78 dødsfald. Oktober har hidtil givet 1.024 tilfælde mod 5.230 i hele september','',['National Dengue Control Unit, Sri Lanka','https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-06.pdf']],
      ['2026-10-08','Filippinerne 180.770 tilfælde opgjort til 30. september',''],
-     ['2026-10-12','Sri Lanka 102.769 tilfælde og 79 dødsfald. Oktober har hidtil givet 2.049 tilfælde','',['National Dengue Control Unit, Sri Lanka','https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-12-1.pdf']]],
- src:[['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['National Dengue Control Unit, Sri Lanka','https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-12-1.pdf'],['The Morning, medie','https://www.themorning.lk/articles/OZbhhc2sFHqEPJzM2p9H']]},
+     ['2026-10-12','Sri Lanka 102.769 tilfælde og 79 dødsfald. Oktober har hidtil givet 2.049 tilfælde','',['National Dengue Control Unit, Sri Lanka','https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-12-1.pdf']],
+     ['2026-10-30','Sri Lanka 106.059 tilfælde og 81 dødsfald. Oktober har hidtil givet 5.339 tilfælde mod 5.230 i hele september','',['National Dengue Control Unit, Sri Lanka','https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-30.pdf']]],
+ src:[['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['National Dengue Control Unit, Sri Lanka','https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-30.pdf'],['The Morning, medie','https://www.themorning.lk/articles/OZbhhc2sFHqEPJzM2p9H']]},
 
 {id:'dengue-bd',place:'Dhaka og øvrige divisioner',country:'Bangladesh',region:'Asien',lat:23.8103,lon:90.4125,
  disease:'Dengue',pathogen:'Dengue-virus, serotype ikke oplyst',stage:'spredning',live:true,
- cases:'133.367 indlagte og 418 dødsfald i 2026, DGHS gengivet af The Daily Star og bdnews24, medie, pr. 30. oktober',
+ cases:'135.000 tilfælde og 419 dødsfald i 2026, DGHS gengivet af The Daily Star og The Business Standard, medie, pr. 31. oktober',
  extra:'Uge 40 gav 12.764 tilfælde, 3,3 gange så mange som samme uge i 2025, og 37 dødsfald ifølge WHO SEARO. Ugetallene ligger over 2022, 2024 og 2025 og over gennemsnittet for de seneste fem år, men under niveauet i 2023. September stod for omkring 51 procent af årets tilfælde og 57 procent af dødsfaldene pr. 5. oktober.',
  note:'Bangladesh har et usædvanligt stort dengueudbrud i 2026 med over 100.000 indlagte. Det falder sammen med landets store mæslingeudbrud, og begge belaster personale, diagnostik og hospitalssenge. Myndighederne opretter ekstra denguestuer og senge uden for Dhaka, blandt andet i Chattogram og Mymensingh.',
  nodes:[['Dhaka',90.4125,23.8103,'2026-07'],['Chattogram',91.7832,22.3569,'2026-10-05'],['Mymensingh',90.4203,24.7471,'2026-10-05']],
  naeste:'Følger monsunen. Falder, når ugetallene vender. Alvor stiger, hvis WHO vurderer risikoen som høj.',
  rel:['dengue-asien','maesling-bd'],
  plabel:'Indlagte i 2026',
- pts:[['2026-10-05',86458,262],['2026-10-08',94151,294],['2026-10-09',95451,295],['2026-10-10',97082,299],['2026-10-11',99275,303],['2026-10-12',101442,307],['2026-10-13',103396,316],['2026-10-14',105316,321],['2026-10-15',107259,331],['2026-10-16',108440,335],['2026-10-17',110312,342],['2026-10-18',112400,348],['2026-10-19',114251,352],['2026-10-20',115617,357],['2026-10-21',116990,364],['2026-10-22',118502,368],['2026-10-23',119801,371],['2026-10-24',121699,377],['2026-10-25',123948,384],['2026-10-30',133367,418]],
+ pts:[['2026-10-05',86458,262],['2026-10-08',94151,294],['2026-10-09',95451,295],['2026-10-10',97082,299],['2026-10-11',99275,303],['2026-10-12',101442,307],['2026-10-13',103396,316],['2026-10-14',105316,321],['2026-10-15',107259,331],['2026-10-16',108440,335],['2026-10-17',110312,342],['2026-10-18',112400,348],['2026-10-19',114251,352],['2026-10-20',115617,357],['2026-10-21',116990,364],['2026-10-22',118502,368],['2026-10-23',119801,371],['2026-10-24',121699,377],['2026-10-25',123948,384],['2026-10-30',133367,418],['2026-10-31',135000,419]],
  tl:[['2026-07','Antallet af denguetilfælde begynder at stige hurtigt i begyndelsen af juli','udbrud',['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']],
      ['2026-10-05','86.458 tilfælde og 262 dødsfald i 2026. Smitten tager til uden for Dhaka, og der oprettes denguestuer på store hospitaler i Chattogram og Mymensingh og senge på upazila-hospitaler i Khulna','spredning',['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']],
      ['2026-10-06','90.356 indlagte og 281 dødsfald i 2026 ifølge den officielle opgørelse','',['DGHS via bdnews24, medie','https://bdnews24.com/health/7d4zguh4hx']],
@@ -1858,8 +1859,9 @@ const EVENTS = [
      ['2026-10-23','119.801 indlagte og 371 dødsfald efter 3 nye dødsfald og 1.299 nye indlagte på et døgn. Uge 42 har indtil videre 9.489 tilfælde og 29 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
      ['2026-10-24','121.699 indlagte og 377 dødsfald efter 6 nye dødsfald og 1.898 nye indlagte på et døgn. Uge 42 har indtil videre 11.387 tilfælde og 35 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
      ['2026-10-25','123.948 indlagte og 384 dødsfald efter 7 nye dødsfald og 2.249 nye indlagte på et døgn. Uge 43 har indtil videre 2.249 tilfælde og 7 dødsfald','',['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php']],
-     ['2026-10-30','133.367 indlagte og 418 dødsfald i 2026 efter 3 nye dødsfald, alle i Dhaka-divisionen, og 1.262 nye indlagte på et døgn til kl. 8 30. oktober','',['DGHS via The Daily Star, medie','https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-1262-hospitalised-24-hours-4311326']]],
- src:[['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php'],['DGHS via The Daily Star, medie','https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-1262-hospitalised-24-hours-4311326'],['DGHS via bdnews24, medie','https://bdnews24.com/bangladesh/hob4giud0u'],['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']]},
+     ['2026-10-30','133.367 indlagte og 418 dødsfald i 2026 efter 3 nye dødsfald, alle i Dhaka-divisionen, og 1.262 nye indlagte på et døgn til kl. 8 30. oktober','',['DGHS via The Daily Star, medie','https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-1262-hospitalised-24-hours-4311326']],
+     ['2026-10-31','135.000 tilfælde og 419 dødsfald i 2026 efter 1 nyt dødsfald, i Khulna-divisionen, og 1.633 nye indlagte på et døgn til kl. 8 31. oktober','',['DGHS via The Daily Star, medie','https://www.thedailystar.net/news/healthcare/disease/news/one-dies-dengue-1633-hospitalised-24-hours-4311966']]],
+ src:[['DGHS, denguedashboard','https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php'],['DGHS via The Daily Star, medie','https://www.thedailystar.net/news/healthcare/disease/news/one-dies-dengue-1633-hospitalised-24-hours-4311966'],['DGHS via The Business Standard, medie','https://www.tbsnews.net/bangladesh/health/dengue-death-toll-419-one-more-dies-1588696'],['DGHS via bdnews24, medie','https://bdnews24.com/bangladesh/hob4giud0u'],['WHO SEARO bulletin 20','https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_20_searo_epi_bulletin.pdf']]},
 
 {id:'mers-sa',place:'Seks steder, blandt andre Riyadh og Taif',country:'Saudi-Arabien',region:'Mellemøsten',lat:24.7136,lon:46.6753,
  disease:'MERS',pathogen:'MERS-coronavirus',stage:'udbrud',

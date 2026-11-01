@@ -61,6 +61,30 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (meddelelsen 31. oktober er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), Sri Lankas dagstal (scriptet kunne igen hente siden, se Ændret), WHO SEARO nummer 21 (nummer 22 gav HTTP 404 og ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 23., 24., 30. og 31. oktober gav HTTP 404), ECDC uge 42, UKHSA (intet om udbrud i Asien eller Mellemøsten), NaTHNaC, Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 31. oktober og 1. november (et tilfælde af svær influenza hos et barn, almindelig sæson, og intet om smitte 1. november). Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502). Desuden WHO EMRO's nyheder (intet nyt om hændelserne på siden efter 25. oktober) og søgninger efter DGHS' daglige dengueopgørelse.
+
+**Ændret**
+- `dengue-asien`: National Dengue Control Unit, dagsopdatering pr. 30. oktober kl. 24: 106.059 tilfælde og 81 dødsfald i Sri Lanka i 2026. Oktober har hidtil givet 5.339 tilfælde mod 5.230 i hele september. Gampaha 22.215 og Colombo 20.555. Kilde: https://www.dengue.health.gov.lk/wp-content/uploads/2026/10/Daily-Update-2026.-10.-30.pdf Nyt punkt 30. oktober, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Tallene er læst to gange: i PDF'ens tekstlag og som billede af siden. Adressen er den nyeste på forsiden https://www.dengue.health.gov.lk
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502, så tallet er taget fra DGHS' daglige melding gengivet af medier: 1 nyt dødsfald, i Khulna-divisionen, og 1.633 nye indlagte i døgnet til kl. 8 31. oktober, i alt 419 dødsfald og 135.000 tilfælde i 2026. Kilder: The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/one-dies-dengue-1633-hospitalised-24-hours-4311966 og The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-419-one-more-dies-1588696 begge mærket medie. Nyt punkt 31. oktober, nyt punkt i talserien, `cases` og `src` opdateret. Tallene er læst i begge artiklers rå tekst og stemmer overens. 133.367 plus 1.633 giver 135.000, så tallet hænger sammen med punktet 30. oktober.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `dengue-bd`: begge medier skriver "1,35,000" tilfælde i alt, et rundt tal. Det er skrevet, som kilderne skriver det, og stemmer med summen af forrige opgørelse og døgnets indlagte. DGHS' egen opgørelse kunne ikke læses, fordi dashboardet gav HTTP 502. Talserien hedder fortsat Indlagte i 2026.
+- Libanons sundhedsministerium meldte 30. oktober mistænkte tilfælde af trikinose (fra kød, smitter ikke mellem mennesker) uden antal eller sted, gengivet af Outbreak News Today: https://outbreaknewstoday.substack.com/p/lebanon-officials-issue-statement Ingen hændelse oprettet: tilfældene er ikke bekræftet, der er intet antal, og der er ingen alarm fra WHO.
+- Dengue i Ho Chi Minh-byen: 1.785 tilfælde 19. til 25. oktober, 9,7 procent over gennemsnittet for de foregående fire uger, og over 42.500 tilfælde og 11 dødsfald i 2026, ifølge byens myndigheder gengivet af Outbreak News Today: https://outbreaknewstoday.substack.com/p/vietnam-ho-chi-minh-city-reports-dae Ikke skrevet: regntidens almindelige sæson, som myndighederne ikke kalder usædvanlig.
+- `difteri-ng` (38 dage) og `h5n1-dk` (31 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit e9f7205.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 31. oktober 2026
 
 ### Kl. 00.20, Europa og Danmark
