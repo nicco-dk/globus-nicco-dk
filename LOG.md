@@ -14,6 +14,37 @@ Kildescriptet (WHO DON 622 23. oktober fortsat nyeste, DGHS' mæslinger 1. novem
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `cre-eu`, skal `live` sættes til `false`, mens ECDC's varslede risikovurdering ikke er udkommet.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste), DGHS' mæslinger (meddelelsen 1. november er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (ugeoversigten 29. oktober er fortsat den nyeste), NaTHNaC, Outbreak News Today (se Ændret), CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. ECDC's ugerapporter for uge 43 og 44 (HTTP 404), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste og står på siden), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), WHO AFRO's oversigt over udbrud (ingen ugebulletin nyere end uge 41 fundet), WHO's mpox-situationsrapporter (nummer 69 er fortsat den nyeste fundne), søgninger efter nyt om ebola i Nigeria og Kenya og gul feber i Ghana, og https://globus.nicco.dk/konflikter.json (genereret 2. november kl. 03.24 UTC).
+
+**Ændret**
+- `dengue-bd`: DGHS' daglige melding gengivet af medier: 8 nye dødsfald, tre i Dhaka-divisionen, to i Mymensingh-divisionen og ét hver i Chattogram-, Rajshahi- og Khulna-divisionen, og 1.929 nye indlagte i døgnet til kl. 8 1. november, i alt 136.929 tilfælde og 427 dødsfald i 2026. Kilder: The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/8-die-dengue-1929-hospitalised-24-hours-4312811 og The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-427-8-more-die-1589451 begge mærket medie. Nyt punkt 1. november, nyt punkt i talserien, `cases` og `src` opdateret. Tallene er læst i begge artiklers rå tekst og stemmer overens. 135.000 plus 1.929 giver 136.929, og 419 plus 8 giver 427.
+- `ebola-ng`: NCDC's generaldirektør Jide Idris oplyser i en erklæring lørdag 31. oktober, at de to mistænkte tilfælde i Adamawa State er testet negative for ebola efter to testrunder, og at tilfældet i Federal Capital Territory fortsat er det eneste bekræftede i Nigeria. Kilder: Vanguard https://www.vanguardngr.com/2026/11/ebola-scare-in-adamawa-ncdc-confirms-negative-tests/ og The Whistler https://thewhistler.ng/nigerias-two-suspected-ebola-cases-test-negative/ begge mærket medie. Nyt punkt 31. oktober, `gap` og `src` opdateret. Trin og `cases` urørt.
+- `ebola-ke`: Kenyas sundhedsministerium oplyste 30. oktober på beredskabets niende møde, at landet er gået 10 dage uden nye tilfælde, fortsat med 9 bekræftede tilfælde og 2 dødsfald, at alle 135 kontakter er sporet, at 46 kontakter ventes løsladt 3. november, at alle kontakter ventes at have afsluttet opfølgningen 11. november, og at to af de syv patienter i isolation er testet negative og venter på nye prøver. Kilder: Kenyans.co.ke https://www.kenyans.co.ke/news/129010-moh-release-46-ebola-contacts-quarantine-issues-notice og The Star https://www.the-star.co.ke/news/2026-10-31-ministry-all-ebola-contacts-set-to-leave-quarantine-by-november-11 begge mærket medie. Nyt punkt 30. oktober, `cases` og `src` opdateret.
+- `gul-feber-gh` (rundtur, 24 dage): UNICEF's første flash update om udbruddet, rapportdato 19. oktober: 121 mistænkte tilfælde i 7 af Upper West Regions 11 distrikter pr. 12. oktober, heraf 19 IgM-positive og 3 bekræftede i Dakar, alle døde. Wa West, Sissala West og Sissala East står for 86 tilfælde, og 60 er børn under 15 år. Nødvaccinationen begyndte 14. oktober i de tre distrikter og er rettet mod 244.870 personer. Kilde: https://www.unicef.org/media/185146/file/Ghana-Humanitarian-Flash-Update-No.1(Yellow-Fever-Outbreak),1-18-October-2026.pdf.pdf Nyt punkt 14. oktober, `cases`, `extra` og `src` opdateret. Tallene er læst to gange: i PDF'ens tekstlag og som billede af forsiden.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (17) og `maesling-am` (11) og `chik-am` (13) hos PAHO, `difteri-afro` (17) og `gul-feber-ci` (19) i NaTHNaC og WHO AFRO's oversigt, `mpox` (20) hos WHO, `pest-irkutsk` (21) i WHO DON, `h5n1-kh` (24) hos WHO WPRO, `kolera-ye` (11) og `salmonella-eu` (24) og `cyclospora-us` (10) uden nyt i de samlede kilder. `ebola-nl` (23), `cre-eu` (31) og `h5n1-dk` (32) blev gennemgået kl. 00.20 i dag og er ikke slået op igen. `difteri-ng` (39) venter på ejeren.
+
+**Usikkert**
+- `gul-feber-gh`: NaTHNaC skriver 28. oktober "121 yellow fever cases (19 confirmed), with three deaths" pr. 19. oktober, mens UNICEF har de 121 som mistænkte pr. 12. oktober, med 19 IgM-positive og 3 bekræftede. Siden følger UNICEF, der gengiver Ghanas sundhedsvæsen. Ghana Health Services egen opgørelse er ikke fundet. Teksten om, at nødvaccinationen forberedes, står fortsat i `extra` fra forrige opdatering, nu efterfulgt af UNICEF's oplysning om, at den begyndte 14. oktober.
+- `ebola-ng` og `ebola-ke`: oplysningerne kendes kun gennem medier, der gengiver NCDC og Kenyas sundhedsministerium. Vanguard skriver, at erklæringen kom "yesterday" i en artikel offentliggjort 1. november kl. 02.21 UTC, og The Whistler skriver lørdag. Punktet er dateret 31. oktober.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. Talserien hedder fortsat Indlagte i 2026, mens medierne skriver tilfælde.
+- CIDRAP nævner fire lande med nye poliotilfælde i en kort notits. GPEI's ugeoversigt er ikke læst i denne kørsel, og `polio` står urørt.
+- `difteri-ng` (39 dage), `cre-eu` (31 dage) og `h5n1-dk` (32 dage): kontrollen advarer om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 2af2d22.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 1. november 2026
 
 ### Kl. 00.20, Europa og Danmark
