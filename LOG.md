@@ -48,6 +48,34 @@ Kildescriptet (WHO DON 622 23. oktober fortsat nyeste, DGHS' mæslinger 1. novem
 ### Kl. 11.20, Asien og Mellemøsten: intet nyt
 Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 1. november er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), WHO SEARO nummer 21 (nummer 22 ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 23., 24., 29., 30. og 31. oktober gav HTTP 404), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today (dengue i Bangladesh 1. november står allerede på siden), CIDRAP og Hongkongs pressemeddelelser (2. november, legionærsyge, almindelige enkelttilfælde). DGHS' denguedashboard gav fortsat HTTP 502; The Daily Star https://www.thedailystar.net/news/bangladesh/news/eight-more-die-dengue-4313191 har de samme tal som `dengue-bd` (136.929 og 427 pr. 1. november). Sri Lankas forside kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots), så `dengue-asien` står urørt med 30. oktober. WHO EMRO's nyhedsside viste ingen poster nyere end oktober 2025 gennem hentningsværktøjet. En søgning efter nye humane H5N1-tilfælde i Cambodja gav intet efter det sjette tilfælde 28. september. Repoet arbejdes fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 44ca153, fordi add_repo ikke findes i kørslen.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ny: DON 623 om Shamonda-virus i Frankrig, se Usikkert), DGHS' mæslinger (meddelelsen 1. november er fortsat den nyeste, også på DGHS' liste over pressemeddelelser kl. 18.26 dansk tid), WHO SEARO nummer 21, WHO WPRO nummer 1066, ECDC uge 42, UKHSA (intet om udbrud i Afrika eller Amerika), NaTHNaC, Outbreak News Today (se Ændret), CIDRAP (mæslinger i USA over 4.800, US CDC's 4.852 pr. 29. oktober står allerede på siden) og Hongkongs pressemeddelelser. Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), WHO AFRO's oversigt over ugebulletiner (uge 41 er fortsat den nyeste), en søgning efter Africa CDC's ugerapport (ingen ny fundet), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste og står på siden), Yakima Health Districts side om fugleinfluenza og https://globus.nicco.dk/konflikter.json (genereret 2. november kl. 16.23 UTC). Kørslen startede kl. 18.23 dansk tid og fulgte rækken for kl. 17.
+
+**Ændret**
+- `h5n1-wa`: Yakima Health District melder 1. november, at beboeren, der var indlagt med alvorlig sygdom efter udsættelse for smittet malkekvæg, er død af komplikationer til fugleinfluenza, og melder et tredje bekræftet humant tilfælde hos en beboer udsat for smittet malkekvæg, uden alvorlig sygdom eller indlæggelse. Distriktets side har 3 bekræftede humane tilfælde. Kilder: https://www.yakimacounty.us/DocumentCenter/View/46819/110126_Yakima-County-Resident-Dies-from-Complications-of-Avian-Influenza og https://www.yakimacounty.us/3226/Avian-Influenza-Bird-Flu Nyt punkt 1. november, `cases`, `extra` (WSDA's besætninger 27. og 29. oktober efter distriktets tabel), `note`, `gap` og `src` opdateret. Trin urørt. Meddelelsen er læst i PDF'ens tekstlag, og KOMO News og Outbreak News Today gengiver det samme.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `shamonda-fr`: WHO's dataudtræk har DON 623 "Shamonda virus in human - France" med udgivelsestidspunkt 2. november kl. 19.00 UTC, men læserens side https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623 gav HTTP 404 kl. 18.27 dansk tid. Teksten oplyser blandt andet, at patienten døde 8. oktober, og at WHO vurderer, at risikoen endnu ikke kan vurderes pålideligt. Ikke skrevet, fordi adressen endnu ikke fører til siden. Næste kørsel kan tage den.
+- `maesling-bd`: DGHS' meddelelse for 2. november var ikke på listen kl. 18.26 dansk tid. Tallene står urørt med 1. november.
+- `h5n1-wa`: dødsfaldet er dateret 1. november efter meddelelsens "died today". Datoerne for bekræftelsen af andet og tredje tilfælde er ikke oplyst. Washingtons sundhedsministeriums egen opgørelse er ikke læst. Kontrollen fik intet gyldigt svar fra https://www.yakimacounty.us/3226/Avian-Influenza-Bird-Flu, men siden blev læst direkte med curl i kørslen.
+- `difteri-ng`, `cre-eu` og `h5n1-dk`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 2e60b22.
+
+**Mediesporet**
+- Afvist: `CO-VE` (Colombia og Venezuela). Den venezuelanske hærs angreb på en ELN-lejr i Apure og en bombe mod colombiansk politi nær grænsen, ikke kampe mellem landenes styrker: The Hindu https://www.thehindu.com/news/international/at-least-19-dead-in-venezuela-army-attack-on-colombian-rebel-camp/article71655211.ece og Hürriyet Daily News https://www.hurriyetdailynews.com/several-dead-in-venezuelan-army-attack-on-colombian-rebel-camp-228882
+- Afvist: `ET-SD` (Etiopien og Sudan). Sudan anklager Etiopien for at lade RSF sende droner fra etiopisk område, og Etiopien afviser. Ophavet er ikke uafhængigt bekræftet: Al Jazeera https://www.aljazeera.com/news/2026/11/2/sudan-files-complaints-against-ethiopia-with-un-over-deadly-drone-spree og Arab News https://www.arabnews.com/middle-east/sudan-says-drone-attacks-from-ethiopia-killed-wounded-hundreds-3009282
+- Intet godkendt.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 1. november 2026
 
 ### Kl. 00.20, Europa og Danmark
