@@ -45,6 +45,9 @@ Kildescriptet (WHO DON 622 23. oktober fortsat nyeste, DGHS' mæslinger 1. novem
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet: WHO DON (DON 622 23. oktober er fortsat den nyeste, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 1. november er fortsat den nyeste og står på siden; dagens er normalt ikke ude endnu), WHO SEARO nummer 21 (nummer 22 ventes 4. november), WHO WPRO nummer 1066 (udgaver dateret 23., 24., 29., 30. og 31. oktober gav HTTP 404), ECDC uge 42, UKHSA, NaTHNaC, Outbreak News Today (dengue i Bangladesh 1. november står allerede på siden), CIDRAP og Hongkongs pressemeddelelser (2. november, legionærsyge, almindelige enkelttilfælde). DGHS' denguedashboard gav fortsat HTTP 502; The Daily Star https://www.thedailystar.net/news/bangladesh/news/eight-more-die-dengue-4313191 har de samme tal som `dengue-bd` (136.929 og 427 pr. 1. november). Sri Lankas forside kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots), så `dengue-asien` står urørt med 30. oktober. WHO EMRO's nyhedsside viste ingen poster nyere end oktober 2025 gennem hentningsværktøjet. En søgning efter nye humane H5N1-tilfælde i Cambodja gav intet efter det sjette tilfælde 28. september. Repoet arbejdes fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 44ca153, fordi add_repo ikke findes i kørslen.
+
 ## 1. november 2026
 
 ### Kl. 00.20, Europa og Danmark
