@@ -32,6 +32,35 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: kørslerne kl. 00.20 og 05.20 3. november mangler.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (meddelelsen 2. november er fortsat den nyeste, også ved nyt opslag kl. 17.29 dansk tid), WHO SEARO nummer 21, WHO WPRO nummer 1068, ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC (se Ændret), Outbreak News Today (mæslingedødsfald i New York, se Ændret), CIDRAP og Hongkongs pressemeddelelser (påmindelse om mæslinger, intet nyt tilfælde). Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste og står på siden), ECDC's ebolaside (fortsat opdateret 30. oktober kl. 16.00), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), søgninger efter WHO AFRO's ugebulletin og Africa CDC's ugerapport (intet nyere fundet), søgninger efter nyt om ebola i Kenya og gul feber i Burkina Faso og Elfenbenskysten, New Yorks sundhedsministeriums meddelelse 2. november og https://globus.nicco.dk/konflikter.json (genereret 3. november kl. 15.23 UTC).
+
+**Ændret**
+- `maesling-us`: New Yorks sundhedsministerium og Lewis County Public Health melder i en fælles udtalelse 2. november et mæslingeassocieret dødsfald hos et barn i Lewis County, det første kendte i delstaten i over 30 år. Delstaten har 178 tilfælde i år pr. 24. oktober, heraf 8 i New York City. Kilde: https://www.health.ny.gov/press/releases/2026/2026-11-02_measles.htm (403 ved direkte opslag, læst med hentningsværktøjet). CNN https://www.cnn.com/2026/11/02/health/new-york-measles-death og ABC News https://abcnews.com/Health/new-york-state-reports-1st-measles-death-30/story?id=137787620 gengiver det samme, også tallet 178 pr. 24. oktober. Nyt punkt 2. november, `extra` og `src` opdateret. `cases` urørt, fordi US CDC's næste opdatering ikke er ude.
+- `kolera`: NaTHNaC melder 2. november, at Zambia har 1.958 tilfælde, heraf 303 bekræftede, og 40 dødsfald i syv provinser pr. 2. november, siden udbruddet blev erklæret 28. juli. Kilde: https://travelhealthpro.org.uk/outbreaks mærket sekundær som de tidligere punkter om Zambia. Tallene er læst i NaTHNaC's RSS-feed https://travelhealthpro.org.uk/rss-outbreaks.php i kildescriptet og ved et nyt direkte opslag. Nyt punkt 2. november.
+- `ebola-drc`: NaTHNaC melder 3. november 10.532 bekræftede tilfælde og 5.126 dødsfald pr. 1. november i otte provinser. Kilde: https://travelhealthpro.org.uk/outbreaks mærket sekundær. Læst i RSS-feedet to gange. Nyt punkt 3. november. `cases`, `extra` og talserien står urørt med sundhedsministeriets situationsrapport 168 pr. 29. oktober, fordi ministeriets egen opgørelse for 1. november ikke er offentliggjort på insp.cd.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne. `ebola-ke` står med 30. oktober: de 46 kontakter, der skulle løslades 3. november, er ikke fundet omtalt endnu.
+
+**Usikkert**
+- `ebola-drc`: NaTHNaC oplyser ikke, hvor tallet pr. 1. november kommer fra. Det er derfor kun et punkt i forløbet og ikke skrevet i `cases` eller talserien.
+- Gul feber i Burkina Faso: NaTHNaC melder 2. november 15 tilfælde og 3 dødsfald i 2026 pr. 27. oktober. Ingen myndighedskilde fra Burkina Faso, WHO eller WHO AFRO er fundet. Ikke taget med.
+- `maesling-bd`: DGHS' meddelelse for 3. november var ikke ude kl. 17.29 dansk tid. Tallene står med 2. november.
+- `difteri-ng`, `cre-eu` og `h5n1-dk`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 8e0fec6.
+
+**Mediesporet**
+- Godkendt: `DZ>NE` (militær støtte fra Algeriet til Niger). Algeriet sender tropper til Niger efter Nigers anmodning om militær bistand, og den første militærkonvoj nåede Arlit ifølge Reuters 30. oktober: Arab News (Reuters) https://www.arabnews.com/middle-east/first-algerian-troops-arrive-in-niger-where-insurgents-threaten-stability-3009067 BBC https://www.bbc.com/news/articles/cm4g14n1e5wko og Al Jazeera https://www.aljazeera.com/news/2026/10/26/algerias-president-orders-troop-deployment-to-neighbouring-niger
+- Intet afvist. `DZ>NE` var det eneste par med status afventer.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 2. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
