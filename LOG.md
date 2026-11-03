@@ -2,6 +2,35 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 4. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (meddelelsen 2. november står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1068, ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC (West Nile-feber i Slovakiet 2. november står allerede i `wnv-eu`), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden ECDC's oversigt over ugerapporter, ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 3. november kl. 16.00), ECDC's ebolaside (fortsat opdateret 30. oktober kl. 16.00), UKHSA's ugeoversigt (uge 43, 29. oktober, er fortsat den nyeste), Statens Serum Instituts liste over sygdomsudbrud (redigeret 3. november, se Ændret) og udbrudsarkiv, Statens Serum Instituts side om ebola (redigeret 22. oktober), RIVM's ebolaside (seneste melding 29. oktober, intet nyt om patienten i Leiden) og Robert Koch Instituts Epidemiologisches Bulletin 43/2026 og 44/2026 (45/2026 er ikke udkommet; Ratgeber Malaria i 44/2026 har de samme 8 tilfælde af lufthavnsmalaria og 3 dødsfald i 2026, som står i `malaria-de`). DK-VET's nyheder kunne fortsat hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots).
+
+**Ændret**
+- `salmonella-dk`: Statens Serum Institut har 3. november flyttet udbruddet til udbrudsarkivet, hvilket ifølge instituttets liste sker, når efterforskningen er afsluttet. Arkivsiden: 33 tilfælde registreret mellem 18. april og 9. september, 17 drenge og mænd og 16 piger og kvinder, overvejende børn mellem 3 og 15 år og seks voksne mellem 21 og 63 år, primært bosat i Region Hovedstaden og enkelte i Region Sjælland. Patienterne kunne kobles til samme leverandør af skolemad, men en specifik smittekilde er ikke fundet. Kilde: https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/arkiv/2026_salmonella-enteritidis-i-danmark Nyt punkt 3. november, `cases`, `extra` og `src` opdateret. `live` stod allerede som `false`.
+- `shamonda-fr`: ECDC oplyser 30. oktober, at ECDC og EFSA udarbejder en fælles risikovurdering af Shamonda-virus, som ventes offentliggjort 30. november. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00036/2026-10-30 Nyt punkt 30. oktober og `src` opdateret. Trin og `alvor` urørt.
+- `cchf-es`: ECDC opgør 23. oktober fortsat 4 lokalt erhvervede tilfælde i Spanien pr. 21. oktober med symptomdebut mellem 11. juni og 7. august og afslutter sine ugerapporter for sæsonen, fordi der ikke er meldt nye tilfælde siden uge 34. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00018/2026-10-23 Nyt punkt 23. oktober og `src` opdateret. `cases` urørt, fordi siden ikke nævner dødsfaldet.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne. `wnv-eu`, `dengue-eu` og `chik-fr` står med ECDC's ugeopgørelser pr. 28. oktober, som er de nyeste. `ebola-nl` uden nyt hos RIVM.
+
+**Usikkert**
+- ECDC har ifølge oversigten over ugerapporter https://www.ecdc.europa.eu/en/publications-and-data/monitoring/weekly-threats-reports holdt op med at udgive Communicable Disease Threats Report i oktober 2026. Opdateringerne udgives nu dagligt på https://www.ecdc.europa.eu/en/public-health-events Det forklarer, at ugerapporterne for uge 43 og 44 gav HTTP 404. Siden Public health events kan læses direkte, men dens filtre virker ikke ved maskinel hentning, så kun de nyeste poster er gennemgået. Se GENNEMGANG.md.
+- `cre-eu`: ingen post om CRE fundet blandt de poster på Public health events, der kunne læses. Ingen ændring.
+- Kontrollen gav ingen advarsler om tal i `cases` uden opgørelsesdato, så kvalitetsopgaven om tre sådanne hændelser havde intet at tage fat på.
+- Italien: Outbreak News Today skriver 3. november 787 tilfælde af West Nile-feber. Myndighedens egen opgørelse er ikke læst, og `wnv-eu` står med ECDC's 780 pr. 28. oktober.
+- `difteri-ng` (41 dage), `cre-eu` (33 dage) og `h5n1-dk` (34 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 537c940.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: ECDC's ugerapport er ophørt, så arbejdsbeskrivelsen og kildescriptet henviser til en kilde, der ikke udkommer mere.
+- Nyt i GENNEMGANG.md: `salmonella-dk`, punktet 1. november har Statens Serum Instituts gamle adresse, som nu fører til en fejlside.
+
 ## 3. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten

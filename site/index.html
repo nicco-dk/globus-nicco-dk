@@ -1214,9 +1214,9 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-11-03';
+const DATA_DATO = '2026-11-04';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-11-03T17:31+01:00';
+const DATA_TID = '2026-11-04T00:26+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1583,8 +1583,9 @@ const EVENTS = [
      ['2026-07-15','Andet tilfælde rapporteret, også i Salamanca',''],
      ['2026-07-22','Tredje tilfælde får symptomdebut i Ciudad Real, provinsens første nogensinde. Patienten overlevede',''],
      ['2026-08-07','Fjerde tilfælde får symptomdebut i Salamanca',''],
-     ['2026-09-30','Status uændret: 4 tilfælde og 1 dødsfald blandt de tre fra Salamanca','']],
- src:[['ECDC CCHF case-CSV','https://cchf-weekly.ecdc.europa.eu/case_summary.csv'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]},
+     ['2026-09-30','Status uændret: 4 tilfælde og 1 dødsfald blandt de tre fra Salamanca',''],
+     ['2026-10-23','ECDC opgør fortsat 4 lokalt erhvervede tilfælde pr. 21. oktober med symptomdebut mellem 11. juni og 7. august. Da der ikke er meldt nye tilfælde siden uge 34, afslutter ECDC sine ugerapporter for sæsonen 2026','',['ECDC, 23. oktober','https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00018/2026-10-23']]],
+ src:[['ECDC, 23. oktober','https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00018/2026-10-23'],['ECDC CCHF case-CSV','https://cchf-weekly.ecdc.europa.eu/case_summary.csv'],['ECDC uge 40','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-40-2026.pdf'],['ECDC uge 41','https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-41-2026.pdf']]},
 
 {id:'maesling-il',place:'Jerusalem',country:'Israel',region:'Mellemøsten',lat:31.7683,lon:35.2137,
  disease:'Mæslinger',pathogen:'Measles morbillivirus, genotype B3',stage:'spredning',live:false,
@@ -1645,8 +1646,9 @@ const EVENTS = [
      ['2026-10-22','De franske sundhedsmyndigheder melder den første dokumenterede infektion med Shamonda-virus hos et menneske, en stærkt immunsvækket patient i Lyon, der døde i begyndelsen af oktober','udbrud',['Frankrigs landbrugsministerium, 22. oktober','https://agriculture.gouv.fr/virus-shamonda-une-premiere-detection-chez-letre-humain']],
      ['2026-10-22','ECDC følger situationen sammen med de franske myndigheder og EFSA. Smittevejen og virussets rolle i dødsfaldet undersøges fortsat','',['ECDC, 22. oktober','https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus']],
      ['2026-10-29','RKI beskriver tilfældet ud fra Eurosurveillance: en stærkt immunsvækket person på 60 til 70 år fik neurologiske symptomer 23. september og døde to uger senere af svær hjernebetændelse. Virusset, kladen SHAV-EU1, blev påvist i rygmarvsvæske og isoleret fra væv fra hjernen og rygmarven, og tidlige blodprøver viser, at personen allerede var smittet 83 dage før de neurologiske symptomer. Den mest sandsynlige smittevej er mitter i personens landlige bopælsområde i Rhône-Alpes, hvor virusset er fundet hos dyr. Ingen andre humane tilfælde er kendt i verden','',['RKI, Epidemiologisches Bulletin 44/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/44_26.pdf?__blob=publicationFile']],
+     ['2026-10-30','ECDC oplyser, at ECDC og EFSA udarbejder en fælles risikovurdering af Shamonda-virus, som ventes offentliggjort 30. november. Epidemiologiske, laboratoriemæssige og entomologiske undersøgelser pågår','',['ECDC, 30. oktober','https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00036/2026-10-30']],
      ['2026-11-02','WHO udsender DON 623: Frankrig underrettede WHO 20. oktober, og patienten døde 8. oktober. Smittekilden og smittevejen er ukendt. Overførsel med insekter er mest sandsynlig, smitte gennem fødevarer undersøges, og smitte gennem blodtransfusion anses for usandsynlig efter negative prøver fra donorerne. Hos dyr er virusset pr. 20. oktober påvist i 54 franske departementer. WHO vurderer, at risikoen for folkesundheden endnu ikke kan vurderes pålideligt, og ingen andre humane tilfælde er fundet','',['WHO DON 623','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623']]],
- src:[['WHO DON 623','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623'],['RKI, Epidemiologisches Bulletin 44/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/44_26.pdf?__blob=publicationFile'],['Frankrigs landbrugsministerium, 22. oktober','https://agriculture.gouv.fr/virus-shamonda-une-premiere-detection-chez-letre-humain'],['ECDC, 22. oktober','https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus']]},
+ src:[['WHO DON 623','https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623'],['RKI, Epidemiologisches Bulletin 44/2026','https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/44_26.pdf?__blob=publicationFile'],['Frankrigs landbrugsministerium, 22. oktober','https://agriculture.gouv.fr/virus-shamonda-une-premiere-detection-chez-letre-humain'],['ECDC, 22. oktober','https://www.ecdc.europa.eu/en/news-events/severely-ill-patient-france-becomes-first-ever-human-infected-shamonda-virus'],['ECDC, 30. oktober','https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00036/2026-10-30']]},
 
 {id:'cre-eu',place:'Grænseoverskridende, hospitalsrelateret',country:'EU og EØS',region:'Europa',lat:50.8503,lon:4.3517,
  disease:'Carbapenem-resistente Enterobacterales',pathogen:'Klebsiella pneumoniae og Escherichia coli med carbapenemase-gener',stage:'variant',live:true,
@@ -1675,15 +1677,16 @@ const EVENTS = [
 
 {id:'salmonella-dk',place:'Sjælland',country:'Danmark',region:'Europa',lat:55.6761,lon:12.5683,
  disease:'Salmonellose',pathogen:'Salmonella Enteritidis, sekvenstype 11',stage:'udbrud',live:false,
- cases:'33 tilfælde, 17 mandlige og 16 kvindelige, Statens Serum Institut pr. 1. oktober',
- extra:'Overvejende børn mellem 3 og 15 år. Koblet til en fælles skolemadsordning på flere skoler.',
+ cases:'33 tilfælde, 17 mandlige og 16 kvindelige, registreret mellem 18. april og 9. september, Statens Serum Institut pr. 3. november',
+ extra:'Overvejende børn mellem 3 og 15 år, men også seks voksne mellem 21 og 63 år. Medianalderen var 10 år. Patienterne boede primært i Region Hovedstaden og enkelte i Region Sjælland. De kunne kobles til samme leverandør af skolemad på flere skoler, men det har ikke været muligt at udpege en specifik smittekilde, Statens Serum Institut pr. 3. november.',
  note:'Statens Serum Institut, Styrelsen for Fødevarer, Landbrug og Fiskeri samt DTU Fødevareinstituttet efterforsker udbruddet. Efterforskningen blev genoptaget i oktober efter nye tilfælde.',
  naeste:'Lukkes, når kilden i skolemadsordningen er fundet og fjernet, og der går en måned uden nye tilfælde.',
  tl:[['2026-04','De første tilfælde af typen registreres. Omtrentlig','mistanke'],
      ['2026-06','Tilfældene kobles til en skolemadsordning på flere skoler. 23 tilfælde. Omtrentlig','udbrud'],
      ['2026-10-01','Efterforskningen genoptages efter otte nye tilfælde siden sommerferien. 33 tilfælde i alt',''],
-     ['2026-11-01','Statens Serum Institut har ikke meldt nye tilfælde siden 1. oktober. Udbruddet står fortsat på listen over aktuelle sygdomsudbrud, men siden er ikke opdateret i en måned, og hændelsen markeres derfor som ikke længere i udvikling','',['Statens Serum Institut','https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/2026_salmonella-enteritidis-i-danmark']]],
- src:[['Statens Serum Institut','https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/2026_salmonella-enteritidis-i-danmark'],['Food Safety News, medie','https://www.foodsafetynews.com/2026/10/denmark-reopens-outbreak-investigation-after-new-cases-reported/']]},
+     ['2026-11-01','Statens Serum Institut har ikke meldt nye tilfælde siden 1. oktober. Udbruddet står fortsat på listen over aktuelle sygdomsudbrud, men siden er ikke opdateret i en måned, og hændelsen markeres derfor som ikke længere i udvikling','',['Statens Serum Institut','https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/2026_salmonella-enteritidis-i-danmark']],
+     ['2026-11-03','Statens Serum Institut flytter udbruddet til udbrudsarkivet, hvilket ifølge instituttet sker, når efterforskningen er afsluttet. 33 tilfælde registreret mellem 18. april og 9. september. Patienterne kunne kobles til samme leverandør af skolemad, men en specifik smittekilde er ikke fundet','',['Statens Serum Institut, udbrudsarkiv','https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/arkiv/2026_salmonella-enteritidis-i-danmark']]],
+ src:[['Statens Serum Institut, udbrudsarkiv','https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud/arkiv/2026_salmonella-enteritidis-i-danmark'],['Food Safety News, medie','https://www.foodsafetynews.com/2026/10/denmark-reopens-outbreak-investigation-after-new-cases-reported/']]},
 
 {id:'botulisme-dk',place:'Region Sjælland',country:'Danmark',region:'Europa',lat:55.45,lon:11.75,
  disease:'Botulisme efter behandling med botulinumtoksin',pathogen:'Botulinumtoksin, forgiftning og ikke smitte',stage:'udbrud',
