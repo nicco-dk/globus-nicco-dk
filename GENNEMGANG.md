@@ -23,6 +23,8 @@ Ingen åbne punkter.
 
 Ingen åbne punkter.
 
+- Planlagte kørsler (3. november): kørslerne kl. 00.20 og 05.20 i dag har hverken skrevet i LOG.md eller committet til main. Seneste commit før kl. 11.20-kørslen var bd484e2 kl. 18.27 dansk tid 2. november, så `DATA_TID` var omkring 17 timer gammel, og siden og workflowets vagt har advaret. Årsagen kendes ikke fra repoet. Afgør: tjek de planlagte opgaver og vagtens issue, og om de to kørsler skal køres igen.
+
 ## Datacentre
 
 Ingen åbne punkter.

@@ -2,6 +2,36 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 3. november 2026
+
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 om Shamonda-virus i Frankrig er ny siden forrige kørsel, se Ændret), DGHS' mæslinger (meddelelsen 2. november, se Ændret), WHO SEARO nummer 21 (nummer 22 ventes 4. november), WHO WPRO nummer 1068 pr. 29. oktober (ingen nye humane tilfælde af fugleinfluenza i regionen), ECDC uge 42, UKHSA (intet om udbrud), NaTHNaC (intet nyt i Asien og Mellemøsten), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 2. november (mpox, se Ændret; svær influenza hos et barn og legionærsyge er almindelige enkelttilfælde). Scriptet kunne ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden The Daily Star og The Business Standard om dengue i Bangladesh og Outbreak News Today om mistænkt trikinose i Libanon.
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 2. november: 231.505 mistænkte og 23.991 bekræftede tilfælde, 1.152 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde, efter 1.492 nye mistænkte, 56 nye bekræftede og 3 dødsfald blandt mistænkte på et døgn, 1 hver i Barishal-, Chattogram- og Rangpur-divisionen. 206.168 indlagte og 197.548 udskrevne siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6ae9455694e4dab67492e0d8 Nyt punkt 2. november, nyt punkt i talserien (1.152 plus 105 giver 1.257), `cases`, `extra` og `src` opdateret. Tallene er læst to gange: i PDF'ens tekstlag og som billede af siden. Taget i denne kørsel, fordi meddelelsen var ude og ikke var taget kl. 17.20 i går.
+- `dengue-bd`: DGHS' daglige melding gengivet af medier: 6 nye dødsfald, tre i Dhaka-divisionen, to i Mymensingh-divisionen og ét i Sylhet-divisionen, og 1.970 nye indlagte i døgnet til kl. 8 2. november, i alt 138.899 tilfælde og 433 dødsfald i 2026. Kilder: The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/6-die-dengue-1970-hospitalised-24-hours-4313826 og The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-433-six-more-die-1590276 begge mærket medie. Nyt punkt 2. november, nyt punkt i talserien, `cases` og `src` opdateret. Tallene er læst i begge artiklers rå tekst og stemmer overens. 136.929 plus 1.970 giver 138.899, og 427 plus 6 giver 433.
+- `shamonda-fr`: WHO DON 623 (2. november): Frankrig underrettede WHO 20. oktober, patienten døde 8. oktober, smittekilden og smittevejen er ukendt, overførsel med insekter er mest sandsynlig, smitte gennem fødevarer undersøges, transfusion anses for usandsynlig, virusset er påvist hos dyr i 54 franske departementer pr. 20. oktober, og WHO vurderer, at risikoen endnu ikke kan vurderes pålideligt. Kilde: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON623 (læserens side svarer nu, teksten er læst i WHO's dataudtræk). Nyt punkt 2. november, `cases` og `src` opdateret. Trin og `alvor` urørt, fordi WHO ikke vurderer risikoen som høj.
+- `mpox-hk`: CHP melder 2. november et bekræftet tilfælde hos en 33-årig mand med kontakt med høj risiko med en mand i Hongkong. Siden 2022 har Hongkong haft 118 tilfælde, 92 lokale, 25 importerede og 1 under undersøgelse, og 792 personer med høj risiko er vaccineret siden 28. september. Kilde: https://www.info.gov.hk/gia/general/202611/02/P2026110200650.htm Nyt punkt 2. november, `extra` og `src` opdateret. `cases` står urørt, fordi CHP ikke oplyser et nyt tal for 2026.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne. `h5n1-kh` uden nyt i WHO WPRO nummer 1068. `dengue-asien` står fortsat med 30. oktober, fordi Sri Lankas side ikke kunne hentes.
+
+**Usikkert**
+- Kørslerne kl. 00.20 og 05.20 i dag har hverken skrevet i loggen eller committet. Seneste commit før denne kørsel var kl. 18.27 dansk tid 2. november, så `DATA_TID` var omkring 17 timer gammel, og siden har vist advarslen. Se GENNEMGANG.md.
+- `dengue-asien`: Sri Lankas forside kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots).
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. Tallene kendes kun gennem medier.
+- Libanon: sundhedsministeriet meddelte 31. oktober, at det undersøger mistænkte tilfælde af trikinose, efter Outbreak News Today https://outbreaknewstoday.substack.com/p/lebanon-officials-issue-statement Ingen tal, ingen bekræftelse og ingen smitte mellem mennesker. Ikke taget med.
+- WHO EMRO's nyhedsside er ikke læst i denne kørsel. Tidligere kørsler har ikke kunnet læse nye poster dér.
+- `difteri-ng`, `cre-eu` og `h5n1-dk`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit bd484e2, som har samme HEAD som nicco-dk/globus-nicco-dk.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: kørslerne kl. 00.20 og 05.20 3. november mangler.
+
 ## 2. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
