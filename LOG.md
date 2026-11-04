@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 5. november 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet (WHO DON 623 2. november er fortsat den nyeste, ingen ny DGHS-meddelelse, WHO SEARO nummer 21, WHO WPRO nummer 1068, ECDC uge 42 og ophørt, UKHSA intet om udbrud, NaTHNaC intet nyt for Europa, Outbreak News Today, CIDRAP, Hongkong), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (kun en ny post 4. november om udsendte eksperter til ebolaudbruddet, ingen nye tal), ECDC's ugesider for West Nile, chikungunya og dengue (fortsat uge 44 pr. 28. oktober), UKHSA's ugeoversigt (fortsat uge 43), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), RIVM's ebolaside (intet nyt) og Istituto Superiore di Sanitàs West Nile-rapport nummer 14 https://www.epicentro.iss.it/westnile/bollettino/Bollettino_WND_2026_14.pdf med 787 bekræftede tilfælde i Italien pr. 28. oktober, heraf 7 importerede. Det svarer til ECDC's 780 lokalt erhvervede i `wnv-eu`, så tallet fra Outbreak News Today 3. november kræver ingen ændring. Robert Koch Instituts Epidemiologisches Bulletin 45/2026 er ikke udkommet. DK-VET's nyheder kunne fortsat ikke hentes. Kontrollen giver ingen advarsler om tal i `cases` uden opgørelsesdato, og koordinaterne er gennemgået uden fund. `difteri-ng`, `cre-eu` og `h5n1-dk` venter fortsat på ejeren. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit a2f68ff, fordi add_repo ikke findes i kørslen.
+
 ## 4. november 2026
 
 ### Kl. 00.20, Europa og Danmark
