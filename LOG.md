@@ -61,6 +61,32 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (ny meddelelse 3. november, se Ændret), WHO SEARO nummer 21 (nummer 22 gav HTTP 404 og er ikke udkommet endnu), WHO WPRO nummer 1068 (ingen nye tilfælde af H5N1 eller H5N6 23. til 29. oktober), ECDC uge 42 (ophørt, se GENNEMGANG.md), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser 3. og 4. november (kun påmindelsen om mæslinger 3. november, intet nyt tilfælde). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet om udbrud siden 25. oktober) og søgninger efter DGHS' denguetal hos bdnews24, The Daily Star, The Business Standard og Dhaka Tribune.
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 3. november: 232.823 mistænkte og 24.073 bekræftede tilfælde siden 15. marts, 1.158 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.318 nye mistænkte, 82 nye bekræftede og 6 dødsfald blandt mistænkte, heraf 5 i Dhaka-divisionen, alle i Dhaka-distriktet, og 1 i Barishal-divisionen. 207.428 indlagt og 198.752 udskrevet. Tallene er læst i PDF'en som tekst og som billede af siden. Kilde: https://dghs.gov.bd/pages/press-releases/6aeac28960eb65489f8b2b98 Nyt punkt 3. november, nyt punkt i talserien (1.158 og 105 lagt sammen til 1.263 efter reglen for denne hændelse), `cases`, `extra` og `src` opdateret.
+- `dengue-bd`: DGHS gengivet af bdnews24 3. november: 6 nye dødsfald og 2.010 nye indlagte på et døgn til kl. 8 3. november, heraf 943 i Dhaka-divisionen, i alt 140.909 indlagte og 439 dødsfald i 2026, 5.876 fortsat indlagt. Kilde: https://bdnews24.com/health/puzs2wjl9l The Daily Star har de samme tal for i alt og indlagte nu: https://www.thedailystar.net/news/healthcare/disease/news/6-more-die-dengue-4314526 Nyt punkt 3. november, nyt punkt i talserien, `cases` og `src` opdateret. Kilden er mærket `, medie`, fordi denguedashboardet ikke kunne hentes.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne. `h5n1-kh`, `h9n2-cn`, `mers-sa`, `kolera-ye`, `cchf-ir`, `pest-irkutsk`, `mpox-hk` og `dengue-asien` uden nyt i dagens kilder.
+
+**Usikkert**
+- `dengue-asien`: Sri Lankas National Dengue Control Unit kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots, også siden /updates/). Tallet pr. 30. oktober står urørt.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. Tallene 4. november var ikke ude ved kørslen.
+- `polio`: Outbreak News Today's melding om Pakistans ottende tilfælde i 2026 i Bara i Khyber District er fortsat ikke bekræftet af NEOC eller GPEI. En søgning gav kun ældre artikler. Ingen ændring.
+- Libanon: Outbreak News Today gengiver 31. oktober en udtalelse fra Libanons sundhedsministerium om mistænkte tilfælde af trikinose, uden antal og sted. Ikke taget med som ny hændelse, fordi der hverken er bekræftede tilfælde eller tal.
+- Rusland: Outbreak News Today gengiver 3. november mediet SHOT med 1.512 tilfælde af hæmoragisk feber med nyresyndrom (hantavirus) i fem regioner i den europæiske del af Rusland. Rospotrebnadzor kalder situationen stabil, og stigningen er sæsonbestemt. Ikke taget med.
+- `difteri-ng` (41 dage), `cre-eu` (33 dage) og `h5n1-dk` (34 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit f4843db.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 3. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
