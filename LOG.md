@@ -87,6 +87,31 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (ny meddelelse 4. november, se Ændret), WHO SEARO nummer 21, WHO WPRO nummer 1068, ECDC uge 42 (ophørt, se GENNEMGANG.md), UKHSA (intet om udbrud), NaTHNaC (intet nyt siden 3. november), Outbreak News Today, CIDRAP (fugleinfluenza i Yakima County, dengue i Florida og mæslinger i USA står allerede på siden) og Hongkongs pressemeddelelser. Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 4. november kl. 16.00, nyeste post om ebola er fortsat 3. november), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat opdateret 30. oktober med 4.852 tilfælde pr. 29. oktober), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), WHO AFRO's oversigt over udbrud (ugebulletinen for uge 41 er fortsat den nyeste), søgninger efter Africa CDC's ugerapport og nyt om ebola i DR Congo og Kenya (intet nyere fundet) og https://globus.nicco.dk/konflikter.json (genereret 4. november kl. 15.23 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 4. november: 234.148 mistænkte og 24.150 bekræftede tilfælde siden 15. marts, 1.164 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.325 nye mistænkte, 77 nye bekræftede og 6 dødsfald blandt mistænkte, heraf 4 i Dhaka-divisionen, alle i Dhaka-distriktet, og 1 hver i Sylhet- og Khulna-divisionen. Ingen nye dødsfald blandt bekræftede tilfælde. 208.634 indlagt og 199.894 udskrevet. Tallene er læst i PDF'en som tekst og som billede af siden. Kilde: https://dghs.gov.bd/pages/press-releases/6aeafe61617938be5902a145 Nyt punkt 4. november, nyt punkt i talserien (1.164 og 105 lagt sammen til 1.269 efter reglen for denne hændelse), `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne. Rundturen for Afrika og Amerika blev gennemført kl. 05.20 i dag og er ikke gentaget. `maesling-us` venter på US CDC's næste ugeopdatering. `ebola-ke` står med 30. oktober: løsladelsen af de 46 kontakter 3. november er fortsat ikke fundet omtalt.
+
+**Usikkert**
+- `ebola-drc`: ministeriets situationsrapporter efter nummer 168 står fortsat ikke i insp.cd's medieliste. Siden følger ECDC's tal pr. 1. november.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. Tallene 4. november er ikke taget i denne kørsel.
+- `difteri-ng` (41 dage), `cre-eu` (33 dage) og `h5n1-dk` (34 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit a4b234b.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 3. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
