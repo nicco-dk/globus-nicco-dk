@@ -31,6 +31,36 @@
 - Nyt i GENNEMGANG.md: ECDC's ugerapport er ophørt, så arbejdsbeskrivelsen og kildescriptet henviser til en kilde, der ikke udkommer mere.
 - Nyt i GENNEMGANG.md: `salmonella-dk`, punktet 1. november har Statens Serum Instituts gamle adresse, som nu fører til en fejlside.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (meddelelsen 2. november er fortsat den nyeste og står på siden), WHO SEARO nummer 21, WHO WPRO nummer 1068, ECDC uge 42 (ugerapporten er ophørt, se GENNEMGANG.md), UKHSA (intet om udbrud; ugeoversigten 29. oktober er fortsat den nyeste), NaTHNaC (ebola i DR Congo, kolera i Zambia, gul feber i Venezuela og West Nile-feber i Slovakiet står allerede på siden), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (3. november, påmindelse om mæslinger, intet nyt tilfælde). Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 3. november kl. 16.00) med posterne om ebola, fugleinfluenza i USA, luftvejsvirus uge 43 og SARS-CoV-2-varianter 3. november, ECDC's ebolaside (fortsat 30. oktober), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), søgninger efter WHO AFRO's ugebulletin og WHO's mpox-situationsrapporter (intet nyere fundet), CHP's ugerapport om fugleinfluenza uge 44, Stanislaus County Health Services Agency og https://globus.nicco.dk/konflikter.json (genereret 4. november kl. 03.23 UTC).
+
+**Ændret**
+- `ebola-drc`: ECDC 3. november: DR Congo har meldt 10.532 bekræftede tilfælde og 5.126 dødsfald med data til og med 1. november, efter 65 nye tilfælde og 23 nye dødsfald meldt 2. november (39 tilfælde i Nordkivu, 19 i Ituri og 7 i Haut-Uélé). 961 patienter i isolation, 2.834 raske, 84 procent af kontakterne fulgt op, tal pr. provins og fortsat 67 af 178 sundhedszoner. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-03 Nyt punkt 3. november, nyt punkt i talserien 1. november, `cases`, `extra` og `src` opdateret. Provinstallene giver tilsammen 10.532 tilfælde og 5.126 dødsfald. Det er de samme tal, som NaTHNaC-punktet 3. november har, nu bekræftet af en myndighed.
+- `mpox-mo`: Stanislaus County Health Services Agency i Californien melder 29. oktober fire nylige tilfælde af mpox, klade I, to bekræftet af Californiens sundhedsmyndighed CDPH og to, der afventer bekræftende test. Tre af de fire har ikke rejst uden for landet for nylig. Kilde: https://www.schsa.org/news-room/2026/26-06-stanislaus-county-public-health-confirms-four-mpox-cases.shtm Nyt punkt 29. oktober og `src` opdateret. `cases` urørt, fordi US CDC's landstal ikke er opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (19), `maesling-am` (13) og `chik-am` (15) uden nyt hos PAHO, `difteri-afro` (19), `gul-feber-gh` (21) og `gul-feber-ci` (21) uden nyere ugebulletin fra WHO AFRO, `mpox` (22) uden ny situationsrapport fra WHO, `pest-irkutsk` (23) uden ny DON, `h5n1-kh` (26) uden nye tilfælde i WHO WPRO nummer 1068, `kolera-ye` (13), `dengue-fl` (11), `cyclospora-us` (12) og `salmonella-eu` (26) uden nyt i de samlede kilder. Floridas ugerapport kommer om torsdagen. `ebola-nl` (25) blev gennemgået kl. 00.20 i dag. `difteri-ng`, `cre-eu` og `h5n1-dk` venter på ejeren.
+
+**Usikkert**
+- `ebola-drc`: ECDC skriver, at situationsrapporten 31. oktober efter en harmonisering af data lagde 314 dødsfald fra Ituri til de samlede tal, og at de ikke indgik i rapporterne 1. og 2. november. CIDRAP gengiver 3. november Al Jazeera med 5.372 dødsfald og 10.444 tilfælde i DR Congo https://www.cidrap.umn.edu/mpox/quick-takes-clade-1-mpox-california-h9n2-avian-flu-cases-china-more-ebola-deaths Siden følger ECDC's 5.126. Situationsrapporterne 169 og frem står ikke i insp.cd's medieliste, så ministeriets egne tal efter 29. oktober er ikke læst.
+- `polio`: Outbreak News Today skriver 3. november, at Pakistan har bekræftet årets ottende tilfælde hos en 13 måneder gammel pige i Bara i Khyber District https://outbreaknewstoday.substack.com/p/pakistan-reports-8th-polio-case-of Hverken NEOC's egen udmelding eller et andet medie er fundet, og GPEI's ugeoversigt er ikke opdateret. Ingen ændring.
+- Gul feber i Burkina Faso: NaTHNaC skriver 2. november 15 tilfælde og 3 dødsfald i 2026 pr. 27. oktober. Burkina Fasos egen myndighed er ikke fundet ved søgning. Ikke taget med som ny hændelse.
+- `ebola-ke`: Kenyas sundhedsministerium ventede at løslade 46 kontakter 3. november. Nation Africa har en artikel om, at der ikke er kommet en ny statusmelding, men den kunne hverken hentes direkte eller med hentningsværktøjet (robots). Ingen ændring.
+- `h9n2-cn`: CHP's ugerapport uge 44 melder to nye tilfælde af H9N2 på det kinesiske fastland, en toårig dreng i Hubei og en 77-årig kvinde i Jiangxi med symptomdebut i september https://www.chp.gov.hk/files/pdf/2026_avian_influenza_report_vol22_wk44.pdf Hændelsen står med `live:false` og gælder to bestemte tilfælde, så den er ikke ændret. Enkelttilfælde af H9N2 i Kina er ikke taget med som ny hændelse.
+- `difteri-ng` (41 dage), `cre-eu` (33 dage) og `h5n1-dk` (34 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit ccd1aac.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 3. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
