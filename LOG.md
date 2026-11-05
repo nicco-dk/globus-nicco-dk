@@ -2,6 +2,33 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 6. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste), DGHS' mæslinger (meddelelsen 5. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22, WHO WPRO nummer 1068, ECDC uge 42 (ophørt), UKHSA, NaTHNaC (chikungunya i Frankrig 5. november, se Ændret), CIDRAP og Hongkongs pressemeddelelser. Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 5. november kl. 16.00) med posterne om H9N2 4. november og de globale månedsopdateringer om chikungunya og dengue 5. november, ECDC's ugeside for chikungunya (fortsat uge 44 pr. 28. oktober), Santé publique France's bulletin 4. november https://www.santepubliquefrance.fr/maladies-a-transmission-vectorielle/chikungunya/bulletin-national/chikungunya-dengue-zika-et-west-nile-en-france-hexagonale-bulletin-de-la-surveillance-renforcee-du-4 (siden og PDF'en læst), UKHSA's ugeoversigt uge 44 https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-44-week-ending-1-november-2026 (ebola og H5N1 i Washington står allerede med de samme tal), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), RIVM's ebolaside (opdatering 4. november, intet nyt om Nederlandene) og Robert Koch Instituts Epidemiologisches Bulletin 45/2026 (gonorré i 2025, intet om udbrud). Kontrollen giver ingen advarsler om tal i `cases` uden opgørelsesdato, så der var ingen at rette.
+
+**Ændret**
+- `chik-fr`: Santé publique France pr. 2. november: 208 lokalt erhvervede tilfælde i 30 episoder efter én ny episode på en uge, i Tarn, Lot, Gard, Gironde, Landes, Pyrénées-Atlantiques, Val-de-Marne, Seine-Saint-Denis, Var og Drôme (Saint-Uze, 2 tilfælde). Kilde: https://www.santepubliquefrance.fr/maladies-a-transmission-vectorielle/chikungunya/bulletin-national/chikungunya-dengue-zika-et-west-nile-en-france-hexagonale-bulletin-de-la-surveillance-renforcee-du-4 Nyt punkt 2. november, `cases`, `extra` (forskellen til ECDC's 204 pr. 28. oktober forklaret) og `src` opdateret.
+- `wnv-eu`: Santé publique France pr. 2. november: 212 lokalt erhvervede tilfælde i Frankrig efter 11 nye på en uge, 6 dødsfald, og 15 departementer med tilfælde for første gang. Samme kilde. Nyt punkt 2. november, `extra` og `src` opdateret. `cases` og talserien følger fortsat ECDC's samlede tal pr. 28. oktober.
+- `h9n2-cn`: ECDC 26. oktober (to nye tilfælde i Henan og Guizhou, 185 siden 2015) https://www.ecdc.europa.eu/en/public-health-events/2019-eip-00007/2026-10-26 og 4. november (fire nye tilfælde i Liaoning, Guangxi, Hubei og Jiangxi, 189 siden 2015, heraf 186 i Kina, 2 dødsfald) https://www.ecdc.europa.eu/en/public-health-events/2019-eip-00007/2026-11-04 To nye punkter, `cases`, `extra` og `src` opdateret.
+- `chik-am`: ECDC's månedsopdatering 5. november: 271.223 tilfælde og 113 dødsfald i 26 lande uden for EU og EØS pr. 30. september, heraf 216.594 tilfælde og 113 dødsfald i Amerika. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2025-eip-00043/2026-11-05 Nyt punkt 5. november, nyt punkt i talserien 30. september (samme serie som ECDC's 250.051 pr. 30. august), `extra` og `src` opdateret. `cases` står med PAHO's tal.
+
+**Nye**
+- Ingen. UKHSA uge 44 nævner et enkelt tilfælde af svineinfluenza A(H1N1)v i Santa Catarina i Brasilien med dødelig udgang. Det er et enkeltstående tilfælde uden påvist smitte mellem mennesker og er ikke taget med.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne. `dengue-eu` står allerede med Frankrigs 8 tilfælde, som Santé publique France også har pr. 2. november. `ebola-nl` uden nyt hos RIVM, lukkes efter planen 21. november. `salmonella-dk`, `botulisme-dk`, `cchf-es`, `sindbis-de`, `malaria-de`, `shamonda-fr` og `salmonella-eu` uden nyt i dagens kilder.
+
+**Usikkert**
+- `h5n1-dk`: DK-VET's nyheder kunne fortsat hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots).
+- Delen `ont` (Outbreak News Today) i kildescriptet fejlede med "JSON.parse(...).map is not a function". Kilden er ikke gennemgået i denne kørsel.
+- `difteri-ng` (43 dage), `cre-eu` (35 dage) og `h5n1-dk` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 3be4120.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 5. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
