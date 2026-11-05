@@ -7,6 +7,34 @@
 ### Kl. 00.20, Europa og Danmark: intet nyt
 Kildescriptet (WHO DON 623 2. november er fortsat den nyeste, ingen ny DGHS-meddelelse, WHO SEARO nummer 21, WHO WPRO nummer 1068, ECDC uge 42 og ophørt, UKHSA intet om udbrud, NaTHNaC intet nyt for Europa, Outbreak News Today, CIDRAP, Hongkong), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (kun en ny post 4. november om udsendte eksperter til ebolaudbruddet, ingen nye tal), ECDC's ugesider for West Nile, chikungunya og dengue (fortsat uge 44 pr. 28. oktober), UKHSA's ugeoversigt (fortsat uge 43), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), RIVM's ebolaside (intet nyt) og Istituto Superiore di Sanitàs West Nile-rapport nummer 14 https://www.epicentro.iss.it/westnile/bollettino/Bollettino_WND_2026_14.pdf med 787 bekræftede tilfælde i Italien pr. 28. oktober, heraf 7 importerede. Det svarer til ECDC's 780 lokalt erhvervede i `wnv-eu`, så tallet fra Outbreak News Today 3. november kræver ingen ændring. Robert Koch Instituts Epidemiologisches Bulletin 45/2026 er ikke udkommet. DK-VET's nyheder kunne fortsat ikke hentes. Kontrollen giver ingen advarsler om tal i `cases` uden opgørelsesdato, og koordinaterne er gennemgået uden fund. `difteri-ng`, `cre-eu` og `h5n1-dk` venter fortsat på ejeren. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit a2f68ff, fordi add_repo ikke findes i kørslen.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (meddelelsen 4. november er fortsat den nyeste og står på siden; scriptet kunne ikke hente PDF'en), WHO SEARO nummer 22 (ny, 4. november, se Ændret), WHO WPRO nummer 1068, ECDC uge 42 (ophørt, se GENNEMGANG.md), UKHSA (intet om udbrud), NaTHNaC (kolera i DR Congo 4. november, se Ændret; West Nile-feber i USA 4. november er almindelig sæson og ikke taget med), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 4. november kl. 16.00; nye poster 4. november om H9N2 og udsendte eksperter, nyeste post om ebola er fortsat 3. november), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat opdateret 30. oktober, læst med hentningsværktøjet, direkte opslag gav 403), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), WHO's mpox-situationsrapporter (nummer 69 14. september er fortsat den nyeste), søgninger efter WHO AFRO's ugebulletin, nyt om ebola i Kenya og Pakistans ottende poliotilfælde, og https://globus.nicco.dk/konflikter.json (genereret 5. november kl. 03.23 UTC).
+
+**Ændret**
+- `dengue-bd`: DGHS gengivet af The Daily Star og The Business Standard 4. november: 6 nye dødsfald, fire i Dhaka-divisionen og to i Khulna-divisionen, og 1.866 nye indlagte på et døgn til kl. 8 4. november, i alt 142.775 tilfælde og 445 dødsfald i 2026, 5.936 fortsat indlagt. Kilder: https://www.thedailystar.net/news/healthcare/disease/news/6-die-dengue-1866-hospitalised-24-hours-4315576 og https://www.tbsnews.net/bangladesh/health/dengue-claims-6-more-lives-24hrs-toll-hits-445-1592496 Desuden WHO SEARO's bulletin 22, situation pr. 2. november: uge 44 gav 12.981 mistænkte tilfælde og 43 nye dødsfald mod 11.548 tilfælde og 36 dødsfald i uge 43. Kilde: https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_22_searo_epi_bulletin.pdf To nye punkter 4. november, nyt punkt i talserien, `cases`, `extra` (ugetallene for uge 40 erstattet af uge 44) og `src` opdateret. Kilden for dagstallene er mærket `, medie`, fordi denguedashboardet ikke kunne hentes.
+- `kolera`: NaTHNaC 4. november: DR Congo har 62.036 mistænkte tilfælde og 1.839 mistænkte dødsfald pr. 19. oktober, mod 59.782 tilfælde og 1.818 dødsfald i samme periode i 2025. Kilde: https://travelhealthpro.org.uk/outbreaks (læst i NaTHNaC's RSS) Nyt punkt 4. november, mærket `, sekundær`. `cases` og `extra` urørt, fordi de bygger på WHO's og ECDC's opgørelser.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (20), `chik-am` (16) og `maesling-am` (14) uden nyt hos PAHO, `mpox` (23) uden ny situationsrapport fra WHO, `difteri-afro` (20), `gul-feber-gh` (22) og `gul-feber-ci` (22) uden nyere ugebulletin fra WHO AFRO fundet, `pest-irkutsk` (24) uden ny DON, `h5n1-kh` (27) uden nye tilfælde i WHO WPRO nummer 1068, `ebola-nl` (26) uden nyt hos RIVM ved kørslen kl. 00.20, `kolera-ye` (14), `dengue-fl` (12), `cyclospora-us` (13) og `salmonella-eu` (27) uden nyt i de samlede kilder. `ebola-ke` (6) står med 30. oktober: Nation Africa skriver, at der ikke er kommet en ny statusmelding. `maesling-us` venter på US CDC's næste ugeopdatering.
+
+**Usikkert**
+- `dengue-bd`: WHO SEARO's bulletin 22 er ikke enig med sig selv om sammenligningen med samme uge i 2025 (side 1: "approximately 2.1 times", side 11: "1.1 times higher", med 6.235 tilfælde i uge 44 2025). Sammenligningen er derfor ikke skrevet. Tallene for uge 43 og 44 er de samme begge steder.
+- `polio`: The Express Tribune har 2. november overskriften om Pakistans ottende tilfælde i 2026, men brødteksten kalder tilfældet hos en 13 måneder gammel pige i Bara i Khyber District for årets syvende https://tribune.com.pk/story/2638158/pakistans-polio-tally-reaches-eight-with-new-case-in-k-p-1 The Hans India gengiver Geo News med det ottende https://www.thehansindia.com/news/international/polio-continues-to-haunt-pakistan-despite-nationwide-campaigns-8th-case-reported-in-2026-1138569 NEOC's egen udmelding og GPEI's ugeoversigt er ikke fundet. Ingen ændring, fordi kilderne er uenige om nummeret.
+- `ebola-drc`: ministeriets situationsrapporter efter nummer 168 står fortsat ikke i insp.cd's medieliste. Siden følger ECDC's tal pr. 1. november.
+- `difteri-ng` (42 dage), `cre-eu` (34 dage) og `h5n1-dk` (35 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 44aaa69.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (7 bekræftede, 70 mistanker). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 4. november 2026
 
 ### Kl. 00.20, Europa og Danmark
