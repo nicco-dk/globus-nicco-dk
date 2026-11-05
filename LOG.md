@@ -59,6 +59,33 @@ Kildescriptet (WHO DON 623 2. november er fortsat den nyeste, ingen ny DGHS-medd
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste), DGHS' mæslinger (ny meddelelse 5. november, se Ændret), WHO SEARO nummer 22, WHO WPRO nummer 1068, ECDC uge 42 (ophørt), UKHSA (intet nyt om udbrud), NaTHNaC (intet nyt siden 4. november), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser. Scriptet kunne fortsat ikke hente DGHS' denguedashboard (HTTP 502) og Sri Lankas side. Desuden ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda og posten i Public health events 5. november, insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (opdateret 4. november, men fortsat med tal pr. 29. oktober, læst med hentningsværktøjet), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), søgninger efter WHO AFRO's ugebulletin, Africa CDC's ugentlige udmeldinger og nyt om ebola i Kenya, og https://globus.nicco.dk/konflikter.json (genereret 5. november kl. 15.24 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS 5. november: 235.475 mistænkte og 24.219 bekræftede tilfælde, 1.167 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.327 nye mistænkte, 69 nye bekræftede og 3 dødsfald blandt mistænkte, 2 i Chattogram-divisionen (begge i Chattogram-distriktet) og 1 i Dhaka-divisionen. 209.854 indlagt og 201.153 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6aeca741ace001488a5e2653 (PDF-bilaget læst som tekst og som billede). Nyt punkt i forløbet og i talserien (dødstallet i grafen er de to rækker lagt sammen, 1.272), `cases`, `extra` og `src` opdateret.
+- `ebola-drc`: ECDC 5. november: 10.668 bekræftede tilfælde og 5.198 dødsfald pr. 4. november med data til og med 3. november, efter 62 nye tilfælde og 34 nye dødsfald meldt 4. november. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-05 Nyt punkt 5. november, nyt punkt i talserien 3. november, `cases`, `extra` (tal pr. provins) og `src` opdateret.
+- `ebola-ke`: Kenyas sundhedsministerium 3. november, gengivet af AP og The Star: fem patienter udskrevet efter negative test, to fortsat i behandling, 46 kontakter løsladt og 52 fortsat under opfølgning. Fortsat 9 bekræftede tilfælde og 2 dødsfald og ingen nye smittede de seneste to uger. Kilder: https://abcnews.com/Health/wireStory/kenya-releases-5-ebola-patients-after-negative-tests-137813664 og https://www.the-star.co.ke/news/infographics/2026-11-04-ebola-response-update-in-kenya Nyt punkt 3. november mærket `, medie`, `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne. `maesling-us` venter på US CDC's næste ugetal, `maesling-am`, `chik-am` og `myiasis-am` uden ny opdatering fra PAHO, `gul-feber-gh`, `gul-feber-ci`, `difteri-afro` og `anthrax-zm` uden nyere ugebulletin fra WHO AFRO fundet, `h5n1-wa` står allerede med 3 tilfælde og 1 dødsfald, `ebola-ng` har allerede ECDC's 62 kontakter og evakueringen til Schweiz.
+
+**Usikkert**
+- `ebola-ke`: tallene 3. november kendes kun gennem AP og The Star, der gengiver sundhedsministeriets udmelding. ECDC står fortsat med Kenyas tal pr. 26. oktober.
+- `maesling-us`: New York og Pennsylvania har meldt nye dødsfald (Outbreak News Today og CIDRAP 3. og 4. november). US CDC's side viser fortsat tal pr. 29. oktober, så intet er skrevet.
+- `difteri-ng`, `cre-eu` og `h5n1-dk`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit d0b8423.
+
+**Mediesporet**
+- Afvist `CA-GB` (Canada og Storbritannien): artiklerne handler om en dræbt mor og datter efter et grizzlybjørneangreb i British Columbia (BBC https://www.bbc.co.uk/news/articles/cqvgry8k5d01o og The New York Times https://www.nytimes.com/2026/11/05/world/canada/canada-grizzly-bear-attack-mother-daughter-killed.html), afpresningsskyderier i Surrey (Hindustan Times https://www.hindustantimes.com/world-news/epicentre-of-extortion-violence-in-canada-records-zero-shootings-in-last-3-mths-police-101793887115544.html) og en britisk skuespiller (Euronews). Ingen kampe mellem landene. Intet godkendt. Det var det eneste par med status afventer.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 4. november 2026
 
 ### Kl. 00.20, Europa og Danmark

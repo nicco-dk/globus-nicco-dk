@@ -96,6 +96,7 @@
     "CA-US": {"dato": "2026-11-01", "grund": "Artiklerne handler om et hjemmerøveri i Toronto, Trumps toldsatser og midtvejsvalget i USA, ikke om kampe mellem landene."},
     "AR-BR": {"dato": "2026-11-01", "grund": "Artiklerne handler om Flávio Bolsonaros flugt fra Brasilien over Argentina efter valgnederlaget, ikke om kampe mellem landene."},
     "CO-VE": {"dato": "2026-11-02", "grund": "Artiklerne handler om den venezuelanske hærs angreb på en lejr for den colombianske guerilla ELN i Apure i Venezuela og en bombe mod colombiansk politi nær grænsen, ikke om kampe mellem de to landes styrker."},
-    "ET-SD": {"dato": "2026-11-02", "grund": "Sudan anklager Etiopien for at lade RSF sende droner fra etiopisk område, Etiopien afviser, og ophavet er ikke uafhængigt bekræftet."}
+    "ET-SD": {"dato": "2026-11-02", "grund": "Sudan anklager Etiopien for at lade RSF sende droner fra etiopisk område, Etiopien afviser, og ophavet er ikke uafhængigt bekræftet."},
+    "CA-GB": {"dato": "2026-11-05", "grund": "Artiklerne handler om en dræbt mor og datter efter et grizzlybjørneangreb i British Columbia, afpresningsskyderier i Surrey i Canada og en britisk skuespiller, ikke om kampe mellem landene (BBC, Hindustan Times, The New York Times)."}
   }
 }
