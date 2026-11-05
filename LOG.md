@@ -35,6 +35,30 @@ Kildescriptet (WHO DON 623 2. november er fortsat den nyeste, ingen ny DGHS-medd
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste og står på siden), DGHS' mæslinger (meddelelsen 4. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22 (allerede brugt kl. 05.20; Sri Lanka uge 43 og Thailand uge 44 ændrer ikke `dengue-asien`), WHO WPRO nummer 1068 (ingen nye tilfælde af H5N1 eller H5N6 23. til 29. oktober), ECDC uge 42 (ophørt, se GENNEMGANG.md), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten), Outbreak News Today, CIDRAP og Hongkongs pressemeddelelser (intet om smitte i dag og i går). Desuden søgninger efter DGHS' denguetal 5. november, WHO EMRO's nyheder og Pakistans ottende poliotilfælde.
+
+**Ændret**
+- `polio`: Daily Pakistan 1. november: ifølge Pakistans nationale nødcenter for polioudryddelse, NEOC, er der meldt otte tilfælde i landet i 2026, seks i Khyber Pakhtunkhwa og to i Sindh, det ottende i Khyber District. Kilde: https://en.dailypakistan.com.pk/01-Nov-2026/pakistan-reports-eighth-polio-case-of-2026-detected-in-khyber-district The Hans India gengiver Geo News med det samme ottende tilfælde: https://www.thehansindia.com/news/international/polio-continues-to-haunt-pakistan-despite-nationwide-campaigns-8th-case-reported-in-2026-1138569 Nyt punkt 1. november, mærket `, medie`, og `src` opdateret. `cases` urørt, fordi GPEI fortsat har 7 pr. 28. oktober.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne. `dengue-bd`, `maesling-bd`, `dengue-asien`, `h5n1-kh`, `h9n2-cn`, `mers-sa`, `kolera-ye`, `pest-irkutsk` og `mpox-hk` uden nyt i dagens kilder.
+
+**Usikkert**
+- `polio`: The Express Tribune kalder i brødteksten 2. november tilfældet i Bara for årets syvende, mens overskriften, Daily Pakistan med NEOC som kilde og The Hans India har det ottende. NEOC's egen udmelding og GPEI's ugeoversigt er ikke læst, så `cases` står med GPEI's 7.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502, og tallene 5. november var ikke fundet i medierne ved kørslen.
+- `dengue-asien`: Sri Lankas National Dengue Control Unit kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots). Tallet pr. 30. oktober står urørt.
+- WHO EMRO's nyhedsside gav med hentningsværktøjet kun nyheder fra 2025, så den er ikke gennemgået.
+- `difteri-ng`, `cre-eu` og `h5n1-dk`: kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit dee8a81.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 4. november 2026
 
 ### Kl. 00.20, Europa og Danmark
