@@ -64,6 +64,28 @@ Fremgangsmåde, kilder, regler og felter står i `OPDATERING.md`. Hver opdaterin
 
 Den automatiske kørsel tilføjer og ajourfører, men retter ikke i gamle forløbspunkter. Det, den finder, som kun ejeren må rette, står i `GENNEMGANG.md`. `tools/hent-kilder.mjs` henter de faste kilder og skriver kildens egne tal ud, så kørslen ikke skal lede efter adresser.
 
+## Fanen Konspirationer
+
+Teoriarkivet på https://globus.nicco.dk/konspirationer/. Det kortlægger, hvordan en teori bliver til en konspirationsteori, med én fane pr. teori og underfanerne Overblik, Kort, Tidslinje, Matrix og Kilder. Den første teori er 17. NOV.
+
+| Sti | Hvad |
+| --- | --- |
+| `site/konspirationer/index.html` | Siden. Samme skrifter, farver og klode som forsiden, og kortet hentes fra `site/kort-50m.txt` |
+| `site/konspirationer/teorier.json` | Listen over teorier og deres datafiler. En ny teori er en ny linje her og en ny datafil |
+| `site/konspirationer/17nov.json` | Punkter, kilder, vurdering og tekster for 17. NOV |
+| `tools/tjek-konspirationer.mjs` | Formkontrol af datafilerne. Køres i hånden før et commit, der rører `site/konspirationer/` |
+
+Regler for fanen:
+
+- **Adskilt fra kloden.** Fanen læser intet af klodens data, og intet herfra indgår i alvor og trin, varsler, beskeder, RSS, status.json eller Nyt på siden. Forsiden har kun linket `#kfane` under logoet. Kontrollen er bevidst ikke en del af udrulningen, så en fejl i fanen aldrig kan standse forsidens data.
+- **Evidens.** Hvert punkt er dokumenteret, sandsynligt, uunderbygget eller fiktion, vist med både ord og form: fyldt prik, halvt fyldt ring, tom ring og stiplet ring.
+- **Kilder.** Sidens egen regel gælder: kun det, en navngiven kilde har offentliggjort, med kilden ved siden af. Udsagn fra navngivne personer skal kunne slås op i kilden ved punktet.
+- **Ingen indtastning.** Nye punkter lægges ind i Teoriarkivets artefakt og føres herover, når ejeren har godkendt dem. Hver runde får en linje i `historik` i datafilen.
+- **Efter datoen.** Fanen bliver stående som arkiv. Feltet `efterspil` (dato, tekst og kilder) skrives, når datoen er passeret, og vises under Overblik.
+- **Godkendelse.** Repoet er offentligt. Ændringer i fanen vises for ejeren og committes først, når ejeren har sagt ja.
+
+Den automatiske kørsel for smitteudbruddene rører ikke `site/konspirationer/`.
+
 ## Bemærk
 
 Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører kl. 00.20, 05.20, 11.20 og 17.20 dansk tid efter vagtplanen i `OPDATERING.md`. Hver kørsel sætter `DATA_TID` og skriver sit underafsnit i dagens post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.

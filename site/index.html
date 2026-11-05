@@ -133,6 +133,12 @@ h1.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);lett
 :root[data-theme="dark"] .temabtn .maane{display:none}
 .guidebtn .q{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--accent);color:var(--accent);font:700 14px/1 var(--display)}
 .guidebtn:hover{border-color:var(--accent)}
+/* Fanen Konspirationer: et link til Teoriarkivet på /konspirationer/. Under logoet på computeren, ved siden af det på telefonen.
+   Den læser intet af klodens data og påvirker hverken alvor, varsler, beskeder, RSS eller Nyt på siden. */
+.kfane{grid-column:1;grid-row:2;justify-self:center;display:inline-flex;align-items:center;gap:6px;color:var(--fg-dim);text-decoration:none;font:500 10.5px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--rule);border-radius:999px;padding:4px 11px 4px 8px;white-space:nowrap}
+.kfane svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.kfane:hover,.kfane:focus-visible{color:var(--fg);border-color:var(--accent)}
+@media (max-width:900px){.kfane{grid-column:auto;grid-row:auto;min-height:36px;padding:0 12px 0 9px;font-size:10px;letter-spacing:.07em;background:var(--panel-2)}}
 .mapctl{grid-column:1;grid-row:3;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:9px 0 0;font-size:12px}
 .mlbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin-right:7px}
 .seg{display:inline-flex;border:1px solid var(--rule);border-radius:7px;overflow:hidden;vertical-align:middle}
@@ -866,6 +872,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
 <div class="app">
   <header>
     <h1 class="logo"><svg class="mk" viewBox="17 17 366 366" aria-hidden="true"><path fill="currentColor" d="M271.493,496.141c126.623-8.169,225.147-113.254,225.147-240.141S398.117,24.029,271.493,15.859l-.133-.008v226.565l66.56,83.2v-197.616h40.96v314.384l-107.52-134.4v188.165l.133-.008ZM240.507,15.859C113.883,24.029,15.36,129.113,15.36,256s98.523,231.971,225.147,240.141l.133.008v-226.565l-66.56-83.2v197.616h-40.96V69.616l107.52,134.4V15.851l-.133.008Z" transform="translate(17.021,17.021) scale(0.714761)"/></svg><span class="dom">GLOBUS.NICCO.DK</span></h1>
+    <a class="kfane" id="kfane" href="/konspirationer/" title="Teoriarkivet: kortlægning af påstande, ikke varsler"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="17.5" r="2.2"/><path d="M8.2 6.7l7.6-.5M7.1 8.9l3.8 6.6M17 8l-3.9 7.5"/></svg><span>Konspirationer</span></a>
     <div class="rchips" id="rchips" role="group" aria-label="Retninger"></div>
     <div class="hacts">
       <button class="hentapp" id="hentapp" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 19h14"/></svg><span>Hent app</span></button>

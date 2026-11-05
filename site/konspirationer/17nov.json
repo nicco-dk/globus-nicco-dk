@@ -1,0 +1,1111 @@
+{
+ "id": "17nov",
+ "fane": "17. NOV",
+ "paastand": "USA kaster en atombombe omkring 17. november 2026",
+ "intro": "Arkivet samler det, der faktisk siges og gøres offentligt, og viser for hvert punkt både, hvad kildegrundlaget siger, og hvordan teorien bruger det.",
+ "status": "2026-11-05",
+ "bygget": "2026-11-05T18:05",
+ "naeste_gennemgang": "2026-11-10",
+ "vurdering": "Intet dokumenterer et planlagt atomangreb. Den reelle risiko, der er dokumenteret, er konventionel optrapning mod Iran.",
+ "anker": {
+  "id": "p01",
+  "tekst": "FEMA og FCC tester nødvarslingssystemet i ca. ét minut på radio og tv. Det er den eneste dokumenterede begivenhed på datoen.",
+  "note": "Testen blev annonceret 16. september. Alle tre teoritråde hænger sig på den, fordi en officiel dato får en påstand til at virke konkret.",
+  "overskrift": "17. november kl. 14.20 ET"
+ },
+ "efterspil": null,
+ "relationer": [
+  {
+   "k": "atom",
+   "l": "Peger på atomangreb",
+   "d": "Punkter der direkte bærer teorien.",
+   "farve": 1
+  },
+  {
+   "k": "konv",
+   "l": "Peger på konventionel optrapning",
+   "d": "Noget er under opsejling, men intet nukleart.",
+   "farve": 2
+  },
+  {
+   "k": "neutral",
+   "l": "Rutine eller baggrund",
+   "d": "Reelt, men uden kobling til datoen.",
+   "farve": 3
+  },
+  {
+   "k": "svaek",
+   "l": "Svækker teorien",
+   "d": "Peger væk fra et atomangreb.",
+   "farve": 4
+  }
+ ],
+ "laesning": "{n} punkter peger direkte på et atomangreb, og {m} er dokumenteret eller sandsynlige. Det meste, der understøtter \"noget er under opsejling\", peger på konventionel optrapning.",
+ "moenster": "Rækken \"Peger på atomangreb\" er kun fyldt i kolonnerne uunderbygget og fiktion. De dokumenterede punkter samler sig i konventionel optrapning, rutine og det, der svækker teorien. Det er præcis det spring, en konspirationsteori lever af: ægte signaler i én række bliver læst som bevis i en anden.",
+ "sammenfald": {
+  "titel": "Tre ting rammer 17. november",
+  "tekst": "Sammenfald er teoriernes stærkeste brændstof. Ingen af de tre har en årsagssammenhæng med de andre."
+ },
+ "efter": {
+  "titel": "Efter 17. november",
+  "venter": "Datoen er ikke nået. Fanen bliver stående som arkiv efter 17. november, og her skrives så, hvad der faktisk skete, med kilder."
+ },
+ "traade": {
+  "anker": "Anker",
+  "T1": "Tråd 1 · Simpsons",
+  "T2": "Tråd 2 · 666 dage",
+  "T3": "Tråd 3 · Carlson og Iran"
+ },
+ "punkter": [
+  {
+   "id": "p01",
+   "d": "2026-11-17",
+   "t": "Landsdækkende test af nødvarslingen (EAS)",
+   "cat": "Officiel",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "anker",
+   "place": "Washington D.C. (FEMA)",
+   "lat": 38.885,
+   "lon": -77.017,
+   "coin": "Testdag",
+   "src": [
+    "fema",
+    "fcc",
+    "femafaq"
+   ],
+   "fakta": "FEMA og FCC tester kl. 14.20 ET i ca. ét minut på radio, tv, kabel og satellit, ikke på mobiler. Testen er lovpligtig mindst hvert tredje år og slukker ikke for strøm.",
+   "laes": "Bruges som tegn på, at myndighederne ved noget og gør befolkningen klar. Er ankeret for alle tre tråde."
+  },
+  {
+   "id": "p02",
+   "d": "2026-09-16",
+   "t": "Testdatoen annonceres",
+   "cat": "Officiel",
+   "lvl": "dok",
+   "rel": "svaek",
+   "thr": "anker",
+   "place": "Washington D.C. (FEMA)",
+   "lat": 38.885,
+   "lon": -77.017,
+   "src": [
+    "fema",
+    "fcc"
+   ],
+   "fakta": "FCC Public Notice DA 26-989. Datoen var offentlig seks uger før rygterne opstod.",
+   "laes": "Overses i teorierne. At datoen lå fast længe i forvejen, svækker idéen om en skjult markør."
+  },
+  {
+   "id": "p03",
+   "d": "2026-10-24",
+   "t": "Luftforsvar ved Mar-a-Lago",
+   "cat": "Luftforsvar",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Palm Beach, Florida",
+   "lat": 26.677,
+   "lon": -80.037,
+   "src": [
+    "snopesmal",
+    "wtmal"
+   ],
+   "fakta": "Ifølge Snopes sandsynligvis Avenger-systemer med Stinger-missiler på en pram ud for Mar-a-Lago og ved Palm Beach-lufthavnen. NORAD bekræfter udsendelsen på Secret Service’ anmodning, og Secret Service henviser til et skærpet trusselsbillede. Snopes vurderer udsendelsen som sand.",
+   "laes": "Tolkes som tegn på, at præsidenten forventer gengældelse, og at et stort angreb derfor er nært. Påstanden om over 60 indgreb i luftrummet er ikke bekræftet."
+  },
+  {
+   "id": "p04",
+   "d": "2026-10-19",
+   "t": "USS Theodore Roosevelt forlader Yokosuka",
+   "cat": "Flåde",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Yokosuka, Japan",
+   "lat": 35.29,
+   "lon": 139.67,
+   "src": [
+    "weektr",
+    "ihtr"
+   ],
+   "fakta": "Hangarskibsgruppen sejler fra Japan, deltager i Keen Sword 27 og sendes ifølge flere medier mod Mellemøsten. Sammen med en amfibiegruppe ca. 10.000 ekstra sømænd og marinesoldater.",
+   "laes": "Et tredje hangarskib læses som optakt til en stor operation."
+  },
+  {
+   "id": "p05",
+   "d": "2026-11-04",
+   "t": "Roosevelt set i Det Sydkinesiske Hav",
+   "cat": "Flåde",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Det Sydkinesiske Hav",
+   "lat": 6.03,
+   "lon": 108.48,
+   "coin": "Beregnet ankomst",
+   "src": [
+    "misbartr"
+   ],
+   "fakta": "Satellitbillede viser skibet ved 6°N 108°E, ca. 3.620 sømil fra Omanbugten. En ankomst omkring 17. november er et estimat ved 12 knob, ikke en observation.",
+   "laes": "At den beregnede ankomst falder på 17. november, deles som bevis på en planlagt dato."
+  },
+  {
+   "id": "p06",
+   "d": "2026-10-21",
+   "t": "To hangarskibe allerede i regionen",
+   "cat": "Flåde",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Det Arabiske Hav (omtrentlig)",
+   "lat": 16.5,
+   "lon": 61.5,
+   "approx": true,
+   "src": [
+    "weektr",
+    "ihtr"
+   ],
+   "fakta": "USS George H.W. Bush har været i regionen siden april og USS George Washington siden midt august. Præcise positioner er ikke offentlige.",
+   "laes": "Tre hangarskibe på én gang ses som klar til en stor operation."
+  },
+  {
+   "id": "p07",
+   "d": "2026-10-27",
+   "t": "Ekstra amfibiegruppe og 9.000-10.000 mand",
+   "cat": "Flåde",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Det Arabiske Hav (omtrentlig)",
+   "lat": 16.5,
+   "lon": 61.5,
+   "approx": true,
+   "src": [
+    "stripespat"
+   ],
+   "fakta": "WSJ: et tredje hangarskib og en anden amfibiegruppe ventes inden udgangen af november. Mindst 16 amerikanske krigsskibe opererer allerede i Det Arabiske Hav.",
+   "laes": "Tidspunktet for ankomst kobles til datoen."
+  },
+  {
+   "id": "p08",
+   "d": "2026-10-27",
+   "t": "Patriot-batteri fra Texas til Israel",
+   "cat": "Luftforsvar",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Israel",
+   "lat": 31.4,
+   "lon": 34.8,
+   "src": [
+    "stripespat"
+   ],
+   "fakta": "WSJ citerer to unavngivne embedsmænd og flysporing. CENTCOM kommenterer ikke flytninger. Et THAAD-system har stået i Israel siden oktober 2024.",
+   "laes": "Forstærket luftforsvar ses som forberedelse på iransk gengældelse efter et angreb."
+  },
+  {
+   "id": "p09",
+   "d": "2026-10-05",
+   "t": "Ekstra Patriot til Saudi-Arabien og Qatar",
+   "cat": "Luftforsvar",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Saudi-Arabien",
+   "lat": 24.4,
+   "lon": 47.3,
+   "src": [
+    "stripespat"
+   ],
+   "fakta": "Axios rapporterede i begyndelsen af oktober om flere Patriot-systemer til Saudi-Arabien og Qatar, gengivet af Stars and Stripes. Datoen er omtrentlig.",
+   "laes": "Samme læsning som Israel: forsvar før et angreb."
+  },
+  {
+   "id": "p10",
+   "d": "2026-10-24",
+   "t": "Flere fly på Diego Garcia",
+   "cat": "Luft",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Diego Garcia",
+   "lat": -7.31,
+   "lon": 72.41,
+   "src": [
+    "misbardg"
+   ],
+   "fakta": "Sentinel-2-billeder: ca. 2-3 store fly 7. oktober, ca. 4 den 14. og ca. 10 den 24. Flytyperne kan ikke ses i opløsningen, og formålet er ikke bekræftet.",
+   "laes": "Læses som atomkapable bombefly klar til Iran."
+  },
+  {
+   "id": "p11",
+   "d": "2025-03-26",
+   "t": "Gamle billeder: B-2 på Diego Garcia",
+   "cat": "Genbrugt materiale",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Diego Garcia",
+   "lat": -7.31,
+   "lon": 72.41,
+   "old": true,
+   "src": [
+    "ukdjdg"
+   ],
+   "fakta": "Mindst syv B-2 blev observeret i marts 2025. Billeder herfra deles stadig som nye.",
+   "laes": "Deles uden dato som bevis på, at bombeflyene står klar nu."
+  },
+  {
+   "id": "p12",
+   "d": "2026-10-21",
+   "t": "Tankfly stadig i Europa: Prestwick",
+   "cat": "Luft",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Glasgow Prestwick, Skotland",
+   "lat": 55.51,
+   "lon": -4.59,
+   "src": [
+    "tank",
+    "tankx"
+   ],
+   "fakta": "OSINT-optælling: ca. 190-195 amerikanske tankfly i CENTCOM og Europa, samme niveau som i starten af september. Flere står midlertidigt i Prestwick. Ikke officielt bekræftet.",
+   "laes": "At tankflyene ikke er vendt hjem, tolkes som klargøring til langdistanceangreb."
+  },
+  {
+   "id": "p13",
+   "d": "2026-10-21",
+   "t": "Tankfly stadig i Europa: Aviano",
+   "cat": "Luft",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Aviano, Italien",
+   "lat": 46.03,
+   "lon": 12.6,
+   "src": [
+    "tank",
+    "tankx"
+   ],
+   "fakta": "Samme OSINT-opdatering nævner midlertidige tankfly i Aviano. Over 90 tankfly har været udsendt to eller tre gange under krigen.",
+   "laes": "Som Prestwick."
+  },
+  {
+   "id": "p14",
+   "d": "2026-07-24",
+   "t": "KC-135 på Bezmer i Bulgarien",
+   "cat": "Luft",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Bezmer, Bulgarien",
+   "lat": 42.45,
+   "lon": 26.35,
+   "src": [
+    "bezmer",
+    "bezmer2"
+   ],
+   "fakta": "Parlamentet godkendte op til otte KC-135 og 250 mand fra 24. juli til 1. oktober. To fly forlod basen 22. august, destination ikke oplyst.",
+   "laes": "Bruges som eksempel på, at tankfly flyttes rundt i Europa."
+  },
+  {
+   "id": "p15",
+   "d": "2026-10-21",
+   "t": "Evakuering fra ambassader i Golfen forberedes",
+   "cat": "Diplomati",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Riyadh, Saudi-Arabien",
+   "lat": 24.69,
+   "lon": 46.62,
+   "src": [
+    "emb",
+    "emb2"
+   ],
+   "fakta": "Reuters: ordered departure forberedes, med mulig fuld evakuering i Saudi-Arabien. Begrundelsen er risiko for nye Houthi-angreb, bl.a. mod lufthavnen i Riyadh.",
+   "laes": "Ambassader, der tømmes, læses som tegn på, at noget stort er nært."
+  },
+  {
+   "id": "p16",
+   "d": "2026-10-28",
+   "t": "Golfstater advaret om offensiv efter valget",
+   "cat": "Diplomati",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Abu Dhabi, UAE",
+   "lat": 24.45,
+   "lon": 54.38,
+   "src": [
+    "mee"
+   ],
+   "fakta": "WSJ: USA har advaret Golfstater om en kort, intens offensiv mod Iran efter midtvejsvalget.",
+   "laes": "Ses som bekræftelse på en fastlagt angrebsplan."
+  },
+  {
+   "id": "p17",
+   "d": "2026-11-02",
+   "t": "Amerikanske angreb på Qeshm",
+   "cat": "Militær",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Qeshm, Iran",
+   "lat": 26.76,
+   "lon": 55.9,
+   "src": [
+    "wikitl",
+    "gn1"
+   ],
+   "fakta": "USA gennemførte angreb, som blev beskrevet som defensive, mod øen Qeshm i Hormuzstrædet.",
+   "laes": "Ses som første skridt i den offensiv, der skulle komme efter valget."
+  },
+  {
+   "id": "p18",
+   "d": "2026-10-31",
+   "t": "Trump: Pickaxe Mountain skal tages hånd om",
+   "cat": "Politik",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Pickaxe Mountain ved Natanz",
+   "lat": 33.7,
+   "lon": 51.73,
+   "src": [
+    "pol",
+    "wtop"
+   ],
+   "fakta": "Trump siger, at \"one or two sites\" mangler, og nævner Pickaxe Mountain. Udenrigsminister Marco Rubio: ingen beslutning om nye angreb. Anlægget ligger ifølge James Martin Center (2023) 80-100 m under jorden.",
+   "laes": "Dybden bruges som argument for, at kun et atomvåben kan ramme anlægget."
+  },
+  {
+   "id": "p19",
+   "d": "2026-11-01",
+   "t": "Carlson: atomangreb inden for få dage",
+   "cat": "Påstand",
+   "lvl": "uu",
+   "rel": "atom",
+   "thr": "T3",
+   "place": "Pickaxe Mountain ved Natanz",
+   "lat": 33.7,
+   "lon": 51.73,
+   "src": [
+    "twz",
+    "toi"
+   ],
+   "fakta": "Påstand på X med én anonym kilde, \"an informed observer\". Over 50 mio. visninger ifølge Times of Israel. Carlson skriver \"within days\" og \"next week\". Nævner ikke 17. november.",
+   "laes": "Kernen i atom-tesen. Andre fletter den sammen med 17. november og FEMA-testen."
+  },
+  {
+   "id": "p20",
+   "d": "2026-11-02",
+   "t": "Det Hvide Hus afviser Carlson",
+   "cat": "Officiel",
+   "lvl": "dok",
+   "rel": "svaek",
+   "thr": "",
+   "place": "Washington D.C.",
+   "lat": 38.897,
+   "lon": -77.036,
+   "src": [
+    "twz",
+    "ibwh"
+   ],
+   "fakta": "En embedsmand i Det Hvide Hus siger til The War Zone, at Carlson ikke har indsigt i militær planlægning. Daryl Kimball (Arms Control Association) og Hans Kristensen (FAS) vurderer et atomangreb usandsynligt.",
+   "laes": "Afvisningen bruges af nogle som tegn på, at noget skjules."
+  },
+  {
+   "id": "p21",
+   "d": "2026-10-15",
+   "t": "Trump: \"I wouldn't use nuclear\"",
+   "cat": "Politik",
+   "lvl": "dok",
+   "rel": "svaek",
+   "thr": "",
+   "place": "Washington D.C.",
+   "lat": 38.897,
+   "lon": -77.036,
+   "src": [
+    "dailysabah",
+    "twz"
+   ],
+   "fakta": "Udtalt til Newsmax: \"No, I wouldn't use nuclear. We don't have to.\" Trump afviste også atomvåben mod Iran i april og august ifølge The War Zone.",
+   "laes": "Ignoreres oftest i teorierne."
+  },
+  {
+   "id": "p22",
+   "d": "2026-11-03",
+   "t": "Midtvejsvalg: Demokraterne vinder begge kamre",
+   "cat": "Politik",
+   "lvl": "dok",
+   "rel": "svaek",
+   "thr": "",
+   "place": "Washington D.C.",
+   "lat": 38.897,
+   "lon": -77.036,
+   "src": [
+    "gn2"
+   ],
+   "fakta": "Vicepræsident Vance giver Iran-krigen skylden for nederlaget og taler for en aftale.",
+   "laes": "I 666-scenariet bliver et tabt valg udløseren for et atomangreb."
+  },
+  {
+   "id": "p23",
+   "d": "2026-11-04",
+   "t": "Trump: ingen umiddelbare planer om angreb",
+   "cat": "Politik",
+   "lvl": "dok",
+   "rel": "svaek",
+   "thr": "",
+   "place": "Washington D.C.",
+   "lat": 38.897,
+   "lon": -77.036,
+   "src": [
+    "bloom"
+   ],
+   "fakta": "Trump tager luften ud af forventningen om nye angreb, men siger samtidig, at USA er klar.",
+   "laes": "Læses som afledningsmanøvre."
+  },
+  {
+   "id": "p24",
+   "d": "2026-10-31",
+   "t": "Qatar mægler i Teheran",
+   "cat": "Diplomati",
+   "lvl": "dok",
+   "rel": "svaek",
+   "thr": "",
+   "place": "Doha, Qatar",
+   "lat": 25.29,
+   "lon": 51.53,
+   "src": [
+    "pol",
+    "gn2"
+   ],
+   "fakta": "Qatarske mæglere er tilbage i Teheran for at presse på for en aftale. Brent faldt til 93 dollar efter valget.",
+   "laes": "Nævnes sjældent i teorierne."
+  },
+  {
+   "id": "p25",
+   "d": "2026-10-27",
+   "t": "Israelsk valg uden klart flertal",
+   "cat": "Politik",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Jerusalem",
+   "lat": 31.77,
+   "lon": 35.21,
+   "src": [
+    "iiel",
+    "toi"
+   ],
+   "fakta": "Exit polls viste ingen blok over 61 mandater. Iran var et centralt valgtema.",
+   "laes": "Carlson påstår, at en presset Netanyahu har brug for krigen."
+  },
+  {
+   "id": "p26",
+   "d": "2026-10-31",
+   "t": "Hormuzstrædet begrænset, amerikansk blokade",
+   "cat": "Flåde",
+   "lvl": "dok",
+   "rel": "konv",
+   "thr": "",
+   "place": "Hormuzstrædet",
+   "lat": 26.57,
+   "lon": 56.25,
+   "src": [
+    "pol"
+   ],
+   "fakta": "Iran begrænser skibsfarten, og USA fastholder flådeblokaden af iranske havne.",
+   "laes": "Del af billedet af en krig, der optrappes."
+  },
+  {
+   "id": "p27",
+   "d": "2026-10-22",
+   "t": "Global Thunder 27",
+   "cat": "Øvelse",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Offutt AFB, Nebraska",
+   "lat": 41.12,
+   "lon": -95.91,
+   "src": [
+    "gt"
+   ],
+   "fakta": "STRATCOM’s årlige atomkommandoøvelse med bombeflyvninger fra 22. oktober. Varigheden er ikke oplyst. STRATCOM: ikke en reaktion på nogen nation eller aktuelle begivenheder.",
+   "laes": "Bombefly og dommedagsfly i luften deles som tegn på forberedelse."
+  },
+  {
+   "id": "p28",
+   "d": "2026-10-13",
+   "t": "Steadfast Noon",
+   "cat": "Øvelse",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Italien",
+   "lat": 42.5,
+   "lon": 12.5,
+   "src": [
+    "sn"
+   ],
+   "fakta": "NATO's årlige atomøvelse i Italien 13.-23. oktober med 17 lande og uden skarpe våben.",
+   "laes": "Atomøvelse i Europa kobles til Iran-krigen.",
+   "approx": true
+  },
+  {
+   "id": "p29",
+   "d": "2026-09-30",
+   "t": "Ikke-nukleart forsøg i Nevada",
+   "cat": "Kontekst",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Nevada National Security Site",
+   "lat": 37.1,
+   "lon": -116.05,
+   "src": [
+    "nnsa"
+   ],
+   "fakta": "NNSA gennemførte en kemisk eksplosion for at forbedre detektion af skjulte prøvesprængninger. Moratoriet fra 1992 er ikke brudt.",
+   "laes": "Bruges som tegn på, at USA gør klar til at bruge atomvåben."
+  },
+  {
+   "id": "p30",
+   "d": "2026-11-01",
+   "t": "Falske atomvarsler i Ukraine og Rusland",
+   "cat": "Kontekst",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Kyiv, Ukraine",
+   "lat": 50.45,
+   "lon": 30.52,
+   "src": [
+    "kyiv",
+    "meduza"
+   ],
+   "fakta": "Hackede varslingsapps sendte falske atom- og kemivarsler natten mellem 1. og 2. november.",
+   "laes": "Forstærker frygtklimaet omkring atomvarsler generelt."
+  },
+  {
+   "id": "p31",
+   "d": "2026-09-29",
+   "t": "Sidste amerikanske soldater forlader Irak",
+   "cat": "Militær",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Baghdad, Irak",
+   "lat": 33.31,
+   "lon": 44.36,
+   "src": [
+    "csm"
+   ],
+   "fakta": "Iranske angreb har skadet over 20 amerikanske anlæg i regionen. Pentagon overvejer at lukke nogle baser i Golfen.",
+   "laes": "Tilbagetrækning tolkes som at flytte folk ud af skudlinjen før et angreb."
+  },
+  {
+   "id": "p32",
+   "d": "2026-09-29",
+   "t": "Femte Flådes hovedkvarter i Bahrain skadet",
+   "cat": "Militær",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Manama, Bahrain",
+   "lat": 26.2,
+   "lon": 50.6,
+   "src": [
+    "csm"
+   ],
+   "fakta": "Flådechef admiral Daryl Caudle om basen i Bahrain: \"We're not getting back there anytime soon.\"",
+   "laes": "Samme læsning som Irak."
+  },
+  {
+   "id": "p33",
+   "d": "2026-01-06",
+   "t": "Gammelt klip: E-4B ved Washington",
+   "cat": "Genbrugt materiale",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Joint Base Andrews",
+   "lat": 38.81,
+   "lon": -76.87,
+   "old": true,
+   "src": [
+    "e4b"
+   ],
+   "fakta": "Flyvningen fra Offutt til Andrews 6. januar 2026 blev beskrevet som rutine. Klip deles igen uden dato.",
+   "laes": "Dommedagsflyet ved Washington deles som tegn på, at noget er nært."
+  },
+  {
+   "id": "p34",
+   "d": "2026-03-04",
+   "t": "Gammelt klip: E-6B mod Mellemøsten",
+   "cat": "Genbrugt materiale",
+   "lvl": "sand",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Al Udeid, Qatar (omtrentlig)",
+   "lat": 25.12,
+   "lon": 51.31,
+   "approx": true,
+   "old": true,
+   "src": [
+    "e6b"
+   ],
+   "fakta": "OSINT-analytikere sporede E-6B Mercury mod regionen i marts 2026 ved krigens start.",
+   "laes": "Flyet kan videregive affyringsordrer, så klip deles som tegn på atomforberedelse."
+  },
+  {
+   "id": "p35",
+   "d": "2026-11-01",
+   "t": "Simpsons \"forudsagde\" blackout 17. november",
+   "cat": "Påstand",
+   "lvl": "uu",
+   "rel": "atom",
+   "thr": "T1",
+   "place": "",
+   "src": [
+    "ins",
+    "ibsim",
+    "gr"
+   ],
+   "fakta": "Afsnittet \"It's a Blunderful Life\" fra 19. november 2023 handler om et strømsvigt i Springfield. Ingen kilde har bekræftet, at det nævner datoen. Over 1,5 mio. visninger ifølge Insider Paper og Gadget Review.",
+   "laes": "Et blackout fremstilles som optakt til EMP eller atomangreb."
+  },
+  {
+   "id": "p36",
+   "d": "2026-11-04",
+   "t": "666 dage og \"dyrets exitstrategi\"",
+   "cat": "Påstand",
+   "lvl": "fik",
+   "rel": "atom",
+   "thr": "T2",
+   "place": "",
+   "coin": "Dag 666",
+   "src": [
+    "sub"
+   ],
+   "fakta": "17. november er dag 666 efter indsættelsen. Forfatteren kalder selv scenariet om taktiske atomvåben mod Iran et tankeeksperiment.",
+   "laes": "Deles videre som profeti uden forbeholdet."
+  },
+  {
+   "id": "p37",
+   "d": "2026-02-05",
+   "t": "New START udløber",
+   "cat": "Kontekst",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "",
+   "src": [
+    "aca"
+   ],
+   "fakta": "Den sidste store atomvåbenaftale mellem USA og Rusland udløb. Udenrigsminister Sergej Lavrov sagde 11. februar, at Rusland holder lofterne, så længe USA gør.",
+   "laes": "Ses som tegn på, at bremserne er væk."
+  },
+  {
+   "id": "p38",
+   "d": "2025-10-30",
+   "t": "Trump beordrer atomprøver på lige fod med Kina og Rusland",
+   "cat": "Kontekst",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "",
+   "src": [
+    "test"
+   ],
+   "fakta": "Opslag 30. oktober 2025. Ifølge News on AIR bad han om atomprøver på lige fod med Kina og Rusland. Der er siden kun gennemført ikke-nukleare forsøg.",
+   "laes": "Ses som forberedelse til brug af atomvåben."
+  },
+  {
+   "id": "p39",
+   "d": "2026-02-28",
+   "t": "Krigen mod Iran begynder",
+   "cat": "Kontekst",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "",
+   "place": "Teheran",
+   "lat": 35.69,
+   "lon": 51.39,
+   "src": [
+    "wikitl"
+   ],
+   "fakta": "USA og Israel indledte krigen. En våbenhvile fra 8. april brød sammen i juli.",
+   "laes": "Baggrund for alle tre tråde."
+  },
+  {
+   "id": "p40",
+   "d": "2026-11-07",
+   "t": "Carlsons antydede frist",
+   "cat": "Påstand",
+   "lvl": "uu",
+   "rel": "atom",
+   "thr": "T3",
+   "place": "",
+   "src": [
+    "toi",
+    "asc"
+   ],
+   "fakta": "Carlson skrev 1. november, at et angreb kunne komme \"within days\", og advarede om \"next week\". Datoen 7. november står hos medier, der gengiver ham, fx Ascendants, ikke i hans eget opslag. Ingen officiel kilde nævner den.",
+   "laes": "Hvis intet sker, flyttes datoen typisk frem til næste markør, fx 17. november."
+  },
+  {
+   "id": "p41",
+   "d": "2026-11-30",
+   "t": "Roosevelt og amfibiegruppe ventes fremme",
+   "cat": "Flåde",
+   "lvl": "sand",
+   "rel": "konv",
+   "thr": "",
+   "place": "Det Arabiske Hav (omtrentlig)",
+   "lat": 16.5,
+   "lon": 61.5,
+   "approx": true,
+   "src": [
+    "stripespat",
+    "weektr"
+   ],
+   "fakta": "WSJ og The Week angiver udgangen af november som forventet ankomst.",
+   "laes": "Bruges sammen med Misbar-estimatet om 17. november."
+  },
+  {
+   "id": "p42",
+   "d": "2026-12-03",
+   "t": "Reservedato for EAS-testen",
+   "cat": "Officiel",
+   "lvl": "dok",
+   "rel": "neutral",
+   "thr": "anker",
+   "place": "Washington D.C. (FEMA)",
+   "lat": 38.885,
+   "lon": -77.017,
+   "src": [
+    "fema"
+   ],
+   "fakta": "Hvis testen ikke kan gennemføres 17. november, bruges 3. december.",
+   "laes": "Nævnes ikke i teorierne."
+  }
+ ],
+ "kilder": {
+  "fema": {
+   "titel": "FEMA: 2026 nationwide test of the Emergency Alert System",
+   "url": "https://www.fema.gov/press-release/20260916/fema-and-fcc-schedule-2026-nationwide-test-emergency-alert-system-november",
+   "type": "officiel"
+  },
+  "fcc": {
+   "titel": "FCC Public Notice DA 26-989",
+   "url": "https://docs.fcc.gov/public/attachments/DA-26-989A1.pdf",
+   "type": "officiel"
+  },
+  "femafaq": {
+   "titel": "FEMA: 2026 National Test FAQs",
+   "url": "https://www.fema.gov/fact-sheet/2026-national-test-faqs",
+   "type": "officiel"
+  },
+  "snopesmal": {
+   "titel": "Snopes via Yahoo: Fact check, air defense at Mar-a-Lago",
+   "url": "https://www.yahoo.com/news/politics/articles/fact-check-us-military-deployed-215800350.html",
+   "type": "faktatjek"
+  },
+  "wtmal": {
+   "titel": "Washington Times: Air defense missiles in place at Mar-a-Lago",
+   "url": "https://www.washingtontimes.com/news/2026/oct/26/air-defense-missiles-place-trumps-mar-lago-estate-florida/",
+   "type": "medie"
+  },
+  "misbartr": {
+   "titel": "Misbar: Satellite images show USS Roosevelt transiting to the Middle East",
+   "url": "https://www.misbar.com/en/editorial/2026/11/05/satellite-images-show-uss-roosevelt-transiting-southeast-asia-middle-east",
+   "type": "faktatjek"
+  },
+  "weektr": {
+   "titel": "The Week: USS Theodore Roosevelt to arrive in Middle East by November end",
+   "url": "https://www.theweek.in/news/middle-east/2026/10/21/war-prep-in-full-swing-uss-theodore-roosevelt-to-arrive-in-middle-east-by-november-end.html",
+   "type": "medie"
+  },
+  "ihtr": {
+   "titel": "Israel Hayom: Third US aircraft carrier heads to Middle East",
+   "url": "https://www.israelhayom.com/2026/10/20/third-us-aircraft-carrier-heads-to-middle-east-as-oil-prices-surge-iran-weighs-compromise-deal/",
+   "type": "medie"
+  },
+  "stripespat": {
+   "titel": "Stars and Stripes: US sending Patriot system to Israel",
+   "url": "https://www.stripes.com/theaters/us/2026-10-28/iran-patriot-israel-strikes-build-up-us-23288005.html",
+   "type": "medie"
+  },
+  "misbardg": {
+   "titel": "Misbar: Satellite images indicate increase in aircraft at Diego Garcia",
+   "url": "https://www.misbar.com/en/editorial/2026/10/26/satellite-images-indicate-increase-aircraft-diego-garcia-base",
+   "type": "faktatjek"
+  },
+  "ukdjdg": {
+   "titel": "UK Defence Journal: U.S. bomber buildup at Diego Garcia (marts 2025)",
+   "url": "https://ukdefencejournal.org.uk/massive-u-s-bomber-buildup-continues-at-diego-garcia/",
+   "type": "medie"
+  },
+  "tank": {
+   "titel": "DefenceGeek via sh1n: US tanker fleet update 21-10-2026",
+   "url": "https://sh1n.org/tweets/us-tanker-fleet-update-21-oct-2026-iranwar-overall-numbers-across-centcom-and-europe-2112861462519783439",
+   "type": "osint"
+  },
+  "tankx": {
+   "titel": "DefenceGeek på X: US tanker fleet update",
+   "url": "https://x.com/DefenceGeek/status/2112861000512794992",
+   "type": "osint"
+  },
+  "bezmer": {
+   "titel": "Army Recognition: Bulgaria clears KC-135 deployment at Bezmer",
+   "url": "https://www.armyrecognition.com/news/aerospace-news/2026/bulgaria-clears-u-s-kc-135-tankers-deployment-at-bezmer-base-to-support-middle-east-operations",
+   "type": "medie"
+  },
+  "bezmer2": {
+   "titel": "Defence Matters: Two US KC-135 tankers leave Bulgaria",
+   "url": "https://defencematters.eu/two-us-kc-135-tankers-leave-bulgaria/",
+   "type": "medie"
+  },
+  "emb": {
+   "titel": "Cyprus Mail / Reuters: US to issue ordered departure from Gulf embassies",
+   "url": "https://cyprus-mail.com/2026/10/21/us-to-issue-ordered-departure-of-personnel-from-gulf-embassies",
+   "type": "medie"
+  },
+  "emb2": {
+   "titel": "Israel Hayom: US orders nonessential embassy staff to leave Gulf states",
+   "url": "https://www.israelhayom.com/2026/10/21/us-orders-nonessential-embassy-staff-and-their-families-to-leave-gulf-states/",
+   "type": "medie"
+  },
+  "mee": {
+   "titel": "Middle East Eye: US warns Gulf of intense strikes on Iran after midterms",
+   "url": "https://www.middleeasteye.net/news/us-warns-gulf-intense-strikes-iran-after-midterms-report",
+   "type": "medie"
+  },
+  "wikitl": {
+   "titel": "Wikipedia: Timeline of the 2026 Iran war",
+   "url": "https://en.wikipedia.org/wiki/Timeline_of_the_2026_Iran_war",
+   "type": "opslag"
+  },
+  "gn1": {
+   "titel": "Gulf News: Midterms over, restraint gone? Fresh strikes on Iran",
+   "url": "https://gulfnews.com/world/mena/midterms-over-restraint-gone-will-trump-unleash-fresh-strikes-on-iran-1.500736202",
+   "type": "medie"
+  },
+  "gn2": {
+   "titel": "Gulf News: Trump weighs Iran strikes or deal after midterm loss",
+   "url": "https://gulfnews.com/world/mena/trump-weighs-iran-strikes-or-deal-after-midterm-loss-as-vance-urges-agreement-qatar-mediates-brent-oil-falls-to-93-1.500736556",
+   "type": "medie"
+  },
+  "pol": {
+   "titel": "Political.org: Trump says US is not in that much of a hurry on Iran deal",
+   "url": "https://political.org/2026/10/31/trump-says-u-s-is-not-in-that-much-of-a-hurry-on-iran-deal-as-he-weighs-new-strikes-after-midterms/",
+   "type": "medie"
+  },
+  "wtop": {
+   "titel": "WTOP / AP: What to know about Iran's Pickaxe Mountain",
+   "url": "https://wtop.com/world/2026/07/what-to-know-about-irans-pickaxe-mountain-home-to-an-underground-nuclear-site-threatened-by-trump/",
+   "type": "medie"
+  },
+  "twz": {
+   "titel": "The War Zone: A nuclear strike on Iran? Let's talk about it",
+   "url": "https://www.twz.com/nuclear/a-nuclear-strike-on-iran-it-sounds-absurd-because-it-is-lets-talk-about-it",
+   "type": "medie"
+  },
+  "toi": {
+   "titel": "Times of Israel: Carlson claims Netanyahu pushing Trump to nuke Iran",
+   "url": "https://www.timesofisrael.com/liveblog_entry/far-right-conspiracist-tucker-carlson-netanyahu-pushing-trump-to-nuke-iran-hundreds-of-millions-will-die/",
+   "type": "medie"
+  },
+  "ibwh": {
+   "titel": "IBTimes UK: White House challenges Carlson nuclear strike claim",
+   "url": "https://www.ibtimes.co.uk/white-house-challenges-carlson-nuclear-strike-iran-claim-1830166",
+   "type": "medie"
+  },
+  "bloom": {
+   "titel": "Bloomberg: Trump plays down prospect of strikes on Iran after midterm rout",
+   "url": "https://www.bloomberg.com/news/articles/2026-11-04/trump-plays-down-prospect-of-strikes-on-iran-after-midterm-rout",
+   "type": "medie"
+  },
+  "iiel": {
+   "titel": "Iran International: Israel election exit polls",
+   "url": "https://www.iranintl.com/en/202610282156",
+   "type": "medie"
+  },
+  "gt": {
+   "titel": "Defence Industry Europe: Global Thunder 27 begins",
+   "url": "https://defence-industry.eu/u-s-launches-global-thunder-27-nuclear-readiness-exercise-with-more-bomber-flights-possible/",
+   "type": "medie"
+  },
+  "sn": {
+   "titel": "Stars and Stripes: Steadfast Noon NATO exercise",
+   "url": "https://www.stripes.com/theaters/europe/2026-10-13/steadfast-noon-nato-exercise-23139099.html",
+   "type": "medie"
+  },
+  "nnsa": {
+   "titel": "Washington Times: US conducts explosion experiment at nuclear test site",
+   "url": "https://www.washingtontimes.com/news/2026/sep/30/us-conducts-explosion-experiment-nuclear-test-site/",
+   "type": "medie"
+  },
+  "kyiv": {
+   "titel": "Kyiv Independent: Ukraine's air raid alert system hacked",
+   "url": "https://kyivindependent.com/ukraines-air-raid-alert-system-hacked-air-force-says-as-false-nuclear-chemical-warnings-sound/",
+   "type": "medie"
+  },
+  "meduza": {
+   "titel": "Meduza: Emergency alert apps hacked in Russia and Ukraine",
+   "url": "https://meduza.io/amp/en/news/2026/11/02/emergency-alert-apps-hacked-in-russia-and-ukraine-sending-false-warnings-of-nuclear-threats",
+   "type": "medie"
+  },
+  "csm": {
+   "titel": "CSMonitor: After Iran war damage, US may close some Middle East bases",
+   "url": "https://www.csmonitor.com/USA/Military/2026/0929/iran-war-middle-east-military-bases",
+   "type": "medie"
+  },
+  "e4b": {
+   "titel": "AviationA2Z: Doomsday E-4B moves to Washington (januar 2026)",
+   "url": "https://aviationa2z.com/index.php/2026/01/09/trumps-doomsday-e-4b-plane-moves-to-washington/",
+   "type": "medie"
+  },
+  "e6b": {
+   "titel": "Militarnyi: USA sends doomsday plane E-6B Mercury to Middle East (marts 2026)",
+   "url": "https://militarnyi.com/en/news/usa-doomsday-plane-e-6b-mercury-middle-east/",
+   "type": "medie"
+  },
+  "ins": {
+   "titel": "Insider Paper: Simpsons blackout prediction goes viral",
+   "url": "https://insiderpaper.com/the-simpsons-blackout-prediction-goes-viral-ahead-of-november-17-fema-test/",
+   "type": "medie"
+  },
+  "ibsim": {
+   "titel": "IBTimes UK: Simpsons blackout claim and the US alert test",
+   "url": "https://www.ibtimes.co.uk/simpsons-blackout-us-alert-test-uk-preparedness-campaign-1829514",
+   "type": "faktatjek"
+  },
+  "gr": {
+   "titel": "Gadget Review via Yahoo: Did the Simpsons predict a blackout?",
+   "url": "https://www.yahoo.com/news/us/articles/did-simpsons-predict-blackout-ahead-151934303.html",
+   "type": "faktatjek"
+  },
+  "sub": {
+   "titel": "Substack: The Blue Wave of Destruction and the Exit Strategy of the Beast",
+   "url": "https://unshackledtruthministry.substack.com/p/the-blue-wave-of-destruction-and",
+   "type": "socialt"
+  },
+  "aca": {
+   "titel": "Arms Control Association: New START expires",
+   "url": "https://www.armscontrol.org/act/2026-03/news/new-start-expires-us-urges-modernized-treaty",
+   "type": "medie"
+  },
+  "test": {
+   "titel": "News on AIR: Trump orders resumption of US nuclear weapons testing",
+   "url": "https://www.newsonair.gov.in/us-president-donald-trump-orders-resumption-of-us-nuclear-weapons-testing",
+   "type": "medie"
+  },
+  "dailysabah": {
+   "titel": "Daily Sabah / Anadolu: Trump rules out nukes against Iran",
+   "url": "https://www.dailysabah.com/world/americas/trump-rules-out-nukes-against-iran-keeps-strike-threat-alive",
+   "type": "medie"
+  },
+  "asc": {
+   "titel": "Ascendants: Carlson claims Trump could decide on nuclear strike by November 7",
+   "url": "https://ascendants.in/spotlight/tucker-carlson-trump-nuclear-strike-iran-netanyahu/",
+   "type": "medie"
+  }
+ },
+ "overvaagning": [
+  {
+   "tegn": "Flere uafhængige medier rapporterer flytning af B61-11 eller atomkapable fly mod Iran",
+   "status": "Ikke observeret"
+  },
+  {
+   "tegn": "Officiel bekræftelse af, at en atommulighed er forelagt præsidenten",
+   "status": "Ikke observeret"
+  },
+  {
+   "tegn": "Bekræftet iransk spring mod atomvåben",
+   "status": "Ikke observeret"
+  },
+  {
+   "tegn": "Evakuering af amerikanske civile i hele regionen med Iran som begrundelse",
+   "status": "Delvist: Golf-ambassader, begrundet med Houthier"
+  }
+ ],
+ "advarselstegn": [
+  {
+   "tegn": "Ægte officiel dato brugt som anker",
+   "traade": [
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "tegn": "Numerologi eller \"præcis på dagen\"",
+   "traade": [
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "tegn": "Anonym kilde uden dokumenter",
+   "traade": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "tegn": "Almindelig detalje gjort mistænkelig",
+   "traade": [
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "tegn": "Fiktion, profeti og nyheder blandet",
+   "traade": [
+    1,
+    1,
+    0
+   ]
+  },
+  {
+   "tegn": "Forbehold fjernet ved videredeling",
+   "traade": [
+    0,
+    1,
+    0
+   ]
+  },
+  {
+   "tegn": "Afvist af primærkilden",
+   "traade": [
+    1,
+    0,
+    1
+   ]
+  },
+  {
+   "tegn": "Gammelt materiale delt som nyt",
+   "traade": [
+    1,
+    0,
+    1
+   ]
+  }
+ ],
+ "mangler": "TikTok, Telegram og live flysporing er ikke gennemsøgt. OSINT-tal om tankfly og satellitoptællinger er uofficielle. Positioner for skibe i Det Arabiske Hav er omtrentlige.",
+ "historik": [
+  {
+   "dato": "2026-11-05",
+   "tekst": "Første udgave på globus med 42 punkter. Punkterne er tjekket mod kilderne, og udsagn fra navngivne personer kan slås op i kilden ved punktet."
+  }
+ ]
+}

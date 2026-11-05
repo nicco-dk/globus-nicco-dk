@@ -1,0 +1,965 @@
+<!doctype html>
+<html lang="da" data-theme="dark">
+<meta charset="utf-8">
+<!-- Fanen Konspirationer på globus.nicco.dk: Teoriarkivet. Siden starter i samme tilstand som kloden, og et valg med knappen gælder resten af besøget. -->
+<script id="tema">(function(){var t;try{t=sessionStorage.getItem("globus-tema")}catch(e){}if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark";document.documentElement.dataset.theme=t})()</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://globus.nicco.dk/konspirationer/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<!-- Den fælles fod for nicco.dk. Kører, når siden er læst, og lægger sig i #nicco-fod i sidens fod. -->
+<script src="https://info.nicco.dk/fod.js" defer></script>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#070d14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#e9eff4" media="(prefers-color-scheme: light)">
+<title>Konspirationer · globus.nicco.dk</title>
+<meta name="description" content="Teoriarkivet på globus.nicco.dk kortlægger, hvordan en teori bliver til en konspirationsteori. Hvert punkt viser, hvad kilderne siger, og hvordan teorien bruger det. Ikke et varsel.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="globus.nicco.dk">
+<meta property="og:title" content="Konspirationer · globus.nicco.dk">
+<meta property="og:description" content="Kortlægning af en påstand, ikke et varsel. Hvert punkt viser, hvad kilderne siger, og hvordan teorien bruger det.">
+<meta property="og:url" content="https://globus.nicco.dk/konspirationer/">
+<meta property="og:locale" content="da_DK">
+<style>
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/archivo-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/archivo-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/archivo-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/archivo-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/archivo-latin-700-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:700;font-display:swap;src:url('/fonts/archivo-latin-ext-700-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/ibm-plex-mono-latin-ext-400-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/ibm-plex-mono-latin-600-normal.woff2') format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'IBM Plex Mono';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/ibm-plex-mono-latin-ext-600-normal.woff2') format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Archivo Smal';font-style:normal;font-weight:800;font-display:swap;src:url('/fonts/archivo-smal-latin-800.woff2') format('woff2');unicode-range:U+0000-00FF}
+</style>
+<style>
+/* Layout: samme mørke instrumentpanel som kloden. Øverst logo og faner, så en fast linje om, at det ikke er et varsel,
+   teoriens påstand og vurdering, underfaner og indholdet. Kortet er globus' egen klode med punkterne. */
+:root{
+  --ocean:#0a131c; --ocean-2:#101d29; --land:#1c2c3a; --land-line:#33506a; --border-line:#24394c;
+  --bg:#070d14; --panel:#0d1721; --panel-2:#122032; --fg:#e4ecf3; --fg-dim:#8ba0b4; --fg-faint:#6f8aa1;
+  --rule:#1d2d3d; --accent:#4fb3c9; --warn:#e2b443;
+  --r1:#ef5d5b; --r2:#e8803a; --r3:#8ba0b4; --r4:#3fcf9e;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
+  color-scheme:dark;
+  --display:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Consolas,monospace;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    --ocean:#c3d4e0; --ocean-2:#d6e3ec; --land:#f2f6f9; --land-line:#9ab0c1; --border-line:#c2d1dc;
+    --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
+    --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
+    --r1:#c4302e; --r2:#c4601c; --r3:#586c80; --r4:#11845d;
+    --shadow:0 8px 24px rgba(20,40,60,.14);
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --ocean:#c3d4e0; --ocean-2:#d6e3ec; --land:#f2f6f9; --land-line:#9ab0c1; --border-line:#c2d1dc;
+  --bg:#e9eff4; --panel:#ffffff; --panel-2:#f3f7fa; --fg:#13202c; --fg-dim:#4d6276; --fg-faint:#586c80;
+  --rule:#d8e2ea; --accent:#196f84; --warn:#8a6410;
+  --r1:#c4302e; --r2:#c4601c; --r3:#586c80; --r4:#11845d;
+  --shadow:0 8px 24px rgba(20,40,60,.14);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--display);-webkit-font-smoothing:antialiased;font-size:14px;line-height:1.5}
+a{color:var(--accent)}
+button{font-family:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{margin:0;line-height:1.2;letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1320px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px;display:flex;flex-direction:column;gap:16px}
+.lbl,.ovt{font-family:var(--mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--fg-faint);margin:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Hoved: logoet fører tilbage til kloden, fanerne skifter mellem kloden og arkivet. */
+header.top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:8px 0;padding:12px 0 10px;border-bottom:1px solid var(--rule)}
+.logo{display:flex;align-items:center;gap:10px;color:var(--fg);text-decoration:none;padding:0 16px 0 4px;border-right:1px solid var(--rule);align-self:stretch;--mh:26px;--ch:13px}
+.logo .mk{height:var(--mh);width:var(--mh);display:block;flex:none}
+.logo .dom{font:800 calc(var(--ch) / .69)/1 'Archivo Smal',var(--display);letter-spacing:.05em;white-space:nowrap}
+.faner{display:flex;gap:4px;padding:0 12px;min-width:0}
+.faner a{display:inline-flex;align-items:center;gap:7px;color:var(--fg-dim);text-decoration:none;font:500 11px/1 var(--mono);letter-spacing:.09em;text-transform:uppercase;
+  border:1px solid transparent;border-radius:999px;padding:0 12px 0 9px;min-height:34px;white-space:nowrap}
+.faner a svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.faner a:hover{color:var(--fg);border-color:var(--rule)}
+.faner a[aria-current="page"]{color:var(--fg);border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--panel))}
+.hacts{display:flex;align-items:center;gap:8px;padding-left:16px;border-left:1px solid var(--rule);align-self:stretch}
+.temabtn{width:36px;height:36px;border-radius:50%;border:1px solid var(--rule);background:var(--panel-2);color:var(--fg);display:grid;place-items:center;cursor:pointer;padding:0;flex:none}
+.temabtn:hover{border-color:var(--accent);color:var(--accent)}
+.temabtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;grid-area:1/1}
+.temabtn .sol{display:none}
+:root[data-theme="dark"] .temabtn .sol{display:block}
+:root[data-theme="dark"] .temabtn .maane{display:none}
+
+/* Den faste linje øverst: fanen er en kortlægning, ikke et varsel. */
+.ikkevarsel{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--warn);border-radius:4px;padding:10px 14px;font-size:13.5px;color:var(--fg-dim)}
+.ikkevarsel .mrk{font:600 10.5px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase;color:var(--warn);border:1px solid var(--warn);border-radius:2px;padding:1px 7px}
+.ikkevarsel b{color:var(--fg);font-weight:600}
+
+/* Teorien: fanerne pr. teori, påstanden og arkivets vurdering. */
+.trow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.ttabs{display:flex;flex-wrap:wrap;gap:6px}
+.ttab{display:inline-flex;align-items:center;border:1.5px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);border-radius:999px;padding:0 14px;min-height:34px;font:600 12px/1 var(--mono);letter-spacing:.06em;cursor:pointer}
+.ttab[aria-selected="true"]{border-color:var(--fg);color:var(--fg);background:var(--panel)}
+.thead{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:16px;align-items:stretch;margin-top:10px}
+.thead h1{font-size:clamp(22px,2.6vw,30px);font-weight:700;margin:4px 0 8px;text-wrap:balance}
+.intro{color:var(--fg-dim);max-width:68ch}
+.vurd{background:var(--panel);border:1px solid var(--rule);border-radius:9px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.vurd p.v{font-size:15px;line-height:1.45;color:var(--fg);font-weight:500}
+.vurd .meta{font:400 11.5px/1.5 var(--mono);color:var(--fg-faint)}
+
+/* Underfaner */
+.stabs{display:flex;gap:2px;overflow-x:auto;border-bottom:1px solid var(--rule);scrollbar-width:none}
+.stabs::-webkit-scrollbar{display:none}
+.stab{border:0;background:none;color:var(--fg-dim);padding:10px 14px 9px;font:500 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+.stab:hover{color:var(--fg)}
+.stab[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+.view{display:flex;flex-direction:column;gap:16px;min-width:0}
+
+/* Fælles: evidens, relation, mærker */
+.ev{display:inline-flex;align-items:center;gap:6px;font:600 10.5px/1 var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--fg);border:1px solid var(--rule);border-radius:999px;padding:4px 9px 4px 6px;white-space:nowrap;background:var(--panel-2)}
+.g{width:12px;height:12px;border-radius:50%;border:1.6px solid currentColor;display:inline-block;flex:none}
+.g.dok{background:currentColor}
+.g.sand{background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
+.g.fik{border-style:dashed}
+.rel{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:var(--fg-dim);white-space:nowrap}
+.rel::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--c);flex:none}
+.tag{font:500 10.5px/1.5 var(--mono);letter-spacing:.03em;color:var(--fg-dim);border:1px solid var(--rule);border-radius:2px;padding:0 6px;white-space:nowrap}
+.tag.warn{color:var(--warn);border-color:var(--warn)}
+.tag.kom{border-style:dashed}
+.rad{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--rule);background:var(--panel-2);color:var(--fg-dim);border-radius:999px;padding:0 11px 0 9px;min-height:32px;font:500 12px/1 var(--display);cursor:pointer;white-space:nowrap}
+.chip[aria-pressed="true"]{border-color:var(--c,var(--accent));color:var(--fg);background:color-mix(in srgb,var(--c,var(--accent)) 12%,var(--panel))}
+.chip.r::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--c);flex:none}
+.chip .n{font-family:var(--mono);font-size:11px;color:var(--fg-faint)}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:9px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.card h2{font-size:17px;font-weight:700}
+.card .sub{color:var(--fg-dim);font-size:13px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:16px}
+.linkbtn{border:0;background:none;color:var(--accent);font:500 12.5px var(--display);cursor:pointer;padding:4px 0;text-align:left}
+.linkbtn:hover{text-decoration:underline}
+
+/* Overblik */
+.bars{display:flex;flex-direction:column;gap:9px}
+.bar{display:grid;grid-template-columns:minmax(120px,220px) 1fr 30px;gap:10px;align-items:center;font-size:13px;color:var(--fg-dim)}
+.bar .lb{display:inline-flex;align-items:center;gap:7px;min-width:0}
+.bar .track{height:10px;background:var(--panel-2);border-radius:2px;overflow:hidden}
+.bar .fill{height:100%;background:var(--c)}
+.bar .n{font-family:var(--mono);text-align:right;color:var(--fg)}
+.laesning{font-size:13.5px;color:var(--fg-dim)}
+.laesning b{color:var(--fg)}
+.coin{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px}
+.coin button{display:flex;flex-direction:column;align-items:flex-start;gap:7px;border:1px dashed var(--rule);border-radius:7px;padding:12px;background:var(--panel-2);cursor:pointer;text-align:left;font-size:13px;color:var(--fg-dim)}
+.coin button:hover{border-color:var(--accent)}
+.coin .big{font:800 20px/1 'Archivo Smal',var(--display);letter-spacing:.03em;color:var(--fg);text-transform:uppercase}
+.watch{list-style:none;margin:0;padding:0}
+.watch li{display:grid;grid-template-columns:1fr auto;gap:12px;padding:9px 0;border-top:1px solid var(--rule);font-size:13.5px}
+.watch li:first-child{border-top:0}
+.watch .st{font:500 11px/1.5 var(--mono);color:var(--fg-dim);text-align:right;max-width:24ch}
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px;font-size:13px}
+.legend div{display:flex;flex-direction:column;gap:5px;align-items:flex-start}
+.legend span.d{color:var(--fg-dim);font-size:12.5px}
+.ankerbig{font-size:15px;color:var(--fg)}
+.ankerbig b{font-weight:700}
+
+/* Kort: klodens felt til venstre, punkterne til højre som på kloden. */
+.kortctl{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:7px;overflow:hidden;vertical-align:middle;flex-wrap:wrap}
+.seg button{border:0;background:var(--panel);color:var(--fg-dim);padding:6px 10px;font:500 12px/1.2 var(--display);cursor:pointer;min-height:30px}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}
+.mlbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin-right:7px;white-space:nowrap}
+.kortgrid{display:grid;grid-template-columns:minmax(0,1fr) 362px;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.stage{position:relative;min-width:0;height:clamp(440px,calc(100vh - 150px),780px)}
+canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab}
+canvas.drag{cursor:grabbing}
+.hud{position:absolute;right:46px;top:8px;font-family:var(--mono);font-size:10.5px;color:var(--fg-faint);letter-spacing:.03em;pointer-events:none;line-height:1.7;text-align:right}
+.zoomer{position:absolute;right:6px;bottom:8px;display:flex;flex-direction:column;gap:5px}
+.zoomer button{font-family:var(--mono);font-size:13px;width:30px;height:30px;border-radius:3px;background:var(--panel);color:var(--fg-dim);border:1px solid var(--rule);cursor:pointer;padding:0}
+.zoomer button:hover{color:var(--fg);border-color:var(--accent)}
+.henter{position:absolute;inset:0;display:grid;place-items:center;font:500 12px var(--mono);color:var(--fg-faint);pointer-events:none}
+.side{border-left:1px solid var(--rule);padding:12px 0 12px 16px;display:flex;flex-direction:column;gap:10px;min-width:0;max-height:clamp(440px,calc(100vh - 150px),780px);overflow:hidden}
+.side .top{display:flex;align-items:center;gap:8px}
+.side .top .n{font:500 11px var(--mono);color:var(--fg-faint);letter-spacing:.06em}
+.side .ind{overflow-y:auto;min-height:0;display:flex;flex-direction:column;gap:1px;padding-right:2px}
+.item{background:var(--panel);border:0;border-left:3px solid var(--c);padding:8px 10px;text-align:left;cursor:pointer;display:grid;gap:4px;color:inherit;font-family:var(--display);width:100%}
+.item:hover{background:var(--panel-2)}
+.item[aria-current="true"]{background:var(--panel-2);outline:1px solid var(--accent);outline-offset:-1px}
+.item .t{font-size:12.5px;font-weight:600;line-height:1.25}
+.item .m{font-family:var(--mono);font-size:10.5px;color:var(--fg-dim);letter-spacing:.02em;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.item .m .g{width:10px;height:10px}
+.tilbage{align-self:flex-start;border:1px solid var(--rule);background:var(--panel-2);border-radius:999px;padding:4px 12px 4px 9px;font:500 11px var(--mono);letter-spacing:.06em;color:var(--fg-dim);cursor:pointer}
+.tilbage:hover{color:var(--fg);border-color:var(--accent)}
+.timebar{display:flex;align-items:center;gap:12px;padding:11px 0 0;flex-wrap:wrap}
+.timebar .cap{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);white-space:nowrap}
+.timebar input[type=range]{flex:1 1 220px;min-width:0;accent-color:var(--accent)}
+.timebar .now{font-family:var(--mono);font-size:12px;color:var(--fg);font-variant-numeric:tabular-nums;white-space:nowrap;min-width:190px}
+.timebar button{font-family:var(--mono);font-size:11px;background:var(--panel);color:var(--fg-dim);border:1px solid var(--rule);border-radius:3px;padding:6px 10px;cursor:pointer;min-height:30px}
+.timebar button:hover{color:var(--fg);border-color:var(--accent)}
+.kortlegend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:12px;color:var(--fg-dim);align-items:center}
+.kortlegend span{display:inline-flex;gap:6px;align-items:center}
+
+/* Punktet: hvad kildegrundlaget siger, og hvordan teorien bruger det */
+.pt{display:flex;flex-direction:column;gap:9px}
+.pt .pm{font:400 11px/1.4 var(--mono);color:var(--fg-faint);letter-spacing:.02em}
+.pt h3{font-size:16px;font-weight:700;line-height:1.25}
+.pt .lab{font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg-faint);margin-top:4px}
+.pt .fakta{font-size:13.5px;color:var(--fg)}
+.pt .laes{font-size:13.5px;color:var(--fg-dim);background:var(--panel-2);border-left:3px solid var(--c);padding:8px 10px;border-radius:0 3px 3px 0}
+.srcs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.srcs li{display:flex;flex-direction:column;gap:1px;font-size:13px}
+.srcs a{word-break:break-word}
+.srcs .k{font:400 10.5px/1.3 var(--mono);color:var(--fg-faint);letter-spacing:.03em}
+.pt .gaa{align-self:flex-start}
+
+/* Tidslinje */
+.tl{display:flex;flex-direction:column;gap:20px}
+.mdr{display:flex;flex-direction:column;gap:4px}
+.mdr h3{font:500 11px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--fg-faint);border-bottom:1px solid var(--rule);padding-bottom:6px;margin-bottom:2px}
+.tli{background:var(--panel);border:1px solid var(--rule);border-left:3px solid var(--c);border-radius:3px}
+.tli.kommende{border-style:dashed;border-left-style:solid}
+.tli summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:62px 1fr;gap:12px;padding:10px 12px;align-items:start}
+.tli summary::-webkit-details-marker{display:none}
+.tli .d{font:600 11.5px/1.5 var(--mono);color:var(--fg-dim)}
+.tli .t{display:flex;flex-direction:column;gap:6px;min-width:0}
+.tli .t strong{font-size:14px;line-height:1.3}
+.tli .body{padding:0 12px 14px 86px}
+.idag{font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border-top:2px solid var(--accent);padding-top:6px;margin:6px 0}
+
+/* Matrix og kilder */
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:9px}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--rule);border-right:1px solid var(--rule);vertical-align:top}
+th:last-child,td:last-child{border-right:0}
+tbody tr:last-child td{border-bottom:0}
+th{font:500 10.5px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--fg-faint);background:var(--panel-2)}
+th .ev{font-size:10px}
+.mx{min-width:820px}
+.mx td.rh{width:190px;font-weight:600}
+.mx td.tom{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--panel-2) 6px 12px);color:var(--fg-faint);font:400 11px var(--mono)}
+.mchip{display:block;width:100%;text-align:left;font-size:12.5px;line-height:1.3;padding:6px 8px;margin:0 0 5px;border-radius:3px;background:var(--panel-2);border:0;border-left:3px solid var(--c);cursor:pointer;color:var(--fg)}
+.mchip:hover{outline:1px solid var(--accent)}
+.wm{min-width:560px}
+td.mk{text-align:center;font-family:var(--mono);font-weight:600;width:110px}
+td.mk.ja{color:var(--fg)}
+td.mk.nej{color:var(--fg-faint)}
+.kt{min-width:760px}
+.kt td:first-child{width:44%}
+.kt .typ{font:500 11px var(--mono);color:var(--fg-dim);white-space:nowrap}
+.kt .brug{display:flex;flex-wrap:wrap;gap:4px}
+.kt .brug button{border:1px solid var(--rule);background:var(--panel-2);border-radius:2px;padding:2px 7px;font:500 11px/1.4 var(--mono);color:var(--fg-dim);cursor:pointer}
+.kt .brug button:hover{color:var(--fg);border-color:var(--accent)}
+.note{font-size:13.5px;color:var(--fg-dim);max-width:90ch}
+.note b{color:var(--fg)}
+.hist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--fg-dim)}
+.hist b{font-family:var(--mono);font-weight:500;color:var(--fg);font-size:12px;margin-right:8px}
+
+/* Dialog med et punkt, som Sådan virker siden på kloden */
+dialog.om{width:min(620px,calc(100% - 24px));max-height:min(88vh,820px);padding:0;border:1px solid var(--rule);border-radius:6px;background:var(--panel);color:var(--fg);box-shadow:var(--shadow);overflow-y:auto;overscroll-behavior:contain}
+dialog.om::backdrop{background:rgba(3,8,13,.62)}
+.omhead{position:sticky;top:0;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px 12px 20px;background:var(--panel);border-bottom:1px solid var(--rule)}
+.omhead .lbl{margin:0}
+.omhead button{font-size:20px;line-height:1;background:none;border:0;color:var(--fg-dim);cursor:pointer;padding:6px 10px}
+.omhead button:hover{color:var(--fg)}
+.ombody{padding:16px 20px 22px}
+
+footer.fod{border-top:1px solid var(--rule);padding-top:14px;font-size:12px;color:var(--fg-faint);display:flex;flex-direction:column;gap:5px;font-family:var(--mono);letter-spacing:.01em;line-height:1.6}
+footer.fod b{color:var(--fg-dim);font-weight:500}
+
+@media (max-width:900px){
+  .wrap{gap:14px}
+  header.top{grid-template-columns:auto minmax(0,1fr) auto;padding:calc(env(safe-area-inset-top) + 8px) 0 8px}
+  .logo{border-right:0;padding:0 4px 0 0}
+  .logo .dom{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .faner{padding:0 6px;gap:2px;justify-content:flex-end}
+  .faner a{padding:0 10px 0 8px;font-size:10px;letter-spacing:.07em}
+  .hacts{border-left:0;padding-left:4px}
+  .thead{grid-template-columns:1fr}
+  .kortgrid{grid-template-columns:1fr}
+  .stage{height:min(62vh,520px);min-height:340px}
+  .side{border-left:0;border-top:1px solid var(--rule);padding:12px 0 4px;max-height:none}
+  .side .ind{max-height:none;overflow:visible}
+  .hud{display:none}
+  .bar{grid-template-columns:minmax(0,1fr) 90px 26px}
+  .tli .body{padding:0 12px 14px}
+  .tli summary{grid-template-columns:52px 1fr}
+  .timebar .now{min-width:0}
+}
+@media (max-width:900px){
+  /* Filtrene og genvejene ligger på én linje, der kan rulles sidelæns, så kloden kommer højt op. */
+  #relfilter,#presets{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%}
+  #relfilter{margin:0 -16px;padding:0 16px 2px;max-width:none;width:calc(100% + 32px)}
+  .kortctl>.rad{min-width:0;max-width:100%}
+  .kortctl>.rad>span{display:flex;align-items:center;min-width:0;max-width:100%}
+  #relfilter::-webkit-scrollbar,#presets::-webkit-scrollbar{display:none}
+  .seg button{white-space:nowrap}
+  .chip{min-height:30px;font-size:11.5px}
+  .ikkevarsel{font-size:13px;padding:9px 12px}
+}
+@media (max-width:420px){
+  .faner a:not([aria-current]) .t{display:none}
+  .faner a:not([aria-current]){padding:0 9px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="/" aria-label="globus.nicco.dk, tilbage til kloden"><svg class="mk" viewBox="17 17 366 366" aria-hidden="true"><path fill="currentColor" d="M271.493,496.141c126.623-8.169,225.147-113.254,225.147-240.141S398.117,24.029,271.493,15.859l-.133-.008v226.565l66.56,83.2v-197.616h40.96v314.384l-107.52-134.4v188.165l.133-.008ZM240.507,15.859C113.883,24.029,15.36,129.113,15.36,256s98.523,231.971,225.147,240.141l.133.008v-226.565l-66.56-83.2v197.616h-40.96V69.616l107.52,134.4V15.851l-.133.008Z" transform="translate(17.021,17.021) scale(0.714761)"/></svg><span class="dom">GLOBUS.NICCO.DK</span></a>
+    <nav class="faner" aria-label="Globus">
+      <a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.6 2.4 3.9 5.2 3.9 8.5s-1.3 6.1-3.9 8.5M12 3.5C9.4 5.9 8.1 8.7 8.1 12s1.3 6.1 3.9 8.5"/></svg><span class="t">Kloden</span></a>
+      <a href="/konspirationer/" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="17.5" r="2.2"/><path d="M8.2 6.7l7.6-.5M7.1 8.9l3.8 6.6M17 8l-3.9 7.5"/></svg><span class="t">Konspirationer</span></a>
+    </nav>
+    <div class="hacts">
+      <button class="temabtn" id="temabtn" type="button" aria-label="Skift til lys tilstand"><svg class="sol" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg><svg class="maane" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+    </div>
+  </header>
+
+  <p class="ikkevarsel" role="note"><span class="mrk">Ikke et varsel</span><span><b>Kortlægning af en påstand.</b> Teoriarkivet viser, hvordan en teori bliver til en konspirationsteori. Intet herfra indgår i klodens alvor og trin, varsler, beskeder, RSS eller Nyt på siden.</span></p>
+
+  <section aria-label="Teorien">
+    <div class="trow"><p class="lbl">Teoriarkivet</p><div class="ttabs" id="ttabs" role="tablist" aria-label="Teorier"></div></div>
+    <div class="thead">
+      <div>
+        <p class="lbl" style="margin-top:12px">Påstanden, der kortlægges</p>
+        <h1 id="paastand">Henter teorien ...</h1>
+        <p class="intro" id="intro"></p>
+      </div>
+      <div class="vurd">
+        <p class="lbl" id="vurdlbl">Arkivets vurdering</p>
+        <p class="v" id="vurd"></p>
+        <p class="meta" id="meta"></p>
+      </div>
+    </div>
+  </section>
+
+  <nav class="stabs" role="tablist" aria-label="Visninger" id="stabs">
+    <button class="stab" role="tab" type="button" data-v="overblik">Overblik</button>
+    <button class="stab" role="tab" type="button" data-v="kort">Kort</button>
+    <button class="stab" role="tab" type="button" data-v="tidslinje">Tidslinje</button>
+    <button class="stab" role="tab" type="button" data-v="matrix">Matrix</button>
+    <button class="stab" role="tab" type="button" data-v="kilder">Kilder</button>
+  </nav>
+
+  <main>
+    <!-- OVERBLIK -->
+    <section class="view" id="v-overblik">
+      <div class="grid2">
+        <div class="card">
+          <h2>Hvad peger punkterne på?</h2>
+          <p class="sub">Alle punkter fordelt på, hvad de reelt understøtter, og hvor godt de er dokumenteret.</p>
+          <div class="bars" id="barsrel"></div>
+          <div class="bars" id="barslvl" style="margin-top:6px"></div>
+          <p class="laesning" id="laesning"></p>
+        </div>
+        <div class="card" id="ankercard">
+          <h2>Ankeret</h2>
+          <p class="ankerbig" id="ankertekst"></p>
+          <p class="sub" id="ankernote"></p>
+          <div class="rad"><button class="chip" type="button" id="ankeraaben">Åbn punktet</button><button class="chip" type="button" id="ankerkort">Se på kloden</button></div>
+        </div>
+      </div>
+      <div class="card">
+        <h2 id="sftitel"></h2>
+        <p class="sub" id="sftekst"></p>
+        <div class="coin" id="coin"></div>
+      </div>
+      <div class="grid2">
+        <div class="card">
+          <h2>Hvad ville ændre vurderingen</h2>
+          <p class="sub">Stærke tegn, der ville flytte teorien fra påstand mod noget reelt. Status ved seneste gennemgang.</p>
+          <ul class="watch" id="watch"></ul>
+        </div>
+        <div class="card">
+          <h2>Sådan læser du arkivet</h2>
+          <div class="legend" id="legend"></div>
+        </div>
+      </div>
+      <div class="card" id="eftercard">
+        <h2 id="eftertitel"></h2>
+        <div id="efterind"></div>
+      </div>
+    </section>
+
+    <!-- KORT -->
+    <section class="view" id="v-kort" hidden>
+      <div class="kortctl">
+        <div class="rad" id="relfilter" role="group" aria-label="Vis efter hvad punktet peger på"></div>
+        <div class="rad">
+          <span><span class="mlbl" id="tillbl">Gå til</span><span class="seg" id="presets" role="group" aria-labelledby="tillbl"></span></span>
+        </div>
+      </div>
+      <div class="kortgrid">
+        <div class="stage" aria-label="Kloden med teoriens punkter">
+          <canvas id="c" role="img" aria-label="Kloden med teoriens punkter. Listen ved siden af har de samme punkter."></canvas>
+          <div class="hud" id="hud"></div>
+          <div class="henter" id="henter">Henter kortet ...</div>
+          <div class="zoomer">
+            <button id="zin" type="button" title="Zoom ind" aria-label="Zoom ind">+</button>
+            <button id="zout" type="button" title="Zoom ud" aria-label="Zoom ud">−</button>
+            <button id="zreset" type="button" title="Nulstil visning" aria-label="Nulstil visning">⟲</button>
+          </div>
+        </div>
+        <aside class="side" id="side" aria-live="polite"></aside>
+      </div>
+      <div class="timebar" role="region" aria-label="Tidspunkt">
+        <span class="cap">Til og med</span>
+        <input id="tid" type="range" min="0" max="100" value="100" step="1" aria-label="Vis punkter til og med dato">
+        <span class="now" id="nowlbl"></span>
+        <button id="afspil" type="button">Afspil forløb</button>
+        <button id="idag" type="button">Seneste gennemgang</button>
+        <button id="alle" type="button">Alle</button>
+      </div>
+      <div class="kortlegend" id="kortlegend"></div>
+      <div class="card">
+        <h2>Uden fast sted</h2>
+        <p class="sub">Påstande og begivenheder, der lever online eller ikke har en placering. De står ikke på kloden.</p>
+        <div class="side" style="border:0;padding:0;max-height:none"><div class="ind" id="udensted"></div></div>
+      </div>
+    </section>
+
+    <!-- TIDSLINJE -->
+    <section class="view" id="v-tidslinje" hidden>
+      <div class="rad" id="tlrel" role="group" aria-label="Filtrér på hvad punktet peger på"></div>
+      <div class="rad" id="tlthr" role="group" aria-label="Filtrér på tråd"></div>
+      <div class="tl" id="tl"></div>
+    </section>
+
+    <!-- MATRIX -->
+    <section class="view" id="v-matrix" hidden>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <h2 style="font-size:18px">Evidensmatrix</h2>
+        <p class="note">Rækker: hvad punktet peger på. Kolonner: hvor godt det er dokumenteret. Tryk på et punkt for at se det.</p>
+      </div>
+      <div class="tablewrap"><table class="mx" id="mx"></table></div>
+      <p class="note" id="moenster"></p>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">
+        <h2 style="font-size:18px">Advarselstegn pr. tråd</h2>
+        <p class="note" id="wmled"></p>
+      </div>
+      <div class="tablewrap"><table class="wm" id="wm"></table></div>
+    </section>
+
+    <!-- KILDER -->
+    <section class="view" id="v-kilder" hidden>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <h2 style="font-size:18px">Kilder</h2>
+        <p class="note">Kun det, en navngiven kilde har offentliggjort, med kilden ved siden af. Udsagn fra navngivne personer kan slås op i kilden ved punktet. Typen fortæller, hvor meget vægt en kilde kan bære alene. Alle links åbner i en ny fane.</p>
+      </div>
+      <div class="rad" id="ktfilter" role="group" aria-label="Filtrér på kildetype"></div>
+      <div class="tablewrap"><table class="kt" id="kt"></table></div>
+      <div class="grid2">
+        <div class="card"><h2>Det er ikke gennemsøgt</h2><p class="note" id="mangler"></p></div>
+        <div class="card"><h2>Opdateringer</h2><ul class="hist" id="hist"></ul></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fod">
+    <span><b>Konspirationer</b> er en fane på globus.nicco.dk. Den er en kortlægning af påstande og står helt for sig: den læser intet af klodens data, og kloden læser intet herfra.</span>
+    <span id="fodbygget"></span>
+    <span><b>Kortdata:</b> globus' eget kort, Natural Earth 1:50m.</span>
+    <div id="nicco-fod"></div>
+  </footer>
+</div>
+
+<dialog class="om" id="pdlg" aria-labelledby="pdlbl">
+  <div class="omhead"><p class="lbl" id="pdlbl">Punkt</p><button type="button" id="pdluk" aria-label="Luk">×</button></div>
+  <div class="ombody" id="pdbody"></div>
+</dialog>
+
+<script>
+'use strict';
+/* ---------- Hjælpere ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const safeUrl = u => /^https:\/\/[^\s"'<>]+$/i.test(String(u || '').trim()) ? String(u).trim() : null;
+const MON = ['jan.','feb.','mar.','apr.','maj','jun.','jul.','aug.','sep.','okt.','nov.','dec.'];
+const MONL = ['januar','februar','marts','april','maj','juni','juli','august','september','oktober','november','december'];
+const fmtD = d => { const [y, m, dd] = d.split('-'); return `${+dd}. ${MON[+m-1]} ${y}`; };
+const fmtL = d => { const [y, m, dd] = d.split('-'); return `${+dd}. ${MONL[+m-1]} ${y}`; };
+const fmtTid = s => { const m = /^(\d{4}-\d{2}-\d{2})T(\d{2}):(\d{2})/.exec(s || ''); return m ? `${fmtL(m[1])} kl. ${m[2]}.${m[3]}` : ''; };
+const DAG = 864e5;
+const dms = d => Date.parse(d + 'T00:00:00Z');
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+/* Evidens er fast for alle teorier. Formen viser den med det samme, også uden farve. */
+const LVL = {
+  dok:  {l:'Dokumenteret', d:'Fyldt prik. Står i en navngiven kilde, der selv har set eller besluttet det.'},
+  sand: {l:'Sandsynligt',  d:'Halvt fyldt ring. Flere kilder peger samme vej, men intet er bekræftet officielt.'},
+  uu:   {l:'Uunderbygget', d:'Tom ring. Påstanden er fremsat, men intet dokumenterer den.'},
+  fik:  {l:'Fiktion',      d:'Stiplet ring. Ophavspersonen kalder det selv opdigtet eller et tankeeksperiment.'}
+};
+const LVLS = ['dok','sand','uu','fik'];
+const KTYPE = {officiel:'Myndighed', medie:'Nyhedsmedie', faktatjek:'Faktatjek', osint:'OSINT, uofficiel', socialt:'Socialt medie', opslag:'Opslagsværk'};
+const evHTML = l => `<span class="ev"><i class="g ${l}" aria-hidden="true"></i>${esc(LVL[l]?.l || l)}</span>`;
+
+/* ---------- Tilstand ---------- */
+let TEORIER = [], D = null, P = [], RELM = {}, AKTIV = null, VIS = 'overblik';
+const relC = k => `var(--r${RELM[k]?.farve || 3})`;
+const relHTML = k => `<span class="rel" style="--c:${relC(k)}">${esc(RELM[k]?.l || k)}</span>`;
+const byId = id => P.find(p => p.id === id);
+const harSted = p => typeof p.lat === 'number' && typeof p.lon === 'number';
+const kommende = p => D && p.d > D.status;
+
+function kilderTil(p){
+  return (p.src || []).map(k => { const s = D.kilder[k]; return s ? {id:k, t:s.titel, u:safeUrl(s.url), type:s.type} : null; }).filter(Boolean);
+}
+function ptHTML(p, o = {}){
+  const s = kilderTil(p);
+  const tags = [`<span class="tag">${esc(p.cat)}</span>`];
+  if(p.thr && D.traade[p.thr]) tags.push(`<span class="tag">${esc(D.traade[p.thr])}</span>`);
+  if(p.old) tags.push('<span class="tag warn">Genbrugt materiale</span>');
+  if(p.approx) tags.push('<span class="tag">Omtrentlig position</span>');
+  if(kommende(p)) tags.push('<span class="tag kom">Kommende</span>');
+  return `<article class="pt" style="--c:${relC(p.rel)}">
+    ${o.utenTitel ? '' : `<p class="pm">${fmtL(p.d)}${p.place ? ' · ' + esc(p.place) : ''}</p><h3>${esc(p.t)}</h3>`}
+    ${o.utenTitel ? '' : `<div class="rad">${evHTML(p.lvl)}${relHTML(p.rel)}</div>`}
+    <div class="rad">${tags.join('')}</div>
+    <p class="lab">Kildegrundlaget siger</p><p class="fakta">${esc(p.fakta)}</p>
+    <p class="lab">Sådan bruges det i teorien</p><p class="laes">${esc(p.laes)}</p>
+    <p class="lab">Kilder</p>
+    <ul class="srcs">${s.map(x => `<li>${x.u ? `<a href="${esc(x.u)}" target="_blank" rel="noopener noreferrer">${esc(x.t)}</a>` : esc(x.t)}<span class="k">${esc(KTYPE[x.type] || x.type)}</span></li>`).join('')}</ul>
+    ${o.kortKnap && harSted(p) ? `<button class="chip gaa" type="button" data-kort="${esc(p.id)}">Se på kloden</button>` : ''}
+  </article>`;
+}
+function itemHTML(p, aktuel){
+  return `<button class="item" type="button" data-pkt="${esc(p.id)}" style="--c:${relC(p.rel)}"${aktuel ? ' aria-current="true"' : ''}>
+    <span class="t">${esc(p.t)}</span>
+    <span class="m"><span>${fmtD(p.d)}</span>${p.place ? `<span>${esc(p.place)}</span>` : ''}<span class="ev"><i class="g ${p.lvl}" aria-hidden="true"></i>${esc(LVL[p.lvl].l)}</span>${p.old ? '<span class="tag warn">Genbrugt</span>' : ''}${kommende(p) ? '<span class="tag kom">Kommende</span>' : ''}</span>
+  </button>`;
+}
+
+/* ---------- Dialog ---------- */
+const dlg = $('#pdlg');
+function aabn(id){
+  const p = byId(id); if(!p) return;
+  $('#pdlbl').textContent = `${D.fane} · punkt ${p.id.replace(/^p/, '')}`;
+  $('#pdbody').innerHTML = ptHTML(p, {kortKnap:true});
+  if(dlg.showModal){ if(!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
+  dlg.scrollTop = 0;
+}
+$('#pdluk').addEventListener('click', () => dlg.close());
+dlg.addEventListener('click', ev => { if(ev.target === dlg) dlg.close(); });
+
+/* ---------- Faner og adresse ----------
+   Adressen er #<teori>/<visning>, fx #17nov/kort, og et punkt kan tilføjes: #17nov/kort/p05. */
+const VISNINGER = ['overblik','kort','tidslinje','matrix','kilder'];
+function adresse(){ const [t, v, p] = location.hash.slice(1).split('/'); return {t, v, p}; }
+function saetAdresse(v, p){ const h = `#${AKTIV}/${v}${p ? '/' + p : ''}`; if(location.hash !== h) try{ history.replaceState(null, '', h); }catch(err){} }
+function visView(v){
+  if(!VISNINGER.includes(v)) v = 'overblik';
+  VIS = v;
+  for(const x of VISNINGER) $('#v-' + x).hidden = x !== v;
+  document.querySelectorAll('.stab').forEach(b => b.setAttribute('aria-selected', String(b.dataset.v === v)));
+  if(v === 'kort') kortVist();
+}
+// Kortet skal kunne ses helt. Står fanerne langt nede, ruller siden op til dem, når Kort vælges.
+const tilFaner = () => { const y = $('#stabs').getBoundingClientRect().top; if(y > 80) window.scrollTo({top:window.scrollY + y - 8, behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}); };
+document.querySelectorAll('.stab').forEach(b => b.addEventListener('click', () => { visView(b.dataset.v); saetAdresse(b.dataset.v, VIS === 'kort' && VALGT.length === 1 ? VALGT[0] : null); if(b.dataset.v === 'kort') tilFaner(); }));
+document.addEventListener('click', ev => {
+  const a = ev.target.closest('[data-aabn]'); if(a){ aabn(a.dataset.aabn); return; }
+  const k = ev.target.closest('[data-kort]'); if(k){ if(dlg.open) dlg.close(); visView('kort'); vaelg([k.dataset.kort], true); saetAdresse('kort', k.dataset.kort); tilFaner(); return; }
+  const g = ev.target.closest('[data-gaa]'); if(g){ visView(g.dataset.gaa); saetAdresse(g.dataset.gaa); }
+});
+window.addEventListener('hashchange', () => { const a = adresse(); if(a.t && a.t !== AKTIV && TEORIER.some(t => t.id === a.t)) hentTeori(a.t, a.v, a.p); else { visView(a.v); if(a.p && byId(a.p)){ if(VIS === 'kort') vaelg([a.p], true); else aabn(a.p); } } });
+
+/* ---------- Overblik ---------- */
+function bygOverblik(){
+  const tot = P.length;
+  $('#barsrel').innerHTML = D.relationer.map(r => { const n = P.filter(p => p.rel === r.k).length;
+    return `<div class="bar" style="--c:var(--r${r.farve})"><span class="lb"><span class="rel" style="--c:var(--r${r.farve})">${esc(r.l)}</span></span><div class="track"><div class="fill" style="width:${tot ? n/tot*100 : 0}%"></div></div><span class="n">${n}</span></div>`; }).join('');
+  $('#barslvl').innerHTML = LVLS.map(l => { const n = P.filter(p => p.lvl === l).length;
+    return `<div class="bar" style="--c:var(--fg-dim)"><span class="lb">${evHTML(l)}</span><div class="track"><div class="fill" style="width:${tot ? n/tot*100 : 0}%"></div></div><span class="n">${n}</span></div>`; }).join('');
+  const hoved = D.relationer[0].k, h = P.filter(p => p.rel === hoved), hd = h.filter(p => p.lvl === 'dok' || p.lvl === 'sand').length;
+  $('#laesning').innerHTML = '<b>Læsning:</b> ' + esc(D.laesning.replace('{n}', h.length).replace('{m}', hd === 0 ? 'ingen af dem' : hd + ' af dem'));
+  const a = byId(D.anker.id);
+  $('#ankertekst').innerHTML = `<b>${esc(D.anker.overskrift)}:</b> ${esc(D.anker.tekst)}`;
+  $('#ankernote').textContent = D.anker.note;
+  $('#ankeraaben').dataset.aabn = a.id; $('#ankerkort').dataset.kort = a.id;
+  $('#sftitel').textContent = D.sammenfald.titel; $('#sftekst').textContent = D.sammenfald.tekst;
+  $('#coin').innerHTML = P.filter(p => p.coin).map(p => `<button type="button" data-aabn="${esc(p.id)}"><span class="big">${esc(p.coin)}</span><span>${esc(p.t)}</span>${evHTML(p.lvl)}</button>`).join('');
+  $('#watch').innerHTML = D.overvaagning.map(w => `<li><span>${esc(w.tegn)}</span><span class="st">${esc(w.status)}</span></li>`).join('');
+  $('#legend').innerHTML = D.relationer.map(r => `<div><span class="rel" style="--c:var(--r${r.farve})">${esc(r.l)}</span><span class="d">${esc(r.d)}</span></div>`).join('')
+    + LVLS.map(l => `<div>${evHTML(l)}<span class="d">${esc(LVL[l].d)}</span></div>`).join('')
+    + '<div><span class="tag warn">Genbrugt materiale</span><span class="d">Gammelt materiale, der deles som nyt.</span></div>'
+    + '<div><span class="tag kom">Kommende</span><span class="d">Datoen ligger efter seneste gennemgang.</span></div>';
+  $('#eftertitel').textContent = D.efter.titel;
+  const e = D.efterspil;
+  $('#efterind').innerHTML = e
+    ? `<p class="lbl">Skrevet ${fmtL(e.dato)}</p><p class="note" style="color:var(--fg)">${esc(e.tekst)}</p>${(e.src || []).length ? `<ul class="srcs">${e.src.map(k => D.kilder[k]).filter(Boolean).map(s => `<li><a href="${esc(safeUrl(s.url) || '#')}" target="_blank" rel="noopener noreferrer">${esc(s.titel)}</a><span class="k">${esc(KTYPE[s.type] || s.type)}</span></li>`).join('')}</ul>` : ''}`
+    : `<p class="note">${esc(D.efter.venter)}</p>`;
+}
+
+/* ---------- Tidslinje ---------- */
+const TLREL = new Set(), TLTHR = {v:'alle'};
+function bygTidslinje(){
+  if(!TLREL.size) D.relationer.forEach(r => TLREL.add(r.k));
+  $('#tlrel').innerHTML = D.relationer.map(r => `<button class="chip r" type="button" data-tlrel="${r.k}" aria-pressed="${TLREL.has(r.k)}" style="--c:var(--r${r.farve})">${esc(r.l)}<span class="n">${P.filter(p => p.rel === r.k).length}</span></button>`).join('');
+  const thr = [['alle','Alle tråde'], ...Object.entries(D.traade), ['', 'Uden tråd']];
+  $('#tlthr').innerHTML = `<span class="mlbl">Tråd</span><span class="seg">${thr.map(([k, l]) => `<button type="button" data-tlthr="${esc(k)}" aria-pressed="${TLTHR.v === k}">${esc(l)}</button>`).join('')}</span>`;
+  const vis = P.filter(p => TLREL.has(p.rel) && (TLTHR.v === 'alle' || (p.thr || '') === TLTHR.v)).sort((a, b) => a.d < b.d ? -1 : a.d > b.d ? 1 : a.id < b.id ? -1 : 1);
+  let html = '', mdr = '', idag = false;
+  for(const p of vis){
+    const m = p.d.slice(0, 7);
+    if(m !== mdr){ if(mdr) html += '</div>'; const [y, mm] = m.split('-'); html += `<div class="mdr"><h3>${MONL[+mm-1]} ${y}</h3>`; mdr = m; }
+    if(!idag && p.d > D.status){ idag = true; html += `<div class="idag">Seneste gennemgang · ${fmtL(D.status)}</div>`; }
+    html += `<details class="tli${kommende(p) ? ' kommende' : ''}" style="--c:${relC(p.rel)}" id="tl-${esc(p.id)}"><summary><span class="d">${fmtD(p.d).replace(/ \d{4}$/, '')}</span><span class="t"><strong>${esc(p.t)}</strong><span class="rad">${evHTML(p.lvl)}${relHTML(p.rel)}${p.place ? `<span class="tag">${esc(p.place)}</span>` : ''}</span></span></summary><div class="body">${ptHTML(p, {utenTitel:true, kortKnap:true})}</div></details>`;
+  }
+  if(mdr) html += '</div>';
+  $('#tl').innerHTML = html || '<p class="note">Ingen punkter med de valgte filtre.</p>';
+}
+$('#tlrel').addEventListener('click', ev => { const b = ev.target.closest('[data-tlrel]'); if(!b) return; const k = b.dataset.tlrel; TLREL.has(k) ? TLREL.delete(k) : TLREL.add(k); bygTidslinje(); });
+$('#tlthr').addEventListener('click', ev => { const b = ev.target.closest('[data-tlthr]'); if(!b) return; TLTHR.v = b.dataset.tlthr; bygTidslinje(); });
+
+/* ---------- Matrix ---------- */
+function bygMatrix(){
+  let h = `<thead><tr><th>Peger på</th>${LVLS.map(l => `<th>${evHTML(l)}</th>`).join('')}</tr></thead><tbody>`;
+  for(const r of D.relationer){
+    h += `<tr><td class="rh"><span class="rel" style="--c:var(--r${r.farve})">${esc(r.l)}</span></td>`;
+    for(const l of LVLS){
+      const ps = P.filter(p => p.rel === r.k && p.lvl === l).sort((a, b) => a.d < b.d ? -1 : 1);
+      h += ps.length ? `<td>${ps.map(p => `<button class="mchip" type="button" data-aabn="${esc(p.id)}" style="--c:var(--r${r.farve})">${esc(p.t)}</button>`).join('')}</td>` : '<td class="tom">Ingen</td>';
+    }
+    h += '</tr>';
+  }
+  $('#mx').innerHTML = h + '</tbody>';
+  $('#moenster').innerHTML = '<b>Mønster:</b> ' + esc(D.moenster);
+  const T = ['T1','T2','T3'].filter(k => D.traade[k]);
+  $('#wmled').textContent = T.map(k => D.traade[k]).join('. ') + '.';
+  const sum = T.map((_, i) => D.advarselstegn.reduce((s, a) => s + (a.traade[i] ? 1 : 0), 0));
+  $('#wm').innerHTML = `<thead><tr><th>Advarselstegn</th>${T.map(k => `<th>${esc(D.traade[k])}</th>`).join('')}</tr></thead><tbody>`
+    + D.advarselstegn.map(a => `<tr><td>${esc(a.tegn)}</td>${a.traade.slice(0, T.length).map(v => `<td class="mk ${v ? 'ja' : 'nej'}">${v ? '● Ja' : 'Nej'}</td>`).join('')}</tr>`).join('')
+    + `<tr><td><b>I alt</b></td>${sum.map(s => `<td class="mk ja">${s} af ${D.advarselstegn.length}</td>`).join('')}</tr></tbody>`;
+}
+
+/* ---------- Kilder ---------- */
+const KT = {v:'alle'};
+function bygKilder(){
+  const K = Object.entries(D.kilder);
+  const typer = ['alle', ...Object.keys(KTYPE).filter(t => K.some(([, s]) => s.type === t))];
+  $('#ktfilter').innerHTML = typer.map(t => `<button class="chip" type="button" data-kt="${t}" aria-pressed="${KT.v === t}">${t === 'alle' ? 'Alle' : esc(KTYPE[t])}<span class="n">${t === 'alle' ? K.length : K.filter(([, s]) => s.type === t).length}</span></button>`).join('');
+  const rows = K.filter(([, s]) => KT.v === 'alle' || s.type === KT.v).sort((a, b) => a[1].titel.localeCompare(b[1].titel, 'da'));
+  $('#kt').innerHTML = `<thead><tr><th>Kilde</th><th>Type</th><th>Bruges i</th></tr></thead><tbody>${rows.map(([k, s]) => {
+    const u = safeUrl(s.url), brug = P.filter(p => (p.src || []).includes(k));
+    return `<tr><td>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(s.titel)}</a>` : esc(s.titel)}</td><td class="typ">${esc(KTYPE[s.type] || s.type)}</td><td><div class="brug">${brug.map(p => `<button type="button" data-aabn="${esc(p.id)}" title="${esc(p.t)}">${esc(p.t.length > 34 ? p.t.slice(0, 32) + ' ...' : p.t)}</button>`).join('')}</div></td></tr>`;
+  }).join('')}</tbody>`;
+  $('#mangler').textContent = D.mangler;
+  $('#hist').innerHTML = (D.historik || []).slice().reverse().map(h => `<li><b>${fmtL(h.dato)}</b>${esc(h.tekst)}</li>`).join('');
+}
+$('#ktfilter').addEventListener('click', ev => { const b = ev.target.closest('[data-kt]'); if(!b) return; KT.v = b.dataset.kt; bygKilder(); });
+
+/* ---------- Kloden ----------
+   Samme projektion og tegning som kloden på forsiden: ortografisk, havet som en radial overgang, gradnet hver 30. grad,
+   land og grænser fra globus' kort (Natural Earth 1:50m). Punkterne tegnes i relationens farve og med evidensens form. */
+const DEG = Math.PI / 180;
+const cv = $('#c'), ctx = cv.getContext('2d');
+let W = 0, H = 0, dpr = 1, T = {};
+const HJEM = {lam:-45, phi:24, zoom:1.05};
+let rot = {lam:HJEM.lam, phi:HJEM.phi}, zoom = HJEM.zoom, target = null;
+const view = {cx:0, cy:0, R:0};
+let LAND = null, BORD = null, KORT_FEJL = false;
+const RELON = new Set(); let VIS_GAMMEL = true, CUT = null, MIN_D = null, MAX_D = null;
+let VALGT = [], KLYNGER = [];
+
+function tokens(){ T = {}; for(const k of ['--ocean','--ocean-2','--land','--land-line','--border-line','--fg','--fg-dim','--fg-faint','--bg','--panel','--accent','--r1','--r2','--r3','--r4']) T[k] = css(k); }
+function unit(lon, lat){
+  const l = (lon + rot.lam) * DEG, b = lat * DEG, p = rot.phi * DEG;
+  const cb = Math.cos(b), sb = Math.sin(b), cl = Math.cos(l), sl = Math.sin(l), cp = Math.cos(p), sp = Math.sin(p);
+  return {x:cb*sl, y:cp*sb - sp*cb*cl, z:sp*sb + cp*cb*cl};
+}
+const scr = u => [view.cx + view.R*u.x, view.cy - view.R*u.y];
+function horizon(a, b){ const t = a.z/(a.z - b.z); let x = a.x + (b.x - a.x)*t, y = a.y + (b.y - a.y)*t; const m = Math.hypot(x, y) || 1; return {x:x/m, y:y/m, z:0}; }
+function arcPts(out, a1, a2){
+  let d = a2 - a1; while(d > Math.PI) d -= 2*Math.PI; while(d < -Math.PI) d += 2*Math.PI;
+  const steps = Math.max(2, Math.ceil(Math.abs(d)/0.06));
+  for(let i = 1; i <= steps; i++){ const a = a1 + d*i/steps; out.push([view.cx + view.R*Math.cos(a), view.cy - view.R*Math.sin(a)]); }
+}
+let ROT = null;
+function rotNu(){ const l = rot.lam*DEG, p = rot.phi*DEG; ROT = {cL:Math.cos(l), sL:Math.sin(l), cp:Math.cos(p), sp:Math.sin(p), lam:rot.lam, phi:rot.phi}; }
+function ringVek(ring, i){
+  if(!ROT || ROT.lam !== rot.lam || ROT.phi !== rot.phi) rotNu();
+  const cb = ring.cb[i], sb = ring.sb[i], cl = ring.cl[i]*ROT.cL - ring.sl[i]*ROT.sL, sl = ring.sl[i]*ROT.cL + ring.cl[i]*ROT.sL;
+  return {x:cb*sl, y:ROT.cp*sb - ROT.sp*cb*cl, z:ROT.sp*sb + ROT.cp*cb*cl};
+}
+function ringPath(ring){
+  const n = ring.length, pts = new Array(n); let vis = 0;
+  for(let i = 0; i < n; i++){ pts[i] = ringVek(ring, i); if(pts[i].z > 0) vis++; }
+  if(vis === 0) return null;
+  if(vis === n) return pts.map(scr);
+  const out = []; let pendingExit = null, firstEntry = null;
+  for(let i = 0; i < n; i++){
+    const a = pts[i], b = pts[(i + 1) % n];
+    if(a.z > 0) out.push(scr(a));
+    if(a.z > 0 && b.z <= 0){ const h = horizon(a, b); out.push(scr(h)); pendingExit = Math.atan2(h.y, h.x); }
+    else if(a.z <= 0 && b.z > 0){ const h = horizon(a, b), ang = Math.atan2(h.y, h.x); if(firstEntry === null) firstEntry = ang; if(pendingExit !== null){ arcPts(out, pendingExit, ang); pendingExit = null; } out.push(scr(h)); }
+  }
+  if(pendingExit !== null && firstEntry !== null) arcPts(out, pendingExit, firstEntry);
+  return out.length > 2 ? out : null;
+}
+function trace(p){ ctx.moveTo(p[0][0], p[0][1]); for(let i = 1; i < p.length; i++) ctx.lineTo(p[i][0], p[i][1]); ctx.closePath(); }
+function graticule(v, isLat){
+  ctx.beginPath(); let open = false;
+  for(let i = -180; i <= 180; i += 4){
+    const u = isLat ? unit(i, v) : unit(v, Math.max(-85, Math.min(85, i/2)));
+    if(u.z > 0){ const s = scr(u); open ? ctx.lineTo(s[0], s[1]) : (ctx.moveTo(s[0], s[1]), open = true); } else open = false;
+  }
+  ctx.stroke();
+}
+const parse = s => s ? s.split('|').map(r => r.split(' ').map(p => { const i = p.indexOf(','); return [+p.slice(0, i), +p.slice(i + 1)]; })) : [];
+function forbered(ringe){
+  for(const r of ringe){ const m = r.length; r.cb = new Float64Array(m); r.sb = new Float64Array(m); r.cl = new Float64Array(m); r.sl = new Float64Array(m);
+    for(let i = 0; i < m; i++){ const lo = r[i][0]*DEG, la = r[i][1]*DEG; r.cb[i] = Math.cos(la); r.sb[i] = Math.sin(la); r.cl[i] = Math.cos(lo); r.sl[i] = Math.sin(lo); } }
+  return ringe;
+}
+let kortHentes = false;
+function hentKort(){
+  if(kortHentes) return; kortHentes = true;
+  fetch('/kort-50m.txt').then(r => r.ok ? r.text() : Promise.reject(r.status)).then(t => {
+    const [l, b] = t.split('\n'); LAND = forbered(parse(l)); BORD = forbered(parse(b)); $('#henter').hidden = true; tegn();
+  }).catch(() => { KORT_FEJL = true; $('#henter').textContent = 'Kortet kunne ikke hentes. Punkterne står i listen.'; tegn(); });
+}
+function resize(){
+  const r = cv.parentElement.getBoundingClientRect(); if(!r.width) return;
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
+  W = Math.max(240, r.width); H = Math.max(240, r.height);
+  cv.width = Math.round(W*dpr); cv.height = Math.round(H*dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  view.cx = W/2; view.cy = H/2; view.R = Math.min(W, H)/2*0.9*zoom;
+  tegn();
+}
+function synlige(){
+  return P.filter(p => harSted(p) && RELON.has(p.rel) && (VIS_GAMMEL || !p.old) && (CUT === null || p.d <= CUT));
+}
+function markør(x, y, r, lvl, col, valgt){
+  const bg = T['--bg'];
+  if(valgt){ ctx.beginPath(); ctx.arc(x, y, r + 5, 0, 2*Math.PI); ctx.strokeStyle = T['--fg']; ctx.lineWidth = 2; ctx.stroke(); }
+  ctx.lineWidth = 2; ctx.setLineDash([]);
+  ctx.beginPath(); ctx.arc(x, y, r, 0, 2*Math.PI);
+  if(lvl === 'dok'){ ctx.fillStyle = col; ctx.fill(); ctx.strokeStyle = bg; ctx.lineWidth = 1.5; ctx.stroke(); return; }
+  ctx.fillStyle = bg; ctx.fill();
+  if(lvl === 'sand'){ ctx.beginPath(); ctx.moveTo(x, y - r); ctx.arc(x, y, r, -Math.PI/2, Math.PI/2, true); ctx.closePath(); ctx.fillStyle = col; ctx.fill(); ctx.beginPath(); ctx.arc(x, y, r, 0, 2*Math.PI); }
+  if(lvl === 'fik') ctx.setLineDash([2.6, 2.4]);
+  ctx.strokeStyle = col; ctx.lineWidth = 2; ctx.stroke(); ctx.setLineDash([]);
+}
+function tegn(){
+  if(!W) return;
+  ctx.clearRect(0, 0, W, H);
+  const R = view.R, cx = view.cx, cy = view.cy;
+  const g = ctx.createRadialGradient(cx - R*0.3, cy - R*0.35, R*0.1, cx, cy, R);
+  g.addColorStop(0, T['--ocean-2']); g.addColorStop(1, T['--ocean']);
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2*Math.PI); ctx.fillStyle = g; ctx.fill();
+  ctx.save(); ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2*Math.PI); ctx.clip();
+  ctx.strokeStyle = T['--border-line']; ctx.globalAlpha = .35; ctx.lineWidth = .5;
+  for(let lat = -60; lat <= 60; lat += 30) graticule(lat, true);
+  for(let lon = -180; lon < 180; lon += 30) graticule(lon, false);
+  ctx.globalAlpha = 1;
+  if(LAND){
+    ctx.fillStyle = T['--land']; ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .7; ctx.beginPath();
+    for(const ring of LAND){ const p = ringPath(ring); if(p) trace(p); }
+    ctx.fill(); ctx.stroke();
+    ctx.strokeStyle = T['--land-line']; ctx.lineWidth = .8; ctx.globalAlpha = .75; ctx.beginPath();
+    for(const line of BORD){ let open = false; for(let i = 0; i < line.length; i++){ const u = ringVek(line, i); if(u.z > 0){ const s = scr(u); open ? ctx.lineTo(s[0], s[1]) : (ctx.moveTo(s[0], s[1]), open = true); } else open = false; } }
+    ctx.stroke(); ctx.globalAlpha = 1;
+  }
+  ctx.restore();
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2*Math.PI); ctx.strokeStyle = T['--land-line']; ctx.globalAlpha = .5; ctx.lineWidth = 1; ctx.stroke(); ctx.globalAlpha = 1;
+
+  // Punkter på samme sted samles i én prik med antallet. Zoom ind eller tryk på prikken for at se dem.
+  const vis = synlige(); KLYNGER = [];
+  for(const p of vis){
+    const u = unit(p.lon, p.lat); if(u.z <= 0.03) continue;
+    const [x, y] = scr(u);
+    let k = KLYNGER.find(c => Math.hypot(c.x - x, c.y - y) < 13);
+    if(k) k.p.push(p); else KLYNGER.push({x, y, p:[p], a:.45 + .55*u.z});
+  }
+  ctx.font = '600 10.5px ' + "'IBM Plex Mono', ui-monospace, monospace"; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+  for(const k of KLYNGER){
+    const valgt = k.p.some(p => VALGT.includes(p.id));
+    ctx.globalAlpha = k.a;
+    if(k.p.length === 1){ const p = k.p[0]; markør(k.x, k.y, 6, p.lvl, T['--r' + (RELM[p.rel]?.farve || 3)], valgt); }
+    else {
+      // Kanten deles mellem punkternes farver, så man kan se, hvad der står der.
+      const n = k.p.length, r = 11;
+      ctx.beginPath(); ctx.arc(k.x, k.y, r, 0, 2*Math.PI); ctx.fillStyle = T['--panel']; ctx.fill();
+      k.p.forEach((p, i) => { ctx.beginPath(); ctx.arc(k.x, k.y, r, -Math.PI/2 + i/n*2*Math.PI, -Math.PI/2 + (i + 1)/n*2*Math.PI); ctx.strokeStyle = T['--r' + (RELM[p.rel]?.farve || 3)]; ctx.lineWidth = 3; ctx.stroke(); });
+      if(valgt){ ctx.beginPath(); ctx.arc(k.x, k.y, r + 5, 0, 2*Math.PI); ctx.strokeStyle = T['--fg']; ctx.lineWidth = 2; ctx.stroke(); }
+      ctx.fillStyle = T['--fg']; ctx.fillText(String(n), k.x, k.y + .5);
+    }
+    ctx.globalAlpha = 1;
+  }
+  // Stednavnet ved det valgte.
+  const kv = KLYNGER.find(k => k.p.some(p => VALGT.includes(p.id)));
+  if(kv){ const navn = kv.p[0].place || ''; ctx.textAlign = 'left'; ctx.font = '500 11px ' + "'IBM Plex Mono', ui-monospace, monospace";
+    const w = ctx.measureText(navn).width; ctx.fillStyle = T['--bg']; ctx.globalAlpha = .75; ctx.fillRect(kv.x + 14, kv.y - 9, w + 8, 18); ctx.globalAlpha = 1; ctx.fillStyle = T['--fg']; ctx.fillText(navn, kv.x + 18, kv.y); }
+  const la = Math.round(rot.phi), lo = Math.round(((-rot.lam + 540) % 360) - 180);
+  $('#hud').innerHTML = `Træk for at dreje · tryk på en prik<br>${Math.abs(la)}° ${la >= 0 ? 'N' : 'S'} · ${Math.abs(lo)}° ${lo >= 0 ? 'Ø' : 'V'} · zoom ${zoom.toFixed(1).replace('.', ',')}×`;
+}
+let anim = null;
+function loop(){
+  anim = null; let mere = false;
+  if(target){
+    let d = target.lam - rot.lam; while(d > 180) d -= 360; while(d < -180) d += 360;
+    rot.lam += d*0.14; rot.phi += (target.phi - rot.phi)*0.14;
+    if(target.zoom){ zoom *= Math.pow(target.zoom/zoom, .14); view.R = Math.min(W, H)/2*0.9*zoom; }
+    if(Math.abs(d) < 0.2 && Math.abs(target.phi - rot.phi) < 0.2 && (!target.zoom || Math.abs(Math.log(target.zoom/zoom)) < .01)){ rot.lam = target.lam; rot.phi = target.phi; if(target.zoom) zoom = target.zoom; view.R = Math.min(W, H)/2*0.9*zoom; target = null; }
+    else mere = true;
+  }
+  tegn();
+  if(mere) anim = requestAnimationFrame(loop);
+}
+const kør = () => { if(!anim) anim = requestAnimationFrame(loop); };
+function flyv(lon, lat, z){ target = {lam:-lon, phi:Math.max(-70, Math.min(70, lat)), zoom:z || null}; if(matchMedia('(prefers-reduced-motion: reduce)').matches){ rot.lam = -lon; rot.phi = target.phi; if(z){ zoom = z; view.R = Math.min(W, H)/2*0.9*zoom; } target = null; } kør(); }
+function setZoom(z){ zoom = Math.max(.8, Math.min(14, z)); view.R = Math.min(W, H)/2*0.9*zoom; kør(); }
+$('#zin').addEventListener('click', () => setZoom(zoom*1.5));
+$('#zout').addEventListener('click', () => setZoom(zoom/1.5));
+$('#zreset').addEventListener('click', () => flyv(-HJEM.lam, HJEM.phi, HJEM.zoom));
+// Træk, rul og knib. Et tryk uden træk vælger det, der står under fingeren.
+const ptr = new Map(); let træk = null;
+cv.addEventListener('pointerdown', ev => { cv.setPointerCapture(ev.pointerId); ptr.set(ev.pointerId, {x:ev.clientX, y:ev.clientY}); target = null;
+  if(ptr.size === 1) træk = {x:ev.clientX, y:ev.clientY, lam:rot.lam, phi:rot.phi, flyttet:0};
+  else if(ptr.size === 2){ const [a, b] = [...ptr.values()]; træk = {knib:Math.hypot(a.x - b.x, a.y - b.y), zoom, flyttet:99}; } });
+cv.addEventListener('pointermove', ev => { if(!ptr.has(ev.pointerId) || !træk) return; ptr.set(ev.pointerId, {x:ev.clientX, y:ev.clientY});
+  if(træk.knib && ptr.size === 2){ const [a, b] = [...ptr.values()]; setZoom(træk.zoom*Math.hypot(a.x - b.x, a.y - b.y)/træk.knib); return; }
+  const dx = ev.clientX - træk.x, dy = ev.clientY - træk.y; træk.flyttet = Math.max(træk.flyttet, Math.hypot(dx, dy));
+  if(træk.flyttet > 3){ cv.classList.add('drag'); const k = 57.3/view.R; rot.lam = træk.lam + dx*k; rot.phi = Math.max(-85, Math.min(85, træk.phi + dy*k)); kør(); } });
+function slip(ev){
+  if(!ptr.has(ev.pointerId)) return; ptr.delete(ev.pointerId); cv.classList.remove('drag');
+  if(træk && !træk.knib && træk.flyttet <= 3 && ev.type === 'pointerup'){
+    const r = cv.getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top;
+    let bedst = null, bd = 18; for(const k of KLYNGER){ const d = Math.hypot(k.x - x, k.y - y); if(d < bd){ bd = d; bedst = k; } }
+    if(bedst) vaelg(bedst.p.map(p => p.id), false); else if(VALGT.length) vaelg([], false);
+  }
+  if(!ptr.size) træk = null;
+}
+cv.addEventListener('pointerup', slip); cv.addEventListener('pointercancel', slip);
+cv.addEventListener('wheel', ev => { ev.preventDefault(); setZoom(zoom*Math.exp(-ev.deltaY*0.0015)); }, {passive:false});
+
+function vaelg(ids, flyvTil){
+  VALGT = ids.filter(id => byId(id));
+  if(VIS === 'kort') saetAdresse('kort', VALGT.length === 1 ? VALGT[0] : null);
+  const p = byId(VALGT[0]);
+  if(p && harSted(p)){
+    // Er punktet skjult af filtrene, vises det alligevel, så et link altid fører frem til punktet.
+    if(!RELON.has(p.rel)){ RELON.add(p.rel); bygRelFilter(); }
+    if(p.old && !VIS_GAMMEL){ VIS_GAMMEL = true; bygRelFilter(); }
+    if(CUT !== null && p.d > CUT){ CUT = null; $('#tid').value = $('#tid').max; tidLbl(); }
+    if(flyvTil) flyv(p.lon, p.lat, Math.max(zoom, 1.8));
+  }
+  bygSide(); kør();
+}
+function bygSide(){
+  const side = $('#side'), vis = synlige();
+  if(VALGT.length === 1){
+    side.innerHTML = `<button class="tilbage" type="button" id="tilbage">‹ Alle punkter på kloden</button><div class="ind">${ptHTML(byId(VALGT[0]))}</div>`;
+  } else if(VALGT.length > 1){
+    const ps = VALGT.map(byId);
+    side.innerHTML = `<button class="tilbage" type="button" id="tilbage">‹ Alle punkter på kloden</button><div class="top"><span class="ovt">${ps.length} punkter samme sted</span></div><div class="ind">${ps.map(p => itemHTML(p)).join('')}</div>`;
+  } else {
+    const sorteret = vis.slice().sort((a, b) => a.d < b.d ? 1 : a.d > b.d ? -1 : 0);
+    side.innerHTML = `<div class="top"><span class="ovt">Punkter på kloden</span><span class="n">${vis.length} vist</span></div><div class="ind">${sorteret.map(p => itemHTML(p)).join('') || '<p class="note">Ingen punkter med de valgte filtre.</p>'}</div>`;
+  }
+  const t = $('#tilbage'); if(t) t.addEventListener('click', () => vaelg([], false));
+}
+$('#side').addEventListener('click', ev => { const b = ev.target.closest('[data-pkt]'); if(b) vaelg([b.dataset.pkt], true); });
+$('#udensted').addEventListener('click', ev => { const b = ev.target.closest('[data-pkt]'); if(b) aabn(b.dataset.pkt); });
+
+function bygRelFilter(){
+  $('#relfilter').innerHTML = D.relationer.map(r => `<button class="chip r" type="button" data-rel="${r.k}" aria-pressed="${RELON.has(r.k)}" style="--c:var(--r${r.farve})">${esc(r.l)}<span class="n">${P.filter(p => p.rel === r.k && harSted(p)).length}</span></button>`).join('')
+    + `<button class="chip" type="button" data-gammel="1" aria-pressed="${VIS_GAMMEL}" style="--c:var(--warn)">Genbrugt materiale<span class="n">${P.filter(p => p.old && harSted(p)).length}</span></button>`;
+}
+$('#relfilter').addEventListener('click', ev => {
+  const b = ev.target.closest('button'); if(!b) return;
+  if(b.dataset.gammel) VIS_GAMMEL = !VIS_GAMMEL;
+  else { const k = b.dataset.rel; RELON.has(k) ? RELON.delete(k) : RELON.add(k); }
+  bygRelFilter(); VALGT = VALGT.filter(id => synlige().some(p => p.id === id)); bygSide(); kør();
+});
+const PRESETS = [['Mellemøsten', 52, 26, 2.4], ['Europa', 15, 48, 2.2], ['USA', -88, 36, 2], ['Asien og Stillehavet', 118, 18, 1.7], ['Hele kloden', 45, 24, 1.05]];
+$('#presets').innerHTML = PRESETS.map((p, i) => `<button type="button" data-pre="${i}">${p[0]}</button>`).join('');
+$('#presets').addEventListener('click', ev => { const b = ev.target.closest('[data-pre]'); if(!b) return; const p = PRESETS[+b.dataset.pre]; flyv(p[1], p[2], p[3]); });
+
+// Tidsskyderen: fra første til sidste punkt. Står den helt til højre, vises alle, også de kommende.
+const tid = $('#tid');
+function tidLbl(){
+  const v = +tid.value, max = +tid.max;
+  if(v >= max){ CUT = null; $('#nowlbl').textContent = 'Alle punkter, også kommende'; return; }
+  const d = new Date(dms(MIN_D) + v*DAG).toISOString().slice(0, 10); CUT = d;
+  $('#nowlbl').textContent = fmtL(d) + (d === D.status ? ' · seneste gennemgang' : '');
+}
+tid.addEventListener('input', () => { stopAfspil(); tidLbl(); bygSide(); kør(); });
+let afspiller = null;
+function stopAfspil(){ if(afspiller){ clearInterval(afspiller); afspiller = null; $('#afspil').textContent = 'Afspil forløb'; } }
+$('#afspil').addEventListener('click', () => {
+  if(afspiller){ stopAfspil(); return; }
+  // Afspilningen starter en uge før den dato, hvor fire femtedele af punkterne ligger efter, så det lange stykke
+  // med få gamle punkter springes over. De gamle står der allerede, når afspilningen starter.
+  if(+tid.value >= +tid.max){ const ds = P.map(p => p.d).sort(), s = ds[Math.floor(ds.length*.2)]; tid.value = String(Math.max(0, Math.round((dms(s) - dms(MIN_D))/DAG) - 7)); }
+  $('#afspil').textContent = 'Stop';
+  afspiller = setInterval(() => { let v = +tid.value + 2; if(v >= +tid.max){ v = +tid.max; stopAfspil(); } tid.value = String(v); tidLbl(); bygSide(); kør(); }, 60);
+});
+$('#idag').addEventListener('click', () => { stopAfspil(); tid.value = String(Math.round((dms(D.status) - dms(MIN_D))/DAG)); tidLbl(); bygSide(); kør(); });
+$('#alle').addEventListener('click', () => { stopAfspil(); tid.value = tid.max; tidLbl(); bygSide(); kør(); });
+
+function bygKortLegend(){
+  $('#kortlegend').innerHTML = '<span class="mlbl">Prikkens form</span>' + LVLS.map(l => `<span>${evHTML(l)}</span>`).join('')
+    + '<span class="mlbl" style="margin-left:6px">Farve</span><span>hvad punktet peger på, se knapperne over kloden</span><span>Tal: flere punkter samme sted</span>';
+}
+let kortKlar = false;
+function kortVist(){
+  if(!kortKlar){ kortKlar = true; tokens(); hentKort(); }
+  requestAnimationFrame(resize);
+}
+new ResizeObserver(() => { if(VIS === 'kort') resize(); }).observe(cv.parentElement);
+
+/* ---------- Teorien ---------- */
+function hentTeori(id, v, pkt){
+  const t = TEORIER.find(x => x.id === id) || TEORIER[0];
+  return fetch('/konspirationer/' + t.fil, {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(d => {
+    D = d; P = d.punkter; AKTIV = d.id; RELM = Object.fromEntries(d.relationer.map(r => [r.k, r]));
+    RELON.clear(); d.relationer.forEach(r => RELON.add(r.k)); TLREL.clear(); VALGT = [];
+    $('#ttabs').innerHTML = TEORIER.map(x => `<button class="ttab" role="tab" type="button" data-teori="${esc(x.id)}" aria-selected="${x.id === AKTIV}">${esc(x.fane)}</button>`).join('');
+    $('#paastand').textContent = d.paastand;
+    $('#intro').textContent = d.intro;
+    $('#vurdlbl').textContent = `Arkivets vurdering pr. ${fmtL(d.status)}`;
+    $('#vurd').textContent = d.vurdering;
+    $('#meta').textContent = `${P.length} punkter · ${Object.keys(d.kilder).length} kilder · næste gennemgang ${fmtL(d.naeste_gennemgang)}`;
+    $('#fodbygget').innerHTML = d.bygget ? `<b>Bygget</b> ${esc(fmtTid(d.bygget))}.` : '';
+    document.title = `Konspirationer · ${d.fane} · globus.nicco.dk`;
+    const ds = P.map(p => p.d).sort(); MIN_D = ds[0]; MAX_D = ds[ds.length - 1];
+    tid.max = String(Math.round((dms(MAX_D) - dms(MIN_D))/DAG) + 1); tid.value = tid.max; tidLbl();
+    bygOverblik(); bygTidslinje(); bygMatrix(); bygKilder(); bygRelFilter(); bygKortLegend();
+    $('#udensted').innerHTML = P.filter(p => !harSted(p)).sort((a, b) => a.d < b.d ? -1 : 1).map(p => itemHTML(p)).join('');
+    bygSide();
+    visView(v);
+    if(pkt && byId(pkt)){ if(VIS === 'kort') vaelg([pkt], true); else aabn(pkt); }
+    saetAdresse(VIS, VIS === 'kort' && VALGT.length === 1 ? VALGT[0] : null);
+  }).catch(() => { $('#paastand').textContent = 'Teorien kunne ikke hentes. Prøv at genindlæse siden.'; });
+}
+$('#ttabs').addEventListener('click', ev => { const b = ev.target.closest('[data-teori]'); if(b && b.dataset.teori !== AKTIV) hentTeori(b.dataset.teori, VIS); });
+
+fetch('/konspirationer/teorier.json', {cache:'no-cache'}).then(r => r.ok ? r.json() : Promise.reject(r.status)).then(j => {
+  TEORIER = j.teorier || [];
+  const a = adresse();
+  return hentTeori(TEORIER.some(t => t.id === a.t) ? a.t : TEORIER[0].id, a.v, a.p);
+}).catch(() => { $('#paastand').textContent = 'Arkivet kunne ikke hentes. Prøv at genindlæse siden.'; });
+
+/* ---------- Lys og mørk tilstand, som på kloden ---------- */
+const temabtn = $('#temabtn');
+function visTema(){ const lys = document.documentElement.dataset.theme === 'light'; temabtn.setAttribute('aria-label', lys ? 'Skift til mørk tilstand' : 'Skift til lys tilstand'); temabtn.title = lys ? 'Mørk tilstand' : 'Lys tilstand'; }
+temabtn.addEventListener('click', () => {
+  const ny = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = ny; try{ sessionStorage.setItem('globus-tema', ny); }catch(err){}
+  tokens(); tegn(); visTema();
+});
+visTema();
+matchMedia('(prefers-color-scheme: light)').addEventListener('change', ev => {
+  let valgt = null; try{ valgt = sessionStorage.getItem('globus-tema'); }catch(err){}
+  if(valgt) return; document.documentElement.dataset.theme = ev.matches ? 'light' : 'dark'; tokens(); tegn(); visTema();
+});
+</script>
