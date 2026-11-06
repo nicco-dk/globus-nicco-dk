@@ -29,6 +29,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 623 2. november er fortsat den nyeste), DGHS' mæslinger (meddelelsen 5. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22, WHO WPRO nummer 1068, ECDC uge 42 (ophørt), UKHSA, NaTHNaC, CIDRAP og Hongkongs pressemeddelelser. Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 5. november kl. 16.00, ingen poster ud over dem, kørslen kl. 00.20 brugte), GOV.UK's søgning efter ebola https://www.gov.uk/api/search.json?q=ebola&order=-public_timestamp (se Nye), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat tal pr. 29. oktober, læst med hentningsværktøjet, direkte opslag gav 403), Pennsylvanias og Wisconsins sundhedsmyndigheder (se Ændret), Floridas ugerapport uge 43 (se Ændret), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste) og mæslingedokumenter (situationsrapport 14 22. oktober er fortsat den nyeste), WHO's nyhed om ebolavacciner 4. november, GPEI's Polio this week, søgninger efter WHO AFRO's ugebulletin, Africa CDC's ugentlige rapport og WHO's mpox-situationsrapporter, og https://globus.nicco.dk/konflikter.json (genereret 6. november kl. 03.23 UTC).
+
+**Ændret**
+- `maesling-us`: Pennsylvanias sundhedsmyndighed 4. november: sjette bekræftede mæslingeassocierede dødsfald i delstaten, en uvaccineret beboer i Jefferson County, 1.467 tilfælde i 45 counties og 283 indlagte. Kilde: https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-confirms-sixth-measles-associated-death Wisconsins sundhedsministerium 5. november: et spædbarn er død af mæslinger, det første dødsfald af sin art i delstaten siden 1990, og 431 tilfælde i 13 counties og 9 indlagte pr. 3. november. Kilde: https://www.dhs.wisconsin.gov/news/releases/110526.htm To nye punkter, `extra` og `src` opdateret. I `extra` er US CDC's dødstal for 2026 rettet fra 3 til 4 efter US CDC's tabel (læst to gange), og sætningen om dødsfaldet i Franklin County følger nu delstatens udmelding 4. november om, at det endnu ikke er bekræftet. `cases` urørt, fordi US CDC fortsat har 4.852 pr. 29. oktober.
+- `dengue-fl`: Floridas ugerapport uge 43 (25. til 31. oktober): 524 lokalt erhvervede tilfælde i 12 counties efter 39 nye på en uge, Hillsborough 407 og Pinellas 80, 21 positive myggepuljer. Kilde: https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w43-2026.pdf Nyt punkt 31. oktober, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `ebola-drc`: WHO 4. november: to vaccinekandidater mod Bundibugyo-virus, ChAdOx1 og mRNA-1469, anbefales taget med i Tumaini-forsøget. Kilde: https://www.who.int/news/item/04-11-2026-two-new-candidate-vaccines-to-join-ebola-trial-as-treatment-research-advances Den britiske regering 5. november: en britisk læge er evakueret til London med ebola. Kilde: https://www.gov.uk/government/news/uk-citizen-returned-from-drc-for-specialist-ebola-care To nye punkter, nyt sted London med forbindelse fra DR Congo, Storbritannien tilføjet i `note`, `rel` og `src` opdateret. Tallene urørt.
+
+**Nye**
+- `ebola-gb`: en britisk læge, der arbejdede med ebolaepidemien i DR Congo, har testet positiv og behandles i højisolationsenheden på Royal Free Hospital i London, den britiske regering 5. november: https://www.gov.uk/government/news/uk-citizen-returned-from-drc-for-specialist-ebola-care Trinnet `udbrud`, `gap` om, at smittetidspunkt, smittested og patientens tilstand ikke er oplyst.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (21) og `maesling-am` (15) uden nyt hos PAHO, `mpox` (24) uden ny situationsrapport fra WHO fundet, `difteri-afro` (21), `gul-feber-gh` (23) og `gul-feber-ci` (23) uden nyere ugebulletin fra WHO AFRO fundet, `pest-irkutsk` (25) uden ny DON, `h5n1-kh` (28) uden nye tilfælde i WHO WPRO nummer 1068 (nummer 1069 var ikke udkommet), `ebola-nl` (27) uden nyt hos RIVM ved kørslen kl. 00.20, `kolera-ye` (15), `cyclospora-us` (14) og `salmonella-eu` (28) uden nyt i de samlede kilder. `ebola-ke` og `ebola-ng` har allerede de seneste tal.
+
+**Usikkert**
+- `ebola-drc`: CIDRAP gengiver 5. november US CDC med 10.699 tilfælde og 5.202 dødsfald i hele udbruddet. Det er ikke klart, om tallet omfatter Kenya og Uganda, og US CDC's egen side er ikke læst. `cases` står med ECDC's tal for DR Congo pr. 4. november.
+- Gul feber i Burkina Faso: NaTHNaC skriver 2. november 15 tilfælde og 3 dødsfald i 2026 pr. 27. oktober. Ingen myndighedskilde er fundet, så hændelsen er ikke oprettet.
+- `polio`: GPEI's side Polio this week viste ved maskinel hentning en landeopdatering pr. 4. oktober, ældre end de tal, der står på siden. Ingen ændring.
+- Delen `ont` (Outbreak News Today) i kildescriptet fejlede fortsat med "JSON.parse(...).map is not a function", og delene `dengue` (HTTP 502) og `lk` fejlede. Kilderne er ikke gennemgået i denne kørsel.
+- `difteri-ng` (43 dage), `cre-eu` (35 dage) og `h5n1-dk` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5543fb4.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (6 bekræftede, 76 mistanker). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 5. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
