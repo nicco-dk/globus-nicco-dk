@@ -59,6 +59,31 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (ny DON 624 om gul feber i WHO's afrikanske region, se Usikkert), DGHS' mæslinger (meddelelsen 5. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22 (allerede brugt), WHO WPRO nummer 1068 (ingen nye tilfælde af H5N1 eller H5N6 23. til 29. oktober; nummer 1069 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261106.pdf gav 404 kl. 11.25), ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten siden CCHF i Afghanistan 22. oktober, som er almindelig sæson), CIDRAP (intet om Asien og Mellemøsten) og Hongkongs pressemeddelelser (intet om smitte i dag og i går). Desuden søgninger efter DGHS' denguetal 5. og 6. november og WHO EMRO's nyheder.
+
+**Ændret**
+- `dengue-bd`: DGHS gengivet af The Daily Star og The Business Standard 5. november: 7 nye dødsfald, tre i Dhaka-divisionen, tre i Chattogram-divisionen og ét i Khulna-divisionen, og 1.596 nye indlagte på et døgn til kl. 8 5. november, i alt 144.371 tilfælde og 452 dødsfald i 2026, 5.839 fortsat indlagt. Kilder: https://www.thedailystar.net/news/healthcare/disease/news/7-die-dengue-1596-hospitalised-24-hours-4316416 og https://www.tbsnews.net/bangladesh/health/dengue-death-toll-rises-452-7-more-die-1593766 (de to medier har de samme tal). Nyt punkt 5. november, nyt punkt i talserien, `cases` og `src` opdateret. Kilden er mærket `, medie`, fordi denguedashboardet ikke kunne hentes.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 48 hændelser uden nyt i kilderne. `maesling-bd`, `dengue-asien`, `h5n1-kh`, `h9n2-cn`, `mers-sa`, `kolera-ye`, `pest-irkutsk`, `polio` og `mpox-hk` uden nyt i dagens kilder. `gul-feber-gh` og `gul-feber-ci` urørt, se Usikkert.
+
+**Usikkert**
+- WHO DON 624 (gul feber i WHO's afrikanske region) står i WHO's dataudtræk med `PublicationDate` 6. november kl. 09.01 UTC, men `PublicationDateAndTime` 6. november kl. 19.00 UTC, og læserens side https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624 gav 404 ved direkte opslag. Hentningsværktøjet kunne ikke prøves (adgangen blev ikke givet). Meldingen ser derfor ikke ud til at være offentliggjort endnu, og intet er skrevet. Indholdet: 67 bekræftede tilfælde og 18 dødsfald i ni lande fra 1. januar til 12. oktober, heraf Elfenbenskysten 30 bekræftede og 10 døde pr. 23. september, Burkina Faso 15 bekræftede og 3 døde pr. 23. august og Ghana 4 bekræftede og 3 døde pr. 2. september, og WHO vurderede 27. oktober risikoen for regionen som moderat. Kørslen efter kl. 19.00 UTC (kl. 00.20) bør tjekke siden igen og opdatere `gul-feber-ci` og `gul-feber-gh`. Burkina Faso har ingen hændelse, og DON 624 oplyser ikke, hvor i landet tilfældene er.
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502, og tallene 6. november var ikke ude ved kørslen.
+- `dengue-asien`: Sri Lankas National Dengue Control Unit kunne fortsat ikke hentes direkte (forbindelsen blev afbrudt). Tallet står urørt.
+- WHO EMRO's nyhedsside gav HTTP 502 ved direkte opslag, og søgningen gav ingen nye nyheder. Ikke gennemgået.
+- Delene `ont`, `dengue` og `lk` i kildescriptet fejlede fortsat.
+- `difteri-ng` (43 dage), `cre-eu` (35 dage) og `h5n1-dk` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 54e57df.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: WHO's dataudtræk for DON viser meldinger, før læserens side er offentliggjort.
+
 ## 5. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
