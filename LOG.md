@@ -84,6 +84,38 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: WHO's dataudtræk for DON viser meldinger, før læserens side er offentliggjort.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 624 om gul feber i WHO's afrikanske region er nu offentliggjort, se Ændret), DGHS' mæslinger (ny meddelelse 6. november, se Ændret), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt siden 5. november), CIDRAP (se Ændret) og Hongkongs pressemeddelelser (intet om smitte). Desuden ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (opdateret 6. november kl. 16.10) og posten https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-06 insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (siden opdateret 4. november, fortsat 4.852 tilfælde pr. 29. oktober og 4 dødsfald, læst med hentningsværktøjet), New Yorks sundhedsministeriums mæslingeside (henviser kun til dashboardet), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste), WHO AFRO's oversigt over ugebulletiner (intet nyere fundet end det, der står på siden) og en søgning efter Africa CDC's ugentlige rapport (ikke fundet), og https://globus.nicco.dk/konflikter.json (genereret 6. november kl. 15.23 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS 6. november: 236.714 mistænkte og 24.294 bekræftede tilfælde siden 15. marts, 1.171 dødsfald blandt mistænkte og 105 blandt bekræftede. Det seneste døgn 1.239 nye mistænkte, 75 nye bekræftede og 4 dødsfald blandt mistænkte, alle i Dhaka-divisionen og Dhaka-distriktet. 210.982 indlagte og 202.394 udskrevne. Kilde: https://dghs.gov.bd/pages/press-releases/6aedeab25d06f0834d93f76e (PDF'en læst som tekst og som billede). Nyt punkt, nyt punkt i talserien (1.276 i grafen er de to dødsrækker lagt sammen), `cases`, `extra` og `src` opdateret.
+- `ebola-drc`: ECDC 6. november: 10.741 bekræftede tilfælde og 5.230 dødsfald pr. 5. november med data til og med 4. november, efter 73 nye tilfælde og 32 nye dødsfald, og tal pr. provins. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-06 Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `gul-feber-ci`: WHO DON 624 6. november: 30 bekræftede tilfælde og 10 dødsfald pr. 23. september i ni distrikter i syv regioner, heraf 18 i Bounkani. WHO vurderede 27. oktober risikoen for regionen som moderat og den globale risiko som lav. Kilde: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624 Nyt punkt, `cases` (WHO AFRO's ældre tal pr. 6. september erstattet), `extra` og `src` opdateret. Regeringens 23 tilfælde og 11 dødsfald pr. 14. oktober står fortsat først i `cases`, fordi det er den nyeste opgørelse.
+- `gul-feber-gh`: WHO DON 624: 4 PCR-bekræftede tilfælde, heraf 3 dødsfald, pr. 2. september. Samme kilde. Nyt punkt, `extra` og `src` opdateret. `cases` urørt, fordi UNICEF's opgørelse pr. 12. oktober er nyere.
+- `maesling-us`: New Yorks sundhedsministerium har 210 tilfælde i delstaten pr. 31. oktober efter 32 nye, gengivet af CIDRAP 3. november: https://www.cidrap.umn.edu/measles/child-dies-measles-new-york-state-first-time-30-years Nyt punkt mærket `, sekundær`, `extra` og `src` opdateret. `cases` urørt.
+
+**Nye**
+- Ingen. Gul feber i Burkina Faso og Liberia efter DON 624 er ikke oprettet, se Til gennemgang.
+
+**Urørt**
+- 44 hændelser uden nyt i kilderne. `ebola-ke` og `ebola-ng` har allerede de tal, ECDC skriver 6. november. `chik-am`, `maesling-am` og `myiasis-am` uden nyt hos PAHO. `mpox-mo`, `h5n1-wa`, `dengue-fl` og `cyclospora-us` uden nyt i dagens kilder. `kolera`, `difteri-afro` og `mpox` uden nyt fra WHO AFRO eller Africa CDC fundet.
+
+**Usikkert**
+- WHO DON 624, som kørslen kl. 11.20 ikke brugte, fordi læserens side gav 404, svarede nu ved direkte opslag kl. 17.23 med datoen 6. november og den fulde tekst. Tallene er læst i sidens rå tekst.
+- `gul-feber-ci`: DON 624 har tilfælde i ni distrikter i syv regioner, mens regeringen 14. oktober sagde, at sygdommen holdt sig til Bounkani. Trinnet er ikke flyttet, fordi gul feber ikke smitter mellem mennesker, og trinnet `spredning` kræver smitte i flere led.
+- `maesling-us`: New Yorks dashboard kunne ikke læses (direkte opslag gav 403, og hentningsværktøjet fik kun oversigtssiden), så tallet 210 er CIDRAP's gengivelse. CIDRAP skriver, at mindst 8 er døde af mæslinger i USA i år ifølge delstaterne, mens US CDC har 4. Tallet 8 er ikke skrevet, fordi det er CIDRAP's egen optælling.
+- WHO AFRO's ugebulletin og Africa CDC's ugentlige rapport: intet nyere end det, der står på siden, blev fundet.
+- Delene `ont`, `dengue` (HTTP 502) og `lk` i kildescriptet fejlede fortsat.
+- `difteri-ng` (43 dage), `cre-eu` (35 dage) og `h5n1-dk` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit beb35cf.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (6 bekræftede, 83 mistanker). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: gul feber i Burkina Faso efter WHO DON 624, egen hændelse eller ej.
+
 ## 5. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
