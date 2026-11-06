@@ -2,6 +2,35 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 7. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (ny DON 625 om ebola 6. november, se Ændret), DGHS' mæslinger (meddelelsen 6. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22, WHO WPRO nummer 1068, ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Europa siden 5. november), CIDRAP og Hongkongs pressemeddelelser (intet om smitte). Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (senest opdateret 6. november kl. 16.00) med de nye poster 6. november om mæslinger i Europa, chikungunya, dengue og West Nile-virus i EU og EØS og lufthavnsmalaria i Frankfurt, BAG's side om chikungunya https://www.bag.admin.ch/en/chikungunya UKHSA's ugeoversigt (fortsat uge 44) og GOV.UK's søgning efter ebola (intet nyt siden 5. november), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (kunne nu hentes direkte, se Ændret), RIVM's ebolaside (opdatering 4. november, intet nyt om Nederlandene) og Robert Koch Instituts Epidemiologisches Bulletin 46/2026 (ikke udkommet, adressen gav 404). Kontrollen giver ingen advarsler om tal i `cases` uden opgørelsesdato, så der var ingen at rette.
+
+**Ændret**
+- `ebola-drc`: WHO DON 625 6. november: 10.668 bekræftede tilfælde og 5.198 dødsfald pr. 3. november i 67 sundhedszoner i otte provinser, heraf 51 med nye tilfælde de seneste 21 dage, 335 af 512 dødsfald siden 21. oktober i lokalsamfundet, Yakoma i Nord-Ubangi senest ramt med tre bekræftede tilfælde, ingen nye tilfælde i Kenya og Nigeria. Kilde: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON625 (læst i WHO's dataudtræk, læserens side svarede med 200). Nyt punkt og `src` opdateret. `cases` urørt, fordi ECDC's tal pr. 5. november er nyere.
+- `chik-fr`: ECDC 6. november: 207 lokalt erhvervede tilfælde i Frankrig efter tre nye, 30 klynger, heraf 16 aktive, ny klynge i Drôme, fire lukket. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00016/2026-11-06 Nyt punkt, `rel` og `src` opdateret. `cases` urørt, se Usikkert.
+- `malaria-de`: ECDC 6. november: genetiske undersøgelser peger på tre separate introduktioner til Frankfurt Lufthavn, sandsynligvis fra Vestafrika, og at lokale Anopheles-myg har været involveret, kan ikke udelukkes. Fortsat 8 tilfælde og 3 dødsfald. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00026/2026-11-06 Nyt punkt og `src` opdateret.
+- `h5n1-dk`: DK-VET's nyheder kunne for første gang i flere kørsler hentes. Der er intet nyt om fugleinfluenza i sæler siden 1. oktober, og Statens Serum Institut har heller intet nyt. `live` er sat til `false` efter reglen om en måned uden nyt, med et punkt i forløbet. Kilde: https://dkvet.dk/nyheder/
+
+**Nye**
+- `chik-ch`: fire lokalt erhvervede tilfælde af chikungunya i området Piano di Magadino i Ticino, de første nogensinde i Schweiz, bekræftet af de schweiziske myndigheder 4. november og gengivet af ECDC 6. november: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00016/2026-11-06 BAG bekræfter, at lokale tilfælde for første gang er meldt i Ticino: https://www.bag.admin.ch/en/chikungunya Trinnet `udbrud`, `gap` om, at sygdomsdato og smittekilde ikke er oplyst.
+- Ikke taget med: mæslinger i Portugal, hvor ECDC 6. november nævner et igangværende udbrud med 9 nye tilfælde i Lissabon og Vale do Tejo siden 6. oktober, heraf 6 sekundære, og Bulgarien med 592 bekræftede tilfælde i 2026 (aftagende). Se Til gennemgang.
+
+**Urørt**
+- 45 hændelser uden nyt i kilderne. `dengue-eu` (fortsat Italien 76 og Frankrig 8, ECDC pr. 4. november) og `wnv-eu` (ECDC's ugeside har fortsat tallene pr. 28. oktober) står allerede med de tal, ECDC skriver. `ebola-nl` uden nyt hos RIVM, lukkes efter planen 21. november. `ebola-gb` uden nyt fra den britiske regering. `salmonella-dk`, `botulisme-dk`, `cchf-es`, `sindbis-de`, `shamonda-fr`, `salmonella-eu`, `cre-eu` og `maesling-il` uden nyt i dagens kilder.
+
+**Usikkert**
+- `chik-fr`: ECDC har 207 tilfælde 6. november uden at angive opgørelsesdatoen, mens Santé publique France har 208 pr. 2. november. `cases` står med Santé publique France's tal.
+- `chik-ch`: Ticinos egen meddelelse er ikke fundet. SRF og RSI gengiver den 4. november (patienterne har ikke rejst for nylig og har det godt), men det er ikke skrevet på siden, fordi myndighedskilderne ikke siger det.
+- `difteri-ng` (44 dage) og `cre-eu` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Delene `ont`, `dengue` (HTTP 502) og `lk` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 719ef53.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `h5n1-dk` er sat til `live:false`, nu hvor DK-VET er læst, så punktet 1. november kan lukkes. Mæslinger i Europa (Portugal og Bulgarien), egen hændelse eller ej.
+
 ## 6. november 2026
 
 ### Kl. 00.20, Europa og Danmark
