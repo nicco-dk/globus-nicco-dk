@@ -62,6 +62,29 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november er fortsat den nyeste og er brugt kl. 00.20), DGHS' mæslinger (meddelelsen 6. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22 (allerede brugt), WHO WPRO nummer 1068 (ingen nye tilfælde af H5N1 eller H5N6 23. til 29. oktober; nummer 1069 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261106.pdf gav fortsat 404), ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten), CIDRAP (intet om Asien og Mellemøsten) og Hongkongs pressemeddelelser (intet om smitte i dag og i går). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (ingen nyheder efter den om Yemen 4. november, som kørslen kl. 05.20 brugte) og søgninger efter DGHS' denguetal og Sri Lankas denguetal.
+
+**Ændret**
+- `dengue-bd`: DGHS gengivet af The Daily Star og The Business Standard 6. november: 3 nye dødsfald, to i Dhaka-divisionen og ét i Khulna-divisionen, og 1.535 nye indlagte på et døgn til kl. 8 6. november, i alt 145.906 tilfælde og 455 dødsfald i 2026, 5.773 fortsat indlagt. Kilder: https://www.thedailystar.net/news/healthcare/disease/news/3-die-1535-hospitalised-dengue-24-hours-4317161 og https://www.tbsnews.net/bangladesh/health/dengue-claims-3-more-lives-24hrs-toll-hits-455-1595006 (de to medier har de samme tal, og bdnews24 har også 455 dødsfald og 145.906 indlagte: https://bdnews24.com/health/5zvdqu2hmp). Nyt punkt 6. november, nyt punkt i talserien, `cases` og `src` opdateret. Kilden er mærket `, medie`, fordi denguedashboardet ikke kunne hentes.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne. `maesling-bd`, `dengue-asien`, `h5n1-kh`, `h5n1-bd`, `h9n2-cn`, `mers-sa`, `kolera-ye`, `pest-irkutsk`, `polio`, `sfts-th` og `mpox-hk` uden nyt i dagens kilder.
+
+**Usikkert**
+- `dengue-bd`: DGHS' denguedashboard gav fortsat HTTP 502. Tallene 7. november var ikke ude ved kørslen. Dhaka Tribune og Bangladesh Pratidin kunne ikke hentes.
+- `dengue-asien`: Sri Lankas National Dengue Control Unit kunne hverken hentes direkte (forbindelsen blev afbrudt) eller med hentningsværktøjet (robots). Søgningen gav intet nyere end tallene pr. 30. oktober. Tallet står urørt.
+- Delene `ont`, `dengue` (HTTP 502) og `lk` i kildescriptet fejlede fortsat.
+- `difteri-ng` (44 dage) og `cre-eu` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 29a8792.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 6. november 2026
 
 ### Kl. 00.20, Europa og Danmark
