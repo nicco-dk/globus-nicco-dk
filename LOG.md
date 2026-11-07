@@ -85,6 +85,32 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november er fortsat den nyeste og er brugt kl. 00.20, intet nyt siden forrige kørsel), DGHS' mæslinger (ny meddelelse 7. november, se Ændret), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt siden 6. november), CIDRAP (se Ændret) og Hongkongs pressemeddelelser (intet om smitte). Desuden US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (opdateret 6. november, læst to gange med hentningsværktøjet), PAHO's epidemiologiske alarmer og opdateringer https://www.paho.org/en/epidemiological-alerts-and-updates (20. oktober er fortsat den nyeste), ECDC's ebolaside (fortsat tal pr. 5. november, står allerede på siden), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), søgninger efter WHO AFRO's ugebulletin (uge 41 er fortsat den nyeste fundne), Africa CDC's ugentlige rapport (ikke fundet) og Kenyas sundhedsministerium om ebola (intet nyere end 9 tilfælde), og https://globus.nicco.dk/konflikter.json (genereret 7. november kl. 15.23 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS 7. november, læst i PDF'en som tekst og som billede: 237.702 mistænkte og 24.355 bekræftede tilfælde, 1.175 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 988 nye mistænkte, 61 nye bekræftede og 4 dødsfald blandt mistænkte, 2 hver i Dhaka- og Sylhet-divisionen, heraf 2 i Dhaka-distriktet. 211.865 indlagte og 203.257 udskrevne siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6aef471c1fa7480db94d41dc Nyt punkt, nyt punkt i talserien (dødstallet er de to rækker lagt sammen, 1.280, efter reglen), `cases`, `extra` og `src` opdateret.
+- `maesling-us`: US CDC pr. 5. november (siden opdateret 6. november): 5.182 bekræftede tilfælde i 2026, heraf 5.164 meldt af 47 jurisdiktioner og 18 hos internationale besøgende, 43 udbrud i 2026, 96 procent (4.993 af 5.182) hører til et udbrud, 3.608 fra udbrud startet i 2026 og 1.385 fra udbrud startet i 2025, 4 dødsfald. Kilde: https://www.cdc.gov/measles/data-research/index.html Nyt punkt, nyt punkt i talserien 5. november, `cases` og `extra` opdateret. Tallet, som kørslen kl. 05.20 kun kunne læse i CIDRAP's gengivelse, er nu læst hos US CDC selv.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 48 hændelser uden nyt i kilderne. `ebola-drc`, `ebola-ke`, `ebola-ng`, `myiasis-am`, `maesling-am`, `chik-am`, `kolera`, `difteri-afro`, `mpox`, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-ve` uden nyt i dagens kilder.
+
+**Usikkert**
+- WHO AFRO's ugebulletin nyere end uge 41 og Africa CDC's ugentlige rapport blev ikke fundet ved søgning.
+- Delene `ont`, `dengue` (HTTP 502) og `lk` i kildescriptet fejlede fortsat.
+- `difteri-ng` (44 dage) og `cre-eu` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit b05dc17.
+
+**Mediesporet**
+- Afvist: `IR-MP` (Iran og Nordmarianerne). Artiklerne handler om krigen mellem USA og Iran og de amerikanske midtvejsvalg, og Nordmarianerne er ikke part: Al Jazeera https://www.aljazeera.com/opinions/2026/11/7/how-the-iran-war-helped-democrats-win-the-midterms Le Monde https://www.lemonde.fr/en/international/article/2026/11/01/trump-says-us-still-has-to-take-care-of-one-or-two-targets-in-iran_6768610_4.html The New York Times https://www.nytimes.com/2026/11/04/world/asia/midterms-trump-foreign-policy-world.html (desuden CNN og France 24 efter overskrifterne). Ingen godkendt. Øvrige: 6 bekræftede, 75 mistanker.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 6. november 2026
 
 ### Kl. 00.20, Europa og Danmark
