@@ -31,6 +31,37 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `h5n1-dk` er sat til `live:false`, nu hvor DK-VET er læst, så punktet 1. november kan lukkes. Mæslinger i Europa (Portugal og Bulgarien), egen hændelse eller ej.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november er fortsat den nyeste og er brugt kl. 00.20), DGHS' mæslinger (meddelelsen 6. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt, nummer 1069 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261106.pdf gav fortsat 404), ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt siden 6. november), CIDRAP (se Ændret) og Hongkongs pressemeddelelser (intet om smitte). Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter dem fra 6. november, som kørslen kl. 00.20 brugte), GPEI's Polio this week https://polioeradication.org/about-polio/polio-this-week/ (se Ændret), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (siden opdateret 4. november, fortsat 4.852 tilfælde pr. 29. oktober, læst med hentningsværktøjet, direkte opslag gav 403), Wisconsins sundhedsministeriums udbrudsside https://www.dhs.wisconsin.gov/outbreaks/index.htm (se Ændret), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (se Ændret), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste) og siden om mæslinger i Amerika, GOV.UK's søgning efter ebola (intet nyt siden 5. november), søgninger efter WHO AFRO's ugebulletin og WHO's mpox-situationsrapporter, og https://globus.nicco.dk/konflikter.json (genereret 7. november kl. 03.23 UTC).
+
+**Ændret**
+- `polio`: GPEI's ugeopdatering, gengivet af CIDRAP 6. november https://www.cidrap.umn.edu/cholera/quick-takes-cholera-dr-congo-canada-oks-mrna-flu-flu-covid-vaccines-polio-4-nations: otte nye tilfælde af vild poliovirus type 1 i Afghanistan, i alt 50 i 2026, ét nyt i Khyber Pakhtunkhwa i Pakistan, i alt 8, ni nye af vaccineafledt type 2 i DR Congo, i alt 93, to nye af vaccineafledt type 1 i Oromia i Etiopien, i alt 11, og to miljøprøver med vaccineafledt type 2 i Kampala. Kilde: https://polioeradication.org/about-polio/polio-this-week/ (tallene læst i sidens rå tekst). Nyt punkt 6. november, `cases` og `extra` opdateret.
+- `maesling-us`: Wisconsins sundhedsministerium pr. 6. november: 477 tilfælde, 9 indlagte og 1 dødsfald i 2026. Kilde: https://www.dhs.wisconsin.gov/outbreaks/index.htm CIDRAP 6. november gengiver US CDC med 5.182 bekræftede tilfælde i 2026 efter 330 nye på en uge: https://www.cidrap.umn.edu/measles/us-measles-total-2026-tops-5100-cases To nye punkter, `extra` (Wisconsin) og `src` opdateret. `cases` og talserien urørt, fordi US CDC's egen side fortsat viste 4.852 pr. 29. oktober.
+- `kolera-ye`: WHO EMRO 4. november: over 8.600 mistænkte tilfælde af kolera og 22.800 tilfælde af mæslinger, heraf 128 dødsfald, meldt i Yemen pr. 4. oktober, og færre meldte tilfælde af kolera siden begyndelsen af oktober. Kilde: https://www.emro.who.int/media/news/who-releases-emergency-response-plan-for-yemen-as-escalating-conflict-threatens-health-services.html Nyt punkt og `src` opdateret. `cases` urørt, se Usikkert.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (22) og `maesling-am` (16) uden nyt hos PAHO, `mpox` (25) uden nyere situationsrapport fra WHO end nummer 69, `difteri-afro` (22) og `difteri-ng` (44) uden nyere ugebulletin fra WHO AFRO fundet, `pest-irkutsk` (26) uden ny DON, `h5n1-kh` (29) uden nyt i WHO WPRO, `ebola-nl` (28) uden nyt hos RIVM ved kørslen kl. 00.20, `dengue-eu` (10), `cre-eu` (36) og `salmonella-eu` (29) uden nye poster hos ECDC, `h5n1-us` (10) og `cyclospora-us` (15) uden nyt i dagens kilder.
+
+**Usikkert**
+- `polio`: GPEI's side har overskriften "Country updates as of 04 October 2026", men tallene er nyere end dem fra 28. oktober, og CIDRAP gengiver dem 6. november. Punktet og `cases` er derfor dateret 6. november, den første dag, opdateringen kan ses offentliggjort.
+- `maesling-us`: US CDC's 5.182 er kun læst i CIDRAP's gengivelse. US CDC's side kunne kun læses med hentningsværktøjet, som viste tallet pr. 29. oktober. Et nyt opslag med hentningsværktøjet fik ikke adgang. Tallet er ikke sat i `cases` eller talserien.
+- `kolera-ye`: WHO EMRO skriver over 8.600 mistænkte tilfælde pr. 4. oktober, mens punktet 13. oktober har 8.034 i 2026. WHO forklarer ikke forskellen, og det er uklart, om tallene dækker samme område og periode. `cases` står fortsat med 8.034.
+- insp.cd's medieliste gav et tomt svar, så DR Congos situationsrapport om ebola er ikke tjekket. USDA APHIS' side over fund i fjerkræ gav 403.
+- Delene `ont`, `dengue` (HTTP 502) og `lk` i kildescriptet fejlede fortsat.
+- `difteri-ng` (44 dage) og `cre-eu` (36 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit f9b6732.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (6 bekræftede, 73 mistanker). Intet godkendt eller afvist.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 6. november 2026
 
 ### Kl. 00.20, Europa og Danmark
