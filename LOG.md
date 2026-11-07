@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 8. november 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet (WHO DON 625 6. november fortsat nyeste, DGHS 7. november allerede brugt, WHO SEARO nummer 22, WHO WPRO nummer 1068, ECDC uge 42 ophørt, UKHSA, NaTHNaC, CIDRAP og Hongkong uden nyt for Europa; delene `dengue`, `lk` og `ont` fejlede), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 7. november kl. 16.00, ingen poster efter 6. november), ECDC's ebolaside (fortsat pr. 5. november, står på siden), GOV.UK's søgning efter ebola (intet efter 5. november), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder (intet nyt), RIVM's ebolaside og shamondaside https://www.rivm.nl/shamondavirus/actueel (intet nyt om tilfælde hos mennesker, RIVM undersøger antistoffer hos ca. 400 personer med dyrekontakt, resultater ventes i første kvartal 2027, siden er udateret og er ikke brugt) og Robert Koch Instituts Epidemiologisches Bulletin 46/2026 (ikke udkommet, 404). Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato. `difteri-ng` (45 dage) og `cre-eu` (37 dage) venter fortsat på ejerens afgørelse. Repoet kunne ikke tilføjes som nicco-dk/globus-nicco-dk (add_repo findes ikke i kørslen), så kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 0f19e8a.
+
 ## 7. november 2026
 
 ### Kl. 00.20, Europa og Danmark
