@@ -2,6 +2,32 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 9. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (ny meddelelse 8. november, se Ændret), DGHS' denguedashboard (fortsat pr. 25. oktober), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC uge 42 (ophørt), UKHSA (intet om udbrud efter 5. november), NaTHNaC (intet nyt siden 6. november), CIDRAP (intet nyt for Europa) og Hongkong (intet om smitte). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 8. november kl. 16.00, ingen poster efter 6. november), GOV.UK's søgning efter ebola (intet efter 5. november), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), RIVM's ebolaside https://www.rivm.nl/ebola (ændret 12. oktober, intet nyt), Robert Koch Instituts Epidemiologisches Bulletin 46/2026 (ikke udkommet, 404) og AGES' produktadvarsel om salmonella i tomater (se Ændret). Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato.
+
+**Ændret**
+- `maesling-bd`: DGHS 8. november: 238.840 mistænkte og 24.442 bekræftede tilfælde, 1.177 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.138 nye mistænkte, 87 nye bekræftede og 2 dødsfald blandt mistænkte, 1 hver i Dhaka- og Mymensingh-divisionen. 212.979 indlagt og 204.049 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6af0b0231fa7480db94dacb9 (bilaget læst som tekst og som billede af første side). Nyt punkt, nyt punkt i talserien (dødstal 1.177 plus 105), `cases`, `extra` og `src` opdateret. Meddelelsen var ikke ude ved kl. 17.20-kørslen og er taget nu.
+- `salmonella-eu`: AGES advarede 16. oktober på vegne af Østrigs sundhedsministerium mod rå cocktailtomater fra Ragusa og Caltanissetta på Sicilien. Østrig har 29 tilfælde siden slutningen af juli, heraf 21 mikrobiologisk bekræftede. Kilde: https://www.ages.at/mensch/produktwarnungen-produktrueckrufe/produkt/produktwarnung-salmonellen-in-tomaten-aus-zwei-regionen-in-sizilien (læst i sidens rå tekst). Nyt punkt dateret 16. oktober og `src` opdateret. `cases` urørt, fordi AGES gentager ECDC's tal for Europa.
+- `h5n1-kh`: kontrollen advarede om 31 dage uden nyt punkt. WHO WPRO's oversigt nummer 1068 pr. 29. oktober har ingen nye tilfælde i regionen siden tilfældet fra Oddar Meanchey med symptomdebut 24. september, og en søgning gav intet nyere. `live` er sat til `false` efter reglen om en måned uden nyt, med et punkt i forløbet. Kilde: https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261030.pdf
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `difteri-ng` (46 dage) og `cre-eu` (38 dage): kontrollen advarer fortsat. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- RIVM's side https://www.rivm.nl/ebola/actuele-informatie gav ingen læsbar tekst ved direkte opslag. Hovedsiden er læst.
+- Delene `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 11b642e.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `h5n1-kh` er sat til `live:false` efter en måned uden nyt.
+
 ## 8. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
