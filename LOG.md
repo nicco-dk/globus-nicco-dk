@@ -36,6 +36,9 @@ Kildescriptet (WHO DON 625 6. november fortsat nyeste, DGHS 7. november allerede
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `tools/ord.json` har "Island" som engelsk navn for Island, som rammer ordet for ø. `SY>YE` venter på ejerens afgørelse.
 
+### Kl. 11.20, Asien og Mellemøsten: intet nyt
+Kildescriptet (WHO DON 625 6. november fortsat nyeste, DGHS' mæslinger 7. november allerede brugt, WHO SEARO nummer 22 allerede brugt, WHO WPRO nummer 1068 allerede brugt, nummer 1069 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261106.pdf gav fortsat 404, Hongkongs pressemeddelelser uden noget om smitte), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt om udbrud efter 4. november), DGHS' denguetal gengivet af The Daily Star (6. november, 145.906 tilfælde og 455 dødsfald, står allerede på siden, intet nyere fundet), søgning efter nye tilfælde af H5N1 hos mennesker i Cambodja (intet efter det sjette tilfælde i september). Usikkert: Bangladeshs denguedashboard https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php svarede 500 i scriptet og 403 direkte, og Sri Lankas forside https://www.dengue.health.gov.lk/ kunne hverken hentes direkte (ingen forbindelse) eller med hentningsværktøjet (robots_disallowed), så `dengue-asien` står urørt med tallet pr. 30. oktober. Delen `ont` fejlede fortsat. Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit d1dfd44.
+
 ## 7. november 2026
 
 ### Kl. 00.20, Europa og Danmark
