@@ -1223,7 +1223,7 @@ const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
 const DATA_DATO = '2026-11-08';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-11-08T00:22+01:00';
+const DATA_TID = '2026-11-08T05:30+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -2026,18 +2026,19 @@ const EVENTS = [
 
 {id:'maesling-am',place:'Guatemala og Mexico',country:'Guatemala, Mexico m.fl.',region:'Amerika',lat:14.6349,lon:-90.5069,
  disease:'Mæslinger',pathogen:'Measles morbillivirus',stage:'spredning',live:true,
- cases:'56.753 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier i Amerika i 2026, PAHO pr. 17. oktober',
- extra:'Guatemala 34.535 tilfælde og 53 dødsfald, Mexico 13.691 og 23, USA 4.410 og 3, Peru 2.698 og 1 og Canada 1.124. Bolivia har 1 dødsfald. De fem lande har 99,5 procent af tilfældene. Det er 4,8 gange så mange tilfælde som i samme periode i 2025. I uge 39 og 40 kom 643 nye tilfælde i seks lande, 32 procent færre end i de to uger før, flest i USA med 320 og Guatemala med 211. Alle tal er fra PAHO, regional situationsrapport nummer 14 for 4. januar til 17. oktober, udgivet 22. oktober. Tallene for USA fra US CDC står i hændelsen om mæslinger i USA.',
+ cases:'57.666 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier i Amerika i 2026, PAHO pr. 31. oktober',
+ extra:'Guatemala 34.748 tilfælde og 53 dødsfald, Mexico 13.761 og 23, USA 4.852 og 3, Peru 2.862 og 1 og Canada 1.126. Bolivia har 1 dødsfald. De fem lande har 99,5 procent af tilfældene. Det er 4,7 gange så mange tilfælde som i samme periode i 2025. I uge 41 og 42 kom 547 nye tilfælde i seks lande, 38 procent færre end i de to uger før, flest i USA med 332 og Guatemala med 115, og ingen nye dødsfald. Alle tal er fra PAHO, regional situationsrapport nummer 15 for 4. januar til 31. oktober, dateret 5. november. Tallene for USA fra US CDC står i hændelsen om mæslinger i USA.',
  note:'Amerika har i 2026 et udbrud af mæslinger i flere lande, som PAHO følger med regionale situationsrapporter hver anden uge. Guatemala er hårdest ramt med over 34.000 bekræftede tilfælde, og aldersgruppen 20 til 29 år er mest ramt dér.',
  nodes:[['Guatemala',-90.5069,14.6349,'2026-10-03'],['Mexico',-99.1332,19.4326,'2026-10-03']],
  rel:['maesling-us'],
  naeste:'Falder, når de ugentlige tal i Guatemala og Mexico fortsætter med at falde. Alvor stiger, hvis WHO vurderer risikoen som høj for regionen.',
  plabel:'Bekræftede tilfælde i Amerika i 2026',
- pts:[['2026-09-19',53957,68],['2026-10-03',55792,77],['2026-10-17',56753,81]],
+ pts:[['2026-09-19',53957,68],['2026-10-03',55792,77],['2026-10-17',56753,81],['2026-10-31',57666,81]],
  tl:[['2026-09-19','PAHO opgør 53.957 bekræftede tilfælde og 68 dødsfald i 17 lande og territorier i Amerika fra 4. januar til 19. september, 3,8 gange så mange tilfælde som i samme periode i 2025. Guatemala har 33.866 tilfælde og Mexico 12.943','spredning',['PAHO, regional situationsrapport 12','https://www.paho.org/sites/default/files/2026/09/pahomeaslessitrep12eng.pdf']],
      ['2026-10-03','PAHO opgør 55.792 bekræftede tilfælde og 77 dødsfald i 17 lande og territorier i Amerika fra 4. januar til 3. oktober, 4,8 gange så mange tilfælde som i samme periode i 2025. Guatemala har 34.355 tilfælde og 50 dødsfald og Mexico 13.595 og 23','',['PAHO, regional situationsrapport 13','https://www.paho.org/sites/default/files/2026/10/pahomeaslessitrep13esp.pdf']],
-     ['2026-10-22','PAHO opgør 56.753 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier i Amerika fra 4. januar til 17. oktober, 4,8 gange så mange tilfælde som i samme periode i 2025. Guatemala har 34.535 tilfælde og 53 dødsfald og Mexico 13.691 og 23. Fire nye dødsfald i uge 39 og 40, tre i Guatemala og et i USA','',['PAHO, regional situationsrapport 14','https://www.paho.org/sites/default/files/2026/10/paho-measles-sitrep14.pdf']]],
- src:[['PAHO, regional situationsrapport 14','https://www.paho.org/sites/default/files/2026/10/paho-measles-sitrep14.pdf'],['PAHO, regional situationsrapport 13','https://www.paho.org/sites/default/files/2026/10/pahomeaslessitrep13esp.pdf'],['PAHO, regional situationsrapport 12','https://www.paho.org/sites/default/files/2026/09/pahomeaslessitrep12eng.pdf']]},
+     ['2026-10-22','PAHO opgør 56.753 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier i Amerika fra 4. januar til 17. oktober, 4,8 gange så mange tilfælde som i samme periode i 2025. Guatemala har 34.535 tilfælde og 53 dødsfald og Mexico 13.691 og 23. Fire nye dødsfald i uge 39 og 40, tre i Guatemala og et i USA','',['PAHO, regional situationsrapport 14','https://www.paho.org/sites/default/files/2026/10/paho-measles-sitrep14.pdf']],
+    ['2026-11-05','PAHO opgør 57.666 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier i Amerika fra 4. januar til 31. oktober, 4,7 gange så mange tilfælde som i samme periode i 2025. Guatemala har 34.748 tilfælde og 53 dødsfald og Mexico 13.761 og 23. 547 nye tilfælde og ingen nye dødsfald i uge 41 og 42','',['PAHO, regional situationsrapport 15','https://www.paho.org/sites/default/files/2026/11/pahomeaslessitrep15eng.pdf']]],
+ src:[['PAHO, regional situationsrapport 15','https://www.paho.org/sites/default/files/2026/11/pahomeaslessitrep15eng.pdf'],['PAHO, regional situationsrapport 14','https://www.paho.org/sites/default/files/2026/10/paho-measles-sitrep14.pdf'],['PAHO, regional situationsrapport 13','https://www.paho.org/sites/default/files/2026/10/pahomeaslessitrep13esp.pdf'],['PAHO, regional situationsrapport 12','https://www.paho.org/sites/default/files/2026/09/pahomeaslessitrep12eng.pdf']]},
 
 {id:'dengue-fl',place:'Hillsborough County, Tampa',country:'USA',region:'Amerika',lat:27.9506,lon:-82.4572,
  disease:'Dengue, lokalt erhvervet',pathogen:'Dengue-virus, overvejende DENV-2',stage:'spredning',live:true,

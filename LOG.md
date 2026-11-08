@@ -7,6 +7,35 @@
 ### Kl. 00.20, Europa og Danmark: intet nyt
 Kildescriptet (WHO DON 625 6. november fortsat nyeste, DGHS 7. november allerede brugt, WHO SEARO nummer 22, WHO WPRO nummer 1068, ECDC uge 42 ophørt, UKHSA, NaTHNaC, CIDRAP og Hongkong uden nyt for Europa; delene `dengue`, `lk` og `ont` fejlede), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 7. november kl. 16.00, ingen poster efter 6. november), ECDC's ebolaside (fortsat pr. 5. november, står på siden), GOV.UK's søgning efter ebola (intet efter 5. november), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder (intet nyt), RIVM's ebolaside og shamondaside https://www.rivm.nl/shamondavirus/actueel (intet nyt om tilfælde hos mennesker, RIVM undersøger antistoffer hos ca. 400 personer med dyrekontakt, resultater ventes i første kvartal 2027, siden er udateret og er ikke brugt) og Robert Koch Instituts Epidemiologisches Bulletin 46/2026 (ikke udkommet, 404). Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato. `difteri-ng` (45 dage) og `cre-eu` (37 dage) venter fortsat på ejerens afgørelse. Repoet kunne ikke tilføjes som nicco-dk/globus-nicco-dk (add_repo findes ikke i kørslen), så kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 0f19e8a.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november er fortsat den nyeste), DGHS' mæslinger (meddelelsen 7. november er fortsat den nyeste og står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt, nummer 1069 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261106.pdf gav fortsat 404), ECDC uge 42 (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt siden 6. november), CIDRAP (intet nyt, der ikke er brugt) og Hongkongs pressemeddelelser (intet om smitte). Desuden ECDC's side Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter 6. november), ECDC's ebolaside (fortsat pr. 5. november), ECDC's dengueudtræk https://dengue-weekly.ecdc.europa.eu/case_summary.csv (fortsat Italien 76 og Frankrig 8), UKHSA's ugeoversigt (fortsat uge 44), PAHO's epidemiologiske alarmer og opdateringer (20. oktober er fortsat den nyeste) og PAHO's mæslingerapporter (se Ændret), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober er fortsat den nyeste), RIVM's ebolaside (opdatering 4. november, intet nyt om Nederlandene), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder (intet nyt), søgninger efter WHO AFRO's ugebulletin, WHO's mpox-situationsrapporter (nummer 69 er fortsat den nyeste), Africa CDC's ugentlige rapport, fugleinfluenza hos mennesker i Cambodja, USDA APHIS' fund i fjerkræ og ECDC om salmonella, og https://globus.nicco.dk/konflikter.json (genereret 8. november kl. 03.23 UTC).
+
+**Ændret**
+- `maesling-am`: PAHO's regionale situationsrapport nummer 15, dateret 5. november: 57.666 bekræftede tilfælde og 81 dødsfald i 17 lande og territorier i Amerika fra 4. januar til 31. oktober, 4,7 gange så mange som i samme periode i 2025. Guatemala 34.748, Mexico 13.761, USA 4.852, Peru 2.862 og Canada 1.126. 547 nye tilfælde og ingen nye dødsfald i uge 41 og 42. Kilde: https://www.paho.org/sites/default/files/2026/11/pahomeaslessitrep15eng.pdf (læst som tekst og som billede af første side). Nyt punkt, nyt punkt i talserien pr. 31. oktober, `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `myiasis-am` (23) uden ny alarm fra PAHO, `difteri-afro` (23) og `difteri-ng` (45) uden nyere ugebulletin fra WHO AFRO fundet, `mpox` (26) uden nyere situationsrapport fra WHO end nummer 69, `pest-irkutsk` (27) uden ny DON, `ebola-nl` (29) uden nyt hos RIVM, `dengue-eu` (11) med de samme tal i ECDC's udtræk, `cre-eu` (37) og `salmonella-eu` (30) uden nye poster hos ECDC, `h5n1-kh` (30) uden nye tilfælde i WHO WPRO nummer 1068, `h5n1-us` (11), `mpox-mo` (10) og `cyclospora-us` (16) uden nyt i dagens kilder.
+
+**Usikkert**
+- `maesling-am`: PAHO's rapport nummer 15 er fundet på adressen https://www.paho.org/sites/default/files/2026/11/pahomeaslessitrep15eng.pdf efter samme form som nummer 13. PDF'en er oprettet 6. november. PAHO's tal for USA (4.852 pr. 31. oktober) er lavere end US CDC's 5.182 pr. 5. november, som står i `maesling-us`.
+- `h5n1-kh` (30 dage) og `salmonella-eu` (30 dage) når grænsen for kontrollens advarsel om over 30 dage uden nyt punkt i morgen, hvis intet nyt kommer.
+- Delene `ont` (svaret kunne ikke læses), `dengue` (HTTP 502) og `lk` i kildescriptet fejlede fortsat. USDA APHIS' side er ikke læst.
+- `difteri-ng` (45 dage) og `cre-eu` (37 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Begge venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 79d08fd.
+
+**Mediesporet**
+- Afvist: `IR-IS` og `IS-US`. Artiklerne handler om amerikanske angreb på den iranske ø Qeshm (Qeshm Island), og Island er ikke nævnt: Al Jazeera https://www.aljazeera.com/news/liveblog/2026/11/8/iran-war-live-explosions-hit-qeshm-us-moves-to-block-land-supply-routes og CBS News https://www.cbsnews.com/news/u-s-strikes-iran-targets/
+- Ikke afgjort: `SY>YE` (militær støtte fra Syrien til Yemen). AFP's oplysninger om syriske soldater i Yemen er gengivet af Al-Monitor https://www.al-monitor.com/originals/2026/11/thousands-syrian-troops-deploy-yemen-saudi-arabia-sources-afp og The Straits Times https://www.straitstimes.com/world/middle-east/syria-denies-plans-to-send-troops-to-yemen-as-saudi-military-ties-deepen men bygger på én kilde, og Syrien afviser dem gennem SANA (Arab News https://www.arabnews.com/middle-east/syria-denies-plans-to-send-troops-to-yemen-3010338). Se Til gennemgang.
+- Ingen godkendt. Øvrige: 6 bekræftede, 70 mistanker.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `tools/ord.json` har "Island" som engelsk navn for Island, som rammer ordet for ø. `SY>YE` venter på ejerens afgørelse.
+
 ## 7. november 2026
 
 ### Kl. 00.20, Europa og Danmark

@@ -98,6 +98,8 @@
     "CO-VE": {"dato": "2026-11-02", "grund": "Artiklerne handler om den venezuelanske hærs angreb på en lejr for den colombianske guerilla ELN i Apure i Venezuela og en bombe mod colombiansk politi nær grænsen, ikke om kampe mellem de to landes styrker."},
     "ET-SD": {"dato": "2026-11-02", "grund": "Sudan anklager Etiopien for at lade RSF sende droner fra etiopisk område, Etiopien afviser, og ophavet er ikke uafhængigt bekræftet."},
     "CA-GB": {"dato": "2026-11-05", "grund": "Artiklerne handler om en dræbt mor og datter efter et grizzlybjørneangreb i British Columbia, afpresningsskyderier i Surrey i Canada og en britisk skuespiller, ikke om kampe mellem landene (BBC, Hindustan Times, The New York Times)."},
-    "IR-MP": {"dato": "2026-11-07", "grund": "Artiklerne handler om krigen mellem USA og Iran og om de amerikanske midtvejsvalg, ikke om kampe mellem Iran og Nordmarianerne, som ikke er part (Al Jazeera, CNN, France 24, Le Monde, The New York Times)."}
+    "IR-MP": {"dato": "2026-11-07", "grund": "Artiklerne handler om krigen mellem USA og Iran og om de amerikanske midtvejsvalg, ikke om kampe mellem Iran og Nordmarianerne, som ikke er part (Al Jazeera, CNN, France 24, Le Monde, The New York Times)."},
+    "IR-IS": {"dato": "2026-11-08", "grund": "Artiklerne handler om amerikanske angreb på den iranske ø Qeshm (Qeshm Island) i Hormuzstrædet, ikke om Island, som ikke er nævnt (Al Jazeera, CBS News)."},
+    "IS-US": {"dato": "2026-11-08", "grund": "Artiklerne handler om amerikanske angreb på den iranske ø Qeshm (Qeshm Island) i Hormuzstrædet, ikke om kampe mellem USA og Island, som ikke er nævnt (Al Jazeera, CBS News)."}
   }
 }
