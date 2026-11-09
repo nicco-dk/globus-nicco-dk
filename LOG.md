@@ -28,6 +28,36 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `h5n1-kh` er sat til `live:false` efter en måned uden nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 8. november fortsat nyeste og står på siden), DGHS' denguedashboard (fortsat pr. 25. oktober), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud efter 5. november), NaTHNaC (intet nyt siden 6. november), CIDRAP (intet nyt, der ikke er brugt) og Hongkong (intet om smitte). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events med opdateringerne 6. november om ebola (tal pr. 5. november, står på siden), dengue (se Ændret), West Nile-virus (fortsat 2.009 tilfælde pr. 28. oktober) og chikungunya (Frankrig 207 hos ECDC, Santé publique France har 208 pr. 2. november på siden), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), søgninger efter PAHO's epidemiologiske alarmer og opdateringer (20. oktober fortsat nyeste fundne), WHO AFRO's ugebulletin, Africa CDC's ugentlige rapport og WHO's mpox-situationsrapporter (nummer 69 fortsat nyeste), US CDC's side om mpox https://www.cdc.gov/monkeypox/situation-summary/index.html (se Ændret), Kenyas sundhedsministerium gengivet af Kenyans.co.ke (se Ændret), samt søgninger efter nyt om ebola i Storbritannien, pest i Irkutsk, Sri Lankas dengue, Venezuelas gule feber, Cyclospora i USA, skruelarve hos mennesker i Mexico og difteri i Nigeria.
+
+**Ændret**
+- `ebola-ke`: Kenyas sundhedsministerium oplyste 6. november gennem generaldirektøren for sundhed, Patrick Amoth, at en sjette patient er rask og udskrives, så én fortsat er i behandling. Fortsat 9 bekræftede tilfælde og 2 dødsfald i én smittekæde, 18 dage uden en ny smittet (seneste 19. oktober), 66 kontakter har afsluttet opfølgningen, og 52 ventes at afslutte karantænen 11. november. Kilde: https://www.kenyans.co.ke/news/129197-kenya-records-6th-ebola-recovery-ministry-outlines-42-day-countdown-ending-outbreak (læst i sidens rå tekst). Nyt punkt, `cases`, `extra` og `src` opdateret.
+- `mpox-mo`: US CDC's side om den aktuelle situation, opdateret 2. november, har over 160 laboratoriebekræftede klade I-tilfælde siden november 2024 i mindst 27 delstater og Puerto Rico og formodet indenlandsk smitte i 16 jurisdiktioner. Kilde: https://www.cdc.gov/monkeypox/situation-summary/index.html (læst to gange med hentningsværktøjet, direkte opslag giver 403). Nyt punkt, `cases`, `gap` og `src` opdateret.
+- `dengue-eu`: ECDC melder 6. november ingen nye lokalt erhvervede tilfælde pr. 4. november, fortsat Italien 76 og Frankrig 8, med seks aktive klynger i Italien og én i Frankrig. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00017/2026-11-06 (læst i sidens rå tekst). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 47 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-asien` (10) uden læsbar kilde fra Sri Lanka, `gul-feber-ve` (10) uden nyere bulletin fundet, `h5n1-us` (12) uden læsbare tal på USDA APHIS' side (tallene står kun i et dashboard), `cyclospora-us` (17), `difteri-afro` (24) og `myiasis-am` (24) uden nyere kilder fundet, `salmonella-eu` (24) uden nye poster hos ECDC, `mpox` (27) uden nyere situationsrapport end nummer 69, `pest-irkutsk` (28) uden ny DON, `ebola-nl` (30) uden nyt hos RIVM, `cre-eu` (38) og `difteri-ng` (46) venter på ejerens afgørelse.
+
+**Usikkert**
+- `mpox-mo`: US CDC har to sider med forskellige tal. Siden om klade I-udbruddet https://www.cdc.gov/monkeypox/outbreaks/2023/index.html viser fortsat næsten 130 tilfælde i mindst 26 delstater pr. oktober (opdateret 27. oktober), mens siden om den aktuelle situation (opdateret 2. november) har over 160 i mindst 27 delstater. Siden bruger den nyeste, og forskellen står i `gap`.
+- `ebola-ke`: tallene kendes kun gennem Kenyans.co.ke, der gengiver ministeriets udmelding. Ministeriets egen udmelding er ikke fundet. The Nations artikel om samme udmelding kunne ikke hentes (robots_disallowed).
+- `ebola-nl` når kontrollens grænse på 30 dage uden nyt punkt i morgen, mens ejerens afgørelse 20. oktober lukker hændelsen 21. november. Se GENNEMGANG.md.
+- `difteri-ng`: The Guardian Nigeria gengiver NCDC's generaldirektør for over 10.000 bekræftede tilfælde af difteri i 2026, men artiklen har ingen dato og ingen opgørelsesdato. Ikke brugt.
+- Delene `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 325f9e1.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (6 bekræftede, 73 mistanker). Intet godkendt eller afvist. `SY>YE` venter fortsat på ejerens afgørelse.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `ebola-nl` når grænsen på 30 dage uden nyt punkt før ejerens lukkedato 21. november.
+
 ## 8. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
