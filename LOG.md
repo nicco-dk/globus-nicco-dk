@@ -58,6 +58,30 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `ebola-nl` når grænsen på 30 dage uden nyt punkt før ejerens lukkedato 21. november.
 
+
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 8. november fortsat nyeste og står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), Hongkongs pressemeddelelser (kun legionærsyge, ikke usædvanligt), UKHSA, NaTHNaC og CIDRAP (intet nyt for Asien og Mellemøsten, der ikke er brugt). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (se Nye), DGHS' denguetal gengivet af The Daily Star og The Business Standard (se Ændret) og WHO WPRO's oversigter dateret 5., 6. og 7. november (404).
+
+**Ændret**
+- `dengue-bd`: DGHS 8. november: 149.913 tilfælde og 461 dødsfald i 2026 efter 3 nye dødsfald, to i Dhaka- og ét i Chattogram-divisionen, og 2.333 nye indlagte på et døgn til kl. 8, årets højeste tal for ét døgn. 6.063 fortsat indlagt. Kilder: https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-record-2333-hospitalised-24-hours-4318486 og https://www.tbsnews.net/bangladesh/health/dengue-death-toll-rises-461-3-more-die-1596676 (begge læst i sidens rå tekst, samme tal). Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- `polio-sy`: Syriens sundhedsministerium og WHO EMRO meldte 9. november vaccineafledt poliovirus type 1 (VDPV1) hos to lammede børn mellem 6 og 13 måneder i Deir Ezzor-provinsen. Mistænkte tilfælde blev først meldt 11. oktober, og en vaccinationskampagne 18. oktober nåede over 34.000 børn under fem år. Kilde: https://www.emro.who.int/media/news/syrian-arab-republic-launches-coordinated-public-health-response-following-poliovirus-detection-in-deir-ezzor.html (læst i sidens rå tekst). Trin `udbrud`, `rel` til `polio`.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `polio-sy`: WHO EMRO oplyser ikke datoer for lammelsesdebut, om virusset er cirkulerende, eller om der er fundet virus i miljøprøver. GPEI har endnu ikke tilfældene. Står i `gap`.
+- `dengue-bd`: DGHS' tal for 7. november (147.580 tilfælde og 458 dødsfald ifølge The Daily Star) er ikke sat ind som eget punkt, fordi artiklen ikke selv er dateret. DGHS' tal for 9. november var ikke fundet ved kørslen.
+- Bangladeshs denguedashboard https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php svarer nu 404 både i scriptet og direkte. Sri Lankas forside https://www.dengue.health.gov.lk/ kunne fortsat ikke nås direkte, så `dengue-asien` står urørt. Delene `lk`, `ont` og `dengue` i kildescriptet fejlede.
+- `difteri-ng` (46 dage) og `cre-eu` (38 dage): kontrollen advarer fortsat. Begge venter på ejerens afgørelse.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 73468b4.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: Bangladeshs denguedashboard svarer 404.
+
 ## 8. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
