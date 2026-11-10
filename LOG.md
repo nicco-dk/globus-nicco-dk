@@ -2,6 +2,33 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 10. november 2026
+
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (to nye meddelelser, 9. og 10. november, se Ændret), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt, nummer 1069 dateret 5., 6. og 7. november gav 404), Hongkongs pressemeddelelser (9. november kun legionærsyge, ikke usædvanligt, intet for 10. november endnu), UKHSA, NaTHNaC og CIDRAP (intet nyt for Asien og Mellemøsten, der ikke er brugt). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt om udbrud efter polio i Deir Ezzor, men en nødplan for Yemen, se Til gennemgang) og DGHS' denguetal gengivet af The Daily Star og bdnews24 (se Ændret).
+
+**Ændret**
+- `maesling-bd`: DGHS 9. november: 240.199 mistænkte og 24.523 bekræftede tilfælde, 1.179 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde, det seneste døgn 1.359 nye mistænkte, 81 nye bekræftede og 2 dødsfald blandt mistænkte, 1 hver i Dhaka- og Chattogram-divisionen. Kilde: https://dghs.gov.bd/pages/press-releases/6af1a1d994968eb2e9dd16a2 DGHS 10. november: 241.556 mistænkte og 24.610 bekræftede tilfælde, 1.184 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde, det seneste døgn 1.357 nye mistænkte, 87 nye bekræftede og 5 dødsfald blandt mistænkte, heraf 3 i Chattogram-divisionen og 1 hver i Dhaka- og Sylhet-divisionen. 215.540 indlagt og 206.799 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6af2e69616ca1df4d9e4cf31 Begge bilag er læst som tekst og som billede af første side. To nye punkter, to nye punkter i talserien (dødstal 1.179 plus 105 og 1.184 plus 105), `cases`, `extra` og `src` opdateret. Meddelelsen 9. november var ikke taget, fordi kørslen kl. 17.20 9. november ikke blev gennemført.
+- `dengue-bd`: DGHS 9. november: 152.173 tilfælde og 466 dødsfald i 2026 efter 5 nye dødsfald, tre i Dhaka-divisionen og ét hver i Mymensingh- og Barishal-divisionen, og 2.260 nye indlagte på et døgn til kl. 8. 6.114 fortsat indlagt. Kilder: https://www.thedailystar.net/news/healthcare/disease/news/5-die-dengue-24-hours-4319351 og https://bdnews24.com/health/vn659dos1n (begge læst i sidens rå tekst, samme tal). Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `maesling-bd`: DGHS' bilag 9. november har i tabellernes overskrift perioden 9. november kl. 8 til 10. november kl. 8, samme tekst som bilaget 10. november. Tallene i de to bilag er forskellige og hænger sammen med bilaget 8. november, så overskriften i bilaget 9. november ser ud til at være en fejl. Punktet er dateret 9. november efter meddelelsens dato.
+- `dengue-bd`: DGHS' tal for 10. november var ikke ude ved kørslen. Bangladeshs denguedashboard svarer fortsat 404 i scriptet.
+- `dengue-asien`: Sri Lankas forside kunne fortsat ikke nås (delen `lk` fejlede), så hændelsen står urørt. Delen `ont` fejlede også.
+- `difteri-ng` (47 dage), `cre-eu` (39 dage) og `ebola-nl` (31 dage): kontrollen advarer om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Kørslerne kl. 17.20 9. november og kl. 00.20 og 05.20 10. november findes hverken i loggen eller i repoet. Denne kørsel har ikke indhentet deres rækker.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 88126cb.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: kolera og mæslinger i Yemen efter WHO EMRO's nødplan, og de tre manglende kørsler.
+
 ## 9. november 2026
 
 ### Kl. 00.20, Europa og Danmark
