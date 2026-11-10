@@ -101,6 +101,8 @@
     "IR-MP": {"dato": "2026-11-07", "grund": "Artiklerne handler om krigen mellem USA og Iran og om de amerikanske midtvejsvalg, ikke om kampe mellem Iran og Nordmarianerne, som ikke er part (Al Jazeera, CNN, France 24, Le Monde, The New York Times)."},
     "IR-IS": {"dato": "2026-11-08", "grund": "Artiklerne handler om amerikanske angreb på den iranske ø Qeshm (Qeshm Island) i Hormuzstrædet, ikke om Island, som ikke er nævnt (Al Jazeera, CBS News)."},
     "IS-US": {"dato": "2026-11-08", "grund": "Artiklerne handler om amerikanske angreb på den iranske ø Qeshm (Qeshm Island) i Hormuzstrædet, ikke om kampe mellem USA og Island, som ikke er nævnt (Al Jazeera, CBS News)."},
-    "GB-PL": {"dato": "2026-11-08", "grund": "Artiklerne handler om bombetrusler mod et LOT-fly fra London til Warszawa, der landede i Modlin 3. november, og et skyderi i Krakow, ikke om kampe mellem britiske og polske styrker (The Star efter Reuters, Cyprus Mail)."}
+    "GB-PL": {"dato": "2026-11-08", "grund": "Artiklerne handler om bombetrusler mod et LOT-fly fra London til Warszawa, der landede i Modlin 3. november, og et skyderi i Krakow, ikke om kampe mellem britiske og polske styrker (The Star efter Reuters, Cyprus Mail)."},
+    "FR-IR": {"dato": "2026-11-10", "grund": "Artiklerne handler om, at Frankrig anklager Irans Revolutionsgarde for et cyberangreb på kølesystemer i omkring 700 supermarkeder 11. og 12. oktober og vil have EU-sanktioner, ikke om væbnede angreb eller kampe mellem landenes styrker (Hindustan Times, NPR, The Washington Post, Le Monde)."},
+    "SY>YE": {"dato": "2026-11-10", "grund": "Syriens udenrigsminister afviser, at der er syriske tropper i Yemen eller planer om at sende dem, og artiklerne beskriver syriske rådgivere og soldater sendt til Saudi-Arabien til træning, ikke levering af våben, tropper eller udstyr til Yemen (Arab News, Al Jazeera)."}
   }
 }

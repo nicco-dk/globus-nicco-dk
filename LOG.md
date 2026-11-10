@@ -29,6 +29,35 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: kolera og mæslinger i Yemen efter WHO EMRO's nødplan, og de tre manglende kørsler.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (ingen meddelelse nyere end 10. november, som står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (ugeoversigten uge 44 fortsat nyeste, intet nyt om udbrud), NaTHNaC (intet nyt for Afrika og Amerika, der ikke står på siden; denguefeber i Nigeria og CCHF i Mauretanien er ikke taget med, se Nye), CIDRAP og Hongkong. Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events med ebolaopdateringerne 9. og 10. november (se Ændret), ECDC's ebolaside (fortsat 6. november), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), søgninger efter PAHO's epidemiologiske alarmer og opdateringer (intet nyere end 20. oktober om dengue og chikungunya), Africa CDC's ugerapport (ikke fundet), Kenyas sundhedsministerium om ebola (intet nyere end 6. november) og Zambias kolera (intet nyere end 2. november). US CDC's mæslingetal kommer om onsdagen.
+
+**Ændret**
+- `ebola-drc`: ECDC 9. november: 10.920 bekræftede tilfælde og 5.323 dødsfald pr. 8. november med data til og med 7. november, 179 nye tilfælde og 93 nye dødsfald siden data til og med 5. november, 99 i Ituri, 68 i Nordkivu, 10 i Haut-Uélé, 1 i Tshopo og 1 i Nord-Ubangi. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-09 ECDC 10. november: 10.990 bekræftede tilfælde og 5.354 dødsfald pr. 9. november med data til og med 8. november, 70 nye tilfælde og 31 nye dødsfald, 40 i Ituri, 23 i Nordkivu, 5 i Haut-Uélé og 2 i Tshopo, 966 i isolation og 2.951 raske. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-10 Begge sider læst i sidens rå tekst, og summerne passer med de forrige tal. To nye punkter, to nye punkter i talserien, `cases`, `extra` og `src` opdateret.
+- `ebola-ng`: ECDC 9. november efter NCDC's situationsrapport 5. november: 62 kontakter under opfølgning pr. 5. november, og syv har afsluttet de 21 dages karantæne (seks pr. 4. november på ECDC's side 6. november). Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-09 Nyt punkt og `src` opdateret.
+
+**Nye**
+- Ingen. NaTHNaC 9. november melder denguefeber i Nigeria (523 mistænkte tilfælde i 2026) og et nyt dødeligt tilfælde af CCHF i Mauretanien (3 tilfælde og 2 dødsfald i 2026). Begge er kendte sæsonsygdomme, som ingen myndighed kalder usædvanlige, og er ikke taget med.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne. Rundturen hører til kl. 05.20-kørslen og er ikke gentaget.
+
+**Mediesporet**
+- Godkendt: ingen.
+- Afvist `FR-IR`: Frankrig anklager Irans Revolutionsgarde for et cyberangreb på kølesystemer i omkring 700 supermarkeder, ikke væbnede angreb. Kilder: https://www.hindustantimes.com/world-news/france-blames-iran-for-unprecedented-cyberattack-on-fridges-launches-probe-and-vows-sanctions-101794243778662.html (læst i sidens rå tekst) og overskrifterne hos NPR, The Washington Post, Le Monde, France 24 og Financial Times.
+- Afvist `SY>YE`: Syriens udenrigsminister afviser tropper i Yemen, og syriske rådgivere og soldater er sendt til Saudi-Arabien til træning. Kilder: https://www.arabnews.com/middle-east/syria-denies-sending-troops-to-yemen-3010719 og https://www.aljazeera.com/features/2026/11/9/syria-confirms-sending-troops-to-saudi-arabia-amid-battle-against-houthis
+
+**Usikkert**
+- `ebola-drc`: ECDC henviser til DR Congos situationsrapporter 175 til 177, men insp.cd's medieliste viser fortsat 168 som nyeste. Tallene er taget fra ECDC.
+- FR-IR: NPR, The Washington Post, Le Monde og France 24 kunne ikke læses ad nogen af de to veje. Afvisningen bygger på Hindustan Times' tekst og de øvrige mediers overskrifter.
+- `difteri-ng` (47 dage), `cre-eu` (39 dage) og `ebola-nl` (31 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 79980b9.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 9. november 2026
 
 ### Kl. 00.20, Europa og Danmark
