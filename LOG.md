@@ -2,6 +2,30 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 11. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 10. november står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud efter 5. november), NaTHNaC (chikungunya i Schweiz, dengue i Italien og ebola i DR Congo står allerede på siden), CIDRAP og Hongkong (kun legionærsyge 9. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 10. november kl. 16.00) med de nye poster om MERS 10. november (ingen nye tilfælde siden 19. oktober, intet at ændre i `mers-sa`), H5N1 i USA 9. november (se Ændret), luftvejsvirus uge 44 og ebola 10. november (allerede brugt), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), GOV.UK's søgning efter ebola (intet efter 5. november), UKHSA's ugeoversigt (uge 44 fortsat nyeste, næste kommer torsdag), RIVM's ebolaside https://www.rivm.nl/en/ebola/current-information (seneste opdatering 4. november, intet nyt om Nederlandene) og Robert Koch Instituts Epidemiologisches Bulletin 45/2026 (gonoré i 2025, intet om udbrud; 46/2026 er ikke udkommet). Kvalitet: koordinater i `lat`, `lon` og `nodes` er tjekket for ombytning uden fund. Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato.
+
+**Ændret**
+- `h5n1-wa`: ECDC 9. november efter US CDC 6. november: det andet og det tredje tilfælde arbejdede på kommercielle malkekvægsbedrifter med H5N1 i køerne. Det andet tilfælde fik luftvejssymptomer i uge 42, blev indlagt og døde, og H5N1 er bekræftet. Det tredje tilfælde fik øjenbetændelse og testede positiv for A(H5) i uge 43, og prøven er sendt til US CDC. Virus fra det første og det andet tilfælde er sekventeret til klade 2.3.4.4b, genotype B3.13. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2024-irv-00003/2026-11-09 (læst i sidens rå tekst). Nyt punkt dateret 6. november, `extra`, `gap` og `src` opdateret. `cases` urørt (3 tilfælde, 1 dødsfald). Hændelsen hører til Amerika, men opdateringen var ikke taget af kl. 17.20-kørslen.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- DK-VET's nyheder https://dkvet.dk/nyheder/ kunne hverken læses direkte (tom side) eller med hentningsværktøjet (robots).
+- `difteri-ng` (48 dage), `cre-eu` (40 dage) og `ebola-nl` (32 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 2f547fd.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: punktet om kolera og mæslinger i Yemen 10. november siger, at siden ingen hændelse har i Yemen, men `kolera-ye` findes.
+
 ## 10. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
