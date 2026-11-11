@@ -26,6 +26,39 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: punktet om kolera og mæslinger i Yemen 10. november siger, at siden ingen hændelse har i Yemen, men `kolera-ye` findes.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 10. november står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt, nummer 1069 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261106.pdf gav fortsat 404), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud efter 5. november, ugeoversigten kommer torsdag), NaTHNaC (polio i Syrien, ebola i DR Congo, chikungunya i Schweiz, dengue i Italien og gul feber i Elfenbenskysten står allerede på siden), CIDRAP (H9N2 i Guangxi og Liaoning 10. november efter Hongkongs CHP er de to tilfælde, ECDC meldte 4. november, og står på siden; New World screwworm hos dyr i USA hører ikke til `myiasis-am`, der kun har tilfælde hos mennesker) og Hongkong (intet om smitte). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 10. november kl. 16.00, ingen poster efter dem, kl. 00.20-kørslen brugte), ECDC's ebolaside (fortsat 6. november), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), Statens Serum Instituts liste over sygdomsudbrud (intet nyt), søgninger efter PAHO's epidemiologiske opdateringer (mæslingerapport nummer 15 er brugt), WHO AFRO's ugebulletin og Africa CDC's ugentlige rapport (ingen nye fundet), Kenyas sundhedsministerium om ebola (intet nyere end 6. november), WHO's mpox-situationsrapport nummer 70 (404) og https://globus.nicco.dk/konflikter.json (genereret 11. november kl. 03.23 UTC).
+
+**Ændret**
+- Ingen hændelser. Kun `DATA_DATO`, `DATA_TID` og `tools/par-tjek.json` (se Mediesporet).
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 51 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-fl` (11) uden ugerapport for uge 44 (https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w44-2026.pdf gav 404), `gul-feber-ve` (12) uden nyere bulletin end uge 41 (adressen for uge 42 fører til en fejlside), `dengue-asien` (12) uden læsbar kilde fra Sri Lanka, `h5n1-us` (14) uden nyere opgørelse fra USDA APHIS gengivet af CIDRAP, `cyclospora-us` (19) uden nyere opdatering hos US CDC, `difteri-afro` (26) uden ny ugebulletin fra WHO AFRO, `myiasis-am` (26) uden nyere alarm fra PAHO (mexicanske medier gengiver fortsat tal pr. uge 40, som står i `gap`), `salmonella-eu` (26) uden nye poster hos ECDC, `mpox` (29) uden situationsrapport nummer 70, `pest-irkutsk` (30) uden ny DON eller ny melding fra WHO, `ebola-nl` (32) uden nyt hos RIVM, `cre-eu` (40) og `difteri-ng` (48) venter på ejerens afgørelse.
+
+**Mediesporet**
+- Seks par med status afventer. Fem af dem var afvist 12. oktober og er udløbet efter 30 dage. Alle seks er afvist med datoen 11. november. Godkendt: ingen.
+- Afvist `IL-US`: landene er allierede, og artiklerne handler om amerikansk støtte til Israel og en international styrke i Gaza. Kilder: https://www.cnn.com/2026/11/10/politics/video/midterms-congress-election-democrat-israel-iran (overskrift) og https://tribune.com.pk/story/2639446/us-military-preparations-underway-near-gaza-border-for-international-force-deployment-israeli-media
+- Afvist `RU-US` og `UA-US`: USA-mæglede fredsforhandlinger mellem Rusland og Ukraine i Abu Dhabi, ikke kampe med amerikanske styrker. Kilder: https://www.dailysabah.com/world/europe/russia-ukraine-resume-us-mediated-peace-talks-after-9-months og https://www.al-monitor.com/originals/2026/11/trump-says-us-seeing-strong-inclination-end-russias-war-ukraine
+- Afvist `IR-SA`: angrebene på Saudi-Arabien er udført af Houthi-bevægelsen, og Iran er nævnt om krigen med USA og Israel og om forhandlinger. Kilder: https://www.aljazeera.com/news/2026/11/9/trump-calls-iran-war-effectively-over-after-talks-with-qatar-pm og https://www.thehindu.com/news/international/saudi-arabia-turns-to-syria-for-help-as-fighting-with-houthis-escalates/article71681228.ece
+- Afvist `IR-YE`: Yemens regering kræver, at Iran stopper våbenleverancer og trækker sine militære eksperter ud fra Houthi-bevægelsen, men der er ikke rapporteret angreb mellem iranske styrker og Yemens regering. Kilder: https://www.arabnews.com/middle-east/stop-arming-houthis-withdraw-military-experts-yemen-tells-iran-3010633 og https://www.thehindu.com/news/international/saudi-arabia-turns-to-syria-for-help-as-fighting-with-houthis-escalates/article71681228.ece
+- Afvist `SA-SY`: landene er allierede, og Syrien har sendt militære rådgivere og vil sende specialstyrker til Saudi-Arabien. Kilder: https://www.aljazeera.com/features/2026/11/9/syria-confirms-sending-troops-to-saudi-arabia-amid-battle-against-houthis og https://www.thehindu.com/news/international/saudi-arabia-turns-to-syria-for-help-as-fighting-with-houthis-escalates/article71681228.ece
+
+**Usikkert**
+- `pest-irkutsk` når i morgen over 30 dage uden nyt punkt. Kilderne er tavse, så næste kørsel bør sætte `live` til `false` efter reglen, hvis intet nyt kommer.
+- `difteri-ng` (48 dage), `cre-eu` (40 dage) og `ebola-nl` (32 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Sri Lankas forside https://www.dengue.health.gov.lk/ kunne hverken nås direkte (delen `lk` fejlede) eller med hentningsværktøjet (robots). Delene `dengue` (404) og `ont` fejlede også.
+- `IL-US`: CNN-indslaget er kun læst som overskrift, og Ynetnews' artikel i stregen gav ingen læsbar tekst.
+- US CDC's ugentlige mæslingetal kommer om onsdagen og var ikke ude ved kørslen.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 511ec4a.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 10. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
