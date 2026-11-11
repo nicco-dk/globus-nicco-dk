@@ -2,6 +2,30 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 12. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 11. november står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud efter 5. november; publikationen om ebola 11. november er en generel oversigt), NaTHNaC (malaria i Panama og dengue i Costa Rica 11. november er almindelig sæson og ikke på siden; resten står allerede på siden eller er tidligere vurderet), CIDRAP (intet nyt for Europa) og Hongkong (intet nyt efter mpox 11. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter ebolaopdateringen 11. november, der er brugt), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), GOV.UK's søgning efter ebola (intet nyt om `ebola-gb` efter 5. november), RIVM's ebolaside https://www.rivm.nl/en/ebola/current-information (fortsat 4. november, intet nyt om Nederlandene) og søgning efter nyt om `pest-irkutsk` (intet efter 12. oktober). Robert Koch Instituts Epidemiologisches Bulletin 46/2026 udkommer torsdag. Kvalitet: koordinater i `lat`, `lon` og `nodes` er tjekket for ombytning uden fund. Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato.
+
+**Ændret**
+- `pest-irkutsk`: `live` sat til `false` efter reglen om en måned uden nyt. Seneste punkt er 12. oktober, WHO har ikke udsendt nyt siden DON 620 10. oktober (WHO's dataudtræk over DON viser ingen nyere melding om Rusland), og søgning gav intet nyt. Nyt punkt med kilde https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON620 Trin og tekster i øvrigt urørt.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- DK-VET's nyheder https://dkvet.dk/nyheder/ gav ved direkte opslag en nyhedsliste fra Københavns Universitet uden nyheder om dyresundhed. `h5n1-dk` er lukket og står urørt.
+- `difteri-ng` (49 dage), `cre-eu` (41 dage) og `ebola-nl` (33 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit ee85680.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 11. november 2026
 
 ### Kl. 00.20, Europa og Danmark
