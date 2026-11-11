@@ -14,6 +14,7 @@
     "DZ>NE": {"dato": "2026-11-03", "note": "Algeriet sender tropper til Niger efter Nigers anmodning om militær bistand for at beskytte energianlæg, og den første algeriske militærkonvoj nåede Arlit ifølge Reuters 30. oktober.", "kilder": [["Arab News (Reuters)", "https://www.arabnews.com/middle-east/first-algerian-troops-arrive-in-niger-where-insurgents-threaten-stability-3009067"], ["BBC", "https://www.bbc.com/news/articles/cm4g14n1e5wko"], ["Al Jazeera", "https://www.aljazeera.com/news/2026/10/26/algerias-president-orders-troop-deployment-to-neighbouring-niger"]]}
   },
   "afvist": {
+    "GB-IE": { "dato": "2026-11-11", "grund": "Artiklerne handler om falske bombetrusler mod skoler i Italien, Storbritannien og Irland og om høringerne om bombeattentatet i Omagh i 1998, ikke om kampe mellem de to landes styrker." },
     "IL-IR": { "dato": "2026-10-13", "grund": "Erklæret krig uden rapporterede angreb mellem parternes styrker i vinduet. Kun direkte kampe mellem parterne tæller (ejerens afgørelse 13. oktober)." },
     "IR-US": { "dato": "2026-10-13", "grund": "Erklæret krig og håndhævelse af en blokade mod tredjelandes skibe, uden rapporterede angreb mellem parternes styrker i vinduet. Kun direkte kampe mellem parterne tæller (ejerens afgørelse 13. oktober)." },
     "DJ-YE": { "dato": "2026-10-13", "grund": "Stregen kommer fra GDELT's stedfæstelse af kampe ved Bab el-Mandeb, ikke fra artiklernes indhold. Ingen artikel beskriver kampe mellem landene (ejerens afgørelse 13. oktober)." },

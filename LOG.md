@@ -81,6 +81,39 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (ny meddelelse 11. november, se Ændret), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet nyt om udbrud), NaTHNaC (intet nyt efter 10. november, der ikke står på siden), CIDRAP (intet nyt for Afrika og Amerika, der ikke er brugt) og Hongkong (mpox 11. november, se Ændret). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events med ebolaopdateringen 11. november (se Ændret), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat pr. 5. november, opdateret 6. november), søgninger efter PAHO's epidemiologiske alarmer og opdateringer (situationsrapport 15 om mæslinger 6. november er brugt), Africa CDC's ugentlige rapport (ikke fundet) og https://globus.nicco.dk/konflikter.json (genereret 11. november kl. 15.24 UTC).
+
+**Ændret**
+- `maesling-bd`: DGHS 11. november: 242.907 mistænkte og 24.723 bekræftede tilfælde, 1.190 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde, det seneste døgn 1.351 nye mistænkte, 113 nye bekræftede og 6 dødsfald blandt mistænkte, 2 hver i Dhaka- og Mymensingh-divisionen og 1 hver i Sylhet- og Chattogram-divisionen. 216.806 indlagt og 207.903 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6af459e29a2bfbb8999df659 (bilaget læst som tekst og som billede af første side). Nyt punkt, nyt punkt i talserien (dødstal 1.190 plus 105), `cases`, `extra` og `src` opdateret.
+- `ebola-drc`: ECDC 11. november: 11.042 bekræftede tilfælde og 5.387 dødsfald pr. 10. november med data til og med 9. november, 52 nye tilfælde og 33 nye dødsfald, 30 i Ituri, 17 i Nordkivu og 5 i Haut-Uélé, 651 i isolation og 2.990 raske. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-11 (læst i sidens rå tekst, summerne passer med de forrige tal). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `ebola-ng`: ECDC 11. november efter NCDC 10. november: 34 af 62 kontakter har afsluttet de 21 dages karantæne. Kilde: samme ECDC-side, og NCDC's side https://evdmicrosite.ncdc.gov.ng/en/outbreaks/ebola-2026 er sat i `src`. Nyt punkt.
+- `ebola-ke`: ECDC 11. november efter Kenyas sundhedsministerium: den sidste patient i behandling er udskrevet, syv af ni tilfælde er raske, og alle kontakter under opfølgning har afsluttet karantænen. Kilde: samme ECDC-side. Nyt punkt, `cases`, `extra` og `src` opdateret. `cases` bygger nu på ECDC i stedet for et medie.
+- `mpox-hk`: CHP 11. november: et nyt tilfælde hos en 26-årig mand, 119 tilfælde siden 2022, 94 lokale og 25 importerede. Kilde: https://www.info.gov.hk/gia/general/202611/11/P2026111100713.htm (læst i sidens rå tekst). Nyt punkt og `src` opdateret. `cases` urørt, fordi CHP ikke skriver et tal for 2026.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne. Rundturen hører til kl. 05.20-kørslen og er ikke gentaget.
+
+**Mediesporet**
+- Ét par med status afventer. Godkendt: ingen.
+- Afvist `GB-IE`: artiklerne handler om falske bombetrusler mod skoler i Italien, Storbritannien og Irland og om høringerne om bombeattentatet i Omagh i 1998, ikke om kampe mellem landenes styrker. Kilder: https://www.aljazeera.com/news/2026/11/11/at-least-300-italian-schools-evacuated-after-email-bomb-alerts og https://www.rte.ie/news/regional/2026/1109/1598575-omagh-bombing-inquiry/ (begge læst i sidens rå tekst).
+
+**Usikkert**
+- `maesling-us`: US CDC's ugentlige tal kommer onsdag og var ikke ude ved kørslen. Næste kørsel bør tjekke siden.
+- `ebola-ke`: ECDC skriver, at nedtællingen er i gang, men oplyser ikke, hvornår udbruddet kan erklæres slut. Kørslen har ikke selv regnet en dato ud.
+- `GB-IE`: CBS News, CNN og France 24 kunne ikke læses ved direkte opslag. Afvisningen bygger på Al Jazeera og RTÉ.
+- `pest-irkutsk`: fortsat intet nyt. Kørslen kl. 00.20 12. november bør sætte `live` til `false`, hvis intet nyt kommer.
+- `difteri-ng` (48 dage), `cre-eu` (40 dage) og `ebola-nl` (32 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 9be4a7c.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 10. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
