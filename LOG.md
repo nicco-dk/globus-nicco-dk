@@ -59,6 +59,28 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 10. november står på siden, ingen nyere), WHO SEARO nummer 22 (allerede brugt), WHO WPRO nummer 1068 (allerede brugt, nummer 1069 dateret 5., 6. og 7. november gav fortsat 404), Hongkongs pressemeddelelser 11. november (kun influenzavaccination, intet om udbrud), UKHSA, NaTHNaC og CIDRAP (intet nyt for Asien og Mellemøsten, der ikke er brugt; H9N2 i Kina er de tilfælde, der står i `h9n2-cn`). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt efter polio i Deir Ezzor og nødplanen for Yemen), DGHS' denguetal gengivet af The Daily Star og The Business Standard (se Ændret), søgninger efter nyt om `pest-irkutsk` (intet efter 12. oktober) og efter Sri Lankas dengue-tal (intet nyere end 30. oktober).
+
+**Ændret**
+- `dengue-bd`: DGHS 10. november: 153.768 tilfælde og 474 dødsfald i 2026 efter 8 nye dødsfald, syv i Dhaka-divisionen og ét i Khulna-divisionen, og 1.595 nye indlagte på et døgn til kl. 8 10. november. 6.136 fortsat indlagt. Kilder: https://www.thedailystar.net/news/healthcare/disease/news/8-die-dengue-1595-hospitalised-24-hours-4320151 og https://www.tbsnews.net/bangladesh/health/dengue-death-toll-reaches-474-8-more-die-1598366 (begge læst i sidens rå tekst, samme tal). Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret. Tallet for 11. november var ikke ude ved kørslen.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `pest-irkutsk`: 30 dage i dag siden seneste punkt 12. oktober, og kilderne er tavse. Kørslen har ladet `live` stå, fordi en hel måned først er gået 12. november. Kørslen kl. 00.20 12. november bør sætte `live` til `false` efter reglen, hvis intet nyt kommer.
+- Sri Lankas forside https://www.dengue.health.gov.lk/ kunne hverken nås direkte (forbindelsen fejlede) eller med hentningsværktøjet (tilladelsen blev ikke givet). Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede. `dengue-asien` står urørt pr. 30. oktober.
+- `difteri-ng`, `cre-eu` og `ebola-nl` venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 8c36ba0.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 10. november 2026
 
 ### Kl. 11.20, Asien og Mellemøsten
