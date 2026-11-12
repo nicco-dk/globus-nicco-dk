@@ -60,6 +60,27 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 11. november står på siden, ingen nyere), WHO SEARO nummer 22 (allerede brugt, nummer 23 ventes 18. november), WHO WPRO nummer 1068 (allerede brugt, nummer 1069 dateret 5., 6., 7., 12. og 13. november gav 404), UKHSA, NaTHNaC og CIDRAP (intet nyt for Asien og Mellemøsten, der ikke er brugt; H9N2 i Kina står i `h9n2-cn`) og Hongkongs pressemeddelelser 11. og 12. november (intet om udbrud efter mpox 11. november, der står på siden). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt efter polio i Deir Ezzor), DGHS' denguetal gengivet af The Daily Star og The Business Standard (se Ændret) og søgning efter Sri Lankas dengue-tal (intet nyere end 30. oktober).
+
+**Ændret**
+- `dengue-bd`: DGHS 11. november: 155.668 tilfælde og 478 dødsfald i 2026 efter 4 nye dødsfald, alle i Dhaka-divisionen, og 1.900 nye indlagte på et døgn til kl. 8 11. november. 6.067 fortsat indlagt. Kilder: https://www.thedailystar.net/news/bangladesh/news/4-more-die-dengue-4321476 og https://www.tbsnews.net/bangladesh/health/dengue-death-toll-rises-478-4-more-die-1599421 (begge læst i sidens rå tekst, samme tal). Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret. Tallet for 12. november var ikke ude ved kørslen.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- Sri Lankas forside https://www.dengue.health.gov.lk/ kunne ikke nås direkte (delen `lk` fejlede). Delene `dengue` (404) og `ont` i kildescriptet fejlede også. `dengue-asien` står urørt pr. 30. oktober.
+- `difteri-ng` (49 dage), `cre-eu` (41 dage) og `ebola-nl` (33 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit bf0e88d.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 11. november 2026
 
 ### Kl. 00.20, Europa og Danmark
