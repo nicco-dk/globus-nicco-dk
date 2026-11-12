@@ -1221,9 +1221,9 @@ const LK = {
 const MONO = "'IBM Plex Mono', ui-monospace, monospace";
 
 // Datasættets dato. Sættes sammen med EVENTS ved hver opdatering. Se OPDATERING.md i repoet.
-const DATA_DATO = '2026-11-12';
+const DATA_DATO = '2026-11-13';
 // Tidspunktet for seneste gennemgang af smitteudbruddene, med tidszone. Sættes sammen med DATA_DATO. Se OPDATERING.md.
-const DATA_TID = '2026-11-12T17:24+01:00';
+const DATA_TID = '2026-11-13T00:23+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
@@ -1443,7 +1443,7 @@ const EVENTS = [
 {id:'mpox',place:'DR Congo og international spredning',country:'Flere lande',region:'Afrika',lat:-4.0383,lon:21.7587,
  disease:'Mpox',pathogen:'Monkeypox-virus, klade Ib',stage:'variant',live:true,
  cases:'65.784 bekræftede tilfælde og 264 dødsfald globalt fra 1. januar 2025, WHO pr. 31. juli 2026',
- extra:'Juli 2026 alene gav 1.370 tilfælde og 7 dødsfald i 32 lande, hvoraf 75 procent i Afrika. Afrika siden 2025: 52.424 tilfælde og 238 dødsfald i 35 lande. Flest kumulerede klade Ib-tilfælde: Spanien 241, Frankrig 173, Portugal 162 og Tyskland 140. I EU og EØS 1.939 klade I-tilfælde i 23 lande fra oktober 2025 til september 2026, heraf 342 i 17 lande i september, flest i Spanien (94), ECDC pr. 13. oktober.',
+ extra:'Juli 2026 alene gav 1.370 tilfælde og 7 dødsfald i 32 lande, hvoraf 75 procent i Afrika. Afrika siden 2025: 52.424 tilfælde og 238 dødsfald i 35 lande. Flest kumulerede klade Ib-tilfælde: Spanien 241, Frankrig 173, Portugal 162 og Tyskland 140. I EU og EØS 2.221 klade I-tilfælde i 24 lande fra november 2025 til oktober 2026, heraf 219 i 15 lande i oktober, flest i Tyskland (70), mod 407 i 18 lande i september og 361 i 18 lande i august, ECDC med tilfælde indberettet til og med 11. november. ECDC skriver, at forsinket og efterfølgende indberetning kan påvirke tallene.',
  note:'Den internationale sundhedskrise blev ophævet 5. september 2025, men WHO behandler fortsat udbruddet som en gradueret nødsituation, og de stående anbefalinger er forlænget til august 2027. Ni lande uden for Central- og Østafrika har samfundssmitte af klade Ib.',
  gap:'Situationsrapport nummer 70 og senere findes ikke endnu, så perioden efter 26. august 2026 er ikke dækket af en primærkilde.',
  nodes:[['DR Congo',21.7587,-4.0383,'2024-08-14'],['Sverige',18.0686,59.3293,'2024-08-15'],['Tjekkiet',14.4378,50.0755,'2026-01-17'],['Israel',34.7818,32.0853,'2026-01-17'],['Madagaskar',47.5079,-18.8792,'2026-01-17'],['Nepal',85.3240,27.7172,'2026-01-17'],['Mayotte',45.1662,-12.8275,'2026-01-17'],['Østrig',16.3738,48.2082,'2026-03-16'],['Argentina',-58.3816,-34.6037,'2026-03-16'],['Centralafrikanske Republik',18.5582,4.3947,'2026-03-16'],['Singapore',103.8198,1.3521,'2026-04-22'],['Ecuador',-78.4678,-0.1807,'2026-04-22'],['Danmark',12.5683,55.6761,'2026-04-22'],['Colombia',-74.0721,4.7110,'2026-04-22'],['Mauritius',57.5522,-20.3484,'2026-05-17'],['Norge',10.7522,59.9139,'2026-06-26'],['Ghana',-0.1870,5.6037,'2026-07-11'],['Costa Rica',-84.0907,9.9281,'2026-07-31'],['Litauen',25.2797,54.6872,'2026-07-31'],['Chile',-70.6693,-33.4489,'2026-07-31'],['Ungarn',19.0402,47.4979,'2026-08-01']],
@@ -1465,8 +1465,9 @@ const EVENTS = [
      ['2026-08-16','DR Congo melder kun 41 tilfælde på seks uger. WHO advarer om forsinket indrapportering på grund af ebolaudbruddet',''],
      ['2026-08-26','Ni lande uden for Central- og Østafrika har samfundssmitte af klade Ib',''],
      ['2026-09-14','WHO offentliggør situationsrapport nummer 69',''],
-     ['2026-10-13','ECDC: 342 klade I-tilfælde i 17 lande i EU og EØS i september, mod 354 i august og 317 i juli. 1.939 klade I-tilfælde i 23 lande de seneste 12 måneder. Antallet er steget siden juni, drevet af klade I','',['ECDC, mpox i EU og EØS, september 2026','https://mpox-monthly.ecdc.europa.eu/']]],
- src:[['WHO sitrep 69','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_69.pdf'],['ECDC, mpox i EU og EØS, september 2026','https://mpox-monthly.ecdc.europa.eu/'],['WHO sitrep 68','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_68.pdf'],['WHO om ophævelsen','https://www.who.int/news/item/30-10-2025-fifth-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-upsurge-of-mpox-2024']]},
+     ['2026-10-13','ECDC: 342 klade I-tilfælde i 17 lande i EU og EØS i september, mod 354 i august og 317 i juli. 1.939 klade I-tilfælde i 23 lande de seneste 12 måneder. Antallet er steget siden juni, drevet af klade I','',['ECDC, mpox i EU og EØS, september 2026','https://mpox-monthly.ecdc.europa.eu/']],
+     ['2026-11-11','ECDC: 219 klade I-tilfælde i 15 lande i EU og EØS i oktober, flest i Tyskland (70), mod 407 i september og 361 i august. 2.221 klade I-tilfælde i 24 lande de seneste 12 måneder. Antallet faldt i oktober, men ligger fortsat over niveauet i første halvår','',['ECDC, mpox i EU og EØS, oktober 2026','https://mpox-monthly.ecdc.europa.eu/']]],
+ src:[['WHO sitrep 69','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_69.pdf'],['ECDC, mpox i EU og EØS, oktober 2026','https://mpox-monthly.ecdc.europa.eu/'],['WHO sitrep 68','https://cdn.who.int/media/docs/default-source/_sage-2026/multi-country-outbreak-of-mpox--external-situation-report_68.pdf'],['WHO om ophævelsen','https://www.who.int/news/item/30-10-2025-fifth-meeting-of-the-international-health-regulations-(2005)-emergency-committee-regarding-the-upsurge-of-mpox-2024']]},
 
 {id:'anthrax-zm',place:'Munyamadzi, Mpika i Muchinga',country:'Zambia',region:'Afrika',lat:-11.8333,lon:31.4500,
  disease:'Miltbrand',pathogen:'Bacillus anthracis',stage:'spredning',live:false,

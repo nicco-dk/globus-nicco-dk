@@ -2,6 +2,30 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 13. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 11. november står på siden, ingen nyere), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud efter ugeoversigten for uge 45, som kl. 17.20-kørslen brugte), NaTHNaC (intet nyt efter hantavirus i Argentina 12. november, der står i GENNEMGANG.md), CIDRAP (intet nyt for Europa; H5N1 hos køer i Oregon hører til Amerika) og Hongkong (intet om udbrud efter mpox 11. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 12. november kl. 16.00, ingen poster efter dem, tidligere kørsler har brugt eller vurderet), ECDC's månedsrapport om mpox i EU og EØS https://mpox-monthly.ecdc.europa.eu/ (se Ændret), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (læst direkte, nyeste om sygdom er fra 7. oktober, intet nyt), RIVM's ebolaside https://www.rivm.nl/en/ebola/current-information (opdatering 12. november om DR Congo, intet nyt om Nederlandene), GOV.UK's søgning efter ebola (intet nyt om `ebola-gb` efter 5. november) og Robert Koch Instituts Epidemiologisches Bulletin 46/2026 https://www.rki.de/DE/Aktuelles/Publikationen/Epidemiologisches-Bulletin/2026/46_26.pdf (12. november, om HIV i Tyskland 2025, intet for siden). Kvalitet: koordinater i `lat`, `lon` og `nodes` er tjekket for ombytning uden fund. Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato.
+
+**Ændret**
+- `mpox`: ECDC's månedsrapport for oktober 2026 med tilfælde indberettet til og med 11. november: 219 klade I-tilfælde i 15 lande i EU og EØS i oktober, flest i Tyskland (70), mod 407 i 18 lande i september og 361 i 18 lande i august. 2.221 klade I-tilfælde i 24 lande fra november 2025 til oktober 2026. Kilde: https://mpox-monthly.ecdc.europa.eu/ (læst i sidens rå tekst). Nyt punkt dateret 11. november, `extra` og navnet på kilden i `src` opdateret. `cases` (WHO's globale tal) og `gap` urørt.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `mpox`: ECDC's rapport har ingen udgivelsesdato i sidens tekst, så punktet er dateret efter indberetningsdatoen 11. november. WHO's situationsrapport nummer 70 er fortsat ikke fundet.
+- `difteri-ng` (50 dage), `cre-eu` (42 dage) og `ebola-nl` (34 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 73475e8.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `mpox`: ECDC har opjusteret klade I-tallene for september (342 i 17 lande til 407 i 18 lande) og august (354 til 361). Punktet 13. oktober er ikke rettet.
+
 ## 12. november 2026
 
 ### Kl. 00.20, Europa og Danmark
