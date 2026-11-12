@@ -81,6 +81,37 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste, intet nyt siden forrige kørsel), DGHS' mæslinger (ingen meddelelse nyere end 11. november; DGHS' liste over pressemeddelelser https://dghs.gov.bd/pages/press-releases viser heller ingen for 12. november), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud), NaTHNaC (hantavirus i Argentina 12. november, se Til gennemgang; resten står allerede på siden eller er vurderet), CIDRAP (intet nyt for Afrika og Amerika, der ikke er brugt) og Hongkong (intet om udbrud efter mpox 11. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events med ebolaopdateringen 12. november (se Ændret) og månedsrapporten om West Nile 12. november (data pr. 4. november, samme dato som punktet fra kl. 05.20, ikke brugt), UKHSA's ugeoversigt uge 45 https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-45-week-ending-8-november-2026 (ebola, H9N2 i Kina, CCHF i Mauritanien og chikungunya i Schweiz; intet nyt for siden), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.182 pr. 5. november, opdateret 6. november), søgninger efter PAHO's epidemiologiske alarmer og opdateringer (situationsrapport 15 om mæslinger 6. november fortsat nyeste), WHO AFRO's ugebulletin og Africa CDC's ugentlige rapport (ingen nye fundet) og https://globus.nicco.dk/konflikter.json (genereret 12. november kl. 15.23 UTC).
+
+**Ændret**
+- `ebola-drc`: ECDC 12. november: 11.114 bekræftede tilfælde og 5.433 dødsfald pr. 11. november med data til og med 10. november, 72 nye tilfælde og 46 nye dødsfald, 44 i Ituri, 24 i Nordkivu, 3 i Haut-Uélé og 1 i Nord-Ubangi, 981 i isolation og 3.031 raske. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-12 (læst i sidens rå tekst, summerne pr. provins passer med de forrige tal). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `ebola-ng`: ECDC 12. november efter NCDC 11. november: 52 af 62 kontakter har afsluttet de 21 dages karantæne. Kilde: samme ECDC-side. Nyt punkt og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne. Rundturen hører til kl. 05.20-kørslen og er ikke gentaget.
+
+**Mediesporet**
+- Tre par med status afventer. Godkendt: ingen.
+- Afvist `IE-IT`: falske bombetrusler sendt med e-mail til skoler i Italien, Skotland og Nordirland, ikke kampe mellem landenes styrker. Kilder: https://www.aljazeera.com/news/2026/11/11/at-least-300-italian-schools-evacuated-after-email-bomb-alerts og https://www.bbc.co.uk/news/articles/cwz0k79pr8z2o (begge læst i sidens rå tekst).
+- Afvist `CN-TW`: præsident Xi Jinpings tale om genforening med Taiwan, hvor han lover at gøre det fredeligt, uden rapporterede angreb. Kilder: https://www.aljazeera.com/news/2026/11/12/xi-jinping-says-taiwans-complete-reunification-with-china-will-happen og https://www.straitstimes.com/asia/east-asia/chinas-xi-says-taiwan-reunification-must-happen-as-history-cannot-be-stopped
+- Afvist `IQ-LB`: drabet på en tidligere irakisk parlamentariker i Beirut, ikke kampe mellem landenes styrker. Kilder: https://www.aljazeera.com/news/2026/11/11/former-iraqi-awmaker-ahmed-al-alwani-found-dead-in-beirut og https://www.arabnews.com/middle-east/former-iraqi-mp-found-dead-in-beirut-suspect-arrested-3011016
+
+**Usikkert**
+- `maesling-us`: US CDC's ugentlige tal, der normalt kommer onsdag, var fortsat ikke opdateret efter 6. november (11. november var Veterans Day). Ingen ændring.
+- `maesling-bd`: DGHS' mæslingetal for 12. november var ikke ude ved kørslen.
+- `IE-IT`: Le Monde, France 24 og CBS News kunne ikke læses ved direkte opslag. Afvisningen bygger på Al Jazeera og BBC.
+- `difteri-ng` (49 dage), `cre-eu` (41 dage) og `ebola-nl` (33 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 7f359dc.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: hantavirus i Argentina, 64 bekræftede tilfælde i 2026 pr. 31. oktober efter NaTHNaC, over det årlige antal i 2022 til 2025. Ingen hændelse oprettet, fordi ministeriets egen opgørelse ikke er læst.
+
 ## 11. november 2026
 
 ### Kl. 00.20, Europa og Danmark

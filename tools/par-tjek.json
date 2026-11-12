@@ -106,6 +106,9 @@
     "FR-IR": {"dato": "2026-11-10", "grund": "Artiklerne handler om, at Frankrig anklager Irans Revolutionsgarde for et cyberangreb på kølesystemer i omkring 700 supermarkeder 11. og 12. oktober og vil have EU-sanktioner, ikke om væbnede angreb eller kampe mellem landenes styrker (Hindustan Times, NPR, The Washington Post, Le Monde)."},
     "SY>YE": {"dato": "2026-11-10", "grund": "Syriens udenrigsminister afviser, at der er syriske tropper i Yemen eller planer om at sende dem, og artiklerne beskriver syriske rådgivere og soldater sendt til Saudi-Arabien til træning, ikke levering af våben, tropper eller udstyr til Yemen (Arab News, Al Jazeera)."},
     "SA-SY": {"dato": "2026-11-11", "grund": "Landene er allierede. Artiklerne beskriver, at Syrien har sendt militære rådgivere og vil sende specialstyrker til Saudi-Arabien for at hjælpe i krigen mod Houthi-bevægelsen, ikke kampe mellem saudiske og syriske styrker (Al Jazeera, The Hindu efter AP)."},
-    "AE-UA": {"dato": "2026-11-12", "grund": "Artiklerne handler om fredsforhandlingerne mellem Rusland og Ukraine i Abu Dhabi, hvor Emiraterne er vært, ikke om kampe mellem landene (RNZ, Al-Monitor)."}
+    "AE-UA": {"dato": "2026-11-12", "grund": "Artiklerne handler om fredsforhandlingerne mellem Rusland og Ukraine i Abu Dhabi, hvor Emiraterne er vært, ikke om kampe mellem landene (RNZ, Al-Monitor)."},
+    "IE-IT": {"dato": "2026-11-12", "grund": "Artiklerne handler om falske bombetrusler sendt med e-mail til skoler i Italien, Skotland og Nordirland, ikke om kampe mellem de to landes styrker (Al Jazeera, BBC)."},
+    "CN-TW": {"dato": "2026-11-12", "grund": "Artiklerne handler om præsident Xi Jinpings tale om genforening med Taiwan, hvor han lover at gøre det fredeligt, uden rapporterede angreb eller kampe mellem parternes styrker (Al Jazeera efter AFP og Reuters, The Straits Times)."},
+    "IQ-LB": {"dato": "2026-11-12", "grund": "Artiklerne handler om drabet på en tidligere irakisk parlamentariker i en lejlighed i Beirut, ikke om kampe mellem landenes styrker (Al Jazeera, Arab News)."}
   }
 }
