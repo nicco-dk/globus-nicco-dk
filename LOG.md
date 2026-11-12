@@ -26,6 +26,40 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 11. november står på siden), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud efter 5. november), NaTHNaC (intet nyt efter 11. november, der ikke står på siden eller er vurderet), CIDRAP (US CDC har erklæret udbruddet af E. coli og Salmonella fra alfalfaspirer afsluttet; det står ikke på siden. PAHO's kommission drøfter i denne uge USA's status for eliminering af mæslinger) og Hongkong (intet nyt efter mpox 11. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 11. november kl. 16.00; ugesiderne 6. november for West Nile, se Ændret, chikungunya og dengue, uden nyt for siden), UKHSA's ugeoversigt (uge 44 fortsat nyeste, uge 45 ventes i dag), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.182 pr. 5. november, opdateret 6. november), US CDC's side om mpox https://www.cdc.gov/monkeypox/situation-summary/index.html (se Ændret), US CDC's Cyclospora-side (fortsat 23. oktober), søgninger efter WHO's mpox-situationsrapport nummer 70 (ikke udkommet, nummer 69 14. september er nyeste), WHO AFRO's ugebulletin og PAHO's epidemiologiske alarmer (alarmen om skruelarve 16. oktober fortsat nyeste) og https://globus.nicco.dk/konflikter.json (genereret 12. november kl. 03.23 UTC).
+
+**Ændret**
+- `wnv-eu`: ECDC's ugeside for West Nile, uge 45, offentliggjort 6. november med data til og med 4. november: 2.029 lokalt erhvervede tilfælde i 20 lande og 234 berørte områder, ingen nye områder på en uge. Italien 783, Grækenland 469, Frankrig 191, Spanien 149, Rumænien 125, Nederlandene 76 og Nordmakedonien 71. Kilde: https://wnv-weekly.ecdc.europa.eu/ (læst i sidens rå tekst, samme tal i nøgletallene på https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00019/2026-11-06). Nyt punkt 4. november, nyt punkt i talserien, `cases`, `extra` og navnet på kilden i `src` opdateret. Ugen var ikke taget af tidligere kørsler.
+- `mpox-mo`: US CDC skriver på siden om den aktuelle situation, opdateret 10. november, at der siden november 2024 er over 190 laboratoriebekræftede klade I-tilfælde i mindst 30 delstater og Puerto Rico, og at formodet indenlandsk smitte er meldt fra 16 jurisdiktioner. Kilde: https://www.cdc.gov/monkeypox/situation-summary/index.html (læst to gange med hentningsværktøjet, direkte opslag giver 403). Nyt punkt, `place`, `cases` og `gap` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-fl` (12) uden ugerapport for uge 44 (adressen gav 404), `gul-feber-ve` (13) uden nyere bulletin, `dengue-asien` (13) uden læsbar kilde fra Sri Lanka, `h5n1-us` (15) uden nyere opgørelse fundet, `cyclospora-us` (20) med US CDC's side fortsat pr. 23. oktober, `myiasis-am` (27) uden nyere alarm fra PAHO, `difteri-afro` (27) uden ny ugebulletin fra WHO AFRO, `salmonella-eu` (27) uden nye poster hos ECDC, `mpox` (30) uden situationsrapport nummer 70, `shamonda-fr` (10) uden nyt efter DON 623, `ebola-nl` (33), `cre-eu` (41) og `difteri-ng` (49) venter på ejerens afgørelse.
+
+**Mediesporet**
+- Fem par med status afventer. Fire af dem var afvist 13. oktober og er udløbet efter 30 dage.
+- Godkendt `IR-US`: USA har angrebet iranske luftforsvarssystemer på øen Qeshm i Hormuzstrædet 6. til 8. november, hvilket præsident Trump har bekræftet, og Irans hær siger, at den har skudt en amerikansk MQ-9-drone ned. Det er direkte angreb mellem parternes styrker, så reglen fra 13. oktober er opfyldt. Kilder: https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation og https://tribune.com.pk/story/2639407/no-vital-infrastructure-damaged-in-us-attack-on-qeshm-island-iranian-official (begge læst i sidens rå tekst).
+- Afvist `IL-IR`: artiklerne handler om Irans krav ved COP31 om erstatning for tidligere angreb og om spekulation om iranske droneoperationer, uden rapporterede angreb mellem Israel og Iran i vinduet. Kilder: https://www.jpost.com/middle-east/iran-news/article-914620 og https://www.al-monitor.com/originals/2026/11/iran-tells-cop31-it-wants-compensation-environmental-damage-us-israeli-strikes
+- Afvist `CN-US`: spionagesagen om Nvidia og et planlagt topmøde, ikke væbnede sammenstød. Kilder: https://www.pbs.org/newshour/world/what-we-know-and-what-we-dont-as-nvidia-investigates-an-alleged-spy-plot-involving-its-ceo og https://www.latimes.com/business/story/2026-11-11/nvidia-scandal-spotlights-growing-espionage-risks-for-ai-firms
+- Afvist `GB-IR`: iranske trusler mod amerikanske baser i Europa og en påstået iransk-støttet plan mod en britisk flybase, ikke kampe mellem landenes styrker. Kilder: https://www.hindustantimes.com/world-news/us-news/iran-security-chief-threatens-to-strike-us-military-bases-in-europe-if-used-for-attacks-101794430971247.html og https://punchng.com/iran-security-chief-threatens-us-bases-in-europe-if-used-for-strikes/
+- Afvist `AE-UA`: fredsforhandlingerne mellem Rusland og Ukraine i Abu Dhabi. Kilder: https://www.rnz.co.nz/news/world/2549868/russia-and-ukraine-say-some-progress-made-at-talks-us-cites-a-lack-of-trust og https://www.al-monitor.com/originals/2026/11/russia-ukraine-reach-deal-prisoner-swap-us-says-lack-trust-holds-back-talks
+
+**Usikkert**
+- `IR-US`: The Wall Street Journals artikel 10. november om udveksling af angreb på øerne kunne ikke læses (betalingsmur), og France 24 afviste opslaget. Godkendelsen bygger på Al Jazeera og The Express Tribune. Præsident Trump kalder krigen "effectively over", så parret kan blive aktuelt at flytte til afvist, hvis to medier beskriver en aftale.
+- `mpox-mo`: CDC oplyser ikke et præcist tal eller en dag for opgørelsen. Hentningsværktøjet giver kun korte citater, så tallet er læst som "more than 190" og "at least 30 states plus Puerto Rico" i to uafhængige opslag.
+- `mpox` når 31 dage uden nyt punkt i morgen. WHO's situationsrapport nummer 70 er ikke fundet.
+- `difteri-ng` (49 dage), `cre-eu` (41 dage) og `ebola-nl` (33 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 1912b64.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 11. november 2026
 
 ### Kl. 00.20, Europa og Danmark
