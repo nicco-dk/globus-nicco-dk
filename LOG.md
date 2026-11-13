@@ -26,6 +26,35 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `mpox`: ECDC har opjusteret klade I-tallene for september (342 i 17 lande til 407 i 18 lande) og august (354 til 361). Punktet 13. oktober er ikke rettet.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste), DGHS' mæslinger (meddelelsen 11. november står på siden, ingen nyere), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt efter 12. november; hantavirus i Argentina står i GENNEMGANG.md), CIDRAP (H5N1 i malkekvæg i Oregon, se Ændret; Kenyas nedtælling til erklæringen om ebolafrihed står allerede i `ebola-ke` efter ECDC 11. november) og Hongkong (intet om udbrud). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter ebola og West Nile 12. november, der er brugt eller vurderet), UKHSA's ugeoversigt uge 45 (allerede brugt), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.182 pr. 5. november, opdateret 6. november), US CDC's Cyclospora-side https://www.cdc.gov/cyclosporiasis/cases/index.html (fortsat 23. oktober), Floridas ugerapport uge 44 (ikke udkommet, adressen gav 404), søgninger efter WHO AFRO's ugebulletin, Africa CDC's ugentlige rapport og PAHO's epidemiologiske alarmer (ingen nyere fundet) og https://globus.nicco.dk/konflikter.json (genereret 13. november kl. 03.23 UTC).
+
+**Ændret**
+- `h5n1-wa`: USDA APHIS 10. november: H5N1 bekræftet i en malkekvægsbesætning i Oregon, delstatens første fund i kvæg, fundet ved Oregons løbende overvågning. Malkekvæg i i alt 22 stater er smittet siden marts 2024. Kilde: https://www.aphis.usda.gov/news/agency-announcements/usda-confirms-highly-pathogenic-avian-influenza-dairy-herd-oregon (læst to gange uafhængigt med hentningsværktøjet, direkte opslag giver 403). Nyt punkt, `extra` (19 stater rettet til 22 stater med kilde og dato) og `src` opdateret. Ingen ny prik, fordi APHIS ikke oplyser, hvor i Oregon besætningen er.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `shamonda-fr` (11) uden nyt efter DON 623, `dengue-fl` (13) uden ugerapport for uge 44, `gul-feber-ve` (14) uden nyere bulletin, `dengue-asien` (14) uden læsbar kilde fra Sri Lanka, `h5n1-us` (16) uden nyere opgørelse fra USDA APHIS fundet, `cyclospora-us` (21) med US CDC's side fortsat pr. 23. oktober, `myiasis-am` (28) uden nyere alarm fra PAHO end 16. oktober, `difteri-afro` (28) uden ny ugebulletin fra WHO AFRO, `salmonella-eu` (28) uden nye poster hos ECDC. `ebola-nl` (34), `cre-eu` (42) og `difteri-ng` (50) venter på ejerens afgørelse.
+
+**Mediesporet**
+- Tre par med status afventer. Alle tre afvist.
+- Afvist `US-VE`: rigsretssagen mod forsvarsminister Pete Hegseth og en amerikansk rapport om indtægter fra venezuelansk olie. Kommandoaktionen mod Maduro i januar nævnes kun som baggrund, og ingen kampe mellem landenes styrker er rapporteret i vinduet. Kilder: https://tribune.com.pk/story/2639570/pentagon-chief-hegseth-expected-to-face-house-impeachment-vote-this-week https://www.euronews.com/2026/11/10/republican-lawmaker-launched-eight-articles-of-impeachment-against-us-defence-chief-hegset og https://www.aljazeera.com/news/2026/11/12/us-releases-report-on-12bn-from-venezuelan-oil-mineral-resources
+- Afvist `GB-RU`: spionagesag, et britisk-ledet nordeuropæisk forsvarssamarbejde, et hypotetisk krigsscenarie og lækkede russiske tabstal i Ukraine, ikke kampe mellem landenes styrker. Kilder: https://www.aljazeera.com/news/2026/11/11/whats-northern-europes-new-drones-and-warships-plan-to-counter-russia https://www.kyivpost.com/post/89903 og https://www.nzherald.co.nz/world/ukraine-war-data-leak-shows-nearly-half-a-million-russians-have-died/PV7WZ6XIVFHHHJKT6POHZOQ3TE/
+- Afvist `EG-PS`: israelske luftangreb i Gaza og Board of Peace. Egypten er ikke part: Arab News har kun datolinjen Kairo, og The Express Tribune nævner ikke Egypten. Kilder: https://www.arabnews.com/middle-east/israeli-strikes-kill-three-people-including-two-brothers-in-gaza-medics-say-3011203 og https://tribune.com.pk/story/2639972/board-of-peace-urges-immediate-implementation-of-trumps-gaza-plan-after-israeli-hospital-strike
+
+**Usikkert**
+- `h5n1-wa`: CIDRAP skriver 12. november efter USDA APHIS' tabel, at 51 kvægbesætninger er ramt de seneste 30 dage, og at Washington har 43 fund siden 8. oktober. Tabellen er ikke læst i kørslen, så tallene er ikke brugt. United Farm Workers skriver, at humane tilfælde blandt malkearbejdere i Yakima Valley er underrapporterede. Det er ikke bekræftet af en myndighed og er ikke brugt.
+- Statens Serum Instituts liste over sygdomsudbrud gav ingen læsbar redigeringsdato ved direkte opslag. Sri Lankas forside https://www.dengue.health.gov.lk/ kunne hverken nås direkte (delen `lk`) eller med hentningsværktøjet (robots_disallowed). Delene `dengue` (404) og `ont` i kildescriptet fejlede også.
+- `difteri-ng` (50 dage), `cre-eu` (42 dage) og `ebola-nl` (34 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 54af3c1.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 12. november 2026
 
 ### Kl. 00.20, Europa og Danmark

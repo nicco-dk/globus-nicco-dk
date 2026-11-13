@@ -30,7 +30,7 @@
     "KP-KR": { "dato": "2026-10-13", "grund": "Artiklerne handler om Nordkoreas prøveopsendelser af ballistiske missiler i havet, ikke om angreb mellem landenes styrker." },
     "SA-SD": { "dato": "2026-10-13", "grund": "Artiklerne handler om Houthi-bevægelsens angreb på Riyadhs lufthavn, og Sudan er ikke part i kampene mod Saudi-Arabien." },
     "DJ-SA": { "dato": "2026-10-13", "grund": "Artiklerne handler om krigen mellem Saudi-Arabien og Houthi-bevægelsen og om Rødehavet, og Djibouti er ikke part i kampene." },
-    "US-VE": { "dato": "2026-10-13", "grund": "Artiklerne handler om anklagerne i USA mod Nicolás Maduro og hans hustru for tortur, en retssag og ikke væbnede sammenstød." },
+    "US-VE": {"dato": "2026-11-13", "grund": "Artiklerne handler om en rigsretssag i Repræsentanternes Hus mod forsvarsminister Pete Hegseth og om en amerikansk rapport om indtægter fra venezuelansk olie, med kommandoaktionen mod Maduro i januar kun som baggrund, uden rapporterede kampe mellem landenes styrker i vinduet (The Express Tribune, Euronews, Al Jazeera)."},
     "EG-SA": { "dato": "2026-10-13", "grund": "Egypten er nævnt, fordi en egyptisk kabineansat blev dræbt i Houthi-angrebet på Riyadhs lufthavn, ikke som part i kampene." },
     "GB-IR": {"dato": "2026-11-12", "grund": "Artiklerne handler om iranske trusler mod amerikanske baser i Europa og en påstået iransk-støttet plan mod en britisk flybase, ikke om kampe mellem landenes styrker (Hindustan Times, Punch)."},
     "CN-US": {"dato": "2026-11-12", "grund": "Artiklerne handler om en påstået kinesisk spionagesag om Nvidia, konkurrencen om kunstig intelligens og et planlagt topmøde, ikke om væbnede sammenstød (PBS, Los Angeles Times)."},
@@ -49,7 +49,7 @@
     "GB-IL": {"dato": "2026-10-14", "grund": "Artiklerne handler om britiske sanktioner mod bosættelser og striden om konsulatet i Jerusalem, ikke om kampe mellem landenes styrker."},
     "DZ-SA": {"dato": "2026-10-14", "grund": "Algeriet er nævnt, fordi landet fordømmer Houthi-angrebene på Saudi-Arabiens lufthavne, ikke som part i kampene."},
     "IT-US": {"dato": "2026-10-14", "grund": "Artiklerne handler om en ærkebiskops kritik af en henrettelse, Columbus Day og andre emner, ikke om kampe mellem landene."},
-    "GB-RU": {"dato": "2026-10-14", "grund": "Artiklerne handler om den britiske efterretningstjenestes advarsler om hybride trusler, ikke om kampe mellem landenes styrker."},
+    "GB-RU": {"dato": "2026-11-13", "grund": "Artiklerne handler om en britisk officer anklaget for spionage for Rusland, et britisk-ledet nordeuropæisk forsvarssamarbejde mod russiske trusler, et hypotetisk krigsscenarie og lækkede russiske tabstal i Ukraine, ikke om kampe mellem landenes styrker (Al Jazeera, Kyiv Post, The New Zealand Herald)."},
     "DE-UA": {"dato": "2026-10-14", "grund": "Artiklerne handler om retssagen i Tyskland mod en ukrainsk tidligere officer for sprængningen af Nord Stream, ikke om kampe mellem landene."},
     "IL-OM": {"dato": "2026-10-14", "grund": "Artiklerne handler om en planlagt kapring af et fly fra flydubai og et fragtfly, der blev afvist i Israel, ikke om kampe mellem landenes styrker."},
     "GB-US": {"dato": "2026-10-15", "grund": "Artiklerne handler om den britiske efterretningstjenestes advarsler om iranske og russiske trusler og om en dødsulykke i en britisk zoo, ikke om kampe mellem landene."},
@@ -109,6 +109,7 @@
     "AE-UA": {"dato": "2026-11-12", "grund": "Artiklerne handler om fredsforhandlingerne mellem Rusland og Ukraine i Abu Dhabi, hvor Emiraterne er vært, ikke om kampe mellem landene (RNZ, Al-Monitor)."},
     "IE-IT": {"dato": "2026-11-12", "grund": "Artiklerne handler om falske bombetrusler sendt med e-mail til skoler i Italien, Skotland og Nordirland, ikke om kampe mellem de to landes styrker (Al Jazeera, BBC)."},
     "CN-TW": {"dato": "2026-11-12", "grund": "Artiklerne handler om præsident Xi Jinpings tale om genforening med Taiwan, hvor han lover at gøre det fredeligt, uden rapporterede angreb eller kampe mellem parternes styrker (Al Jazeera efter AFP og Reuters, The Straits Times)."},
-    "IQ-LB": {"dato": "2026-11-12", "grund": "Artiklerne handler om drabet på en tidligere irakisk parlamentariker i en lejlighed i Beirut, ikke om kampe mellem landenes styrker (Al Jazeera, Arab News)."}
+    "IQ-LB": {"dato": "2026-11-12", "grund": "Artiklerne handler om drabet på en tidligere irakisk parlamentariker i en lejlighed i Beirut, ikke om kampe mellem landenes styrker (Al Jazeera, Arab News)."},
+    "EG-PS": {"dato": "2026-11-13", "grund": "Artiklerne handler om israelske luftangreb i Gaza og Board of Peace, hvor Egypten ikke er part: Arab News har kun datolinjen Kairo, og The Express Tribune nævner ikke Egypten. Ingen kampe mellem Egyptens styrker og palæstinensiske parter (Arab News, The Express Tribune)."}
   }
 }
