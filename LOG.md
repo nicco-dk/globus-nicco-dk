@@ -55,6 +55,31 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 625 6. november fortsat nyeste, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 11. november står på siden, ingen nyere), WHO SEARO nummer 22 pr. 4. november (allerede brugt, nummer 23 ventes 18. november), WHO WPRO nummer 1068 pr. 29. oktober (allerede brugt; adresserne for 6., 7. og 13. november gav 404), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten efter polio i Syrien 10. november, der står i `polio-sy`), CIDRAP og Hongkongs pressemeddelelser (se Urørt). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (nyeste om udbrud er polio i Deir Ezzor 9. november, allerede i `polio-sy`), DGHS' dengue gengivet af The Daily Star og The Business Standard (se Ændret).
+
+**Ændret**
+- `dengue-bd`: 157.628 tilfælde og 481 dødsfald i 2026 efter 3 nye dødsfald og 1.960 nye indlagte på et døgn til kl. 8 12. november, 5.915 fortsat indlagt, DGHS gengivet af The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/three-more-die-dengue-1960-hospitalised-24-hours-4322156 og The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-reaches-481-3-more-die-1600496 (dødsfald, nye indlagte og fortsat indlagte stemmer i begge). 483 dødsfald efter 2 nye, begge i Dhaka-divisionen, og 1.255 nye indlagte på et døgn til kl. 8 13. november, DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-483-2-more-die-1601461 Nye punkter 12. og 13. november, `cases`, `pts` (12. november) og `src` opdateret. Intet punkt i `pts` for 13. november, fordi det samlede antal tilfælde ikke er læst i en kilde.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+- `h9n2-cn`: CIDRAP's nyhed om flere H9N2-tilfælde i Kina https://www.cidrap.umn.edu/avian-influenza-bird-flu/more-h9n2-avian-flu-cases-confirmed-china handler om tilfældene i Liaoning og Guangxi, som allerede står i punktet 4. november efter ECDC. Ingen ændring.
+- Hongkong: AFCD meldte 13. november H5-fugleinfluenza i to miljøprøver fra Mai Po Nature Reserve, indsamlet 11. november https://www.info.gov.hk/gia/general/202611/13/P2026111300578.htm Fund i vilde fugles miljø uden humane tilfælde og uden fjerkræfarme inden for 3 km. Ikke taget med som ny hændelse, fordi det svarer til den almindelige sæson, og ingen myndighed kalder det usædvanligt.
+
+**Usikkert**
+- `dengue-bd`: The Daily Star skriver, at dødsfaldene 12. november var i Dhaka-, Barishal- og Rajshahi-divisionerne, The Business Standard Dhaka-, Mymensingh- og Rajshahi-divisionerne. Divisionerne er derfor udeladt i punktet 12. november.
+- En overskrift hos The Business Standard ("Measles: Death toll crosses 1,300 as 5 more die") er set på dengueartiklen 13. november, men artiklen er ikke læst. DGHS' egen meddelelse for 12. eller 13. november findes endnu ikke i kildescriptet, så `maesling-bd` er ikke ændret. Kl. 17.20-kørslen tager dagens mæslingetal.
+- Sri Lankas dagstal: delen `lk` i kildescriptet fejlede igen. `dengue-asien` er ikke ændret. Delene `dengue` (404) og `ont` fejlede også.
+- WHO WPRO's oversigt nummer 1069 er fortsat ikke fundet.
+- Repoet kunne ikke tilføjes med add_repo, fordi værktøjet ikke findes i kørslen. Kørslen har arbejdet i den eksisterende klon, hvor origin peger på https://github.com/nicco-dk/globus-nicco-dk med samme seneste commit d9c5b41 som mikkelnicco/globus-nicco-dk.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 12. november 2026
 
 ### Kl. 00.20, Europa og Danmark
