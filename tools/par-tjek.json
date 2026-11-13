@@ -37,10 +37,10 @@
     "MX-US": { "dato": "2026-10-13", "grund": "Artiklerne handler om kriminalitet, en drabssag og amerikansk indenrigspolitik, ikke om kampe mellem landenes styrker." },
     "US-YE": { "dato": "2026-10-14", "grund": "USA er nævnt, fordi en amerikaner blev dræbt i Houthi-angrebet på Riyadhs lufthavn, og fordi medierne drøfter, om USA vil gribe ind. Der er ikke beskrevet amerikanske angreb på Houthi-bevægelsen i perioden." },
     "IR-RU": { "dato": "2026-10-14", "grund": "Artiklerne handler om britisk efterretningstjenestes advarsler om iranske og russiske trusler mod Storbritannien og om en aftale om diesel, ikke om kampe mellem Iran og Rusland." },
-    "EG-IL": { "dato": "2026-10-14", "grund": "Artiklerne handler om nødhjælp til Gaza gennem Egypten og israelske angreb i Gaza. Egypten er ikke part i kampene." },
+    "EG-IL": {"dato": "2026-11-13", "grund": "Artiklerne handler om et israelsk luftangreb på Nasser Hospital i Khan Younis i Gaza. Egypten er ikke nævnt og er ikke part i kampene (Naharnet, NPR, Daily Sabah, Ynetnews)."},
     "PS-US": { "dato": "2026-10-14", "grund": "Artiklerne handler om amerikansk indenrigspolitik, en fotopris og kort over Gaza, ikke om kampe mellem palæstinensiske og amerikanske styrker." },
     "JP-KP": { "dato": "2026-10-14", "grund": "Artiklerne handler om nordkoreanske missilprøver i havet mellem Korea og Japan, ikke om angreb på Japan." },
-    "GB-PS": { "dato": "2026-10-14", "grund": "Artiklerne handler om britiske sanktioner mod bosættelser og en diplomatisk strid om konsulatet i Østjerusalem, ikke om kampe." },
+    "GB-PS": {"dato": "2026-11-13", "grund": "Artiklerne handler om en retssag om et knivangreb på en foged i Birmingham, en brandstiftelse udført af bosættere på Vestbredden med datolinjen London og en britisk udtalelse om oversvømmelser i Gaza, ikke kampe mellem britiske styrker og palæstinensiske parter (The Independent, Arab News, Ynetnews)."},
     "DE-RU": { "dato": "2026-10-14", "grund": "Artiklerne handler om retssagen om sprængningen af Nord Stream og NATO's forsvarsplaner, ikke om kampe mellem Tyskland og Rusland." },
     "JP-US": { "dato": "2026-10-14", "grund": "Artiklerne handler om en drabssag på Okinawa, hvor en amerikansk marinesoldat er mistænkt, ikke om kampe mellem landenes styrker." },
     "EG-YE": { "dato": "2026-10-14", "grund": "Egypten er nævnt, fordi en egyptisk kabineansat blev dræbt i Houthi-angrebet på Riyadhs lufthavn, ikke som part i kampene." },
@@ -110,6 +110,7 @@
     "IE-IT": {"dato": "2026-11-12", "grund": "Artiklerne handler om falske bombetrusler sendt med e-mail til skoler i Italien, Skotland og Nordirland, ikke om kampe mellem de to landes styrker (Al Jazeera, BBC)."},
     "CN-TW": {"dato": "2026-11-12", "grund": "Artiklerne handler om præsident Xi Jinpings tale om genforening med Taiwan, hvor han lover at gøre det fredeligt, uden rapporterede angreb eller kampe mellem parternes styrker (Al Jazeera efter AFP og Reuters, The Straits Times)."},
     "IQ-LB": {"dato": "2026-11-12", "grund": "Artiklerne handler om drabet på en tidligere irakisk parlamentariker i en lejlighed i Beirut, ikke om kampe mellem landenes styrker (Al Jazeera, Arab News)."},
-    "EG-PS": {"dato": "2026-11-13", "grund": "Artiklerne handler om israelske luftangreb i Gaza og Board of Peace, hvor Egypten ikke er part: Arab News har kun datolinjen Kairo, og The Express Tribune nævner ikke Egypten. Ingen kampe mellem Egyptens styrker og palæstinensiske parter (Arab News, The Express Tribune)."}
+    "EG-PS": {"dato": "2026-11-13", "grund": "Artiklerne handler om israelske luftangreb i Gaza og Board of Peace, hvor Egypten ikke er part: Arab News har kun datolinjen Kairo, og The Express Tribune nævner ikke Egypten. Ingen kampe mellem Egyptens styrker og palæstinensiske parter (Arab News, The Express Tribune)."},
+    "AE-RU": {"dato": "2026-11-13", "grund": "Artiklerne handler om fredsforhandlinger mellem Rusland og Ukraine i Abu Dhabi med De Forenede Arabiske Emirater som vært og en aftale om fangeudveksling, ikke kampe mellem landenes styrker (RNZ, NPR, Al-Monitor)."}
   }
 }

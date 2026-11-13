@@ -80,6 +80,39 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 om MERS i Qatar 13. november er ny, se Nye), DGHS' mæslinger (meddelelserne 12. og 13. november, se Ændret), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt efter 12. november), CIDRAP (intet nyt for Afrika og Amerika, der ikke er brugt) og Hongkong (mpox og influenza 13. november hører til Asien og er ikke vurderet i denne række). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events med ebolaopdateringen 13. november (se Ændret), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.182 pr. 5. november, læst med hentningsværktøjet), søgninger efter PAHO's alarmer og opdateringer (situationsrapport 15 om mæslinger 6. november fortsat nyeste), WHO AFRO's ugebulletin og Africa CDC's ugentlige rapport (ingen nye fundet) og https://globus.nicco.dk/konflikter.json (genereret 13. november kl. 17.23 dansk tid).
+
+**Ændret**
+- `ebola-drc`: ECDC 13. november: 11.197 bekræftede tilfælde og 5.471 dødsfald pr. 12. november med data til og med 11. november, 83 nye tilfælde og 38 nye dødsfald, 41 i Nordkivu, 37 i Ituri og 5 i Haut-Uélé, 3.045 raske. Watsa i Haut-Uélé er ny ramt sundhedszone, så 68 af 178 sundhedszoner er ramt. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-13 (læst i sidens rå tekst, summerne pr. provins passer med de samlede tal). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `maesling-bd`: DGHS 12. november: 244.291 mistænkte og 24.880 bekræftede tilfælde, 1.194 dødsfald blandt mistænkte og 105 blandt bekræftede, efter 1.384 nye mistænkte, 157 nye bekræftede og 4 dødsfald på et døgn. Kilde: https://dghs.gov.bd/pages/press-releases/6af7322696fdaee72fa56a2e DGHS 13. november: 245.562 mistænkte og 25.028 bekræftede tilfælde, 1.199 dødsfald blandt mistænkte og 105 blandt bekræftede, efter 1.271 nye mistænkte, 148 nye bekræftede og 5 dødsfald på et døgn, 219.247 indlagt og 210.401 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6af737049a2bfbb8999f20b5 Begge PDF-bilag er læst som tekst og som billede. To nye punkter, to nye punkter i talserien, `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- `mers-qa`: MERS i Qatar. WHO DON 626 13. november: Qatar meldte 29. oktober to laboratoriebekræftede tilfælde, bekræftet 5. og 25. august, de første siden 2022. Begge er mænd over 50 år med erhvervsmæssig kontakt med dromedarer på to adskilte farme, begge udskrevet, og alle 99 kontakter er testet negative. Trin `udbrud`, ikke `live`, som `mers-sa`. Kilde: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON626 (læst i WHO's dataudtræk og på læserens side).
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne. Rundturen hører til kl. 05.20-kørslen og er ikke gentaget.
+- ECDC's ugesider 13. november for chikungunya, dengue og West Nile i EU og EØS og månedsrapporten om mpox 13. november er ikke læst, fordi de hører til kl. 00.20-kørslens række.
+
+**Mediesporet**
+- Tre par med status afventer. Godkendt: ingen.
+- Afvist `EG-IL`: et israelsk luftangreb på Nasser Hospital i Khan Younis i Gaza. Egypten nævnes ikke. Kilder: https://mobile.naharnet.com/stories/en/323723-israeli-strike-on-gaza-hospital-kills-6-people-including-doctor https://www.npr.org/2026/11/12/nx-s1-6038339/israeli-strike-gaza-hospital https://www.dailysabah.com/world/mid-east/israeli-strike-on-gazas-nasser-hospital-kills-6-including-doctor og https://www.ynetnews.com/article/rkunqgvazg
+- Afvist `AE-RU`: fredsforhandlinger mellem Rusland og Ukraine i Abu Dhabi med De Forenede Arabiske Emirater som vært. Kilder: https://www.rnz.co.nz/news/world/2549868/russia-and-ukraine-say-some-progress-made-at-talks-us-cites-a-lack-of-trust https://www.npr.org/2026/11/10/nx-s1-6034616/kushner-and-witkoff-renew-peace-talks-to-end-war-between-russia-and-ukraine og https://www.al-monitor.com/originals/2026/11/russia-ukraine-reach-deal-prisoner-swap-us-says-lack-trust-holds-back-talks
+- Afvist `GB-PS`: en retssag om et knivangreb i Birmingham, en brandstiftelse udført af bosættere på Vestbredden med datolinjen London og en britisk udtalelse om oversvømmelser i Gaza. Kilder: https://www.independent.co.uk/news/uk/crime/mohammed-alfatih-hamas-bailiff-knife-attack-birmingham-b3084549.html https://www.arabnews.com/middle-east/israeli-settlers-launch-arson-attack-on-scrapyard-in-west-bank-village-3011212 og https://www.ynetnews.com/article/bjoyxuxcgl
+- `EG-IL` og `GB-PS` var afvist 14. oktober og er udløbet. De har fået ny dato.
+
+**Usikkert**
+- `ebola-drc`: ECDC skriver 13. november 1.676 patienter indlagt i isolation mod 981 dagen før. Springet er ikke forklaret, så tallet er ikke brugt.
+- `mers-qa`: WHO oplyser ikke, hvor i Qatar farmene ligger. Prikken står midt i landet, og det står i `gap`. WHO's dataudtræk har udgivelsestidspunktet 13. november kl. 19.00 UTC, senere end kørslen, men læserens side kunne hentes og har hele teksten.
+- `maesling-us`: US CDC's ugentlige tal er fortsat ikke opdateret efter 5. november. Ingen ændring.
+- `difteri-ng` (50 dage), `cre-eu` (42 dage) og `ebola-nl` (34 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Delene `dengue`, `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 2cc3c5d.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 12. november 2026
 
 ### Kl. 00.20, Europa og Danmark
