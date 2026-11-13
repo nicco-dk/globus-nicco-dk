@@ -2,6 +2,32 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 14. november 2026
+
+### Kl. 00.20, Europa og Danmark
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november er brugt af kl. 17.20-kørslen, intet nyere), DGHS' mæslinger (en meddelelse dateret 14. november uden fundet PDF, hører til kl. 17.20-kørslen), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt efter 12. november), CIDRAP (intet nyt for Europa) og Hongkong (intet nyt for Europa). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events med ugesiderne 13. november for chikungunya, dengue og West Nile og månedsrapporten om West Nile 12. november (se Ændret), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november) og nyheder (intet om udbrud efter 29. oktober), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om udbrud), RIVM's ebolaside https://www.rivm.nl/en/ebola/current-information (opdatering 12. november om DR Congo, intet nyt om Nederlandene, næste om to uger). Robert Koch Instituts Epidemiologisches Bulletin 46/2026 er læst af forrige kørsel, 47/2026 udkommer 19. november. Kvalitet: koordinater i `lat`, `lon` og `nodes` er tjekket for ombytning uden fund. Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato.
+
+**Ændret**
+- `wnv-eu`: ECDC 13. november: 2.056 lokalt erhvervede tilfælde og 235 områder i 20 lande pr. 11. november, ét nyt område på en uge. Italien 783, Grækenland 470, Frankrig 201, Spanien 150, Rumænien 140, Nederlandene 76 og Nordmakedonien 71. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00019/2026-11-13 ECDC's månedsrapport 12. november pr. 4. november: 1.883 tilfælde og 148 dødsfald i EU og EØS (Italien 60, Grækenland 53, Nederlandene 10, Rumænien 9, Spanien 7, Frankrig 4, Belgien 2, Bulgarien, Kroatien og Ungarn 1 hver) og 146 tilfælde og 15 dødsfald i kandidatlandene (Nordmakedonien 12, Albanien 2, Kosovo 1). Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00025/2026-11-12 Begge læst i sidernes rå tekst. To nye punkter (11. og 12. november), nyt punkt i talserien, `place`, `cases`, `extra` og `src` opdateret.
+- `chik-fr`: ECDC 13. november: 213 lokalt erhvervede tilfælde i Frankrig pr. 11. november efter seks nye, 31 klynger, hvoraf 14 er aktive. En ny klynge i Seine-Saint-Denis er allerede lukket. Prayssac 38 og Cavalaire-sur-Mer 34 tilfælde. Italien fortsat 1. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00016/2026-11-13 (læst i sidens rå tekst). Nyt punkt, `place`, `cases`, `extra` og `src` opdateret. Adressen fra 6. november er fjernet fra `src`, fordi punktet 6. november selv bærer den.
+- `dengue-eu`: ECDC 13. november: ingen nye tilfælde pr. 11. november, fortsat Italien 76 og Frankrig 8. Fire klynger i Italien (mod seks ugen før) og én i Frankrig er aktive. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00017/2026-11-13 (læst i sidens rå tekst). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Adressen fra 6. november er fjernet fra `src`, fordi punktet 4. november selv bærer den.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 49 hændelser uden nyt i kilderne.
+
+**Usikkert**
+- `wnv-eu`: ECDC's ugeside nævner ikke, hvilket område der er kommet til. Ingen ny prik.
+- `difteri-ng` (51 dage), `cre-eu` (43 dage) og `ebola-nl` (35 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md. Ingen ændring.
+- Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede fortsat. Delen `dghs` fandt ingen PDF i meddelelsen 14. november.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5a91114.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 13. november 2026
 
 ### Kl. 00.20, Europa og Danmark
