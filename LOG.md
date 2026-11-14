@@ -28,6 +28,41 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og allerede brugt), DGHS' mæslinger (meddelelsen 14. november uden fundet PDF, hører til kl. 17.20-kørslen), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt efter 12. november), CIDRAP (se Ændret) og Hongkong (intet nyt efter 13. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter 13. november; MERS-opdateringen 10. november har ingen nye tilfælde), US CDC's mæslingeside, Pennsylvanias og Wisconsins mæslingetal, GPEI Polio This Week https://polioeradication.org/about-polio/polio-this-week/ (opdateret 12. november), Floridas ugerapport uge 44, Venezuelas epidemiologiske bulletiner for uge 42 og 43, ECDC's ugeside om chikungunya 13. november (for `chik-ch`), søgninger efter WHO AFRO's ugebulletin, Africa CDC's ugentlige rapport og PAHO's alarmer (ingen nye fundet) og https://globus.nicco.dk/konflikter.json (genereret 14. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `maesling-us`: US CDC 13. november: 5.412 bekræftede tilfælde i 2026 pr. 12. november, heraf 5.394 meldt af 47 jurisdiktioner og 18 hos internationale besøgende, 43 udbrud, 5.216 tilfælde (96 procent) hører til et udbrud, og 6 dødsfald i tabellen. Kilde: https://www.cdc.gov/measles/data-research/index.html (læst to gange med hentningsværktøjet; summerne passer). Pennsylvanias sundhedsmyndighed 13. november: syvende mæslingeassocierede dødsfald, en uvaccineret beboer i Montour County, 1.542 tilfælde i 46 counties, 305 indlagte og 37 nye siden 9. november. Kilde: https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-confirms-seventh-measles-associated-deat Wisconsins sundhedsministerium pr. 13. november: 651 bekræftede tilfælde, 14 indlagte og 2 dødsfald i 2026. Kilde: https://www.dhs.wisconsin.gov/outbreaks/index.htm Begge læst i sidernes rå tekst. Tre nye punkter, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `polio`: GPEI 12. november: et nyt tilfælde af vild poliovirus type 1 i Khyber Pakhtunkhwa i Pakistan, i alt 9 i 2026. Vaccineafledt type 2: DR Congo 102 (9 nye) og Nigeria 37 (1 ny). Vaccineafledt type 3: Nigeria 17 (2 nye) og Niger 3 (1 ny). Vaccineafledt type 1: Sydsudan 19 (1 ny). Afghanistan er ikke nævnt i ugens oversigt, så tallet 50 pr. 6. november står. Kilde: https://polioeradication.org/about-polio/polio-this-week/ (læst i sidens rå tekst, ændret 12. november ifølge sidens metadata). Nyt punkt, `cases` og `extra` opdateret.
+- `dengue-fl`: Floridas ugerapport uge 44 (1. til 7. november): 624 lokalt erhvervede tilfælde i 12 counties, 100 nye på en uge, Hillsborough 468 og Pinellas 109. Myndigheden skriver, at antallet af nye tilfælde under undersøgelse er faldet de seneste uger. Kilde: https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w44-2026.pdf (læst med pdftotext; summerne pr. county, debutmåned og serotype giver alle 624). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `gul-feber-ve`: Venezuelas sundhedsministeriums bulletin for uge 42: ingen nye tilfælde, fortsat 14 og 6 dødsfald. Kilde: https://mpps.gob.ve/wp-content/uploads/2026/11/Boletin-Epidemiologico-SEM-42.pdf Bulletinen for uge 43: 2 nye tilfælde, i alt 16 bekræftede og 7 dødsfald i syv delstater, Guárico ny med 1 og La Guaira nu 4, og 56 udbrud blandt aber. Kilde: https://mpps.gob.ve/wp-content/uploads/2026/11/Boletin-Epidemiologico-SEM-43.pdf (begge læst med pdftotext; delstaterne summer til 16). To nye punkter, ny prik i Guárico, nyt punkt i talserien, `place`, `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 48 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `chik-ch` (10) uden nyt i ECDC's ugeside 13. november, `kolera` (10) uden ny månedsopgørelse fra ECDC, `kolera-ye` (10) uden nyt fra WHO EMRO, `shamonda-fr` (12) uden nyt efter DON 623, `dengue-asien` (15) uden læsbar kilde fra Sri Lanka, `h5n1-us` (17) uden læst opgørelse fra USDA APHIS (kun medier fundet), `cyclospora-us` (22) fordi US CDC's side ikke kunne hentes i kørslen, `myiasis-am` (29) uden nyere alarm fra PAHO end 16. oktober, `difteri-afro` (29) uden ny ugebulletin fra WHO AFRO, `salmonella-eu` (29) uden nye poster hos ECDC. `ebola-nl` (35), `cre-eu` (43) og `difteri-ng` (51) venter på ejerens afgørelse.
+
+**Mediesporet**
+- To par med status afventer. Begge afvist.
+- Afvist `GB-US`: mistænkt droneaktivitet over en amerikansk militærbase i Storbritannien og en amerikansk anklage mod tre mænd for at planlægge terrorangreb, blandt andet mod en britisk flybase. Ingen kampe mellem landenes styrker. Kilder: https://www.nbcnews.com/world/united-kingdom/us-charges-3-men-plotting-multiple-terrorist-attacks-planned-attack-uk-rcna608647 https://www.cnn.com/2026/11/13/uk/uk-airbase-usaf-suspected-drone-latam-intl og https://www.ft.com/content/cf902a58-b694-4357-b1b0-07cf8e36c94e
+- Afvist `DE-RU`: Ruslands krig i Ukraine, bombetrusler og cyberangreb i Europa og fransk pres på Tyskland om langtrækkende missiler. Ingen kampe mellem Tysklands og Ruslands styrker. Kilder: https://www.aljazeera.com/news/2026/11/13/russias-demands-come-from-different-reality-as-war-efforts-stagnates https://www.newsweek.com/europes-leaders-gather-after-weeks-of-bomb-threats-cyberattacks-12698209 og https://www.ft.com/content/7f61b561-bcbd-4900-afd7-553ff76d6217
+- Begge par var afvist i oktober og er udløbet. De har fået ny dato.
+
+**Usikkert**
+- `maesling-us`: hentningsværktøjet viste først en forældet udgave af US CDC's side med tallet pr. 5. november og datoen 12. november. En anden adresse til samme side gav udgaven opdateret 13. november, som er brugt.
+- `gul-feber-ve`: bulletinerne har ingen udgivelsesdato i teksten. Punkterne er dateret efter PDF-filernes ændringsdato (2. og 12. november).
+- `polio-sy`: GPEI har nu en forhåndsmelding om VDPV1 i Deir Ezzor, der tages med i næste uges globale oversigt. `gap` siger, at GPEI endnu ikke har meldt tilfældene. Ikke ændret, fordi det ikke er klart, hvornår meldingen kom på siden.
+- Kontrollen kunne ikke nå https://mpps.gob.ve/wp-content/uploads/2026/11/Boletin-Epidemiologico-SEM-43.pdf inden for sin tidsgrænse. Et direkte opslag med `curl` gav 200, og PDF'en er læst.
+- US CDC's Cyclospora-side kunne ikke hentes med hentningsværktøjet (anmodningen blev ikke godkendt i tide). Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede fortsat.
+- `difteri-ng` (51 dage), `cre-eu` (43 dage) og `ebola-nl` (35 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit e0f5f6f.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: lokalt erhvervet chikungunya i Miami-Dade i Florida (2 tilfælde i 2026 efter ugerapport uge 44). Egen hændelse eller ej.
+
 ## 13. november 2026
 
 ### Kl. 00.20, Europa og Danmark
