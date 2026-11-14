@@ -6,7 +6,7 @@
    "dato": "2026-10-17",
    "titel": "Datacentre på kloden",
    "tekst": "Knappen ved siden af rejsevejledningerne (på mobilen under Lag) viser de største datacentre i verden: i drift, under opførelse og planlagt. Prikkens størrelse følger effekten. Tryk på et datacenter for ejer, brugere, forbrug, tidslinje og kilder.",
-   "ikon": "dc",
+   "ikon": "data",
    "proev": "dc"
   },
   {
@@ -14,7 +14,7 @@
    "dato": "2026-10-12",
    "titel": "Få besked om de lande, du følger",
    "tekst": "Følg et land med stjernen, og tryk på klokken i landets kort. Så får du en besked, når rejsevejledningen ændres, eller der kommer et nyt smitteudbrud, et varsel fra alvor 3 eller en bekræftet konflikt. På iPhone og iPad virker det, når siden ligger på hjemmeskærmen som app.",
-   "ikon": "nyt",
+   "ikon": "besked",
    "proev": "land"
   },
   {
@@ -74,7 +74,7 @@
    "dato": "2026-10-12",
    "titel": "Søg i hele skærmen",
    "tekst": "Søg midt i bundbjælken åbner en søgning, der fylder skærmen. Før du skriver, foreslår den steder nær dig, lande du følger, dine seneste søgninger og populære emner. Mens du skriver, kommer lande og hændelser frem med det samme.",
-   "ikon": "sog",
+   "ikon": "soeg",
    "proev": "soeg"
   },
   {
@@ -97,7 +97,7 @@
    "dato": "2026-10-12",
    "titel": "Data og kilder",
    "tekst": "Tryk på Prototypedata øverst, så ser du, hvilke data siden henter, hvorfra og hvornår de sidst blev hentet, og de seneste opdateringer, ti ad gangen.",
-   "ikon": "kort",
+   "ikon": "billede",
    "proev": "data"
   },
   {
@@ -105,7 +105,7 @@
    "dato": "2026-10-11",
    "titel": "Følg et land",
    "tekst": "Stjernen i detaljekortet følger landet. Lande, du følger, står øverst i overblikket og markeres, når noget er ændret, siden du sidst kiggede. Det gemmes kun i din egen browser.",
-   "ikon": "foelg",
+   "ikon": "foelger",
    "proev": "land"
   },
   {
@@ -145,7 +145,7 @@
    "dato": "2026-10-11",
    "titel": "Nyt siden sidst",
    "tekst": "Øverst i overblikket står det, der er kommet til eller har skiftet alvor, siden du sidst var inde. Prikkerne har en lille blå markering på kloden. Siden husker dit sidste besøg i din egen browser.",
-   "ikon": "nyt",
+   "ikon": "siden-sidst",
    "proev": "nyt"
   },
   {
@@ -153,7 +153,7 @@
    "dato": "2026-10-11",
    "titel": "Detaljekort med billede og læs mere",
    "tekst": "Alle hændelser har nu samme kort: billede, kort fortalt, nøgletal, forløb, kilder og tre artikler at læse videre i. For brugere i Danmark er den første artikel fra DR, når DR har skrevet om det.",
-   "ikon": "kort",
+   "ikon": "billede",
    "proev": "kort"
   },
   {
