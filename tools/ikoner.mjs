@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROD = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAPPE = join(ROD, 'brand', 'ikoner');
-const SIDER = ['site/index.html', 'site/konspirationer/index.html'];
+const SIDER = ['site/index.html', 'pause/konspirationer/index.html'];
 const tjek = process.argv.includes('--tjek');
 
 const tal = n => String(+(+n).toFixed(3));
