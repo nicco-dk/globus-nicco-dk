@@ -63,6 +63,33 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: lokalt erhvervet chikungunya i Miami-Dade i Florida (2 tilfælde i 2026 efter ugerapport uge 44). Egen hændelse eller ej.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og allerede brugt, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 14. november https://dghs.gov.bd/pages/press-releases/6af7429288a6e7617aff5e32 har endnu hverken tekst eller PDF-bilag, hører til kl. 17.20-kørslen), WHO SEARO nummer 22 pr. 4. november (allerede brugt, nummer 23 ventes 18. november), WHO WPRO nummer 1068 pr. 29. oktober (allerede brugt; adresserne for 3. til 14. november gav 404), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten efter 10. november), CIDRAP (intet nyt for Asien og Mellemøsten) og Hongkongs pressemeddelelser 13. og 14. november (se Ændret). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt om udbrud efter polio i Deir Ezzor), CHP's Avian Influenza Report uge 44 og 45 https://www.chp.gov.hk/files/pdf/2026_avian_influenza_report_vol22_wk45.pdf (ingen nye humane tilfælde i Asien; H9N2-tilfældene i Liaoning og Guangxi står allerede i `h9n2-cn`) og DGHS' dengue gengivet af The Daily Star, The Business Standard og Dhaka Tribune (se Ændret).
+
+**Ændret**
+- `mpox-hk`: CHP 13. november: importeret tilfælde hos en 34-årig mand med seksuel kontakt med høj risiko med andre mænd uden for Hongkong, indlagt i isolation i stabil tilstand. Siden 2022 har Hongkong haft 120 tilfælde, 94 lokale og 26 importerede, og alle 27 tilfælde siden august har oplyst seksuel aktivitet med høj risiko. Kilde: https://www.info.gov.hk/gia/general/202611/13/P2026111300642.htm (læst i sidens rå tekst, tallene fundet to gange). Nyt punkt og `src` opdateret. `cases` (årets tal pr. 13. oktober) urørt, fordi meddelelsen ikke oplyser årets samlede tal.
+- `dengue-bd`: 158.883 tilfælde og 483 dødsfald i 2026 pr. kl. 8 13. november, DGHS gengivet af The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/2-die-dengue-1255-hospitalised-24-hours-4322891 (læst med hentningsværktøjet og i sidens rå tekst; tallet svarer til 157.628 plus døgnets 1.255 nye indlagte). Nyt punkt i talserien for 13. november, `cases` og `src` opdateret. Punktet 13. november i forløbet stod allerede.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+- `dengue-bd`: DGHS' tal for døgnet til kl. 8 14. november er ikke fundet i medierne ved kørslens afslutning.
+- `maesling-bd`: DGHS' meddelelse 14. november er tom. Kl. 17.20-kørslen tager dagens mæslingetal.
+- Hongkong: et barn med svær influenza, meldt 13. november, er død (https://www.info.gov.hk/gia/general/202611/13/P2026111300663.htm). Sæsoninfluenza, ikke taget med.
+
+**Usikkert**
+- `dengue-bd`: The Daily Star skriver 5.915 fortsat indlagte 13. november, samme tal som 12. november. Tallet er ikke brugt. Det samlede antal tilfælde 13. november står kun hos The Daily Star; The Business Standard og Dhaka Tribune oplyser det ikke.
+- Sri Lankas dagstal: forsiden https://www.dengue.health.gov.lk/ kunne ikke nås direkte (forbindelsen blev afbrudt) og er tidligere afvist af hentningsværktøjet (robots_disallowed). `dengue-asien` er ikke ændret. Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede også.
+- WHO WPRO's oversigt nummer 1069 er fortsat ikke fundet.
+- `difteri-ng` (51 dage), `cre-eu` (43 dage) og `ebola-nl` (35 dage): kontrollen advarer fortsat om over 30 dage uden nyt punkt. Alle tre venter på ejerens afgørelse i GENNEMGANG.md.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 32e3d26.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 13. november 2026
 
 ### Kl. 00.20, Europa og Danmark
