@@ -1,12 +1,12 @@
 {
  "om": "Faste engelske oversættelser af sidens egne længere tekster: guiden Sådan virker siden, dialogerne og Nyt på siden (nyheder.json). Nøglen er den danske tekst præcis, som den står på siden. Hentes kun, når siden vises på engelsk. Ændres en dansk tekst, eller kommer der en ny nyhed, rettes eller tilføjes linjen her. Mangler en linje, står teksten på dansk.",
  "t": {
-  "Hent Globus som app": "Get Globus as an app",
+  "Hent globus som app": "Get globus as an app",
   "Åbn browserens menu (de tre prikker).": "Open the browser menu (the three dots).",
   "Vælg": "Choose",
   "eller": "or",
   "Føj til startskærm": "Add to home screen",
-  "Bekræft. Globus åbner nu i sit eget vindue og virker også uden net.": "Confirm. Globus now opens in its own window and also works offline.",
+  "Bekræft. globus åbner nu i sit eget vindue og virker også uden net.": "Confirm. globus now opens in its own window and also works offline.",
   "Appen er den samme side. Den gemmer intet om dig ud over det, siden selv husker i browseren.": "The app is the same page. It stores nothing about you beyond what the page itself remembers in your browser.",
   "Siden er en prototype. Her står, hvilke data vi henter, hvorfra, og hvornår de sidst blev hentet. Alt bliver hentet automatisk fra kildernes egne feeds og vist, som kilden har skrevet det.": "The page is a prototype. This shows which data we fetch, from where, and when it was last fetched. Everything is fetched automatically from the sources' own feeds and shown as the source wrote it.",
   "Ændringer i smitteudbruddenes tal og kilder står i": "Changes to the outbreaks' figures and sources are listed in",
