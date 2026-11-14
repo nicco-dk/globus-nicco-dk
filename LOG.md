@@ -90,6 +90,34 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og allerede brugt, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 14. november https://dghs.gov.bd/pages/press-releases/6af7429288a6e7617aff5e32 er fortsat tom, uden tekst og PDF-bilag, sidst ændret 13. november kl. 23.02 lokal tid), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud), NaTHNaC (intet nyt efter 12. november), CIDRAP (se Ændret; mæslinger i USA og H5N1 i Oregon er allerede brugt) og Hongkong (intet nyt efter 13. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter 13. november; ebolaopdateringen 13. november er brugt), NCDC's situationsrapporter og side om ebola (nyeste fundne situationsrapport er 4. november), PAHO's dokumenter om sundhedskriser https://www.paho.org/en/documents/subsite/health-emergencies (situationsrapport 15 om mæslinger 6. november og alarmen om skruelarve 16. oktober fortsat nyeste), søgninger efter WHO AFRO's ugebulletin og Africa CDC's ugentlige rapport (ingen nye fundet) og https://globus.nicco.dk/konflikter.json (genereret 14. november kl. 16.26 dansk tid).
+
+**Ændret**
+- `ebola-ng`: NCDC's generaldirektør Jide Idris oplyste på et pressemøde 13. november, at alle 62 kontakter har afsluttet de 21 dages opfølgning uden sekundære tilfælde, at 13 kontakter med feber eller andre symptomer og syv mistænkte tilfælde i Adamawa, Rivers, Borno, Lagos og Ekiti er testet negative, og at patienten er rask og udskrevet fra hospitalet i Schweiz. Nigeria er ikke erklæret fri for ebola. Kilder: https://von.gov.ng/nigeria-completes-ebola-contact-monitoring-ncdc/ og https://leadership.ng/ebola-ncdc-completes-contact-monitoring-records-no-secondary-transmission/ (begge læst i sidernes rå tekst og enige; Tribune Online gengiver det samme). Mærket `, medie`, fordi NCDC's egen udmelding ikke er fundet. Nyt punkt, `extra` og `src` opdateret. `live` og trin urørt.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 51 hændelser uden nyt i kilderne. Rundturen hører til kl. 05.20-kørslen og er ikke gentaget.
+- `maesling-bd`: DGHS' meddelelse 14. november er fortsat tom ved kørslens afslutning. Dagens tal er ikke skrevet.
+- `ebola-drc`: WHO AFRO's tal fra pressemødet 12. november (11.145 tilfælde og 5.437 dødsfald, gengivet af CIDRAP) er ældre end ECDC's tal pr. 12. november, der allerede står. `ebola-ke`: Kenyas nedtælling på 42 dage står allerede efter ECDC 11. november.
+
+**Mediesporet**
+- Ét par med status afventer. Godkendt: ingen.
+- Afvist `AF-US`: amerikanske udvisninger af afghanere og Den Internationale Straffedomstols beslutning om at standse efterforskningen af amerikanske soldaters påståede forbrydelser i Afghanistan. Ingen kampe mellem landenes styrker. Kilder: https://www.theguardian.com/us-news/2026/nov/14/afghan-deportations-trump-administration og https://www.aljazeera.com/news/2026/11/14/icc-stops-probe-into-alleged-crimes-by-us-troops-in-afghanistan France 24's artikel kunne ikke hentes (adgang nægtet).
+
+**Usikkert**
+- `ebola-ng`: CIDRAP skriver, at patienten blev udskrevet i Schweiz 12. november. NCDC's udmelding, som gengivet, nævner ingen dato for udskrivningen. Punktet nævner derfor ingen dato for den.
+- `difteri-ng` (51 dage), `cre-eu` (43 dage) og `ebola-nl` (35 dage) venter fortsat på ejerens afgørelse i GENNEMGANG.md.
+- Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 6a8ed2d. `gh api` mod repoet afvises af proxyen (omdirigering til et numerisk id), så udrulningen følges med GitHub-værktøjerne.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 13. november 2026
 
 ### Kl. 00.20, Europa og Danmark

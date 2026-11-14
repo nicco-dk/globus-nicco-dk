@@ -111,6 +111,7 @@
     "CN-TW": {"dato": "2026-11-12", "grund": "Artiklerne handler om præsident Xi Jinpings tale om genforening med Taiwan, hvor han lover at gøre det fredeligt, uden rapporterede angreb eller kampe mellem parternes styrker (Al Jazeera efter AFP og Reuters, The Straits Times)."},
     "IQ-LB": {"dato": "2026-11-12", "grund": "Artiklerne handler om drabet på en tidligere irakisk parlamentariker i en lejlighed i Beirut, ikke om kampe mellem landenes styrker (Al Jazeera, Arab News)."},
     "EG-PS": {"dato": "2026-11-13", "grund": "Artiklerne handler om israelske luftangreb i Gaza og Board of Peace, hvor Egypten ikke er part: Arab News har kun datolinjen Kairo, og The Express Tribune nævner ikke Egypten. Ingen kampe mellem Egyptens styrker og palæstinensiske parter (Arab News, The Express Tribune)."},
-    "AE-RU": {"dato": "2026-11-13", "grund": "Artiklerne handler om fredsforhandlinger mellem Rusland og Ukraine i Abu Dhabi med De Forenede Arabiske Emirater som vært og en aftale om fangeudveksling, ikke kampe mellem landenes styrker (RNZ, NPR, Al-Monitor)."}
+    "AE-RU": {"dato": "2026-11-13", "grund": "Artiklerne handler om fredsforhandlinger mellem Rusland og Ukraine i Abu Dhabi med De Forenede Arabiske Emirater som vært og en aftale om fangeudveksling, ikke kampe mellem landenes styrker (RNZ, NPR, Al-Monitor)."},
+    "AF-US": {"dato": "2026-11-14", "grund": "Artiklerne handler om amerikanske udvisninger af afghanere og Den Internationale Straffedomstols beslutning om at standse efterforskningen af amerikanske soldaters påståede forbrydelser i Afghanistan, ikke om kampe mellem landenes styrker (The Guardian, Al Jazeera efter AP og Reuters)."}
   }
 }
