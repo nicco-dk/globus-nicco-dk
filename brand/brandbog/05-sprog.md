@@ -8,7 +8,7 @@ Stemmen, reglerne og ordbogen. Sproget skrives når designmanualen er færdig (G
 
 ## Stemmen
 Status: Mangler
-Spørgsmål: Hvordan lyder projektet, og hvem taler?
+Spørgsmål: Har globus sin egen stemme oven på grundtonen i WORKDISK, hvem taler, og siger siden vi om dem der står bag eller omtaler den sig ved navn?
 
 ## Reglerne
 Status: Udkast
@@ -32,8 +32,8 @@ Spørgsmål: Er der læsere der skal have enklere tekst, fx børn?
 
 ## Mails og beskeder
 Status: Mangler
-Spørgsmål: Hvordan lyder mails og beskeder fra projektet? Udgangspunktet er mailformen i WORKDISKs bog kapitel 5 med projektets eget navn.
+Spørgsmål: Hvordan lyder mails og beskeder fra projektet? Udgangspunktet er mailformen i bogen for WORKDISK, kapitel 5, med projektets eget navn.
 
 ## Kanalerne
 Status: Mangler
-Spørgsmål: Hvilke kanaler har projektet, hvem taler i hver, til hvem, og hvad er ordet for modtageren? Skriv det som en tabel.
+Spørgsmål: Hvilke kanaler har globus, hvem taler i hver, til hvem, og hvad er ordet for modtageren? Skriv det som en tabel. Opslag og story til kommende brugere er fra Mikkel i jeg-form, og plakaten er fra projektet (R-afsender-04 A). Hvilke ord står på en annonce for betalt indhold?

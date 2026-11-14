@@ -4,7 +4,7 @@ titel: Billeder
 ---
 # Billeder
 
-globus viser kortet først. Billeder bruges kun som detaljer til en hændelse og hentes først når man trykker.
+globus viser kortet først. Billeder bruges kun som detaljer til en hændelse og hentes først ved et tryk.
 
 ## Billedstil
 Status: Udkast

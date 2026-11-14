@@ -8,10 +8,10 @@ Kloden bevæger sig, resten står stille. Bevægelse bruges til at vise tid og n
 
 ## Hvornår noget bevæger sig
 Status: Udkast
-- **Kloden drejer** langsomt, til man rører den, og kan sættes på pause.
+- **Kloden drejer** langsomt til du rører den, og kan sættes på pause.
 - **Afspil forløb** kører tidsskyderen frem så mærkerne skifter trin og alvor over tid.
 - **Akut** får en ring der breder sig fra mærket og forsvinder (kapitel 7). Det er det eneste mærke der pulserer.
-- **Arkene** glider op nedefra på telefonen, og knapper skifter farve når man peger.
+- **Arkene** glider op nedefra på telefonen, og knapper skifter farve når musen peger på dem.
 
 Om prikken i logoet skal pulsere i toppen som en ny hændelse på kortet, er ikke spurgt endnu (kapitel 16).
 

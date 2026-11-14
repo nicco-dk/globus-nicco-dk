@@ -32,7 +32,7 @@ Spørgsmål: Hvad skal det aldrig ligne eller blive til?
 
 ## Navnet og skrivemåden
 Status: Besluttet 14-11-2026
-globus skrives med lille i tekst og i logoet (GD-02 A og WORKDISKs brandbog, kapitel 1). Adressen er globus.nicco.dk. Manifestet skriver i dag Globus med stort, og det rettes til globus.
+globus skrives med lille i tekst og i logoet (GD-02 A og bogen for WORKDISK, kapitel 1). Adressen er globus.nicco.dk. Manifestet skriver i dag Globus med stort, og det rettes til globus.
 
 ## Familien af projekter
 Status: Besluttet 14-11-2026

@@ -41,4 +41,4 @@ Spørgsmål: Hvad viser siden når et filter ikke giver nogen hændelser, og nå
 Status: Udkast
 - **Velkomsten** første gang med Sådan virker siden.
 - **Nyt siden sidst:** en sammenfatning øverst i overblikket og en lille prik i Cyan ved hver ny hændelse.
-- **Beskeder om nye hændelser** for det, man følger, med klokken.
+- **Beskeder om nye hændelser** for det du følger, med klokken.

@@ -4,7 +4,7 @@ titel: Layout
 ---
 # Layout
 
-Kloden i midten og det, man læser, ved siden af eller nedenunder. På computer står alt på én skærm uden at rulle. På telefonen er kloden hele skærmen, og arkene kommer op nedefra.
+Kloden i midten og det du læser, ved siden af eller nedenunder. På computer står alt på én skærm uden at rulle. På telefonen er kloden hele skærmen, og arkene kommer op nedefra.
 
 ## Gitter og spalter
 Status: Udkast

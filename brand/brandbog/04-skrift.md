@@ -4,7 +4,7 @@ titel: Skrift
 ---
 # Skrift
 
-To skrifter: Archivo til alt, man læser, og IBM Plex Mono til tal, tider og kilder. Begge ligger på sitet, og ingen skrift hentes fra Google.
+To skrifter: Archivo til alt der skal læses, og IBM Plex Mono til tal, tider og kilder. Begge ligger på sitet, og ingen skrift hentes fra Google.
 
 ::: skrift
 
@@ -18,7 +18,7 @@ Filerne ligger i `site/fonts` som WOFF2 med latin og latin-ext, og udrulningen a
 
 ## Ordmærkets skrift
 Status: Besluttet 14-11-2026
-Ordmærket er globus i Archivo 600 med små bogstaver (GD-02 A), lavet om til kurver i `brand/logo/`. Archivo må bruges i tekst, men ordmærket sættes aldrig med skriften. globus skrives med lille i tekst som WORKDISKs brandbog siger i kapitel 1.
+Ordmærket er globus i Archivo 600 med små bogstaver (GD-02 A), lavet om til kurver i `brand/logo/`. Archivo må bruges i tekst, men ordmærket sættes aldrig med skriften. globus skrives med lille i tekst som bogen for WORKDISK siger i kapitel 1.
 
 ## Hierarki og størrelser
 Status: Udkast
