@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 15. november 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS-meddelelsen 14. november fortsat uden PDF, SEARO nummer 22 og WPRO nummer 1068 allerede brugt, ECDC's ugerapport ophørt, UKHSA og NaTHNaC uden nyt om udbrud, CIDRAP og Hongkong uden nyt for Europa; delene `dengue` (404), `lk` og `ont` fejlede fortsat), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 14. november kl. 16.02, ingen poster efter 13. november; mpox-siden https://www.ecdc.europa.eu/en/public-health-events/2022-sti-00005/2026-11-13 skriver under Key facts 342 klade I-tilfælde i oktober, men 219 i selve teksten og i månedsrapporten, som `mpox` bruger, så intet er ændret), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november) og nyheder (intet om udbrud efter 29. oktober), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt), RIVM's ebolaside (opdatering 12. november, intet om Nederlandene), GOV.UK's søgning efter ebola og UKHSA (intet nyt om `ebola-gb`), RKI's Epidemiologisches Bulletin 47/2026 udkommer 19. november. Kvalitet: koordinater i `lat`, `lon` og `nodes` tjekket for ombytning uden fund, ingen advarsler om tal i `cases` uden opgørelsesdato, `difteri-ng`, `cre-eu` og `ebola-nl` venter fortsat på ejerens afgørelse i GENNEMGANG.md. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
+
 ## 14. november 2026
 
 ### Kl. 00.20, Europa og Danmark
