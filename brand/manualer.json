@@ -1,0 +1,36 @@
+{
+ "projekt": "globus",
+ "titel": "globus · manualer",
+ "aarshjul": false,
+ "faner": [
+  {
+   "id": "brand",
+   "navn": "Brandbog",
+   "mappe": "brandbog",
+   "overskrift": "Brandbog",
+   "praefiks": ""
+  },
+  {
+   "id": "design",
+   "navn": "Designmanual",
+   "mappe": "brandbog",
+   "overskrift": "Designmanual",
+   "kapitler": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    15
+   ],
+   "i_soegning": false,
+   "indledning": "Det, en designer skal bruge: logo, farver, skrift, ikoner, kloden og mærkerne, billeder, former, layout, byggeklodser, bevægelse, tilgængelighed og filerne. Kapitlerne er de samme som i brandbogen, så noterne følger med."
+  }
+ ]
+}

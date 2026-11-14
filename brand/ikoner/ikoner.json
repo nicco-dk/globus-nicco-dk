@@ -1,0 +1,234 @@
+{
+ "bygget": "14-11-2026",
+ "kilde": "Udkast: Tabler Icons 3.51.0 (MIT-licens) i streg 1,75 på gitteret 24 × 24 efter GD-08 A. Navnet på Tabler står under tabler. Om globus bruger Tabler eller tegner sine egne som GRO og WORKDISK, er spurgt Mikkel (kapitel 6 og 16).",
+ "ikoner": [
+  {
+   "navn": "teoriarkivet",
+   "betydning": "Fanen Teoriarkivet i toppen",
+   "tabler": "affiliate",
+   "status": "udkast"
+  },
+  {
+   "navn": "hent-app",
+   "betydning": "Hent appen",
+   "tabler": "download",
+   "status": "udkast"
+  },
+  {
+   "navn": "lys",
+   "betydning": "Skift til lys tilstand",
+   "tabler": "sun",
+   "status": "udkast"
+  },
+  {
+   "navn": "moerk",
+   "betydning": "Skift til mørk tilstand",
+   "tabler": "moon",
+   "status": "udkast"
+  },
+  {
+   "navn": "nyt",
+   "betydning": "Nyt på siden",
+   "tabler": "sparkles",
+   "status": "udkast"
+  },
+  {
+   "navn": "pause",
+   "betydning": "Sæt kloden på pause",
+   "tabler": "player-pause",
+   "status": "udkast"
+  },
+  {
+   "navn": "afspil",
+   "betydning": "Afspil forløbet og drej kloden igen",
+   "tabler": "player-play",
+   "status": "udkast"
+  },
+  {
+   "navn": "overblik",
+   "betydning": "Overblik i bundmenuen",
+   "tabler": "list",
+   "status": "udkast"
+  },
+  {
+   "navn": "udforsk",
+   "betydning": "Udforsk",
+   "tabler": "compass",
+   "status": "udkast"
+  },
+  {
+   "navn": "soeg",
+   "betydning": "Søg",
+   "tabler": "search",
+   "status": "udkast"
+  },
+  {
+   "navn": "filtre",
+   "betydning": "Filtre",
+   "tabler": "filter",
+   "status": "udkast"
+  },
+  {
+   "navn": "foelger",
+   "betydning": "Følger",
+   "tabler": "star",
+   "status": "udkast"
+  },
+  {
+   "navn": "lag",
+   "betydning": "Lagene på kloden",
+   "tabler": "stack-2",
+   "status": "udkast"
+  },
+  {
+   "navn": "besked",
+   "betydning": "Beskeder om nye hændelser",
+   "tabler": "bell",
+   "status": "udkast"
+  },
+  {
+   "navn": "del",
+   "betydning": "Del",
+   "tabler": "share",
+   "status": "udkast"
+  },
+  {
+   "navn": "sammenlign",
+   "betydning": "Sammenlign",
+   "tabler": "chart-bar",
+   "status": "udkast"
+  },
+  {
+   "navn": "udvid",
+   "betydning": "Udvid til fuld visning",
+   "tabler": "arrows-diagonal",
+   "status": "udkast"
+  },
+  {
+   "navn": "rss",
+   "betydning": "RSS",
+   "tabler": "rss",
+   "status": "udkast"
+  },
+  {
+   "navn": "klik",
+   "betydning": "Klik, i Sådan virker siden",
+   "tabler": "click",
+   "status": "udkast"
+  },
+  {
+   "navn": "mus",
+   "betydning": "Mus og hjul, i Sådan virker siden",
+   "tabler": "mouse",
+   "status": "udkast"
+  },
+  {
+   "navn": "zoom",
+   "betydning": "Zoom",
+   "tabler": "zoom-in",
+   "status": "udkast"
+  },
+  {
+   "navn": "tid",
+   "betydning": "Tidsskyderen",
+   "tabler": "clock",
+   "status": "udkast"
+  },
+  {
+   "navn": "billede",
+   "betydning": "Billede eller kort",
+   "tabler": "photo",
+   "status": "udkast"
+  },
+  {
+   "navn": "app",
+   "betydning": "Appen på telefonen",
+   "tabler": "device-mobile",
+   "status": "udkast"
+  },
+  {
+   "navn": "trin",
+   "betydning": "Trinstigen",
+   "tabler": "stairs-up",
+   "status": "udkast"
+  },
+  {
+   "navn": "land",
+   "betydning": "Land",
+   "tabler": "map",
+   "status": "udkast"
+  },
+  {
+   "navn": "akut",
+   "betydning": "Akut",
+   "tabler": "alert-triangle",
+   "status": "udkast"
+  },
+  {
+   "navn": "siden-sidst",
+   "betydning": "Siden sidst du var her",
+   "tabler": "history",
+   "status": "udkast"
+  },
+  {
+   "navn": "rejse",
+   "betydning": "Rejsevejledning",
+   "tabler": "plane",
+   "status": "udkast"
+  },
+  {
+   "navn": "krig",
+   "betydning": "Krig og konflikt",
+   "tabler": "current-location",
+   "status": "udkast"
+  },
+  {
+   "navn": "smitte",
+   "betydning": "Smitteudbrud",
+   "tabler": "virus",
+   "status": "udkast"
+  },
+  {
+   "navn": "hede",
+   "betydning": "Hede og klima",
+   "tabler": "temperature",
+   "status": "udkast"
+  },
+  {
+   "navn": "jord",
+   "betydning": "Jordskælv",
+   "tabler": "activity",
+   "status": "udkast"
+  },
+  {
+   "navn": "flod",
+   "betydning": "Oversvømmelse",
+   "tabler": "ripple",
+   "status": "udkast"
+  },
+  {
+   "navn": "storm",
+   "betydning": "Storm",
+   "tabler": "storm",
+   "status": "udkast"
+  },
+  {
+   "navn": "brand",
+   "betydning": "Naturbrand",
+   "tabler": "flame",
+   "status": "udkast"
+  },
+  {
+   "navn": "vulkan",
+   "betydning": "Vulkan",
+   "tabler": "volcano",
+   "status": "udkast"
+  },
+  {
+   "navn": "data",
+   "betydning": "Datacenter",
+   "tabler": "server",
+   "status": "udkast"
+  }
+ ]
+}

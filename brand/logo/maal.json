@@ -1,0 +1,51 @@
+{
+ "bygget": "14-11-2026 12.27",
+ "ordmaerke_26px": {
+  "xhoejde_px": 15,
+  "grundlinje_px": 21.0,
+  "bredde_px": 119
+ },
+ "gitter": "64 × 64 med midten i 32, 32",
+ "prik": 6.6,
+ "inderste_ring": [
+  14.5,
+  18.5
+ ],
+ "yderste_ring": [
+  22.5,
+  26.5
+ ],
+ "farver": {
+  "moerk": {
+   "prik": "#4fb3c9",
+   "ring": "#3d8a9c",
+   "ydre": "#244f5c",
+   "ord": "#e4ecf3",
+   "grund": "#070d14"
+  },
+  "lys": {
+   "prik": "#196f84",
+   "ring": "#5293a3",
+   "ydre": "#a3c5ce",
+   "ord": "#13202c",
+   "grund": "#ffffff"
+  }
+ },
+ "ord": {
+  "skrift": "Archivo 600 (archivo-latin-600-normal.woff2)",
+  "xhoejde": 526,
+  "hoejde_top_til_bund": 905,
+  "bredde": 3102
+ },
+ "emblem_i_ordmaerket": {
+  "diameter": 905,
+  "luft_til_ordet": 153.7,
+  "luft_i_gitterenheder": 9
+ },
+ "ikon": {
+  "emblemets_bredde": 0.64
+ },
+ "ikon_maskable": {
+  "emblemets_bredde": 0.48
+ }
+}

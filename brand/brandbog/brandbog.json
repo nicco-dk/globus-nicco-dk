@@ -1,0 +1,787 @@
+{
+ "projekt": "globus",
+ "titel": "globus · brandbog",
+ "overskrift": "Brandbog",
+ "indledning": "globus' brandbog med de samme 16 kapitler som de andre projekter i nicco.dk. Logoet, emblemet og designmanualen er besluttet af Mikkel 14. november 2026 (GD-01 til GD-12), og DESIGN fører bogen. Hvert underkapitel er mærket besluttet, udkast eller mangler.",
+ "udtraek": {
+  "fil": "designmanual",
+  "titel": "globus · designmanual",
+  "overskrift": "Designmanual",
+  "indledning": "Udtrækket af globus' brandbog med det, en designer skal bruge: logo, farver, skrift, ikoner, kloden og mærkerne, billeder, former, layout, byggeklodser, bevægelse, tilgængelighed og filerne. Kapitlerne er de samme som i brandbogen.",
+  "kapitler": [
+   2,
+   3,
+   4,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   15
+  ]
+ },
+ "kilde": "globus-nicco-dk/brand/brandbog/",
+ "ordmaerke": {
+  "lys": "../logo/ordmaerke.svg",
+  "moerk": "../logo/ordmaerke-moerk.svg"
+ },
+ "logo": [
+  {
+   "navn": "Ordmærket, lys",
+   "fil": "../logo/ordmaerke.svg",
+   "grund": "#FFFFFF"
+  },
+  {
+   "navn": "Ordmærket, mørk",
+   "fil": "../logo/ordmaerke-moerk.svg",
+   "grund": "#070D14"
+  },
+  {
+   "navn": "Emblemet, lys",
+   "fil": "../logo/emblem.svg",
+   "grund": "#E9EFF4"
+  },
+  {
+   "navn": "Emblemet, mørk",
+   "fil": "../logo/emblem-moerk.svg",
+   "grund": "#070D14"
+  },
+  {
+   "navn": "Emblemet med én ring, under 24 px",
+   "fil": "../logo/emblem-en-ring.svg",
+   "grund": "#FFFFFF"
+  },
+  {
+   "navn": "App-ikonet",
+   "fil": "../logo/ikon.svg",
+   "grund": "#E9EFF4",
+   "form": "app"
+  }
+ ],
+ "farver": [
+  [
+   "Cyan",
+   "#4FB3C9",
+   [
+    79,
+    179,
+    201
+   ],
+   [
+    65,
+    6,
+    18,
+    4
+   ],
+   "Prikken i logoet og accenten i mørk tilstand: valgt, links og fokus"
+  ],
+  [
+   "Cyan lys",
+   "#196F84",
+   [
+    25,
+    111,
+    132
+   ],
+   [
+    84,
+    31,
+    29,
+    31
+   ],
+   "Prikken i logoet og accenten i lys tilstand"
+  ],
+  [
+   "Ring",
+   "#3D8A9C",
+   [
+    61,
+    138,
+    156
+   ],
+   [
+    71,
+    19,
+    24,
+    24
+   ],
+   "Logoets inderste ring på mørk grund. Cyan med 75 procent dækning på Nat"
+  ],
+  [
+   "Ydre ring",
+   "#244F5C",
+   [
+    36,
+    79,
+    92
+   ],
+   [
+    88,
+    46,
+    40,
+    49
+   ],
+   "Logoets yderste ring på mørk grund. Cyan med 40 procent dækning på Nat"
+  ],
+  [
+   "Ring lys",
+   "#5293A3",
+   [
+    82,
+    147,
+    163
+   ],
+   [
+    65,
+    18,
+    24,
+    20
+   ],
+   "Logoets inderste ring på lys grund. Cyan lys med 75 procent dækning på hvidt"
+  ],
+  [
+   "Ydre ring lys",
+   "#A3C5CE",
+   [
+    163,
+    197,
+    206
+   ],
+   [
+    42,
+    13,
+    18,
+    0
+   ],
+   "Logoets yderste ring på lys grund. Cyan lys med 40 procent dækning på hvidt"
+  ],
+  [
+   "Nat",
+   "#070D14",
+   [
+    7,
+    13,
+    20
+   ],
+   [
+    90,
+    68,
+    36,
+    98
+   ],
+   "Grunden i mørk tilstand, app-ikonet og delingsbilledet"
+  ],
+  [
+   "Panel",
+   "#0D1721",
+   [
+    13,
+    23,
+    33
+   ],
+   [
+    95,
+    63,
+    27,
+    96
+   ],
+   "Paneler og ark i mørk tilstand"
+  ],
+  [
+   "Panel 2",
+   "#122032",
+   [
+    18,
+    32,
+    50
+   ],
+   [
+    98,
+    60,
+    10,
+    91
+   ],
+   "Felter og valgte rækker i mørk tilstand"
+  ],
+  [
+   "Tekst",
+   "#E4ECF3",
+   [
+    228,
+    236,
+    243
+   ],
+   [
+    12,
+    6,
+    6,
+    0
+   ],
+   "Tekst og ordmærket i mørk tilstand"
+  ],
+  [
+   "Dæmpet",
+   "#8BA0B4",
+   [
+    139,
+    160,
+    180
+   ],
+   [
+    48,
+    28,
+    19,
+    9
+   ],
+   "Forklaringer i mørk tilstand"
+  ],
+  [
+   "Svag",
+   "#6F8AA1",
+   [
+    111,
+    138,
+    161
+   ],
+   [
+    55,
+    31,
+    17,
+    22
+   ],
+   "Metadata og kilder i mørk tilstand"
+  ],
+  [
+   "Streg",
+   "#1D2D3D",
+   [
+    29,
+    45,
+    61
+   ],
+   [
+    89,
+    53,
+    18,
+    84
+   ],
+   "Skillestreger i mørk tilstand"
+  ],
+  [
+   "Lys grund",
+   "#E9EFF4",
+   [
+    233,
+    239,
+    244
+   ],
+   [
+    10,
+    5,
+    5,
+    0
+   ],
+   "Grunden i lys tilstand"
+  ],
+  [
+   "Hvid",
+   "#FFFFFF",
+   [
+    255,
+    255,
+    255
+   ],
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   "Paneler i lys tilstand og papir"
+  ],
+  [
+   "Lys panel 2",
+   "#F3F7FA",
+   [
+    243,
+    247,
+    250
+   ],
+   [
+    5,
+    3,
+    3,
+    0
+   ],
+   "Felter og valgte rækker i lys tilstand"
+  ],
+  [
+   "Blæk",
+   "#13202C",
+   [
+    19,
+    32,
+    44
+   ],
+   [
+    95,
+    59,
+    25,
+    93
+   ],
+   "Tekst og ordmærket i lys tilstand"
+  ],
+  [
+   "Lys dæmpet",
+   "#4D6276",
+   [
+    77,
+    98,
+    118
+   ],
+   [
+    71,
+    47,
+    31,
+    33
+   ],
+   "Forklaringer i lys tilstand"
+  ],
+  [
+   "Lys svag",
+   "#586C80",
+   [
+    88,
+    108,
+    128
+   ],
+   [
+    66,
+    44,
+    29,
+    28
+   ],
+   "Metadata og kilder i lys tilstand"
+  ],
+  [
+   "Lys streg",
+   "#D8E2EA",
+   [
+    216,
+    226,
+    234
+   ],
+   [
+    18,
+    9,
+    8,
+    0
+   ],
+   "Skillestreger i lys tilstand"
+  ],
+  [
+   "Hav",
+   "#0A131C",
+   [
+    10,
+    19,
+    28
+   ],
+   [
+    94,
+    65,
+    30,
+    97
+   ],
+   "Havet på kloden i mørk tilstand"
+  ],
+  [
+   "Land",
+   "#1C2C3A",
+   [
+    28,
+    44,
+    58
+   ],
+   [
+    90,
+    53,
+    23,
+    84
+   ],
+   "Landene på kloden i mørk tilstand"
+  ],
+  [
+   "Landlinje",
+   "#33506A",
+   [
+    51,
+    80,
+    106
+   ],
+   [
+    83,
+    52,
+    25,
+    44
+   ],
+   "Grænser og kyster i mørk tilstand"
+  ],
+  [
+   "Lyst hav",
+   "#C3D4E0",
+   [
+    195,
+    212,
+    224
+   ],
+   [
+    28,
+    12,
+    10,
+    0
+   ],
+   "Havet på kloden i lys tilstand"
+  ],
+  [
+   "Lyst land",
+   "#F2F6F9",
+   [
+    242,
+    246,
+    249
+   ],
+   [
+    5,
+    4,
+    4,
+    0
+   ],
+   "Landene på kloden i lys tilstand"
+  ],
+  [
+   "Lys landlinje",
+   "#9AB0C1",
+   [
+    154,
+    176,
+    193
+   ],
+   [
+    43,
+    22,
+    16,
+    5
+   ],
+   "Grænser og kyster i lys tilstand"
+  ]
+ ],
+ "farvetrin": [
+  [
+   "Reservoir",
+   "#49796B"
+  ],
+  [
+   "Reservoir lys",
+   "#2F6354"
+  ],
+  [
+   "Mistanke",
+   "#6F93AD"
+  ],
+  [
+   "Mistanke lys",
+   "#49708C"
+  ],
+  [
+   "Bekræftet udbrud",
+   "#E2B443"
+  ],
+  [
+   "Bekræftet udbrud lys",
+   "#B5861C"
+  ],
+  [
+   "Smitte mellem mennesker",
+   "#E8803A"
+  ],
+  [
+   "Smitte mellem mennesker lys",
+   "#C4601C"
+  ],
+  [
+   "Geografisk spredning",
+   "#DC4A4A"
+  ],
+  [
+   "Geografisk spredning lys",
+   "#C22F2F"
+  ],
+  [
+   "Ny variant",
+   "#B253D8"
+  ],
+  [
+   "Ny variant lys",
+   "#8C2FB0"
+  ],
+  [
+   "Rejse",
+   "#E98BC4"
+  ],
+  [
+   "Rejse lys",
+   "#AD3C80"
+  ],
+  [
+   "Krig",
+   "#EF5D5B"
+  ],
+  [
+   "Krig lys",
+   "#C4302E"
+  ],
+  [
+   "Smitte",
+   "#3FCF9E"
+  ],
+  [
+   "Smitte lys",
+   "#11845D"
+  ],
+  [
+   "Hede",
+   "#F2C94C"
+  ],
+  [
+   "Hede lys",
+   "#9A7208"
+  ],
+  [
+   "Jord",
+   "#CDA57C"
+  ],
+  [
+   "Jord lys",
+   "#88603A"
+  ],
+  [
+   "Flod",
+   "#5B95F6"
+  ],
+  [
+   "Flod lys",
+   "#2457C2"
+  ],
+  [
+   "Storm",
+   "#55CBE0"
+  ],
+  [
+   "Storm lys",
+   "#14798E"
+  ],
+  [
+   "Brand",
+   "#F5893C"
+  ],
+  [
+   "Brand lys",
+   "#C0531A"
+  ],
+  [
+   "Vulkan",
+   "#B691F7"
+  ],
+  [
+   "Vulkan lys",
+   "#7244C4"
+  ],
+  [
+   "Data",
+   "#B9DD4F"
+  ],
+  [
+   "Data lys",
+   "#5B7F10"
+  ],
+  [
+   "Advarsel",
+   "#E2B443"
+  ],
+  [
+   "Advarsel lys",
+   "#8A6410"
+  ],
+  [
+   "Hjælp",
+   "#8FDC6C"
+  ],
+  [
+   "Hjælp lys",
+   "#3F8A1C"
+  ],
+  [
+   "Støtte",
+   "#F2C94C"
+  ],
+  [
+   "Støtte lys",
+   "#A67C00"
+  ],
+  [
+   "Flugt",
+   "#C7D2FE"
+  ],
+  [
+   "Flugt lys",
+   "#4F5FB8"
+  ],
+  [
+   "Humanitær",
+   "#C3CCD5"
+  ],
+  [
+   "Humanitær lys",
+   "#7F8C98"
+  ],
+  [
+   "Krigstone",
+   "#13304A"
+  ],
+  [
+   "Krigstone lys",
+   "#D9E4EC"
+  ]
+ ],
+ "skrift": {
+  "familie": "Archivo",
+  "filer": [
+   {
+    "familie": "Archivo",
+    "fil": "../../site/fonts/archivo-latin-400-normal.woff2",
+    "vaegt": "400"
+   },
+   {
+    "familie": "Archivo",
+    "fil": "../../site/fonts/archivo-latin-600-normal.woff2",
+    "vaegt": "600"
+   },
+   {
+    "familie": "Archivo",
+    "fil": "../../site/fonts/archivo-latin-700-normal.woff2",
+    "vaegt": "700"
+   },
+   {
+    "familie": "IBM Plex Mono",
+    "fil": "../../site/fonts/ibm-plex-mono-latin-400-normal.woff2",
+    "vaegt": "400"
+   },
+   {
+    "familie": "IBM Plex Mono",
+    "fil": "../../site/fonts/ibm-plex-mono-latin-600-normal.woff2",
+    "vaegt": "600"
+   }
+  ],
+  "proever": [
+   [
+    "Titel · 24",
+    24,
+    700,
+    "Mpox i Den Demokratiske Republik Congo"
+   ],
+   [
+    "Overskrift · 20",
+    20,
+    600,
+    "Krig og konflikt"
+   ],
+   [
+    "Stor · 16",
+    16,
+    600,
+    "Geografisk spredning"
+   ],
+   [
+    "Mellem · 14,5",
+    14.5,
+    600,
+    "Bekræftet udbrud · 12 lande"
+   ],
+   [
+    "Tekst · 13",
+    13,
+    400,
+    "Laboratoriebekræftede tilfælde i fire provinser ifølge WHO. Tallene er fra 12. november."
+   ],
+   [
+    "Lille · 11,5",
+    11.5,
+    400,
+    "Kilde: WHO, Disease Outbreak News, 12. nov. 2026"
+   ],
+   [
+    "Mikro · 10,5 · IBM Plex Mono",
+    10.5,
+    400,
+    "OPDATERET KL. 11.20",
+    "IBM Plex Mono",
+    "letter-spacing:.06em"
+   ]
+  ]
+ },
+ "planter": {
+  "mappe": ".",
+  "arter": {}
+ },
+ "ikoner": {
+  "mappe": "../ikoner",
+  "liste": "../ikoner/ikoner.json"
+ },
+ "moenster": "",
+ "tokens": {
+  "lys": {
+   "papir": "#E9EFF4",
+   "flade": "#FFFFFF",
+   "flade-2": "#F3F7FA",
+   "kant": "#D8E2EA",
+   "felt": "#7F8C98",
+   "paa-skov": "#FFFFFF",
+   "blaek": "#13202C",
+   "daempet": "#4D6276",
+   "skov": "#196F84",
+   "skov-lys": "#E1EEF1",
+   "mos": "#13505F",
+   "salvie": "#B9D3DA",
+   "jord": "#C22F2F",
+   "jord-tekst": "#A62828",
+   "jord-lys": "#F7E3E3",
+   "guld": "#8A6410",
+   "guld-tekst": "#74540D",
+   "guld-lys": "#F5EEDC"
+  },
+  "moerk": {
+   "papir": "#070D14",
+   "flade": "#0D1721",
+   "flade-2": "#122032",
+   "kant": "#1D2D3D",
+   "felt": "#6F8AA1",
+   "paa-skov": "#070D14",
+   "blaek": "#E4ECF3",
+   "daempet": "#8BA0B4",
+   "skov": "#4FB3C9",
+   "skov-lys": "#10303A",
+   "mos": "#8ED0DE",
+   "salvie": "#244F5C",
+   "jord": "#EF5D5B",
+   "jord-tekst": "#EF7A78",
+   "jord-lys": "#3A1A1D",
+   "guld": "#E2B443",
+   "guld-tekst": "#E2B443",
+   "guld-lys": "#2E2714"
+  }
+ }
+}
