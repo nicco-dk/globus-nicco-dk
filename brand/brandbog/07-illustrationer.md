@@ -9,7 +9,7 @@ globus har ingen tegninger ud over kloden og mærkerne på den. Kloden er sidens
 ## Hvad de er, og hvor de bruges
 Status: Udkast
 Eget navn: Kloden og mærkerne
-- **Kloden:** ortografisk projektion med landene fra Natural Earth i 50m. Et finere kort hentes når der zoomes ind. Kloden drejer langsomt, til man rører den.
+- **Kloden:** ortografisk projektion med landene fra Natural Earth i 50m. Et finere kort hentes når der zoomes ind. Kloden drejer langsomt til du rører den.
 - **Mærkerne:** én hændelse er ét mærke. Farven er slags hændelse, og formen er trinnet og alvoren.
 - **Klyngerne:** mærker der ligger tæt, samles i en cirkel med tallet og farverne delt efter slags.
 
