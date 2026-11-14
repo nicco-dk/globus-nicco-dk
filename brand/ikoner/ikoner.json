@@ -1,234 +1,196 @@
 {
  "bygget": "14-11-2026",
- "kilde": "Udkast: Tabler Icons 3.51.0 (MIT-licens) i streg 1,75 på gitteret 24 × 24 efter GD-08 A. Navnet på Tabler står under tabler. Om globus bruger Tabler eller tegner sine egne som GRO og WORKDISK, er spurgt Mikkel (kapitel 6 og 16).",
+ "kilde": "globus' egne ikoner, tegnet i hånden i sidens stil med streg 1,8 på gitteret 24 × 24. Besluttet af Mikkel 14. november 2026 i DESIGN-chatten: egne ikoner frem for Tabler (GD-08 rettet). 35 er sidens egne tegninger fra koden 14. november 2026, én pr. betydning. Trin og siden-sidst er tegnet af DESIGN samme dag, og smitte har fået knopper på stregerne, så det ikke ligner solen.",
  "ikoner": [
   {
    "navn": "teoriarkivet",
    "betydning": "Fanen Teoriarkivet i toppen",
-   "tabler": "affiliate",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "hent-app",
    "betydning": "Hent appen",
-   "tabler": "download",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "lys",
    "betydning": "Skift til lys tilstand",
-   "tabler": "sun",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "moerk",
    "betydning": "Skift til mørk tilstand",
-   "tabler": "moon",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "nyt",
    "betydning": "Nyt på siden",
-   "tabler": "sparkles",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "pause",
    "betydning": "Sæt kloden på pause",
-   "tabler": "player-pause",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "afspil",
    "betydning": "Afspil forløbet og drej kloden igen",
-   "tabler": "player-play",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "overblik",
    "betydning": "Overblik i bundmenuen",
-   "tabler": "list",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "udforsk",
    "betydning": "Udforsk",
-   "tabler": "compass",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "soeg",
    "betydning": "Søg",
-   "tabler": "search",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "filtre",
    "betydning": "Filtre",
-   "tabler": "filter",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "foelger",
    "betydning": "Følger",
-   "tabler": "star",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "lag",
    "betydning": "Lagene på kloden",
-   "tabler": "stack-2",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "besked",
    "betydning": "Beskeder om nye hændelser",
-   "tabler": "bell",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "del",
    "betydning": "Del",
-   "tabler": "share",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "sammenlign",
    "betydning": "Sammenlign",
-   "tabler": "chart-bar",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "udvid",
    "betydning": "Udvid til fuld visning",
-   "tabler": "arrows-diagonal",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "rss",
    "betydning": "RSS",
-   "tabler": "rss",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "klik",
    "betydning": "Klik, i Sådan virker siden",
-   "tabler": "click",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "mus",
    "betydning": "Mus og hjul, i Sådan virker siden",
-   "tabler": "mouse",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "zoom",
    "betydning": "Zoom",
-   "tabler": "zoom-in",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "tid",
    "betydning": "Tidsskyderen",
-   "tabler": "clock",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "billede",
    "betydning": "Billede eller kort",
-   "tabler": "photo",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "app",
    "betydning": "Appen på telefonen",
-   "tabler": "device-mobile",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "trin",
    "betydning": "Trinstigen",
-   "tabler": "stairs-up",
    "status": "udkast"
   },
   {
    "navn": "land",
    "betydning": "Land",
-   "tabler": "map",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "akut",
    "betydning": "Akut",
-   "tabler": "alert-triangle",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "siden-sidst",
    "betydning": "Siden sidst du var her",
-   "tabler": "history",
    "status": "udkast"
   },
   {
    "navn": "rejse",
    "betydning": "Rejsevejledning",
-   "tabler": "plane",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "krig",
    "betydning": "Krig og konflikt",
-   "tabler": "current-location",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "smitte",
    "betydning": "Smitteudbrud",
-   "tabler": "virus",
    "status": "udkast"
   },
   {
    "navn": "hede",
    "betydning": "Hede og klima",
-   "tabler": "temperature",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "jord",
    "betydning": "Jordskælv",
-   "tabler": "activity",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "flod",
    "betydning": "Oversvømmelse",
-   "tabler": "ripple",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "storm",
    "betydning": "Storm",
-   "tabler": "storm",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "brand",
    "betydning": "Naturbrand",
-   "tabler": "flame",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "vulkan",
    "betydning": "Vulkan",
-   "tabler": "volcano",
-   "status": "udkast"
+   "status": "besluttet"
   },
   {
    "navn": "data",
    "betydning": "Datacenter",
-   "tabler": "server",
-   "status": "udkast"
+   "status": "besluttet"
   }
  ]
 }
