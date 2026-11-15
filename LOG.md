@@ -7,6 +7,33 @@
 ### Kl. 00.20, Europa og Danmark: intet nyt
 Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS-meddelelsen 14. november fortsat uden PDF, SEARO nummer 22 og WPRO nummer 1068 allerede brugt, ECDC's ugerapport ophørt, UKHSA og NaTHNaC uden nyt om udbrud, CIDRAP og Hongkong uden nyt for Europa; delene `dengue` (404), `lk` og `ont` fejlede fortsat), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 14. november kl. 16.02, ingen poster efter 13. november; mpox-siden https://www.ecdc.europa.eu/en/public-health-events/2022-sti-00005/2026-11-13 skriver under Key facts 342 klade I-tilfælde i oktober, men 219 i selve teksten og i månedsrapporten, som `mpox` bruger, så intet er ændret), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november) og nyheder (intet om udbrud efter 29. oktober), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt), RIVM's ebolaside (opdatering 12. november, intet om Nederlandene), GOV.UK's søgning efter ebola og UKHSA (intet nyt om `ebola-gb`), RKI's Epidemiologisches Bulletin 47/2026 udkommer 19. november. Kvalitet: koordinater i `lat`, `lon` og `nodes` tjekket for ombytning uden fund, ingen advarsler om tal i `cases` uden opgørelsesdato, `difteri-ng`, `cre-eu` og `ebola-nl` venter fortsat på ejerens afgørelse i GENNEMGANG.md. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
 
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og allerede brugt), DGHS' mæslinger (meddelelsen 14. november har nu PDF-bilag, se Ændret), WHO SEARO nummer 22 og WHO WPRO nummer 1068 (allerede brugt), ECDC's ugerapport (ophørt), UKHSA (intet om udbrud; kuldevarsel og statistik), NaTHNaC (intet nyt efter 12. november) og CIDRAP (ebola, mæslinger i USA og H5N1 i Oregon er allerede brugt; se Nye) og Hongkong (intet om smitte 14. og 15. november). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter 13. november), PAHO's sider om mæslinger og sundhedskriser https://www.paho.org/en/measles-multi-country-outbreak-2026 og https://www.paho.org/en/documents/subsite/health-emergencies (situationsrapport 15 6. november, opdateringen om dengue og chikungunya 20. oktober og alarmen om skruelarve 16. oktober fortsat nyeste), UKHSA's blog om ebolapatienten https://ukhsa.blog.gov.uk/2026/11/05/uk-providing-specialist-care-to-aid-worker-with-ebola/ (intet nyt efter 5. november), US CDC's Cyclospora-side, søgning efter WHO AFRO's ugebulletin (ingen ny fundet), DGHS' dengue gengivet af The Business Standard og The Daily Star og https://globus.nicco.dk/konflikter.json (genereret 15. november kl. 04.24 dansk tid).
+
+**Ændret**
+- `maesling-bd`: DGHS 14. november: 246.646 mistænkte og 25.111 bekræftede tilfælde, 1.201 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.084 nye mistænkte, 83 nye bekræftede og 2 dødsfald blandt mistænkte (1 hver i Dhaka- og Sylhet-divisionen) på et døgn til kl. 8 14. november. 220.247 indlagt og 211.303 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6af7429288a6e7617aff5e32 (PDF-bilaget læst som tekst med pdftotext og som billede af siden; døgntallene lagt til 13. november giver de samlede tal). Nyt punkt, nyt punkt i talserien (dødstallet 1.306 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 13. november er fjernet fra `src`, fordi punktet 13. november selv bærer den.
+- `dengue-bd`: 160.557 tilfælde og 491 dødsfald i 2026 efter 8 nye dødsfald og 1.674 nye indlagte på et døgn til kl. 8 14. november, 154.151 udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/dengue-claims-8-more-lives-24hrs-toll-hits-491-1602171 og The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/8-die-1674-hospitalised-dengue-24-hours-4323611 (begge læst i sidernes rå tekst og enige; 158.883 plus 1.674 giver 160.557, og 483 plus 8 giver 491). Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- Ingen. Set, men ikke taget med: STEC (E. coli) med 5 bekræftede tilfælde og 1 dødsfald efter besøg på en græskarfarm i San Luis Obispo i Californien (CIDRAP 13. november efter countyets sundhedsmyndighed). Et lokalt fødevareudbrud, som ingen myndighed kalder usædvanligt.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `chik-am` (10) og `maesling-am` (10) uden nyt fra PAHO efter 20. oktober og 6. november, `ebola-gb` (10) uden nyt fra UKHSA efter 5. november, `chik-ch` (11) uden nyt efter ECDC's ugeside 13. november, `kolera` (11) uden ny månedsopgørelse fra ECDC, `kolera-ye` (11) uden nyt fra WHO EMRO, `shamonda-fr` (13) uden nyt efter DON 623, `dengue-asien` (16) uden læsbar kilde fra Sri Lanka, `h5n1-us` (18) uden ny opgørelse, `cyclospora-us` (23) fordi US CDC's side kun kom frem i en forældet udgave (opdateret 15. september), `myiasis-am` (30) uden nyere alarm fra PAHO end 16. oktober, `difteri-afro` (30) uden ny ugebulletin fra WHO AFRO, `salmonella-eu` (30) uden nye poster hos ECDC. `ebola-nl` (36), `cre-eu` (44) og `difteri-ng` (52) venter på ejerens afgørelse.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json. Intet godkendt eller afvist.
+
+**Usikkert**
+- `dengue-bd`: The Business Standard og The Daily Star skriver fortsat 5.915 indlagte i øjeblikket, samme tal som 12. og 13. november. Tallet er ikke brugt.
+- `myiasis-am`, `difteri-afro` og `salmonella-eu` når 30 dage uden nyt punkt og vil give kontrollens advarsel fra i morgen. Kilderne er tavse; næste kørsel bør søge igen og ellers sætte `live` til false efter reglen.
+- Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede fortsat. Første hentning af DGHS' PDF blev afbrudt af serveren og lykkedes ved næste forsøg.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 5ed0e31.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 14. november 2026
 
 ### Kl. 00.20, Europa og Danmark
