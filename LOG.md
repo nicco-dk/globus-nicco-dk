@@ -34,6 +34,30 @@ Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS-meddelelse
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og allerede brugt, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 15. november med PDF-bilag, se Ændret), WHO SEARO nummer 22 pr. 4. november (allerede brugt, nummer 23 ventes 18. november), WHO WPRO nummer 1068 pr. 29. oktober (allerede brugt; adresserne for 6., 7., 13. og 14. november gav 404), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten efter 10. november), CIDRAP (intet nyt for Asien og Mellemøsten) og Hongkongs pressemeddelelser (intet om smitte 14. og 15. november, også tjekket på https://www.info.gov.hk/gia/general/today.htm). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt om udbrud efter polio i Deir Ezzor og nødplanen for Yemen) og DGHS' dengue gengivet af The Daily Star, The Business Standard og Dhaka Tribune (intet tal for døgnet til kl. 8 15. november fundet).
+
+**Ændret**
+- `maesling-bd`: DGHS 15. november: 248.060 mistænkte og 25.269 bekræftede tilfælde, 1.209 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.414 nye mistænkte, 158 nye bekræftede og 8 dødsfald blandt mistænkte (6 i Dhaka-divisionen, alle i Dhaka-distriktet, og 1 hver i Chattogram- og Khulna-divisionen) på et døgn til kl. 8 15. november. 221.539 indlagt og 212.402 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6af97b5538bed40d37c4b871 (PDF-bilaget læst som tekst med pdftotext og som billede af siden; døgntallene lagt til 14. november giver de samlede tal). Nyt punkt, nyt punkt i talserien (dødstallet 1.314 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 14. november er fjernet fra `src`, fordi punktet 14. november selv bærer den. Meddelelsen var ude før kl. 11.20, så kl. 17.20-kørslen har ikke dagens mæslingetal at tage.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 51 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-asien` (16) uden læsbar kilde fra Sri Lanka, `kolera-ye` (11) uden nyt fra WHO EMRO.
+- `dengue-bd`: DGHS' tal for døgnet til kl. 8 15. november er ikke fundet i medierne ved kørslens afslutning. The Daily Star 15. november (https://www.thedailystar.net/news/healthcare/news/dengue-claims-eight-more-lives-4324061) gengiver tallene til 14. november, som allerede står.
+
+**Usikkert**
+- Sri Lankas dagstal: forsiden https://www.dengue.health.gov.lk/ afbrød forbindelsen ved direkte opslag og blev afvist af hentningsværktøjet (robots_disallowed). `dengue-asien` er ikke ændret. Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede også.
+- WHO WPRO's oversigt nummer 1069 er fortsat ikke fundet.
+- Første hentning af DGHS' PDF blev afbrudt af serveren og lykkedes ved næste forsøg.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit d497e70.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 14. november 2026
 
 ### Kl. 00.20, Europa og Danmark
