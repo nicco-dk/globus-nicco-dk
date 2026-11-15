@@ -2,6 +2,11 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 16. november 2026
+
+### Kl. 00.20, Europa og Danmark: intet nyt
+Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS' meddelelse 15. november allerede brugt, SEARO nummer 22 og WPRO nummer 1068 allerede brugt, ECDC's ugerapport ophørt, UKHSA uden nyt om udbrud, NaTHNaC uden nyt efter 12. november, CIDRAP og Hongkong uden nyt for Europa; delene `dengue` (404), `lk` og `ont` fejlede fortsat), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (opdateret 15. november kl. 16.00, ingen poster efter 13. november), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt), RIVM's ebolaside (opdatering 12. november, næste om to uger), RKI's Epidemiologisches Bulletin 47/2026 udkommer 19. november, søgning efter nyt om Salmonella Strathcona (intet efter ECDC 9. oktober). Kvalitet: koordinater i `nodes` tjekket for ombytning uden fund, ingen advarsler om tal i `cases` uden opgørelsesdato. Kontrollen advarer nu om over 30 dage uden nyt punkt for `myiasis-am`, `difteri-afro` og `salmonella-eu` (31 dage) ud over `difteri-ng`, `cre-eu` og `ebola-nl`; alle seks står urørt og venter på ejerens afgørelse i GENNEMGANG.md. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
+
 ## 15. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
