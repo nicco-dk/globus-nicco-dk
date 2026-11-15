@@ -58,6 +58,34 @@ Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS-meddelelse
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 15. november er brugt kl. 11.20, ingen nyere), NaTHNaC (intet nyt efter 12. november), CIDRAP (se Urørt) og Hongkong (intet om smitte). Desuden ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter 13. november), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), WHO AFRO's side over ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), søgninger efter Africa CDC's ugentlige rapport (ikke fundet), PAHO's opdateringer (situationsrapport 15 om mæslinger 6. november, dengue og chikungunya 20. oktober og alarmen om skruelarve 16. oktober fortsat nyeste), søgning på cdc.gov (intet nyt om hændelserne på siden) og https://globus.nicco.dk/konflikter.json (genereret 15. november kl. 16.23 dansk tid).
+
+**Ændret**
+- Ingen hændelser.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 52 hændelser uden nyt i kilderne.
+- `ebola-drc`: CIDRAP https://www.cidrap.umn.edu/ebola/500-ebola-cases-still-diagnosed-week-amid-escalating-attacks-officials-say gengiver WHO med 11.145 tilfælde og 5.437 dødsfald, færre end ECDC's 11.197 og 5.471 pr. 12. november, som allerede står. Ikke brugt.
+- `ebola-ng`, `ebola-ke` og `maesling-us`: CIDRAP's artikler om Nigerias afsluttede opfølgning, Kenyas nedtælling og to nye mæslingedødsfald i Wisconsin og Pennsylvania svarer til punkterne 11. til 13. november.
+- `myiasis-am` og `difteri-afro` (30 dage): søgt igen. PAHO's alarm 16. oktober er fortsat den nyeste, mexicanske medier gengiver ældre tal, og WHO AFRO har intet nyere end uge 41 om difteri. Kilderne er tavse, men intet tyder på, at udbruddene er ovre. Se Til gennemgang.
+
+**Mediesporet**
+- Godkendt `BH-IR`: Irans Revolutionsgarde siger, at den 15. november angreb en amerikansk radar på Al-Riffa-basen i Bahrain med seks droner, og Bahrains militær siger, at luftforsvaret skød flere iranske angreb ned. Kilder: The Globe and Mail efter Reuters https://www.theglobeandmail.com/world/article-bahrain-intercepts-iranian-aerial-attacks-as-tehran-claims-strikes-on/ og CBS News https://www.cbsnews.com/live-updates/us-iran-war-trump-nuclear-material-no-deal/
+- Intet afvist. `BH-IR` var det eneste par med status afventer.
+
+**Usikkert**
+- `BH-IR`: angrebet var rettet mod et amerikansk mål i Bahrain, men Bahrains egne styrker skød de iranske droner ned, og Bahrain kalder det angreb på kongeriget. Godkendt som direkte kamp mellem landenes styrker. Ejeren kan flytte parret til afvist, hvis angreb på amerikanske baser i tredjelande ikke skal tælle.
+- France 24 og The Guardian kunne ikke læses ved direkte opslag (spærret eller uden tekst). The Washington Post gav ingen tekst.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 63cfded.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `myiasis-am`, `difteri-afro` og `salmonella-eu` har nået 30 dage uden nyt punkt.
+
 ## 14. november 2026
 
 ### Kl. 00.20, Europa og Danmark
