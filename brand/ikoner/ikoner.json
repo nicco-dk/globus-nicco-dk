@@ -1,12 +1,7 @@
 {
- "bygget": "14-11-2026",
- "kilde": "globus' egne ikoner, tegnet i hånden i sidens stil med streg 1,8 på gitteret 24 × 24. Besluttet af Mikkel 14. november 2026 i DESIGN-chatten: egne ikoner frem for Tabler (GD-08 rettet). 35 er sidens egne tegninger fra koden 14. november 2026, én pr. betydning. Trin og siden-sidst er tegnet af DESIGN samme dag, og smitte har fået knopper på stregerne, så det ikke ligner solen.",
+ "bygget": "16-11-2026",
+ "kilde": "globus' egne ikoner, tegnet i hånden i sidens stil med streg 1,8 på gitteret 24 × 24. Besluttet af Mikkel 14. november 2026 i DESIGN-chatten: egne ikoner frem for Tabler (GD-08 rettet). 35 er sidens egne tegninger fra koden 14. november 2026, én pr. betydning. Trin og siden-sidst er tegnet af DESIGN samme dag, og smitte har fået knopper på stregerne, så det ikke ligner solen. Teoriarkivet taget ud 16. november 2026 da Mikkel lukkede Teoriarkivet for globus, og findes i git-historikken. Sprog tegnet af DESIGN samme dag til knappen English. Land betyder kun land (GT-02).",
  "ikoner": [
-  {
-   "navn": "teoriarkivet",
-   "betydning": "Fanen Teoriarkivet i toppen",
-   "status": "besluttet"
-  },
   {
    "navn": "hent-app",
    "betydning": "Hent appen",
@@ -191,6 +186,11 @@
    "navn": "data",
    "betydning": "Datacenter",
    "status": "besluttet"
+  },
+  {
+   "navn": "sprog",
+   "betydning": "Sproget: siden på engelsk eller dansk, i Sådan virker siden og i Nyt",
+   "status": "udkast"
   }
  ]
 }

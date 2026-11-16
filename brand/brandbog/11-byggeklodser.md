@@ -27,7 +27,6 @@ Status: Udkast
 - **Retningerne i toppen:** én chip pr. slags hændelse med ikon og farve. Retninger uden data endnu står stiplet.
 - **Filterchips** i søgningen og overblikket.
 - **Lagvælgeren:** lagene om krig, støtte, hjælp og flugt slået til og fra.
-- **Fanen Teoriarkivet** fører til `/konspirationer/`.
 
 ## Formularer
 Status: Udkast

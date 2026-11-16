@@ -7,7 +7,7 @@ titel: Beslutninger og åbent
 Det der er besluttet, og det der mangler. Beslutningerne fra før bogen står i `claude/beslutningsliste-globus.md` i Claude-projektet.
 
 ## Beslutningslog med dato
-Status: Besluttet 14-11-2026
+Status: Besluttet 16-11-2026
 | Dato | Beslutning | Kapitel |
 | --- | --- | --- |
 | 14-11-2026 | Emblemet er prikken fra kortet med to ringe i accentfarven, og i 16 px falder den yderste ring væk (GD-01 A) | Kapitel 2 |
@@ -23,6 +23,7 @@ Status: Besluttet 14-11-2026
 | 14-11-2026 | Prikken som på kortet (GD-11 A1) | Kapitel 2 |
 | 14-11-2026 | Den yderste ring skarp, uden glød (GD-12 A1) | Kapitel 2 |
 | 14-11-2026 | globus tegner sine egne ikoner som GRO og WORKDISK, ikke Tabler. Mikkels svar i DESIGN-chatten, da det kom frem at GD-08 A byggede på at GRO og WORKDISK brugte Tabler | Kapitel 6 |
+| 16-11-2026 | Teoriarkivet er lukket for globus (Mikkel, globus-nicco-dk 5d751b8). Ikonet teoriarkivet er taget ud af kartoteket, og kloden tegnes ikke | Kapitel 6, 11 og 13 |
 
 De tolv GD-kort er afgjort af Mikkel 14. november 2026 kl. 11.54 til 12.19 på beslutningssiden »globus logo og designmanual«, og ikonerne samme dag i DESIGN-chatten.
 
@@ -35,8 +36,9 @@ Status: Udkast
 - **Farverne:** Hede og Støtte er samme gule i mørk, og Bekræftet udbrud og Advarsel er samme (kapitel 3).
 
 ## Ændringslog
-Status: Besluttet 14-11-2026
+Status: Besluttet 16-11-2026
 | Dato | Ændring | Kapitel |
 | --- | --- | --- |
 | 14-11-2026 | Bogen oprettet af DESIGN efter GT-01 med skabelonen fra WORKDISK. Logoet tegnet rent, ikonerne til hjemmeskærm og fane, det nye delingsbillede og udkast til kapitel 3, 4 og 6 til 13 ud fra kortlægningen 12. november 2026 | Alle |
 | 14-11-2026 | Kapitel 6 tegnet om efter Mikkels svar om egne ikoner: kartoteket af sitets egne tegninger med streg 1,8, og trin, siden-sidst og smitte tegnet af DESIGN. Tabler-udkastet er taget ud | Kapitel 6 og 16 |
+| 16-11-2026 | DESIGN efter GT-02: teoriarkivet taget ud og sprog tegnet til English, Trin for trin på mobilen med overblik, stregen 2,1 i kortets mærker og størrelserne ved tekst og i en ring. Fanen Teoriarkivet og evidensen taget ud af kapitel 11 og 13 | Kapitel 6, 7, 11 og 13 |

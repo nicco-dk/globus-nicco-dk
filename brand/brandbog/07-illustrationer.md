@@ -25,7 +25,7 @@ Status: Udkast
 | Akut | Alvor 4 med en udvikling inden for tre dage. En ring der breder sig 16 px ud og forsvinder |
 | Mistanke | Stiplet ring på panelets farve. Vises først når der er zoomet ind |
 | Reservoir | Tom ring på 3,4 px |
-| Tæt på | Prikken bliver større med panelets farve inden i, en kant i slagsens farve og slagsens ikon i midten |
+| Tæt på | Prikken bliver større med panelets farve inden i, en kant i slagsens farve og slagsens ikon i midten med stregen 2,1 (kapitel 6) |
 | Nyt siden sidst | En lille prik i Cyan oppe til højre for mærket |
 | Valgt | En ring i tekstens farve 7 px uden for prikken |
 

@@ -23,7 +23,6 @@ Status: Udkast
 - **Slags hændelse** står med ikon og navn i lister og ark, og ikonet står i mærket når der er zoomet ind.
 - **Trinnet** står med ord og som mærkets form: stiplet for mistanke, tom ring for reservoir.
 - **Alvoren** står med ord og som ringene om mærket.
-- **Evidensen i Teoriarkivet** vises med form og ord.
 
 Gråtoneprøven (W-16) er ikke lavet for forsiden. Spørgsmål: hvornår laves den, og hvem gør det?
 
