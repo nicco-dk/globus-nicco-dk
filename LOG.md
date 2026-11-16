@@ -84,6 +84,36 @@ Ejeren gav lov til at åbne WHO EMRO's nyhed om nødplanen og Floridas ugerappor
 **Til gennemgang**
 - De to punkter om Yemen er fjernet fra GENNEMGANG.md. Hantavirus i Argentina står fortsat: kørslen opretter `hanta-ar` når sundhedsministeriets bulletin er læst.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 16. november er brugt kl. 11.20, ingen nyere), ECDC's Public health events (ebolaopdateringen 16. november, se Ændret; MERS-månedsopdateringen og luftvejsoversigten 16. november uden nyt for Afrika og Amerika), NaTHNaC (intet nyt efter 12. november), CIDRAP (mæslinger i USA 13. november og ebola 13. november er allerede dækket af US CDC, Wisconsin, Pennsylvania og ECDC) og Hongkong (kun den faste ugemelding om legionærsyge). Desuden WHO AFRO's side over ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), søgning efter Africa CDC's ugentlige rapport (ikke fundet; kun nyheder om ebola), PAHO's dokumenter om sundhedskriser og epidemiologiske alarmer https://www.paho.org/en/documents/subsite/health-emergencies og https://www.paho.org/en/epidemiological-alerts-and-updates (situationsrapport 15 om mæslinger 6. november, dengue og chikungunya 20. oktober og skruelarve 16. oktober fortsat nyeste), US CDC's ebolaside https://www.cdc.gov/ebola/situation-summary/index.html (11.254 bekræftede tilfælde og 5.505 dødsfald i DR Congo pr. 12. november, ældre end ECDC's tal; ingen tilfælde i USA), US CDC's side om H5-overvågning (opdateret 13. november, intet nyt tal), Argentinas Boletín Epidemiológico Nacional nr. 833 (se Nye) og https://globus.nicco.dk/konflikter.json (genereret 16. november kl. 16.23 dansk tid).
+
+**Ændret**
+- `ebola-drc`: ECDC 16. november: 11.376 bekræftede tilfælde og 5.568 dødsfald pr. 15. november med data til og med 14. november, 179 nye tilfælde og 97 nye dødsfald siden data til og med 11. november (93 i Ituri, 58 i Nordkivu, 19 i Haut-Uélé og 9 i Tshopo), fortsat 68 af 178 sundhedszoner i otte provinser. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-16 (læst i sidens rå tekst; provinstallene giver tilsammen 11.376 og 5.568). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. `extra` har også UNICEF's tal om børn, gengivet af ECDC.
+
+**Nye**
+- `hanta-ar`: hantavirus i Argentina, oprettet efter ejerens afgørelse 16. november, nu hvor sundhedsministeriets bulletin er læst. Boletín Epidemiológico Nacional nr. 833 for uge 43 (25. til 31. oktober), udgivet 11. november, tabel 1 side 9: 64 tilfælde af hantavirose i 2026 mod en median på 49 i 2022 til 2025, stigende for året og over det forventede de seneste fire uger. Kilde: https://www.argentina.gob.ar/sites/default/files/2026/01/ben_833_se_43_11112026-2.pdf (læst som tekst med pdftotext og som billede af siden). NaTHNaC's melding 12. november om 64 bekræftede tilfælde står ved siden af. Trinnet er udbrud. Prikken står midt i landet, fordi bulletinen ikke oplyser provinser, og det står i `gap`.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne. `ebola-ke` og `ebola-ng`: ECDC 16. november gentager det, der allerede står (Kenya 9 tilfælde og 2 dødsfald, sidste patient udskrevet 11. november; Nigerias kontakter afsluttet 13. november).
+
+**Mediesporet**
+- Afvist `BH-US`: Irans droneangreb på en amerikansk base i Bahrain 15. november, ikke kampe mellem Bahrain og USA. Angrebene står under de godkendte par `IR-US` og `BH-IR`. Læst: https://www.theguardian.com/world/2026/nov/15/iran-launches-drone-attacks-against-us-military-base-in-bahrain og https://www.washingtonpost.com/world/2026/11/15/iran-targets-bahrain-twice-after-months-quiet-claiming-retaliation-against-us/
+- Afvist `EE-RU`: Estland lukker grænseovergangene til Rusland efter et forsøg på brandstiftelse på en dronefabrik, som Estland tilskriver Rusland, og som Rusland afviser. Sabotage uden uafhængigt bekræftet ophav. Læst: https://www.bbc.co.uk/news/articles/cqp83nk673reo og https://www.aljazeera.com/video/newsfeed/2026/11/15/estonia-to-close-border-crossings-with-russia-after-alleged-arson-attack
+- Afvist `IQ-US`: droneangreb fra ukendte grupper på gasfeltet Khor Mor og kommentarer til striden mellem USA og Iran, ingen kampe mellem Irak og USA. Læst: https://www.aljazeera.com/news-analysis/2026/11/10/khor-mor-drone-attack-raises-fears-over-iraqs-energy-security og https://www.france24.com/en/tv-shows/t%C3%AAte-%C3%A0-t%C3%AAte/20261113-no-war-and-no-peace-between-the-us-and-iran-cannot-continue-iraqi-fm-says
+- Afvist `IR-LB`: artiklerne handler om Israels besættelse af det sydlige Libanon og Irans udtalelser om missilernes rækkevidde, ingen kampe mellem Iran og Libanon. Læst: https://www.france24.com/en/tv-shows/focus/20261112-israeli-occupation-in-southern-lebanon-displaced-families-struggle-to-cope og https://www.thenationalnews.com/news/uk/2026/11/16/iran-boasts-us-airbase-in-britain-is-within-missile-range/
+- Afvist igen `GB-IL` (afvisningen 14. oktober var udløbet): israelske angreb i Gaza og en palæstinensisk journalists møde med israelske soldater, ingen kampe mellem Storbritannien og Israel. Ny dato 16. november.
+- Intet godkendt.
+
+**Usikkert**
+- `hanta-ar`: bulletinens tabel siger ikke selv, om de 64 tilfælde alle er bekræftede; det er NaTHNaC, der kalder dem bekræftede. Dødsfald og provinser er ikke oplyst.
+- `ebola-drc`: antallet indlagt i isolation er 1.681 hos ECDC 16. november mod 981 12. november. ECDC forklarer ikke springet. Tallet står, som ECDC skriver det.
+- Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede fortsat.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 3c44849.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `hanta-ar` er oprettet, så punktet om hantavirus i Argentina kan fjernes.
+
 ## 15. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
