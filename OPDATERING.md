@@ -69,7 +69,7 @@ Smittekørslen rører hverken `feeds.json`, `tools/hent-feeds.mjs` eller `tools/
 
 ### Datacentre (laget med servere)
 
-Laget Datacentre kommer ikke fra denne kørsel og rører ikke `EVENTS`. Det er en service ved siden af rejsevejledningerne, slået fra, når siden åbner, og det tæller ikke med i alvor, søljen eller beskeder. Planen og skabelonen står i `claude/globus-datacentre.md` i projektet.
+Laget Datacentre kommer ikke fra denne kørsel og rører ikke `EVENTS`. Den ugentlige gennemgang af den kuraterede liste har sin egen arbejdsbeskrivelse i `DATACENTRE.md` og kører søndag kl. 13.40. Det er en service ved siden af rejsevejledningerne, slået fra, når siden åbner, og det tæller ikke med i alvor, søljen eller beskeder. Planen og skabelonen står i `claude/globus-datacentre.md` i projektet.
 
 - **Kørslen:** `tools/hent-datacentre.mjs` kører i `udrul.yml` ved hver udrulning og skriver `site/datacentre.json`, som ikke ligger i repoet. Det henter `data_centers.csv` og `data_center_timelines.csv` fra Epoch AI's Frontier Data Centers (CC BY 4.0) og fletter dem med den kuraterede liste `tools/datacentre.json`. Fejler Epoch, genbruges Epochs anlæg fra den udgave, der er live. Scriptet bruger ingen AI.
 - **Status fra Epoch:** det seneste punkt i tidslinjen på eller før i dag afgør. IT-effekt over 0 giver `drift`. Punkter i fortiden uden effekt giver `opfoerelse`. Kun punkter i fremtiden giver `planlagt`. Den planlagte effekt er den største IT-effekt efter i dag med Epochs dato. Epochs effekt, kapitalomkostning, vand og chips vises som skøn med Epochs navn.
@@ -118,18 +118,16 @@ Erfaringer fra tidligere kørsler. Virker en adresse eller en metode ikke længe
 
 ## Vagtplan
 
-Kørslen startes fire gange i døgnet, kl. 00.20, 05.20, 11.20 og 17.20 dansk tid. Læs timen med `TZ=Europe/Copenhagen date +%H`, og følg rækken for den time. De andre retninger (jordskælv, storme, oversvømmelser, brande, hede, vulkaner, rejsevejledninger og mediesporets optælling) hentes automatisk hver time af workflowet og hører ikke til kørslen. Rækken siger, hvor kørslen lægger sin tid. Alt i Fremgangsmåde gælder stadig, og en alvorlig ny hændelse et andet sted tages med uanset rækken.
+Kørslen startes to gange i døgnet, kl. 05.20 og 17.20 dansk tid (Del C, besluttet 13. oktober og sat i gang 16. november 2026). Læs timen med `TZ=Europe/Copenhagen date +%H`, og følg rækken for den time. De andre retninger (jordskælv, storme, oversvømmelser, brande, hede, vulkaner, rejsevejledninger og mediesporets optælling) hentes automatisk hver time af workflowet og hører ikke til kørslen. Rækken siger, hvor kørslen lægger sin tid. Alt i Fremgangsmåde gælder stadig, og en alvorlig ny hændelse et andet sted tages med uanset rækken.
 
 | Kl. | Fokus |
 | --- | --- |
-| 00 | Smitte i Europa og Danmark: ECDC, Statens Serum Institut, DK-VET, UKHSA, RIVM og RKI. Kvalitet: koordinater, gamle punkter og GENNEMGANG.md. Tre hændelser fra kontrollens advarsel om tal i `cases` uden opgørelsesdato får kilde og dato, når kilden kan findes. |
-| 05 | Bred gennemgang: alle samlede kilder i trin 2, rundturen (trin 3a) og tjek af par i mediesporet. |
-| 11 | Smitte i Asien og Mellemøsten: WHO SEARO, WHO WPRO, WHO EMRO, Bangladeshs denguetal (DGHS gennem medierne, se Myndigheder gennem medier), Sri Lankas dagstal og Hongkongs pressemeddelelser. WHO DON siden forrige kørsel. Bangladeshs mæslingetal for dagen er normalt ikke ude endnu. |
-| 17 | Smitte i Afrika og Amerika: WHO AFRO, Africa CDC, PAHO og US CDC. Bangladeshs mæslingetal for dagen (DGHS). WHO DON siden forrige kørsel. Tjek af par i mediesporet. |
+| 05 | Bred gennemgang: alle samlede kilder i trin 2 med aftenens udgivelser fra WHO, ECDC og US CDC, rundturen (trin 3a) og tjek af par i mediesporet. Smitte i Europa og Danmark: ECDC, Statens Serum Institut, DK-VET, UKHSA, RIVM og RKI. Smitte i Asien og Mellemøsten: WHO SEARO, WHO WPRO, WHO EMRO, Bangladeshs denguetal (DGHS gennem medierne, se Myndigheder gennem medier), Sri Lankas dagstal og Hongkongs pressemeddelelser. |
+| 17 | Smitte i Afrika og Amerika: WHO AFRO, Africa CDC, PAHO og US CDC. Bangladeshs mæslingetal for dagen (DGHS). WHO DON siden forrige kørsel. Tjek af par i mediesporet. Kvalitet: koordinater, gamle punkter og GENNEMGANG.md. Tre hændelser fra kontrollens advarsel om tal i `cases` uden opgørelsesdato får kilde og dato når kilden kan findes. |
 
 **Ingen overlap.** Hent `main` først. Er der et commit fra en anden kørsel inden for de sidste 15 minutter, og er dens udrulning ikke færdig, så vent, til den er, eller spring kørslen over og skriv det i rapporten.
 
-**Hver kørsel sætter tiden.** Hver kørsel sætter `DATA_DATO` og `DATA_TID`, skriver sit underafsnit i dagens post og committer, også når intet er ændret. Er intet ændret, er underafsnittet én linje, fx `### Kl. 17.20, Afrika og Amerika: intet nyt` efterfulgt af en linje med de kilder, der er gennemgået. Siden advarer, når `DATA_TID` er over 9 timer gammel, og workflowet åbner da et issue til ejeren. En kørsel, der ikke sætter tiden, ligner derfor en kørsel, der ikke er gennemført.
+**Hver kørsel sætter tiden.** Hver kørsel sætter `DATA_DATO` og `DATA_TID`, skriver sit underafsnit i dagens post og committer, også når intet er ændret. Er intet ændret, er underafsnittet én linje, fx `### Kl. 17.20, Afrika og Amerika: intet nyt` efterfulgt af en linje med de kilder, der er gennemgået. Siden advarer, når `DATA_TID` er over 13 timer gammel, og workflowet åbner da et issue til ejeren. En kørsel, der ikke sætter tiden, ligner derfor en kørsel, der ikke er gennemført.
 
 ## Fremgangsmåde
 
@@ -248,7 +246,7 @@ En fejl standser udrulningen. En advarsel gør ikke, men den skal læses og besv
 
 Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker til fra foden, og den bygges af `LOG.md` ved hver udrulning. Skriv den, så en læser udefra kan følge, hvad der blev ændret og hvorfor. Ingen HTML i loggen, og adresser skrives fuldt ud med `https://`.
 
-`LOG.md` får én post pr. døgn med overskriften `## <dato>` øverst. Hver kørsel tilføjer et underafsnit i dagens post med klokkeslættet, fx `### Kl. 11.20, Asien og Mellemøsten`, under de tidligere kørslers underafsnit. Findes dagens post ikke, oprettes den. En kørsel uden ændringer skriver én linje (se Vagtplan). Formatet for indholdet i et underafsnit med ændringer:
+`LOG.md` får én post pr. døgn med overskriften `## <dato>` øverst. Hver kørsel tilføjer et underafsnit i dagens post med klokkeslættet, fx `### Kl. 17.20, Afrika og Amerika`, under de tidligere kørslers underafsnit. Findes dagens post ikke, oprettes den. En kørsel uden ændringer skriver én linje (se Vagtplan). Formatet for indholdet i et underafsnit med ændringer:
 
 ```
 ## 9. oktober 2026
@@ -256,7 +254,7 @@ Loggen er offentlig. Den vises på https://globus.nicco.dk/log, som siden linker
 ### Kl. 05.20, bred gennemgang: intet nyt
 ECDC CDTR uge 40, WHO DON siden 8. oktober, UKHSA's ugeoversigt uge 40.
 
-### Kl. 11.20, Asien og Mellemøsten
+### Kl. 17.20, Afrika og Amerika
 
 **Gennemgået:** ECDC CDTR uge 41, WHO DON siden 8. oktober, UKHSA's ugeoversigt uge 40.
 

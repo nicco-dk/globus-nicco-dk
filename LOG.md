@@ -84,6 +84,16 @@ Ejeren gav lov til at åbne WHO EMRO's nyhed om nødplanen og Floridas ugerappor
 **Til gennemgang**
 - De to punkter om Yemen er fjernet fra GENNEMGANG.md. Hantavirus i Argentina står fortsat: kørslen opretter `hanta-ar` når sundhedsministeriets bulletin er læst.
 
+### Kl. 13.15, to smittekørsler i døgnet og datacentre hver søndag
+
+Ejeren har afgjort to kort i Globus-projektet 16. november: datacentrenes ugentlige kørsel bruger Opus 5.5 som smittekørslen (B2-01), og Del C køres først (B2-02).
+
+**Ændret i reglerne**
+- `OPDATERING.md`: vagtplanen har to rækker, kl. 05 og kl. 17. Rækkerne kl. 00 og kl. 11 er flyttet ind i dem så intet falder ud. Kl. 05 tager Europa, Danmark, Asien og Mellemøsten med den brede gennemgang, og kl. 17 tager Afrika og Amerika og kvaliteten.
+- `DATA_MAX_TIMER` er 13 timer i stedet for 9, og vagten i `udrul.yml` læser grænsen derfra.
+- Siden, den engelske tekst og README siger to gange i døgnet.
+- `DATACENTRE.md` er ny: arbejdsbeskrivelsen for den ugentlige gennemgang af datacentrene søndag kl. 13.40. Den første kørsel skriver sine forslag i GENNEMGANG.md til ejeren har godkendt den.
+
 ### Kl. 17.20, Afrika og Amerika
 
 **Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 16. november er brugt kl. 11.20, ingen nyere), ECDC's Public health events (ebolaopdateringen 16. november, se Ændret; MERS-månedsopdateringen og luftvejsoversigten 16. november uden nyt for Afrika og Amerika), NaTHNaC (intet nyt efter 12. november), CIDRAP (mæslinger i USA 13. november og ebola 13. november er allerede dækket af US CDC, Wisconsin, Pennsylvania og ECDC) og Hongkong (kun den faste ugemelding om legionærsyge). Desuden WHO AFRO's side over ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), søgning efter Africa CDC's ugentlige rapport (ikke fundet; kun nyheder om ebola), PAHO's dokumenter om sundhedskriser og epidemiologiske alarmer https://www.paho.org/en/documents/subsite/health-emergencies og https://www.paho.org/en/epidemiological-alerts-and-updates (situationsrapport 15 om mæslinger 6. november, dengue og chikungunya 20. oktober og skruelarve 16. oktober fortsat nyeste), US CDC's ebolaside https://www.cdc.gov/ebola/situation-summary/index.html (11.254 bekræftede tilfælde og 5.505 dødsfald i DR Congo pr. 12. november, ældre end ECDC's tal; ingen tilfælde i USA), US CDC's side om H5-overvågning (opdateret 13. november, intet nyt tal), Argentinas Boletín Epidemiológico Nacional nr. 833 (se Nye) og https://globus.nicco.dk/konflikter.json (genereret 16. november kl. 16.23 dansk tid).

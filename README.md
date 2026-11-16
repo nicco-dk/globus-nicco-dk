@@ -70,8 +70,10 @@ Teoriarkivet var en fane på globus fra 5. november 2026, blev sat på pause 14.
 
 ## Bemærk
 
-Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører kl. 00.20, 05.20, 11.20 og 17.20 dansk tid efter vagtplanen i `OPDATERING.md`. Hver kørsel sætter `DATA_TID` og skriver sit underafsnit i dagens post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
+Datasættet er sammenstillet manuelt 8. oktober 2026 og opdateres siden da automatisk: en planlagt opgave i Claude, "Udbrudsglobus daglig opdatering", kører kl. 05.20 og 17.20 dansk tid efter vagtplanen i `OPDATERING.md`. Hver kørsel sætter `DATA_TID` og skriver sit underafsnit i dagens post i `LOG.md`. Sidens overskriftslinje siger det samme gennem `DATA_STATUS` i `site/index.html`. Sættes opgaven på pause, skal den linje rettes tilbage.
 
-Går der mere end 9 timer siden `DATA_TID`, skifter overskriftslinjen selv til en advarsel med tiden siden seneste gennemgang. Grænsen er `DATA_MAX_TIMER` i `site/index.html`. Samtidig åbner jobbet Vagt for smittekørslen i `.github/workflows/udrul.yml` et issue i repoet, som GitHub sender til ejeren, og lukker det igen, når en kørsel har sat tiden.
+Datacentrenes kuraterede liste gennemgås hver søndag kl. 13.40 af en anden planlagt opgave, "Globus.nicco.dk datacentre ugentlig", efter `DATACENTRE.md`.
+
+Går der mere end 13 timer siden `DATA_TID`, skifter overskriftslinjen selv til en advarsel med tiden siden seneste gennemgang. Grænsen er `DATA_MAX_TIMER` i `site/index.html`. Samtidig åbner jobbet Vagt for smittekørslen i `.github/workflows/udrul.yml` et issue i repoet, som GitHub sender til ejeren, og lukker det igen, når en kørsel har sat tiden.
 
 Siden er offentlig, men holdt ude af søgemaskiner, mens datasættet er en prototype. Det styres af linjen `<meta name="robots" content="noindex">` i `site/index.html`. Slet linjen, når siden skal kunne findes. Adresserne på pages.dev holdes altid ude med `X-Robots-Tag` i `site/_headers`, så der kun er én udgave i søgemaskinerne.

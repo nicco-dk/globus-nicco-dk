@@ -161,8 +161,8 @@ jobs:
           accountId: b8e531774d257d9555c444b444dd71b5
           command: pages deploy site --project-name=globus-nicco-dk --branch=main
 
-      # Vagt for smittekørslen. Hver af de fire daglige kørsler sætter DATA_TID i site/index.html.
-      # Er DATA_TID over 9 timer gammel, mangler mindst én kørsel, og der åbnes et issue, som
+      # Vagt for smittekørslen. Hver af de to daglige kørsler sætter DATA_TID i site/index.html.
+      # Er DATA_TID ældre end DATA_MAX_TIMER (13 timer), mangler mindst én kørsel, og der åbnes et issue, som
       # GitHub sender til ejeren. Issuet lukkes igen af den første kørsel, der finder DATA_TID frisk.
       # Et trin i samme job og ikke et eget job, fordi GitHub regner hvert job op til et helt minut.
       - name: Vagt for smittekørslen
@@ -177,13 +177,14 @@ jobs:
           if [ -z "$tid" ]; then echo "::warning::DATA_TID blev ikke fundet i site/index.html"; exit 0; fi
           t=$(date -d "$tid" +%s)
           timer=$(( (nu - t) / 3600 ))
-          echo "DATA_TID $tid er $timer timer gammel."
+          graense=$(grep -oP "^const DATA_MAX_TIMER = \\K[0-9]+" site/index.html || echo 13)
+          echo "DATA_TID $tid er $timer timer gammel. Grænsen er $graense timer."
           # REST, ikke gh issue, så trinnet også virker, hvor GraphQL ikke er tilgængeligt.
           aaben=$(gh api "repos/$GITHUB_REPOSITORY/issues?state=open&per_page=100" --jq "[.[] | select(.title == \"$TITEL\" and (.pull_request | not))][0].number // empty")
-          if [ "$timer" -ge 9 ]; then
+          if [ "$timer" -ge "$graense" ]; then
             if [ -z "$aaben" ]; then
               printf '%s\n\n%s\n\n%s\n' \
-                "Seneste gennemgang af smitteudbruddene (DATA_TID) er fra $tid, $timer timer siden. Kørslerne ligger kl. 00.20, 05.20, 11.20 og 17.20 dansk tid, så mindst én kørsel er ikke gennemført." \
+                "Seneste gennemgang af smitteudbruddene (DATA_TID) er fra $tid, $timer timer siden. Kørslerne ligger kl. 05.20 og 17.20 dansk tid, så mindst én kørsel er ikke gennemført." \
                 "Se den planlagte opgave \"Udbrudsglobus daglig opdatering\" i Claude og den seneste post i LOG.md. Siden viser selv en advarsel i overskriftslinjen." \
                 "Issuet lukkes automatisk, når en kørsel har sat DATA_TID igen." > "$RUNNER_TEMP/tekst.md"
               gh api "repos/$GITHUB_REPOSITORY/issues" -f title="$TITEL" -F body=@"$RUNNER_TEMP/tekst.md" --jq '"Issue #\(.number) åbnet."'

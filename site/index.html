@@ -1093,7 +1093,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,canvas:focus-visible{ou
     <h3 id="om-opdatering">Opdatering og prototypedata</h3>
     <ul>
       <li>Varslerne om krig og konflikt, jordskælv, storme, oversvømmelser, brande, hede og vulkaner hentes automatisk hver time fra kildernes egne feeds. Rejsevejledningerne hentes hver 6. time. Fejler en kilde, vises dens seneste meldinger, til den svarer igen. Varslerne vises kun for i dag, ikke bagud på tidslinjen. Læs mere-artiklerne findes hver time blandt overskrifterne fra de store medier og i GDELT. Billederne kommer fra Wikipedia-artiklen om emnet og bruges kun med fri licens fra Wikimedia Commons.</li>
-      <li>Smitteudbruddene gennemgås automatisk fire gange i døgnet efter faste regler og en vagtplan, så hver verdensdel får sin tid. De andre retninger hentes hver time. Hvad der er ændret, og på hvilken kilde, står i <a href="/log">ændringsloggen</a>.</li>
+      <li>Smitteudbruddene gennemgås automatisk to gange i døgnet efter faste regler og en vagtplan, så hver verdensdel får sin tid. De andre retninger hentes hver time. Hvad der er ændret, og på hvilken kilde, står i <a href="/log">ændringsloggen</a>.</li>
       <li>Ændringerne går på siden uden at være set igennem af et menneske først.</li>
       <li>Siden er en prototype. Datasættet blev sammenstillet 8. oktober 2026, og ældre punkter i forløbene har endnu ikke deres egen kilde. Det er det, mærket Prototypedata øverst på siden betyder.</li>
       <li>Siden dækker ikke alle udbrud i verden. Den almindelige sæson for kendte sygdomme er ikke med, medmindre en myndighed kalder den usædvanlig.</li>
@@ -1259,8 +1259,8 @@ const DATA_TID = '2026-11-16T17:25+01:00';
 // Vises i overskriftslinjen. Ændres kun, når måden siden opdateres på ændres.
 const DATA_STATUS = 'opdateres automatisk flere gange i døgnet';
 // Går der flere timer end dette siden DATA_TID, viser overskriftslinjen en advarsel i stedet for DATA_STATUS.
-// Kørslerne ligger kl. 00.20, 05.20, 11.20 og 17.20, og hver kørsel sætter DATA_TID. Største mellemrum er 7 timer.
-const DATA_MAX_TIMER = 9;
+// Kørslerne ligger kl. 05.20 og 17.20, og hver kørsel sætter DATA_TID. Største mellemrum er 12 timer.
+const DATA_MAX_TIMER = 13;
 
 // Tidslinjer er foreløbige: start og seneste opdatering er belagt med kilder,
 // mellemliggende punkter mangler endnu for de fleste hændelser.
@@ -5579,7 +5579,7 @@ START_KLAR = true; requestAnimationFrame(() => flyvIgen());
     m('Hændelser og varsler nu:', String(ALLE().filter(e => liveAt(e, T1)).length));
     const rt = el('dl','rettider'); rt.style.cssText = 'margin-top:8px;flex-basis:100%'; bygRetTider(rt); meta.appendChild(rt);
     const box = document.getElementById('datakilder'); box.innerHTML = '';
-    box.appendChild(kildeKort('Smitteudbrud', 'WHO, ECDC, UKHSA, US CDC, PAHO, Statens Serum Institut og nationale sundhedsmyndigheder. Gennemgås fire gange i døgnet efter faste regler.', '', 'ok', `${EVENTS.filter(e => liveAt(e, T1)).length} udbrud · datasæt pr. ${fmtDate(DATA_DATO)}`));
+    box.appendChild(kildeKort('Smitteudbrud', 'WHO, ECDC, UKHSA, US CDC, PAHO, Statens Serum Institut og nationale sundhedsmyndigheder. Gennemgås to gange i døgnet efter faste regler.', '', 'ok', `${EVENTS.filter(e => liveAt(e, T1)).length} udbrud · datasæt pr. ${fmtDate(DATA_DATO)}`));
     for(const [k, [navn, tekst, url]] of Object.entries(KILDEINFO)){
       const ki = FEEDINFO && FEEDINFO.kilder && FEEDINFO.kilder[k]; if(!ki) continue;
       box.appendChild(kildeKort(navn, tekst, url, ki.ok ? 'ok' : 'fejl', ki.ok ? `${ki.antal} poster · hentet ${ki.hentet ? klok(ki.hentet) : 'ukendt'}` : `Fejl: ${String(ki.fejl || 'ukendt').replace(/^https?:\/\/\S+: /, '')}. Vi viser de seneste meldinger, til kilden svarer igen.`));
