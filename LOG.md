@@ -10,6 +10,30 @@ Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS' meddelels
 ### Kl. 05.20, bred gennemgang: intet nyt
 Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS' meddelelse 15. november allerede brugt, SEARO nummer 22 og WPRO nummer 1068 allerede brugt, ECDC's ugerapport ophørt, UKHSA uden nyt om udbrud, NaTHNaC uden nyt efter 12. november, CIDRAP uden nyt, der ikke står på siden, Hongkong uden nyt om smitte; delene `dengue` (404), `lk` og `ont` fejlede fortsat), ECDC's Public health events https://www.ecdc.europa.eu/en/public-health-events (ingen poster efter 13. november), UKHSA's ugeoversigt uge 45 (allerede brugt), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's dokumenter om sundhedskriser https://www.paho.org/en/documents/subsite/health-emergencies (situationsrapport 15 om mæslinger 6. november fortsat nyeste), søgning efter Africa CDC's ugentlige rapport (ikke fundet), WHO EMRO's nyheder (intet nyt om udbrud), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), DGHS' dengue i The Daily Star og The Business Standard (intet nyere end tallene til 14. november). Rundtur uden nyt (dage siden seneste punkt): `gul-feber-gh` og `gul-feber-ci` (10), `ebola-gb`, `maesling-am` og `chik-am` (11), `kolera`, `kolera-ye` og `chik-ch` (12), `shamonda-fr` (14), `dengue-asien` (17), `h5n1-us` (19), `cyclospora-us` (24), `myiasis-am`, `difteri-afro` og `salmonella-eu` (31); `ebola-nl`, `cre-eu` og `difteri-ng` venter på ejerens afgørelse i GENNEMGANG.md. Mediesporet: ingen par med status afventer i https://globus.nicco.dk/konflikter.json (genereret 16. november kl. 04.23 dansk tid), intet godkendt eller afvist. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk, fordi add_repo ikke findes i kørslen.
 
+### Kl. 11.20, Asien og Mellemøsten
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og allerede brugt, intet siden forrige kørsel), DGHS' mæslinger (meddelelsen 16. november med PDF-bilag, se Ændret), WHO SEARO nummer 22 pr. 4. november (allerede brugt, nummer 23 ventes 18. november), WHO WPRO nummer 1068 pr. 29. oktober (allerede brugt; adresserne for 6., 7., 12., 13. og 14. november gav 404), UKHSA (intet om udbrud), NaTHNaC (intet nyt for Asien og Mellemøsten efter 10. november), CIDRAP (intet nyt for Asien og Mellemøsten) og Hongkongs pressemeddelelser (kun den faste ugemelding om legionærsyge 16. november https://www.info.gov.hk/gia/general/202611/16/P2026111600429.htm, ikke taget med). Desuden WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt om udbrud efter polio i Deir Ezzor og nødplanen for Yemen) og DGHS' dengue gengivet af The Business Standard og bdnews24 (se Ændret).
+
+**Ændret**
+- `maesling-bd`: DGHS 16. november: 249.569 mistænkte og 25.442 bekræftede tilfælde, 1.213 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.509 nye mistænkte, 173 nye bekræftede og 4 dødsfald blandt mistænkte (2 i Dhaka-divisionen, begge i Dhaka-distriktet, og 1 hver i Chattogram- og Mymensingh-divisionen) på et døgn til kl. 8 16. november. 222.944 indlagt og 213.870 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6afacb4b38bed40d37c544a4 (PDF-bilaget læst som tekst med pdftotext og som billede af siden; døgntallene lagt til 15. november giver de samlede tal). Nyt punkt, nyt punkt i talserien (dødstallet 1.318 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 15. november er fjernet fra `src`, fordi punktet 15. november selv bærer den. Meddelelsen var ude før kl. 11.20, så kl. 17.20-kørslen har ikke dagens mæslingetal at tage.
+- `dengue-bd`: 162.509 tilfælde og 499 dødsfald i 2026 efter 8 nye dødsfald (fem i Dhaka-divisionen og ét hver i Mymensingh-, Chattogram- og Khulna-divisionen) og 1.952 nye indlagte på et døgn til kl. 8 15. november. 5.816 er fortsat indlagt, og 156.194 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/dengue-toll-499-8-more-die-1603331 (læst i sidens rå tekst) og bdnews24 https://bdnews24.com/health/ugc2lill4v (læst med hentningsværktøjet); de to er enige om 162.509, 499, 1.952 og fordelingen af dødsfald. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 50 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-asien` (17) uden læsbar kilde fra Sri Lanka, `kolera-ye` (12) uden nyt fra WHO EMRO.
+
+**Usikkert**
+- Sri Lankas dagstal: forsiden https://www.dengue.health.gov.lk/ svarede ikke ved direkte opslag, og hentningsværktøjet har tidligere afvist den (robots_disallowed). `dengue-asien` er ikke ændret. Delene `dengue` (404), `lk` og `ont` i kildescriptet fejlede også.
+- `dengue-bd`: DGHS' tal for døgnet til kl. 8 16. november er ikke fundet i medierne ved kørslens afslutning.
+- WHO WPRO's oversigt nummer 1069 er fortsat ikke fundet.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk (omdirigeret til nicco-dk) på det seneste commit ce837b2.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 15. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
