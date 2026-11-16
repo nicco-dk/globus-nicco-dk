@@ -64,20 +64,9 @@ Fremgangsmåde, kilder, regler og felter står i `OPDATERING.md`. Hver opdaterin
 
 Den automatiske kørsel tilføjer og ajourfører, men retter ikke i gamle forløbspunkter. Det, den finder, som kun ejeren må rette, står i `GENNEMGANG.md`. `tools/hent-kilder.mjs` henter de faste kilder og skriver kildens egne tal ud, så kørslen ikke skal lede efter adresser.
 
-## Teoriarkivet (på pause)
+## Teoriarkivet (lukket)
 
-Teoriarkivet blev sat på pause 14. november 2026 efter ejerens ønske og er taget af live-siden. Fanen under logoet er fjernet, siden ligger i `pause/konspirationer/` uden for `site/` og bliver derfor ikke udrullet, og `site/_redirects` sender `/konspirationer/` videre til kloden. Inden Teoriarkivet bygges igen, skal det afgøres hvorfor og hvordan.
-
-| Sti | Hvad |
-| --- | --- |
-| `pause/konspirationer/index.html` | Siden. Samme skrifter, farver og klode som forsiden, og kortet hentes fra `site/kort-50m.txt` |
-| `pause/konspirationer/teorier.json` | Listen over teorier og deres datafiler |
-| `pause/konspirationer/17nov.json` | Punkter, kilder, vurdering og tekster for 17. NOV, som de stod på live-siden |
-| `tools/tjek-konspirationer.mjs` | Formkontrol af datafilerne. Peger stadig på `site/konspirationer/` |
-
-Sådan kommer det tilbage: flyt `pause/konspirationer/` til `site/konspirationer/`, fjern linjerne i `site/_redirects`, og sæt fanen `#kfane` ind igen fra commit d6f730e. Repoet er offentligt, så det vises for ejeren og committes først, når ejeren har sagt ja.
-
-Reglerne fra fanen gælder stadig, hvis den kommer tilbage: adskilt fra klodens data, evidens med både ord og form, kun navngivne kilder, ingen indtastning og ejerens godkendelse før commit.
+Teoriarkivet var en fane på globus fra 5. november 2026, blev sat på pause 14. november og lukket for globus 16. november efter ejerens valg. Arkivet bliver i ejerens sagsmappe og som privat artefakt og kommer ikke på globus igen. Siden, datafilerne og formkontrollen er fjernet fra repoet og findes i historikken til og med commit 8828e82. `site/_redirects` sender stadig `/konspirationer/` videre til kloden. Så ender gamle links et sted.
 
 ## Bemærk
 
