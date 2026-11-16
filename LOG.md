@@ -73,6 +73,17 @@ Ejeren har afgjort de 25 punkter fra GENNEMGANG.md på beslutningssiden Gennemga
 **Til gennemgang**
 - Står fortsat: Yemen (`kolera-ye` får nødplanens tal i `gap`, ingen ny hændelse) venter på at WHO EMRO's nyhed om nødplanen er læst. Hantavirus i Argentina (`hanta-ar`) oprettes når sundhedsministeriets bulletin er læst.
 
+### Kl. 12.46, Yemen og Florida efter ejerens afgørelser
+
+Ejeren gav lov til at åbne WHO EMRO's nyhed om nødplanen og Floridas ugerapport for uge 44. Begge er læst.
+
+**Ændret i datasættet**
+- `kolera-ye`: `gap` har fået nødplanens tal: over 8.600 mistænkte tilfælde pr. 4. oktober, flere end årets 8.034 pr. 13. oktober, og WHO forklarer ikke forskellen. `cases` er uændret, og der kommer ingen ny hændelse for mæslinger. Nyheden er dateret 4. november 2026 i sidens tekst, så punktet i forløbet passer: https://www.emro.who.int/media/news/who-releases-emergency-response-plan-for-yemen-as-escalating-conflict-threatens-health-services.html
+- `chik-am`: Floridalinjen har 2 lokalt erhvervede tilfælde i Miami-Dade i 2026, begge med sygdomsdebut i august, pr. uge 44 (1. til 7. november). Ugerapporten står under kilder: https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w44-2026.pdf
+
+**Til gennemgang**
+- De to punkter om Yemen er fjernet fra GENNEMGANG.md. Hantavirus i Argentina står fortsat: kørslen opretter `hanta-ar` når sundhedsministeriets bulletin er læst.
+
 ## 15. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
