@@ -38,6 +38,11 @@ async function findes(url) {
   const [kode, type] = (r.ud || '').split(' ');
   return +kode === 200 && !/xml|html/.test(type || '');
 }
+// Svarer en side med 200? Til HTML-sider, hvor findes() kun godtager filer.
+async function svarer(url) {
+  const r = await kør('curl', ['-sSL', '-o', '/dev/null', '--max-time', '30', '-A', 'Mozilla/5.0 (globus.nicco.dk hent-kilder)', '-w', '%{http_code}', url]);
+  return +(r.ud || 0) === 200;
+}
 // Henter en PDF og giver dens tekst med layout.
 async function pdfTekst(url, sider = '') {
   const fil = join(MAPPE, `${Math.random().toString(36).slice(2)}.pdf`);
@@ -68,8 +73,17 @@ const KILDER = {
     const r = await hent(u);
     if (r.fejl) return [`FEJL ${r.fejl}: ${u}`];
     const d = JSON.parse(r.tekst).value || [];
-    return ['De seneste 10. Læserens side: https://www.who.int/emergencies/disease-outbreak-news/item/<DonId>',
-      ...d.map((v) => `${v.PublicationDateAndTime.slice(0, 10)}  ${v.DonId}  ${v.Title}`)];
+    // En DON bruges først når læserens side svarer (ejerens afgørelse 16. november 2026, G3-19). Udtrækket kan vise en
+    // melding før siden findes, så de nyeste slås op, og et tidspunkt i fremtiden markeres.
+    const ud = ['De seneste 10. Læserens side: https://www.who.int/emergencies/disease-outbreak-news/item/<DonId>'];
+    for (const v of d) {
+      const t = new Date(v.PublicationDateAndTime);
+      let mrk = '';
+      if (t > NU) mrk = `  FREMTID: offentliggøres ${v.PublicationDateAndTime.slice(0, 16)} UTC. Brug den ikke endnu`;
+      else if (NU - t < 3 * 864e5 && !(await svarer(`https://www.who.int/emergencies/disease-outbreak-news/item/${v.DonId}`))) mrk = '  LÆSERENS SIDE SVARER IKKE ENDNU. Brug den ikke endnu';
+      ud.push(`${v.PublicationDateAndTime.slice(0, 10)}  ${v.DonId}  ${v.Title}${mrk}`);
+    }
+    return ud;
   },
 
   // DGHS, Bangladesh: mæslinger. Pressemeddelelsen viser en PDF, hvis adresse står i sidens kildekode.
@@ -124,11 +138,12 @@ const KILDER = {
     return ud;
   },
 
-  // DGHS, Bangladesh: dengue. Dashboardet viser ugens og årets tal øverst.
+  // DGHS, Bangladesh: dengue. Dashboardet viser ugens og årets tal øverst. Det har svaret 404 siden 9. november 2026,
+  // og så bruges DGHS' tal gengivet af The Daily Star og The Business Standard, mærket medie (OPDATERING.md, G3-20).
   async dengue() {
     const u = 'https://dashboard.dghs.gov.bd/pages/heoc_dengue_v1.php';
     const r = await hent(u);
-    if (r.fejl) return [`FEJL ${r.fejl}: ${u}`];
+    if (r.fejl) return [`FEJL ${r.fejl}: ${u}`, 'Dashboardet svarer ikke. Brug DGHS\' tal gengivet af The Daily Star eller The Business Standard med tilføjelsen , medie, som OPDATERING.md siger. Skriv i loggen hvis dashboardet er fundet på en ny adresse.'];
     const t = ren(r.tekst);
     const top = (t.match(/Last Updated:\s*(\S+)\s+(W\d+:\s*[\d,]+\s+[\d,]+\s+[\d,]+\s+[\d,]+)/) || []);
     const total = [...t.matchAll(/Grand Total\s+([\d,]+)\s+([\d,]+)\s+([\d,]+)/g)].slice(0, 2).map((m) => m[3]);
@@ -182,17 +197,20 @@ const KILDER = {
     return [`Kilde: ${u}`, ...saetn.map((s) => '  ' + s.trim())];
   },
 
-  // ECDC's ugentlige Communicable Disease Threats Report, om fredagen.
+  // ECDC's Public health events. Ugerapporten Communicable Disease Threats Report udkom til oktober 2026, og
+  // opdateringerne kommer nu dagligt her (ejerens afgørelse 16. november 2026, G3-18). Hver post har en fast adresse
+  // med datoen sidst. Sidens filtre virker ikke ved maskinel hentning, så listen tages som den står.
   async ecdc() {
-    for (let i = 0; i < 4; i++) {
-      const [aar, uge] = isoUge(new Date(NU.getTime() - i * 7 * 864e5));
-      const u = `https://www.ecdc.europa.eu/sites/default/files/documents/communicable-disease-threats-report-week-${uge}-${aar}.pdf`;
-      if (!(await findes(u))) continue;
-      const p = await pdfTekst(u, [1, 2]);
-      if (p.fejl) return [`FEJL ${p.fejl}: ${u}`];
-      return [`Kilde: ${u}`, ...linjer(p.tekst, 80).filter((x) => /^\s*\S.{3,}\s{2,}\d+\s*$|Week \d+|period/.test(x)).slice(0, 30).map((x) => '  ' + x.trim())];
+    const u = 'https://www.ecdc.europa.eu/en/public-health-events';
+    const r = await hent(u);
+    if (r.fejl) return [`FEJL ${r.fejl}: ${u}`];
+    const set = new Set(), ud = [];
+    for (const m of r.tekst.matchAll(/href="(\/en\/public-health-events\/[^"]+\/(\d{4}-\d{2}-\d{2}))"[^>]*>([^<]+)</g)) {
+      if (set.has(m[1])) continue; set.add(m[1]);
+      ud.push(`${m[2]}  ${ren(m[3])}  https://www.ecdc.europa.eu${m[1]}`);
     }
-    return ['Ingen ugerapport fundet de sidste fire uger'];
+    ud.sort().reverse();
+    return ud.length ? [`Kilde: ${u}`, ...ud.slice(0, 25)] : [`Ingen poster fundet på ${u}`];
   },
 
   async ukhsa() {

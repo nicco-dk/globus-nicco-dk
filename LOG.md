@@ -34,6 +34,45 @@ Kildescriptet (WHO DON 626 13. november fortsat nyeste og brugt, DGHS' meddelels
 **Til gennemgang**
 - Intet nyt.
 
+
+### Kl. 11.44, ejerens afgørelser i gennemgangen
+
+Ejeren har afgjort de 25 punkter fra GENNEMGANG.md på beslutningssiden Gennemgang globus november 16. november, alle efter forslaget. 22 punkter er fjernet fra GENNEMGANG.md. De tre om Yemen og Argentina står til kilden er læst.
+
+**Nye**
+- `difteri-ma`: difteri i Marokko. Sundhedsministeriet meldte 28. september to begrænsede familieklynger i Souss-Massa med 1 laboratoriebekræftet tilfælde og 8 under undersøgelse, heraf 2 døde, gengivet af Morocco World News: https://www.moroccoworldnews.com/2026/09/340086/morocco-reports-two-family-clusters-of-diphtheria-in-souss-massa/ Ministeriets chef for smitsomme sygdomme sagde 30. oktober at der er omkring 30 bekræftede tilfælde i Souss-Massa, Casablanca-Settat og Rabat-Salé-Kénitra og enkelte i Oriental, og at intet epidemisk fokus er fundet, gengivet af Hespress: https://fr.hespress.com/494476-diphterie-une-trentaine-de-cas-confirmes-au-maroc-le-ministere-ecarte-tout-foyer-epidemique.html Trinnet er udbrud fordi tilfældene er laboratoriebekræftede.
+- `mpox-pk`: mpox i Sindh i Pakistan. 98 tilfælde og 12 dødsfald i 2026 efter provinsens sundhedsministerium, gengivet af The Express Tribune 29. oktober: https://tribune.com.pk/story/2637522/mpox-caseload-in-sindh-soars-past-100 Klade Ib er påvist ved sekventering af prøver fra Khairpur efter det føderale og Sindhs sundhedsministerium 21. april, gengivet af The News: https://www.thenews.pk/print/1411237-highly-virulent-mpox-virus-strain-clade-1b-detected-in-sindh Beslutningssiden foreslog trinnet mistanke fordi myndighedens tal ikke var fundet. Tallene og de laboratoriebekræftede tilfælde giver trinnet udbrud.
+- `gul-feber-bf`: gul feber i Burkina Faso, 15 bekræftede tilfælde og 3 dødsfald i ugen der sluttede 23. august, WHO DON 624: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON624 Prikken står midt i landet, og det manglende sted står i `gap`.
+- `maesling-bg`: mæslinger i Bulgarien, 592 bekræftede tilfælde i 2026 pr. uge 44 og aftagende, ECDC 6. november: https://www.ecdc.europa.eu/en/public-health-events/2011-eip-00003/2026-11-06 Placeret i Vratsa efter ECDC's ugerapport for uge 16.
+
+**Ændret i datasættet**
+- `chik-am`: `extra` har fået en linje om Florida: 1 lokalt erhvervet tilfælde i Miami-Dade i 2026 med sygdomsdebut i august pr. uge 43: https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w43-2026.pdf Kørslen 14. november læste 2 tilfælde i ugerapporten for uge 44. Den har globus-chatten ikke kunnet åbne, og tallet rettes når den er læst.
+- `salmonella-dk`: punktet 1. november har fået udbrudsarkivets adresse.
+- `myiasis-am`, `salmonella-eu` og `cre-eu`: `live` er sat til `false` med et punkt i forløbet efter reglen om en måned uden nyt.
+- Uændret efter afgørelsen: `chik-fr` 14. oktober med 163, `mpox` 13. oktober med septemberrapportens tal, `h5n1-dk` og `h5n1-kh` lukket, `difteri-ng` og `difteri-afro` åbne efter den nye undtagelse, og `ebola-nl` lukkes 21. november som besluttet 20. oktober.
+
+**Ændret i mediesporet**
+- `tools/ord.json`: Island er taget ud af Islands engelske navne. Så giver Qeshm Island og andre øer ikke falske par.
+- `SY>YE` står som afventer, til en kilde uden for AFP bekræfter.
+
+**Ændret i reglerne (OPDATERING.md)**
+- `live`: kalder en myndigheds seneste rapport udbruddet igangværende, bliver `live` stående selv om hændelsens egen kilde er tavs.
+- ECDC: Public health events afløser ugerapporten. Den udkom til oktober 2026.
+- WHO DON: en melding bruges først når læserens side svarer.
+- Bangladeshs dengue: DGHS' tal gennem The Daily Star eller The Business Standard, mærket medie. Det gælder til dashboardet findes på en ny adresse.
+- Mediesporet: to medier, der gengiver samme bureauartikel, tæller som én kilde.
+
+**Ændret i kildescriptet (tools/hent-kilder.mjs)**
+- `ecdc` læser de nyeste poster under Public health events.
+- `who` markerer en DON med offentliggørelse i fremtiden eller uden læserens side.
+- `dengue` skriver hvad kørslen skal gøre når dashboardet ikke svarer.
+
+**Svar fra ejeren**
+- Kørslerne 3. november kl. 00.20 og 05.20 og 9. til 10. november kl. 17.20, 00.20 og 05.20 udeblev. Data er ajour, og vagten virkede. Sker det igen, tjekkes forbruget på kontoen først.
+
+**Til gennemgang**
+- Står fortsat: Yemen (`kolera-ye` får nødplanens tal i `gap`, ingen ny hændelse) venter på at WHO EMRO's nyhed om nødplanen er læst. Hantavirus i Argentina (`hanta-ar`) oprettes når sundhedsministeriets bulletin er læst.
+
 ## 15. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
