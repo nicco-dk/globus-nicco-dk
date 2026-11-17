@@ -17,6 +17,9 @@ Ingen åbne punkter.
 
 - `hanta-ar` (16. november, kl. 17.20): hændelsen er oprettet efter afgørelsen, med 64 tilfælde fra Boletín Epidemiológico Nacional nr. 833 (uge 43). Bulletinens tabel siger ikke selv, om alle tilfælde er bekræftede, og prikken står midt i landet. Afgør: punktet ovenfor om hantavirus i Argentina kan fjernes.
 
+- `difteri-ma` (17. november, kl. 05.20): le360 skrev 30. oktober efter samme udtalelse fra sundhedsministeriet som Hespress, at der er 30 bekræftede tilfælde og tre dødsfald i Marokko: https://fr.le360.ma/societe/diphterie-30-cas-confirmes-et-3-deces-recenses-le-ministere-de-la-sante-assure-que-la-situation-est_W2GCPFYZEBHPPBQ6B6KNU542VA/ Hændelsens `gap` siger, at antallet af døde efter de 2 i september ikke er oplyst. Kørslen har ikke ændret hændelsen, fordi oplysningen er fra 30. oktober, og ministeriets egen opgørelse ikke er fundet. Afgør: skal dødstallet 3 med i `extra` og `gap` med le360, medie, som kilde, eller ingen ændring.
+
+
 ## Repoet og driften
 
 Ingen åbne punkter.

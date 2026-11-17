@@ -2,6 +2,37 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 17. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 626 13. november fortsat nyeste og brugt), DGHS' mæslinger (meddelelsen 16. november allerede brugt, ingen nyere), WHO SEARO nummer 22 (allerede brugt, nummer 23 ventes 18. november), WHO WPRO nummer 1068 (allerede brugt; adresserne for 5., 6., 10., 13. og 14. november gav 404), ECDC's Public health events (ingen poster efter 16. november, som kl. 17.20 brugte), UKHSA (kun statistik og kuldevarsel), NaTHNaC (16. november: kolera i Zambia, se Ændret; dengue i Florida og MERS i Qatar står allerede), CIDRAP (intet nyt, der ikke står på siden) og Hongkong (kun den faste ugemelding om legionærsyge). Desuden UKHSA's ugeoversigt https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026 (uge 45 fra 12. november fortsat nyeste og brugt), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (20. oktober fortsat nyeste), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (polio i Deir Ezzor 9. november fortsat nyeste om udbrud), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), US CDC's sider om H5 (opdateret 5. november, 74 tilfælde siden 2024, intet nyt) og Cyclospora (opdateret 23. oktober), DGHS' dengue gengivet af The Business Standard og The Daily Star (se Ændret) og https://globus.nicco.dk/konflikter.json (genereret 17. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `dengue-bd`: 164.107 tilfælde og 502 dødsfald i 2026 efter 3 nye dødsfald (to i Dhaka-divisionen og ét i Khulna-divisionen) og 1.598 nye indlagte på et døgn til kl. 8 16. november. 5.617 er fortsat indlagt, og 157.988 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-crosses-500-3-more-die-1604241 (læst i sidens rå tekst) og The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-1598-hospitalised-24-hours-4325376 (læst med hentningsværktøjet); de to er enige om 164.107, 502, 1.598, 5.617 og fordelingen af dødsfald. 162.509 plus 1.598 giver 164.107, og 499 plus 3 giver 502. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `kolera`: nyt punkt om Zambia: 3.099 tilfælde, heraf 437 bekræftede, og 68 dødsfald i 27 distrikter i syv provinser pr. 16. november, siden udbruddet blev erklæret 28. juli. Flest i distrikterne Lusaka (1.959) og Chibombo (371). Kilde: NaTHNaC, sekundær, https://travelhealthpro.org.uk/outbreaks (læst i RSS-udtrækket https://travelhealthpro.org.uk/rss-outbreaks.php to gange). Zambias egen myndighed er ikke fundet.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-fl` (10) uden ugerapport for uge 45 (adressen gav 404), `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (11) uden ny DON eller ugebulletin fra WHO AFRO, `ebola-gb` (12) uden nyt fra UKHSA, `maesling-am` og `chik-am` (12) uden nyt fra PAHO efter 6. november og 20. oktober, `chik-ch` (13) uden nyt efter ECDC's ugeside 13. november, `kolera-ye` (13) uden nyt fra WHO EMRO, `shamonda-fr` (15) uden nyt efter DON 623, `maesling-bg` (16) uden ny månedsopdatering fra ECDC, `difteri-ma` (18) uden nyt fra ministeriet (se Til gennemgang), `dengue-asien` (18) uden læsbar kilde fra Sri Lanka, `mpox-pk` (19) uden nyere tal end 98 tilfælde pr. 29. oktober, `h5n1-us` (20) uden ny opgørelse, `cyclospora-us` (25) med US CDC's side uændret siden 23. oktober. `difteri-ng` (54) og `difteri-afro` (32) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende. `ebola-nl` (38) lukkes 21. november som besluttet.
+
+**Mediesporet**
+- Afvist `IR-KW`: artiklerne handler om det iranske droneangreb i Port Shuaiba i Kuwait 1. marts, en whistleblowers kritik i 60 Minutes og Golfstaternes nye kommandocenter i Kuwait. En søgning gav ingen angreb mellem Iran og Kuwait i vinduet; de seneste fundne var fra juli og august. Læst: https://www.hindustantimes.com/world-news/us-soldier-kuwait-attack-survivor-us-iran-war-alleges-senior-military-officials-ignored-warnings-before-kuwait-drone-attack-101794802501388.html, https://www.cbsnews.com/video/civilian-u-s-medics-kuwait-attack-drone-strike-chaos-lack-of-preparation/ og https://www.middleeasteye.net/news/gcc-establish-joint-forward-command-center-kuwait
+- Afvist igen `US-YE` (afvisningen 14. oktober var udløbet): Houthi-bevægelsens fremrykning mod regeringsstyrkerne i Taiz og ved Bab al-Mandeb og rigsretssagen mod USA's forsvarsminister, ingen angreb mellem amerikanske styrker og Houthi-bevægelsen. Læst: https://www.aljazeera.com/news/liveblog/2026/11/16/live-houthis-advance-in-yemen-as-tankers-hit-sea-mines-in-strait-of-hormuz og https://www.i24news.tv/en/news/analysis-opinion/artc-chokepoints-and-the-vulnerabilities-of-a-global-economy-analysis Ny dato 17. november.
+- Intet godkendt.
+
+**Usikkert**
+- `kolera`: Zambias tal kommer fortsat kun gennem NaTHNaC; `gap` om forskellen mellem WHO og NaTHNaC står uændret.
+- `dengue-bd`: DGHS' tal for døgnet til kl. 8 17. november var ikke ude ved kørslens afslutning. DGHS' denguedashboard svarede med HTTP-fejl 502.
+- Sri Lankas forside https://www.dengue.health.gov.lk/ svarede ikke ved direkte opslag. Delene `lk` og `ont` i kildescriptet fejlede også.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 59ac517.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `difteri-ma`: le360 skrev 30. oktober 30 bekræftede tilfælde og tre dødsfald. Ikke rettet.
+
 ## 16. november 2026
 
 ### Kl. 00.20, Europa og Danmark: intet nyt
