@@ -2,6 +2,41 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 18. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 627 om chikungunya i Schweiz, offentliggjort 17. november kl. 19.00 UTC, læserens side svarer nu, se Ændret), DGHS' mæslinger (meddelelsen 17. november, se Ændret), WHO SEARO nummer 22 (allerede brugt; nummer 23 for 18. november gav 404), WHO WPRO nummer 1068 (allerede brugt; adresserne for 5., 6., 7., 12., 13. og 14. november gav 404), ECDC's Public health events (ingen poster efter 16. november, som er brugt), UKHSA (kun vejledninger om SFTS, statistik og kuldevarsel), NaTHNaC (17. november: kolera i DR Congo, se Ændret, og MERS i Saudi-Arabien med 8 tilfælde pr. 19. oktober, samme antal som på siden), CIDRAP (PAHO om mæslinger, se Ændret; skruelarve i Texas gælder dyr) og Hongkong (kun en øvelse og antibiotikaresistens). Desuden ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 15. november, allerede brugt), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), Africa CDC's vidensbank https://khub.africacdc.org/records/resource/africa-cdc-epidemic-intelligence-weekly-report (nyeste er ebolarapporten 4. november, ældre end ECDC's tal), PAHO's nyheder 17. november (se Ændret), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet nyt om udbrud), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), DGHS' dengue gengivet af The Business Standard og The Daily Star (se Ændret) og https://globus.nicco.dk/konflikter.json (genereret 18. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `chik-ch`: WHO DON 627 17. november: fire lokalt erhvervede tilfælde i samme afgrænsede område i Ticino, bekræftet 9., 13., 22. og 23. oktober, den tidligste med symptomer fra 10. august, alle med godt forløb, ingen flere fundet ved aktiv opsporing, og WHO vurderer risikoen for mere lokal smitte som lav. Kilde: https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON627 (læst i WHO's dataudtræk; læserens side svarer 200). Nyt punkt, `cases`, `gap` og `src` opdateret.
+- `maesling-bd`: DGHS 17. november: 250.797 mistænkte tilfælde, 1.218 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.228 nye mistænkte, 86 nye bekræftede og 5 dødsfald blandt mistænkte (2 i Sylhet-, 2 i Dhaka- og 1 i Chattogram-divisionen) på et døgn til kl. 8 17. november. 224.080 indlagt og 215.063 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6afc7df1862c6f28f3ce925b (PDF-bilaget læst som tekst med pdftotext og som billede af siden). Bekræftede i alt står ikke i `cases`, se Usikkert. Nyt punkt, nyt punkt i talserien (dødstallet 1.323 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 16. november er fjernet fra `src`, fordi punktet 16. november selv bærer den.
+- `dengue-bd`: 165.644 tilfælde og 507 dødsfald i 2026 efter 5 nye dødsfald, alle i Dhaka-divisionen, og 1.537 nye indlagte på et døgn til kl. 8 17. november. 5.609 er fortsat indlagt, og 159.528 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-reaches-507-5-more-die-1605476 og The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/5-more-die-dengue-1537-hospitalised-day-4326296 (begge læst i sidens rå tekst); de to er enige om 165.644, 507, 1.537, 5.609 og at alle dødsfald var i Dhaka-divisionen. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `kolera`: nyt punkt om DR Congo: 65.698 mistænkte tilfælde og 1.892 mistænkte dødsfald pr. 2. november i 22 provinser, hårdest ramt Haut-Katanga, Haut-Lomami, Tanganyika, Nordkivu og Sydkivu. Kilde: NaTHNaC, sekundær, https://travelhealthpro.org.uk/outbreaks (læst i RSS-udtrækket https://travelhealthpro.org.uk/rss-outbreaks.php to gange). `cases` med de globale tal er ikke ændret.
+- `maesling-am`: PAHO 17. november: regionen har 58.213 bekræftede tilfælde og 82 dødsfald pr. 13. november mod 12.806 tilfælde i samme periode sidste år, og efter den regionale kommissions møde 10. til 13. november har Bolivia, Mexico og USA mistet status som fri for endemiske mæslinger. Kilder: https://www.paho.org/en/news/17-11-2026-paho-urges-countries-step-efforts-stop-measles-outbreaks-and-move-towards og https://www.paho.org/en/news/17-11-2026-measles-americas-questions-and-answers-technical-reference-journalists-and-public (begge læst i sidens rå tekst). Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Landetallene i `extra` er fortsat fra situationsrapport 15.
+- `maesling-us`: nyt punkt om, at USA har mistet status som fri for endemiske mæslinger, fordi smitten har varet uafbrudt fra 20. januar 2025 til 20. januar 2026, PAHO 17. november (spørgsmål og svar ovenfor). `cases` er uændret, US CDC's næste opdatering ventes onsdag.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 51 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `dengue-fl` (11) uden ugerapport for uge 45 (adressen gav 404 og blev ikke fundet ved søgning), `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (12) uden ny DON eller ugebulletin fra WHO AFRO, `ebola-gb` (13) uden nyt fra UKHSA, `chik-am` (13) uden nyt fra PAHO efter 20. oktober, `kolera-ye` (14) uden nyt fra WHO EMRO, `shamonda-fr` (16) uden nyt efter DON 623, `maesling-bg` (17) uden ny månedsopdatering fra ECDC, `difteri-ma` (19) uden nyt fra ministeriet, `dengue-asien` (19) uden læsbar kilde fra Sri Lanka, `mpox-pk` (20) uden nyere tal end 29. oktober, `h5n1-us` (21) uden ny opgørelse, `cyclospora-us` (26) med US CDC's side uændret siden 23. oktober. `difteri-ng` (55) og `difteri-afro` (33) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende. `ebola-nl` (39) lukkes 21. november som besluttet.
+
+**Mediesporet**
+- Afvist `ES-MA`: artiklerne handler om migranter, der når De Kanariske Øer, og om den spanske undersøgelse af massetilstrømningen til Ceuta i juli, ikke om kampe eller angreb mellem Spaniens og Marokkos styrker. Læst: https://www.nbcnews.com/world/spain/nearly-2200-migrants-reach-canary-islands-2-days-spain-says-rcna609549, https://www.moroccoworldnews.com/2026/11/346625/ceuta-cenif-accuses-morocco-while-the-cni-points-in-a-different-direction/ og overskriften i https://www.arabnews.com/world/migrant-arrivals-from-africa-to-the-canary-islands-spike-as-spains-general-election-nears-3012585 En søgning gav ingen kampe mellem landenes styrker i vinduet.
+- Intet godkendt.
+
+**Usikkert**
+- `maesling-bd`: DGHS' meddelelse 17. november har 25.628 bekræftede tilfælde i alt i tabellen på første side og 25.528 i divisionstabellen på anden side (læst både som tekst og som billede). 25.442 pr. 16. november og 86 nye giver 25.528. Kørslen har ikke skrevet et samlet tal for bekræftede i `cases`, men nævner begge i forløbet og `extra`.
+- `dengue-bd`: DGHS' tal for døgnet til kl. 8 18. november var ikke ude ved kørslens afslutning. Dashboardet svarede 404.
+- Sri Lankas forside https://www.dengue.health.gov.lk/ svarede ikke ved direkte opslag (forbindelsen blev afbrudt). Delene `lk` og `ont` i kildescriptet fejlede også.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 1e4bed7.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `maesling-us`: `naeste` siger, at USA risikerer sin eliminationsstatus, men PAHO meldte 17. november, at den er mistet. Ikke rettet.
+- Nyt i GENNEMGANG.md: `maesling-bd`: to forskellige tal for bekræftede tilfælde i alt i DGHS' meddelelse 17. november.
+
 ## 17. november 2026
 
 ### Kl. 05.20, bred gennemgang

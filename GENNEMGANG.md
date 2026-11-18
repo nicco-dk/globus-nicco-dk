@@ -19,6 +19,10 @@ Ingen åbne punkter.
 
 - `difteri-ma` (17. november, kl. 05.20): le360 skrev 30. oktober efter samme udtalelse fra sundhedsministeriet som Hespress, at der er 30 bekræftede tilfælde og tre dødsfald i Marokko: https://fr.le360.ma/societe/diphterie-30-cas-confirmes-et-3-deces-recenses-le-ministere-de-la-sante-assure-que-la-situation-est_W2GCPFYZEBHPPBQ6B6KNU542VA/ Hændelsens `gap` siger, at antallet af døde efter de 2 i september ikke er oplyst. Kørslen har ikke ændret hændelsen, fordi oplysningen er fra 30. oktober, og ministeriets egen opgørelse ikke er fundet. Afgør: skal dødstallet 3 med i `extra` og `gap` med le360, medie, som kilde, eller ingen ændring.
 
+- `maesling-us` (18. november, kl. 05.20): `naeste` siger: "USA risikerer sin eliminationsstatus, hvis smitten fortsætter ind i 2027." PAHO meldte 17. november, at USA har mistet status som fri for endemiske mæslinger: https://www.paho.org/en/news/17-11-2026-measles-americas-questions-and-answers-technical-reference-journalists-and-public Kørslen har tilføjet et punkt i forløbet, men retter ikke `naeste`, fordi trinnet ikke har flyttet sig. Afgør: ny tekst i `naeste`, eller ingen ændring.
+
+- `maesling-bd` (18. november, kl. 05.20): DGHS' meddelelse 17. november https://dghs.gov.bd/pages/press-releases/6afc7df1862c6f28f3ce925b har 25.628 bekræftede tilfælde i alt på første side og 25.528 i divisionstabellen. 25.442 pr. 16. november og 86 nye giver 25.528. Kørslen har ikke skrevet et samlet tal for bekræftede i `cases`. Afgør: skal `cases` bruge divisionstabellens 25.528, eller vente til DGHS' næste meddelelse.
+
 
 ## Repoet og driften
 
