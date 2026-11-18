@@ -37,6 +37,39 @@
 - Nyt i GENNEMGANG.md: `maesling-us`: `naeste` siger, at USA risikerer sin eliminationsstatus, men PAHO meldte 17. november, at den er mistet. Ikke rettet.
 - Nyt i GENNEMGANG.md: `maesling-bd`: to forskellige tal for bekræftede tilfælde i alt i DGHS' meddelelse 17. november.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 627 17. november fortsat nyeste og brugt kl. 05.20), DGHS' mæslinger (meddelelsen 18. november, se Ændret), ECDC's Public health events (ny post 18. november om risikovurdering af carbapenemresistente Enterobacterales, hører til Europa-gennemgangen kl. 05.20; ellers intet efter 16. november, som er brugt), UKHSA (kun vejledninger, statistik og kuldevarsel), NaTHNaC (18. november: ebola i DR Congo og malaria i Panama, se Ændret og Nye; dengue i Vanuatu hører til Asien-gennemgangen), CIDRAP (intet nyt, der ikke står på siden) og Hongkong (et importeret mpoxtilfælde 18. november, hører til Asien-gennemgangen). Delene `dengue` (404), `lk` og `ont` fejlede fortsat. Desuden ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 15. november), insp.cd's medieliste (situationsrapport 168 pr. 29. oktober fortsat nyeste), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), søgning efter Africa CDC's ugentlige rapport (intet nyere fundet), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (to alarmer 17. november om vilde svampe og sæsoninfluenza, se Til gennemgang) og US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.412 pr. 12. november, opdateret 13. november).
+
+**Ændret**
+- `maesling-bd`: DGHS 18. november: 252.173 mistænkte og 25.786 bekræftede tilfælde, 1.224 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.376 nye mistænkte, 258 nye bekræftede og 6 dødsfald blandt mistænkte (3 i Dhaka-, 2 i Chattogram- og 1 i Khulna-divisionen) på et døgn til kl. 8 18. november. 225.339 indlagt og 216.389 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6afdc22634f2d6299b678990 (PDF-bilaget læst som tekst med pdftotext og som billede af begge sider). Bekræftede i alt står som 25.786 i begge tabeller. Nyt punkt, nyt punkt i talserien (dødstallet 1.329 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 17. november er fjernet fra `src`, fordi punktet 17. november selv bærer den.
+- `ebola-drc`: nyt punkt: DR Congo har meldt 11.504 bekræftede tilfælde og 5.630 dødsfald pr. 16. november i otte provinser. Kilde: NaTHNaC, sekundær, https://travelhealthpro.org.uk/rss-outbreaks.php (læst i RSS-udtrækket to gange). `cases` og talserien står fortsat med ECDC's tal pr. 15. november, fordi DR Congos egen opgørelse ikke er fundet.
+
+**Nye**
+- `malaria-pa`: Panamas sundhedsministerium erklærede 16. november alarm for malaria i hele landet efter tilfælde i Ancón ved Panamá by, som ministeriet kalder ikke endemisk, og opgør tilfældene i de mest ramte regioner: Panamá Este 3.053, Kuna Yala 2.016, Darién 1.162, Metropolitana 214, Ngäbe Buglé 145, Panamá Oeste 79 og Veraguas 58. Kilde: https://www.minsa.gob.pa/centro-de-prensa/noticias/minsa-declara-alerta-sanitaria-por-malaria-nivel-nacional (læst i sidens rå tekst). De 161 tilfælde i Ancón står i TVN https://www.tvn-2.com/nacionales/alerta-sanitaria-malaria-minsa-reporta_1_2271354.html og Telemetro https://www.telemetro.com/nacionales/minsa-declara-alerta-sanitaria-malaria-panama-registrar-161-casos-ancon-n6098727 (begge mærket `, medie`, enige om 161, 97, 53 og 11). NaTHNaC 18. november som sekundær kilde. Trin `udbrud`, `gap` udfyldt.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne.
+- Rundtur ikke gentaget; kl. 05.20 gennemgik den samme dag. `maesling-us` og `maesling-am` venter på US CDC's ugeopdatering og PAHO's næste situationsrapport. `difteri-ng` (55) og `difteri-afro` (33) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende. `ebola-nl` (39) lukkes 21. november som besluttet.
+
+**Mediesporet**
+- Afvist `IE-US`: en irsk mand er sigtet for at have ødelagt et amerikansk militærfly i Shannon Lufthavn; det er ikke kampe mellem landenes styrker. Læst: https://www.cnn.com/2026/11/17/politics/irish-national-charges-destroying-us-military-plane-ireland (overskrift), https://www.euronews.com/2026/11/18/irish-man-charged-with-effectively-destroying-us-military-c-130-aircraft-at-shannon-airpor (overskrift) og søgning, der gav Irish Examiner https://www.irishexaminer.com/news/courtandcrime/arid-41841030.html
+- Afvist `SO-US`: USA's fornyede støtte til FN's støttekontor og Den Afrikanske Unions mission mod al-Shabaab og et overfald i Minnesota, ikke kampe mellem Somalias og USA's styrker. Læst: https://www.garoweonline.com/en/news/somalia/somalia-s-fight-against-al-shabaab-gets-us-lifeline-amid-mounting-setbacks og https://www.arabnews.com/world/somalia-welcomes-us-reversal-on-funding-international-military-support-3012345 (samme AFP-tekst), overskriften i https://www.theguardian.com/us-news/2026/nov/15/somali-american-uber-driver-attack-minnesota
+- Intet godkendt.
+
+**Kvalitet**
+- Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato, så ingen hændelser fik kilde og dato af den grund. Koordinaterne til `malaria-pa` (Ancón, 8,97 N, 79,55 V) er sat ved Ancón-højen i Panamá by og tjekket for ombytning af længde- og breddegrad.
+
+**Usikkert**
+- `malaria-pa`: ministeriets side har hverken antallet i Ancón, et samlet tal for landet eller parasitart. TVN skriver, at 6.727 er summen af de syv regioner og ikke landets samlede tal; kørslen har ikke skrevet et samlet tal.
+- `ebola-drc`: NaTHNaC's tal pr. 16. november er ikke fundet hos DR Congos sundhedsministerium eller WHO.
+- Euronews' og CNN's artikler om Shannon kunne ikke læses ad nogen af de to veje (hentningsværktøjet gav ingen tilladelse, direkte opslag gav ingen brødtekst); afvisningen bygger på overskrifterne og Irish Examiner.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 2abd791.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `maesling-bd`: meddelelsen 18. november har 25.786 bekræftede i begge tabeller, som nu står i `cases`.
+- Nyt i GENNEMGANG.md: PAHO's alarm 17. november om forgiftning med vilde svampe i Amerika er ikke taget med.
+
 ## 17. november 2026
 
 ### Kl. 05.20, bred gennemgang

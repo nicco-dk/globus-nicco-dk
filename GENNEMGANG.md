@@ -24,6 +24,10 @@ Ingen åbne punkter.
 - `maesling-bd` (18. november, kl. 05.20): DGHS' meddelelse 17. november https://dghs.gov.bd/pages/press-releases/6afc7df1862c6f28f3ce925b har 25.628 bekræftede tilfælde i alt på første side og 25.528 i divisionstabellen. 25.442 pr. 16. november og 86 nye giver 25.528. Kørslen har ikke skrevet et samlet tal for bekræftede i `cases`. Afgør: skal `cases` bruge divisionstabellens 25.528, eller vente til DGHS' næste meddelelse.
 
 
+- `maesling-bd` (18. november, kl. 17.20): DGHS' meddelelse 18. november https://dghs.gov.bd/pages/press-releases/6afdc22634f2d6299b678990 har 25.786 bekræftede tilfælde i alt både på første side og i divisionstabellen. 25.528 pr. 17. november og 258 nye giver 25.786. Kørslen har skrevet 25.786 i `cases`. Afgør: punktet ovenfor om 25.628 og 25.528 kan fjernes.
+
+- PAHO's alarm om vilde svampe (18. november, kl. 17.20): PAHO udsendte 17. november en epidemiologisk alarm om indsamling og spisning af vilde svampe i Amerika https://www.paho.org/sites/default/files/2026/11/2026-nov-17-phe-epi-alert-wild-mushroomsen.pdf Den er forebyggende og nævner tidligere forgiftninger, fx 39 mistænkte amatoksinforgiftninger og 4 dødsfald i Californien fra november 2025 til marts 2026, men intet aktuelt udbrud. Kørslen har ikke oprettet en hændelse, fordi reglen om forgiftninger kræver en alarm om tilfælde hos mennesker. Afgør: skal den med, eller ej.
+
 ## Repoet og driften
 
 Ingen åbne punkter.
