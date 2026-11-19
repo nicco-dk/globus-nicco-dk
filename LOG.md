@@ -37,6 +37,36 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 627 17. november fortsat nyeste og brugt), DGHS' mæslinger (meddelelsen 19. november, se Ændret), ECDC's Public health events (ny ebolapost 19. november, se Ændret; posten om H9N2 19. november hører til Asien-gennemgangen kl. 05.20), UKHSA (ugeoversigten over udbrud under overvågning uge 46 https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-46-week-ending-15-november-2026 med ebola til 14. november og MERS i Qatar, begge allerede på siden), NaTHNaC (19. november: gul feber i Venezuela, se Ændret, og dengue i Indien, der hører til Asien-gennemgangen), CIDRAP (et dødsfald af mæslinger i Pennsylvania venter på US CDC's ugetal) og Hongkong (intet nyt om smitte efter 18. november). Delene `dengue` (404), `lk` og `ont` fejlede fortsat. Desuden Venezuelas sundhedsministeriums bulletin for uge 44 (uge 45 gav 404), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), søgning efter Africa CDC's ugentlige rapport (intet nyere fundet), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november) og US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.412 pr. 12. november, opdateret 13. november).
+
+**Ændret**
+- `maesling-bd`: DGHS 19. november: 253.408 mistænkte og 25.881 bekræftede tilfælde, 1.231 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.235 nye mistænkte, 95 nye bekræftede og 7 dødsfald blandt mistænkte (4 i Dhaka- og 3 i Sylhet-divisionen) på et døgn til kl. 8 19. november. 226.469 indlagt og 217.540 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6afebc852395180813afa52f (PDF-bilaget læst som tekst med pdftotext og som billede af begge sider). Bekræftede i alt står som 25.881 i begge tabeller. Nyt punkt, nyt punkt i talserien (dødstallet 1.336 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 18. november er fjernet fra `src`, fordi punktet 18. november selv bærer den.
+- `ebola-drc`: ECDC 19. november: DR Congo har pr. 17. november meldt 11.504 bekræftede tilfælde og 5.630 dødsfald med data til og med 16. november, 128 nye tilfælde og 64 nye dødsfald siden data til og med 14. november (65 i Nordkivu, 53 i Ituri, 9 i Haut-Uélé og 1 i Tshopo), 1.743 i isolation, 3.142 raske og 81,6 procent af kontakterne fulgt op, fortsat 68 af 178 sundhedszoner. Kilde: https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-19 (læst i sidens rå tekst). Tallene er de samme, som NaTHNaC skrev 18. november. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `gul-feber-ve`: sundhedsministeriets bulletin for uge 44: 1 nyt bekræftet tilfælde med dødelig udgang i Guárico, i alt 17 bekræftede og 8 dødsfald i 2026 (dødelighed 47 procent) i syv delstater: Barinas 4, La Guaira 4, Aragua 3, Monagas 2, Guárico 2, Delta Amacuro 1 og Lara 1. 14.084 prøver undersøgt på INHRR og 56 udbrud blandt aber. Kilde: https://mpps.gob.ve/wp-content/uploads/2026/11/Boletin-Epidemiologico-SEM-44.pdf (læst med pdftotext og som billede af siderne 23 og 24). NaTHNaC har de samme tal pr. 7. november. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Adressen for uge 43 er fjernet fra `src`, fordi punktet 12. november selv bærer den.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne.
+- Rundtur ikke gentaget; kl. 05.20 gennemgik den samme dag. `maesling-us` venter på US CDC's ugeopdatering. `difteri-ng` (56) og `difteri-afro` (34) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende. `ebola-nl` (40) lukkes 21. november som besluttet.
+
+**Mediesporet**
+- Afvist `CN-RU`: topmødet mellem Trump, Xi og Putin i Shenzhen og Ruslands krig i Ukraine, ikke kampe mellem Kinas og Ruslands styrker. Læst: https://www.cbsnews.com/news/trump-xi-putin-china-apec-summit/ og https://www.npr.org/2026/11/18/nx-s1-6044242/putin-to-meet-with-trump-and-xi-after-ukrainian-attack-on-russian-bridge (begge i sidens rå tekst), overskriften i https://www.nytimes.com/2026/11/19/world/europe/trump-xi-putin-nuclear-weapons-ukraine.html
+- Intet godkendt. Det var det eneste par med status afventer.
+
+**Kvalitet**
+- Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato, så ingen hændelser fik kilde og dato af den grund. Ingen nye koordinater i kørslen.
+
+**Usikkert**
+- `ebola-drc`: ECDC skriver 64 nye dødsfald, men det samlede dødstal er 62 højere end i opdateringen 16. november (5.568 til 5.630). Begge tal står, som ECDC skriver dem, og forskellen er nævnt i `extra`.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og GitHubs API afviste opslag under det navn. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 866258b.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 18. november 2026
 
 ### Kl. 05.20, bred gennemgang

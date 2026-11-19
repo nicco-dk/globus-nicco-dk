@@ -123,6 +123,7 @@
     "IE-US": {"dato": "2026-11-18", "grund": "Artiklerne handler om en irsk mand, der er sigtet for at have ødelagt et amerikansk militærfly i Shannon Lufthavn, ikke om kampe eller angreb mellem Irlands og USA's styrker (Euronews, CNN, Irish Examiner)."},
     "SO-US": {"dato": "2026-11-18", "grund": "Artiklerne handler om USA's fornyede finansiering af FN's støttekontor og Den Afrikanske Unions mission mod al-Shabaab og om et overfald på en somalisk-amerikansk chauffør i Minnesota, ikke om kampe mellem Somalias og USA's styrker (Garowe Online, Arab News, The Guardian)."},
     "CN-SG": {"dato": "2026-11-19", "grund": "Artiklerne handler om en påstået spionagesag om Nvidia-chips, hvor Singapore ikke fandt tilstrækkelige beviser, og om Trumps møde med Xi, ikke om kampe mellem landenes styrker (Anadolu, France 24, Newsweek)."},
-    "CN-UA": {"dato": "2026-11-19", "grund": "Artiklerne handler om topmødet mellem Trump, Xi og Putin i Kina og et ukrainsk angreb på en russisk bro, ikke om kampe mellem Kinas og Ukraines styrker (NPR, Le Monde, The Guardian)."}
+    "CN-UA": {"dato": "2026-11-19", "grund": "Artiklerne handler om topmødet mellem Trump, Xi og Putin i Kina og et ukrainsk angreb på en russisk bro, ikke om kampe mellem Kinas og Ukraines styrker (NPR, Le Monde, The Guardian)."},
+    "CN-RU": {"dato": "2026-11-19", "grund": "Artiklerne handler om topmødet mellem Trump, Xi og Putin i Shenzhen og Ruslands krig i Ukraine, ikke om kampe eller angreb mellem Kinas og Ruslands styrker (CBS News, NPR, The New York Times)."}
   }
 }
