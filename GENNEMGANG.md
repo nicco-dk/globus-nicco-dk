@@ -8,7 +8,9 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 ## Mediesporet
 
-Ingen åbne punkter.
+- `PL-RU` (20. november, kl. 17.20): afvist, fordi et russisk krydsermissil (Kh-101), et formodet missil mere og en drone krænkede polsk luftrum og styrtede ned i det sydøstlige Polen under et russisk angreb på Ukraine, uden skader og uden kampe mellem landenes styrker. Polens regering kalder det en provokation, og NATO sendte fly på vingerne. Læst: https://www.bbc.co.uk/news/articles/cqx2x9dklxnro og https://www.aljazeera.com/video/newsfeed/2026/11/20/poland-hit-by-at-least-one-russian-missile-says-polish-govt Afgør, om et missil, der rammer polsk territorium uden at ramme polske styrker, skal tælle som angreb mellem landene.
+
+- `tools/par-tjek.json` (20. november, kl. 17.20): `DJ-YE` står to gange under `afvist`, med datoen 2026-10-13 (ejerens afgørelse) og 2026-10-12. Ved læsning gælder den sidste, og kørslen har derfor sat ny dato og grund på den. Afgør, hvilken af de to linjer der skal fjernes.
 
 
 ## Datasættet: gamle punkter og tekster

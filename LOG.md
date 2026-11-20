@@ -36,6 +36,38 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `dengue-asien`: `naeste` siger, at Sri Lanka toppede i september, men WHO SEARO har 5.536 tilfælde i oktober mod National Dengue Control Units 5.230 i september.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 627 17. november fortsat nyeste og brugt), DGHS' mæslinger (meddelelsen 20. november, se Ændret), ECDC's Public health events (intet efter 19. november, som er brugt), UKHSA (20. november kun dødelighedsstatistik og kuldevarsel; ugeoversigten for uge 46 er brugt), NaTHNaC (intet efter 19. november, som er brugt), CIDRAP (Pennsylvanias ottende dødsfald af mæslinger, se Ændret) og Hongkong (20. november: 2 importerede denguetilfælde fra Vietnam og Cambodja, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste; en artikel 20. november om Sydsudans beredskab mod Bundibugyo-virus melder ingen tilfælde), søgning efter Africa CDC's ugentlige rapport (intet nyere fundet), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (fortsat 5.412 pr. 12. november, opdateret 13. november, læst med hentningsværktøjet; direkte opslag gav ingen tekst) og https://globus.nicco.dk/konflikter.json (genereret 20. november kl. 16.24 dansk tid).
+
+**Ændret**
+- `maesling-bd`: DGHS 20. november: 254.593 mistænkte og 25.966 bekræftede tilfælde, 1.236 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde efter 1.185 nye mistænkte, 85 nye bekræftede og 5 dødsfald blandt mistænkte (2 i Dhaka-, 2 i Sylhet- og 1 i Mymensingh-divisionen) på et døgn til kl. 8 20. november. 227.675 indlagt og 218.910 udskrevet siden 15. marts. Kilde: https://dghs.gov.bd/pages/press-releases/6b005daeace001488a64bd39 (PDF-bilaget læst som tekst med pdftotext og som billede af begge sider). Bekræftede i alt står som 25.966 i begge tabeller. Første side nævner kun Sylhet 2 og Dhaka 2 under flest dødsfald, divisionstabellen har desuden 1 i Mymensingh og i alt 5. Nyt punkt, nyt punkt i talserien (dødstallet 1.341 er de to rækker lagt sammen, som `extra` forklarer), `cases`, `extra` og `src` opdateret. Adressen fra 19. november er fjernet fra `src`, fordi punktet 19. november selv bærer den.
+- `maesling-us`: Pennsylvanias sundhedsmyndighed bekræftede 18. november delstatens ottende mæslingeassocierede dødsfald, en uvaccineret beboer i Clinton County: 1.589 tilfælde i 46 counties, 315 indlagte, 28 nye tilfælde siden 16. november, dødsfald i Clinton (1), Jefferson (2), Lancaster (3), Mifflin (1) og Montour (1). Kilde: https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-confirms-eighth-measles-associated-death (læst i sidens rå tekst). Fundet gennem CIDRAP. Nyt punkt, `extra` og `src` opdateret. `cases` står fortsat med US CDC's tal pr. 12. november.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 56 hændelser uden nyt i kilderne.
+- Rundtur ikke gentaget; kl. 05.20 gennemgik den samme dag. `difteri-ng` (57) og `difteri-afro` (35) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende. `ebola-nl` (41) lukkes 21. november som besluttet.
+
+**Mediesporet**
+- Afvist `PL-RU`: et russisk krydsermissil, et formodet missil mere og en drone krænkede polsk luftrum og styrtede ned i det sydøstlige Polen under et russisk angreb på Ukraine, uden skader. Polen kalder det en provokation, men der er ingen kampe eller angreb mellem landenes styrker. Læst: https://www.bbc.co.uk/news/articles/cqx2x9dklxnro (rå tekst) og https://www.aljazeera.com/video/newsfeed/2026/11/20/poland-hit-by-at-least-one-russian-missile-says-polish-govt Afgørelsen er lagt til ejeren i GENNEMGANG.md.
+- Afvist igen efter udløb `DJ-YE`: krigen i Yemen mellem Houthi-bevægelsen og regeringsstyrkerne ved Hodeidah og Bab el-Mandeb; Djibouti er ikke nævnt i artiklernes tekst. Læst: https://www.dw.com/en/yemen-anti-houthi-forces-pull-back-as-rebels-advance/a-79953692 , https://naharnet.com/stories/en/323923-saudi-coalition-issues-hodeida-evacuation-warning-sparking-houthi-threats og https://www.irishtimes.com/world/middle-east/2026/11/15/iranian-drone-attacks-on-bahrain-ramp-up-pressure-on-us-to-end-war/ (alle i sidens rå tekst).
+- Intet godkendt. Det var de to par med status afventer.
+
+**Kvalitet**
+- Kontrollen har ingen advarsler om tal i `cases` uden opgørelsesdato, så ingen hændelser fik kilde og dato af den grund. Ingen nye koordinater i kørslen.
+
+**Usikkert**
+- `maesling-us`: CIDRAP skriver, at USA har 11 mæslingeassocierede dødsfald i 2026 efter Pennsylvanias ottende, mens US CDC's tabel fortsat har 6. Begge tal står, som kilderne skriver dem; CIDRAP's tal er ikke skrevet ind.
+- `PL-RU`: afvisningen bygger på reglen om direkte kampe eller angreb mellem parternes styrker. Se GENNEMGANG.md.
+- Repoet er ikke tilføjet som nicco-dk/globus-nicco-dk i kørslen. Opslag i GitHubs API under det navn blev afvist; kørslen arbejder gennem mikkelnicco/globus-nicco-dk, som viderestiller til nicco-dk.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `PL-RU`: skal et russisk missil, der rammer polsk territorium uden at ramme polske styrker, tælle som angreb mellem landene?
+- Nyt i GENNEMGANG.md: `tools/par-tjek.json` har `DJ-YE` to gange under `afvist`.
+
 ## 19. november 2026
 
 ### Kl. 05.20, bred gennemgang
