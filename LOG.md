@@ -2,6 +2,40 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 20. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 627 17. november fortsat nyeste og brugt), DGHS' mæslinger (meddelelsen 19. november brugt kl. 17.20, ingen nyere), WHO SEARO nummer 23 for 2. til 15. november (ny, se Ændret), WHO WPRO nummer 1070 (allerede brugt; nummer 1071 for 20. november gav 404), ECDC's Public health events (posten om H9N2 19. november https://www.ecdc.europa.eu/en/public-health-events/2019-eip-00007/2026-11-19 gælder samme tilfælde i Hunan, som `h9n2-cn` fik 19. november; ebolaposten 19. november er brugt), UKHSA (ugeoversigten for uge 46 er brugt; ellers kun overvågningsstatistik og influenzavaccination), NaTHNaC (intet efter 19. november, som er brugt; dengue i Indien, se Usikkert), CIDRAP (senatorer beder om en undersøgelse af Cyclospora-udbruddet, ingen nye tal; et dødsfald af mæslinger i Pennsylvania venter på US CDC's ugetal) og Hongkong (19. og 20. november intet om smitte hos mennesker). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (kun folkesundhedsefterretning og antimikrobiel resistens), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), DGHS' dengue gengivet af The Business Standard og The Daily Star (se Ændret) og https://globus.nicco.dk/konflikter.json (genereret 20. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `dengue-bd`: 168.933 tilfælde og 510 dødsfald i 2026 efter 2 nye dødsfald, begge i Dhaka-divisionen, og 1.615 nye indlagte på et døgn til kl. 8 19. november. 5.617 er fortsat indlagt, og 162.806 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-510-2-more-die-1607791 og The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/2-more-die-dengue-1615-hospitalised-day-4328146 (begge læst i sidens rå tekst); de to er enige om 168.933, 510, 1.615, 5.617 og Dhaka-divisionen. 167.318 plus 1.615 giver 168.933. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `dengue-bd`: WHO SEARO nummer 23 https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_23_searo_epi_bulletin.pdf (læst med pdftotext): uge 46 gav 12.596 mistænkte tilfælde og 38 dødsfald mod 12.984 og 34 i uge 45 og 6.454 tilfælde i uge 46 2025, og IEDCR melder, at DENV-3 udgør 80,4 procent i 2026, mens DENV-2 var den hyppigste i 2025 (48,5 procent). Nyt punkt 17. november om skiftet i serotype, `extra`, `pathogen` (fra "serotype ikke oplyst" til "overvejende DENV-3") og `src` opdateret. Trinnet er ikke flyttet, fordi kilden ikke dokumenterer ændret smitsomhed.
+- `dengue-asien`: WHO SEARO nummer 23 pr. 16. november: Sri Lanka 1.410 mistænkte tilfælde i uge 45 mod 1.324 i uge 44 og 777 i samme uge 2025, og 5.536 tilfælde i oktober. Nyt punkt, `extra` og `src` opdateret. `cases` står fortsat med National Dengue Control Units tal pr. 30. oktober.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 56 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `h5n1-wa` og `mpox-mo` (10) uden nyt fra US CDC eller USDA ved gennemgangen, `dengue-fl` (13) uden ugerapport for uge 45 og 46 (begge adresser gav 404, og søgning gav ingen nyere end uge 44), `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (14) uden ny DON eller ugebulletin fra WHO AFRO, `ebola-gb` (15) uden nyt fra UKHSA, `chik-am` (15) uden nyt fra PAHO efter 20. oktober, `kolera-ye` (16) uden nyt fra WHO EMRO, `shamonda-fr` (18) uden ny DON, `maesling-bg` (19) uden ny månedsopdatering fra ECDC, `difteri-ma` (21) og `mpox-pk` (22) uden nyere tal, `h5n1-us` (23) og `cyclospora-us` (28) uden nye tal; `cyclospora-us` når 30 dage 22. november. `difteri-ng` (57) og `difteri-afro` (35) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende. `ebola-nl` (41) lukkes 21. november som besluttet.
+
+**Mediesporet**
+- Afvist `GB-OM`: angreb på tankskibe i Hormuzstrædet nord for Khasab meldt af den britiske flådes UKMTO, en savnet sømand og Omans mægling mellem USA og Iran, ikke kampe mellem Storbritanniens og Omans styrker. Læst: https://www.hurriyetdailynews.com/us-strikes-iran-as-gulf-states-report-new-attacks-229541 , https://www.arabnews.com/middle-east/jordan-coordinates-with-uae-and-oman-in-search-for-missing-sailor-3012969 og https://www.middleeasteye.net/live-blog/live-blog-update/crew-abandon-gas-tanker-hormuz-after-being-hit-projectile-sources-say (alle i sidens rå tekst).
+- Afvist `US>IR` (militær støtte): USA's opbygning af styrker omkring Iran, ikke levering af våben eller udstyr fra USA til Iran. Læst: https://www.middleeasteye.net/live-blog/live-blog-update/us-builds-forces-around-iran-can-it-sustain-another-war (rå tekst) og overskrifterne fra Euronews og Hindustan Times.
+- Afvist `PK-US`: en dom i USA over en pakistansk statsborger og Pakistans udenrigsminister om regional sikkerhed. Læst: https://www.geo.tv/latest/691558-us-judge-sentences-asif-merchant-to-27-years-over-alleged-iran-backed-plot-to-kill-trump og https://www.euronews.com/2026/11/19/new-regional-security-architecture-will-also-benefit-europe-pakistani-fm-tells-euronews (rå tekst).
+- Afvist `FR-GB`: retssager, en kunstsamling og en bunker fra Anden Verdenskrig. Afgjort på overskrifterne og adresserne i stregens `art` i https://globus.nicco.dk/konflikter.json
+- Intet godkendt. Det var de fire par med status afventer.
+
+**Usikkert**
+- `dengue-bd`: begge medier skriver 5.617 fortsat indlagte 19. november, samme tal som 16. og 18. november. Tallet står, som de skriver det.
+- Dengue i Indien: NaTHNaC og WHO SEARO skriver 104.004 tilfælde i 2026 til og med oktober mod 91.015 i samme periode 2025. Ingen myndighed kalder sæsonen usædvanlig, så der er ikke oprettet en hændelse.
+- Robert Koch Instituts oversigt over Epidemiologisches Bulletin kunne ikke læses ved direkte opslag. Sri Lankas forside svarede fortsat ikke, og DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 763dddb.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `dengue-asien`: `naeste` siger, at Sri Lanka toppede i september, men WHO SEARO har 5.536 tilfælde i oktober mod National Dengue Control Units 5.230 i september.
+
 ## 19. november 2026
 
 ### Kl. 05.20, bred gennemgang

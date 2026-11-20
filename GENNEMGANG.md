@@ -28,6 +28,8 @@ Ingen åbne punkter.
 
 - PAHO's alarm om vilde svampe (18. november, kl. 17.20): PAHO udsendte 17. november en epidemiologisk alarm om indsamling og spisning af vilde svampe i Amerika https://www.paho.org/sites/default/files/2026/11/2026-nov-17-phe-epi-alert-wild-mushroomsen.pdf Den er forebyggende og nævner tidligere forgiftninger, fx 39 mistænkte amatoksinforgiftninger og 4 dødsfald i Californien fra november 2025 til marts 2026, men intet aktuelt udbrud. Kørslen har ikke oprettet en hændelse, fordi reglen om forgiftninger kræver en alarm om tilfælde hos mennesker. Afgør: skal den med, eller ej.
 
+- `dengue-asien` (20. november, kl. 05.20): `naeste` siger: "Følger monsunen. Sri Lanka toppede i september." WHO SEARO nummer 23 har 5.536 tilfælde i Sri Lanka i oktober https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_23_searo_epi_bulletin.pdf mod 5.230 i hele september efter National Dengue Control Unit, og uge 45 lå 6 procent over uge 44. Kørslen retter ikke `naeste`, fordi trinnet ikke har flyttet sig. Afgør: ny tekst i `naeste`, eller ingen ændring.
+
 ## Repoet og driften
 
 Ingen åbne punkter.
