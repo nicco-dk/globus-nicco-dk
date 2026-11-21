@@ -49,6 +49,33 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `SY>SA`: tæller syriske rådgivere og trænere i Saudi-Arabien som levering af tropper?
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 630 20. november fortsat nyeste og brugt kl. 05.20, ingen ny siden forrige kørsel), DGHS' mæslinger (meddelelsen 21. november, ny, se Ændret), ECDC's Public health events (intet efter 20. november, som er brugt), UKHSA (intet nyt efter 20. november), NaTHNaC (intet efter 20. november), CIDRAP (Wisconsin og US CDC's mæslingetal, se Usikkert; Uganda og Sydsudan forbereder sig på ebola, ingen tilfælde) og Hongkong (20. november intet nyt om smitte på siden). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (seneste er alarmen 17. november om sæsoninfluenza, intet om hændelserne på siden), Africa CDC's ugerapporter https://africacdc.org/download/africa-cdc-epidemic-intelligence-weekly-report-october-2026/ (nyeste 25. oktober, ingen for november) og US CDC's mæslingeside https://www.cdc.gov/measles/data-research (kunne ikke læses, se Usikkert).
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 21. november https://dghs.gov.bd/pages/press-releases/6b015ffb4dd0494621a83be5 (PDF-bilaget læst med pdftotext og som billede af siden): 255.424 mistænkte og 26.060 bekræftede tilfælde, 1.238 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 831 nye mistænkte, 94 nye bekræftede og 2 dødsfald blandt mistænkte, 1 i Dhaka- og 1 i Khulna-divisionen. 228.466 indlagt og 219.718 udskrevet siden 15. marts. Bekræftede i alt er 26.060 i begge tabeller. Nyt punkt, nyt punkt i talserien (255.424 og 1.238 plus 105 giver 1.343), `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 57 hændelser uden nyt i kilderne.
+- `difteri-ng` (58 dage) og `difteri-afro` (36 dage) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende. `cyclospora-us` (29) når 30 dage 22. november.
+
+**Mediesporet**
+- Afvist igen efter udløb `DJ-SA`: den saudisk-ledede koalitions angreb på Hodeidah og Houthi-bevægelsens angreb på Saudi-Arabien; Djibouti er hverken part eller nævnt. Læst i sidens rå tekst: https://www.thenationalnews.com/news/2026/11/20/un-yemen-saudi-houthis-hodeidah/ , https://www.al-monitor.com/originals/2026/11/saudi-coalition-launches-special-operation-yemens-houthis-vow-reprisals (efter AFP) og https://gulfnews.com/world/mena/middle-east-war-6-key-updates-uae-residents-need-to-know-this-evening-november-20-1.500755450 ; heller ikke The Hindu og Ynetnews i stregens `art` nævner Djibouti.
+- Intet godkendt. Det var det eneste par med status afventer.
+
+**Usikkert**
+- `maesling-us`: CIDRAP skriver, at USA nærmer sig 6.000 tilfælde. US CDC's side gav 403 ved direkte opslag, og hentningsværktøjet fik ikke lov til at hente den. Tallet 5.412 pr. 12. november står uændret.
+- Dengue i Peru: overladt fra kl. 05.20. Peruvianske myndigheders egen opgørelse er ikke læst, og kun NaTHNaC (sekundær) sammenligner med 2025. Ingen hændelse oprettet.
+- Kvalitet: kontrollen viser ingen advarsler om tal i `cases` uden opgørelsesdato i denne udgave, så vagtplanens tre hændelser kunne ikke udpeges. Koordinater er ikke gennemgået ud over `maesling-bd`, som er uændret.
+- Sri Lankas forside svarede fortsat ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 20. november 2026
 
 ### Kl. 05.20, bred gennemgang
