@@ -2,6 +2,53 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 21. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 630 20. november om ebola i DR Congo, Kenya og Nigeria, ny, læserens side svarer, se Ændret), DGHS' mæslinger (meddelelsen 20. november brugt kl. 17.20, ingen nyere), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1070 (allerede brugt; nummer 1071 for 20. november gav 404), ECDC's Public health events (ugerapporterne 20. november om dengue, chikungunya og West Nile, se Ændret; ebola og H9N2 19. november er brugt), UKHSA (ugeoversigten for uge 46 er brugt; ellers rabies, dødelighed og kuldevarsel), NaTHNaC (20. november: vaccineafledt poliovirus type 2 i en miljøprøve i Israel, se `polio`, og dengue i Peru, se Usikkert), CIDRAP (fugleinfluenza hos et menneske i Oregon, se Ændret; GPEI's ugeoversigt, se Ændret; US CDC's mæslingetal, se Usikkert) og Hongkong (20. november intet nyt om smitte på siden). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden GPEI Polio This Week pr. 18. november https://polioeradication.org/about-polio/polio-this-week/ (se Ændret), RIVM's side om ebola https://www.rivm.nl/en/ebola/current-information (opdatering 12. november, se `ebola-nl`), Oregon Health Authority (se Ændret), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (kun folkesundhedsefterretning og antimikrobiel resistens), Statens Serum Instituts liste over sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), DGHS' dengue gengivet af The Business Standard (se Ændret) og https://globus.nicco.dk/konflikter.json (genereret 21. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `ebola-drc`: WHO DON 630 https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON630 (læst i WHO's dataudtræk i rå tekst): 11.613 bekræftede tilfælde, heraf 5.678 dødsfald, og 3.148 raske pr. 17. november i 68 sundhedszoner i otte provinser, smitte de seneste 21 dage i 48 zoner. Ituri 7.946 og 3.751, Nordkivu 2.996 og 1.654, Haut-Uélé 534 og 231, Tshopo 109 og 35. Watsa i Haut-Uélé er senest ramt. 452 af 720 dødsfald siden 28. oktober skete i lokalsamfundet. Generaldirektøren fastslog 18. november, at udbruddet fortsat er en international sundhedskrise. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. `alvor` er uændret 4.
+- `ebola-ke`: WHO DON 630: fortsat 9 bekræftede tilfælde og 2 dødsfald pr. 17. november, det sidste tilfælde udskrevet 11. november, nedtællingen på 42 dage er i gang, intet nyt tilfælde siden 19. oktober, 135 kontakter, alle færdige med opfølgningen 11. november. Nyt punkt, `cases`, `extra` og `src` opdateret.
+- `ebola-ng`: WHO DON 630: patienten udskrevet i Genève 11. november efter to negative PCR-test, alle 62 kontakter færdige med opfølgningen pr. 13. november, nedtællingen på 42 dage er i gang. Nyt punkt og `src`.
+- `ebola-gb`: WHO DON 630: Storbritannien meldte 18. november, at sundhedsarbejderen er rask og udskrevet. Nyt punkt, `extra`, `gap` og `src` opdateret. Den britiske regerings egen udmelding er ikke fundet ved søgning på gov.uk.
+- `ebola-nl`: lukket som besluttet 20. oktober: 42 dage efter RIVM's melding 10. oktober om negativ test, uden sekundære tilfælde. RIVM's opdatering 12. november nævner ingen nye tilfælde i Nederlandene. Nyt punkt med RIVM som kilde, `live` sat til `false`.
+- `wnv-eu`: ECDC 20. november https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00019/2026-11-20 (rå tekst): 2.057 tilfælde i 236 områder i 20 lande pr. 18. november, ét nyt område. Italien 783, Grækenland 463, Frankrig 205, Spanien 150, Rumænien 140, Nederlandene 80. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `dengue-eu`: ECDC 20. november https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00017/2026-11-20 (rå tekst): ingen nye tilfælde pr. 18. november, fortsat Italien 76 og Frankrig 8; to klynger i Italien og én i Frankrig er aktive. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `chik-fr`: ECDC 20. november https://www.ecdc.europa.eu/en/public-health-events/2026-evd-00016/2026-11-20 (rå tekst): 216 tilfælde i Frankrig pr. 18. november efter tre nye, 31 klynger, 10 aktive, Prayssac 40 og Cavalaire-sur-Mer 35. Italiens klynge er lukket. Nyt punkt, `cases`, `extra` og `src` opdateret. `chik-ch` er uændret, ECDC gentager kun de fire tilfælde.
+- `dengue-bd`: 170.280 tilfælde og 513 dødsfald i 2026 efter 3 nye dødsfald (2 i Chattogram- og 1 i Barishal-divisionen) og 1.347 nye indlagte på et døgn til kl. 8 20. november. 5.617 fortsat indlagt, 164.150 udskrevet. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-claims-3-more-lives-24hrs-toll-hits-513-1608956 (læst i sidens rå tekst). 168.933 plus 1.347 giver 170.280. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `polio-sy`: GPEI pr. 18. november: tre tilfælde af cirkulerende vaccineafledt poliovirus type 1 i Deir Al Zour med lammelsesdebut 6., 15. og 18. oktober, officielt meldt som en ny udbredelse. Nyt punkt, `cases`, `gap` og `src` opdateret.
+- `polio`: GPEI pr. 18. november: Tchad 4 nye tilfælde af vaccineafledt type 2, i alt 13, Nigeria 2 nye af type 3, i alt 19, Syrien 3 af type 1, miljøprøver med type 2 i Israel og Somalia og vild type 1 i miljøprøver i Pakistan, fortsat 9 tilfælde. Nyt punkt og `extra` opdateret.
+- `h5n1-wa`: Oregon Health Authority 19. november https://www.oregon.gov/oha/ERD/Pages/OHA-confirms-states-first-human-case-of-avian-influenza-of-2026-11.19.2026.aspx (rå tekst): delstatens første humane tilfælde af højpatogen fugleinfluenza i 2026, knyttet til malkekvæg i Morrow County, milde symptomer, ikke indlagt. Fundet gennem CIDRAP. Nyt punkt, `gap` og `src` opdateret. `cases` gælder Washington og er ikke ændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 46 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt), afgjort på de samlede kilder ovenfor: `mpox` (10) uden ny opdatering fra ECDC eller WHO, `mpox-mo` (11) og `h5n1-us` (24) uden nyt fra US CDC eller USDA i CIDRAP, `dengue-fl` (14) uden nyere ugerapport fundet, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (15) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (16) uden nyt fra PAHO, `kolera-ye` (17) uden nyt fra WHO EMRO, `shamonda-fr` (19) uden ny DON, `maesling-bg` (20) uden ny månedsopdatering fra ECDC, `difteri-ma` (22) og `mpox-pk` (23) uden nyere tal, `cyclospora-us` (29) uden nye tal; den når 30 dage 22. november. `difteri-ng` (58) og `difteri-afro` (36) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 kalder udbruddene igangværende.
+
+**Mediesporet**
+- Godkendt `SY>SA` (militær støtte): Syrien har sendt militære rådgivere, trænere og soldater til Saudi-Arabien efter forsvarsaftalen 4. november; en syrisk embedsmand bekræfter over for SANA, at soldater er sendt til træning og rådgivning. Læst: https://www.aljazeera.com/features/2026/11/9/syria-confirms-sending-troops-to-saudi-arabia-amid-battle-against-houthis (efter AP og SANA) og http://www.jpost.com/middle-east/article-914267 (efter Reuters og SANA), begge i sidens rå tekst. Parret var afvist 22. oktober, fordi soldaterne endnu ikke var sendt. Lagt til ejeren i GENNEMGANG.md.
+- Afvist igen efter udløb `PL-UA`: russiske missiler mod Ukraine, hvoraf et landede i Polen. Læst: https://www.cbsnews.com/news/ukraine-war-russia-intentional-provocation-poland-missiles-nato/ og BBC's artikel https://www.bbc.co.uk/news/articles/cqx2x9dklxnro (læst 20. november); Le Monde afviste maskinel hentning.
+- Afvist igen efter udløb `HT-SV`: salvadoranske soldater udsendt mod bandevold i Haiti, to dræbt under håndtering af sprængstof, og en aftale om fængsler. Læst: https://www.aljazeera.com/news/2026/11/20/two-salvadoran-soldiers-killed-in-haiti-while-handling-explosives og https://www.nbcnews.com/world/haiti/two-salvadorans-killed-haiti-handling-explosives-first-official-deaths-rcna610493
+- Afvist `FR-RU`: franske ikke-kæmpende militærfolk i Ukraine og Ruslands reaktion. Læst: https://www.naharnet.com/stories/en/323873-why-france-is-sending-soldiers-into-ukraine-and-how-russia-is-responding (rå tekst) og overskriften fra France 24; France 24 afviste maskinel hentning.
+- Afvist igen efter udløb `JP-US`: en overlevende fra Pearl Harbor, kunstig intelligens og en filmrolle. Afgjort på overskrifterne og adresserne i stregens `art` i https://globus.nicco.dk/konflikter.json
+- Det var de fem par med status afventer.
+
+**Usikkert**
+- `dengue-bd`: kun The Business Standard kunne læses; Dhaka Tribune gav 403, og The Daily Star's artikel for 20. november blev ikke fundet. Dhaka Tribunes overskrift har også 3 dødsfald og 1.347 indlagte.
+- `maesling-us`: CIDRAP skriver, at US CDC nu har 5.838 tilfælde efter 426 nye. US CDC's side gav 403 ved direkte opslag og er ikke læst. Tallet er ikke skrevet ind og overlades til kl. 17.20.
+- Dengue i Peru: NaTHNaC skriver 112.610 tilfælde og 148 dødsfald i 2026 pr. 8. november, 238 procent over samme periode 2025. Peruvianske myndigheders egen opgørelse er ikke læst, så der er ikke oprettet en hændelse. Overlades til kl. 17.20.
+- `wnv-eu`: ECDC har 463 tilfælde i Grækenland pr. 18. november mod 470 pr. 11. november uden forklaring. Begge står, som ECDC skriver dem.
+- `SY>SA`: begge artikler bygger på nyhedsbureauer (AP og Reuters) og SANA, men på to forskellige bureauer og en officiel syrisk bekræftelse.
+- Sri Lankas forside svarede fortsat ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og GitHubs API afviste opslag under det navn. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 82c4002.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `SY>SA`: tæller syriske rådgivere og trænere i Saudi-Arabien som levering af tropper?
+
 ## 20. november 2026
 
 ### Kl. 05.20, bred gennemgang

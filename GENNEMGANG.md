@@ -12,6 +12,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 - `tools/par-tjek.json` (20. november, kl. 17.20): `DJ-YE` står to gange under `afvist`, med datoen 2026-10-13 (ejerens afgørelse) og 2026-10-12. Ved læsning gælder den sidste, og kørslen har derfor sat ny dato og grund på den. Afgør, hvilken af de to linjer der skal fjernes.
 
+- `SY>SA` (21. november, kl. 05.20): godkendt som militær støtte, fordi Al Jazeera https://www.aljazeera.com/features/2026/11/9/syria-confirms-sending-troops-to-saudi-arabia-amid-battle-against-houthis og The Jerusalem Post http://www.jpost.com/middle-east/article-914267 beskriver, at Syrien har sendt militære rådgivere, trænere og soldater til Saudi-Arabien, og en syrisk embedsmand over for SANA bekræfter, at soldater er sendt til træning og rådgivning. Syrien afviser at sende tropper til Yemen. Begge artikler bygger på AP, Reuters og SANA. Afgør, om rådgivere og trænere tæller som levering af tropper, eller om parret skal flyttes til afvist.
+
 
 ## Datasættet: gamle punkter og tekster
 
