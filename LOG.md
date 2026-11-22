@@ -34,6 +34,35 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 630 20. november fortsat nyeste og brugt, ingen ny siden forrige kørsel), DGHS' mæslinger (ingen meddelelse nyere end 21. november, også ved nyt opslag kl. 17.23), ECDC's Public health events (intet efter 20. november, som er brugt), UKHSA (intet nyt efter 20. november), NaTHNaC (intet efter 20. november, som er brugt), CIDRAP (US CDC's mæslingetal, se Ændret) og Hongkong (22. november en sag om invasiv meningokoksygdom, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html og Cyclospora-side https://www.cdc.gov/cyclosporiasis/cases/index.html (begge læst med hentningsværktøjet; direkte opslag gav 403 og tom side), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november), Africa CDC (ingen ugerapport for november fundet) og https://globus.nicco.dk/konflikter.json (genereret 22. november kl. 16.23 dansk tid).
+
+**Ændret**
+- `maesling-us`: US CDC's side, opdateret 20. november: 5.838 bekræftede tilfælde i 2026 pr. 19. november, heraf 5.820 meldt af 47 jurisdiktioner, 43 udbrud i 2026, 96 procent af tilfældene (5.629 af 5.838) hører til et udbrud, og 6 dødsfald i tabellen. Tallet stemmer med CIDRAP, der 21. november skrev 5.838 efter 426 nye. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. Fordelingen på udbrud startet i 2025 og 2026 og tallet for internationale besøgende er fjernet fra `extra`, fordi de ikke er læst i den nye udgave.
+- `cyclospora-us`: `live` sat til `false` efter reglen om `live`: intet nyt i en måned. US CDC's side er fortsat opdateret 23. oktober og skriver, at den ikke længere opdateres ugentligt, fordi antallet af smittede er faldet markant. Nyt punkt med US CDC som kilde.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 56 hændelser uden nyt i kilderne.
+- `difteri-ng` (59 dage) og `difteri-afro` (37 dage) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist `FI-RU`: formodede ukrainske droneangreb på russiske skibe i Den Finske Bugt, hvoraf et brændende russisk fragtskib på vej mod Kaliningrad drev ind i finsk farvand 21. november, ikke kampe mellem Finlands og Ruslands styrker. Læst: https://www.aljazeera.com/video/newsfeed/2026/11/22/russian-ship-attacked-by-drone-in-baltic-sea-off-finland og Yle https://yle.fi/a/74-20256496 og https://yle.fi/a/74-20256796 om angrebet 12. november på et russisk krigsskib nær Gogland (alle i sidens rå tekst). CNN og France 24 afviste maskinel hentning.
+- Intet godkendt. Det var det eneste par med status afventer.
+
+**Usikkert**
+- `maesling-us`: US CDC's tabel over indlæggelser har tomme felter for 2026, og dødstallet 6 er mærket som foreløbigt. Wisconsins nye tal efter CIDRAP's overskrift er ikke læst hos delstaten.
+- Kvalitet: kontrollen viser ingen advarsler om tal i `cases` uden opgørelsesdato, så vagtplanens tre hændelser kunne ikke udpeges. Knudepunkternes koordinater er tjekket for ombyttet længde- og breddegrad uden fund.
+- Dengue i Peru: fortsat ikke oprettet; peruvianske myndigheders egen opgørelse er ikke læst.
+- Sri Lankas forside svarede fortsat ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 3e6684e.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 21. november 2026
 
 ### Kl. 05.20, bred gennemgang

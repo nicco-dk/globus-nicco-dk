@@ -130,6 +130,7 @@
     "PK-US": {"dato": "2026-11-20", "grund": "Artiklerne handler om en dom i USA over en pakistansk statsborger for et Iran-støttet attentatforsøg og Pakistans udenrigsminister om regional sikkerhed, ikke om kampe mellem Pakistans og USA's styrker (Geo News, Hindustan Times, Euronews)."},
     "US>IR": {"dato": "2026-11-20", "grund": "Artiklerne handler om USA's militære opbygning omkring Iran og udvekslinger af ild mellem de to lande, ikke om levering af våben, tropper eller udstyr fra USA til Iran (Middle East Eye, Euronews, Hindustan Times)."},
     "FR-RU": {"dato": "2026-11-21", "grund": "Artiklerne handler om franske ikke-kæmpende militærfolk, der træner og vedligeholder våben i Ukraine, Ruslands reaktion og russiske angreb på Kyiv, der ramte europæiske ambassader, ikke om kampe mellem Frankrigs og Ruslands styrker (Naharnet, France 24, Deutsche Welle, BBC)."},
-    "GB-JO": {"dato": "2026-11-22", "grund": "Artiklerne handler om en voldtægtssag ved en britisk domstol, et meningsindlæg om Gaza og et interview, ikke om kampe mellem Storbritanniens og Jordans styrker (The Guardian, Punch, The Sydney Morning Herald, The Telegraph)."}
+    "GB-JO": {"dato": "2026-11-22", "grund": "Artiklerne handler om en voldtægtssag ved en britisk domstol, et meningsindlæg om Gaza og et interview, ikke om kampe mellem Storbritanniens og Jordans styrker (The Guardian, Punch, The Sydney Morning Herald, The Telegraph)."},
+    "FI-RU": {"dato": "2026-11-22", "grund": "Artiklerne handler om formodede ukrainske droneangreb på russiske skibe i Den Finske Bugt, hvoraf et brændende russisk fragtskib drev ind i finsk farvand, ikke om kampe mellem Finlands og Ruslands styrker (Al Jazeera, Yle)."}
   }
 }
