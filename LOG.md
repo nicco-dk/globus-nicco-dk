@@ -2,6 +2,38 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 22. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 630 20. november fortsat nyeste og brugt), DGHS' mæslinger (meddelelsen 21. november brugt kl. 17.20, ingen nyere), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1070 (allerede brugt; nummer 1071 for 20. november gav 404), ECDC's Public health events (intet efter 20. november, som er brugt), UKHSA (intet nyt efter 20. november; ugeoversigten 19. november er brugt), NaTHNaC (intet efter 20. november, som er brugt), CIDRAP (ingen nye overskrifter om hændelserne på siden siden forrige kørsel) og Hongkong (intet om smitte i dag og i går). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 15. november, ældre end WHO DON 630), Statens Serum Instituts liste over sygdomsudbrud (intet nyt), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), US CDC's side om Cyclospora https://www.cdc.gov/cyclosporiasis/cases/index.html (læst med hentningsværktøjet, fortsat opdateret 23. oktober), DGHS' dengue gengivet af The Daily Star (se Ændret) og https://globus.nicco.dk/konflikter.json (genereret 22. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `dengue-bd`: 171.954 tilfælde og 516 dødsfald i 2026 efter 3 nye dødsfald (2 i Dhaka- og 1 i Khulna-divisionen) og 1.674 nye indlagte på et døgn til kl. 8 21. november. 5.574 er fortsat indlagt. DGHS gengivet af The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/3-die-dengue-1674-hospitalised-24-hours-4329561 (læst i sidens rå tekst). 170.280 plus 1.674 giver 171.954, og 513 plus 3 giver 516. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 57 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt), afgjort på de samlede kilder ovenfor: `hanta-ar` (10) uden ny bulletin fundet, `mpox` (11) uden ny opdatering fra ECDC eller WHO, `mpox-mo` (12) og `h5n1-us` (25) uden nyt fra US CDC i CIDRAP, `dengue-fl` (15) uden nyere ugerapport fundet, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (16) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (17) uden nyt fra PAHO, `kolera-ye` (18) uden nyt fra WHO EMRO, `shamonda-fr` (20) uden ny DON, `maesling-bg` (21) uden ny månedsopdatering fra ECDC, `difteri-ma` (23) og `mpox-pk` (24) uden nyere tal, `cyclospora-us` (30) uden nyt: US CDC's side er fortsat opdateret 23. oktober med 20.996 tilfælde, 1.161 indlagte og 2 dødsfald, og siden opdateres ikke længere ugentligt. `difteri-ng` (59) og `difteri-afro` (37) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist igen efter udløb `MX-US`: den mexicanske hærs anholdelse af en narkoboss på FBI's liste over de mest eftersøgte og den efterfølgende kartelvold i Mexico, ikke kampe mellem Mexicos og USA's styrker. Læst i sidens rå tekst: https://www.euronews.com/2026/11/21/mexico-captures-fbis-most-wanted-cartel-boss-el-chapo-isidro-triggering-violence og https://nyheder.tv2.dk/udland/2026-11-21-mexico-anholder-en-af-fbis-ti-mest-eftersoegte (efter Ritzau); overskriften fra The New York Times i stregens `art` siger det samme.
+- Afvist igen efter udløb `IL-JO`: et meningsindlæg om Jordans forhold til Syrien, et meningsindlæg om Gaza, en dom i Jordan for et angreb på en kirke og israelsk opbringning af personer, der krydsede Det Døde Hav fra Jordan. Læst: https://www.arabnews.com/opinion/a-unified-syria-is-jordans-best-security-policy-3012413 (rå tekst) og overskrifterne fra Associated Press og i24NEWS i stregens `art`; i24NEWS afviste maskinel hentning.
+- Afvist `GB-JO`: en voldtægtssag ved en britisk domstol, et meningsindlæg om Gaza og et interview. Læst: https://punchng.com/four-convicted-of-sexually-abusing-woman-drugged-by-husband-in-uk/ (rå tekst, Jordan er ikke nævnt) og adresserne fra The Guardian, The Sydney Morning Herald og The Telegraph i stregens `art`; The Guardian svarede ikke med tekst ved maskinel hentning.
+- Intet godkendt. Det var de tre par med status afventer.
+
+**Usikkert**
+- `dengue-bd`: kun The Daily Star havde 21. november ved gennemgangen; The Business Standard havde endnu ingen artikel for dagen.
+- `cyclospora-us`: hændelsen har 30 dage uden nyt punkt i dag og bliver advaret fra i morgen. US CDC skriver, at siden ikke længere opdateres ugentligt, fordi antallet af smittede er faldet markant. `live` er ikke ændret i denne kørsel; næste kørsel vurderer det efter reglen om `live`.
+- Dengue i Peru: fortsat ikke oprettet. En søgning gav kun medier og PAHO's ældre situationsrapporter, ikke en peruviansk myndighed, der kalder sæsonen usædvanlig.
+- Sri Lankas forside svarede fortsat ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen, og GitHubs API afviste opslag under begge navne. Kørslen arbejder gennem git mod mikkelnicco/globus-nicco-dk på det seneste commit d629e06.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 21. november 2026
 
 ### Kl. 05.20, bred gennemgang
