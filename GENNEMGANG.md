@@ -34,6 +34,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 - `dengue-asien` (20. november, kl. 05.20): `naeste` siger: "Følger monsunen. Sri Lanka toppede i september." WHO SEARO nummer 23 har 5.536 tilfælde i Sri Lanka i oktober https://cdn.who.int/media/docs/default-source/searo/whe/wherepib/2026_23_searo_epi_bulletin.pdf mod 5.230 i hele september efter National Dengue Control Unit, og uge 45 lå 6 procent over uge 44. Kørslen retter ikke `naeste`, fordi trinnet ikke har flyttet sig. Afgør: ny tekst i `naeste`, eller ingen ændring.
 
+- `h5n1-gx` (23. november, kl. 05.20): ny hændelse efter WHO WPRO nummer 1071 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261120.pdf om A(H5N1) hos en mand bosat i Quang Ninh i Vietnam, fundet ved grænsekontrollen i Dongxing i Guangxi. WPRO lister tilfældet under Kina, prøven ved grænsen var positiv i Kina, og senere prøver i Vietnam var negative. Kørslen har sat prikken og landet til Kina (Dongxing) og skrevet de negative prøver i `gap`. Afgør: skal hændelsen stå i Kina eller Vietnam, og skal den med, når de senere prøver var negative.
+
 ## Repoet og driften
 
 Ingen åbne punkter.

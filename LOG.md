@@ -2,6 +2,38 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 23. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 630 20. november fortsat nyeste og brugt), DGHS' mæslinger (ingen meddelelse nyere end 21. november, som er brugt), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1071 for 20. november (nu tilgængelig, se Ændret og Nye), ECDC's Public health events (intet efter 20. november, som er brugt), UKHSA (intet nyt efter 20. november; ugeoversigten 19. november er brugt), NaTHNaC (intet efter 20. november, som er brugt), CIDRAP (ingen nye overskrifter om hændelserne på siden siden forrige kørsel) og Hongkong (22. og 23. november intet om smitte på siden). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden Floridas ugerapport uge 45 https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w45-2026.pdf (se Ændret), DGHS' dengue gengivet af The Business Standard og The Daily Star (se Ændret), Statens Serum Instituts liste over sygdomsudbrud https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud (senest redigeret 3. november, intet nyt), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet om udbrud), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste) og https://globus.nicco.dk/konflikter.json (genereret 23. november kl. 04.23 dansk tid).
+
+**Ændret**
+- `dengue-bd`: 173.473 tilfælde og 518 dødsfald i 2026 efter 2 nye dødsfald og 1.519 nye indlagte på et døgn til kl. 8 22. november. 5.070 er fortsat indlagt, og 167.885 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-rises-518-two-more-die-1610626 og The Daily Star https://www.thedailystar.net/news/healthcare/disease/news/2-die-dengue-1519-hospitalised-24-hours-4330456 (begge læst i sidens rå tekst, samme tal). 171.954 plus 1.519 giver 173.473, og 516 plus 2 giver 518. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `h9n2-cn`: WHO WPRO nummer 1071 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261120.pdf (læst med pdftotext): et nyt tilfælde hos et barn i Henan med symptomdebut 24. oktober efter kontakt med fjerkræ på et marked med levende fjerkræ, hvor en miljøprøve ved boden var positiv for influenza A(H9). Alle tre nære kontakter er testet negative, og barnet er rask. 191 tilfælde siden 2015, heraf 188 i Kina, og 2 dødsfald. Nyt punkt, `cases`, `extra` og `src` opdateret; nummer 1070 står fortsat på sit eget punkt.
+- `dengue-fl`: Floridas ugerapport uge 45 (8. til 14. november): 651 lokalt erhvervede tilfælde i 12 counties, 27 nye på en uge, Hillsborough 487 og Pinellas 116, DENV-2 i 592 og DENV-3 i 4. 624 plus 27 giver 651. Myndigheden skriver fortsat, at antallet af nye tilfælde under undersøgelse er faldet. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- `h5n1-gx`: fugleinfluenza A(H5N1) hos en voksen mand bosat i Quang Ninh i Vietnam, fundet ved sundhedskontrollen i grænsehavnen Dongxing i Guangxi 2. november med symptomdebut 1. november. Prøven ved grænsen var positiv i Kina, senere prøver i Vietnam negative. Ingen kendt kontakt med fjerkræ eller dyr, to husstandskontakter negative. WHO WPRO nummer 1071. Trin `udbrud`, `gap` beskriver den ukendte smittekilde og de negative prøver i Vietnam.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt), afgjort på de samlede kilder ovenfor og søgninger: `hanta-ar` (11) uden nyere Boletín Epidemiológico Nacional fundet, `mpox` (12) uden ny opdatering fra ECDC eller WHO, `mpox-mo` (13) og `h5n1-us` (26) uden nyt fra US CDC i CIDRAP, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (17) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (18) uden nyt fra PAHO, `kolera-ye` (19) uden nyt fra WHO EMRO, `shamonda-fr` (21) uden ny DON, `maesling-bg` (22) uden ny månedsopdatering fra ECDC, `difteri-ma` (24) uden nyere tal, `mpox-pk` (25) uden nyere tal fra Sindh fundet ved søgning. `difteri-ng` (60) og `difteri-afro` (38) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist `DK-RU`: et russisk efterretningsplot om at dræbe en ukrainsk-amerikansk rapper i Danmark, som dansk politi forhindrede, og Danmarks udvisning af Ruslands forsvarsattaché, ikke kampe mellem landenes styrker. Læst i sidens rå tekst: https://www.independent.co.uk/news/world/europe/kyivstoner-russia-assassination-attempt-us-rapper-ukraine-b3088943.html og https://www.arabnews.com/world/poland-says-russia-allegedly-twice-tried-to-kill-a-ukrainian-american-rapper-3013591 (efter AP og Reuters). Politico Europe gav ingen tekst ved maskinel hentning.
+- Afvist `MC-US`: henrettelser i Texas og Florida og samme russiske plot mod rapperen; Monaco er ikke part. Læst: https://www.latimes.com/world-nation/story/2026-11-19/texas-execution-took-over-hour-as-staff-struggled-to-find-vein og Arab News ovenfor.
+- Afvist `AU-GB`: bosætteres brandangreb på landsbyer på Vestbredden efter britiske og australske sanktioner, en nekrolog og en svæveflyulykke i Skotland. Læst: https://www.rte.ie/news/middle-east/2026/1122/1600216-west-bank-fires/ , https://www.arabnews.com/middle-east/israel-investigates-west-bank-fires-blamed-on-settlers-3013496 og https://www.smh.com.au/national/god-s-warrior-fred-nile-was-never-afraid-to-take-up-the-fight-20261122-p5d9da.html ; The Guardian-artiklen er afgjort på adressen.
+- Intet godkendt. Det var de tre par med status afventer.
+
+**Usikkert**
+- `h5n1-gx`: hændelsen står i Kina ved Dongxing, hvor prøven blev taget og meldt, selv om manden bor i Vietnam. Smittekilden er ukendt, og de senere prøver i Vietnam var negative. Lagt til ejeren i GENNEMGANG.md. Hverken Kinas eller Vietnams egen udmelding er fundet ved søgning.
+- Sri Lankas forside https://www.dengue.health.gov.lk/ kunne ikke hentes ad nogen af de to veje: direkte opslag gav nulstillet forbindelse, og hentningsværktøjet kunne ikke læse sidens robots.txt. DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 0c9f247.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `h5n1-gx`: skal tilfældet stå i Kina (Dongxing) eller Vietnam (Quang Ninh)?
+
 ## 22. november 2026
 
 ### Kl. 05.20, bred gennemgang
