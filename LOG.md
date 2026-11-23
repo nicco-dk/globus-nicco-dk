@@ -34,6 +34,34 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `h5n1-gx`: skal tilfældet stå i Kina (Dongxing) eller Vietnam (Quang Ninh)?
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 630 20. november fortsat nyeste brugte; DON 628 om cVDPV1 i Syrien er markeret FREMTID til kl. 19 UTC og er ikke brugt), DGHS' mæslinger (meddelelserne 22. og 23. november, se Ændret), ECDC's Public health events (fugleinfluenza A(H5N1) hos mennesker i USA 23. november, se Ændret; overblikket over luftvejsvirus uge 46 uden betydning for siden), UKHSA (kun rutinerapporter 23. november), NaTHNaC (intet efter 20. november, som er brugt), CIDRAP (mæslinger i Wisconsin og Pennsylvania og ebola i Uganda og Sydsudan, alle allerede dækket af US CDC's tal pr. 19. november, Pennsylvanias ottende dødsfald 18. november og WHO DON 630) og Hongkong (23. november legionærsyge, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november), Africa CDC (ingen ny ugerapport fundet ved søgning), insp.cd's medieliste over DR Congos situationsrapporter (nyeste fortsat nummer 168 pr. 29. oktober), Venezuelas sundhedsministerium (bulletin for uge 45 findes endnu ikke) og https://globus.nicco.dk/konflikter.json (genereret 23. november kl. 16.24 dansk tid).
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 22. november https://dghs.gov.bd/pages/press-releases/6b028b30ace001488a650ed4: 256.586 mistænkte og 26.136 bekræftede tilfælde, 1.247 dødsfald blandt mistænkte og 105 blandt bekræftede, 1.162 nye mistænkte, 76 nye bekræftede og 9 dødsfald blandt mistænkte på et døgn (Dhaka 4, Chattogram 3, Sylhet 1, Khulna 1). Meddelelsen 23. november https://dghs.gov.bd/pages/press-releases/6b04194096fdaee72fa96eb8: 257.907 mistænkte og 26.232 bekræftede, 1.321 nye mistænkte, 96 nye bekræftede og ingen nye dødsfald, fortsat 1.247 og 105. 230.791 indlagte og 222.019 udskrevne siden 15. marts. Begge PDF-bilag læst som tekst og som billede, og bekræftede i alt er ens i begge tabeller. 255.424 plus 1.162 giver 256.586, og plus 1.321 giver 257.907. To nye punkter, to nye punkter i talserien (dødstallet 1.352 er de to rækker lagt sammen efter reglen), `cases`, `extra` og `src` opdateret.
+- `h5n1-wa`: ECDC 23. november https://www.ecdc.europa.eu/en/public-health-events/2024-irv-00003/2026-11-23 (læst i sidens rå tekst): tilfældet i Morrow County i Oregon er en voksen ansat på en kommerciel malkekvægsbedrift med influenza A(H5) i køerne, fik øjenirritation i uge 45, prøven fra bindehinden blev bekræftet af US CDC, og der er ingen nye tilfælde blandt nære kontakter. Nyt punkt, `gap` præciseret (subtypen er fortsat ikke oplyst, kun A(H5)), ECDC 23. november tilføjet i `src`.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 57 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `h5n1-us` (26) uden nyere opgørelse fra USDA APHIS fundet ved søgning, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (17) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (18) uden nyt fra PAHO, `mpox-mo` (13) og `hanta-ar` (11) uden nyt i kilderne ovenfor. De øvrige hændelser i rundturen (`mpox`, `shamonda-fr`, `kolera-ye`, `difteri-ma`, `mpox-pk`, `maesling-bg`) blev slået op kl. 05.20 i dag uden nyt. `difteri-ng` (60) og `difteri-afro` (38) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist `DE-UA` (afvisningen 14. oktober var udløbet): artiklerne handler om Coalition of the Willing-topmødet i Berlin 19. november om støtte til Ukraine og fredsforhandlinger med Rusland og om et prorussisk netværk, der hverver irere til Ruslands skyggekrig, ikke om kampe mellem Tysklands og Ukraines styrker. Læst i sidens rå tekst: Al Jazeera https://www.aljazeera.com/news/2026/11/19/european-leaders-unite-in-berlin-to-reaffirm-support-for-ukraine, BBC https://www.bbc.co.uk/news/articles/ckzd9nln5e6go og The Irish Times https://www.irishtimes.com/opinion/2026/11/23/opinion-the-pro-russian-network-seeking-irish-recruits/
+- Intet godkendt. Det var det eneste par med status afventer.
+
+**Usikkert**
+- `ebola-drc`: CIDRAP skrev 20. november 11.645 tilfælde og 5.683 dødsfald efter US CDC. US CDC's situationsside gav 403 ved direkte opslag og kom ikke frem ved søgning, så hentningsværktøjet kunne ikke bruges. Opgørelsesdatoen er ukendt, og tallet er ikke skrevet. WHO DON 630 pr. 17. november står.
+- Kvalitet: kontrollen viser ingen advarsler om tal i `cases` uden opgørelsesdato, så vagtplanens tre hændelser kunne ikke udpeges. Knudepunkternes koordinater er tjekket mod hændelsernes placering uden tegn på ombyttet længde- og breddegrad; de fjerne knudepunkter hører til hændelser i flere lande.
+- Sri Lankas forside svarede ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 407eca4. GitHubs API afviser opslag i Actions for det repo, så udrulningen kan ikke følges derfra; se GENNEMGANG.md.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: kørslen kan ikke følge udrulningen i Actions.
+
 ## 22. november 2026
 
 ### Kl. 05.20, bred gennemgang

@@ -40,6 +40,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 Ingen åbne punkter.
 
+- Udrulningen (23. november, kl. 17.20): repoet er tilgængeligt for kørslen som mikkelnicco/globus-nicco-dk, men GitHubs API svarer for det navn kun med en henvisning til repoets nummer, som kørslens adgang ikke tillader, og nicco-dk/globus-nicco-dk er ikke givet til kørslen. Kørslen kan derfor skubbe til main, men ikke læse Actions-kørslerne, og følger i stedet udrulningen ved at se, om DATA_TID er ændret på https://globus.nicco.dk. Afgør: giv den planlagte opgave adgang til nicco-dk/globus-nicco-dk, så trin 10 kan gennemføres som beskrevet.
+
 
 ## Datacentre
 
