@@ -36,6 +36,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 - `h5n1-gx` (23. november, kl. 05.20): ny hændelse efter WHO WPRO nummer 1071 https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261120.pdf om A(H5N1) hos en mand bosat i Quang Ninh i Vietnam, fundet ved grænsekontrollen i Dongxing i Guangxi. WPRO lister tilfældet under Kina, prøven ved grænsen var positiv i Kina, og senere prøver i Vietnam var negative. Kørslen har sat prikken og landet til Kina (Dongxing) og skrevet de negative prøver i `gap`. Afgør: skal hændelsen stå i Kina eller Vietnam, og skal den med, når de senere prøver var negative.
 
+- `polio-sy` (24. november, kl. 05.20): WHO DON 628 https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON628 dokumenterer smitte fra person til person, og kørslen har flyttet trinnet til `smitte`. DON'en skriver, at international spredning af polio fortsat er en international sundhedskrise (PHEIC siden 5. maj 2014), og at de midlertidige anbefalinger gælder Syrien. `polio` har `alvor` 4 af den grund, `polio-sy` har intet `alvor`. Kørslen har ikke sat feltet. Afgør: `alvor` 4 på `polio-sy`, eller ingen ændring.
+
 ## Repoet og driften
 
 Ingen åbne punkter.

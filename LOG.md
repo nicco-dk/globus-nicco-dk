@@ -2,6 +2,40 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 24. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 628 om cVDPV1 i Syrien, offentliggjort 23. november kl. 19 UTC, læserens side svarer, se Ændret; ellers DON 630 fortsat nyeste brugte), DGHS' mæslinger (ingen meddelelse nyere end 23. november, som er brugt), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1071 (allerede brugt), ECDC's Public health events (intet efter 23. november, som er brugt), UKHSA (kun rutinerapporter 23. november; ugeoversigten 19. november er brugt), NaTHNaC (intet efter 20. november, som er brugt), CIDRAP (nye mæslingedødsfald i Virginia og Pennsylvania, se Ændret; ebola i DR Congo efter seks måneder, se Usikkert) og Hongkong (23. november legionærsyge, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden DGHS' dengue gengivet af The Business Standard (se Ændret), Pennsylvanias og Virginias sundhedsmyndigheder (se Ændret), ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 15. november, ældre end WHO DON 630), Africa CDC's nyhed om seks måneder med ebola https://africacdc.org/news-item/six-months-on-accessing-hard-to-reach-communities-key-to-halting-ebola-outbreak/ (kun afrundede tal), Statens Serum Instituts liste over sygdomsudbrud https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om smitte hos mennesker), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet om udbrud), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november) og https://globus.nicco.dk/konflikter.json (genereret 24. november kl. 04.23 dansk tid). Robert Koch Instituts Epidemiologisches Bulletin er ikke læst i denne kørsel.
+
+**Ændret**
+- `polio-sy`: WHO DON 628 https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON628 (læst i WHO's dataudtræk i rå tekst): tre bekræftede tilfælde af cirkulerende vaccineafledt poliovirus type 1 pr. 13. november og VDPV1 hos tre kontakter uden lammelse. WHO skriver, at isolaterne er genetisk forbundne og viser smitte fra person til person, en ny udbredelse uden forbindelse til VDPV1 i en miljøprøve fra Al-Mayadin i februar 2026. 12 nye tilfælde af akut slap lammelse fra flere steder i Deir Ez Zor 9. til 20. november undersøges. Trinnet flyttet fra `udbrud` til `smitte` på WHO's dokumentation af smitte fra person til person. Nyt punkt, `extra`, `gap`, `naeste` (fordi trinnet flyttede sig) og `src` opdateret. `cases` er uændret (GPEI pr. 18. november, samme tal).
+- `dengue-bd`: 174.840 tilfælde og 520 dødsfald i 2026 efter 2 nye dødsfald og 1.367 nye indlagte på et døgn til kl. 8 23. november. 4.929 er fortsat indlagt, og 169.391 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-reaches-520-2-more-die-1611626 (læst i sidens rå tekst). 173.473 plus 1.367 giver 174.840, og 518 plus 2 giver 520. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `maesling-us`: Pennsylvanias sundhedsmyndighed https://www.pa.gov/agencies/health/newsroom/pennsylvania-department-of-health-confirms-ninth-measles-associa (rå tekst): niende mæslingeassocierede dødsfald, en uvaccineret beboer i Centre County, 1.638 tilfælde i 46 counties, 330 indlagte og 49 nye tilfælde siden 18. november, pr. 23. november. Virginias sundhedsmyndighed https://www.vdh.virginia.gov/news/public-relations-contacts/2026-news-releases/vdh-1st-measles-death-2026/ (rå tekst, 20. november): delstatens første mæslingeassocierede dødsfald i 2026, et barn mellem 0 og 4 år. Fundet gennem CIDRAP. To nye punkter, `extra` og `src` opdateret. `cases` og talserien er uændrede (US CDC pr. 19. november). CIDRAP's samlede tal på 13 dødsfald meldt af delstaterne er ikke skrevet, fordi det er CIDRAP's egen sammentælling.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 56 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt), afgjort på de samlede kilder ovenfor: `hanta-ar` (12), `mpox` (13) og `mpox-mo` (14) uden nyt fra ECDC, WHO eller US CDC, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (18) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (19) uden nyt fra PAHO, `kolera-ye` (20) uden nyt fra WHO EMRO, `shamonda-fr` (22) uden ny DON, `maesling-bg` (23) uden ny månedsopdatering fra ECDC, `difteri-ma` (25) og `mpox-pk` (26) uden nyere tal, `h5n1-us` (27): USDA APHIS' side over fund i fjerkræ gav 403 ved direkte opslag, og en søgning gav ingen dateret opgørelse. `difteri-ng` (61) og `difteri-afro` (39) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist `LY-RU`: Ukraines angreb med syv søgående droner på den russiske korvet Merkury og transportskibet Angara ud for Benghazi 22. november; Libyen er kun stedet. Læst i sidens rå tekst: NBC News https://www.nbcnews.com/world/ukraine/ukraine-sinks-russian-warship-merkury-libya-naval-drones-war-rcna610822 ; The Washington Post https://www.washingtonpost.com/world/2026/11/23/ukraine-says-it-sank-russian-warship-off-coast-libya-far-front-line/ og Le Monde https://www.lemonde.fr/en/le-monde-africa/article/2026/11/23/attacks-on-two-russian-ships-in-libyan-waters-mark-new-turn-in-ukraine-war_6787337_124.html er afgjort på overskriften (Le Monde afviste maskinel hentning).
+- Afvist `LY-UA`: samme angreb, Libyen er ikke part. Samme artikler.
+- Afvist igen efter udløb `IQ-IR`: irakiske regeringsstyrkers overtagelse af Kataib Hezbollahs højborg Jurf al-Sakhar efter en aftale formidlet af Iran, og et droneangreb på iransk-kurdiske oppositionsbaser i Sulaymaniyah, hvor angriberen ikke er bekræftet. Læst: Al Jazeera https://www.aljazeera.com/news/2026/11/22/what-next-for-iraqs-push-against-militias-following-jurf-al-sakhar-deal og Middle East Eye https://www.middleeasteye.net/live-blog/live-blog-update/two-drones-target-iranian-kurdish-opposition-bases-iraq-sources-say (efter Reuters). The National gav ingen brødtekst ved maskinel hentning.
+- Intet godkendt. Det var de tre par med status afventer.
+
+**Usikkert**
+- `ebola-drc`: CIDRAP skriver 23. november efter Africa CDC 11.793 bekræftede tilfælde og 5.779 dødsfald "this weekend". Africa CDC's egen side har kun "more than 11 000 cases and 5400 deaths", og opgørelsesdatoen er ikke fundet. Tallet er ikke skrevet. WHO DON 630 pr. 17. november står.
+- `polio-sy`: WHO DON 628 minder om, at international spredning af polio fortsat er en international sundhedskrise, og at de midlertidige anbefalinger gælder Syrien. `alvor` er ikke sat; lagt til ejeren i GENNEMGANG.md.
+- `h5n1-us`, `mpox-pk` og `difteri-ma` nærmer sig 30 dage uden nyt punkt.
+- Sri Lankas forside svarede ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+- Repoet kunne fortsat ikke tilføjes som nicco-dk/globus-nicco-dk, fordi add_repo ikke findes i kørslen. Kørslen arbejder gennem mikkelnicco/globus-nicco-dk på det seneste commit 806b641.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `polio-sy`: skal hændelsen have `alvor` 4 som `polio`, nu hvor WHO DON 628 henviser til den internationale sundhedskrise?
+
 ## 23. november 2026
 
 ### Kl. 05.20, bred gennemgang
