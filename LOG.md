@@ -36,6 +36,39 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `polio-sy`: skal hændelsen have `alvor` 4 som `polio`, nu hvor WHO DON 628 henviser til den internationale sundhedskrise?
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 629 om fugleinfluenza A(H5N1) i USA står i WHO's dataudtræk, men offentliggøres først 24. november kl. 19 UTC og er ikke brugt; ellers ingen ny DON siden forrige kørsel), DGHS' mæslinger (meddelelsen 24. november, se Ændret), ECDC's Public health events (intet efter 23. november, som er brugt), UKHSA (24. november kun hedebølger og blodbårne virus), NaTHNaC (intet efter 20. november, som er brugt), CIDRAP (mæslingedødsfald i Virginia og Pennsylvania og ebola efter seks måneder, begge set i forrige kørsel; kort nyt om fugleinfluenza hos et menneske i Oregon, som allerede står i `h5n1-wa` efter Oregon Health Authority og ECDC 23. november) og Hongkong (24. november en klynge af influenza A på et hospital, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), Africa CDC's nyheder https://africacdc.org/news/ (intet nyt med tal), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 17. november), ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 16. november, ældre end WHO DON 630), insp.cd's medieliste over situationsrapporter om ebola (nyeste fortsat nummer 168 pr. 29. oktober) og https://globus.nicco.dk/konflikter.json (genereret 24. november kl. 16.23 dansk tid). US CDC's mæslingetal kommer en gang om ugen, og udgaven pr. 19. november er brugt.
+
+**Ændret**
+- `maesling-bd`: DGHS' meddelelse 24. november https://dghs.gov.bd/pages/press-releases/6b055fe805b08a52990dc60c (PDF-bilaget læst som tekst og som billede af siden): 259.190 mistænkte og 26.300 bekræftede tilfælde siden 15. marts, 1.256 dødsfald blandt mistænkte og 105 blandt bekræftede tilfælde. Det seneste døgn 1.283 nye mistænkte, 68 nye bekræftede og 9 dødsfald blandt mistænkte (3 i Dhaka, 3 i Sylhet, 1 i Chattogram, 1 i Barishal og 1 i Khulna). 231.999 indlagt og 223.158 udskrevet. Bekræftede i alt står som 26.300 i begge tabeller. 257.907 plus 1.283 giver 259.190, og 1.247 plus 9 giver 1.256. Nyt punkt, nyt punkt i talserien (dødstal 1.256 plus 105 efter undtagelsen i reglerne for tal), `cases`, `extra` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 58 hændelser uden nyt i kilderne. Rundturen er afgjort i kørslen kl. 05.20.
+- `difteri-ng` (61 dage) og `difteri-afro` (39 dage) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist `HT-US`: dommen i Florida over en præst for medvirken til mordet på Haitis præsident og tre salvadoranske soldater, der døde ved en ulykke i Haiti. Læst: BBC https://www.bbc.com/news/articles/cm702q0lg50po og Al Jazeera (AP) https://www.aljazeera.com/news/2026/11/24/bukele-shares-details-on-deaths-of-salvadoran-troops-in-haiti-intervention
+- Afvist `BD-MM`: Den Internationale Domstols afgørelse om folkedrab mod rohingyaerne. Læst: The Jakarta Post http://www.thejakartapost.com/world/2026/11/20/myanmar-guilty-of-genocide-against-rohingya-says-top-un-court og El País https://english.elpais.com/international/2026-11-19/the-uns-top-court-finds-myanmars-military-killed-thousands-of-rohingya-and-subjected-them-to-extreme-violence.html
+- Afvist `EE-FI`: Ukraines droneangreb på russiske skibe ud for Libyen og i Den Finske Bugt. Læst: Arab News (Reuters) https://www.arabnews.com/middle-east/ukraine-sinks-russian-warship-in-libya-as-conflict-spreads-beyond-europe-3013640 ; Fox News https://www.foxnews.com/world/zelenskyy-hails-exemplary-ukrainian-operation-sinking-russian-warship-libya er afgjort på overskriften.
+- Afvist `GB-IN`: indbrud på et kongeligt landsted i England og en danseforestilling. Læst: NBC News https://www.nbcnews.com/world/united-kingdom/prince-william-princess-kate-home-break-in-sandringham-arrests-police-rcna611060 og Arab News https://www.arabnews.com/world/2-men-arrested-over-suspected-burglary-at-prince-william-and-kates-country-home-in-eastern-england-3013862
+- Afvist `DK-US`: det russiske plot mod en ukrainsk-amerikansk rapper i Danmark og sikkerhedsaftalen om Grønland. Læst: CBS News (AFP) https://www.cbsnews.com/news/denmark-accuses-russia-assassination-plot-against-us-ukrainian-citizen/ og The Independent https://www.independent.co.uk/news/world/europe/kyivstoner-russia-assassination-attempt-us-rapper-ukraine-b3088943.html
+- Afvist `FI-UA`: det formodede ukrainske droneangreb på fragtskibet Sparta II, der drev ind i finsk farvand. Læst: BBC https://www.bbc.co.uk/news/articles/cj752ddve27ko og Arab News (Reuters) https://www.arabnews.com/world/russian-cargo-ship-under-tow-after-being-hit-by-drones-arrives-in-st-petersburg-3013787 . France 24 afviste maskinel hentning.
+- Afvist `LT-RU`: luftalarm i Kaliningrad og russiske påstande om droner fra Litauens retning, som Litauen afviser. Læst: The New Zealand Herald https://www.nzherald.co.nz/world/nato-calls-urgent-meeting-as-russia-tensions-escalate/TJOT7RZCXREU5PYQ3B3KCABYSE/ og The Hindu https://www.thehindu.com/news/international/a-russian-attack-destroyed-an-apartment-building-in-dymer-near-kyiv-killing-two-as-kaliningrad-sounded-a-rare-air-alert/article71731042.ece
+- Afvist `RU>EE` (militær støtte): ukrainske angreb på russiske skibe og estiske skibe, der hjalp med at slukke en brand; ingen levering af militært udstyr. Læst: Arab News (Reuters) ovenfor og CNA https://www.channelnewsasia.com/world/russia-starts-towing-ship-hit-drones-in-baltic-finland-says-6573286 (afgjort på overskriften).
+- Intet godkendt. Det var de otte par med status afventer.
+
+**Usikkert**
+- WHO DON 629 om A(H5N1) i USA er ikke offentliggjort på læserens side endnu og er lagt til næste kørsel.
+- Sri Lankas forside svarede ikke ved direkte opslag, og DGHS' denguedashboard gav 502.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 1a80efd, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 23. november 2026
 
 ### Kl. 05.20, bred gennemgang
