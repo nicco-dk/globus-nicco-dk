@@ -2,6 +2,37 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 25. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (DON 629 om fugleinfluenza A(H5N1) i USA, offentliggjort 24. november kl. 19 UTC, læserens side svarer, se Ændret; ellers ingen ny DON), DGHS' mæslinger (ingen meddelelse nyere end 24. november, som er brugt), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1071 (allerede brugt), ECDC's Public health events (intet efter 23. november, som er brugt), UKHSA (24. november kun hedebølger og blodbårne virus; ugeoversigten 19. november er brugt), NaTHNaC (24. november ebola i DR Congo og polio i Syrien, se Usikkert), CIDRAP (tredje mæslingedødsfald i Wisconsin, se Ændret) og Hongkong (24. november en klynge af influenza A på et hospital og et datalæk, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden DGHS' dengue gengivet af The Daily Star (se Ændret), Wisconsins sundhedsministerium (se Ændret), ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 16. november, ældre end WHO DON 630), insp.cd's medieliste over situationsrapporter om ebola (nyeste fortsat nummer 168 pr. 29. oktober), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet om udbrud), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste) og https://globus.nicco.dk/konflikter.json (genereret 25. november kl. 05.23 dansk tid). Statens Serum Instituts liste, DK-VET's nyheder og Sri Lankas forside kunne ikke læses, se Usikkert. RIVM og Robert Koch Instituts Epidemiologisches Bulletin er ikke læst i denne kørsel.
+
+**Ændret**
+- `h5n1-wa`: WHO DON 629 https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON629 (læst i WHO's dataudtræk i rå tekst): de tre tilfælde i Washington, meldt til WHO 16. oktober og 4. november. Dødsfaldet er det første i verden efter udsættelse for smittet malkekvæg. Sekventering bekræfter A(H5N1) hos alle tre, virus ligner virus fra malkekvæg i delstaten meget, og der er ingen tegn på smitte mellem mennesker. USA har meldt 75 humane tilfælde af A(H5) siden 2024 pr. 20. november. WHO vurderer risikoen som lav for befolkningen og lav til moderat for personer udsat gennem arbejdet. Nyt punkt, `extra` og `src` opdateret. Sætningen i `gap` om, at det tredje tilfælde kun var bekræftet som A(H5), er fjernet, fordi DON'en bekræfter H5N1. `cases` er uændret.
+- `maesling-us`: Wisconsins sundhedsministerium https://www.dhs.wisconsin.gov/news/releases/112426.htm (rå tekst, 24. november): det tredje dødsfald knyttet til udbruddet i 2026, en voksen beboer i Lafayette County. 918 tilfælde og 19 indlagte i 24 counties siden august, 88 nye siden 20. november, og 920 tilfælde, 20 indlagte og 3 dødsfald i hele 2026. Fundet gennem CIDRAP. Nyt punkt, `extra` og `src` opdateret. `cases` og talserien er uændrede (US CDC pr. 19. november).
+- `dengue-bd`: 175.985 tilfælde og 524 dødsfald i 2026 efter 4 nye dødsfald (3 i Dhaka- og 1 i Mymensingh-divisionen) og 1.145 nye indlagte på et døgn til kl. 8 24. november. 4.861 er fortsat indlagt, og 170.600 er udskrevet i 2026. DGHS gengivet af The Daily Star (efter UNB) https://www.thedailystar.net/news/healthcare/disease/news/four-die-dengue-1145-hospitalised-24-hours-4332301 (læst i sidens rå tekst). 174.840 plus 1.145 giver 175.985, og 520 plus 4 giver 524. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 56 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt), afgjort på de samlede kilder ovenfor: `dengue-fl` (11) uden ny ugerapport (kommer torsdag), `hanta-ar` (13), `mpox` (14) og `mpox-mo` (15) uden nyt fra ECDC, WHO eller US CDC, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (19) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (20) uden nyt fra PAHO, `kolera-ye` (21) uden nyt fra WHO EMRO, `shamonda-fr` (23) uden ny DON, `maesling-bg` (24) uden ny månedsopdatering fra ECDC, `difteri-ma` (26) og `mpox-pk` (27) uden nyere tal, `h5n1-us` (28) uden ny dateret opgørelse fra USDA APHIS. `difteri-ng` (62) og `difteri-afro` (40) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist igen efter udløb `KP-KR`: russiske militærfly i Sydkoreas luftforsvarszone ved Ulleung, hvor en første melding om et nordkoreansk fly blev rettet, Sydkoreas nye sikkerhedsteam og eftersøgningen af et fly bombet af Nordkorea i 1987. Læst i sidens rå tekst: Al Jazeera (efter AP og Reuters) https://www.aljazeera.com/news/2026/11/24/why-s-korea-issued-air-raid-alert-after-russian-jets-flew-near-its-airspace og The Korea Times https://www.koreatimes.co.kr/southkorea/politics/20261124/lees-new-security-team-faces-strains-with-us-tensions-with-north-korea ; NK News https://www.nknews.org/2026/11/seoul-dispatches-team-to-myanmar-to-search-for-plane-bombed-by-north-korea/ er afgjort på overskriften. Den gamle linje fra 13. oktober er erstattet med den nye dato og grund.
+- Intet godkendt. Det var det eneste par med status afventer.
+
+**Usikkert**
+- `ebola-drc`: NaTHNaC https://travelhealthpro.org.uk/rss-outbreaks.php skriver 24. november 11.821 bekræftede tilfælde og 5.810 dødsfald i DR Congo pr. 21. november, uden at nævne den oprindelige kilde. Hverken WHO, ECDC eller insp.cd har tallet endnu. Tallet er ikke skrevet. WHO DON 630 pr. 17. november står.
+- Statens Serum Instituts liste over sygdomsudbrud, DK-VET's nyheder og Sri Lankas forside gav ingen tekst ved direkte opslag, og hentningsværktøjet var ikke tilgængeligt i kørslen (forespørgslen blev ikke godkendt). Ingen af de to veje førte til siderne. DGHS' denguedashboard gav 502.
+- `h5n1-us` når 30 dage uden nyt punkt 27. november. Næste kørsler skal søge efter nyt fra USDA APHIS og ellers sætte `live` til `false`.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 4cd5d3a, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: SSI, DK-VET og Sri Lankas forside kunne ikke hentes ad nogen af de to veje i denne kørsel.
+
 ## 24. november 2026
 
 ### Kl. 05.20, bred gennemgang

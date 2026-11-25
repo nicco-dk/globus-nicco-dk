@@ -44,6 +44,8 @@ Ingen åbne punkter.
 
 - Udrulningen (23. november, kl. 17.20): repoet er tilgængeligt for kørslen som mikkelnicco/globus-nicco-dk, men GitHubs API svarer for det navn kun med en henvisning til repoets nummer, som kørslens adgang ikke tillader, og nicco-dk/globus-nicco-dk er ikke givet til kørslen. Kørslen kan derfor skubbe til main, men ikke læse Actions-kørslerne, og følger i stedet udrulningen ved at se, om DATA_TID er ændret på https://globus.nicco.dk. Afgør: giv den planlagte opgave adgang til nicco-dk/globus-nicco-dk, så trin 10 kan gennemføres som beskrevet.
 
+- Kildehentning (25. november, kl. 05.20): Statens Serum Instituts liste https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud, DK-VET's nyheder https://dkvet.dk/nyheder og Sri Lankas forside https://www.dengue.health.gov.lk gav ingen tekst ved direkte opslag med curl, og hentningsværktøjet var ikke tilgængeligt for den planlagte kørsel, fordi forespørgslen om tilladelse ikke blev besvaret. Kravet om to veje i Sådan hentes kilderne kunne derfor ikke opfyldes for de tre sider. Afgør: giv den planlagte opgave adgang til hentningsværktøjet uden godkendelse, eller anvis en anden vej til siderne.
+
 
 ## Datacentre
 
