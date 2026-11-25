@@ -38,6 +38,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 - `polio-sy` (24. november, kl. 05.20): WHO DON 628 https://www.who.int/emergencies/disease-outbreak-news/item/2026-DON628 dokumenterer smitte fra person til person, og kørslen har flyttet trinnet til `smitte`. DON'en skriver, at international spredning af polio fortsat er en international sundhedskrise (PHEIC siden 5. maj 2014), og at de midlertidige anbefalinger gælder Syrien. `polio` har `alvor` 4 af den grund, `polio-sy` har intet `alvor`. Kørslen har ikke sat feltet. Afgør: `alvor` 4 på `polio-sy`, eller ingen ændring.
 
+- `mpox` (25. november, kl. 17.20): PAHO's alarm 24. november https://www.paho.org/sites/default/files/2026/11/24-nov-2026-epi-alert-mpox.pdf skriver, at Brasilien har 43 klade Ib-tilfælde i Rio de Janeiro, og at epidemiologien ser ud til at skifte fra rejserelaterede tilfælde til samfundssmitte. Colombia (23 tilfælde) og Canada (34 klade I) har tegn på samfundssmitte. Kørslen har skrevet det som et punkt i `mpox` og ikke oprettet en hændelse, fordi PAHO kalder smitten tilsyneladende og under undersøgelse. Afgør: egen hændelse `mpox-br` (og evt. Colombia), eller ingen ændring.
+
 ## Repoet og driften
 
 Ingen åbne punkter.

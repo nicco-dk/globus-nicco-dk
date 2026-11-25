@@ -33,6 +33,39 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: SSI, DK-VET og Sri Lankas forside kunne ikke hentes ad nogen af de to veje i denne kørsel.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 er brugt), DGHS' mæslinger (en ny meddelelse https://dghs.gov.bd/pages/press-releases/6b06b6c134f2d6299b6ad91e, se Usikkert), ECDC's Public health events (kolera 24. november, se Ændret; fugleinfluenza hos mennesker 24. november og Salmonella Strathcona 25. november er Europa og globalt og ligger til kørslen kl. 05.20), UKHSA (kun rutinerapporter), NaTHNaC (intet efter 24. november, som er set), CIDRAP (intet nyt ud over det, kørslen kl. 05.20 brugte) og Hongkong (intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (to nye alarmer 24. november om mpox og A(H5N1), se Ændret), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (opdateret 20. november med tallene pr. 19. november, som er brugt), US CDC's side om mpox https://www.cdc.gov/monkeypox/situation-summary/index.html (se Ændret), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), Africa CDC's nyheder (intet nyt med tal fundet), ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 16. november, ældre end WHO DON 630), insp.cd's medieliste over situationsrapporter om ebola (nyeste fortsat nummer 168 pr. 29. oktober) og https://globus.nicco.dk/konflikter.json (genereret 25. november kl. 16.23 dansk tid). US CDC's sider er læst med hentningsværktøjet, som virkede i denne kørsel, efter 403 ved direkte opslag.
+
+**Ændret**
+- `kolera`: ECDC's månedsopdatering https://www.ecdc.europa.eu/en/public-health-events/2006-eip-00031/2026-11-24 (rå tekst): 319.272 tilfælde og 2.953 dødsfald globalt i 2026 pr. 24. november, 10.973 nye tilfælde og 468 nye dødsfald siden 24. oktober, flest i DR Congo, Nigeria, Tchad, Zambia og Somalia, og et tilfælde i Sydkorea uden udlandsrejse. DR Congo 58.319 tilfælde og 1.718 dødsfald og Nigeria 72.375 og 487 pr. 25. oktober. Nyt punkt, `cases`, `extra` og `src` opdateret. Sætningen i `extra` om, at WHO havde flere dødsfald i Afrika end ECDC globalt, og at Nigeria ikke havde indberettet, er fjernet, fordi den ikke længere passer.
+- `h5n1-us`: PAHO's alarm om A(H5N1) https://www.paho.org/sites/default/files/2026/11/2026-11-24-phe-epidemiological-alert-avian-influenza-ah5-final.pdf (PDF læst som tekst): USA har meldt 354 udbrud til WOAH fra 1. januar til 14. november 2026, heraf 278 i fjerkræ og andre tamfugle og 34 i tamme pattedyr. Nyt punkt og `src` opdateret. `cases` er uændret.
+- `h5n1-wa`: samme alarm: fire bekræftede humane tilfælde i USA i oktober og november, tre i Washington og ét i Oregon, dødsfaldet 1. november, klade 2.3.4.4b, genotype B3.13, og virus sandsynligvis kommet fra Idaho med kvæg ifølge USDA. 76 humane tilfælde af A(H5) i USA siden april 2022. Nyt punkt, `extra`, `gap` (dødsdatoen kendes nu) og `src` opdateret.
+- `mpox-mo`: US CDC https://www.cdc.gov/monkeypox/situation-summary/index.html, opdateret 23. november: over 250 laboratoriebekræftede klade I-tilfælde siden november 2024 i mindst 31 delstater og Puerto Rico, og de fleste nye tilfælde har ikke rejst uden for landet. Nyt punkt, `cases`, `gap` og `src` opdateret.
+- `mpox`: PAHO's alarm om mpox https://www.paho.org/sites/default/files/2026/11/24-nov-2026-epi-alert-mpox.pdf (PDF læst som tekst): 3.269 bekræftede tilfælde og 4 dødsfald i 13 lande i Amerika i 2026 til uge 43, over 380 klade Ib-tilfælde i 11 lande, tilsyneladende samfundssmitte med klade Ib i Brasilien (43 tilfælde i Rio de Janeiro) og tegn på samfundssmitte i Canada og Colombia. Nyt punkt og `src` opdateret.
+
+**Nye**
+- Ingen. Klade Ib i Brasilien er skrevet i `mpox` og lagt til ejeren, se Til gennemgang.
+
+**Urørt**
+- 54 hændelser uden nyt i kilderne. Rundturen er afgjort i kørslen kl. 05.20.
+- `difteri-ng` (62 dage) og `difteri-afro` (40 dage) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist igen efter udløb `IR-PK`: dommen i New York over en pakistansk mand for et plot støttet af Iran mod Trump, Irans angreb på Bahrain og Indiens forhold til Israel. Læst: BBC https://www.bbc.co.uk/news/articles/cm15ezz8n394o ; The Express Tribune https://tribune.com.pk/story/2640962/us-judge-hands-pakistani-27-year-sentence-in-trump-assassination-plot er afgjort på overskriften. Den gamle linje fra 26. oktober er erstattet med den nye dato og grund.
+- Afvist `BH-KW`: Irans missil- og droneangreb på både Bahrain og Kuwait; landene er ikke parter mod hinanden. Læst: The Jerusalem Post http://www.jpost.com/middle-east/iran-news/article-915324 (overskrift og artikeldata) og Al Jazeera https://www.aljazeera.com/news/liveblog/2026/11/18/iran-war-live-kuwait-says-intercepting-hostile-drone-attacks (overskrift og indledning); The New York Times og The Wall Street Journal har samme indhold i overskriften.
+- Intet godkendt. Det var de to par med status afventer.
+
+**Usikkert**
+- `maesling-bd`: DGHS' nye meddelelse 6b06b6c134f2d6299b6ad91e har overskriften med datoen 24. november og nøjagtig de samme tal som meddelelsen 24. november, der er brugt (1.283 nye mistænkte, 68 nye bekræftede, 9 dødsfald). Den er ikke skrevet som et nyt døgn. Dagens tal for 25. november var ikke ude ved kørslen.
+- `ebola-drc`: NaTHNaC's tal pr. 21. november (11.821 bekræftede og 5.810 dødsfald) er fortsat ikke fundet hos WHO, ECDC eller insp.cd og er ikke skrevet.
+- `mpox-mo`: PAHO skriver efter US CDC over 200 klade I-tilfælde og formodet indenlandsk smitte i mindst 16 jurisdiktioner. US CDC's egen side har nu over 250 og nævner ikke antallet af jurisdiktioner. Siden bruger US CDC.
+- Kontrollens advarsel om tal i `cases` uden opgørelsesdato gav ingen hændelser i denne kørsel.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 0b4a64f, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `mpox`: skal samfundssmitte med klade Ib i Brasilien have sin egen hændelse?
+
 ## 24. november 2026
 
 ### Kl. 05.20, bred gennemgang
