@@ -2,6 +2,37 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 26. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 er brugt), DGHS' mæslinger (meddelelsen 6b06b6c134f2d6299b6ad91e med tallene for 24. november, allerede vurderet kl. 17.20 i går), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1071 (allerede brugt; næste udgave ventes fredag), ECDC's Public health events (Salmonella Strathcona 25. november, se Ændret; A(H5N1) globalt og A(H9N2) 24. november gælder tilfældene i Guangxi og Henan, som allerede står i `h5n1-gx` og `h9n2-cn` efter WHO WPRO nummer 1071), UKHSA (kun rutineudgivelser; ugeoversigten for denne uge var ikke ude ved kørslen), NaTHNaC (25. november zika i Brasilien, Argentina og Bolivia, mæslinger i USA og kolera i Zambia; intet skrevet, fordi den oprindelige kilde ikke er nævnt), CIDRAP (fugleinfluenza i USA, se Ændret; skruelarve hos kvæg og svin i Texas, kun dyr) og Hongkong (25. november kun RSV, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden ECDC's Salmonella-side https://www.ecdc.europa.eu/en/public-health-events/2023-fwd-00090/2026-11-25 (rå tekst), DGHS' dengue gengivet af The Business Standard (se Ændret), Floridas ugerapport uge 46 https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w46-2026.pdf (se Ændret), ECDC's ebolaside https://www.ecdc.europa.eu/en/ebola-outbreak-democratic-republic-congo-and-uganda (fortsat tallene pr. 16. november, ældre end WHO DON 630), insp.cd's medieliste over situationsrapporter om ebola (nyeste fortsat nummer 168 pr. 29. oktober), Statens Serum Instituts liste over sygdomsudbrud https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt; nyheden om rævens dværgbændelorm er fra 7. oktober), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet om udbrud), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 24. november, som er brugt) og https://globus.nicco.dk/konflikter.json (genereret 26. november kl. 04.23 dansk tid). Robert Koch Instituts Epidemiologisches Bulletin er ikke læst i denne kørsel.
+
+**Ændret**
+- `salmonella-eu`: ECDC https://www.ecdc.europa.eu/en/public-health-events/2023-fwd-00090/2026-11-25 (rå tekst): udbruddet med Salmonella Strathcona ST2559 er fortsat i gang med 270 laboratoriebekræftede tilfælde i 2026 i 14 lande i EU og EØS og 58 i Canada og USA pr. 20. november, ingen dødsfald. Toppen var i august. Desuden 90 tilfælde af monofasisk S. Typhimurium ST34 og 64 af S. Goldcoast fra ti lande, knyttet til små tomater eller rejse til Italien. `live` sat til `true` igen, fordi ECDC kalder udbruddet igangværende. Nyt punkt, `place`, `cases`, `extra`, fire nye steder (Belgien, Tjekkiet, Finland og Spanien, ved hovedstaden som de øvrige lande) og `src` opdateret.
+- `dengue-bd`: 177.137 tilfælde og 526 dødsfald i 2026 efter 2 nye dødsfald (1 i Dhaka- og 1 i Mymensingh-divisionen) og 1.152 nye indlagte på et døgn til kl. 8 25. november. 4.861 er fortsat indlagt, og 171.750 er udskrevet i 2026. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/dengue-death-toll-526-2-more-die-1613641 (læst i sidens rå tekst). 175.985 plus 1.152 giver 177.137, og 524 plus 2 giver 526. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+- `dengue-fl`: Floridas sundhedsmyndighed, ugerapport uge 46 (15. til 21. november) https://www.floridahealth.gov/wp-content/uploads/2026/11/fl-arbovirus-report-w46-2026.pdf (læst som tekst og som billede af siden): 669 lokalt erhvervede tilfælde i 12 counties, 18 nye på en uge, Hillsborough 494 og Pinellas 126, tre med sygdomsdebut i november. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `h5n1-us`: USDA APHIS gengivet af CIDRAP 25. november https://www.cidrap.umn.edu/avian-influenza-bird-flu/uptick-h5n1-avian-flu-activity-continues-across-north-america : 32 fjerkræbesætninger (10 kommercielle og 22 baggårdsbesætninger) og 4,02 millioner fugle på 30 dage, og 26 fund i malkekvægsbesætninger på 30 dage, heraf 17 i Washington. Nyt punkt, `cases` og `src` opdateret, mærket `, sekundær`. Talserien er uændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt), afgjort på de samlede kilder ovenfor og egne søgninger: `dengue-asien` (10) uden nyt fra National Dengue Control Unit, som ikke kunne læses (se Usikkert), `hanta-ar` (14) uden ny bulletin fundet, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (20) uden ny DON eller ugebulletin fra WHO AFRO, `chik-am` (21) uden nyt fra PAHO, `kolera-ye` (22) uden nyt fra WHO EMRO, `shamonda-fr` (24) uden ny DON, `maesling-bg` (25) uden ny månedsopdatering fra ECDC, `difteri-ma` (27) uden nyere tal end 30. oktober, `mpox-pk` (28) uden læst nyere tal (se Usikkert). `difteri-ng` (63) og `difteri-afro` (41) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (8 bekræftede og 86 mistanker). Intet godkendt eller afvist.
+
+**Usikkert**
+- Sri Lankas forside https://www.dengue.health.gov.lk svarede hverken ved direkte opslag eller gennem hentningsværktøjet (forespørgslen om tilladelse blev ikke besvaret). Det samme gjaldt Dawns artikel om et nyt mpoxtilfælde i Karachi https://www.dawn.com/news/2007663, så `mpox-pk` er ikke ændret. DGHS' denguedashboard gav 502.
+- `mpox-pk` og `difteri-ma` når 30 dage uden nyt punkt 28. og 29. november. Næste kørsler skal søge efter nyt og ellers sætte `live` til `false`.
+- `ebola-drc`: NaTHNaC's tal pr. 21. november (11.821 bekræftede og 5.810 dødsfald) er fortsat ikke fundet hos WHO, ECDC eller insp.cd og er ikke skrevet.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit b1044bf, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 25. november 2026
 
 ### Kl. 05.20, bred gennemgang
