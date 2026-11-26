@@ -33,6 +33,37 @@
 **Til gennemgang**
 - Intet nyt.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 er brugt), DGHS' mæslinger (ny meddelelse 26. november, se Ændret), ECDC's Public health events (ebola 26. november, se Usikkert; chikungunya globalt 26. november, se Ændret), UKHSA (ugeoversigten for uge 47, opdateret 26. november, se nedenfor), NaTHNaC (intet efter 25. november, som er set), CIDRAP (intet nyt ud over det, kørslen kl. 05.20 brugte) og Hongkong (25. november kun RSV). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden UKHSA's ugeoversigt uge 47 https://www.gov.uk/government/publications/outbreaks-under-monitoring-in-2026/outbreaks-under-monitoring-week-47-week-ending-22-november-2026 (ebola i DR Congo med henvisning til INSP's situationsrapport 190, A(H5) i Oregon, kolera i Sydkorea, CCHF i Afghanistan og lungepest på Madagaskar), insp.cd's liste over situationsrapporter (nyeste nummer 194 pr. 24. november, se Ændret og Til gennemgang), ECDC's chikungunyaside https://www.ecdc.europa.eu/en/public-health-events/2025-eip-00043/2026-11-26 (rå tekst), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (opdateret 25. november, læst to gange uafhængigt med hentningsværktøjet efter 403 ved direkte opslag), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 24. november, som er brugt), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), Africa CDC's nyheder https://africacdc.org/news/ (intet nyt med tal) og https://globus.nicco.dk/konflikter.json (genereret 26. november kl. 16.24 dansk tid).
+
+**Ændret**
+- `ebola-drc`: INSP's situationsrapport 194 https://insp.cd/wp-content/uploads/2026/11/SitRep_N194_24-11-2026_corrige_VF.pdf (læst som tekst og som billede af første side): 12.021 bekræftede tilfælde og 5.904 bekræftede dødsfald pr. 24. november, 66 nye tilfælde og 37 dødsfald det seneste døgn, 1.092 i isolation, 3.332 raske og 69 af 178 sundhedszoner ramt. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret. `cases` bruger nu INSP, som er nyere end WHO DON 630 pr. 17. november.
+- `maesling-bd`: DGHS' meddelelse 26. november https://dghs.gov.bd/pages/press-releases/6b0806f005b08a52990f0307 (PDF læst som tekst og som billede): 261.535 mistænkte og 26.476 bekræftede tilfælde, 1.265 dødsfald blandt mistænkte og 106 blandt bekræftede pr. 26. november, døgnet til kl. 8 26. november 1.007 nye mistænkte, 102 nye bekræftede, 7 dødsfald blandt mistænkte og 1 blandt bekræftede. Nyt punkt, nyt punkt i talserien (dødstallet 1.371 er de to rækker lagt sammen efter undtagelsen i reglerne), `cases`, `extra` og `src` opdateret.
+- `maesling-us`: US CDC, opdateret 25. november på grund af helligdagen: 6.039 bekræftede tilfælde i 2026 pr. 24. november, heraf 6.021 meldt af 47 jurisdiktioner, 43 udbrud, 97 procent udbrudsrelaterede (5.829 af 6.039) og 9 dødsfald i tabellen. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret.
+- `chik-am`: ECDC's månedsopdatering https://www.ecdc.europa.eu/en/public-health-events/2025-eip-00043/2026-11-26 (rå tekst): 281.748 tilfælde og 116 dødsfald uden for EU og EØS i 2026 pr. 31. oktober, heraf 225.986 og 116 i Amerika, 10.525 tilfælde og 3 dødsfald i oktober. Nyt punkt, nyt punkt i talserien (samme ECDC-serie som før), `extra` og `src` opdateret. `cases` (PAHO, kun Amerika) er uændret.
+
+**Nye**
+- Ingen. Lungepest på Madagaskar (UKHSA uge 47, efter et medie) er ikke taget med, fordi Madagaskar har pest hvert år i sæsonen, og ingen myndighed kalder den usædvanlig.
+
+**Urørt**
+- 55 hændelser uden nyt i kilderne. Rundturen er afgjort i kørslen kl. 05.20.
+- `difteri-ng` (63 dage) og `difteri-afro` (41 dage) står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (8 bekræftede og 100 mistanker). Intet godkendt eller afvist.
+
+**Usikkert**
+- ECDC's ebolaopdatering 26. november https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-26 svarede med "The server is temporarily unavailable" ved to direkte opslag, og hentningsværktøjet blev ikke prøvet på den. INSP's egen rapport er brugt i stedet.
+- `ebola-drc`: NaTHNaC's tal pr. 21. november (11.821 og 5.810) stammer sandsynligvis fra INSP's situationsrapport 191, som ikke er læst. Ikke skrevet.
+- `maesling-bd`: DGHS' meddelelse med overskriften 25. november gentog tallene for 24. november, så døgnet til 25. november er ikke meldt for sig. Det er skrevet i `extra` og i punktet.
+- `maesling-us`: US CDC's side siger både "As of November 24" og data "as of 12:00PM on Thursday". Siden bruger 24. november, som står i sætningen med tallet. Næste opdatering ventes 4. december.
+- `chik-am`: ECDC skriver nu 20.457 tilfælde i september, mod 20.456 i opdateringen 5. november, og Brasilien med 143.767 tilfælde i 2026 i afsnittet om Amerika, men 135.878 til uge 38 i landeafsnittet. Gamle punkter er ikke rettet.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit c2fa5f0, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: adressen til insp.cd's situationsrapporter i OPDATERING.md finder ikke de nye filnavne.
+
 ## 25. november 2026
 
 ### Kl. 05.20, bred gennemgang

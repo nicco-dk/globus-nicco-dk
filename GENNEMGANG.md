@@ -49,6 +49,8 @@ Ingen åbne punkter.
 - Kildehentning (25. november, kl. 05.20): Statens Serum Instituts liste https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud, DK-VET's nyheder https://dkvet.dk/nyheder og Sri Lankas forside https://www.dengue.health.gov.lk gav ingen tekst ved direkte opslag med curl, og hentningsværktøjet var ikke tilgængeligt for den planlagte kørsel, fordi forespørgslen om tilladelse ikke blev besvaret. Kravet om to veje i Sådan hentes kilderne kunne derfor ikke opfyldes for de tre sider. Afgør: giv den planlagte opgave adgang til hentningsværktøjet uden godkendelse, eller anvis en anden vej til siderne.
 
 
+- Kildehentning (26. november, kl. 17.20): insp.cd's situationsrapporter om ebola hedder nu fx `SitRep_N194_24-11-2026_corrige_VF.pdf`. Opslaget i Sådan hentes kilderne (`https://insp.cd/wp-json/wp/v2/media?search=SitRep_MVEBDB&per_page=5`) finder derfor kun de gamle filer op til nummer 168, og kørslerne har siden skrevet, at nummer 168 pr. 29. oktober var nyeste. Søgningen `https://insp.cd/wp-json/wp/v2/media?search=SitRep&per_page=8&_fields=date,source_url` fandt nummer 188 til 194. Afgør: ret adressen i OPDATERING.md.
+
 ## Datacentre
 
 Ingen åbne punkter.
