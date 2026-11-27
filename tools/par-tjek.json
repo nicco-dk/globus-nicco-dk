@@ -146,6 +146,7 @@
     "LT-RU": {"dato": "2026-11-24", "grund": "Artiklerne handler om luftalarm i Kaliningrad og russiske påstande om droner fra Litauens retning, som Litauen afviser; ingen rapporterede kampe mellem landenes styrker (The New Zealand Herald, The Hindu)."},
     "RU>EE": {"dato": "2026-11-24", "grund": "Artiklerne handler om ukrainske angreb på russiske skibe og om, at estiske skibe hjalp med at slukke branden på et russisk fragtskib; ingen levering af våben, tropper eller militært udstyr fra Rusland til Estland (Arab News efter Reuters, CNA)."},
     "BH-KW": {"dato": "2026-11-25", "grund": "Artiklerne handler om Irans missil- og droneangreb på både Bahrain og Kuwait og om amerikanske sikkerhedsvarsler; Bahrain og Kuwait er ikke parter i kampe mod hinanden (The Jerusalem Post, Al Jazeera)."},
-    "KW-US": {"dato": "2026-11-27", "grund": "Artiklerne handler om iranske droneangreb på Kuwait, hvor to italienere blev dræbt, og om Pentagons undersøgelse af et iransk droneangreb på amerikanske soldater i havnen Shuaiba; Kuwait og USA er ikke parter i kampe mod hinanden (The New York Times, Financial Times)."}
+    "KW-US": {"dato": "2026-11-27", "grund": "Artiklerne handler om iranske droneangreb på Kuwait, hvor to italienere blev dræbt, og om Pentagons undersøgelse af et iransk droneangreb på amerikanske soldater i havnen Shuaiba; Kuwait og USA er ikke parter i kampe mod hinanden (The New York Times, Financial Times)."},
+    "DK-UA": {"dato": "2026-11-27", "grund": "Artiklerne handler om, at Danmark anklager Rusland for et planlagt mord på en ukrainsk-amerikansk rapper på dansk jord, og om Ruslands krig i Europa; Danmark og Ukraine er ikke parter i kampe mod hinanden (NBC News, CBS News)."}
   }
 }

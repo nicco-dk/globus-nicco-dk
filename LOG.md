@@ -35,6 +35,35 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: lassafeber i Nigeria, skal den med.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 og 630 er brugt), DGHS' mæslinger (ingen meddelelse nyere end 26. november ved to opslag kl. 17.21 og 17.24), ECDC's Public health events (intet efter 26. november, som er brugt), UKHSA (27. november kun rutineudgivelser), NaTHNaC (27. november difteri i Senegal, se Ændret), CIDRAP (intet nyt ud over det, de forrige kørsler brugte; artiklen om nye mæslingedødsfald i Virginia og Pennsylvania gælder dødsfald, der allerede står i `maesling-us`) og Hongkong (27. november myggebårne sygdomme, kun importerede tilfælde, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden insp.cd's liste over situationsrapporter https://insp.cd/wp-json/wp/v2/media?search=SitRep&per_page=5&_fields=date,source_url (nyeste nummer 195 pr. 25. november, se Ændret), Pennsylvanias sundhedsmyndighed (se Ændret), Senegals sundhedsministerium gengivet af Wakat Séra og SenTV (se Ændret), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 24. november, som er brugt), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), Africa CDC's nyheder https://africacdc.org/news/ (siden gav ingen læsbar liste ved direkte opslag) og https://globus.nicco.dk/konflikter.json (genereret 27. november kl. 16.23 dansk tid).
+
+**Ændret**
+- `ebola-drc`: INSP's situationsrapport 195 https://insp.cd/wp-content/uploads/2026/11/SitRep_N195_25-11-2026_corrige_VF.pdf (læst som tekst og som billede af første side): 12.089 bekræftede tilfælde og 5.943 bekræftede dødsfald pr. 25. november, 68 nye tilfælde og 39 dødsfald det seneste døgn, 1.248 i isolation, 3.349 raske og fortsat 69 af 178 sundhedszoner ramt. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret (rapport 194 står fortsat som kilde på sit eget punkt).
+- `maesling-us`: Pennsylvanias sundhedsmyndighed 25. november https://www.pa.gov/agencies/health/newsroom/pa-department-of-health-provides-statewide-update-on-measles-out19 (rå tekst): 1.679 tilfælde i 46 counties, 340 indlagte og fortsat 9 bekræftede mæslingeassocierede dødsfald i 2026, 41 nye tilfælde siden 23. november. Nyt punkt, `extra` og `src` opdateret. `cases` og talserien er uændrede (US CDC pr. 24. november).
+- `difteri-afro`: Senegals sundhedsministerium opgør i sin bulletin 23. november 619 tilfælde og 18 dødsfald i 65 sundhedsdistrikter i 13 regioner pr. 22. november, flest i Kaolack (127), Dakar (95) og Thiès (74). Gengivet af Wakat Séra https://www.wakatsera.com/senegal-619-cas-de-diphterie-et-18-deces-recenses-dans-13-regions/ og SenTV https://www.sentv.info/diphterie-au-senegal-619-cas-recenses-et-18-deces-les-13-regions-desormais-touchees/ (begge læst i sidens rå tekst), mærket `, medie`, og af NaTHNaC https://travelhealthpro.org.uk/rss-outbreaks.php 27. november. Nyt punkt og `src` opdateret. `cases` (det regionale tal pr. 1. marts) er uændret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 57 hændelser uden nyt i kilderne. Rundturen er afgjort i kørslen kl. 05.20.
+- `difteri-ng` (64 dage) står åben efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddet igangværende.
+
+**Mediesporet**
+- Afvist `DK-UA`: artiklerne handler om, at Danmark anklager Rusland for at planlægge et mord på en ukrainsk-amerikansk rapper på dansk jord. Danmark og Ukraine er ikke parter i kampe mod hinanden. Afgjort på overskrift og indledning hos NBC News https://www.nbcnews.com/world/europe/denmark-accuses-russia-plotting-kill-ukrainian-american-rapper-soil-rcna610542 og overskriften hos CBS News https://www.cbsnews.com/news/denmark-accuses-russia-assassination-plot-against-us-ukrainian-citizen/
+- Intet godkendt. Det var det eneste par med status afventer (8 bekræftede og 97 mistanker).
+
+**Usikkert**
+- `difteri-afro`: Senegals sundhedsministeriums egen bulletin er ikke fundet. Wakat Séra og NaTHNaC kalder de 619 tilfælde bekræftede, SenTV skriver "recensés". Punktet skriver derfor kun tilfælde.
+- `maesling-bd`: DGHS havde ikke lagt dagens meddelelse ud ved kørslen. Tallene for 27. november tages af næste kørsel.
+- `mpox-pk` når 30 dage uden nyt punkt 28. november og `difteri-ma` 29. november. Kørslen kl. 05.20 i morgen skal søge igen og ellers sætte `live` til `false`.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 806ea67, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 26. november 2026
 
 ### Kl. 05.20, bred gennemgang
