@@ -2,6 +2,39 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 27. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 er brugt), DGHS' mæslinger (ingen meddelelse nyere end 26. november, som er brugt), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1071 (allerede brugt; næste udgave ventes i dag fredag), ECDC's Public health events (ebola 26. november, se nedenfor; chikungunya 26. november er brugt), UKHSA (ugeoversigten for uge 47 er brugt; ellers kun rutineudgivelser), NaTHNaC (26. november gul feber i Sydsudan, se Nye, og lassafeber i Nigeria, se Nye), CIDRAP (intet nyt ud over det, de forrige kørsler brugte) og Hongkong (intet om smitte). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden ECDC's ebolaopdatering https://www.ecdc.europa.eu/en/public-health-events/2026-eip-00026/2026-11-26 (rå tekst, svarede i denne kørsel: 12.021 bekræftede tilfælde og 5.904 dødsfald pr. 24. november, de samme tal som INSP's situationsrapport 194, som `ebola-drc` allerede bruger, og uændrede tal for Kenya, Nigeria og Uganda), DGHS' dengue gengivet af The Business Standard (se Ændret), Statens Serum Instituts liste over sygdomsudbrud https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud (fortsat redigeret 3. november), DK-VET's nyheder https://dkvet.dk/nyheder/ (intet nyt om mennesker; nyhederne om sæler med fugleinfluenza og tularæmi hos en hare gælder dyr, og sælerne står allerede i `h5n1-dk`), RIVM's nyheder https://www.rivm.nl/nieuws (kun rapporten NethMap om antibiotikaresistens), WHO EMRO's nyheder https://www.emro.who.int/media/news/ (intet om udbrud), Sydsudans meldinger gengivet af Radio Tamazuj og Sudans Post (se Nye) og https://globus.nicco.dk/konflikter.json (genereret 27. november kl. 04.23 dansk tid). Robert Koch Instituts Epidemiologisches Bulletin er ikke læst i denne kørsel.
+
+**Ændret**
+- `dengue-bd`: 178.140 tilfælde og 527 dødsfald i 2026 efter 1 nyt dødsfald i Dhaka-divisionen og 1.003 nye indlagte på et døgn til kl. 8 26. november. DGHS gengivet af The Business Standard https://www.tbsnews.net/bangladesh/health/dengue-death-toll-rises-527-one-more-dies-1614811 (læst i sidens rå tekst). 177.137 plus 1.003 giver 178.140, og 526 plus 1 giver 527. Nyt punkt, nyt punkt i talserien, `cases` og `src` opdateret.
+
+**Nye**
+- `gul-feber-ss`: gul feber i Morobo og Yei counties i Central Equatoria, Sydsudan. Sydsudans nationale folkesundhedsinstitut bekræftede 10. november ved RT-PCR et dødeligt tilfælde hos en 48-årig landmand fra Okaba i Gulumbi Payam, der havde rejst i Ariwara i DR Congo, gengivet af Radio Tamazuj https://www.radiotamazuj.org/en/news/article/fatal-yellow-fever-case-confirmed-in-morobo-county og Sudans Post https://www.sudanspost.com/south-sudan-confirms-yellow-fever-death-in-morobo-county/ (begge læst i sidens rå tekst). NaTHNaC https://travelhealthpro.org.uk/rss-outbreaks.php skriver 26. november, at 9 bekræftede tilfælde, heraf 6 dødsfald, er meldt fra Yei og Morobo i 2026 pr. 22. november. `cases` bruger NaTHNaC mærket `, sekundær`, og `gap` siger, at den oprindelige kilde ikke er fundet. Trin `udbrud`. Prikken står ved Morobo (3,6833 N, 30,7833 Ø), Yei er et sted i hændelsen (4,0950 N, 30,6786 Ø).
+- Ikke taget med: lassafeber i Nigeria (NaTHNaC 26. november: 1.226 bekræftede tilfælde og 278 dødsfald pr. 15. november, flere end i samme periode i 2025). Lassafeber er sæsonbetonet i Nigeria, og NCDC's egen vurdering er ikke læst. Se Til gennemgang.
+
+**Urørt**
+- 58 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `mpox-pk` (29) uden nyere tal end 29. oktober i søgninger efter Sindhs mpoxtal, `difteri-ma` (28) uden nyere tal end 30. oktober i søgninger efter Marokkos sundhedsministerium, `maesling-bg` (26) uden ny månedsopdatering fra ECDC, `shamonda-fr` (25) og `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (21) uden ny DON, `kolera-ye` (23) uden nyt fra WHO EMRO, `hanta-ar` (15) uden ny bulletin fundet, `dengue-asien` (11) uden nyt fra National Dengue Control Unit, som ikke kunne læses (se Usikkert), `maesling-am` og `chik-ch` (10) uden nyt fra PAHO eller WHO. WHO AFRO's ugebulletin er ikke læst igen i denne kørsel; ved kørslen kl. 17.20 i går var uge 41 fortsat nyeste. `difteri-ng` (64) og `difteri-afro` (42) står derfor fortsat åbne efter undtagelsen i reglen om `live`.
+
+**Mediesporet**
+- Afvist `KW-US`: artiklerne handler om iranske droneangreb på Kuwait, hvor to italienere blev dræbt, og om Pentagons undersøgelse af et iransk droneangreb på amerikanske soldater i havnen Shuaiba. Kuwait og USA er ikke parter i kampe mod hinanden. Afgjort på overskrifterne hos The New York Times https://www.nytimes.com/2026/11/26/world/middleeast/italians-killed-iran-drone-attack-kuwait.html og Financial Times https://www.ft.com/content/e5f3128d-5f8b-416c-90d1-2549175cb091 , støttet af CBS News https://www.cbsnews.com/news/pentagon-troops-killed-iran-port-shuaiba-kuwait-families/
+- Afvist igen efter udløb `FR-US`: artiklerne handler om en retssag mod Gérard Depardieu (The Irish Times https://www.irishtimes.com/world/europe/2026/11/26/french-actor-gerard-depardieu-to-face-trial-for-rape-court-rules/ ), et forlig om en fransk vingård (The Guardian https://www.theguardian.com/film/2026/nov/25/brad-pitt-angelina-jolie-settle-french-winery-lawsuit ), film og amerikansk indenrigspolitik. Den gamle linje fra 23. oktober er erstattet med den nye dato og grund.
+- Intet godkendt. Det var de eneste to par med status afventer (8 bekræftede og 92 mistanker).
+
+**Usikkert**
+- `dengue-bd`: The Business Standard skriver for fjerde døgn i træk, at 4.861 er indlagt nu. Tallet er ikke skrevet i punktet.
+- `gul-feber-ss`: NaTHNaC's tal pr. 22. november er ikke fundet hos Sydsudans sundhedsministerium, NPHI eller WHO AFRO. Sundhedsministeriets egen meddelelse 10. november er heller ikke fundet; det første tilfælde bygger på to medier, der gengiver den.
+- Sri Lankas forside https://www.dengue.health.gov.lk svarede hverken ved direkte opslag eller gennem hentningsværktøjet (forespørgslen om tilladelse blev ikke besvaret). DGHS' denguedashboard gav 502.
+- `mpox-pk` og `difteri-ma` når 30 dage uden nyt punkt 28. og 29. november. Kørslen kl. 17.20 eller i morgen skal søge igen og ellers sætte `live` til `false`.
+- `ebola-drc`: NaTHNaC's tal pr. 21. november (11.821 og 5.810) er fortsat ikke fundet hos WHO, ECDC eller insp.cd og er ikke skrevet. ECDC 26. november bruger INSP's tal pr. 24. november.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit d4ab815, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: lassafeber i Nigeria, skal den med.
+
 ## 26. november 2026
 
 ### Kl. 05.20, bred gennemgang

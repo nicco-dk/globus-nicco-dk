@@ -40,6 +40,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 - `mpox` (25. november, kl. 17.20): PAHO's alarm 24. november https://www.paho.org/sites/default/files/2026/11/24-nov-2026-epi-alert-mpox.pdf skriver, at Brasilien har 43 klade Ib-tilfælde i Rio de Janeiro, og at epidemiologien ser ud til at skifte fra rejserelaterede tilfælde til samfundssmitte. Colombia (23 tilfælde) og Canada (34 klade I) har tegn på samfundssmitte. Kørslen har skrevet det som et punkt i `mpox` og ikke oprettet en hændelse, fordi PAHO kalder smitten tilsyneladende og under undersøgelse. Afgør: egen hændelse `mpox-br` (og evt. Colombia), eller ingen ændring.
 
+- Lassafeber i Nigeria (27. november, kl. 05.20): NaTHNaC https://travelhealthpro.org.uk/rss-outbreaks.php skriver 26. november, at Nigeria har 1.226 bekræftede tilfælde, 9.264 mistænkte, 6 sandsynlige og 278 dødsfald i 26 delstater i 2026 pr. 15. november, flere end i samme periode i 2025. Lassafeber har sæson i Nigeria hvert år, og NCDC's egen situationsrapport er ikke læst. Kørslen har ikke oprettet en hændelse efter reglen om den almindelige sæson for kendte sygdomme. Afgør: skal lassafeber i Nigeria med, og i givet fald efter NCDC's situationsrapport.
+
 ## Repoet og driften
 
 Ingen åbne punkter.
