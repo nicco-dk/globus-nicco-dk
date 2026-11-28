@@ -2,6 +2,39 @@
 
 Én post pr. kørsel, nyeste øverst. Formatet står i `OPDATERING.md`.
 
+## 28. november 2026
+
+### Kl. 05.20, bred gennemgang
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 og 630 er brugt), DGHS' mæslinger (ingen meddelelse nyere end 26. november, som er brugt), WHO SEARO nummer 23 (allerede brugt), WHO WPRO nummer 1071 (allerede brugt; udgaven 27. november https://cdn.who.int/media/docs/default-source/wpro---documents/emergency/surveillance/avian-influenza/ai_20261127.pdf gav 404), ECDC's Public health events (intet efter 26. november, som er brugt), UKHSA (27. november kun rutineudgivelser; ugeoversigten for uge 47 er brugt), NaTHNaC (intet efter 27. november, som er brugt), CIDRAP (intet nyt ud over det, de forrige kørsler brugte) og Hongkong (27. november myggebårne sygdomme: 2 importerede denguetilfælde og 1 importeret chikungunyatilfælde på en uge, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden GPEI's Polio This Week pr. 25. november https://polioeradication.org/about-polio/polio-this-week/ (rå tekst, se Ændret), DGHS' dengue hos The Business Standard og The Daily Star (ingen tal nyere end 26. november, som er brugt), Statens Serum Instituts liste over sygdomsudbrud https://www.ssi.dk/sygdomme-beredskab-og-forskning/sygdomsudbrud (fortsat redigeret 3. november), RIVM's nyheder https://www.rivm.nl/nieuws (intet om udbrud), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 24. november, som er brugt), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), Hongkongs pressemeddelelser om mpox (seneste tilfælde 11. november, allerede brugt), Panamas malaria i medierne (intet nyere end 16. november) og https://globus.nicco.dk/konflikter.json (genereret 28. november kl. 04.23 dansk tid). DK-VET's nyheder https://dkvet.dk/nyheder/ og WHO EMRO's nyheder https://www.emro.who.int/media/news/ gav ingen læsbar liste ved direkte opslag. Robert Koch Instituts Epidemiologisches Bulletin er ikke læst i denne kørsel.
+
+**Ændret**
+- `polio`: GPEI's Polio This Week pr. 25. november https://polioeradication.org/about-polio/polio-this-week/ (rå tekst): ingen nye tilfælde af vild poliovirus, fortsat 9 i Pakistan i 2026, og to positive miljøprøver fra Khyber Pakhtunkhwa og Islamabad, indsamlet 20. oktober. Et nyt tilfælde af vaccineafledt type 1 i Lakes i Sydsudan med lammelsesdebut 23. oktober, i alt 20 i 2026, og tre nye af vaccineafledt type 2 i Jonglei, i alt 7. Somalia har fortsat 6 tilfælde af type 2. Vaccineafledt type 2 i miljøprøver fra Kisumu i Kenya (knyttet til en udbredelse fundet i Tanzania), Banadir i Somalia og Kampala i Uganda. Nyt punkt, `cases` (Pakistans dato) og `extra` opdateret.
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 59 hændelser uden nyt i kilderne.
+- Rundtur (dage siden seneste punkt): `wnv-eu`, `dengue-eu`, `chik-fr` og `cre-eu` (10) uden nyt fra ECDC efter ugerapporterne 20. november, som er brugt, `mpox-hk` (10) uden nyt tilfælde fra CHP, `malaria-pa` (10) uden nyere tal end 16. november, `maesling-am` og `chik-ch` (11) uden nyt fra PAHO eller WHO, `dengue-asien` (12) uden nyt fra National Dengue Control Unit, som ikke kunne læses (se Usikkert), `hanta-ar` (16) uden ny bulletin fundet, `gul-feber-gh`, `gul-feber-ci` og `gul-feber-bf` (22) uden ny DON eller ugebulletin fra WHO AFRO, `kolera-ye` (24) uden nyt fra WHO EMRO, `shamonda-fr` (26) uden ny DON, `maesling-bg` (27) uden ny månedsopdatering fra ECDC, `difteri-ma` (29) uden nyere tal end 30. oktober i søgninger efter Marokkos sundhedsministerium, `mpox-pk` (30) uden nyere tal fra Sindhs sundhedsministerium (se Usikkert). `difteri-ng` (65) og `difteri-afro` står åbne efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddene igangværende.
+
+**Mediesporet**
+- Afvist `IR-IT`: et droneangreb på kuwaitiske militæranlæg 26. november dræbte to italienske teknikere fra Rheinmetall. Italien og Kuwait giver Iran skylden, Iran afviser, ophavet er ikke uafhængigt bekræftet, og angrebet gjaldt ikke italienske styrker. Læst i sidens rå tekst: The Standard (efter AFP) https://www.standardmedia.co.ke/world/article/2001563147/two-italians-killed-in-drone-attack-in-kuwait og Naharnet https://mobile.naharnet.com/stories/en/324051-eu-chief-urges-pressure-on-iran-after-italians-killed-in-drone-strike
+- Afvist `IT-KW`: samme angreb. Italien og Kuwait er ikke parter i kampe mod hinanden. The Standard (efter AFP, som ovenfor) og overskriften hos France 24 https://www.france24.com/en/video/20261127-kuwait-two-italians-killed-in-drone-attack
+- Afvist `CD-UG`: diplomatisk strid efter den ugandiske hærchefs udtalelser og Ugandas tilbagetrækning fra Lubero. Ugandas styrker står i DR Congo for at støtte den congolesiske hær mod ADF, og ingen kampe mellem landenes styrker er rapporteret. Læst i sidens rå tekst: Arab News (efter AFP) https://www.arabnews.com/world/uganda-to-withdraw-troops-from-dr-congo-amid-diplomatic-spat-3014265 ; Africanews https://www.africanews.com/2026/11/27/uganda-to-withdraw-troops-from-eastern-dr-congo-town-amid-diplomatic-spat/ er afgjort på overskriften.
+- Intet godkendt. Det var de eneste tre par med status afventer (8 bekræftede og 87 mistanker).
+
+**Usikkert**
+- `mpox-pk`: Dawn skrev 31. oktober https://www.dawn.com/news/2041078/three-year-old-child-tests-positive-for-mpox-in-sindh , at et barn i Karachi testede positiv, og at provinsen har 115 tilfælde og 12 dødsfald i 2026, men uden at nævne, hvem tallene kommer fra. Ikke skrevet. Hændelsen har 30 dage uden nyt punkt i dag og når en måned 29. november. Næste kørsel skal søge igen og ellers sætte `live` til `false`. Se Til gennemgang.
+- `difteri-ma` når 30 dage uden nyt punkt 29. november. Næste kørsel skal søge igen og ellers sætte `live` til `false`.
+- `dengue-bd`: hverken The Business Standard eller The Daily Star havde DGHS' tal for 27. november ved kørslen. DGHS' denguedashboard gav 502.
+- Sri Lankas forside https://www.dengue.health.gov.lk svarede ikke ved direkte opslag og er ikke prøvet gennem hentningsværktøjet i denne kørsel.
+- Dawn afviser direkte opslag med 403, men kunne læses gennem hentningsværktøjet.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 2779f44, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Nyt i GENNEMGANG.md: `mpox-pk`, skal Dawns 115 tilfælde og 12 dødsfald pr. 31. oktober med, og skal hændelsen lukkes.
+
 ## 27. november 2026
 
 ### Kl. 05.20, bred gennemgang

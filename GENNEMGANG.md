@@ -42,6 +42,8 @@ Alle punkter fra 13. oktober er afgjort af ejeren i svararket samme aften og fje
 
 - Lassafeber i Nigeria (27. november, kl. 05.20): NaTHNaC https://travelhealthpro.org.uk/rss-outbreaks.php skriver 26. november, at Nigeria har 1.226 bekræftede tilfælde, 9.264 mistænkte, 6 sandsynlige og 278 dødsfald i 26 delstater i 2026 pr. 15. november, flere end i samme periode i 2025. Lassafeber har sæson i Nigeria hvert år, og NCDC's egen situationsrapport er ikke læst. Kørslen har ikke oprettet en hændelse efter reglen om den almindelige sæson for kendte sygdomme. Afgør: skal lassafeber i Nigeria med, og i givet fald efter NCDC's situationsrapport.
 
+- `mpox-pk` (28. november, kl. 05.20): Dawn skrev 31. oktober https://www.dawn.com/news/2041078/three-year-old-child-tests-positive-for-mpox-in-sindh , at et treårigt barn testede positiv i Karachi 30. oktober, og at Sindh har 115 tilfælde og 12 dødsfald i 2026, uden at nævne kilden til tallene. Hændelsen har 98 tilfælde og 12 dødsfald efter sundhedsministeriet gengivet af The Express Tribune pr. 29. oktober, og intet nyere er fundet. Kørslen har ikke skrevet tallet. Afgør: skal Dawns tal med som punkt mærket `, medie`, og skal `live` sættes til `false`, når en måned uden nyt er gået 29. november.
+
 ## Repoet og driften
 
 Ingen åbne punkter.
