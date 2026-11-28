@@ -35,6 +35,32 @@
 **Til gennemgang**
 - Nyt i GENNEMGANG.md: `mpox-pk`, skal Dawns 115 tilfælde og 12 dødsfald pr. 31. oktober med, og skal hændelsen lukkes.
 
+### Kl. 17.20, Afrika og Amerika
+
+**Gennemgået:** Kildescriptet: WHO DON (ingen ny DON siden forrige kørsel, DON 629 og 630 er brugt), DGHS' mæslinger (ingen meddelelse nyere end 26. november, som er brugt), ECDC's Public health events (intet efter 26. november, som er brugt), UKHSA (intet nyt siden 27. november), NaTHNaC (intet efter 27. november, som er brugt), CIDRAP (intet nyt ud over det, de forrige kørsler brugte; Wisconsins 920 tilfælde og 3 dødsfald står allerede i `maesling-us`) og Hongkong (28. november kun en kampagne om hiv, intet på siden berørt). Delene `dengue` (502), `lk` og `ont` fejlede. Desuden insp.cd's liste over situationsrapporter https://insp.cd/wp-json/wp/v2/media?search=SitRep&per_page=5&_fields=date,source_url (nyeste nummer 196 pr. 26. november, se Ændret), PAHO's epidemiologiske alarmer https://www.paho.org/en/epidemiological-alerts-and-updates (intet efter 24. november; alarmerne om mpox og A(H5N1) er brugt), WHO AFRO's ugebulletiner https://www.afro.who.int/health-topics/disease-outbreaks/outbreaks-and-other-emergencies-updates (uge 41 fortsat nyeste), US CDC's mæslingeside https://www.cdc.gov/measles/data-research/index.html (ugetallet pr. 24. november er brugt, næste ventes i næste uge), søgninger efter Africa CDC's ugerapport (ingen ny fundet), malaria i Panama (intet nyere end tallene pr. 16. november, som er brugt; El País' 6.727 er summen af de syv regioner, der allerede står i `extra`), hantavirus i Argentina (ingen ny bulletin fundet), gul feber i Ghana og Elfenbenskysten (intet nyere end 6. november, som er brugt) og kolera i Zambia (kun NaTHNaC, ingen oprindelig kilde fundet), samt https://globus.nicco.dk/konflikter.json (genereret 28. november kl. 16.23 dansk tid).
+
+**Ændret**
+- `ebola-drc`: INSP's situationsrapport 196 https://insp.cd/wp-content/uploads/2026/11/SitRep_N196_26-11-2026_corrige_VF.pdf (læst som tekst og som billede af første side): 12.176 bekræftede tilfælde og 5.978 bekræftede dødsfald pr. 26. november, 87 nye tilfælde (54 i Nordkivu, 27 i Ituri, 3 i Tshopo og 3 i Haut-Uélé) og 35 dødsfald det seneste døgn, heraf 25 i lokalsamfundet, 1.183 i isolation, 3.363 raske og fortsat 69 af 178 sundhedszoner ramt. 12.089 plus 87 giver 12.176, og 5.943 plus 35 giver 5.978. Nyt punkt, nyt punkt i talserien, `cases`, `extra` og `src` opdateret (rapport 195 står fortsat som kilde på sit eget punkt).
+
+**Nye**
+- Ingen.
+
+**Urørt**
+- 59 hændelser uden nyt i kilderne. Rundturen er afgjort i kørslen kl. 05.20.
+- `difteri-ng` (65 dage) står åben efter undtagelsen i reglen om `live`, fordi WHO AFRO's ugebulletin for uge 41 fortsat er den nyeste og kalder udbruddet igangværende.
+
+**Mediesporet**
+- Ingen par med status afventer i https://globus.nicco.dk/konflikter.json (8 bekræftede og 87 mistanker). Intet godkendt eller afvist.
+
+**Usikkert**
+- `maesling-bd`: DGHS har ikke lagt meddelelser ud efter 26. november. Tallene tages af næste kørsel, når de kommer.
+- `mpox-pk` og `difteri-ma` når 30 dage uden nyt punkt 28. og 29. november. Kørslen kl. 05.20 i morgen skal søge igen og ellers sætte `live` til `false`.
+- Hentningsværktøjet er ikke brugt i denne kørsel; alle sider ovenfor er læst ved direkte opslag eller afgjort på søgeresultater.
+- Kørslen arbejder fortsat gennem mikkelnicco/globus-nicco-dk på det seneste commit 67626b8, fordi add_repo ikke findes i kørslen.
+
+**Til gennemgang**
+- Intet nyt.
+
 ## 27. november 2026
 
 ### Kl. 05.20, bred gennemgang
